@@ -2,9 +2,9 @@
 title: Guía de integración de Amazon FireOS
 description: Guía de integración de Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '1432'
+source-wordcount: '1416'
 ht-degree: 0%
 
 ---
@@ -20,27 +20,27 @@ ht-degree: 0%
 
 ## Introducción {#intro}
 
-En este documento se describen los flujos de trabajo de asignación de derechos que la aplicación de nivel superior de un programador puede implementar a través de las API expuestas por la biblioteca Amazon FireOS AccessEnabler.
+En este documento se describen los flujos de trabajo de asignación de derechos que la aplicación de nivel superior de un programador puede implementar mediante las API expuestas por Amazon FireOS `AccessEnabler` biblioteca.
 
 La solución de asignación de derechos de autenticación de Adobe Pass para Amazon FireOS se divide finalmente en dos dominios:
 
-- Dominio de interfaz de usuario: es la capa de aplicación de nivel superior que implementa la interfaz de usuario y utiliza los servicios proporcionados por la biblioteca AccessEnabler para proporcionar acceso al contenido restringido.
-- Dominio de AccessEnabler: aquí es donde se implementan los flujos de trabajo de asignación de derechos en forma de:
+- El dominio de la interfaz de usuario: es la capa de aplicación de nivel superior que implementa la interfaz de usuario y utiliza los servicios proporcionados por el `AccessEnabler` para proporcionar acceso al contenido restringido.
+- El `AccessEnabler` dominio: aquí es donde se implementan los flujos de trabajo de derechos en forma de:
    - Llamadas de red realizadas a los servidores back-end de Adobe
    - Reglas de lógica empresarial relacionadas con los flujos de trabajo de autenticación y autorización
    - Administración de varios recursos y procesamiento del estado del flujo de trabajo (como la caché de símbolos)
 
-El objetivo del dominio AccessEnabler es ocultar todas las complejidades de los flujos de trabajo de asignación de derechos y proporcionar a la aplicación de capa superior (a través de la biblioteca AccessEnabler) un conjunto de primitivas de asignación de derechos simples con las que implementar los flujos de trabajo de asignación de derechos:
+El objetivo del `AccessEnabler` Este dominio es para ocultar todas las complejidades de los flujos de trabajo de asignación de derechos y para proporcionar a la aplicación de capa superior (a través de `AccessEnabler` library) un conjunto de primitivas de derechos simples. Este proceso permite implementar los flujos de trabajo de derechos:
 
-1. Establecer la identidad del solicitante
-1. Comprobación y obtención de autenticación con un proveedor de identidad concreto
-1. Comprobación y obtención de autorización para un recurso concreto
-1. Cerrar sesión
+1. Establezca la identidad del solicitante.
+1. Comprobación y obtención de autenticación con un proveedor de identidad concreto.
+1. Compruebe y obtenga autorización para un recurso en particular.
+1. Cerrar sesión.
 
-La actividad de red de AccessEnabler tiene lugar en un subproceso diferente, por lo que el subproceso de la interfaz de usuario nunca se bloquea. Como resultado, el canal de comunicación bidireccional entre los dos dominios de aplicación debe seguir un patrón totalmente asincrónico:
+El `AccessEnabler`La actividad de red de se lleva a cabo en un subproceso diferente, por lo que el subproceso de interfaz de usuario nunca se bloquea. Como resultado, el canal de comunicación bidireccional entre los dos dominios de aplicación debe seguir un patrón totalmente asincrónico:
 
-- La capa de aplicación de la interfaz de usuario envía mensajes al dominio AccessEnabler a través de las llamadas de API expuestas por la biblioteca AccessEnabler.
-- AccessEnabler responde a la capa de interfaz de usuario mediante los métodos de devolución de llamada incluidos en el protocolo AccessEnabler que la capa de interfaz de usuario registra con la biblioteca AccessEnabler.
+- La capa de aplicación de la interfaz de usuario envía mensajes a `AccessEnabler` dominio a través de las llamadas API expuestas por el `AccessEnabler` biblioteca.
+- El `AccessEnabler` responde a la capa de interfaz de usuario mediante los métodos de llamada de retorno incluidos en la variable `AccessEnabler` protocolo que registra la capa de interfaz de usuario en `AccessEnabler` biblioteca.
 
 ## Flujos de derecho {#entitlement}
 
@@ -50,8 +50,6 @@ La actividad de red de AccessEnabler tiene lugar en un subproceso diferente, por
 1. [Flujo de autorización](#authz_flow)
 1. [Ver flujo de medios](#media_flow)
 1. [Flujo de cierre de sesión](#logout_flow)
-
-
 
 ### A. Requisitos previos {#prereqs}
 
@@ -113,9 +111,9 @@ El `event` parámetro indica qué evento de derecho se produjo;el parámetro `da
 1. Inicie la aplicación de nivel superior.
 1. Inicie la autenticación de Adobe Pass.
 
-   1. Llamada [`getInstance`](#$getInstance) para crear una instancia única del Adobe Pass Authentication AccessEnabler.
+   1. Llamada [`getInstance`](#$getInstance) para crear una única instancia de autenticación de Adobe Pass `AccessEnabler`.
 
-      - **Dependencia:** Biblioteca Adobe Pass Authentication Native Amazon FireOS (AccessEnabler)
+      - **Dependencia:** Biblioteca Adobe Pass Authentication Native Amazon FireOS (`AccessEnabler`)
 
    1. Llamada` setRequestor()` para establecer la identificación del Programador; pase en el `requestorID` y (opcionalmente) una matriz de puntos finales de autenticación de Adobe Pass.
 
@@ -127,8 +125,8 @@ El `event` parámetro indica qué evento de derecho se produjo;el parámetro `da
 
    Tiene dos opciones de implementación: Una vez que la información de identificación del solicitante se envía al servidor back-end, la capa de aplicación de la interfaz de usuario puede elegir uno de los dos enfoques siguientes:</p>
 
-   1. Espere a que se active la `setRequestorComplete()` callback (parte del delegado AccessEnabler).  Esta opción proporciona la mayor certeza de que `setRequestor()` completado, por lo que se recomienda para la mayoría de las implementaciones.
-   1. Continúe sin esperar a que se active el `setRequestorComplete()` llamada de retorno y empiece a emitir solicitudes de derechos. Estas llamadas (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) se ponen en cola mediante la biblioteca AccessEnabler, que realizará las llamadas de red reales después de la `setRequestor()`. Esta opción se puede interrumpir ocasionalmente si, por ejemplo, la conexión de red es inestable.
+   1. Espere a que se active la `setRequestorComplete()` callback (parte de `AccessEnabler` delegate).  Esta opción proporciona la mayor certeza de que `setRequestor()` completado, por lo que se recomienda para la mayoría de las implementaciones.
+   1. Continúe sin esperar a que se active el `setRequestorComplete()` llamada de retorno y empiece a emitir solicitudes de derechos. El pone en cola estas llamadas (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) `AccessEnabler` , que realizará las llamadas de red reales después de que `setRequestor()`. Esta opción se puede interrumpir ocasionalmente si, por ejemplo, la conexión de red es inestable.
 
 1. Llamada [checkAuthentication()](#$checkAuthN) para comprobar si hay una autenticación existente sin iniciar el flujo de autenticación completo.  Si esta llamada se realiza correctamente, puede continuar directamente al flujo de autorización.  Si no es así, continúe con el flujo de autenticación.
 
@@ -150,10 +148,10 @@ El `event` parámetro indica qué evento de derecho se produjo;el parámetro `da
 
    >[!NOTE]
    >
-   >En este punto, el usuario tiene la oportunidad de cancelar el flujo de autenticación. Si esto ocurre, AccessEnabler limpiará su estado interno y restablecerá el flujo de autenticación.
+   >En este punto, el usuario tiene la oportunidad de cancelar el flujo de autenticación. Si esto sucede, el `AccessEnabler` limpiará su estado interno y restablecerá el flujo de autenticación.
 
 1. Cuando el usuario inicie sesión correctamente, WebView se cerrará.
-1. llamada `getAuthenticationToken(),` que indica a AccessEnabler que recupere el token de autenticación del servidor back-end.
+1. llamada `getAuthenticationToken(),` que ordena al `AccessEnabler` para recuperar el token de autenticación del servidor back-end.
 1. [Opcional] Llamada [`checkPreauthorizedResources(resources)`](#$checkPreauth) para comprobar qué recursos puede ver el usuario. El `resources` El parámetro es una matriz de recursos protegidos asociados al token de autenticación del usuario.
 
    **Déclencheur:** `preAuthorizedResources()` callback\
@@ -196,6 +194,6 @@ El `event` parámetro indica qué evento de derecho se produjo;el parámetro `da
 
 ### F. Flujo de cierre de sesión {#logout_flow}
 
-1. Llamada [`logout()`](#$logout) para cerrar la sesión del usuario. AccessEnabler borra todos los valores en caché y tokens obtenidos por el usuario para la MVPD actual en todos los solicitantes que comparten el inicio de sesión mediante el inicio de sesión único. Después de borrar la caché, AccessEnabler realiza una llamada al servidor para limpiar las sesiones del lado del servidor.  Tenga en cuenta que, dado que la llamada al servidor podría provocar un redireccionamiento de SAML al IdP (esto permite la limpieza de la sesión en el lado del IdP), esta llamada debe seguir todas las redirecciones. Por este motivo, esta llamada se controlará dentro de un control WebView, invisible para el usuario.
+1. Llamada [`logout()`](#$logout) para cerrar la sesión del usuario. El `AccessEnabler` borra todos los valores en caché y tokens obtenidos por el usuario para la MVPD actual en todos los solicitantes que comparten el inicio de sesión mediante el inicio de sesión único. Después de borrar la caché, el `AccessEnabler` realiza una llamada al servidor para limpiar las sesiones del lado del servidor.  Tenga en cuenta que, dado que la llamada al servidor podría provocar un redireccionamiento de SAML al IdP (esto permite la limpieza de la sesión en el lado del IdP), esta llamada debe seguir todas las redirecciones. Por este motivo, esta llamada se controlará dentro de un control WebView, invisible para el usuario.
 
    **Nota:** El flujo de cierre de sesión difiere del flujo de autenticación en que el usuario no tiene que interactuar con WebView de ninguna manera. Por lo tanto, es posible (y recomendado) hacer que el control WebView sea invisible (es decir, oculto) durante el proceso de cierre de sesión.

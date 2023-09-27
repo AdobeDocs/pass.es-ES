@@ -2,7 +2,7 @@
 title: Información general del SDK para Android
 description: Información general del SDK para Android
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '2720'
 ht-degree: 0%
@@ -14,9 +14,6 @@ ht-degree: 0%
 >[!NOTE]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
-
-</br>
-
 
 ## Introducción {#intro}
 
@@ -34,8 +31,6 @@ Los flujos de trabajo de cliente nativos suelen ser los mismos o muy similares a
 - [Flujo de trabajo de autenticación inicial genérica](#generic)
 - [Flujo de trabajo de cierre](#logout)
 
-
-
 ### Flujo de trabajo posterior a la inicialización {#post-init}
 
 Todos los flujos de trabajo de derechos admitidos por AccessEnabler suponen que ha llamado anteriormente a [`setRequestor()`](#setRequestor) para establecer su identidad. Esta llamada se realiza para proporcionar el ID de solicitante solo una vez, normalmente durante la fase de inicialización/configuración de la aplicación.
@@ -50,8 +45,6 @@ Con los clientes nativos (por ejemplo, Android), después de la llamada inicial 
 - O bien, haga ambas cosas.
 
 Depende de usted si desea esperar la notificación del éxito de [`setRequestor()`](#setRequestor) o confiar en el mecanismo de cola de llamadas de AccessEnabler. Dado que todas las solicitudes de autorización y autenticación subsiguientes necesitan el ID del solicitante y la información de configuración asociada, la variable [`setRequestor()`](#setRequestor) bloquea de forma efectiva todas las llamadas de API de autenticación y autorización hasta que se complete la inicialización.
-
-
 
 ### Flujo de trabajo de autenticación inicial genérica {#generic}
 

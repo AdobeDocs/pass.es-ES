@@ -2,7 +2,7 @@
 title: Guía del SDK para Android
 description: Guía del SDK para Android
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '1685'
 ht-degree: 0%
@@ -32,10 +32,13 @@ La solución de asignación de derechos de autenticación de Adobe Pass para And
 
 El objetivo del dominio AccessEnabler es ocultar todas las complejidades de los flujos de trabajo de asignación de derechos y proporcionar a la aplicación de capa superior (a través de la biblioteca AccessEnabler) un conjunto de primitivas de asignación de derechos simples con las que implementar los flujos de trabajo de asignación de derechos:
 
-1. Establecer la identidad del solicitante
-1. Comprobación y obtención de autenticación con un proveedor de identidad concreto
-1. Comprobación y obtención de autorización para un recurso concreto
-1. Cerrar sesión
+1. Establezca la identidad del solicitante.
+
+1. Comprobación y obtención de autenticación con un proveedor de identidad concreto.
+
+1. Compruebe y obtenga autorización para un recurso en particular.
+
+1. Cerrar sesión.
 
 La actividad de red de AccessEnabler tiene lugar en un subproceso diferente, por lo que el subproceso de la interfaz de usuario nunca se bloquea. Como resultado, el canal de comunicación bidireccional entre los dos dominios de aplicación debe seguir un patrón totalmente asincrónico:
 
@@ -50,8 +53,6 @@ La actividad de red de AccessEnabler tiene lugar en un subproceso diferente, por
 1. [Flujo de autorización](#authz_flow)
 1. [Ver flujo de medios](#media_flow)
 1. [Flujo de cierre de sesión](#logout_flow)
-
-
 
 ### A. Requisitos previos {#prereqs}
 
@@ -137,8 +138,6 @@ La actividad de red de AccessEnabler tiene lugar en un subproceso diferente, por
 
    - **Déclencheur:** llamada de retorno setAuthenticationStatus()
 
-
-
 ### C. Flujo de autenticación {#authn_flow}
 
 1. Llamada [`getAuthentication()`](#$getAuthN) para iniciar el flujo de autenticación o para obtener confirmación de que el usuario ya está autenticado.\
@@ -151,7 +150,6 @@ La actividad de red de AccessEnabler tiene lugar en un subproceso diferente, por
 1. Una vez que el usuario haya seleccionado un proveedor, obtenga la URL de la MVPD del usuario en el `navigateToUrl()` devolución de llamada.  Abra un control WebView y dirija ese control WebView a la dirección URL.
 
 1. A través del WebView creado en el paso anterior, el usuario aterriza en la página de inicio de sesión de la MVPD e introduce credenciales de inicio de sesión. Varias operaciones de redirección tienen lugar dentro de WebView.
-
 
    **Nota:** En este punto, el usuario tiene la oportunidad de cancelar el flujo de autenticación. Si esto sucede, el nivel de la interfaz de usuario es responsable de informar a AccessEnabler sobre este evento llamando a `setSelectedProvider()` con `null` como parámetro. Esto permite al AccessEnabler limpiar su estado interno y restablecer el flujo de autenticación.
 
