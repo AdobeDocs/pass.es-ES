@@ -2,9 +2,9 @@
 title: Referencia de API de SDK para Android
 description: Referencia de API de SDK para Android
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: 2ccfa8e018b854a359881eab193c1414103eb903
+source-git-commit: 854698397d9d14c1bfddcc10eecc61c7e3c32b71
 workflow-type: tm+mt
-source-wordcount: '4518'
+source-wordcount: '4526'
 ht-degree: 0%
 
 ---
@@ -165,7 +165,7 @@ Los valores se pasan al servidor independientemente del flujo actual (autenticac
 
 ### checkAuthentication {#checkAuthN}
 
-**Descripción:** Comprueba el estado de autenticación. Para ello, busca un token de autenticación válido en el espacio de almacenamiento del token local. Llamar a este método no realiza llamadas de red. La aplicación la utiliza para consultar el estado de autenticación del usuario y actualizar la interfaz de usuario en consecuencia (es decir, actualizar la interfaz de usuario de inicio de sesión/cierre de sesión). El estado de autenticación se comunica a la aplicación a través de la [*setAuthenticationStatus()*](#setAuthNStatus) devolución de llamada.
+**Descripción:** Comprueba el estado de autenticación. Para ello, busca un token de autenticación válido en el espacio de almacenamiento del token local. Este método no realiza llamadas de red y se recomienda llamarlo en el subproceso principal. La aplicación la utiliza para consultar el estado de autenticación del usuario y actualizar la interfaz de usuario en consecuencia (es decir, actualizar la interfaz de usuario de inicio de sesión/cierre de sesión). El estado de autenticación se comunica a la aplicación a través de la [*setAuthenticationStatus()*](#setAuthNStatus) devolución de llamada.
 
 Si una MVPD admite la función &quot;Autenticación por solicitante&quot;, se pueden almacenar varios tokens de autenticación en un dispositivo.  Para obtener más información sobre esta función, consulte la [Directrices de almacenamiento en caché](#$caching) de la Información general técnica de Android.
 

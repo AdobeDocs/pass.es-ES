@@ -2,9 +2,9 @@
 title: Referencia de la API de iOS/tvOS
 description: Referencia de la API de iOS/tvOS
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 2ccfa8e018b854a359881eab193c1414103eb903
+source-git-commit: 854698397d9d14c1bfddcc10eecc61c7e3c32b71
 workflow-type: tm+mt
-source-wordcount: '7010'
+source-wordcount: '7018'
 ht-degree: 0%
 
 ---
@@ -365,7 +365,8 @@ Si se llama sin el `serviceProviders` , la biblioteca recuperará la configuraci
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
 **Descripción:** Comprueba el estado de autenticación del usuario actual.
-Para ello, busca un token de autenticación válido en el espacio de almacenamiento del token local. Llamar a este método no realiza llamadas de red. La aplicación la utiliza para consultar el estado de autenticación del usuario y actualizar la interfaz de usuario en consecuencia (es decir, actualizar la interfaz de usuario de inicio de sesión/cierre de sesión). El estado de autenticación se comunica a la aplicación a través de la [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) devolución de llamada.
+Para ello, busca un token de autenticación válido en el espacio de almacenamiento del token local. Este método no realiza llamadas de red y se recomienda llamarlo en el subproceso principal.
+La aplicación la utiliza para consultar el estado de autenticación del usuario y actualizar la interfaz de usuario en consecuencia (es decir, actualizar la interfaz de usuario de inicio de sesión/cierre de sesión). El estado de autenticación se comunica a la aplicación a través de la [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) devolución de llamada.
 
 
 <table class="pass_api_table">
