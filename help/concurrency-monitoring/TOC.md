@@ -2,17 +2,17 @@
 product: adobe primetime
 feature: Concurrency Monitoring
 audience: end-user
-user-guide-title: Monitorización de concurrencia de Adobe Pass
+user-guide-title: Monitorización de la concurrencia de Adobe Pass
 user-guide-description: Aprenda a definir y aplicar límites en el uso simultáneo en varias aplicaciones.
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
 source-wordcount: '141'
-ht-degree: 0%
+ht-degree: 17%
 
 ---
 
 
-# Ayuda de supervisión de concurrencia de Adobe Pass {#cm}
+# Monitorización de la concurrencia de Adobe Pass ayuda {#cm}
 
 + [Introducción a la monitorización de concurrencia](cm-home.md)
 + [Glosario de monitorización de concurrencia](cm-glossary.md)
@@ -32,7 +32,7 @@ ht-degree: 0%
       + [Restricción del uso simultáneo con varias aplicaciones que pertenecen a propietarios diferentes](restrict-concurr-usage-mult-apps.md)
       + [Inquilino/política único y varias aplicaciones](single-tenant-policy-mult-app.md)
    + [Modelos de implementación](implementation-models.md)
-+ Notas de versión {#cm-release-notes}
++ Notas de la versión {#cm-release-notes}
    + [Notas de la versión de Concurrency Monitoring services 3.1](rn-cm-services-31.md)
    + [Notas de la versión de Concurrency Monitoring services 3.0](rn-cm-services-30.md)
    + [Notas de la versión de Concurrency Monitoring 2.9.6](rn-cm-296.md)
