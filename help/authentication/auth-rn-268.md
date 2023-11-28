@@ -1,7 +1,8 @@
 ---
 title: Notas de la versión de autenticación de Adobe Pass 2.68
 description: Notas de la versión de autenticación de Adobe Pass 2.68
-source-git-commit: dc9572912371fb23586eafa93d06c3f3a5c546bc
+exl-id: 88628696-448e-4afa-91f0-d3767d68d2f4
+source-git-commit: 87d7380aa7045e64e8caff6d5d7610bd0917181e
 workflow-type: tm+mt
 source-wordcount: '142'
 ht-degree: 0%
@@ -25,11 +26,11 @@ En esta página se describen las nuevas funciones, los cambios y los problemas c
 ### Número de compilación {#build-number-268}
 
 Autenticación de Adobe Pass: adobe-pass-end **2.68.0.5**
-Fecha de versión: **21/11/2023 - 23/11/2023**
+Fecha de versión: **05/12/2023 - 07/12/2023**
 
 ### Nuevas funciones {#new-features-268}
 
-* Desarrollo en curso de nuevas API de REST. Está previsto que los nuevos puntos de conexión y flujos estén disponibles en una próxima versión dedicada. Está en curso la actualización de la documentación para el uso de estas nuevas API.
+* Desarrollo en curso de las nuevas API de REST. Los nuevos puntos finales y flujos están planificados para estar disponibles en una próxima versión dedicada. Está en curso la actualización de la documentación para el uso de estas nuevas API.
 * Mejoras continuas de la arquitectura interna.
 * Se ha actualizado la biblioteca Device Atlas a la versión más reciente para mejorar la identificación de dispositivos.
 
