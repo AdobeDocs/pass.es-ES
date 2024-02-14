@@ -4,15 +4,15 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Monitorización de la concurrencia de Adobe Pass
 user-guide-description: Aprenda a definir y aplicar límites en el uso simultáneo en varias aplicaciones.
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: d39836cfb81a81271f526e6aa52fcc2d6558678f
 workflow-type: tm+mt
-source-wordcount: '141'
-ht-degree: 17%
+source-wordcount: '161'
+ht-degree: 9%
 
 ---
 
 
-# Monitorización de la concurrencia de Adobe Pass ayuda {#cm}
+# Ayuda de supervisión de concurrencia de Adobe Pass {#cm}
 
 + [Introducción a la monitorización de concurrencia](cm-home.md)
 + [Glosario de monitorización de concurrencia](cm-glossary.md)
@@ -21,6 +21,7 @@ ht-degree: 17%
 + [Resumen de API de supervisión de concurrencia](cm-api-overview.md)
 + [Atributos de metadatos estándar](standard-metadata-attributes.md)
 + [Política de retención de datos](data-retention-policy.md)
++ [Mecanismo de limitación](throttling-mechanism.md)
 + [Procedimientos de escalación](cm-escalation-procedures.md)
 + Uso de supervisión de concurrencia {#cmu}
    + [Informes de uso de supervisión de concurrencia](cm-usage-reports.md)
@@ -32,7 +33,7 @@ ht-degree: 17%
       + [Restricción del uso simultáneo con varias aplicaciones que pertenecen a propietarios diferentes](restrict-concurr-usage-mult-apps.md)
       + [Inquilino/política único y varias aplicaciones](single-tenant-policy-mult-app.md)
    + [Modelos de implementación](implementation-models.md)
-+ Notas de la versión {#cm-release-notes}
++ Notas de versión {#cm-release-notes}
    + [Notas de la versión de Concurrency Monitoring services 3.1](rn-cm-services-31.md)
    + [Notas de la versión de Concurrency Monitoring services 3.0](rn-cm-services-30.md)
    + [Notas de la versión de Concurrency Monitoring 2.9.6](rn-cm-296.md)
