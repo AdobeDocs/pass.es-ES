@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: 31620db6a05d4c7043e49c03099e9f84cdbad4fb
+source-git-commit: 2dbb45aebb1a00863a9344114963f6df95763dfc
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '915'
 ht-degree: 3%
 
 ---
@@ -155,6 +155,7 @@ ht-degree: 3%
    + [Monitorización de Adobe Pass Adobe PayTV Pass](monitoring-adobe-pay-tv-pass.md)
    + [Requisitos mínimos del sistema](minimum-system-requirements.md)
 + Notas de versión {#release-notes}
+   + [Notas de la versión de Adobe Pass Authentication 2.69](auth-rn-269.md)
    + [Notas de la versión de Adobe Pass Authentication 2.68](auth-rn-268.md)
    + [Notas de la versión de Adobe Pass Authentication 2.67](auth-rn-267.md)
    + [Notas de la versión de Adobe Pass Authentication 2.66](auth-rn-266.md)
@@ -165,13 +166,14 @@ ht-degree: 3%
    + [Notas de la versión de Adobe Pass Authentication 2.63](auth-rn-263.md)
    + [Notas de la versión de autenticación de Adobe Pass 2.62.1](auth-rn-2621.md)
    + Notas de la versión del SDK de JavaScript  {#release-notes-javascript}
-      + [Notas de la versión de Adobe Pass Authentication JavaScript 3.5.0](authn-rn-javascript-350.md)
-      + [Notas de la versión JavaScript 4.0.0 de autenticación de Adobe Pass](authn-rn-javascript-400.md)
-      + [Notas de la versión JavaScript 4.1.0 de autenticación de Adobe Pass](authn-rn-javascript-410.md)
-      + [Notas de la versión de JavaScript 4.1.1 de autenticación de Adobe Pass](authn-rn-javascript-411.md)
-      + [Notas de la versión JavaScript 4.2.0 de autenticación de Adobe Pass](authn-rn-javascript-420.md)
-      + [Notas de la versión JavaScript 4.4.0 de autenticación de Adobe Pass](authn-rn-javascript-440.md)
+      + [Notas de la versión de JavaScript 4.7.0 de autenticación de Adobe Pass](authn-rn-javascript-470.md)
       + [Notas de la versión JavaScript 4.6.0 de autenticación de Adobe Pass](authn-rn-javascript-460.md)
+      + [Notas de la versión JavaScript 4.4.0 de autenticación de Adobe Pass](authn-rn-javascript-440.md)
+      + [Notas de la versión JavaScript 4.2.0 de autenticación de Adobe Pass](authn-rn-javascript-420.md)
+      + [Notas de la versión de JavaScript 4.1.1 de autenticación de Adobe Pass](authn-rn-javascript-411.md)
+      + [Notas de la versión JavaScript 4.1.0 de autenticación de Adobe Pass](authn-rn-javascript-410.md)
+      + [Notas de la versión JavaScript 4.0.0 de autenticación de Adobe Pass](authn-rn-javascript-400.md)
+      + [Notas de la versión de Adobe Pass Authentication JavaScript 3.5.0](authn-rn-javascript-350.md)
    + Notas de la versión de iOS/tvOS SDK  {#release-notes-ios}
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.4](authn-rn-ios-tvos-384.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.3](authn-rn-ios-tvos-383.md)
@@ -185,7 +187,7 @@ ht-degree: 3%
       + [Preguntas y respuestas de certificados](certificates-qa.md)
       + SDK de JavaScript {#javascript}
          + [Limitaciones del SDK de JS para el explorador Safari](js-sdk-limitations-for-safari-browser.md)
-         + [Actualizaciones de cookies: indicadores SameSite y Secure](cookies-updates--samesite-and-secure-flags.md)
+         + [Actualizaciones de cookies: indicadores SameSite y Secure](cookies-updates-samesite-and-secure-flags.md)
       + SDK para Android {#android}
          + [Acceso Habilitar el inicio de sesión único (SSO) del SDK de Android en aplicaciones de Android 10](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
          + [Autenticación de Adobe Pass y el modelo de nuevos permisos de Android 6 &quot;Marshmallow&quot;](adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
@@ -202,7 +204,7 @@ ht-degree: 3%
       + [Configurar el entorno y realizar pruebas en la calidad previa](setting-up-your-environment-and-testing-in-prequal.md)
       + [Prueba de los flujos de autenticación y autorización mediante el sitio de prueba de la API de Adobe](test-authn-authz-flows-using-adobes-api-test-site.md)
    + API sin cliente {#clientless-api}
-      + [Implementación de API sin cliente: códigos de error/mensajes con motivo/causa probable](clientless-api-implementation-error-codes--messages-with-probable-reason--cause.md)
+      + [Implementación de API sin cliente: códigos de error/mensajes con motivo/causa probable](clientless-api-implementation-error-codes-messages-with-probable-reason-cause.md)
       + [Flujo de API sin cliente en ausencia de ID de dispositivo](clientless-api-flow-in-the-absence-of-device-id.md)
       + [Sin cliente: evite utilizar &#39;&amp;&#39;reg_code en la solicitud /authentication](clientless-avoid-using-reg-code-in-authenticate-request.md)
       + [Habilitar los servicios de autorización de Adobe Pass para un programador en Xbox 360 y XboxOne sin cliente](enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
