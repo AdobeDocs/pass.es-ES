@@ -2,9 +2,9 @@
 title: SSO en iOS al utilizar el Habilitador de acceso a autenticación de Adobe Pass
 description: SSO en iOS al utilizar el Habilitador de acceso a autenticación de Adobe Pass
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 929d1cc2e0466155b29d1f905f2979c942c9ab8c
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1121'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ El comportamiento de SSO es el siguiente:
    - **Importante:** Tenga en cuenta que la versión 1.9.4 del SDK para iOS tiene [se ha aumentado el objetivo mínimo de implementación de iOS a iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7 y versiones posteriores**: SSO funcionará en las siguientes condiciones:
 
-1. Las aplicaciones se publican con el mismo perfil de distribución de Apple o perfiles que pertenecen al mismo equipo. Esta es la única manera en que las aplicaciones comparten paneles de trabajo personalizados en iOS 7 y versiones posteriores. En todos los demás casos, la mesa de trabajo se coloca en una zona protegida por aplicación. Desde [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[UIPasteboardPasteboardWithName:create:\] y +\[UIPasteboard pasteboardWithUniqueName\] ahora permiten que el nombre dado sea único para permitir que solo las aplicaciones del mismo grupo de aplicaciones tengan acceso a la mesa de trabajo. Si el desarrollador intenta crear una mesa de trabajo con un nombre que ya existe y no forma parte del mismo grupo de aplicaciones, obtendrá su propia mesa de trabajo única y privada. Tenga en cuenta que esto no afecta al sistema, a los paneles de trabajo que se proporcionan, a las herramientas generales y a los buscadores.
+1. Las aplicaciones se publican con el mismo perfil de distribución de Apple o perfiles que pertenecen al mismo equipo. Esta es la única manera en que las aplicaciones comparten paneles de trabajo personalizados en iOS 7 y versiones posteriores. En todos los demás casos, la mesa de trabajo se coloca en una zona protegida por aplicación. Desde [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[`UIPasteboard pasteboardWithName:create:\`] y +\[`UIPasteboard pasteboardWithUniqueName`\] ahora es único en el nombre para permitir que solo las aplicaciones del mismo grupo de aplicaciones tengan acceso a la mesa de trabajo. Si el desarrollador intenta crear una mesa de trabajo con un nombre que ya existe y no forma parte del mismo grupo de aplicaciones, obtendrá su propia mesa de trabajo única y privada. Tenga en cuenta que esto no afecta al sistema, a los paneles de trabajo que se proporcionan, a las herramientas generales y a los buscadores.
 
 1. Las aplicaciones tienen el mismo prefijo de ID de paquete (todos los componentes excepto el último). Solo las aplicaciones que comparten el mismo prefijo de ID de paquete calcularán el mismo IDFV. Desde [*https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice\_Class/index.html\#//apple\_ref/occ/instp/UIDevice/identifierForVendor*](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor): en IOS 7, se utilizan todos los componentes del paquete excepto el último componente para generar el ID de proveedor. Si el ID de paquete solo tiene un componente, se utiliza el ID de paquete completo.
 
