@@ -2,9 +2,9 @@
 title: Metadatos del usuario
 description: Metadatos del usuario
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '495'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+
+>[!NOTE]
+>
+> La implementación de la API de REST está limitada por [Mecanismo de limitación](/help/authentication/throttling-mechanism.md)
 
 ## Extremos de API de REST {#clientless-endpoints}
 

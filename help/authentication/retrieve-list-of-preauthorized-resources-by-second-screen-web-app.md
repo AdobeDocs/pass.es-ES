@@ -2,9 +2,9 @@
 title: Recuperar lista de recursos preautorizados por aplicación web de segunda pantalla
 description: Recuperar lista de recursos preautorizados por aplicación web de segunda pantalla
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '254'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+
+>[!NOTE]
+>
+> La implementación de la API de REST está limitada por [Mecanismo de limitación](/help/authentication/throttling-mechanism.md)
 
 ## Extremos de API de REST {#clientless-endpoints}
 

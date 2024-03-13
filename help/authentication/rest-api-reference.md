@@ -2,10 +2,10 @@
 title: Referencia de API de REST
 description: Referencia de API de REST
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '649'
-ht-degree: 4%
+source-wordcount: '641'
+ht-degree: 2%
 
 ---
 
@@ -14,6 +14,10 @@ ht-degree: 4%
 >[!NOTE]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+
+## Mecanismo de limitación
+
+La API de REST de autenticación de Adobe Pass se rige por un [Mecanismo de limitación](/help/authentication/throttling-mechanism.md).
 
 ## Formatos de respuesta {#response-formats}
 
@@ -51,13 +55,13 @@ En la tabla siguiente se enumeran los servicios web disponibles para el enfoque 
 | Sr | Punto final de servicio web | Descripción | <!--[Diag.  </br>Ref](http://tve.helpdocsonline.com/api-reference-v2-test#illustration)-->. | Alojado en | Llamado por |
 | --- | --- | --- | --- | --- | --- |
 | 1. | [&lt;reggie_fqdn>/reggie/v1/  </br>  {requestorId}/regcode](/help/authentication/registration-code-request.md) | Devuelve el código de registro generado aleatoriamente y el URI de la página de inicio de sesión | 2 | Adobe  </br>Servicio de código de registro | Smart Device |
-| 2. | [&lt;reggie_fqdn>/reggie/v1/  </br>  {requestorId}/regcode/  </br>  {registrationCode}](/help/authentication/return-registration-record.md) | Devuelve el registro del código de registro que contiene el UUID del código de registro, el código de registro y el ID del dispositivo con hash | 8 | Adobe  </br>Servicio de código de registro | Autenticación de Adobe Pass |
+| 2. | [&lt;reggie_fqdn>/reggie/v1/  </br>  {requestorId}/regcode/  </br>  {registrationCode}](/help/authentication/return-registration-record.md) | Devuelve el registro del código de registro que contiene el UUID del código de registro, el código de registro y el ID del dispositivo con hash | 8 | Adobe  </br>Servicio de código de registro | Adobe Pass Authentication |
 | 3. | [&lt;sp_fqdn>/api/v1/config/  </br>  {requestorId}](/help/authentication/provide-mvpd-list.md) | Devuelve la lista de MVPD configuradas para el solicitante | 5 | Adobe  </br>Adobe Pass  </br>authentication  </br>Servicio | Iniciar sesión  </br>Web  </br>Aplicación |
 | 4. | [&lt;sp_fqdn>/api/v1/authenticate](/help/authentication/initiate-authentication.md) | Inicia el proceso AuthN al informar al evento de selección de MVPD. Crea un registro en la base de datos de autenticación, que se concilia cuando se recibe una respuesta correcta de MVPD (Paso 13) | 7 | Adobe  </br>Adobe Pass  </br>authentication  </br>Servicio | Iniciar sesión  </br>Web  </br>Aplicación |
-| 5. | Consumidor de afirmación de SAML | Flujo de trabajo SAML existente entre Adobe Pass Authentication y MVPD | 13 | Adobe Pass  </br>authentication  </br>Servicio | Autenticación de Adobe Pass |
+| 5. | Consumidor de afirmación de SAML | Flujo de trabajo SAML existente entre Adobe Pass Authentication y MVPD | 13 | Adobe Pass  </br>authentication  </br>Servicio | Adobe Pass Authentication |
 | 6. | [&lt;sp_fqdn>/api/v1/checkauthn/  </br>  {registrationCode}](/help/authentication/check-authentication-flow-by-second-screen-web-app.md) | La aplicación web de inicio de sesión puede comprobar si el flujo de inicio de sesión intentado se ha realizado correctamente |     | Adobe Pass  </br>authentication   </br>Servicio | Iniciar sesión   </br>Web   </br>Aplicación |
 | 7. | [&lt;sp_fqdn>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md) | Obtiene metadatos relacionados con el token de AuthN | 15 | Adobe Pass  </br>authentication  </br>Servicio | Smart Device |
-| 8. | [&lt;reggie_fqdn>/reggie/v1/  </br>  {requestorId}/regcode/  </br>  {registrationCode}](/help/authentication/delete-registration-record.md) | Elimina el registro de código reg y libera el código reg para su reutilización | 16 | Adobe  </br>Servicio de código de registro | Autenticación de Adobe Pass |
+| 8. | [&lt;reggie_fqdn>/reggie/v1/  </br>  {requestorId}/regcode/  </br>  {registrationCode}](/help/authentication/delete-registration-record.md) | Elimina el registro de código reg y libera el código reg para su reutilización | 16 | Adobe  </br>Servicio de código de registro | Adobe Pass Authentication |
 | 9. | [&lt;sp_fqdn>/api/v1/authorize](/help/authentication/initiate-authorization.md) | Obtiene una respuesta de autorización. | 17 | Adobe Pass  </br>authentication  </br>Servicio | Smart Device |
 | 10. | [&lt;sp_fqdn>/api/v1/checkauthn](/help/authentication/check-authentication-token.md) | Indica si el dispositivo tiene un token de AuthN no caducado. |     | Adobe Pass  </br>authentication  </br>Servicio | Smart Device |
 | 11. | [&lt;sp_fqdn>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md) | Devuelve el token de AuthN si se encuentra. |     | Adobe Pass  </br>authentication  </br>Servicio | Smart Device |
