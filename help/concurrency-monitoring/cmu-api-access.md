@@ -1,7 +1,7 @@
 ---
 title: Acceso a API de CMU
 description: Acceso a API de CMU
-source-git-commit: 30631ac006b7944cb2eb8996c2c165343b6be5fe
+source-git-commit: 598eb878168f6e352a8eae369cbc8cb833033328
 workflow-type: tm+mt
 source-wordcount: '407'
 ht-degree: 0%
@@ -16,8 +16,7 @@ ht-degree: 0%
 
 ## Introducción al procedimiento de acceso {#api-access-procedure-overview}
 
-Hemos actualizado el acceso a los informes de CMU para que sea compatible con el Protocolo de registro dinámico de clientes OAuth 2.0.
-Se implementa un servidor de autorización OAuth 2.0 personalizado para satisfacer las necesidades de la aplicación de Monitorización de concurrencia. \
+Hemos actualizado el acceso a los informes de CMU para que sea compatible con el Protocolo de registro dinámico de clientes OAuth 2.0. Se implementa un servidor de autorización OAuth 2.0 personalizado para satisfacer las necesidades de la aplicación de Monitorización de concurrencia. \
 Para que las aplicaciones cliente utilicen la autorización de OAuth 2.0, el servidor debe registrarse dinámicamente para obtener información específica (credenciales del cliente) para poder interactuar con ella. Como parte del proceso de registro, el cliente debe presentar un conjunto de metadatos integrados al extremo de registro del cliente.
 Estos metadatos se comunican como una declaración de software, que contiene un &quot;software_id&quot; para permitir que nuestro servidor de autorización correlacione diferentes instancias de una aplicación utilizando la misma declaración de software.
 Una instrucción de software es un token web JSON (JWT) que afirma valores de metadatos sobre el software cliente como un paquete. Cuando se presenta al servidor de autorización como parte de una solicitud de registro de cliente, la instrucción de software debe estar firmada digitalmente o ser editada en MAC mediante la firma web JSON (JWS). \
@@ -28,7 +27,7 @@ Siga los pasos de las secciones siguientes para obtener acceso.
 
 1. Tener una aplicación registrada en el servidor de Adobe Pass DCR. Para realizar este paso, póngase en contacto con nuestro [Equipo de soporte](mailto:tve-support@adobe.com).
 2. Obtener la declaración del software
-   1. Ir al panel de TVE <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-Prod </a> o <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. Ir al panel de TVE <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-Prod </a>  o <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
    2. Seleccionar programador
    3. Vaya a la pestaña Aplicaciones
    4. Seleccionar aplicación
