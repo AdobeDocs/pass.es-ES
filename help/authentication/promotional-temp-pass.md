@@ -2,9 +2,9 @@
 title: Pase temporal promocional
 description: Pase temporal promocional
 exl-id: 705c1ba9-0430-4e3b-add1-d9e4da3f82d1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c88fba76b1805dd88fccb68b13bde11b1b8ea181
 workflow-type: tm+mt
-source-wordcount: '1529'
+source-wordcount: '1510'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ En función del ID del dispositivo y de la información que proporcionó el usua
 
 * Clave de información proporcionada por el usuario (por ejemplo, correo electrónico)
 * Número de recursos que el usuario tiene derecho a consumir
-* TTL: lapso de tiempo en el que el usuario puede consumir el número configurado de recursos
+* TTL: intervalo de tiempo en el que el usuario tiene derecho a consumir el número configurado de recursos
 
 ### Metadatos del usuario {#user-metadata}
 
@@ -74,7 +74,7 @@ Para facilitar la implementación de la aplicación del Programador, lo siguient
 
 ### ¿Cómo se calcula el tiempo de visualización? {#compute-viewing-time}
 
-La cantidad de tiempo que un pase temporal sigue siendo válido no se correlaciona con la cantidad de tiempo que un usuario emplea para ver contenido en la aplicación del programador. Tras la solicitud inicial del usuario para obtener autorización a través de Promotional Temp Pass, se calcula un tiempo de caducidad añadiendo el tiempo de solicitud actual inicial al TTL (lapso de tiempo de duración) especificado por el Programador.
+La cantidad de tiempo que un pase temporal sigue siendo válido no se correlaciona con la cantidad de tiempo que un usuario emplea para ver contenido en la aplicación del programador. Tras la solicitud inicial del usuario para obtener autorización a través de Promotional Temp Pass, se calcula un tiempo de caducidad añadiendo el tiempo de solicitud actual inicial al TTL (intervalo de tiempo de duración) especificado por el Programador.
 
 ### Autenticación y autorización {#authn-authz}
 

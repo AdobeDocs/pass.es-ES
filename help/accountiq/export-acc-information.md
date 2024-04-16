@@ -2,86 +2,90 @@
 title: Exportar información para cuentas con una puntuación de uso compartido alta
 description: Exportar información para cuentas con una puntuación de uso compartido alta.
 exl-id: df41ddd2-fde3-4861-abd4-6e32f0be9ea5
-source-git-commit: d543bbe972944ad83f4cb28c8a17ea6e10f66975
+source-git-commit: 88b11527b2a432c2cd27bf9e29fd286969036eb0
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '676'
 ht-degree: 1%
 
 ---
 
 # Exportar información para cuentas con una puntuación de uso compartido alta {#export-account-info-high-score}
 
-[!UICONTROL Account IQ] le da la opción de exportar los detalles de uso compartido de cuentas para las 1000 cuentas de suscriptores principales en función de su [compartir probabilidades](/help/accountiq/product-concepts.md#account-sharing-probability-def). Los datos del archivo CSV exportado se ordenan en orden decreciente de las probabilidades de uso compartido de las cuentas de suscriptor, de las MVPD seleccionadas en la [segmento](/help/accountiq/product-concepts.md#segment-def), para a [lapso de tiempo especificado](/help/accountiq/product-concepts.md#time-frame-def).
+[!UICONTROL Account IQ] permite exportar los detalles de uso compartido de cuentas de las 1000 cuentas de suscriptores principales en función de su [compartir probabilidades](/help/accountiq/product-concepts.md#account-sharing-probability-def). Puede exportar la información de uso compartido de cuentas del actual [segmento](/help/accountiq/product-concepts.md#segment-def) y [intervalo de tiempo especificado](/help/accountiq/product-concepts.md#time-interval-def) en el [Informes de cuentas compartidas](/help/accountiq/shared-acc-reports.md) página.
 
-La opción para exportar la información de uso compartido de cuentas está disponible en [Informes de uso generales](/help/accountiq/general-usage-reports.md) y [Informes de cuentas compartidas](/help/accountiq/shared-acc-reports.md) páginas.
+Siga los pasos para exportar la información de uso compartido de cuentas de las cuentas de suscriptor de un segmento específico.
 
->[!NOTE]
->
->Los números del archivo CSV descargado son diferentes para las páginas de informes Uso general y Cuentas compartidas. Esto se debe a que la página Informes de uso generales tiene filtros adicionales para que los programadores seleccionen Umbral para el número de dispositivos, IP y códigos postales. Por lo tanto, los datos exportados desde Informes de uso general se basan en el filtro de umbral adicional aplicado.
+1. Inicie sesión con sus credenciales.
+1. Vaya a **Cuentas compartidas** pestaña debajo de **Informes** sección.
+1. Seleccione el segmento y el intervalo de tiempo necesarios en el panel Segmento e intervalo de tiempo. Aprender [cómo seleccionar un segmento y un intervalo de tiempo](segments-timeinterval.md).
 
-![Opción Exportar en Uso general](assets/export.png)
+   Si es necesario, consulte las instrucciones de [creación de segmentos](work-with-segments.md#create-new-segment) o [edición de segmentos](work-with-segments.md#edit-segment).
 
-Para exportar la información de uso compartido de cuentas de los suscriptores:
+1. Seleccionar **[!UICONTROL Export top 1000 accounts]** situado en la esquina superior derecha del panel segmento e intervalo de tiempo.
 
-1. Defina el segmento que desee siguiendo los pasos de [Cómo definir el segmento y seleccionar el periodo de tiempo](/help/accountiq/howto-select-segment-timeframe.md) para evaluación desde [segmento y periodo de tiempo](/help/accountiq/segments-timeframe.md) panel.
+   ![Exportar las 1000 cuentas principales](assets/export-top-1000-accounts.png)
 
-1. Seleccione el **[!UICONTROL Export top 1000 accounts]** opción para exportar la información de la cuenta para 1000 suscriptores con la mayor probabilidad de uso compartido.
+   *Seleccione la opción Exportar las 1000 cuentas principales*
 
-Al utilizar la opción de exportación, las estadísticas de 1000 cuentas con las mayores probabilidades de compartir (para un lapso de tiempo definido) se descargan en la carpeta Descargas del equipo local.
+El archivo se descargará automáticamente en el equipo local como un .csv.
 
->[!NOTE]
->
->El archivo CSV descargado se puede abrir con cualquier aplicación que lea un archivo CSV, por ejemplo, Microsoft Excel.
+Este archivo contiene los datos de las 1000 cuentas principales en función de las probabilidades de uso compartido de las cuentas de suscriptor del segmento actual en orden decreciente.
 
-![datos exportados en formato csv](assets/exported-csv.png)
+A continuación se muestra un ejemplo del archivo .csv exportado.
 
-*Imagen: datos de cuenta compartida exportados en formato CSV*
+![datos exportados en archivo .csv](assets/exported-csv.png)
+
+*Datos exportados en el archivo .csv*
 
 ## Columnas del informe exportado {#columns-in-export}
 
-**Semana/ Mes**
+**Semana/Mes**
 
-La semana o el mes que seleccionó en la variable **[!UICONTROL Granularity and Time Frame]** en el selector de segmentos, para el cual se buscan las estadísticas de uso compartido.
+La semana o el mes seleccionados dentro del **[!UICONTROL Granularity and Time Interval]** en el selector de segmentos.
 
 **MVPD**
 
-Si es un usuario programador, la columna muestra a qué MVPD pertenece la cuenta del suscriptor.
+Si es programador, la columna muestra el distribuidor con el que está suscrita la cuenta.
 
-**ID de suscriptor**
+>[!NOTE]
+>
+> El **MVPD** solo está disponible para las versiones de TV en todas partes.
 
-Cuenta específica de la que estamos hablando en una fila.
+**Identificador de suscriptor**
+
+El identificador único de la cuenta específica.
 
 **Cantidad mínima de dispositivos**
 
-El número real de dispositivos (que transmiten contenido) es casi con certeza mayor que el número mínimo de dispositivos, especificado para una cuenta en particular.
+Número mínimo de dispositivos desde los que los usuarios transmiten contenido de forma activa.
 
 >[!NOTE]
 >
->El número real de dispositivos (que transmiten contenido) es ciertamente mayor que el número mínimo de dispositivos, especificado para una cuenta en particular.
+>El número real de dispositivos que transmiten contenido es mayor que el número mínimo de dispositivos especificado para una cuenta en particular.
 
 **Cantidad mínima de personas**
 
-La cantidad mínima absoluta de personas que estaban activas en el contenido de streaming mediante esos dispositivos.
+El número mínimo de personas que retransmitieron contenido de forma activa mediante esos dispositivos.
 
 >[!NOTE]
 >
->El número real de personas (que transmiten contenido) es casi con certeza mucho mayor que el número mínimo de personas, especificado para una cuenta en particular.
+>El número real de personas que transmiten contenido es mayor que el número mínimo de personas asignadas a una cuenta determinada.
 
 **[!UICONTROL # IPs]**
 
-Número de direcciones IP desde las que se transmite el contenido.
+El número de direcciones IP desde las que se transmite el contenido.
 
 **[!UICONTROL # Locations]**
 
-Número de ubicaciones (según el código postal) desde las que se transmite el contenido.
+El número de ubicaciones (según el código postal) desde las que se transmite el contenido.
 
 **[!UICONTROL # Cities]**
 
-Número de ciudades en las que se ha producido la transmisión.
+El número de ciudades en las que se ha producido la actividad de streaming.
 
 **[!UICONTROL # States]**
 
-Número de estados en los que se ha producido la transmisión.
+El número de estados en los que se ha producido la actividad de flujo continuo.
 
 **[!UICONTROL # Clusters]**
 
@@ -93,46 +97,113 @@ La distancia máxima entre las ubicaciones de streaming asociadas con la cuenta.
 
 **[!UICONTROL # AuthN OK]**
 
-El número de veces que los usuarios han iniciado sesión durante el período, utilizando esa cuenta.
+El número de inicios de sesión que los usuarios realizan durante el período especificado con esa cuenta.
+
+>[!NOTE]
+>
+> Es posible que algunos servicios D2C no vean **[!UICONTROL # AuthN OK]** ya que es posible que no se incluyan en los datos de su empresa.
 
 **[!UICONTROL # AuthZ OK]**
 
-Número de veces que un MVPD ha autorizado un flujo o ha concedido acceso (al contenido) a esa cuenta.
+El número de veces que un MVPD ha autorizado un flujo o ha concedido acceso al contenido de esa cuenta.
 
 >[!NOTE]
 >
->El **[!UICONTROL # AuthZ OK]** está relacionado con el **[!UICONTROL # Play Requests]**; es más pequeña que la **[!UICONTROL # Play Requests]** porque el Adobe almacena en caché las autorizaciones que vienen para MVPD por lo general durante 24 horas.
+>**[!UICONTROL # AuthZ OK]** no está disponible para los servicios D2C.
+
+>[!NOTE]
+>
+>Para TV en todas partes, **[!UICONTROL # AuthZ OK]** se correlaciona con el número de **[Nº de solicitudes de reproducción](/help/accountiq/product-concepts.md##play-requests-def)**. Siempre será menor que **[!UICONTROL # Play Requests]** porque el Adobe generalmente almacena en caché las autorizaciones de MVPD durante aproximadamente 24 horas.
+
 
 **[!UICONTROL # Play Requests]**
 
-El número real de flujos durante el período de tiempo.
+El número real de flujos se produjeron durante un período de tiempo especificado.
+
+>[!NOTE]
+>
+>El [Nº de solicitudes de reproducción](/help/accountiq/product-concepts.md##play-requests-def) no está disponible en la versión de MVPD de TV Everywhere.
 
 **[!UICONTROL # Channels]**
 
-Número total de canales diferentes que la cuenta ha visto durante el período de tiempo.
+El número total de canales que la cuenta ha visto durante un periodo especificado.
 
 >[!NOTE]
 >
->**[!UICONTROL # Channels]** incluye los canales que no pertenecían necesariamente al programador que ha iniciado sesión.
+> Para servicios D2C **[!UICONTROL # Channels]** es equivalente al número de **[!UICONTROL # Video categories]**.
+
+>[!NOTE]
 >
->Este número de la cuenta se mostró porque la cuenta vio el canal, pero también accedió a otros canales durante ese período de tiempo.
+>Para TV Everywhere, incluyen los canales que pueden no pertenecer al programador que ha iniciado sesión. Este número de la cuenta incluye el canal y otros canales a los que se accedió durante el periodo especificado.
+
 
 **Patrón de uso**
 
-Los números de esta columna son identificadores que se asignan a uno de los 14 patrones con los que identificamos todas las cuentas de usuario.
+Los valores dentro de estas columnas sirven como identificadores correspondientes a uno de los 14 patrones que utilizamos para categorizar todas las cuentas de usuario.
 
-*Tabla: Identificadores de patrones de uso en la asignación CSV exportada con patrones de uso*
+<table>
+    <tbody>
+      <tr>
+        <th style="width:10%">ID</th>
+        <th style="width:30%">Patrones de uso</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Usuario normal</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Viajero o viajero</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Familia numerosa</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Familias y amigos cercanos</td>
+      </tr>
+      </tr>
+         <td>5 y 8</td>
+         <td>Uso compartido de grupos sociales</td>
+      </tr>
+      </tr>
+         <td>6</td>
+         <td>Gran grupo de amigos</td>
+      </tr>
+      </tr>
+         <td>7</td>
+         <td>Flujo simultáneo</td>
+      </tr>
+      </tr>
+         <td>9</td>
+         <td>Uso compartido de comunidades</td>
+      </tr>
+      </tr>
+         <td>10 y 11</td>
+         <td>Comportamiento incierto</td>
+      </tr>
+      </tr>
+         <td>12</td>
+         <td>Familia pequeña</td>
+      </tr>
+      </tr>
+         <td>13</td>
+         <td>Segunda casa </td>
+      </tr>
+      </tr>
+         <td>14</td>
+         <td>Uso anormal</td>
+      </tr>
+    </tbody>
+  </table>
 
-| ID | 1 | 2 | 3 | 4 | 5 y 8 | 6 | 7 | 9 | 10 y 11 | 12 | 13 | 14 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Patrones de uso | Usuario normal | Viajero o viajero | Familia numerosa | Familias y amigos cercanos | Uso compartido de grupos sociales | Gran grupo de amigos | Flujo simultáneo | Uso compartido de comunidades | Comportamiento incierto | Familia pequeña | Segunda casa | Uso anormal |
-
-{style="table-layout:auto"}
+*Identificadores de patrón de uso en la asignación .csv exportada con patrones de uso*
 
 **Probabilidad de uso compartido**
 
-La probabilidad de compartir es la probabilidad de que la cuenta específica comparta sus credenciales.
+La probabilidad de que una cuenta específica comparta sus credenciales.
 
 >[!NOTE]
 >
-> El promedio de la probabilidad de compartir de todas las cuentas (en el segmento seleccionado) se utiliza para calcular la [nivel de uso compartido](/help/accountiq/dashboard.md#sharing-level) de la [Puntuación de uso compartido agregado](/help/accountiq/dashboard.md#aggregated-sharing).
+> La media de la probabilidad de compartir de todas las cuentas del segmento seleccionado se utiliza para calcular la [nivel de uso compartido](/help/accountiq/data-panels.md#sharing-level) de la [puntuación media de uso compartido](/help/accountiq/data-panels.md#aggregated-sharing).

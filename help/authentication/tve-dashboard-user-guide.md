@@ -2,9 +2,9 @@
 title: Guía del usuario del panel de TVE Primetime
 description: Guía del usuario del panel de TVE Primetime
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
 workflow-type: tm+mt
-source-wordcount: '4386'
+source-wordcount: '4377'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,7 @@ Para cambiar entre entornos, el usuario puede hacer clic en el entorno deseado r
 *Figura 2: Menú desplegable Entornos del panel de TVE de Adobe Pass*
 
 >[!IMPORTANT]
+>
 >Es muy importante tener en cuenta que, cuando realice cambios administrativos en la configuración de autenticación de Adobe Pass a través del panel de TVE, le recomendamos encarecidamente que siga la secuencia que se muestra a continuación para garantizar la funcionalidad adecuada.
 
 Para realizar cambios administrativos en la configuración de la autenticación de Adobe Pass a través del panel de TVE:
@@ -69,6 +70,7 @@ Para realizar cambios administrativos en la configuración de la autenticación 
 * Realice los cambios en [Liberar producción y validarlas](http://sp.auth-staging.adobe.com/apitest/api.html).
 
 >[!IMPORTANT]
+>
 >Para que los cambios administrativos se activen, los usuarios deben navegar a la sección &quot;Revisar y pulsar cambios&quot; seleccionando el botón, que se mostrará en la parte inferior izquierda de la barra lateral para revisar los cambios, añadir una descripción para los cambios recién creados y confirmar la actualización de la configuración seleccionando la &quot;Configuración push&quot;.
 
 ![Tve Dashboard revisa una notificación push](assets/tve-review-push-notifications.png)
@@ -489,7 +491,7 @@ Para obtener instrucciones sobre cómo capturar capturas de pantalla, consulte l
 
 * [Cómo capturar capturas de pantalla en Mac](https://support.apple.com/en-us/HT201361)
 
-## Solución de problemas {#tve-db-troubleshoot}
+## Resolución de problemas {#tve-db-troubleshoot}
 
 ### Modo de mantenimiento {#maintenance-mode}
 

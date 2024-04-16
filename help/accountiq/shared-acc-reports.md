@@ -2,20 +2,20 @@
 title: Informes de cuentas compartidas
 description: Informes de cuentas compartidas
 exl-id: 16c5ded1-2a95-4373-8b90-b445131f333a
-source-git-commit: d543bbe972944ad83f4cb28c8a17ea6e10f66975
+source-git-commit: 85316a40ba5f6564c84a5aecf689c077e936a91a
 workflow-type: tm+mt
-source-wordcount: '452'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
 
 # Informes de cuentas compartidas {#shared-accounts-reports}
 
-Los Informes de cuentas compartidas desglosan las métricas, como el número de dispositivos y los tipos de dispositivos, según el rango seleccionado de probabilidad de uso compartido, por ejemplo **[!UICONTROL Over Moderate Probability]** y **[!UICONTROL Over Low Probability]** para el segmento actual.
+Los Informes de cuentas compartidas proporcionan otro grupo de gráficos y diagramas que reflejan el comportamiento de uso compartido y consumo para el segmento actual. Por ejemplo, **[!UICONTROL Over Moderate Probability]** y **[!UICONTROL Over Low Probability]** para el segmento actual.
 
-Estos intervalos pueden servir como umbrales definidos por el usuario y los gráficos se actualizan en función de los umbrales seleccionados.
+## Probabilidad de compartir cuentas {#accounts-sharing-probability}
 
-Account IQ clasifica todas las cuentas de suscriptor del segmento definido en las cuentas con las siguientes cinco categorías en función de sus probabilidades de uso compartido:
+Este gráfico de anillo y barras muestra los porcentajes (y números absolutos) de las cuentas de suscriptor que se encuentran en rangos específicos de probabilidad de uso compartido. Estos intervalos se definen como:
 
 * Muy alta (80%-100%)
 * Alto (60-80%)
@@ -23,25 +23,23 @@ Account IQ clasifica todas las cuentas de suscriptor del segmento definido en la
 * Baja (20%-40%)
 * Muy bajo (0%-20%)
 
-## Probabilidad de compartir cuentas {#accounts-sharing-probability}
-
-El gráfico de anillo clasifica y muestra los porcentajes (y números absolutos) de las cuentas de suscriptor de varias categorías de probabilidad.
-
-La línea roja marca el rango de umbral seleccionado por los usuarios en [Cuentas por encima del umbral en el segmento actual](#threshold-selector) panel.
+La línea roja marca el rango de umbral seleccionado en la [Cuentas por encima del umbral en el segmento actual](#threshold-selector) y el área roja clara contiene el total de todas las cuentas por encima de ese umbral.
 
 ![](assets/accounts-sharing-probability-pie.png)
 
-El gráfico de barras representa el número de cuentas en el eje Y para varias categorías de probabilidades de uso compartido (trazadas en el eje X).
+El gráfico de barras representa el número de cuentas que se encuentran en cada rango en el eje Y para cada uno de los rangos (trazados en el eje X).
 
 ![](assets/accounts-sharing-probability-bar.png)
 
-La línea roja marca el rango de umbral y se puede ajustar en el gráfico de barras. El umbral ajustado en el gráfico de barras se refleja en el intervalo de umbrales del gráfico de anillo.
+Una vez más, la línea roja marca el umbral actual y el área roja clara contiene el total de todas las cuentas por encima de ese umbral.
 
-<!--![](assets/shared-accounts-rep.gif)-->
+>[!NOTE]
+>
+> El eje Y del gráfico de barras es logarítmico.
 
 ### Cuentas por encima del umbral en el segmento actual{#threshold-selector}
 
-Este panel le permite seleccionar un rango de los siguientes como umbral para cuentas de suscriptor (según sus probabilidades de uso compartido):
+Este panel le permite seleccionar el rango de umbral para los gráficos de anillo y de barras de arriba. Las cuatro opciones son:
 
 * Cuentas **muy bajo** uso compartido **probabilidad**
 
@@ -55,44 +53,43 @@ Este panel le permite seleccionar un rango de los siguientes como umbral para cu
 
 Una vez seleccionado el umbral, el panel muestra el porcentaje (y el número) de cuentas de todas las cuentas de suscriptor del segmento seleccionado.
 
-## Segmento: solicitudes de reproducción de un total {#play-request-out-total}
+## Solicitudes de reproducción de segmentos de un total {#play-request-out-total}
 
-El gráfico de anillo muestra el porcentaje (y el número) de solicitudes de reproducción realizadas por los suscriptores del segmento y le permite comparar las solicitudes de reproducción realizadas por suscriptores que no están en el segmento definido.
+El gráfico de anillo muestra el porcentaje (y el número) de solicitudes de reproducción realizadas por los suscriptores del segmento y permite comparar las solicitudes de reproducción realizadas por suscriptores que no están en el segmento definido.
 
 ![](assets/play-req-outof-total.png)
 
-Cuando mueve el cursor sobre el gráfico de anillo, también muestra porcentajes de suscriptores y números de varios rangos de probabilidad.
+Cuando se mueve el cursor sobre el gráfico de anillo, también se muestran los porcentajes de suscriptores y los números de varios rangos de probabilidad.
 
 <!--![](assets/play-request-total.gif)-->
 
-## Número medio de dispositivos por cuenta según el segmento{#avg-devices-account}
+## Número promedio de dispositivos por cuenta según el segmento{#avg-devices-account}
 
-El gráfico de barras muestra el número promedio de dispositivos de cada tipo de dispositivo que utilizan los suscriptores del segmento actual y los suscriptores que no están en el segmento actual.
+El gráfico de barras muestra el número promedio de dispositivos de cada tipo que están actualmente en uso los suscriptores del segmento actual y de los que no lo están.
 
 ![](assets/avg-devices-per-acc.png)
 
-## Segmento: códigos postales por período y cuenta {#zip-codes-period-account}
+## Códigos postales de segmento por periodo y cuenta {#zip-codes-period-account}
 
-Este gráfico informa sobre la cantidad de suscriptores que consumen contenido de diferentes ubicaciones en un lapso de tiempo.
+Este gráfico le informa sobre el número de suscriptores del segmento actual que consumen contenido de diferentes ubicaciones (según las medidas por código postal) durante el intervalo de tiempo determinado.
 
 ![](assets/zip-period-account.png)
 
-Puede acercarse para reducir y ver los detalles específicos de una barra en el gráfico que representa una serie de ubicaciones.
+>[!NOTE]
+>
+>Puede ampliar las barras que representan más de un conjunto de códigos postales, representados por un **+** (más) (por ejemplo, 10+), haciendo doble clic en ellos.
 
-<!--![](assets/zip-code-period.gif)-->
 
-## Segmento: intervalo geográfico/período/cuenta {#geo-span-period-account}
+## Intervalo geográfico de segmentos por período por cuenta {#geo-span-period-account}
 
-Este gráfico de barras representa el número de cuentas de suscriptor con respecto a diferentes rangos geográficos en millas. El rango se basa en la distancia máxima entre las ubicaciones desde las que un suscriptor ha transmitido en streaming durante el lapso de tiempo.
-
-<!--Total number of users ...
-
-How many accounts are within 99 miles of each other.....and how many are apart. 
-
-Based on points on the map.-->
+Este gráfico de barras representa el número de cuentas de suscriptor que consumen contenido de ubicaciones que se encuentran en diferentes rangos geográficos en millas. El rango se basa en la distancia máxima entre las ubicaciones desde las que un suscriptor ha transmitido en streaming durante el intervalo de tiempo.
 
 ![](assets/geogr-span-account.png)
 
-Al seleccionar una barra que representa un rango de distancia geográfica, se amplía el rango para mostrarle más detalles.
+>[!NOTE]
+>
+> Puede ampliar las barras que representan más de un conjunto de distancias geográficas, representadas con un **+** (más) (por ejemplo, 1000+), haciendo doble clic en ellos.
 
-<!--![](assets/geo-span-period-acc.gif)-->
+>[!MORELIKETHIS]
+>
+>* Obtenga información sobre cómo exportar informes para los 1000 suscriptores principales del segmento seleccionado mediante filtros en Informes de cuentas compartidas mediante [Exportar las 1000 cuentas principales](/help/accountiq/export-acc-information.md) opción.

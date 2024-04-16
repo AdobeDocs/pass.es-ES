@@ -1,97 +1,71 @@
 ---
-title: Informes de uso general
-description: Informes de uso general
+title: Informes de uso generales
+description: Obtenga información sobre los informes de uso general
 exl-id: 1272073a-61fe-47ec-aced-2e8055b6b11e
-source-git-commit: d543bbe972944ad83f4cb28c8a17ea6e10f66975
+source-git-commit: 4a8a73d6c67508e88ba3ffbb9033b7e339f4fe8f
 workflow-type: tm+mt
-source-wordcount: '1275'
+source-wordcount: '1055'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL General Usage] informes {#general-usage-reports}
+# [!UICONTROL General usage] informes {#general-usage-reports}
 
-[!UICONTROL Account IQ] los informes son herramientas de análisis básicas y son informes que le permiten explorar en profundidad los datos para aislarlos [cohortes](/help/accountiq/product-concepts.md#segmet-def), identifique anomalías y comprenda las características de la cuenta.
+[!UICONTROL Account IQ] los informes son herramientas de análisis básicas que permiten explorar en profundidad los datos para aislar [cohortes](/help/accountiq/product-concepts.md#segmet-def), identifique anomalías y comprenda las características de la cuenta.
 
-[!UICONTROL General Usage] La página Informes proporciona herramientas para crear subgrupos de métricas en función del número de dispositivos de cuenta en uso, las direcciones IP detectadas y los códigos postales correspondientes.
+[!UICONTROL General usage] La página Informes proporciona herramientas para crear métricas de subgrupos en función del número de dispositivos de cuenta en uso, las direcciones IP detectadas y sus respectivos códigos postales.
 
-<!--Divide the content in cohorts.
+Todos los informes se basan en el segmento actual seleccionado del [Segmentos e intervalo de tiempo](/help/accountiq/segments-timeinterval.md) panel. Puede ajustar la selección y reducirla aún más especificando umbrales (número de dispositivos, número de direcciones IP y número de códigos postales) en [Resumen de Instantáneas: Cuentas por encima de los umbrales](#snapshot-overview) panel.
 
-Content filters
-device filters
+## Solicitudes de reproducción y suscriptores únicos {#playreq-uniquesubs}
 
-segment and definition replicate to cohorts. Number of people and number of account that ......
-content consumption.....-->
+Los gráficos de líneas aquí le proporcionan una vista de los cambios a lo largo del tiempo de los valores, como Solicitudes de reproducción y Suscriptores únicos en un intervalo de tiempo seleccionado para el segmento definido.
 
-Todos los informes se basan en el segmento actual seleccionado usando [Segmentos y lapso de tiempo](/help/accountiq/howto-select-segment-timeframe.md) panel. Puede ajustar la selección y reducirla aún más especificando umbrales (número de dispositivos, número de direcciones IP y número de códigos postales) en [Resumen de Instantáneas: Cuentas por encima de los umbrales](#snapshot-overview) panel.
++++ Servicios D2C: Solicitudes de reproducción/suscriptores únicos
 
-<!--To view General Usage Reports:
+![](assets/d2c-line-graph-gu.png)
 
-1. Select the desired MVPDs from the **MVPDs in Segment** option.
 
-2. Select the desired programmer channels from the **Channels in Segment** Option.
+*Solicitudes de reproducción/suscriptores únicos para servicios D2C*
 
-3. Select an appropriate time frame from the **Granularity and time frame** option.
++++
 
-   Using the above options you have defined segments for your analysis. Based on your segment selection, following graphs and reports are displayed.
-
-4. You can fine tune your selection and further narrow it down by specifying (number of devices, number of IPs, and number of zip codes) thresholds in [Snapshot Overview - Accounts above thresholds](#snapshot-overview) widget/panel.-->
-
-## AuthN OK / AuthZ OK / Solicitudes de reproducción / Suscriptores únicos {#authn-authz-playreq-uniquesubs}
-
-Los gráficos de líneas aquí le proporcionan una vista de los cambios a lo largo del tiempo en los valores de AuthN OK, AuthZ OK, Solicitudes de reproducción y Suscriptores únicos en un lapso de tiempo seleccionado para el segmento definido.
-
-+++Programador- **AuthN OK / AuthZ OK / Solicitudes de reproducción / Suscriptores únicos**
++++Programadores: Solicitudes de reproducción/suscriptores únicos
 
 ![](assets/progr-line-graph-gu.png)
 
 
-*Figura: AuthN OK / AuthZ OK / Solicitudes de reproducción / Suscriptores únicos para usuario programador*
-
+*Solicitudes de reproducción/suscriptores únicos para programadores*
 
 +++
 
-
-+++MVPD- **AuthN OK / AuthZ OK / Suscriptores únicos**
++++MVPD: Suscriptores únicos
 
 ![](assets/mvpd-line-graph-gu.png)
 
-
-*Figura: AuthN OK / AuthZ OK / Suscriptores únicos para usuario de MVPD*
-
+*Suscriptores únicos para MVPD*
 
 +++
 
-El eje x presenta las unidades dentro del lapso de tiempo actual y el eje y representa las métricas básicas de actividad del suscriptor durante ese período. Los gráficos de líneas le permiten comparar los siguientes valores para los suscriptores de MVPD y canales que seleccionó en el panel de selección de segmentos:
+<br/>
 
-* **AuthN OK**
+El eje x representa el tiempo en función del intervalo actual y el eje y representa las métricas básicas de actividad del suscriptor durante ese período. Los gráficos de líneas le ayudan a visualizar y comparar la actividad de los suscriptores del segmento actual. Según la versión de Account IQ, las métricas incluyen:
 
-  AuthN OK es el número de autenticaciones correctas. Para obtener más información y definición, consulte [Conceptos de producto: AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
+* **AuthN OK**: número de autenticaciones correctas. Más información sobre [AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
 
-* **AuthZ OK**
+* **AuthZ OK**: Número de autorizaciones correctas. Más información sobre [AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
 
-  AuthZ OK es el número de autorizaciones correctas. Para obtener más información y definición, consulte [Conceptos de producto: AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
+* **Solicitudes de reproducción**: Número de solicitudes de reproducción. Más información sobre [Solicitudes de reproducción](/help/accountiq/product-concepts.md#play-requests-def).
 
-* **Solicitudes de reproducción**
+* **Suscriptores únicos**: Número de suscriptores únicos correctos. Más información sobre [Suscriptores únicos](/help/accountiq/product-concepts.md#unique-subscriber-def).
 
-  Las solicitudes de reproducción son el número de solicitudes de reproducción. Para obtener más información y definición, consulte [Conceptos de producto: solicitudes de reproducción](/help/accountiq/product-concepts.md#play-requests-def)
+>[!NOTE]
+>
+>La disponibilidad de las métricas varía según la versión de Account IQ.
 
-  >[!NOTE]
-  >
-  >El gráfico de líneas de solicitudes de reproducción no está disponible para los usuarios de MVPD.
+## Resumen de instantáneas: cuentas por encima de los umbrales {#snapshot-overview}
 
-
-* **Suscriptores únicos**
-
-  Los suscriptores únicos son el número de suscriptores únicos correctos. Para obtener más información y definición, consulte [Conceptos de producto: suscriptores únicos](/help/accountiq/product-concepts.md#unique-subscriber-def)
-
-  >[!NOTE]
-  >
-  >El número total de suscriptores únicos también incluye el número de dispositivos únicos si el uso de TempPass de Adobe por parte de un programador (es decir, vista previa gratuita) es parte del segmento.
-
-## Resumen de Instantáneas: Cuentas por encima de los umbrales {#snapshot-overview}
-
-Ajuste los análisis e informes con este filtro adicional para establecer varios umbrales de uso. Una vez que haya definido el segmento (o cohorte) para su análisis seleccionando los canales y las MVPD deseados, también puede utilizar los siguientes filtros para analizar el comportamiento de los suscriptores:
+Ajuste los análisis e informes con este filtro adicional para establecer varios umbrales de uso. Una vez que haya seleccionado un segmento, también puede utilizar los siguientes filtros para analizar más a fondo el comportamiento del suscriptor:
 
 * Umbral de número de dispositivos
 
@@ -99,7 +73,7 @@ Ajuste los análisis e informes con este filtro adicional para establecer varios
 
 * Umbral de número de códigos postales
 
-Cuando se actualizan los valores de umbral en [Segmento de cuentas: según los umbrales seleccionados](#account-segments-basedon-segments) , puede ver el efecto en:
+Cuando se actualizan los valores de umbral en [Cuentas basadas en segmentos en los umbrales seleccionados](#account-segments-basedon-segments) , verá el efecto en:
 
 * [Dispositivos por semana (o mes) por cuenta](#devices-week-account)
 
@@ -111,25 +85,23 @@ Cuando se actualizan los valores de umbral en [Segmento de cuentas: según los u
 
 >[!NOTE]
 >
->El valor predeterminado para cada uno de los umbrales es 4. Lo que significa que la página Uso general muestra un análisis de MVPD con suscriptores que usan cuatro (y más de cuatro) dispositivos y consumen contenido de cuatro (y más) ubicaciones geográficas diferentes y cuatro (y más) códigos postales diferentes.
+>Cada umbral se establece con un valor predeterminado de 4. Lo que significa que la página Uso general muestra un análisis para los suscriptores que utilizan más de cuatro dispositivos y consumen contenido de más de cuatro direcciones IP diferentes. *y* más de cuatro códigos postales diferentes.
 
-### Segmento de cuentas: según los umbrales seleccionados {#account-segments-basedon-segments}
+### Cuentas basadas en segmentos según los umbrales seleccionados {#account-segments-basedon-segments}
 
-El **Segmento de cuentas: según los umbrales seleccionados** El panel le ofrece opciones para establecer umbrales (entre 1 y 10) para el número de dispositivos, el número de direcciones IP y el número de códigos postales.
+El **Cuentas basadas en segmentos en los umbrales seleccionados** El panel le ofrece opciones para establecer umbrales (entre 1 y 10) para el número de dispositivos, el número de direcciones IP y el número de códigos postales.
 
 El gráfico muestra lo siguiente:
 
-* número absoluto de cuentas de suscriptor y
+* Número absoluto de cuentas de suscriptor.
 
-* porcentaje del total de cuentas de suscriptor en ese segmento,
-
-  que utilizan un número X de dispositivos, un número Y de direcciones IP y un número Z de códigos postales para consumir contenido de su canal para las MVPD (segmento definido de), durante un periodo de tiempo.
+* Porcentaje del total de cuentas de suscriptor en el segmento que utilizan el número de dispositivos, desde el número de direcciones IP, en el número de códigos postales según se especifican en los umbrales.
 
 ![](assets/select-thresholds.png)
 
 ## Dispositivos por semana (o mes) por cuenta {#devices-week-account}
 
-El **gráfico de barras** proporciona perspectivas sobre el comportamiento de uso en términos de cómo los suscriptores utilizan sus dispositivos para acceder al contenido.
+Este gráfico de barras proporciona información sobre el comportamiento de uso en términos de cómo los suscriptores utilizan sus dispositivos para acceder al contenido.
 
 El eje x representa el número de cuentas y el eje y el número de dispositivos. En función del umbral que establezca para el número de dispositivos por cuenta, marca el número absoluto de cuentas de suscriptores que consumen contenido de un número específico de dispositivos en una semana.
 
@@ -143,23 +115,17 @@ El gráfico también marca lo siguiente:
 
 * Una línea verde para marcar el promedio del número de dispositivos diferentes utilizados por una cuenta de suscriptor por semana (o mes).
 
-Puede comparar el nivel de umbral con la media semanal del número de dispositivos diferentes utilizados por una cuenta para valorar el nivel de uso compartido.
-
-El gráfico también proporciona un vistazo al porcentaje de cuentas de suscriptor que utilizan más dispositivos que el umbral establecido.
-
-El gráfico de anillo le ayuda a juzgar la magnitud de las cuentas de suscriptores que consumen contenido del canal mediante dispositivos más que el umbral establecido (en un periodo de tiempo) de un vistazo.
+El anillo proporciona una vista alternativa de los dispositivos que utilizan las cuentas del segmento actual por encima del umbral establecido.
 
 ![](assets/donut-devices-w-acc.png)
 
 ## Ubicaciones por semana (o mes) por cuenta {#locations-week-account}
 
-Like [Dispositivos por semana (o mes) por cuenta](#devices-week-account), la métrica Ubicaciones por semana (o mes) y por cuenta le ayuda a analizar el uso de la cuenta del suscriptor desde diferentes ubicaciones para identificar mejor el uso compartido de contraseñas. El eje x representa el número de cuentas y el eje y el número de ubicaciones.
-
-Resultados de esta métrica combinados con el número de [Dispositivos por semana (o mes) por cuenta](#devices-week-account) y número de [IP por semana (o mes) por cuenta](#ip-week-account) le ayuda a valorar con mayor precisión las instancias de uso compartido de contraseñas, de modo que los usuarios auténticos no se cuentan en.
+Similar a la métrica para [Dispositivos por semana (o mes) por cuenta](#devices-week-account), la métrica Ubicaciones por semana (o mes) y por cuenta permite analizar el uso de la cuenta del suscriptor desde diferentes ubicaciones. El eje x representa el número de cuentas y el eje y el número de ubicaciones.
 
 ![](assets/graph-loc-week-acc.png)
 
-Una vez que haya definido un segmento y establecido el umbral para el número de ubicaciones, puede identificar desde el gráfico:
+Una vez establecido el umbral para el número de ubicaciones, puede utilizar el gráfico para identificar lo siguiente:
 
 * Número (y porcentaje) de suscriptores que consumen contenido de (una ubicación específica) x número de ubicaciones en una semana.
 
@@ -169,38 +135,34 @@ Una vez que haya definido un segmento y establecido el umbral para el número de
 
 ## IP por semana (o mes) por cuenta {#ip-week-account}
 
-Similar a [Dispositivos por semana (o mes) por cuenta](#devices-week-account) y [Ubicaciones por semana (o mes) por cuenta](#locations-week-account), el **Número de direcciones IP por semana por cuenta** Esta métrica le permite analizar el uso compartido de contraseñas de forma más precisa y con mayor granularidad.
+Similar a la métrica para **Número de ubicaciones por semana por cuenta**, el **Número de direcciones IP por semana por cuenta** Esta métrica le permite evaluar la cantidad de cambio en el origen de la transmisión para el segmento actual.
 
 El eje x representa el número de cuentas y el eje y el número de direcciones IP.
 
 ![](assets/graph-ip-week-acc.png)
 
-Una vez que haya definido un segmento (seleccionando MVPD y canales) y establecido el umbral para el número de IP, puede identificar desde el gráfico:
+Una vez definido un segmento y establecido el umbral para el número de direcciones IP, puede utilizar el gráfico para identificar lo siguiente:
 
-* Número (y porcentaje) de suscriptores que consumen contenido de (una cantidad específica) x número de IP en una semana.
+* Número (y porcentaje) de suscriptores que consumen contenido de una cantidad específica de IP en una semana.
 
 * Porcentaje del total de cuentas de suscriptor que están viendo contenido desde más direcciones IP que el umbral.
 
 * Comparar el promedio semanal (número de direcciones IP diferentes para una cuenta) con el umbral.
 
-## Segmento de cuentas: vista histórica {#account-segment-historical-view}
+## Vista del historial de segmentos de cuentas {#account-segment-historical-view}
 
-El gráfico de barras Vista histórica le ayuda a comparar las métricas de uso en diferentes lapsos de tiempo. Además, traza colectivamente las distintas métricas de uso, como [Dispositivos por semana (o mes) por cuenta](#devices-week-account), [Ubicaciones por semana (o mes) por cuenta](#locations-week-account), y [IP por semana (o mes) por cuenta](#ip-week-account).
+El gráfico de barras Vista histórica le ayuda a comparar las métricas de uso en diferentes intervalos de tiempo. Además, traza colectivamente las distintas métricas de uso, como [Dispositivos por semana (o mes) por cuenta](#devices-week-account), [Ubicaciones por semana (o mes) por cuenta](#locations-week-account), y [IP por semana (o mes) por cuenta](#ip-week-account).
 
-* El eje x representa el lapso de tiempo y el eje y representa el número de cuentas de suscriptor, dispositivos, ubicaciones e IP.
+* El eje x representa el intervalo de tiempo y el eje y representa el número de cuentas de suscriptor, dispositivos, ubicaciones e IP.
 
-* Las barras de color naranja significan segmentos en varios lapsos de tiempo.
+* Las barras de color naranja significan segmentos en varios intervalos de tiempo.
 
-* El gráfico de líneas representa los cambios en [Dispositivos por semana (o mes) por cuenta](#devices-week-account), [Ubicaciones por semana (o mes) por cuenta](#locations-week-account), y [IP por semana (o mes) por cuenta](#ip-week-account) valores a lo largo del lapso de tiempo en función del umbral.
+* El gráfico de líneas representa los cambios en [Dispositivos por semana (o mes) por cuenta](#devices-week-account), [Ubicaciones por semana (o mes) por cuenta](#locations-week-account), y [IP por semana (o mes) por cuenta](#ip-week-account) valores a lo largo del intervalo de tiempo en función del umbral.
 
 ![](assets/historical-view.png)
 
-* Las barras azules indican el número total de suscriptores activos en el sector durante un periodo de tiempo.
+* Las barras azules indican el número total de suscriptores activos en todo el sector durante un intervalo de tiempo.
 
 * Puede seleccionar leyendas específicas, que le ayudarán a escalar el gráfico.
 
 ![](assets/historical-view-total.png)
-
->[!MORELIKETHIS]
->
->* Obtenga información sobre cómo exportar informes para los 1000 suscriptores principales del segmento seleccionado mediante filtros en Informe de uso general mediante [Exportar las 1000 cuentas principales](/help/accountiq/export-acc-information.md) opción.

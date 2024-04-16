@@ -3,47 +3,33 @@ product: adobe primetime
 audience: end-user
 feature: Account IQ
 user-guide-description: Las ayudas de Adobe Pass Account IQ proporcionan información sobre los componentes de Account IQ y le guían por los recorridos de usuario para utilizar los distintos componentes.
-source-git-commit: 964ca5d24682662df2f7f766924ac062ca49b54e
+source-git-commit: ac08ee6b6e63209e3ee8483d01c86e33e7c21c04
 workflow-type: tm+mt
-source-wordcount: '144'
-ht-degree: 16%
+source-wordcount: '83'
+ht-degree: 28%
 
 ---
 
 # Ayuda de Account IQ {#aiq-help}
 
 + [Resumen de Account IQ](/help/accountiq/home.md)
++ [Versiones de Account IQ](/help/accountiq/versions-aiq.md)
 + [Introducción a Account IQ](/help/accountiq/get-started.md)
-+ Componentes de Account IQ {#account-iq-components}
-   + [Segmentos y lapso de tiempo](/help/accountiq/segments-timeframe.md)
-   + [Tablero](/help/accountiq/dashboard.md)
-   + Informes {#reports-account-iq}
-   + [Informes de uso general](/help/accountiq/general-usage-reports.md)
++ [Trabajo con segmentos](/help/accountiq/work-with-segments.md)
++ Tablero {#dashboard}
+   + [Introducción al tablero](/help/accountiq/introduction-dashboard.md)
+   + [Segmentos e intervalo de tiempo](/help/accountiq/segments-timeinterval.md)
+   + [Paneles de datos](/help/accountiq/data-panels.md)
+   + [Exportar informes del panel de datos](/help/accountiq/export-reports.md)
++ Informes {#reports}
+   + [Informes de uso generales](/help/accountiq/general-usage-reports.md)
    + [Informes de cuentas compartidas](/help/accountiq/shared-acc-reports.md)
-   + Compartir componentes {#sharing-components}
-      + [Patrones de uso](/help/accountiq/usage-patterns.md)
-   + Acciones {#further-next-steps-actions}
-      + [Operaciones](/help/accountiq/operations.md)
-+ Cómo hacer esto {#use-aiq}
-   + [Generar segmentos](/help/accountiq/build-segment.md)
-   + [Seleccionar segmento y periodo de tiempo](/help/accountiq/howto-select-segment-timeframe.md)
-   + Exportación de informes {#export-reports}
-      + [Programador - Exportar informes](/help/accountiq/export-segment-metrics-progr.md)
-      + [MVPD - Exportar informes](/help/accountiq/export-segment-metrics-mvpd.md)
    + [Exportar cuentas de uso compartido alto](/help/accountiq/export-acc-information.md)
-   + [Creación de una operación en un segmento de usuario](/help/accountiq/operation-affecting-user-segment.md)
-   + Ver informes de uso compartido de cuentas {#view-account-sharing-reports}
-      + Programador: ver informes de uso compartido de cuentas {#view-programmer-reports}
-         + [Informes de una MVPD específica](/help/accountiq/reports-for-specific-mvpds.md)
-         + [Informes de las 10 principales MVPD](/help/accountiq/top-10-mvpd-reports.md)
-         + [Informes de varias MVPD](viewrep-multiple-mvpd.md)
-         + [Modo de aislamiento y comportamiento compartido](/help/accountiq/isolation-mode.md)
-      + MVPD: ver informes de uso compartido de cuentas {#view-mvpd-reports}
-         + [Informes de un programador o canal específico](/help/accountiq/reports-for-specific-programmers.md)
-         + [Informes para los 10 programadores principales](/help/accountiq/top-10-programmer-reports.md)
-         + [Informes para varios programadores y canales](viewrep-multiple-programmer.md)
++ [Patrones de uso](/help/accountiq/usage-patterns.md)
++ [Operaciones](/help/accountiq/operations.md)
 + [Prácticas recomendadas](/help/accountiq/best-practices.md)
 + [Limitaciones](/help/accountiq/limitations.md)
++ [MVPD de modo de aislamiento](/help/accountiq/isolation-mode.md)
 + [Solucionar problemas](/help/accountiq/troubleshoot.md)
 + [Preguntas más frecuentes](/help/accountiq/faq.md)
 + [Glosario de conceptos de productos](/help/accountiq/product-concepts.md)

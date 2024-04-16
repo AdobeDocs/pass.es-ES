@@ -2,94 +2,239 @@
 title: Operaciones en Account IQ
 description: Las operaciones en Account IQ implican realizar acciones para realizar automatizaciones y operaciones masivas en las cuentas de los suscriptores y rastrear sus efectos.
 exl-id: ba6bceca-221c-42db-b207-804e4b9f6d54
-source-git-commit: 2ccfa8e018b854a359881eab193c1414103eb903
+source-git-commit: 85316a40ba5f6564c84a5aecf689c077e936a91a
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '1417'
 ht-degree: 0%
 
 ---
 
 # Operaciones {#operations-tab-next-steps}
 
-Una vez que haya comprendido los patrones de uso de sus suscriptores y haya identificado el uso compartido de contraseñas para el segmento seleccionado (mediante [!DNL Analytics] en Account IQ), puede realizar acciones dirigidas hacia un objetivo para mitigar el uso compartido de contraseñas.
+Una vez que haya analizado los patrones de uso de su suscriptor e identificado los casos de uso compartido de contraseñas para un segmento seleccionado utilizando [!DNL Account IQ] analytics, puede realizar acciones segmentadas mediante procedimientos centrados denominados operaciones en [!DNL Account IQ].
 
-La funcionalidad Operaciones de Account IQ le ayuda a abordar y administrar de forma eficaz el uso compartido de credenciales mediante procedimientos centrados denominados operaciones. Le ofrece opciones para diseñar un objetivo, adaptar las acciones segmentadas (según el objetivo) para un grupo específico de cuentas de suscriptor y automatizar su ejecución durante un tiempo futuro. Mediante la funcionalidad Operaciones, no solo puede crear y ejecutar operaciones, sino también medir su impacto. Por lo tanto, al medir los impactos, puede ajustar su estrategia para optimizar el efecto, ya sea convirtiendo a los prestatarios o mitigando el uso compartido de credenciales.
+**Operaciones** le permite realizar un seguimiento y administrar de forma eficaz el uso compartido de credenciales en un grupo de cuentas para mitigar el uso compartido de contraseñas y mejorar la experiencia de los suscriptores más valiosos.
 
-Para ver **Operaciones** selección de página **Operaciones** opción en **Acciones** en la navegación izquierda de la aplicación Account IQ. La página Operaciones enumera todas las operaciones existentes en el sistema de Account IQ junto con sus detalles.
+Puede aplicar acciones a un [segmento](/help/accountiq/product-concepts.md#segment-def) para abordar el uso compartido de contraseñas dentro de un [intervalo de tiempo](/help/accountiq/product-concepts.md#time-interval-def) y programe la operación para que se ejecute en una fecha futura. Estas acciones incluyen restricciones para minimizar el uso compartido de contraseñas o aliviar las restricciones en cuentas que no comparten.
 
-![](assets/operations-page.png)
+Con las operaciones no solo se especifican acciones y su ámbito, sino que también se miden sus resultados.
 
-*Figura: lista y detalles de operaciones existentes en Account IQ*
+Al evaluar los resultados, puede refinar su estrategia para optimizar los efectos, ya sea convirtiendo a los prestatarios, mitigando el uso compartido de las credenciales o reduciendo la pérdida.
 
-En la página Operaciones, puede:
-
-* Ver una lista de operaciones ya existentes en Account IQ
-
-* Ver detalles de la operación, como:
-
-   * Estado (programado, en ejecución, finalizado, error o detenido)
-
-   * progreso (en porcentaje completado)
-
-   * audiencia de destino (segmento en el que ejecutar la operación)
-
-   * programación (fecha de inicio y finalización de la operación)
-
-   * fecha de creación y finalización de la operación
-
-* [Crear nueva operación](/help/accountiq/operation-affecting-user-segment.md)
+Puede realizar varias funciones con las siguientes operaciones:
 
 * [Ver informes de operaciones](#operation-reports)
-
-<!--* Search from the list of operations using Search field
-
-* Stop an operation.
-
-* Create a duplicate operation.
-
-* [Configure columns of Operations details page](#configure-columns)-->
+* [Crear una nueva operación](#create-new-operation)
+* [Detener operación](#stop-operation)
 
 ## Ver informes de operaciones {#operation-reports}
 
-Puede analizar el impacto de una operación consultando su informe. Para ver el informe de una operación:
+Puede revisar los efectos de una operación mediante los informes de operaciones. Para ver el informe de operaciones, seleccione **Operaciones** pestaña debajo de **Acciones** en el panel izquierdo de la aplicación Account IQ. Se muestra una lista de las operaciones disponibles en el sistema. Puede acceder a los detalles clave de cada operación en formato de tabla. Los detalles incluyen:
 
-1. Seleccione el nombre de la operación en la página Operaciones principal.
+* Nombre de la operación
+* Estado actual (como Programado, En ejecución, Finalizado, Error o Detenido)
+* Porcentaje de progreso completado
+* Audiencia o segmento de destino en el que se aplica la operación
+* Tipo de acción seleccionada para la operación
+* Fecha de inicio de la operación
+* Fecha de finalización de la operación
+* Fecha de creación de la operación
+* Fecha de la última modificación de la operación
 
-   El informe se muestra en forma de gráfico de columnas apiladas.
+![](assets/operations-page.png)
 
-   ![](assets/operation-impact-report.png)
+*Lista y detalles de operaciones existentes en Account IQ*
 
-   *Imagen: informe de operaciones para ver los impactos de las operaciones*
+Seleccione el **Nombre de operación** de la lista de operaciones. Se muestran los siguientes informes:
 
-   El eje X representa el periodo de evaluación y el eje Y representa el impacto de la operación (en términos de número de cuentas en un segmento durante el periodo de evaluación). Cada barra está dividida en tres partes.
+### Rendimiento de operación {#operation-performance}
 
-   * Una parte representa el número de cuentas que aún cumplen los criterios del segmento de operación.
+El rendimiento de la operación proporciona una lectura de línea superior que resume el número de cuentas afectadas, el progreso de la operación y la puntuación de uso compartido general de las cuentas del segmento durante la ejecución de la operación [período evaluación](/help/accountiq/product-concepts.md#evaluation-period-def).
 
-   * Otra parte representa el número de cuentas activas para ese período que originalmente estaban en el segmento, pero que ya no cumplen los criterios del segmento de operación.
+![Informe de rendimiento de operaciones](assets/operation-performance.png)
 
-   * La tercera parte representa las cuentas que no estaban activas en ese período.
+*Informe de rendimiento de operaciones*
 
-   >[!NOTE]
-   >
-   >La primera barra representa el número de cuentas que cumplen las condiciones del segmento de operación al comienzo del período de evaluación.
+**A.** Cuentas afectadas **B.** Progreso de operación **C.** Puntuación de uso compartido general
 
-   Con el tiempo, el gráfico muestra el efecto de la acción (a través de la operación ) indicando el número de cuentas que han cambiado su comportamiento en relación con los criterios originales (por ejemplo, si tienen una probabilidad de uso compartido superior a 90 y usan más de 5 dispositivos) o que han quedado inactivas.
+#### Cuentas afectadas {#impacted-accounts}
 
-<!--For example, in the above image the variable on the y-axis is number of accounts. Looking at the graph you can compare the number of accounts that are in the operations' segment versus the number of accounts that are outside the operations segment at a particular time (such as week 2nd of the operations evaluation period). Therefore, you can analyze how over the evaluation period do number of accounts vary within the operation segment and outside the segment.
+Este número muestra el recuento de cuentas de suscriptor afectadas por la acción realizada durante el periodo de evaluación de la operación.
 
-So, if your operation was to send out warning emails to suspecting accounts, and accounts in operations segment were those with sharing probability more than 90 and using more than 5 devices to stream content, then in the beginning of the evaluation period accounts in segment are more than 17 thousand. This number changes over the evaluation period as shown in the graph, thereby indicating the impact of operation. Based on the evaluation, you can take remedial measures on suspecting accounts, or continue with the operation, or adjust your strategy for better outcomes to curb credential sharing.-->
+#### Progreso de operación {#operation-progress}
 
-1. Para cerrar el informe y volver a la página principal de Operaciones, seleccione **Operaciones** opción en **Acciones** en la navegación izquierda.
+Este indicador muestra el número de días y el porcentaje de la operación finalizada fuera de la programación planificada.
 
-<!--
+#### Puntuación de uso compartido general {#overall-sharing-score}
 
-![](assets/operations-details.png)
+Este gráfico de líneas representa el [puntuación de uso compartido general](/help/accountiq/data-panels.md#overall-sharing-score), que incluye el nivel de uso compartido y el uso de cuentas compartidas en cada semana durante el periodo de evaluación de la operación.
 
-*Figure: Operation details*
-## Configure columns {#configure-columns}
+### Impacto de la operación: cuentas en el segmento {#impact-accounts}
 
-You can select the icon to **Configure columns** on the top of the operations table.
+Este informe se muestra como un gráfico de columnas apiladas que ilustra el impacto de una operación a lo largo del tiempo.
 
-![](assets/config-columns.png)
+![Impacto de la operación en las cuentas en el gráfico de segmentos](assets/accounts-in-segment.png)
 
-*Figure: Configure columns of Operations details page*-->
+*Impacto de la operación en las cuentas en el gráfico de segmentos*
+
+El eje x representa el de la operación [período evaluación](/help/accountiq/product-concepts.md#evaluation-period-def), mientras que el eje Y indica el estado de las cuentas en el segmento de la operación. Cada barra del gráfico está dividida en tres colores:
+
+* Rosa representa el número de cuentas que cumplen las condiciones del segmento utilizado en esta operación.
+
+* Azul representa el número de cuentas activas que originalmente estaban en el segmento, pero que no cumplían las condiciones del segmento durante cada semana o mes en la [período evaluación](/help/accountiq/product-concepts.md#evaluation-period-def).
+
+* Gris representa las cuentas inactivas durante el período de evaluación.
+
+>[!NOTE]
+>
+>La primera barra rosa representa el número de cuentas que cumplen las condiciones del segmento de operación al principio del período de evaluación.
+
+Con el tiempo, el gráfico ilustra los cambios en el comportamiento de la cuenta en relación con los criterios originales (por ejemplo, si tiene una probabilidad de compartir más de 90 y utiliza más de 5 dispositivos, habrá quedado inactivo).
+
+### Impacto de la operación: métricas de cuentas compartidas {#impact-shared-accounts}
+
+Las métricas de cuentas compartidas proporcionan una visión general del nivel de uso compartido y las solicitudes de reproducción de las cuentas de suscriptor en el segmento de la operación durante el [período evaluación](/help/accountiq/product-concepts.md#evaluation-period-def).
+
+#### Nivel de uso compartido {#share-level}
+
+Este gráfico de líneas representa el [nivel de uso compartido](/help/accountiq/data-panels.md#sharing-level) cada semana durante el periodo de evaluación de la operación.
+
+![Compartir gráfico de líneas de nivel](assets/share-level.png){width="550" align="left"}
+
+*Compartir gráfico de líneas de nivel*
+
+#### Número de solicitudes de reproducción {#play-requests}
+
+Este gráfico de líneas representa el [solicitudes de reproducción](/help/accountiq/general-usage-reports.md#playreq-uniquesubs) cada semana en el periodo de evaluación de la operación.
+
+![Gráfico de líneas de número de solicitudes de reproducción](assets/number-play-requests.png){width="550" align="left"}
+
+*Gráfico de líneas de número de solicitudes de reproducción*
+
+### Impacto de la operación: métricas de uso generales {#impact-general-usage}
+
+Las métricas de uso generales proporcionan una visión general del número promedio de dispositivos, direcciones IP y ubicaciones en el segmento de la operación durante el [período evaluación](/help/accountiq/product-concepts.md#evaluation-period-def).
+
+#### Número de dispositivos {#devices}
+
+Este gráfico de líneas representa el promedio [número de dispositivos](/help/accountiq/general-usage-reports.md#devices-week-account) cada semana en el periodo de evaluación de la operación.
+
+![Gráfico de líneas de número de dispositivos](assets/number-devices.png){width="550" align="left"}
+
+*Gráfico de líneas de número de dispositivos*
+
+#### Número de direcciones IP y ubicaciones {#IPs-locations}
+
+Este gráfico de líneas representa el promedio [número de direcciones IP](/help/accountiq/general-usage-reports.md#ip-week-account) y [ubicaciones](/help/accountiq/general-usage-reports.md#locations-week-account) cada semana en el periodo de evaluación de la operación.
+
+![Gráfico de líneas de número de direcciones IP y ubicaciones](assets/number-ips-locations.png){width="550" align="left"}
+
+*Gráfico de líneas de número de direcciones IP y ubicaciones*
+
+Para cerrar el informe y volver al principal **Operaciones** página, seleccione **Operaciones** pestaña debajo de **Acciones** en el panel izquierdo.
+
+## Crear nueva operación {#create-new-operation}
+
+Cuando vaya a la **Operaciones** pestaña debajo de **Acciones** en el panel izquierdo, seleccione **Crear nueva operación** en la parte superior del **Operaciones** página.
+
+Para crear una nueva operación, siga las instrucciones de las secciones siguientes:
+
+* [Detalles de operación](#operation-details)
+* [Segmento](#segment)
+* [Acción](#action)
+* [Programación](#schedule)
+
+### Detalles de operación {#operation-details}
+
+En esta sección, escriba el nombre de la operación en **Nombre de operación**.
+
+>[!TIP]
+>
+>Describa el propósito de la operación o la naturaleza de la acción en **nombre de operación** para una identificación rápida. La opción para **Añadir descripción y etiquetas** estará disponible en futuras versiones.
+
+![Agregar nombre de operación en detalles de operación](assets/operation-details.png)
+
+*Agregar nombre de operación*
+
+### Segmento {#segment}
+
+En esta sección, haga clic en **Seleccionar segmento** y elija un segmento en el que desee utilizar esta operación. Aprender [cómo seleccionar un segmento](/help/accountiq/segments-timeinterval.md#segment-selection).
+
+Una vez seleccionado un segmento, utilice el <img alt= "expandir resumen de segmentos" src="./assets/expand-segment-summary.svg" width="25"> para ver el resumen detallado del segmento. Más información sobre [resumen del segmento](segments-timeinterval.md#segment-summary).
+
+![Seleccionar segmento e intervalo de tiempo](assets/select-segment-timeinterval.png)
+
+*Seleccionar segmento e intervalo de tiempo*
+
+>[!NOTE]
+>
+>El [categorías de vídeo](product-concepts.md#video-category-def) se muestra en la imagen anterior, como **MVPD**, **Programadores**, y **Canales** representan las etiquetas utilizadas en la versión de TV Everywhere de Account IQ. Si ha iniciado sesión como servicio D2C, estas etiquetas muestran las categorías de vídeo específicas de su empresa.
+
+Si es necesario, utilice <img alt= "editar segmento" src="./assets/edit-segment.svg" width="25"> para editar el segmento seleccionado o  <img alt= "crear nuevo segmento" src="./assets/create-new-segment.svg" width="25"> para crear un nuevo segmento. Para obtener más información, consulte las instrucciones de [creación de un nuevo segmento](work-with-segments.md#create-new-segment) o [edición de segmentos](work-with-segments.md#edit-segment).
+
+>[!IMPORTANT]
+>
+>**Tipo de segmento** nombrado **[!UICONTROL Fixed number of accounts]** está seleccionado de forma predeterminada. La opción para seleccionar **[!UICONTROL Variable number of accounts]** estará disponible en próximas versiones.
+
+Seleccionar **Granularidad e intervalo de tiempo** para supervisar la operación durante un periodo específico. Más información sobre [cómo seleccionar la granularidad y el intervalo de tiempo](/help/accountiq/segments-timeinterval.md#granularity-timeinterval).
+
+### Acción {#action}
+
+En esta sección, elija un **Acción** que desea realizar en el segmento seleccionado del menú desplegable.
+
+![Seleccionar el tipo de acción](assets/apply-actions.png)
+
+*Seleccionar el tipo de acción*
+
+Hay dos opciones disponibles:
+
+* Seleccionar **Política de CM** para el sistema de monitorización de concurrencia integrado con Account IQ.
+
+* Seleccionar **Acciones externas** crear y procesar flujos de trabajo externos a Account IQ y no integrados con el sistema Account IQ.
+
+>[!NOTE]
+>
+>Es posible que las acciones externas no siempre estén directamente relacionadas con el uso compartido de contraseñas, pero aún así pueden afectarlo, como el inicio de una nueva temporada.
+
+### Programación {#schedule}
+
+En esta sección, seleccione **Fecha de inicio** y **Fecha de finalización** del selector de fechas para establecer la activación de la operación.
+
+>[!IMPORTANT]
+>
+>Actualmente, la activación predeterminada **Fecha de inicio** y **Fecha de finalización** están configuradas como **En la fecha**. La opción para seleccionar **Cuando se cumple una condición** y **Manualmente** estará disponible en próximas versiones.
+
+>[!NOTE]
+>
+>Asegúrese de que la fecha de inicio y la fecha de finalización se alinean con la granularidad seleccionada para la evaluación en **Paso 4**.
+
+* Si ha optado por la granularidad acumulada por semanas, seleccione las fechas de inicio y finalización en semanas (por ejemplo, la semana 10).
+* Si ha optado por la granularidad acumulada por meses, seleccione las fechas de inicio y finalización en meses.
+
+![Seleccione la fecha de inicio y la fecha de finalización en el selector de fechas](assets/add-schedule.png)
+
+*Seleccione Start date y End date en el selector de fechas*
+
+**A.** Selector de fecha de inicio **B.** Selector de fecha final
+
+>[!NOTE]
+>
+>El **Fecha de inicio** debe ser posterior tanto al periodo de evaluación como a la fecha actual, mientras que la variable **Fecha de finalización** debe ser posterior a la fecha de inicio y a la fecha actual para programar y ejecutar operaciones en un periodo futuro.
+
+Seleccionar **Guardar operación** en la parte superior del **Operaciones** para procesar una nueva operación.
+
+## Detener operación {#stop-operation}
+
+Solo puede detener las operaciones que se encuentran actualmente en **Ejecutando** estado. Para detener una operación existente, siga estos pasos:
+
+1. Vaya a **Operaciones** pestaña debajo de **Acciones** en la navegación izquierda de la aplicación Account IQ.
+1. Seleccionar **Opciones** de la operación que desea detener.
+
+   ![Seleccione el menú de opciones para detener la operación](assets/stop-operation.png)
+
+   *Seleccione el menú Opciones para detener la operación*
+
+1. Seleccionar **Detener**.
+
+
+
