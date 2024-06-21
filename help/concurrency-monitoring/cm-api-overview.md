@@ -1,13 +1,13 @@
 ---
 title: Resumen de API
 description: Información general de API de Monitorización de concurrencia
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
+source-git-commit: dd370b231acc08ea0544c0dedaa1bdb0683e378f
 workflow-type: tm+mt
-source-wordcount: '1425'
+source-wordcount: '1556'
 ht-degree: 0%
 
 ---
-
 
 # Resumen de API {#api-overview}
 
@@ -101,6 +101,24 @@ Utilice los mismos parámetros para la llamada que para el latido de la sesión.
 * 202 ACEPTADO para obtener una respuesta correcta
 * 410 SE HA IDO si la sesión ya se ha detenido.
 
+#### Obtener todos los flujos en ejecución {#get-all-running-streams}
+
+Este extremo ofrece todas las sesiones que se están ejecutando para un inquilino específico en todas sus aplicaciones. Uso **sujeto** y **idp** parámetros de la llamada:
+
+![](assets/get-all-running-streams-parameters.png)
+
+Cuando realice la llamada, obtendrá la siguiente respuesta:
+
+![](assets/get-all-running-streams-success.png)
+
+Tenga en cuenta los **Caduca** encabezado. Es el momento en que la primera sesión debe caducar a menos que se envíe un latido. OtherStreams tiene el valor 0 porque no hay otros flujos ejecutándose para este usuario en las aplicaciones de otro inquilino.
+El campo de metadatos se rellenará con todos los metadatos enviados cuando comience la sesión. Si no lo filtramos, recibirá todo lo que haya enviado.
+Si no hay sesiones en ejecución para un usuario específico al realizar la llamada, obtendrá esta respuesta:
+
+![](assets/get-all-running-streams-empty.png)
+
+Tenga en cuenta también que en este caso la variable **Caduca** el encabezado no está presente.
+
 #### Infracción de la directiva {#breaking-policy-app-first}
 
 
@@ -157,4 +175,3 @@ Para romper la regla que tenemos en la política asignada a esta aplicación, ne
 Si utilizamos valores diferentes para los metadatos de canal cada vez que creamos una nueva sesión, todas las llamadas se realizarán correctamente porque el umbral de 2 se establece para cada valor de forma individual.
 
 Al igual que en el primer ejemplo, podemos usar el código de terminación para detener de forma remota los flujos en conflicto o podemos esperar a que uno de los flujos caduque, suponiendo que no se opere ningún latido en ellos.
-
