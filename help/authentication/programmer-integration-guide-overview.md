@@ -21,20 +21,20 @@ ht-degree: 0%
 
 * Guía del SDK de JavaScript de AccessEnabler
 * Guía del SDK de AccessEnabler para iOS/tvOS
-* Guía del SDK de AccessEnabler para Android
+* Guía del SDK de Android de AccessEnabler
 * Guía de la API de REST (servidor a servidor)
 * Guía de la API de REST (de cliente a servidor)
 
 ## Referencias de API {#api-references}
 
-* Referencia de API del SDK de JavaScript de AccessEnabler
+* Referencia de API de SDK de JavaScript AccessEnabler
 * Referencia de la API del SDK de AccessEnabler iOS/tvOS
 * Referencia de API de SDK de Android AccessEnabler
 * Referencia de API de REST
 
 ## Información general técnica {#technical-overviews}
 
-* Información general del SDK de JavaScript de AccessEnabler
+* Información general del SDK de JavaScript AccessEnabler
 * Información general sobre el SDK de AccessEnabler para iOS/tvOS
 * Información general del SDK de Android AccessEnabler
 * Información general de API REST

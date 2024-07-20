@@ -34,7 +34,7 @@ Se utiliza como abreviatura de &quot;autorización&quot;, como en &quot;AuthZ To
 
 ## Token de AuthZ {#authz-token}
 
-Token de autorización, generado por la autenticación de Adobe Pass después de que un usuario haya sido autorizado para ver contenido protegido. El token de AuthZ se almacena en servidores de autenticación de Adobe Pass y se utiliza para generar una [Token de medios de corta duración](#short-lived-token).
+Token de autorización, generado por la autenticación de Adobe Pass después de que un usuario haya sido autorizado para ver contenido protegido. El token de AuthZ se almacena en servidores de autenticación de Adobe Pass y se usa para generar un [token de medios de corta duración](#short-lived-token).
 
 ## ID de canal (obsoleto) {#channel_id}
 
@@ -56,7 +56,7 @@ Término que se utiliza en la documentación de autenticación de Adobe Pass par
 
 ## GUID {#guid}
 
-Consulte [ID de usuario](#user-id).
+Ver [ID de usuario](#user-id).
 
 ## IdP {#idp}
 
@@ -72,7 +72,7 @@ Distribuidor de programación de vídeo multicanal; sinónimo de &quot;Proveedor
 
 ## ID de MVPD {#mvpd-id}
 
-Consulte [ID de usuario](#user-id).
+Ver [ID de usuario](#user-id).
 
 ## ID de socio {#partner-id}
 
@@ -96,15 +96,15 @@ Una MVPD que no tiene una integración directa con el SP de Adobe, pero que est�
 
 ## ID de solicitante {#requestor-id}
 
-Identifica de forma exclusiva a [Programador](#programmer) (una cuenta, marca, canal o propiedad) dentro de la autenticación de Adobe Pass. Este ID se determina entre el Programador y el Adobe durante la configuración inicial de la cuenta. En la web, el ID de solicitante está asociado a un conjunto de dominios en la lista blanca; se rechazará cualquier llamada que utilice un ID de un dominio externo. Los programadores también utilizan el ID de solicitante para Analytics. Normalmente, solo hay un ID de solicitante por programador. Una función adicional relacionada con el ID de solicitante es que el programador debe proporcionar Adobe con un certificado público, ya que la llamada de API setRequestor espera que se envíen datos cifrados, utilizados para autenticar al programador en el sistema de autenticación de Adobe Pass.
+Identifica de forma exclusiva a [Programador](#programmer) (una cuenta, marca, canal o propiedad) en la autenticación de Adobe Pass. Este ID se determina entre el Programador y el Adobe durante la configuración inicial de la cuenta. En la web, el ID de solicitante está asociado a un conjunto de dominios en la lista blanca; se rechazará cualquier llamada que utilice un ID de un dominio externo. Los programadores también utilizan el ID de solicitante para Analytics. Normalmente, solo hay un ID de solicitante por programador. Una función adicional relacionada con el ID de solicitante es que el programador debe proporcionar Adobe con un certificado público, ya que la llamada de API setRequestor espera que se envíen datos cifrados, utilizados para autenticar al programador en el sistema de autenticación de Adobe Pass.
 
 ## ID de recurso {#resource-id}
 
-Una cadena o recurso mRSS que identifica un [Programador](#programmer) a MVPD. Se acuerda entre el programador y las MVPD; la autenticación de Adobe Pass pasa el ID de recurso intacto, por lo que debe ser el mismo para todas las MVPD. Un programador puede utilizar varios ID de recurso siempre que las MVPD sepan lo que representa cada ID.
+Cadena o recurso mRSS que identifica un [programador](#programmer) para MVPD. Se acuerda entre el programador y las MVPD; la autenticación de Adobe Pass pasa el ID de recurso intacto, por lo que debe ser el mismo para todas las MVPD. Un programador puede utilizar varios ID de recurso siempre que las MVPD sepan lo que representa cada ID.
 
 ## SessionGUID {#sessionGUID}
 
-Consulte [ID de usuario](#user-id).
+Ver [ID de usuario](#user-id).
 
 ## Token de medios de corta duración {#short-lived-token}
 
@@ -116,7 +116,7 @@ Término utilizado en toda la documentación de autenticación de Adobe Pass par
 
 ## SP{#sp}
 
-Proveedor de servicios; esto suele referirse a la variable *función* de SP, reproducido por Adobe Pass Authentication, que actúa en nombre de un programador en una integración con un [MVPD](#mvpd).
+Proveedor de servicios; esto suele referirse a la *función* de SP, desempeñada por la autenticación de Adobe Pass, que actúa en nombre de un programador en una integración con un [MVPD](#mvpd).
 
 ## Pase temporal {#temp-pass}
 

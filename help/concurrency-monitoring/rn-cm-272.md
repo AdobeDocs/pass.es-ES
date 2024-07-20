@@ -1,13 +1,13 @@
 ---
 title: Notas de la versión de Monitorización de la concurrencia de Adobes 2.7.2
 description: Notas de la versión de Monitorización de la concurrencia de Adobes 2.7.2
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: b7850400-a3ae-4c26-aba9-ffbf68bc41f4
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '41'
-ht-degree: 2%
+source-wordcount: '47'
+ht-degree: 4%
 
 ---
-
 
 # Notas de la versión de Monitorización de la concurrencia de Adobes 2.7.2 {#cm-272-rn}
 
@@ -15,7 +15,7 @@ Esta página describe las nuevas funciones, los cambios y los problemas conocido
 
 ## Fecha de lanzamiento {#release-date}
 
-10/17/2017
+17/10/2017
 
 ## Información general de versión {#rel-overview}
 

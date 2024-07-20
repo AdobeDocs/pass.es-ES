@@ -4,7 +4,7 @@ description: Guía de Apple SSO (API de REST)
 exl-id: cb27c4b7-bdb4-44a3-8f84-c522a953426f
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '1435'
+source-wordcount: '1344'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Tenga en cuenta que este documento actúa como una extensión de la documentaci�
 
 ## Libros {#Cookbooks}
 
-Para beneficiarse de la experiencia del usuario de SSO de Apple, una aplicación tendría que integrar [Cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) desarrollada por Apple, mientras que con respecto a la comunicación de la API de REST de autenticación de Adobe Pass, tendría que seguir la secuencia de sugerencias presentada a continuación.
+Para beneficiarse de la experiencia del usuario de SSO de Apple, una aplicación necesitaría integrar la plataforma de [cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) desarrollada por Apple, mientras que en cuanto a la comunicación de la API de REST de autenticación de Adobe Pass, tendría que seguir la secuencia de sugerencias presentadas a continuación.
 
 ### Autenticación {#Authentication}
 
@@ -47,18 +47,18 @@ Para beneficiarse de la experiencia del usuario de SSO de Apple, una aplicación
 
 >[!TIP]
 >
-> **<u>Sugerencia:</u>** Implementar esto a través del medio de [Autenticación de Adobe Pass](/help/authentication/check-authentication-token.md) servicio.
+> **<u>Sugerencia:</u>** Implemente esto a través del servicio [Autenticación de Adobe Pass](/help/authentication/check-authentication-token.md).
 
 
 #### Paso: &quot;¿El usuario ha iniciado sesión mediante el SSO de Platform?&quot; {#Is_the_user_logged_in_via_Platform_SSO}
 
 >[!TIP]
 >
-> **<u>Sugerencia:</u>** Implementar esto a través del medio de [Cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) marco.
+> **<u>Sugerencia:</u>** Implemente esto a través del marco de [cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount).
 
-- La aplicación tendría que buscar [permiso para acceder a](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) la información de suscripción del usuario y continuar solo si el usuario lo permite.
-- La solicitud tendría que presentar una [solicitud](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) para obtener información de la cuenta del suscriptor.
-- La aplicación tendría que esperar y procesar el [metadatos](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata) información.
+- La aplicación tendría que comprobar si tiene [permiso para acceder](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) a la información de suscripción del usuario y continuar solo si el usuario lo permite.
+- La aplicación tendría que enviar una [solicitud](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) para obtener información de la cuenta del suscriptor.
+- La aplicación tendría que esperar y procesar la información de [metadata](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata).
 
 
 
@@ -124,7 +124,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Sugerencia:</u>** Implementar esto a través del medio de [Autenticación de Adobe Pass](/help/authentication/provide-mvpd-list.md) servicio.
+> **<u>Sugerencia:</u>** Implemente esto a través del servicio [Autenticación de Adobe Pass](/help/authentication/provide-mvpd-list.md).
 
 
 >[!TIP]
@@ -135,12 +135,12 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Sugerencia:</u>** Implementar esto a través del medio de [Cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) marco.
+> **<u>Sugerencia:</u>** Implemente esto a través del marco de [cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount).
 
-- La aplicación tendría que buscar [permiso para acceder a](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) la información de suscripción del usuario y continuar solo si el usuario lo permite.
-- La aplicación tendría que proporcionar un [delegar](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate) para el Administrador de cuentas de VSA.
-- La solicitud tendría que presentar una [solicitud](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) para obtener información de la cuenta del suscriptor.
-- La aplicación tendría que esperar y procesar el [metadatos](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata) información.
+- La aplicación tendría que comprobar si tiene [permiso para acceder](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) a la información de suscripción del usuario y continuar solo si el usuario lo permite.
+- La aplicación tendría que proporcionar un [delegado](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate) para VSAccountManager.
+- La aplicación tendría que enviar una [solicitud](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) para obtener información de la cuenta del suscriptor.
+- La aplicación tendría que esperar y procesar la información de [metadata](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata).
 
 
 
@@ -250,28 +250,28 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Sugerencia profesional:</u>** Tenga en cuenta el fragmento de código de la [&quot;Iniciar el flujo de trabajo de Platform SSO con la configuración de Adobe&quot;](#Initiate_Platform_SSO_workflow_with_Adobe_config) paso. El inicio de sesión del usuario se realiza correctamente en caso de que la variable *`vsaMetadata!.accountProviderIdentifier`* contiene un valor válido y la fecha actual no ha pasado el *`vsaMetadata!.authenticationExpirationDate`* valor.
+> **<u>Sugerencia profesional:</u>** Tenga en cuenta el fragmento de código del paso [&quot;Iniciar flujo de trabajo de SSO de Platform con configuración de Adobe&quot;](#Initiate_Platform_SSO_workflow_with_Adobe_config). El inicio de sesión del usuario se realiza correctamente en el caso de que *`vsaMetadata!.accountProviderIdentifier`* contenga un valor válido y la fecha actual no haya pasado el valor *`vsaMetadata!.authenticationExpirationDate`*.
 
 #### Paso &quot;Obtener una solicitud de perfil del Adobe para la MVPD seleccionada&quot; {#Obtain_a_profile_request_from_Adobe_for_the_selected_MVPD}
 
 >[!TIP]
 >
-> **<u>Sugerencia:</u>** Implementar esto a través de la autenticación de Adobe Pass [Solicitud de perfil](/help/authentication/retrieve-profilerequest.md) servicio.
+> **<u>Sugerencia:</u>** Implemente esto a través del servicio de autenticación de Adobe Pass [Solicitud de perfil](/help/authentication/retrieve-profilerequest.md).
 
 >[!TIP]
 >
-> **<u>Sugerencia profesional:</u>** Tenga en cuenta que el identificador de proveedor obtenido del marco de trabajo de la cuenta del suscriptor de vídeo representa el *`platformMappingId`* en términos de configuración de autenticación de Adobe Pass. Por lo tanto, la aplicación debe determinar el valor de la propiedad ID de MVPD mediante la variable *`platformMappingId`* mediante la autenticación de Adobe Pass. [Proporcionar lista de MVPD](/help/authentication/provide-mvpd-list.md) servicio.
+> **<u>Sugerencia profesional:</u>** Tenga en cuenta que el identificador de proveedor obtenido del módulo de cuenta de suscriptor de vídeo representa a *`platformMappingId`* en términos de la configuración de autenticación de Adobe Pass. Por lo tanto, la aplicación debe determinar el valor de la propiedad MVPD id, usando el valor *`platformMappingId`*, a través del medio del servicio Autenticación de Adobe Pass [Proporcionar lista MVPD](/help/authentication/provide-mvpd-list.md).
 
 #### Paso: &quot;Reenviar la solicitud de Adobe a Platform SSO para obtener el perfil&quot; {#Forward_the_Adobe_request_to_Platform_SSO_to_obtain_the_profile}
 
 >[!TIP]
 >
-> **<u>Sugerencia:</u>** Implementar esto a través del medio de [Cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) marco.
+> **<u>Sugerencia:</u>** Implemente esto a través del marco de [cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount).
 
 
-- La aplicación tendría que buscar [permiso para acceder a](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) la información de suscripción del usuario y continuar solo si el usuario lo permite.
-- La solicitud tendría que presentar una [solicitud](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) para obtener información de la cuenta del suscriptor.
-- La aplicación tendría que esperar y procesar el [metadatos](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata) información.
+- La aplicación tendría que comprobar si tiene [permiso para acceder](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) a la información de suscripción del usuario y continuar solo si el usuario lo permite.
+- La aplicación tendría que enviar una [solicitud](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) para obtener información de la cuenta del suscriptor.
+- La aplicación tendría que esperar y procesar la información de [metadata](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata).
 
 
 
@@ -347,12 +347,12 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Sugerencia:</u>** Implementar esto a través de la autenticación de Adobe Pass [Intercambio de tokens](/help/authentication/token-exchange.md) servicio.
+> **<u>Sugerencia:</u>** Implemente esto a través del servicio de autenticación de Adobe Pass [Intercambio de tokens](/help/authentication/token-exchange.md).
 
 
 >[!TIP]
 >
-> **<u>Sugerencia profesional:</u>** Tenga en cuenta el fragmento de código de la [&quot;Reenviar la solicitud de Adobe a Platform SSO para obtener el perfil&quot;](#Forward_the_Adobe_request_to_Platform_SSO_to_obtain_the_profile) paso. Esta *`vsaMetadata!.samlAttributeQueryResponse!`* representa el *`SAMLResponse`*, que debe pasarse. [Intercambio de tokens](/help/authentication/token-exchange.md) y requiere la manipulación y codificación de cadenas (*Base64* codificado y *URL* codificado posteriormente) antes de realizar la llamada.
+> **<u>Sugerencia profesional:</u>** Tenga en cuenta el fragmento de código de [&quot;Reenvíe la solicitud de Adobe a Platform SSO para obtener el paso del perfil&quot;](#Forward_the_Adobe_request_to_Platform_SSO_to_obtain_the_profile). Este(a) *`vsaMetadata!.samlAttributeQueryResponse!`* representa el(la) *`SAMLResponse`*, que necesita pasarse en [Intercambio de tokens](/help/authentication/token-exchange.md) y requiere manipulación de cadenas y codificación (*Codificado(a) Base64* y codificado(a) *URL* posteriormente) antes de realizar la llamada.
 
 </br>
 
@@ -360,41 +360,41 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Sugerencia:</u>** Implementar esto a través del medio Autenticación de Adobe Pass [Intercambio de tokens](/help/authentication/token-exchange.md) respuesta correcta, que será una *`204 No Content`*, lo que indica que el token se creó correctamente y está listo para utilizarse en los flujos de autorización.
+> **<u>Sugerencia:</u>** Implemente esto a través del medio de respuesta correcta de autenticación de Adobe Pass [Intercambio de tokens](/help/authentication/token-exchange.md), que será una respuesta de *`204 No Content`*, lo que indica que el token se creó correctamente y está listo para utilizarse en los flujos de autorización.
 
 </br>
 
 #### Paso: &quot;Iniciar flujo de trabajo de autenticación de segunda pantalla&quot; {#Initiate_second_screen_authentication_workflow}
 
-**Importante:** La terminología &quot;Flujo de trabajo de autenticación de segunda pantalla&quot; es apropiada para Apple TV, mientras que la terminología &quot;Flujo de trabajo de autenticación de primera pantalla&quot; / &quot;Flujo de trabajo de autenticación regular&quot; sería más apropiada para iPhone y iPads.
+**Importante:** La terminología &quot;Flujo de trabajo de autenticación de segunda pantalla&quot; es apropiada para AppleTV, mientras que la terminología &quot;Flujo de trabajo de autenticación de primera pantalla&quot; / &quot;Flujo de trabajo de autenticación regular&quot; sería más apropiada para iPhone y iPads.
 
 
 >[!TIP]
 >
-> **<u>Sugerencia:</u>** Implementar esto a través de la autenticación de Adobe Pass
+> **<u>Sugerencia:</u>** Implemente esto a través del medio de autenticación de Adobe Pass
 
-[Solicitud de código de registro](/help/authentication/registration-code-request.md), [Iniciar autenticación](/help/authentication/initiate-authentication.md) y [API de REST: recuperar token de autenticación](/help/authentication/retrieve-authentication-token.md) o [Comprobar token de autenticación](/help/authentication/check-authentication-token.md) servicios.
+[Solicitud de código de registro](/help/authentication/registration-code-request.md), [Iniciar autenticación](/help/authentication/initiate-authentication.md) y [API REST Recuperar token de autenticación](/help/authentication/retrieve-authentication-token.md) o [Comprobar servicios de token de autenticación](/help/authentication/check-authentication-token.md).
 
 
 >[!TIP]
 >
-> **<u>Sugerencia profesional:</u>** Siga los pasos a continuación para las implementaciones de tvOS.
+> **<u>Sugerencia profesional:</u>** Siga los pasos descritos a continuación para las implementaciones de tvOS.
 
 - La aplicación tendría que [obtener un código de registro](/help/authentication/registration-code-request.md) y presentarlo al usuario final en el primer dispositivo (pantalla).
-- La aplicación tendría que iniciarse [sondeo para reconocer el estado de autenticación](/help/authentication/retrieve-authentication-token.md) en el primer dispositivo (pantalla) después de obtener el código de registro.
-- Otra aplicación tendría que [iniciar autenticación](/help/authentication/initiate-authentication.md) en un segundo dispositivo (pantalla) cuando se utiliza el código de registro.
-- La aplicación tendría que detenerse [votación](/help/authentication/retrieve-authentication-token.md) en el primer dispositivo (pantalla) cuando se genere el token de autenticación.
+- La aplicación tendría que iniciar [sondeo para confirmar el estado de autenticación](/help/authentication/retrieve-authentication-token.md) en el primer dispositivo (pantalla) después de obtener el código de registro.
+- Otra aplicación tendría que [iniciar autenticación](/help/authentication/initiate-authentication.md) en un segundo dispositivo (pantalla) cuando se use el código de registro.
+- La aplicación tendría que detener [el sondeo](/help/authentication/retrieve-authentication-token.md) en el primer dispositivo (pantalla) cuando se genere el token de autenticación.
 
 
 
 >[!TIP]
 >
-> **<u>Sugerencia profesional:</u>** Siga los pasos a continuación para las implementaciones de iOS/iPadOS.
+> **<u>Sugerencia profesional:</u>** Siga los pasos descritos a continuación para las implementaciones de iOS/iPadOS.
 
-- La aplicación tendría que [obtener un código de registro](/help/authentication/registration-code-request.md) que no debe presentarse al usuario final en el primer dispositivo (pantalla).
-- La aplicación tendría que [iniciar autenticación](/help/authentication/initiate-authentication.md) en el primer dispositivo (pantalla) utilizando el código de registro y una [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) o una [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) componente.
-- La aplicación tendría que iniciarse [sondeo para conocer el estado de autenticación](/help/authentication/retrieve-authentication-token.md) en el primer dispositivo (pantalla) después de la [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) o el [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) el componente se cierra.
-- La aplicación tendría que detenerse [votación](/help/authentication/retrieve-authentication-token.md) en el primer dispositivo (pantalla) cuando se genere el token de autenticación.
+- La aplicación tendría que [obtener un código de registro](/help/authentication/registration-code-request.md) que no debería presentarse al usuario final en el primer dispositivo (pantalla).
+- La aplicación tendría que [iniciar la autenticación](/help/authentication/initiate-authentication.md) en el primer dispositivo (pantalla) usando el código de registro y un componente [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) o [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller).
+- La aplicación tendría que iniciar [sondeo para conocer el estado de autenticación](/help/authentication/retrieve-authentication-token.md) en el primer dispositivo (pantalla) después de que se cierre [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) o el componente [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller).
+- La aplicación tendría que detener [el sondeo](/help/authentication/retrieve-authentication-token.md) en el primer dispositivo (pantalla) cuando se genere el token de autenticación.
 
 </br>
 
@@ -402,37 +402,37 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Sugerencia:</u>** Implementar esto a través de la autenticación de Adobe Pass [Iniciar autorización](/help/authentication/initiate-authorization.md) y [Obtener token de medios corto](/help/authentication/obtain-short-media-token.md) servicios.
+> **<u>Sugerencia:</u>** Implemente esto a través del medio de autenticación de Adobe Pass [Iniciar autorización](/help/authentication/initiate-authorization.md) y [Obtener servicios de token de medios cortos](/help/authentication/obtain-short-media-token.md).
 
 </br>
 
 ### Cerrar sesión {#Logout}
 
-El [Cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) Este marco de trabajo no proporciona una API para cerrar la sesión de las personas que han iniciado sesión en su cuenta de proveedor de TV a nivel de sistema de dispositivo mediante programación. Por lo tanto, para que el cierre de sesión surta efecto, el usuario final tendría que cerrar sesión explícitamente desde *`Settings -> TV Provider`* en iOS/iPadOS o *`Settings -> Accounts -> TV Provider`* en tvOS. La otra opción que tendría el usuario es retirar el permiso para acceder a la información de suscripción del usuario desde la sección de configuración específica de la aplicación (acceso al proveedor de TV).
+El marco de trabajo de la cuenta de suscriptor de vídeo [Video Subscriber Account](https://developer.apple.com/documentation/videosubscriberaccount) no proporciona una API para cerrar la sesión mediante programación de las personas que han iniciado sesión en su cuenta de proveedor de TV en el nivel del sistema del dispositivo. Por lo tanto, para que el cierre de sesión surta efecto, el usuario final tendría que cerrar sesión explícitamente desde *`Settings -> TV Provider`* en iOS/iPadOS o *`Settings -> Accounts -> TV Provider`* en tvOS. La otra opción que tendría el usuario es retirar el permiso para acceder a la información de suscripción del usuario desde la sección de configuración específica de la aplicación (acceso al proveedor de TV).
 
 >[!TIP]
 >
-> **<u>Sugerencia:</u>** Implementar esto a través de la autenticación de Adobe Pass [Llamada de metadatos de usuario](/help/authentication/user-metadata.md) y [Cerrar sesión](/help/authentication/initiate-logout.md) servicios.
-
-
->[!TIP]
->
-> **<u>Sugerencia profesional:</u>** Siga los pasos a continuación para las implementaciones de tvOS.
-
-
-- La aplicación tendría que determinar si la autenticación se ha producido como resultado de un inicio de sesión a través del SSO de plataforma o no, utilizando el complemento &quot;*tokenSource&quot;* [metadatos de usuario](/help/authentication/user-metadata.md) del servicio de autenticación de Adobe Pass.
-- La aplicación tendría que indicar o pedir al usuario que cierre sesión explícitamente desde *`Settings -> Accounts -> TV Provider`* en tvOS **solamente** en caso de que la *&quot;tokenSource&quot;* el valor es igual a &quot;*Apple&quot;.*
-- La aplicación tendría que [iniciar el cierre de sesión](/help/authentication/initiate-logout.md) del servicio de autenticación de Adobe Pass mediante una llamada HTTP directa. Esto no facilitaría la limpieza de la sesión en el lado de MVPD.
-
+> **<u>Sugerencia:</u>** Implemente esto a través del medio de la autenticación de Adobe Pass [llamada de metadatos de usuario](/help/authentication/user-metadata.md) y los servicios [Cerrar sesión](/help/authentication/initiate-logout.md).
 
 
 >[!TIP]
 >
-> **<u>Sugerencia profesional:</u>** Siga los pasos a continuación para las implementaciones de iOS/iPadOS.
+> **<u>Sugerencia profesional:</u>** Siga los pasos descritos a continuación para las implementaciones de tvOS.
 
-- La aplicación tendría que determinar si la autenticación se ha producido como resultado de un inicio de sesión a través del SSO de la plataforma o no, utilizando el &quot;*tokenSource&quot;* [metadatos de usuario](/help/authentication/user-metadata.md) del servicio de autenticación de Adobe Pass.
-- La aplicación tendría que indicar o pedir al usuario que cierre sesión explícitamente desde *`Settings -> TV Provider`* en iOS/iPadOS **solamente** en caso de que la *&quot;tokenSource&quot;* el valor es igual a *&quot;Apple&quot;*.
-- La aplicación tendría que [iniciar el cierre de sesión](/help/authentication/initiate-logout.md) del servicio de autenticación de Adobe Pass mediante una [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) o una [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) componente. Esto facilitaría la limpieza de la sesión en el lado de MVPD.
+
+- La aplicación tendría que determinar si la autenticación se ha producido como resultado de un inicio de sesión a través del SSO de la plataforma o no, utilizando los &quot;*tokenSource&quot;* [metadatos de usuario](/help/authentication/user-metadata.md) del servicio de autenticación de Adobe Pass.
+- La aplicación tendría que indicar o pedir al usuario que cierre sesión explícitamente desde *`Settings -> Accounts -> TV Provider`* en tvOS **solo** en caso de que el valor *&quot;tokenSource&quot;* sea igual a &quot;*Apple&quot;.*
+- La aplicación tendría que [iniciar el cierre de sesión](/help/authentication/initiate-logout.md) desde el servicio de autenticación de Adobe Pass usando una llamada HTTP directa. Esto no facilitaría la limpieza de la sesión en el lado de MVPD.
+
+
+
+>[!TIP]
+>
+> **<u>Sugerencia profesional:</u>** Siga los pasos descritos a continuación para las implementaciones de iOS/iPadOS.
+
+- La aplicación tendría que determinar si la autenticación se ha producido como resultado de un inicio de sesión a través del SSO de la plataforma o no, utilizando los &quot;*tokenSource&quot;* [metadatos de usuario](/help/authentication/user-metadata.md) del servicio de autenticación de Adobe Pass.
+- La aplicación tendría que indicar o pedir al usuario que cierre sesión explícitamente desde *`Settings -> TV Provider`* en iOS/iPadOS **solo** en caso de que el valor *&quot;tokenSource&quot;* sea igual a *&quot;Apple&quot;*.
+- La aplicación tendría que [iniciar el cierre de sesión](/help/authentication/initiate-logout.md) desde el servicio de autenticación de Adobe Pass usando un [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) o un componente [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller). Esto facilitaría la limpieza de la sesión en el lado de MVPD.
 
 <!--
 

@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Terminologías comunes en D2C y TV en todas partes
 
-Las siguientes terminologías de productos y sus definiciones son comunes a todos los [versiones de Account IQ](versions-aiq.md).
+Las siguientes terminologías de productos y sus definiciones son comunes a todas las [versiones de Account IQ](versions-aiq.md).
 
 ### [!UICONTROL Accounts Sharing Probability] {#account-sharing-probability-def}
 
@@ -21,7 +21,7 @@ Panel de panel con gráficos que divide las puntuaciones de uso compartido del s
 
 ### [!UICONTROL Action] {#action-def}
 
-Un evento directo o indirecto asociado con un [Operación](#operation-def) que afecta a las características (por ejemplo, la puntuación de uso compartido o el número de dispositivos en uso) de un segmento de operación relacionado.
+Un evento directo o indirecto asociado con una [operación](#operation-def) que afecta a las características (por ejemplo, compartir puntuación o número de dispositivos en uso) de un segmento de operación relacionado.
 
 ### [!UICONTROL Aggregated sharing score] {#sharing-probability-level-def}
 
@@ -90,7 +90,7 @@ Un dispositivo con alta movilidad. Por ejemplo, teléfono móvil y tableta.
 
 ### Operación {#operation-def}
 
-Operación es un registro creado para realizar un seguimiento del efecto de un objeto concreto [acción](#action-def) en un segmento asociado. Un ejemplo de acción puede ser un límite colocado en el número de flujos simultáneos permitidos para las cuentas identificadas por el segmento.
+La operación es un registro creado para hacer un seguimiento del efecto de una [acción](#action-def) en particular en un segmento asociado. Un ejemplo de acción puede ser un límite colocado en el número de flujos simultáneos permitidos para las cuentas identificadas por el segmento.
 
 ### [!UICONTROL Overall sharing score] {#overall-sharing-score}
 

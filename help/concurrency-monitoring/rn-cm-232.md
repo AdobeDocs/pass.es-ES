@@ -1,13 +1,13 @@
 ---
 title: Notas de la versión de Adobe Pass Concurrency Monitoring 2.3.2
 description: Notas de la versión de Adobe Pass Concurrency Monitoring 2.3.2
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 3996da45-498c-482a-b374-3cda1c5df2f7
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '130'
-ht-degree: 0%
+source-wordcount: '141'
+ht-degree: 1%
 
 ---
-
 
 # Notas de la versión de Adobe Pass Concurrency Monitoring 2.3.2 {#cm-232}
 
@@ -22,7 +22,7 @@ Fecha de versión: 11/12/2015
    * mvpd: el MVPD indicado en la dirección URL de la llamada
    * canal: el canal de metadatos personalizado
    * platform: la aplicación de metadatos personalizada
-* Nuevas métricas relacionadas con **duración del flujo** disponible en los informes de uso. Las nuevas métricas se pueden utilizar para crear un histograma de duración del flujo. Actualmente están disponibles los siguientes intervalos en minutos:
+* Nuevas métricas relacionadas con **duración del flujo** disponibles en los informes de uso. Las nuevas métricas se pueden utilizar para crear un histograma de duración del flujo. Actualmente están disponibles los siguientes intervalos en minutos:
    * duration_0-15
    * duration_15-30
    * duration_30-60

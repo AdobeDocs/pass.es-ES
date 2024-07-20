@@ -4,7 +4,7 @@ description: Autenticación basada en el hogar para TV en todas partes
 exl-id: abdc7724-4290-404a-8f93-953662cdc2bc
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1687'
+source-wordcount: '1638'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Definición de autenticación basada en el hogar del Open Authentication Technol
 
 
 
-Para obtener más información sobre HBA y los estándares del sector, lea la [Casos de uso y requisitos de OATC](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/Defining%20TVE%20Home-Based%20Authentication%20(HBA)%20%20Use%20Cases%20and%20Requirements%20Recommended%20Practice%20Version%201_0%20FINAL%20DRAFT%20FOR%20BOARD%20APPROVAL.pdf){target=_blank} documentación y **Directrices de experiencia del usuario OATC para HBA**.
+Para obtener más información sobre HBA y los estándares del sector, lea la documentación de [Casos de uso y requisitos de OATC](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/Defining%20TVE%20Home-Based%20Authentication%20(HBA)%20%20Use%20Cases%20and%20Requirements%20Recommended%20Practice%20Version%201_0%20FINAL%20DRAFT%20FOR%20BOARD%20APPROVAL.pdf){target=_blank} y las **Directrices de experiencia del usuario de OATC para HBA**.
 
 >[!NOTE]
 >
@@ -35,7 +35,7 @@ HBA es importante porque elimina prácticamente la barrera de inicio de sesión 
 
 Actualmente, casi la mitad de los intentos de iniciar sesión no tienen éxito.
 
-Una vez que uno de los 5 principales MVPD activó HBA, su tasa de conversión de autenticación **aumentado en un 40 %** (del 45 % al 63 %)
+Una vez que uno de los 5 MVPD principales activó HBA, su tasa de conversión de autenticación **aumentó en un 40%** (de 45% a 63%)
 
 ![](assets/authn-conv-pre-post.png)
 
@@ -89,7 +89,7 @@ En las tablas siguientes se proporciona información sobre la experiencia del us
 En el flujo HBA para MVPD integradas con el protocolo de autenticación OAuth 2.0, MVPD emite un token de actualización y el Adobe emite un token de autenticación HBA:
 
 * El token de actualización tiene un TTL determinado por los requisitos comerciales de la MVPD.
-* El TTL del token de autenticación HBA **debe ser menor o igual que** el TTL del token de actualización.
+* El TTL del token de autenticación HBA **debe ser inferior o igual a** el TTL del token de actualización.
 
 
 *Descripción del flujo de autenticación HBA para el protocolo OAuth 2.0*
@@ -98,7 +98,7 @@ En el flujo HBA para MVPD integradas con el protocolo de autenticación OAuth 2.
 | Acciones del usuario | Acciones del sistema |
 |---|---|
 | El usuario navega al sitio del programador. Al intentar reproducir un vídeo, se muestra el selector de MVPD. El usuario selecciona su MVPD y hace clic en Iniciar sesión. | Se realiza una comprobación de los antecedentes. La MVPD aplica su conjunto de reglas para la detección de usuarios (por ejemplo, asignar la dirección IP del usuario a la dirección MAC de módems aprovisionados por el distribuidor o decodificadores conectados a banda ancha). |
-| Se muestra una pantalla que persiste durante unos 3 segundos. Se puede mostrar una página intersticial que informe al usuario de que ha iniciado sesión automáticamente mediante su cuenta de MVPD. | <ol><li>AccessEnabler, que se instala en el lado del programador, envía una solicitud de autenticación (como una solicitud HTTP) al extremo de autenticación de Adobe Pass.</li><li>El extremo de autenticación de Adobe Pass redirige la solicitud al extremo de autenticación de MVPD. <br />**Nota:** La solicitud contiene el `hba_flag` parámetro (intento HBA = true) que indica que MVPD debe intentar la autenticación HBA.</li><li>El extremo de autenticación MVPD envía un código de autorización al extremo de autenticación de Adobe Pass.</li><li>La autenticación de Adobe Pass utiliza el código de autorización para solicitar un token de actualización y un token de acceso del extremo del token de la MVPD.</li><li>La MVPD envía una decisión de autenticación y la `hba_status` parámetro (true/false) en el `id_token`.</li><li>Se envía una llamada al extremo del perfil de usuario de MVPD para exponer el [clave hba_status en los metadatos del usuario](/help/authentication/user-metadata-feature.md#obtaining).</li><li>La MVPD establece el TTL del token de actualización en un valor acordado con MVPD y el Adobe establece el TTL del token de AuthN en un valor menor o igual que el valor del token de actualización.</li></ol> |
+| Se muestra una pantalla que persiste durante unos 3 segundos. Se puede mostrar una página intersticial que informe al usuario de que ha iniciado sesión automáticamente mediante su cuenta de MVPD. | <ol><li>AccessEnabler, que se instala en el lado del programador, envía una solicitud de autenticación (como una solicitud HTTP) al extremo de autenticación de Adobe Pass.</li><li>El extremo de autenticación de Adobe Pass redirige la solicitud al extremo de autenticación de MVPD. <br />**Nota:** La solicitud contiene el parámetro `hba_flag` (intento HBA = true) que indica que el MVPD debe intentar la autenticación HBA.</li><li>El extremo de autenticación MVPD envía un código de autorización al extremo de autenticación de Adobe Pass.</li><li>La autenticación de Adobe Pass utiliza el código de autorización para solicitar un token de actualización y un token de acceso del extremo del token de la MVPD.</li><li>La MVPD envía una decisión de autenticación y el parámetro `hba_status` (true/false) en `id_token`.</li><li>Se envía una llamada al extremo del perfil de usuario de MVPD para exponer la clave [hba_status en los metadatos del usuario](/help/authentication/user-metadata-feature.md#obtaining).</li><li>La MVPD establece el TTL del token de actualización en un valor acordado con MVPD y el Adobe establece el TTL del token de AuthN en un valor menor o igual que el valor del token de actualización.</li></ol> |
 | El usuario está autenticado y ahora puede navegar por el contenido titulado TV en todas partes. | El token de autenticación se pasa al usuario, que ahora puede examinar correctamente el sitio del programador. |
 
 #### Protocolo SAML {#saml-protocol}
@@ -108,16 +108,16 @@ Descripción del flujo de autenticación HBA para el protocolo de autenticación
 | Acciones del usuario | Acciones del sistema |
 |---|---|
 | El usuario navega al sitio del programador. Al intentar reproducir un vídeo, se muestra el selector de MVPD. El usuario selecciona su MVPD y hace clic en Iniciar sesión. | Se realiza una comprobación de los antecedentes. La MVPD aplica su conjunto de reglas para la detección de usuarios (por ejemplo, asignar la dirección IP del usuario a la dirección MAC de módems aprovisionados por el distribuidor o decodificadores conectados a banda ancha). |
-| Se muestra una pantalla que persiste durante unos 3 segundos. Se puede mostrar una página intersticial que informe al usuario de que ha iniciado sesión automáticamente mediante su cuenta de MVPD. | <ol><li>AccessEnabler, que se instala en el lado del programador, envía una solicitud de autenticación (como una solicitud HTTP) al extremo de autenticación de Adobe Pass.</li><li>El extremo de autenticación de Adobe Pass redirige la solicitud al extremo de autenticación de MVPD.</li><li>La MVPD debe enviar una decisión de autenticación en forma de respuesta SAML que debe contener el indicador HBA: hba_status (true/false).</li><li>Se envía una llamada al extremo del perfil de usuario de MVPD para exponer el [clave hba_status en los metadatos del usuario](/help/authentication/user-metadata-feature.md#obtaining).</li></ol> |
+| Se muestra una pantalla que persiste durante unos 3 segundos. Se puede mostrar una página intersticial que informe al usuario de que ha iniciado sesión automáticamente mediante su cuenta de MVPD. | <ol><li>AccessEnabler, que se instala en el lado del programador, envía una solicitud de autenticación (como una solicitud HTTP) al extremo de autenticación de Adobe Pass.</li><li>El extremo de autenticación de Adobe Pass redirige la solicitud al extremo de autenticación de MVPD.</li><li>La MVPD debe enviar una decisión de autenticación en forma de respuesta SAML que debe contener el indicador HBA: hba_status (true/false).</li><li>Se envía una llamada al extremo del perfil de usuario de MVPD para exponer la clave [hba_status en los metadatos del usuario](/help/authentication/user-metadata-feature.md#obtaining).</li></ol> |
 | El usuario está autenticado y ahora puede navegar por el contenido titulado TV en todas partes. | El token de autenticación se pasa al usuario, que ahora puede examinar correctamente el sitio del programador. |
 
 
 ## Cómo activar HBA {#how-to-activate-hba}
 
-* **Protocolo de OAuth:**
+* **Protocolo OAuth:**
    * Para habilitar HBA, consulte [Guía del usuario del panel de Adobe Pass TVE](/help/authentication/tve-dashboard-user-guide.md)
-* **Protocolo SAML:** La autenticación basada en el hogar se activa en el lado de MVPD. El programador o el Adobe no requieren ninguna acción.
-Para obtener más información sobre las MVPD que admiten la autenticación basada en el inicio, consulte [Estado de HBA para MVPD](/help/authentication/hba-status-mvpds.md).
+* **Protocolo SAML:** La autenticación basada en inicio está activada en el lado de MVPD. El programador o el Adobe no requieren ninguna acción.
+Para obtener más información sobre las MVPD que admiten la autenticación basada en inicio, consulte [Estado de HBA para MVPD](/help/authentication/hba-status-mvpds.md).
 
 ## FAQ {#faqs}
 
@@ -130,21 +130,21 @@ Para obtener más información sobre las MVPD que admiten la autenticación basa
 
 **Pregunta:** ¿Es necesario que los usuarios rellenen un nombre de usuario y una contraseña la primera vez que se autentican cuando HBA está habilitado?
 
-**Respuesta:** No, el nombre de usuario y la contraseña no son obligatorios.
+**Respuesta:** No se requieren el nombre de usuario y la contraseña.
 
 
 
 **Pregunta:** ¿Cómo se aplican los controles parentales?
 
-**Respuesta 1:** El Adobe puede deshabilitar el HBA para integraciones con canales que necesitan la aprobación del control parental.
+**Respuesta 1:** el Adobe puede deshabilitar el HBA para integraciones con canales que necesitan la aprobación del control parental.
 
-**Respuesta 2:** Adobe está trabajando con OATC en un documento UX que recomienda cómo configurar la experiencia HBA con controles parentales.
+**Respuesta 2:** El Adobe está trabajando con OATC en un documento UX que recomienda cómo configurar la experiencia HBA con controles parentales.
 
 
 
 **Pregunta:** ¿Los proveedores que admiten HBA tienen ventanas TTL más cortas para HBA que para la autenticación regular?
 
-**Respuesta:** La configuración del TTL es configurable. Se recomienda configurar un TTL más corto para los tokens de autenticación HBA a fin de evitar un mal manejo.
+**Respuesta:** La configuración de TTL es configurable. Se recomienda configurar un TTL más corto para los tokens de autenticación HBA a fin de evitar un mal manejo.
 
 
 ## Información útil {#useful-info}
@@ -152,7 +152,7 @@ Para obtener más información sobre las MVPD que admiten la autenticación basa
 * [Acceso instantáneo (HBA) Recommendations](http://www.ctamtve.com/instantaccess){target=_blank} - por CTAM
 * [Implementación de muestra de HBA en la aplicación del programador](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/HBA_Flow_Sample.pdf?dc=201604222139-1346){target=_blank} - por Adobe
   <!--* [Home Based Authentication User Experience Guidelines for TV Everywhere](http://oatc.us/Standards/DownloadRecommendedPractices.aspx){target=_blank} - by OATC-->
-* [Casos de uso y requisitos de autenticación basada en inicio](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/Defining%20TVE%20Home-Based%20Authentication%20(HBA)%20%20Use%20Cases%20and%20Requirements%20Recommended%20Practice%20Version%201_0%20FINAL%20DRAFT%20FOR%20BOARD%20APPROVAL.pdf){target=_blank} por OATC
+* [Casos de uso y requisitos de autenticación basada en el hogar](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/Defining%20TVE%20Home-Based%20Authentication%20(HBA)%20%20Use%20Cases%20and%20Requirements%20Recommended%20Practice%20Version%201_0%20FINAL%20DRAFT%20FOR%20BOARD%20APPROVAL.pdf){target=_blank} por OATC
 * [Infografía de autenticación basada en inicio](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf?dc=201604260953-2640){target=_blank} - por Adobe
 * [Autenticación mediante el protocolo OAuth 2.0](/help/authentication/authn-oauth2-protocol.md)
 * [Autenticación con MVPD de SAML](/help/authentication/authn-usecase.md)

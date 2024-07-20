@@ -1,14 +1,13 @@
 ---
 title: Punto de información de política
 description: Punto de información de política
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 964bb28d-cfef-4a37-b6c4-10cc59be0b47
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '227'
 ht-degree: 0%
 
 ---
-
-
 
 # Punto de información de política {#pip}
 
@@ -16,7 +15,7 @@ ht-degree: 0%
 >
 >Esta página está obsoleta, ya que se aplica a la versión anterior de la API, que ya no se recomienda para las nuevas integraciones
 
-El diagrama siguiente muestra el flujo en caso de que el cliente elija el **Punto de información de política**, en cuyo caso, CM se utiliza únicamente para consultar la actividad y toda la lógica de acceso está incrustada en la aplicación cliente):
+El diagrama siguiente muestra el flujo en caso de que el cliente opte por el **punto de información de directiva**, en cuyo caso CM se utiliza únicamente para consultar la actividad y toda la lógica de acceso está incrustada en la aplicación cliente):
 
 ![](assets/pip-workflow.png)
 
@@ -33,4 +32,3 @@ En pocas palabras, el flujo de mensajes habitual es el siguiente:
 1. Durante la reproducción de vídeo, la aplicación instrumentada realiza llamadas de Heartbeat al servicio de monitorización de concurrencia, lo que muestra que el usuario está consumiendo un vídeo en este momento.
 1. En cualquier otro momento, otras aplicaciones instrumentadas pueden realizar llamadas de consulta de estado al servicio de supervisión de simultaneidad, que devolverá la actividad del usuario actual.
 1. Al final de la reproducción de vídeo, la aplicación instrumentada puede realizar una llamada de Heartbeat con &quot;event=stop&quot;, lo que significa que el vídeo se ha detenido y que el flujo actual ya no debe contarse como un flujo activo.
-

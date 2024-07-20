@@ -11,11 +11,11 @@ ht-degree: 0%
 
 # [!UICONTROL General usage] informes {#general-usage-reports}
 
-[!UICONTROL Account IQ] los informes son herramientas de análisis básicas que permiten explorar en profundidad los datos para aislar [cohortes](/help/accountiq/product-concepts.md#segmet-def), identifique anomalías y comprenda las características de la cuenta.
+Los informes de [!UICONTROL Account IQ] son herramientas de análisis básicas que le permiten explorar en profundidad los datos para aislar [cohortes](/help/accountiq/product-concepts.md#segmet-def), identificar anomalías y comprender las características de la cuenta.
 
-[!UICONTROL General usage] La página Informes proporciona herramientas para crear métricas de subgrupos en función del número de dispositivos de cuenta en uso, las direcciones IP detectadas y sus respectivos códigos postales.
+La página de informes [!UICONTROL General usage] proporciona herramientas para crear métricas de subgrupos en función del número de dispositivos de cuenta en uso, las direcciones IP detectadas y sus respectivos códigos postales.
 
-Todos los informes se basan en el segmento actual seleccionado del [Segmentos e intervalo de tiempo](/help/accountiq/segments-timeinterval.md) panel. Puede ajustar la selección y reducirla aún más especificando umbrales (número de dispositivos, número de direcciones IP y número de códigos postales) en [Resumen de Instantáneas: Cuentas por encima de los umbrales](#snapshot-overview) panel.
+Todos los informes se basan en el segmento actual seleccionado en el panel [Segmentos e intervalo de tiempo](/help/accountiq/segments-timeinterval.md). Puede ajustar su selección y reducirla aún más especificando umbrales (número de dispositivos, número de direcciones IP y número de códigos postales) en el panel [Resumen de instantáneas: cuentas por encima de los umbrales](#snapshot-overview).
 
 ## Solicitudes de reproducción y suscriptores únicos {#playreq-uniquesubs}
 
@@ -26,7 +26,7 @@ Los gráficos de líneas aquí le proporcionan una vista de los cambios a lo lar
 ![](assets/d2c-line-graph-gu.png)
 
 
-*Solicitudes de reproducción/suscriptores únicos para servicios D2C*
+*Reproducir solicitudes/suscriptores únicos para los servicios de D2C*
 
 +++
 
@@ -35,7 +35,7 @@ Los gráficos de líneas aquí le proporcionan una vista de los cambios a lo lar
 ![](assets/progr-line-graph-gu.png)
 
 
-*Solicitudes de reproducción/suscriptores únicos para programadores*
+*Reproducir solicitudes/suscriptores únicos para programadores*
 
 +++
 
@@ -51,17 +51,17 @@ Los gráficos de líneas aquí le proporcionan una vista de los cambios a lo lar
 
 El eje x representa el tiempo en función del intervalo actual y el eje y representa las métricas básicas de actividad del suscriptor durante ese período. Los gráficos de líneas le ayudan a visualizar y comparar la actividad de los suscriptores del segmento actual. Según la versión de Account IQ, las métricas incluyen:
 
-* **AuthN OK**: número de autenticaciones correctas. Más información sobre [AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
+* **AuthN OK**: Número de autenticaciones correctas. Más información sobre [AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def).
 
 * **AuthZ OK**: Número de autorizaciones correctas. Más información sobre [AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
 
-* **Solicitudes de reproducción**: Número de solicitudes de reproducción. Más información sobre [Solicitudes de reproducción](/help/accountiq/product-concepts.md#play-requests-def).
+* **Solicitudes de reproducción**: Número de solicitudes de reproducción. Más información sobre [solicitudes de reproducción](/help/accountiq/product-concepts.md#play-requests-def).
 
 * **Suscriptores únicos**: Número de suscriptores únicos correctos. Más información sobre [Suscriptores únicos](/help/accountiq/product-concepts.md#unique-subscriber-def).
 
 >[!NOTE]
 >
->La disponibilidad de las métricas varía según la versión de Account IQ.
+>La disponibilidad de las métricas varía en función de la versión de Account IQ.
 
 ## Resumen de instantáneas: cuentas por encima de los umbrales {#snapshot-overview}
 
@@ -73,7 +73,7 @@ Ajuste los análisis e informes con este filtro adicional para establecer varios
 
 * Umbral de número de códigos postales
 
-Cuando se actualizan los valores de umbral en [Cuentas basadas en segmentos en los umbrales seleccionados](#account-segments-basedon-segments) , verá el efecto en:
+Cuando actualice los valores de umbral en [Cuentas basadas en segmentos en el panel de umbrales seleccionados](#account-segments-basedon-segments), verá el efecto en:
 
 * [Dispositivos por semana (o mes) por cuenta](#devices-week-account)
 
@@ -85,11 +85,11 @@ Cuando se actualizan los valores de umbral en [Cuentas basadas en segmentos en l
 
 >[!NOTE]
 >
->Cada umbral se establece con un valor predeterminado de 4. Lo que significa que la página Uso general muestra un análisis para los suscriptores que utilizan más de cuatro dispositivos y consumen contenido de más de cuatro direcciones IP diferentes. *y* más de cuatro códigos postales diferentes.
+>Cada umbral se establece con un valor predeterminado de 4. Lo que significa que la página Uso general muestra un análisis para los suscriptores que usan más de cuatro dispositivos y consumen contenido de más de cuatro direcciones IP diferentes, *y* más de cuatro códigos postales diferentes.
 
 ### Cuentas basadas en segmentos según los umbrales seleccionados {#account-segments-basedon-segments}
 
-El **Cuentas basadas en segmentos en los umbrales seleccionados** El panel le ofrece opciones para establecer umbrales (entre 1 y 10) para el número de dispositivos, el número de direcciones IP y el número de códigos postales.
+El panel **Cuentas basadas en segmentos en umbrales seleccionados** le ofrece opciones para establecer umbrales (entre 1 y 10) para el número de dispositivos, el número de direcciones IP y el número de códigos postales.
 
 El gráfico muestra lo siguiente:
 
@@ -121,7 +121,7 @@ El anillo proporciona una vista alternativa de los dispositivos que utilizan las
 
 ## Ubicaciones por semana (o mes) por cuenta {#locations-week-account}
 
-Similar a la métrica para [Dispositivos por semana (o mes) por cuenta](#devices-week-account), la métrica Ubicaciones por semana (o mes) y por cuenta permite analizar el uso de la cuenta del suscriptor desde diferentes ubicaciones. El eje x representa el número de cuentas y el eje y el número de ubicaciones.
+Similar a la métrica para [Dispositivos por semana (o mes) por cuenta](#devices-week-account), la métrica Ubicaciones por semana (o mes) por cuenta le permite analizar el uso de la cuenta de suscriptor desde diferentes ubicaciones. El eje x representa el número de cuentas y el eje y el número de ubicaciones.
 
 ![](assets/graph-loc-week-acc.png)
 
@@ -135,7 +135,7 @@ Una vez establecido el umbral para el número de ubicaciones, puede utilizar el 
 
 ## IP por semana (o mes) por cuenta {#ip-week-account}
 
-Similar a la métrica para **Número de ubicaciones por semana por cuenta**, el **Número de direcciones IP por semana por cuenta** Esta métrica le permite evaluar la cantidad de cambio en el origen de la transmisión para el segmento actual.
+Similar a la métrica para **Número de ubicaciones por semana por cuenta**, la métrica **Número de direcciones IP por semana por cuenta** le permite evaluar la cantidad de cambio en el origen de la transmisión para el segmento actual.
 
 El eje x representa el número de cuentas y el eje y el número de direcciones IP.
 
@@ -151,13 +151,13 @@ Una vez definido un segmento y establecido el umbral para el número de direccio
 
 ## Vista del historial de segmentos de cuentas {#account-segment-historical-view}
 
-El gráfico de barras Vista histórica le ayuda a comparar las métricas de uso en diferentes intervalos de tiempo. Además, traza colectivamente las distintas métricas de uso, como [Dispositivos por semana (o mes) por cuenta](#devices-week-account), [Ubicaciones por semana (o mes) por cuenta](#locations-week-account), y [IP por semana (o mes) por cuenta](#ip-week-account).
+El gráfico de barras Vista histórica le ayuda a comparar las métricas de uso en diferentes intervalos de tiempo. Además, representa colectivamente las distintas métricas de uso, tales como [Dispositivos por semana (o mes) por cuenta](#devices-week-account), [Ubicaciones por semana (o mes) por cuenta](#locations-week-account) y [IP por semana (o mes) por cuenta](#ip-week-account).
 
 * El eje x representa el intervalo de tiempo y el eje y representa el número de cuentas de suscriptor, dispositivos, ubicaciones e IP.
 
 * Las barras de color naranja significan segmentos en varios intervalos de tiempo.
 
-* El gráfico de líneas representa los cambios en [Dispositivos por semana (o mes) por cuenta](#devices-week-account), [Ubicaciones por semana (o mes) por cuenta](#locations-week-account), y [IP por semana (o mes) por cuenta](#ip-week-account) valores a lo largo del intervalo de tiempo en función del umbral.
+* El gráfico de líneas representa los cambios en [Dispositivos por semana (o mes) por cuenta](#devices-week-account), [Ubicaciones por semana (o mes) por cuenta](#locations-week-account) y [direcciones IP por semana (o mes) por cuenta](#ip-week-account) valores a lo largo del intervalo de tiempo basado en el umbral.
 
 ![](assets/historical-view.png)
 

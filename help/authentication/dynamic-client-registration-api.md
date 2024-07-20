@@ -4,7 +4,7 @@ description: API de registro de cliente dinámico
 exl-id: 06a76c71-bb19-4115-84bc-3d86ebcb60f3
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '930'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 Actualmente, la autenticación de Adobe Pass identifica y registra las aplicaciones de dos formas:
 
-* los clientes basados en el explorador se registran mediante permitido [lista de dominios](/help/authentication/programmer-overview.md)
+* los clientes basados en el explorador se han registrado mediante la [lista de dominios](/help/authentication/programmer-overview.md) permitida
 * los clientes de aplicaciones nativas, como las aplicaciones de iOS y Android, se registran mediante el mecanismo de solicitante firmado.
 
 La autenticación de Adobe Pass propone un nuevo mecanismo para registrar aplicaciones. Este mecanismo se describe en los párrafos siguientes.
@@ -28,11 +28,13 @@ La autenticación de Adobe Pass propone un nuevo mecanismo para registrar aplica
 
 ### Razones técnicas {#reasons}
 
-El mecanismo de autenticación de la autenticación de Adobe Pass dependía de las cookies de sesión, pero debido a [Fichas personalizadas de Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} and [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}Sin embargo, este objetivo ya no se puede lograr.
+El mecanismo de autenticación de la autenticación de Adobe Pass dependía de las cookies de sesión, pero debido a [Android Chrome Custom Tabs](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} y [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}, este objetivo ya no se puede lograr.
 
-Dadas estas limitaciones, el Adobe introduce un nuevo mecanismo de registro para todos sus clientes. Se basa en el documento RFC de OAuth 2.0 y consta de los siguientes pasos:
+Dadas estas limitaciones, el Adobe introduce un nuevo mecanismo de registro para todos sus clientes. Se basa en el documento RFC de OAuth 2.0 y consiste en
+de los pasos siguientes:
 
-1. Recuperación de la declaración del software desde el panel de TVE
+1. Recuperación de la declaración del software de TVE
+Tablero
 1. Obteniendo credenciales del cliente
 1. Obtención de token de acceso
 
@@ -44,7 +46,7 @@ Para cada aplicación que publique, deberá obtener una declaración de software
 >
 >Al utilizar una instrucción de software, el mecanismo de ID de solicitante firmado ya no será necesario.
 
-Para obtener más información sobre cómo crear instrucciones de software, visite [Registro de cliente en el panel de TVE](/help/authentication/dynamic-client-registration.md).
+Para obtener más información sobre cómo crear instrucciones de software, visite [Registro de cliente en TVE Dashboard](/help/authentication/dynamic-client-registration.md).
 
 ### Obtención de credenciales de cliente {#clientCredentials}
 
@@ -160,14 +162,14 @@ Después de recuperar el identificador de cliente único (ID de cliente y secret
 **Solicitud**
 
 
-| **llamada HTTP** | |
+| **Llamada HTTP** | |
 | --- | --- |
 | ruta | `/o/client/token` |
 | método | POST |
 
 | **parámetros de solicitud** | |
 | --- | --- |
-| `grant_type` | Recibido en el proceso de registro de cliente.<br/> **Valor aceptado**<br/>`client_credentials`: se utiliza para clientes no seguros, como el SDK para Android. |
+| `grant_type` | Recibido en el proceso de registro de cliente.<br/> **Valor aceptado**<br/>`client_credentials`: se usa para clientes no seguros, como el SDK de Android. |
 | `client_id` | Identificador de cliente obtenido en el proceso de registro de cliente. |
 | `client_secret` | Identificador de cliente obtenido en el proceso de registro de cliente. |
 
@@ -177,7 +179,7 @@ Después de recuperar el identificador de cliente único (ID de cliente y secret
 | --- | --- | --- |
 | `access_token` | El valor del token de acceso que debe utilizar para llamar a las API de Adobe Pass. | obligatorio |
 | `expires_in` | Tiempo en segundos hasta que caduca access_token | obligatorio |
-| `token_type` | El tipo de token **portador** | obligatorio |
+| `token_type` | El tipo del token **bearer** | obligatorio |
 | `created_at` | La hora de emisión del token | obligatorio |
 | **encabezados de respuesta** | | |
 | `Content-Type` | application/json | obligatorio |
@@ -232,7 +234,7 @@ Pragma: no-cache
 
 ## Realización de solicitudes de autenticación {#autheticationRequests}
 
-Utilice el token de acceso para realizar Adobe Pass [Llamadas de API de autenticación](/help/authentication/initiate-authentication.md). Para ello, es necesario añadir el token de acceso a la solicitud de API de una de las siguientes maneras:
+Use el token de acceso para realizar llamadas a la API de autenticación [de Adobe Pass](/help/authentication/initiate-authentication.md). Para ello, es necesario añadir el token de acceso a la solicitud de API de una de las siguientes maneras:
 
 * agregando un nuevo parámetro de consulta a la solicitud. Ese nuevo parámetro se llama **access_token**.
 

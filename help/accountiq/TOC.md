@@ -12,7 +12,7 @@ ht-degree: 28%
 
 # Ayuda de Account IQ {#aiq-help}
 
-+ [Resumen de Account IQ](/help/accountiq/home.md)
++ [Información general de Account IQ](/help/accountiq/home.md)
 + [Versiones de Account IQ](/help/accountiq/versions-aiq.md)
 + [Introducción a Account IQ](/help/accountiq/get-started.md)
 + [Trabajo con segmentos](/help/accountiq/work-with-segments.md)

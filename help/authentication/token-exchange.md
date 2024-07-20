@@ -21,15 +21,15 @@ ht-degree: 0%
 
 ## Extremos de API de REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 Permite &quot;intercambiar&quot; un perfil SSO de Platform por un token de Adobe.
 
-| Extremo | Llamado  </br>Por | Entrada   </br>Parámetros | HTTP  </br>Método | Respuesta | HTTP  </br>Respuesta |
+| Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/tokens/authn | Aplicación de streaming</br></br>o</br></br>Servicio de programador | 1. solicitante (obligatorio)</br>    </br>2.  deviceId (obligatorio)</br>    </br>3.  mvpd (obligatorio)</br>    </br>4.  deviceType (obligatorio)</br>    </br>5.  SAMLResponse (obligatorio)</br>    </br>6.  deviceUser (Obsoleto)</br>    </br>7.  appId (obsoleto) | POST | La respuesta correcta será un 204 Sin contenido, que indica que el token se creó correctamente y está listo para usarse en los flujos de autenticación. | 204 - Sin contenido   </br>400: Solicitud incorrecta |
+| &lt;SP_FQDN>/api/v1/tokens/authn | Servicio de programador </br></br>o</br></br>de aplicación de streaming | 1. solicitante (obligatorio)</br>    </br>2.  deviceId (obligatorio)</br>    </br>3.  mvpd (obligatorio)</br>    </br>4.  deviceType (obligatorio)</br>    </br>5.  SAMLResponse (obligatorio)</br>    </br>6.  deviceUser (Obsoleto)</br>    </br>7.  appId (obsoleto) | POST | La respuesta correcta será un 204 Sin contenido, que indica que el token se creó correctamente y está listo para usarse en los flujos de autenticación. | 204 - Sin contenido   </br>400 - Solicitud incorrecta |
 
 
 | Parámetro de entrada | Descripción |
@@ -47,7 +47,7 @@ Permite &quot;intercambiar&quot; un perfil SSO de Platform por un token de Adobe
 | solicitante | Identificador de solicitante del programador para el que es válida esta operación. |
 | deviceId | El ID de dispositivo bytes. |
 | mvpd | Id de MVPD para el que es válida esta operación. |
-| deviceType | La plataforma de Apple para la que intentamos obtener una solicitud de perfil.  Cualquiera **iOS** o **tvOS**. |
+| deviceType | La plataforma de Apple para la que intentamos obtener una solicitud de perfil.  **iOS** o **tvOS**. |
 | SAMLResponse | El perfil real devuelto por el SSO de Platform. |
 | _deviceUser_ | El identificador de usuario del dispositivo. |
 | _appId_ | El nombre o ID de la aplicación. |

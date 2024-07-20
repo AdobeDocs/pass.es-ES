@@ -4,7 +4,7 @@ description: Autorización de comprobación preliminar de MVPD
 exl-id: da2e7150-b6a8-42f3-9930-4bc846c7eee9
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '750'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,9 @@ La &quot;autorización de comprobación preliminar&quot; es una comprobación de
 
 Actualmente, la autenticación de Adobe Pass admite la autorización de comprobaciones de dos formas para MVPD, ya sea mediante atributos de respuesta AuthN o a través de una solicitud AuthZ multicanal.  Los siguientes escenarios describen el costo/beneficio de las diferentes maneras de implementar la autorización de comprobaciones:
 
-* **Escenario de mejor caso** - La MVPD proporciona la lista de recursos preautorizados durante la fase de autorización (Multi-channel AuthZ).
-* **Peor escenario posible** - Si una MVPD no admite ninguna forma de autorización de varios recursos, el servidor de autenticación de Adobe Pass realiza una llamada de autorización a la MVPD para cada recurso de la lista de recursos. Este escenario tiene un impacto (proporcional al número de recursos) en el tiempo de respuesta de la solicitud de autorización de verificación previa. Puede aumentar la carga en los servidores de Adobe y MVPD, lo que provoca problemas de rendimiento. Además, generará eventos de solicitudes de autorización / respuestas sin la necesidad real de una obra de teatro.
-* **Obsoleto** - La MVPD proporciona la lista de recursos preautorizados durante la fase de autenticación, por lo que no se necesitarán llamadas de red, ni siquiera la solicitud de verificación previa, ya que la lista se almacena en caché en el cliente.
+* **Mejor escenario posible**: la MVPD proporciona la lista de recursos autorizados previamente durante la fase de autorización (autenticación multicanal).
+* **Peor escenario posible**: si una MVPD no admite ninguna forma de autorización de varios recursos, el servidor de autenticación de Adobe Pass realiza una llamada de autorización a la MVPD para cada recurso de la lista de recursos. Este escenario tiene un impacto (proporcional al número de recursos) en el tiempo de respuesta de la solicitud de autorización de verificación previa. Puede aumentar la carga en los servidores de Adobe y MVPD, lo que provoca problemas de rendimiento. Además, generará eventos de solicitudes de autorización / respuestas sin la necesidad real de una obra de teatro.
+* **Obsoleto**: la MVPD proporciona la lista de recursos preautorizados durante la fase de autenticación, por lo que no se necesitarán llamadas de red, ni siquiera la solicitud de comprobación preliminar, ya que la lista se almacena en caché en el cliente.
 
 Aunque las MVPD no tienen que admitir la autorización de comprobaciones, las secciones siguientes describen algunos métodos de autorización de comprobaciones que puede admitir la autenticación de Adobe Pass antes de volver al peor escenario anterior.
 

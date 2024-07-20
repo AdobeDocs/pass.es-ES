@@ -4,7 +4,7 @@ description: Compatibilidad con inicio de sesión único
 exl-id: edc3719e-c627-464c-9b10-367a425698c6
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1135'
+source-wordcount: '1144'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ Una vez que un usuario inicia sesión con sus credenciales de MVPD, la autentica
 | Android | Sí | Token de autenticación compartido (Adobe SSO) | Todo | Si el usuario no acepta la solicitud de permiso WRITE_EXTERNAL_STORAGE, la biblioteca utilizará un almacenamiento local limitado. Esto implica que no habrá SSO entre diferentes aplicaciones al utilizar el almacenamiento local. |
 | tvOS - nuevo Apple TV | Sí | Platform SSO: intercambio de tokens | Según la compatibilidad con Apple, la lista está aquí | Desde tvOS 10, Apple y Adobe introdujeron la funcionalidad SSO para los programadores participantes y las MVPD. Al utilizar el SDK de tvOS de Adobe más reciente o la API de REST sin cliente de Adobe e implementar la funcionalidad de SSO de Apple, puede beneficiarse de SSO en dispositivos tvOS. Más detalles sobre el SDK de tvOS: aquí y aquí, y más detalles sobre la implementación sin cliente aquí. |
 | Roku | Sí | Token de autenticación compartido (Adobe SSO) | La lista completa de cobertura significativa se proporcionará pronto. | Roku SSO funciona de forma predeterminada con la API sin cliente para todos los clientes, respetando las directrices de Roku, no se requiere implementación especial. SSO se basa en la información de identificación del dispositivo que Roku envía de forma segura al Adobe. |
-| Amazon FireTV | Sí | Token de autenticación compartido (Adobe SSO) | La lista completa de cobertura significativa se proporcionará pronto. | El SDK de FireTV es compatible con el inicio de sesión único basado en las capacidades de Android. El SSO en esta plataforma solo es posible entre aplicaciones que utilicen el SDK de Adobe FireTV por ahora. Obtenga más información acerca del nuevo SDK de FireTV aquí. Las aplicaciones FireTV implementadas sobre la API sin cliente podrán beneficiarse del SSO en el año 2018. |
+| Amazon FireTV | Sí | Token de autenticación compartido (Adobe SSO) | La lista completa de cobertura significativa se proporcionará pronto. | El SDK de FireTV proporciona compatibilidad con el inicio de sesión único en función de las capacidades de Android. El SSO en esta plataforma solo es posible entre aplicaciones que utilicen el SDK de Adobe FireTV por ahora. Obtenga más información acerca del nuevo SDK de FireTV aquí. Las aplicaciones FireTV implementadas sobre la API sin cliente podrán beneficiarse del SSO en el año 2018. |
 | Xbox 360 | No |                                         |                                                     | No hay ningún ID de dispositivo que podamos aprovechar. Hay un ID de aplicación, por lo que los usuarios no tienen que autenticarse cada vez. |
 | Xbox One | No |                                         |                                                     | No hay ningún ID de dispositivo que podamos aprovechar. Hay un ID de aplicación, por lo que los usuarios no tienen que autenticarse cada vez. |
 | Windows 8/10 | No |                                         |                                                     | No hay ningún ID de dispositivo que podamos aprovechar. Hay un ID de aplicación, por lo que los usuarios no tienen que autenticarse cada vez. |
@@ -42,17 +42,17 @@ Una vez que un usuario inicia sesión con sus credenciales de MVPD, la autentica
 
 ### Notas sobre Xbox 360 y Xbox One {#notes-xbox-360}
 
-* **Xbox 360**- Xbox 360 se basa en el servicio en vivo para proporcionar el token que incrusta el ID del dispositivo. Las capas del servicio activo en el valor appID para deviceID, lo que lo convierte en ámbito solo de la aplicación. Para Xbox 360, Microsoft proporcionó al Adobe una biblioteca Java para ayudarle a analizar el token.
+* **Xbox 360**- Xbox 360 depende del servicio en vivo para proporcionar el token que incrusta el ID del dispositivo. Las capas del servicio activo en el valor appID para deviceID, lo que lo convierte en ámbito solo de la aplicación. Para Xbox 360, Microsoft proporcionó al Adobe una biblioteca Java para ayudarle a analizar el token.
 
-* **Xbox One**- Se emitirá un token web JSON cifrado con el certificado/clave del editor y firmado por Microsoft. El Adobe extrae el deviceID de un parámetro denominado DPI (ID de dispositivo por pares), distinto del PDID del parámetro de Xbox 360 (ID de dispositivo asociado). El PDID también existe en Xbox One, pero está pensado para ser reemplazado por este nuevo parámetro &quot;ID de dispositivo en pares&quot; (DPI).
+* **Xbox One**: se emitirá un token web JSON cifrado con el certificado o la clave del editor y firmado por Microsoft. El Adobe extrae el deviceID de un parámetro denominado DPI (ID de dispositivo por pares), distinto del PDID del parámetro de Xbox 360 (ID de dispositivo asociado). El PDID también existe en Xbox One, pero está pensado para ser reemplazado por este nuevo parámetro &quot;ID de dispositivo en pares&quot; (DPI).
 
 
 ### Desactivación de SSO {#disable-sso}
 
 En determinadas situaciones, algunas aplicaciones o sitios querrán deshabilitar el SSO para satisfacer los casos comerciales avanzados.
 
-* **Para JS y SDK nativos** : el equipo de soporte de autenticación de Adobe Pass puede deshabilitar el SSO para un par de ID de solicitante/MVPD. No es necesario trabajar en los sitios ni en las aplicaciones nativas.  Una vez que el equipo de soporte de Autenticación de Adobe Pass ha deshabilitado el SSO, las autenticaciones realizadas mediante el par RequestorId / MVPD especificado no se compartirán con sitios o aplicaciones que utilicen ID de solicitante diferentes. Además, las autenticaciones existentes con distintos ID de solicitante no serán válidas para la combinación ID de solicitante/MVPD en la que se deshabilitó SSO. Técnicamente, la desactivación de SSO se realiza enlazando el token AuthN a la combinación específica de ID de solicitante/MVPD.
-* **Para la API sin cliente** : Puede deshabilitar el SSO en el flujo de autenticación sin cliente especificando un parámetro appId no vacío en las llamadas REST. Puede utilizar cualquier cadena como valor, siempre que esa cadena sea única para el ID del solicitante. Tenga en cuenta que para la API sin cliente, el programador/implementador debe cambiar el sitio o la aplicación para añadir este parámetro específico del solicitante.
+* **Para JS y SDK nativos**: el equipo de soporte de autenticación de Adobe Pass puede deshabilitar SSO para un par ID de solicitante/MVPD. No es necesario trabajar en los sitios ni en las aplicaciones nativas.  Una vez que el equipo de soporte de Autenticación de Adobe Pass ha deshabilitado el SSO, las autenticaciones realizadas mediante el par RequestorId / MVPD especificado no se compartirán con sitios o aplicaciones que utilicen ID de solicitante diferentes. Además, las autenticaciones existentes con distintos ID de solicitante no serán válidas para la combinación ID de solicitante/MVPD en la que se deshabilitó SSO. Técnicamente, la desactivación de SSO se realiza enlazando el token AuthN a la combinación específica de ID de solicitante/MVPD.
+* **Para la API sin cliente**: puede deshabilitar el SSO en el flujo de autenticación sin cliente especificando un parámetro appId no vacío en las llamadas REST. Puede utilizar cualquier cadena como valor, siempre que esa cadena sea única para el ID del solicitante. Tenga en cuenta que para la API sin cliente, el programador/implementador debe cambiar el sitio o la aplicación para añadir este parámetro específico del solicitante.
 
 >[!IMPORTANT]
 >

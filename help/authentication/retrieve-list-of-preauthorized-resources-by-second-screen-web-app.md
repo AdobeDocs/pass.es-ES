@@ -21,15 +21,15 @@ ht-degree: 0%
 
 ## Extremos de API de REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -40,9 +40,9 @@ Una solicitud a la autenticación de Adobe Pass para obtener la lista de recurso
 Existen dos conjuntos de API: un conjunto para la aplicación de streaming o el servicio de programador y otro para la aplicación web de segunda pantalla. Esta página describe la API para la aplicación AuthN.
 
 
-| Extremo | Llamado  </br>Por | Entrada   </br>Parámetros | HTTP  </br>Método | Respuesta | HTTP  </br>Respuesta |
+| Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/preauthorize/{código de registro} | Módulo AuthN | 1. código de registro  </br>    (Componente Ruta)</br>2.  solicitante (obligatorio)</br>3.  lista de recursos (obligatorio) | GET | XML o JSON que contienen decisiones individuales de preautorización o detalles de error. Consulte los ejemplos siguientes. | 200 - Éxito</br></br>400: Solicitud incorrecta</br></br>401 - No autorizado</br></br>405: método no permitido  </br></br>412: error de condición previa</br></br>500 - Error interno del servidor |
+| &lt;SP_FQDN>/api/v1/preauthorize/{código de registro} | Módulo AuthN | 1. código de registro </br>    (Componente de ruta de acceso)</br>2.  solicitante (obligatorio)</br>3.  lista de recursos (obligatorio) | GET | XML o JSON que contienen decisiones individuales de preautorización o detalles de error. Consulte los ejemplos siguientes. | 200 - Correcto</br></br>400 - Solicitud incorrecta</br></br>401 - No autorizado</br></br>405 - Método no permitido </br></br>412 - Error de condición previa</br></br>500 - Error interno del servidor |
 
 
 

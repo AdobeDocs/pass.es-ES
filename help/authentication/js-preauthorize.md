@@ -1,10 +1,10 @@
 ---
 title: Preautorizar
-description: Autorización previa de JavaScript
+description: JavaScript preautorizar
 exl-id: b7493ca6-1862-4cea-a11e-a634c935c86e
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '1499'
+source-wordcount: '1465'
 ht-degree: 0%
 
 ---
@@ -23,61 +23,61 @@ En caso de que se produzca un error inesperado (por ejemplo, un problema de red 
 
 ### public preauthorize(solicitud: PreauthorizeRequest, devolución de llamada: AccessEnablerCallback&lt;any>): void {#preauth-method}
 
-**Descripción:** Las aplicaciones deben utilizar este método para obtener las decisiones de autorización previa (informativas) del usuario autenticado del servicio de autenticación de Adobe Pass para ver recursos protegidos específicos, con el propósito principal de decorar la interfaz de usuario de la aplicación (por ejemplo, indicar el estado de acceso con iconos de bloqueo y desbloqueo).
+**Descripción:** este método lo deben usar las aplicaciones para obtener las decisiones de autorización previa (informativas) del usuario autenticado del servicio de autenticación de Adobe Pass para ver recursos protegidos específicos, con el propósito principal de decorar la interfaz de usuario de la aplicación (por ejemplo, indicar el estado de acceso con iconos de bloqueo y desbloqueo).
 
 **Disponibilidad:** v4.4.0+
 
 **Parámetros:**
 
-* `PreauthorizeRequest`: objeto de creación utilizado para definir la solicitud
-* `AccessEnablerCallback`: llamada de retorno utilizada para devolver la respuesta de API
+* `PreauthorizeRequest`: objeto de generador utilizado para definir la solicitud
+* `AccessEnablerCallback`: la llamada de retorno se utilizó para devolver la respuesta de API
 * `PreauthorizeResponse`: objeto utilizado para devolver el contenido de respuesta de API
 
 ### class PreauthorizeRequestBuilder {#preath-req-builder-class}
 
-#### setResources(resources: string)[]): PreauthorizeRequestBuilder {#set-res-preath-req-buildr}
+#### setResources(resources: string[]): PreauthorizeRequestBuilder {#set-res-preath-req-buildr}
 
 * Establece la lista de recursos para los que desea obtener decisiones de preautorización.
 * Es obligatorio establecerlo para el uso de la API preautorizada.
 * Cada elemento de la lista debe ser una cadena que represente el valor del ID de recurso o el fragmento RSS de medios que debe acordarse con MVPD.
-* Este método establece la información solo en el contexto de la actual `PreauthorizeRequestBuilder` instancia de objeto, que es el receptor de esta llamada al método.
+* Este método establece la información solamente en el contexto de la instancia de objeto `PreauthorizeRequestBuilder` actual, que es el receptor de esta llamada al método.
 
-* Para generar una `PreauthorizeRequest` puede echar un vistazo a `PreauthorizeRequestBuilder`Método de:
+* Para generar un(a) `PreauthorizeRequest` real(a), puede echar un vistazo al método de `PreauthorizeRequestBuilder`:
 
 ```JavaScript
   build(): PreauthorizeRequest
 ```
 
 * `@param {string[]}` recursos. La lista de recursos para los que desea obtener decisiones de preautorización.
-* `@returns {PreauthorizeRequestBuilder}` La referencia a lo mismo `PreauthorizeRequestBuilder` instancia de objeto, que es el receptor de la llamada al método.
+* `@returns {PreauthorizeRequestBuilder}` La referencia a la misma instancia de objeto `PreauthorizeRequestBuilder`, que es el receptor de la llamada al método.
 * Esto se hace para permitir la creación del encadenamiento de métodos.
 
 #### disableFeatures(...features: string[]): PreauthorizeRequestBuilder {#disabl-featres-preauth-req-buildr}
 
 * Establece las funciones que desea que se deshabiliten al obtener decisiones de preautorización.
-* Esta función establece la información solo en el contexto de la actual `PreauthorizeRequestBuilder` instancia de objeto, que es el receptor de esta llamada de función.
-* Para generar una `PreauthorizeRequest` puede echar un vistazo a `PreauthorizeRequestBuilder`Función de:
+* Esta función establece la información solamente en el contexto de la instancia de objeto `PreauthorizeRequestBuilder` actual, que es el receptor de esta llamada de función.
+* Para generar un(a) `PreauthorizeRequest` real(a), puede echar un vistazo a la función de `PreauthorizeRequestBuilder`:
 
 ```JavaScript
 public func build() -> PreauthorizeRequest
 ```
 
-* `@param {string[]}` funciones. El conjunto de funciones que desea que se deshabiliten.
-* `@returns` La referencia a lo mismo `PreauthorizeRequestBuilder` instancia de objeto, que es el receptor de la llamada a la función.
+* `@param {string[]}` características. El conjunto de funciones que desea que se deshabiliten.
+* `@returns` La referencia a la misma instancia de objeto `PreauthorizeRequestBuilder`, que es el receptor de la llamada de función.
 * Lo hace para permitir la creación de cadenas de funciones.
 
 #### build(): PreauthorizeRequest {#preauth-req}
 
-* Crea y recupera la referencia de un nuevo `PreauthorizeRequest` instancia de objeto.
-* Este método crea una instancia nueva `PreauthorizeRequest` cada vez que se llama a.
-* Este método utiliza los valores establecidos de antemano en el contexto de la actual `PreauthorizeRequestBuilder` instancia de objeto, que es el receptor de esta llamada al método.
+* Crea y recupera la referencia de una nueva instancia de objeto `PreauthorizeRequest`.
+* Este método crea una instancia de un nuevo objeto `PreauthorizeRequest` cada vez que se realiza la llamada.
+* Este método utiliza los valores establecidos de antemano en el contexto de la instancia de objeto `PreauthorizeRequestBuilder` actual, que es el receptor de esta llamada al método.
 * Tenga en cuenta que este método no produce ningún efecto secundario,
-* por lo tanto, no altera el estado del SDK ni el estado del `PreauthorizeRequestBuilder` instancia de objeto, que es el receptor de esta llamada al método.
-* Significa que las llamadas sucesivas de este método para el mismo receptor crearán nuevas llamadas diferentes `PreauthorizeRequest` instancias de objeto, pero que tengan la misma información, en caso de que los valores se establezcan en `PreauthorizeRequestBuilder` no se ha modificado entre las llamadas de.
+* por lo tanto, no altera el estado del SDK ni el estado de la instancia del objeto `PreauthorizeRequestBuilder`, que es el receptor de esta llamada de método.
+* Significa que las llamadas sucesivas de este método para el mismo receptor crearán diferentes instancias de objeto `PreauthorizeRequest` nuevas, pero con la misma información, en caso de que los valores establecidos en `PreauthorizeRequestBuilder` no se hayan modificado entre las llamadas.
 * Si no necesita actualizar ninguna de la información proporcionada (recursos y almacenamiento en caché), puede reutilizar la instancia PreauthorizeRequest para varios usos de la API preautorizada.
 * `@returns {PreauthorizeRequest}`
 
-### interfaz AccessEnablerCallback&lt;t> {#interface-access-enablr-callback}
+### interface AccessEnablerCallback&lt;T> {#interface-access-enablr-callback}
 
 #### onResponse(resultado: T); {#on-response-result}
 
@@ -96,9 +96,9 @@ public func build() -> PreauthorizeRequest
 #### estado público: estado; {#public-status}
 
 * Devuelve: información adicional de estado (estado) en caso de error.
-* Podría contener un `null` valor.
+* Puede contener un valor `null`.
 
-#### decisiones públicas: decisión[]; {#public-decisions}
+#### decisiones públicas: Decisión[]; {#public-decisions}
 
 * Devuelve: la lista de decisiones de preautorización. Una decisión para cada recurso.
 * La lista puede estar vacía en caso de error.
@@ -108,46 +108,46 @@ public func build() -> PreauthorizeRequest
 #### estatus público: número; {#public-status-numbr}
 
 * El código de estado de respuesta HTTP tal como se documenta en RFC 7231.
-* Podría ser 0 en caso de que la variable `Status` proviene del SDK en lugar de los servicios de autenticación de Adobe Pass.
+* Podría ser 0 si `Status` procede del SDK en lugar de los servicios de autenticación de Adobe Pass.
 
 #### código público: número; {#public-code-numbr}
 
 * El código de error estándar de los servicios de autenticación de Adobe Pass.
-* Puede contener una cadena vacía o un `null` valor.
+* Puede contener una cadena vacía o un valor `null`.
 
 #### public message: string; {#public-msg-string}
 
 * El mensaje detallado que, en algunos casos, proporcionan los puntos finales de autorización de MVPD o las reglas de degradación del Programador.
-* Puede contener una cadena vacía o un `null` valor.
+* Puede contener una cadena vacía o un valor `null`.
 
 #### public details: string; {#public-details-strng}
 
 * Contiene un mensaje detallado que, en algunos casos, lo proporcionan los puntos finales de autorización de MVPD o las reglas de degradación del programador.
-* Puede contener una cadena vacía o un `null` valor.
+* Puede contener una cadena vacía o un valor `null`.
 
 
 #### public helpUrl: string; {#public-help-url-string}
 
 * La dirección URL que vincula a más información sobre por qué se produjo este estado/error y posibles soluciones.
-* Puede contener una cadena vacía o un `null` valor.
+* Puede contener una cadena vacía o un valor `null`.
 
 #### public trace: string; {#public-trace-string}
 
 * El identificador único de esta respuesta, que se puede utilizar al ponerse en contacto con el servicio de asistencia para identificar problemas específicos en situaciones más complejas.
-* Puede contener una cadena vacía o un `null` valor.
+* Puede contener una cadena vacía o un valor `null`.
 
 #### public action: string; {#public-action-string}
 
 * La acción recomendada para remediar la situación.
-   * **ninguno**: Lamentablemente, no hay ninguna acción predefinida para solucionar este problema. Esto podría indicar una invocación incorrecta de la API pública
-   * **configuración**: Es necesario realizar un cambio de configuración a través del panel de TVE o poniéndose en contacto con el servicio de asistencia.
+   * **ninguno**: Lamentablemente no hay ninguna acción predefinida para remediar este problema. Esto podría indicar una invocación incorrecta de la API pública
+   * **configuración**: se necesita un cambio de configuración a través del panel de TVE o poniéndose en contacto con el soporte técnico.
    * **application-registration**: la aplicación debe registrarse de nuevo.
-   * **authentication**: el usuario debe autenticarse o volver a autenticarse.
-   * **autorización**: el usuario debe obtener autorización para el recurso específico.
-   * **degradación**: Se debe aplicar alguna forma de degradación.
-   * **volver a intentar**: Si se vuelve a intentar la solicitud, el problema podría resolverse
-   * **retry-after**: Si se reintenta la solicitud después del período de tiempo indicado, el problema podría resolverse.
-* Puede contener una cadena vacía o un `null` valor.
+   * **autenticación**: el usuario debe autenticarse o volver a autenticarse.
+   * **authorization**: el usuario debe obtener autorización para el recurso específico.
+   * **degradación**: se debe aplicar alguna forma de degradación.
+   * **reintentar**: si se reintenta la solicitud, el problema podría resolverse
+   * **reintentar-después**: si se reintenta la solicitud después del período de tiempo indicado, el problema podría resolverse.
+* Puede contener una cadena vacía o un valor `null`.
 
 ### decisión colectiva {#class-decision}
 
@@ -161,7 +161,7 @@ public func build() -> PreauthorizeRequest
 
 #### error público: Estado; {#public-error-status}
 
-* Información adicional de estado (estado) en caso de que se haya producido algún error. Podría contener un `null` valor.
+* Información adicional de estado (estado) en caso de que se haya producido algún error. Puede contener un valor `null`.
 
 ## Ejemplo de implementación de cliente {#client-imp-example}
 
@@ -252,7 +252,7 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;JavaScript
     
     {
-    &quot;decisiones&quot;: [
+    &quot;decisions&quot;: [
     {
     &quot;id&quot;: &quot;RES01&quot;,
     &quot;authorized&quot;: true
@@ -266,10 +266,10 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;authorized&quot;: true
     }
     ]
-    }
-    
-    &quot;
+    &quot; 
 
+    
+    
 </td>
   </tr>
 
@@ -279,7 +279,7 @@ accessEnablerApi.preauthorize(request, callback);
 
     &quot;JavaScript
     {
-    &quot;decisiones&quot;: [
+    &quot;decisions&quot;: [
     {
     &quot;id&quot;: &quot;RES01&quot;,
     &quot;authorized&quot;: true
@@ -290,11 +290,11 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;preauthorization_denied_by_mvpd&quot;,
-    &quot;message&quot;: &quot;El MVPD ha devuelto una decisión \&quot;Deny\&quot; al solicitar la preautorización del recurso especificado.&quot;,
+    &quot;message&quot;: &quot;The MVPD has devolvió una decisión \&quot;Denegar\&quot; al solicitar la preautorización para el recurso especificado.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;none&quot;
     }
-    },
+    ,
     {
     &quot;id&quot;: &quot;RES03&quot;,
     &quot;authorized&quot;: true
@@ -326,7 +326,7 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;JavaScript
     
     {
-    &quot;decisiones&quot;: [
+    &quot;decisions&quot;: [
     {
     &quot;id&quot;: &quot;RES01&quot;,
     &quot;authorized&quot;: false
@@ -340,10 +340,10 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;authorized&quot;: false
     }
     ]
-    }
-    
-    &quot;
+    &quot; 
 
+    
+    
 </td>
   </tr>
 
@@ -354,42 +354,42 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;JavaScript
     
     {
-    &quot;decisiones&quot;: [
+    &quot;decisions&quot;: [
     {
     &quot;id&quot;: &quot;RES01&quot;,
     &quot;authorized&quot;: false,
     &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;preauthorization_denied_by_mvpd&quot;,
-    &quot;message&quot;: &quot;El MVPD ha devuelto una decisión \&quot;Deny\&quot; al solicitar la preautorización del recurso especificado.&quot;,
-    &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    &quot;action&quot;: &quot;none&quot;
+    &quot;message&quot;: &quot;La MVPD ha devuelto una decisión \&quot;Deny\&quot; al solicitar la preautorización para el recurso especificado.&quot;,
+    &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,{11 1}&quot;action&quot;: &quot;none&quot;
     }
-    },
+    ,
     {
     &quot;id&quot;: &quot;RES02&quot;,
     &quot;authorized&quot;: false,
     &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;preauthorization_denied_by_mvpd&quot;,
-    &quot;message&quot;: &quot;El MVPD ha devuelto una decisión \&quot;Deny\&quot; al solicitar la preautorización del recurso especificado.&quot;,
+    &quot;message&quot;: &quot;La MVPD ha devuelto una decisión \&quot;Deny\&quot; al solicitar la preautorización del recurso especificado.&quot; 
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;none&quot;
     }
-    },
+    ,
     {
     &quot;id&quot;: &quot;RES03&quot;,
     &quot;authorized&quot;: false,
     &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;maximum_execution_time_expanded&quot;,
-    &quot;message&quot;: &quot;La solicitud no se completó en el tiempo máximo permitido. Si vuelve a intentar la solicitud, el problema podría resolverse.&quot;,
+    &quot;message&quot;: &quot;La solicitud no se completó en el tiempo máximo permitido. 
+     Si se reintenta la solicitud, podría resolverse el problema.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    &quot;acción&quot;: &quot;reintentar&quot;
+    &quot;action&quot;: &quot;retry&quot;
     }
-    }
+    
     ]
-    }
+    
     
     &quot;
 
@@ -417,12 +417,12 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;status&quot;: {
     &quot;status&quot;: 400,
     &quot;code&quot;: &quot;internal_error&quot;,
-    &quot;message&quot;: &quot;Error interno en la solicitud.&quot;,
-    &quot;details&quot;: &quot;El parámetro &quot;resource&quot; de String[] requerido no está presente&quot;,
+    &quot;message&quot;: &quot;La solicitud falló debido a un error interno.&quot;,
+    &quot;details&quot;: &quot;El parámetro de cadena obligatorio[] &#39;resource&#39; no está presente&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;none&quot;
-    },
-    &quot;decisiones&quot;: []
+    ,
+    &quot;decisions&quot;: []
     }
     &quot;
 
@@ -450,12 +450,12 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;status&quot;: {
     &quot;status&quot;: 412,
     &quot;code&quot;: &quot;missing_resource&quot;,
-    &quot;message&quot;: &quot;Falta el parámetro resource&quot;,
+    &quot;message&quot;: &quot;Falta el parámetro del recurso&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;none&quot;
     },
-    &quot;decisiones&quot;: []
-    }
+    &quot;decisions&quot;: []
+    
     &quot;
 
 </td>
@@ -479,31 +479,31 @@ accessEnablerApi.preauthorize(request, callback);
 
     &quot;JavaScript
     {
-    &quot;decisiones&quot;: [
+    &quot;decisions&quot;: [
     {
     &quot;id&quot;: &quot;RES01&quot;,
     &quot;authorized&quot;: false,
     &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;network_received_error&quot;,
-    &quot;message&quot;: &quot;Se ha producido un error de lectura al recuperar la respuesta del servicio de socio asociado. Si vuelve a intentar la solicitud, el problema podría resolverse.&quot;,
+    &quot;message&quot;: &quot;Error de lectura al recuperar la respuesta del servicio de socio asociado. Si se vuelve a intentar la solicitud, se podría resolver el problema.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    &quot;acción&quot;: &quot;reintentar&quot;
-    }
-    },
+    &quot;action&quot;: &quot;retry&quot;
+    
+    ,
     {
     &quot;id&quot;: &quot;RES02&quot;,
     &quot;authorized&quot;: false,
     &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;network_received_error&quot;,
-    &quot;message&quot;: &quot;Se ha producido un error de lectura al recuperar la respuesta del servicio de socio asociado. Si vuelve a intentar la solicitud, el problema podría resolverse.&quot;,
+    &quot;message&quot;: &quot;Se produjo un error de lectura al recuperar la respuesta del servicio asociado. Si se reintenta la solicitud, podría resolverse el problema.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
-    &quot;acción&quot;: &quot;reintentar&quot;
+    &quot;action&quot;: &quot;retry&quot;
     }
-    }
+    
     ]
-    }
+    
     &quot;
 
 </td>
@@ -531,8 +531,8 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;status&quot;: 0,
     &quot;code&quot;: &quot;authentication_session_missing&quot;,
     &quot;message&quot;: &quot;No se pudo recuperar la sesión de autenticación asociada con esta solicitud. El usuario debe volver a autenticarse con una MVPD compatible para continuar.&quot;,
-    &quot;action&quot;: &quot;authentication&quot;
-    },
+    &quot;acción&quot;: &quot;autenticación&quot;
+    ,
     &quot;decisiones&quot;: []
     }
     
@@ -565,9 +565,9 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;status&quot;: 0,
     &quot;code&quot;: &quot;requestor_not_configured&quot;,
     &quot;message&quot;: &quot;El solicitante aún no está configurado, lo que es un requisito previo para utilizar cualquier API aparte de la API setRequestor.&quot;,
-    &quot;acción&quot;: &quot;reintentar&quot;
-    },
-    &quot;decisiones&quot;: []
+    &quot;action&quot;: &quot;retry&quot;
+    ,
+    &quot;decisions&quot;: []
     }
     &quot;
 

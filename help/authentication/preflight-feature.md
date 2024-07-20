@@ -4,7 +4,7 @@ description: Función de comprobación preliminar, Cómo habilitar, solucionar p
 exl-id: 9e4ec343-371f-4116-915f-191e5f42cb47
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ La interfaz externa para la API de preautorización no cambia y no se requieren 
 
 Existen tres formas de calcular los recursos de comprobaciones:
 
-* **Método de bifurcación y unión a MVPD**: esto implica que el Adobe hace varias llamadas de autorización a la MVPD (aunque el cliente tendrá que hacer una llamada de verificación previa).
-* **Línea de canales**: la MVPD expone la línea de canales para el usuario que ha iniciado sesión en la respuesta de autenticación SAML y el Adobe devuelve los recursos autorizados en función de eso. La respuesta authN de SAML en el rastreador de SAML debe exponer esa lista.
-* **Autorización de varios canales**: el cliente y la autenticación de Adobe realizan una sola llamada a la MVPD para un conjunto de recursos.
+* **Método de bifurcación y unión a MVPD**: esto implica que el Adobe realice varias llamadas de autorización a MVPD (aunque el cliente tendrá que realizar una llamada de comprobación preliminar).
+* **Línea de canales**: la MVPD expone la línea de canales para el usuario que ha iniciado sesión en la respuesta de autenticación SAML y el Adobe devuelve los recursos autorizados basados en eso. La respuesta authN de SAML en el rastreador de SAML debe exponer esa lista.
+* **Autorización multicanal**: la autenticación de cliente y Adobe realizan una sola llamada a la MVPD para un conjunto de recursos.
 
 Independientemente de la MVPD, la aplicación cliente realizará una sola llamada al extremo de comprobación preliminar (API checkPreauthorizedResources), pasando un conjunto de resourceIDs. En función de una de las formas anteriores admitidas por MVPD, Adobe devolverá los ID de recurso preautorizados.
 

@@ -1,14 +1,15 @@
 ---
-title: Notas de la versión JavaScript 4.4.0 de autenticación de Adobe Pass
-description: Notas de la versión JavaScript 4.4.0 de autenticación de Adobe Pass
-source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
+title: Notas de la versión de Adobe Pass Authentication JavaScript 4.4.0
+description: Notas de la versión de Adobe Pass Authentication JavaScript 4.4.0
+exl-id: 28cc0ccc-7a1d-45bd-8455-26cfde25c5c5
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '245'
 ht-degree: 0%
 
 ---
 
-# Notas de la versión JavaScript 4.4.0 de autenticación de Adobe Pass {#javascript-sdk-440-release-notes}
+# Notas de la versión de Adobe Pass Authentication JavaScript 4.4.0 {#javascript-sdk-440-release-notes}
 
 >[!NOTE]
 >

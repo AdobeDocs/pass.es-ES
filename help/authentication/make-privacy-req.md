@@ -4,7 +4,7 @@ description: Cómo realizar una solicitud de privacidad
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '558'
 ht-degree: 0%
 
 ---
@@ -20,8 +20,8 @@ ht-degree: 0%
 Al enviar una solicitud de privacidad de acceso o eliminación, la aplicación del cliente debe incluir los siguientes identificadores:
 
 * **mvpdID** - Identificador único de la MVPD.
-* **userID** - Identifica de forma exclusiva al usuario de la aplicación de un programador, pero se origina a partir de la MVPD. Consulte Explicación de los ID de usuario en la Información general del programador.
-* **IMSOrgID** : ID de organización del servicio Adobe Experience Cloud Identity Management que identifica de forma exclusiva al cliente en Adobe Experience Cloud
+* **userID**: identifica de forma exclusiva al usuario de la aplicación de un programador, pero se origina a partir de la MVPD. Consulte Explicación de los ID de usuario en la Información general del programador.
+* **IMSOrgID**: el ID de organización del servicio Adobe Experience Cloud Identity Management que identifica de forma exclusiva al cliente en Adobe Experience Cloud.
 
 
 Compruebe el ejemplo siguiente:
@@ -78,7 +78,7 @@ Debe cargar un JSON con los identificadores de autenticación de Adobe Pass para
 }
 ```
 
-**Muestra de respuesta**
+**Ejemplo de respuesta**
 
 ```JSON
 {
@@ -160,7 +160,7 @@ Debe cargar un JSON con los identificadores de autenticación de Adobe Pass para
 }
 ```
 
-**Muestra de respuesta**
+**Ejemplo de respuesta**
 
 Para una solicitud de eliminación:
 
@@ -221,12 +221,12 @@ Para una solicitud de eliminación:
 
 Los clientes tienen dos opciones para enviar solicitudes de privacidad al Adobe:
 
-* **manualmente** - mediante [Interfaz de usuario de Privacy Service](#privacy-service-ui)
-* **automáticamente** - mediante [API de Privacy Service](#privacy-service-api)
+* **manualmente** - usando la [interfaz de usuario del Privacy Service](#privacy-service-ui)
+* **automáticamente** - usando [API de Privacy Service](#privacy-service-api)
 
 ### Mediante la IU del Privacy Service {#privacy-service-ui}
 
-A [tutorial completo](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) sobre cómo acceder y utilizar la interfaz de usuario de Privacy Service está disponible en línea a través de los servicios de Adobe I/O. Además, los clientes pueden utilizar este vínculo para acceder a la biblioteca de vídeos y artículos sobre normas de privacidad. Haga clic en el menú Adobe Experience Cloud y RGPD. Se abrirán varios vídeos: &quot;Cómo... la IU del RGPD&quot; explica cómo utilizarla.
+Hay disponible en línea un [tutorial completo](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) sobre cómo acceder y utilizar la interfaz de usuario del Privacy Service a través de los servicios de Adobe I/O. Además, los clientes pueden utilizar este vínculo para acceder a la biblioteca de vídeos y artículos sobre normas de privacidad. Haga clic en el menú Adobe Experience Cloud y RGPD. Se abrirán varios vídeos: &quot;Cómo... la IU del RGPD&quot; explica cómo utilizarla.
 
 En la interfaz de usuario de, los clientes deben cargar su propio IMSOrgID y un JSON que contenga solicitudes de RGPD para cada producto.
 
@@ -234,11 +234,11 @@ En la interfaz de usuario de, los clientes deben cargar su propio IMSOrgID y un 
 
 Adobe Experience Platform Privacy Service proporciona una facilitación común y centralizada de las solicitudes de acceso/eliminación y las solicitudes de exclusión de la venta de datos privados.
 
-El **Documentación de API de Privacy Service** explica en detalle cómo un cliente de Adobe puede integrarse con la API de Adobe.
+La **documentación de la API de Privacy Service** explica en detalle cómo un cliente de Adobe puede integrarse con la API de Adobe.
 
-**Visualice llamadas de API con Postman (un software gratuito de terceros):**
+**Visualizar llamadas API con Postman (software gratuito de terceros):**
 
-* [Colección de Postman de la API de Privacy Service en GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
+* [Colección de Postman de API de Privacy Service en GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
 * [Guía de vídeo para crear el entorno de Postman](https://video.tv.adobe.com/v/28832)
 * [Pasos para importar entornos y colecciones en Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
@@ -246,13 +246,13 @@ El **Documentación de API de Privacy Service** explica en detalle cómo un clie
 **Rutas de API:**
 
 * URL de puerta de enlace de PLATFORM: `https://platform.adobe.io/`
-* Ruta básica para esta API: `/data/core/privacy/jobs`
-* Ejemplo de ruta completa: `https://platform.adobe.io/data/core/privacy/jobs/ping`
+* Ruta de acceso base para esta API: `/data/core/privacy/jobs`
+* Ejemplo de ruta de acceso completa: `https://platform.adobe.io/data/core/privacy/jobs/ping`
 
 
-**Encabezados obligatorios:**
+**Encabezados requeridos:**
 
-* Todas las llamadas requieren los encabezados `Authorization`, `x-gw-ims-org-id`, y `x-api-key`. Para obtener más información sobre cómo obtener estos valores, consulte la **tutorial de autenticación**.
+* Todas las llamadas requieren los encabezados `Authorization`, `x-gw-ims-org-id` y `x-api-key`. Para obtener más información sobre cómo obtener estos valores, consulte el **tutorial de autenticación**.
 * Todas las solicitudes con una carga útil en el cuerpo de la solicitud (como llamadas de POST, PUT y PATCH) deben incluir el encabezado `Content-Type` con un valor de `application/json`.
 
 <!--

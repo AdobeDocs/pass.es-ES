@@ -4,7 +4,7 @@ description: Requisitos mínimos del sistema
 exl-id: 57b21e2a-abd7-4b4b-85f1-25584a850e40
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '434'
+source-wordcount: '446'
 ht-degree: 0%
 
 ---
@@ -43,12 +43,12 @@ Adobe Pass anima a sus clientes y socios a considerar la posibilidad de actualiz
 
 | Sistema operativo | Versiones compatibles |
 |---|---|
-| *Android* | **7,0** (Turrón) o posterior |
+| *Android* | **7.0** (Nougat) o posterior |
 | *iOS* | **14** o posterior |
 | *iPadOS* | **14** o posterior |
 | *tvOS* | **14** o posterior |
-| *Fire OS* | **5 (Android 5.1)** o posterior |
-| *SO MAC* | **10,13** o posterior |
+| *Activar SO* | **5 (Android 5.1)** o posterior |
+| *SO Mac* | **10.13** o posterior |
 | *Microsoft Windows* | **10** o posterior |
 
 
@@ -62,7 +62,7 @@ Adobe Pass anima a sus clientes y socios a considerar la posibilidad de actualiz
 ## Requisitos de dispositivo para implementaciones de sin cliente (REST) {#general_clientless_reqs}
 
 
-Cualquier dispositivo que vaya a consumir los servicios de autenticación de Adobe Pass a través de implementaciones sin cliente **debe ser capaz de**:
+Cualquier dispositivo que vaya a consumir los servicios de autenticación de Adobe Pass a través de implementaciones sin cliente **debe poder**:
 
 * Proporcione un ID de dispositivo único con hash. Si el dispositivo no proporciona un ID de dispositivo con hash único, debe poder mantener un ID único proporcionado por la autenticación de Adobe Pass. El dispositivo debe poder mantener el ID único de forma permanente en su almacenamiento local y proporcionarlo como ID del dispositivo cuando realice llamadas a las API de autenticación de Adobe Pass.
 * Generar firmas digitales con el algoritmo HMAC-SHA1

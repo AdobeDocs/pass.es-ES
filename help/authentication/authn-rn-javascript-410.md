@@ -1,14 +1,15 @@
 ---
-title: Notas de la versión JavaScript 4.1.0 de autenticación de Adobe Pass
-description: Notas de la versión JavaScript 4.1.0 de autenticación de Adobe Pass
-source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
+title: Notas de la versión de Adobe Pass Authentication JavaScript 4.1.0
+description: Notas de la versión de Adobe Pass Authentication JavaScript 4.1.0
+exl-id: aaee88cb-a9b9-4474-9860-a527a47768b9
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '116'
 ht-degree: 0%
 
 ---
 
-# Notas de la versión JavaScript 4.1.0 de autenticación de Adobe Pass {#javascript-sdk-410-release-notes}
+# Notas de la versión de Adobe Pass Authentication JavaScript 4.1.0 {#javascript-sdk-410-release-notes}
 
 >[!NOTE]
 >
@@ -20,7 +21,7 @@ En esta página se describen las nuevas funciones, los cambios y los problemas c
 
 Autenticación de Adobe Pass: JavaScript 4.1.0
 
-Fecha de versión: **04/10/2018**
+Fecha de versión: **10/04/2018**
 
 
 ## Información general de versión {#overview-javascript-sdk-410}

@@ -1,13 +1,13 @@
 ---
 title: Atributos de metadatos estándar
 description: Atributos de metadatos estándar
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '1257'
+source-wordcount: '1053'
 ht-degree: 0%
 
 ---
-
 
 # Atributos de metadatos estándar {#std-metadata-attributes}
 
@@ -18,27 +18,27 @@ Esta página pretende proporcionar una lista exhaustiva de atributos de metadato
 
 ## Atributos requeridos por el diseño {#attr-req-by-design}
 
-La API de monitorización de concurrencia obliga a los clientes a enviar los siguientes valores como parte de cualquier llamada de inicialización válida: [llamadas de inicio de sesión](/help/concurrency-monitoring/restrict-concurr-usage-mult-apps.md#api-calls-descr).
+La API de supervisión de simultaneidad obliga a los clientes a enviar los siguientes valores como parte de cualquier llamada de inicialización válida: [llamadas de inicio de sesión](/help/concurrency-monitoring/restrict-concurr-usage-mult-apps.md#api-calls-descr).
 
 | Nombre de campo | Valor de ejemplo | Dónde se usa | Obtenido de |
 |-------------|---------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | applicationId | 75b4-431b-adb2-eb6b9e546013 | Encabezado de autorización | Billete de Zendesk en integración |
 | mvpdName | Sample_MVPD | Ruta de URI | Autenticación de Adobe Pass desde el punto final de configuración cuando el usuario selecciona la MVPD |
-| accountId | 12345 | Ruta de URI | Metadatos de upstreamUserID de autenticación de Adobe Pass después del inicio de sesión del usuario [UserID de subida de metadatos de usuario: autenticación de Adobe Pass](/help/authentication/user-metadata-feature.md) |
+| accountId | 12345 | Ruta de URI | Metadatos de upstreamUserID de autenticación de Adobe Pass después de que el usuario inicie sesión [Metadatos de usuario upstreamUserID - Autenticación de Adobe Pass](/help/authentication/user-metadata-feature.md) |
 
 
 ## Atributos de metadatos {#metadata-attr}
 
 Los programadores y las MVPD pueden utilizar los campos de la tabla siguiente para crear políticas que se implementarán en la Monitorización de concurrencia.
 
-Con [API v2.0](http://docs.adobeptime.io/cm-api-v2/)Sin embargo, si cualquiera de estos atributos es requerido por las políticas definidas, un intento de inicio de sesión sin ese atributo resultará en una solicitud 400 incorrecta.
+Con [API v2.0](http://docs.adobeptime.io/cm-api-v2/), si cualquiera de estos atributos es requerido por las directivas definidas, un intento de inicio de sesión sin ese atributo resultará en una solicitud 400 incorrecta.
 
 
 | Entidad | Nombre de atributo | Tipo de datos | Descripción | Referencia externa (por ejemplo: EIDR, OATC) | Valor de ejemplo | Reglas de validación |
 |---------------|-------------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
 | Empresa de medios | programmerName | cadena | El nombre del programador |                                                   | ProgrammerX |                                                                                   |
 | Recurso | canal | cadena | El canal de televisión |                                                   | CanalY |                                                                                   |
-|                 | assetId | cadena | El título &quot;descriptivo&quot; o legible para el consumidor que se presentará para este contenido | [Referencia de campos de datos de EIDR 2.0](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/EIDR_2_0_Data_Fields.pdf){target=_blank} | Ben-Hur |                                                                                   |
+|                 | assetId | cadena | El título &quot;descriptivo&quot; o legible para el consumidor que se presentará para este contenido | [Referencia de campos de datos EIDR 2.0](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/EIDR_2_0_Data_Fields.pdf){target=_blank} | Ben-Hur |                                                                                   |
 |                 | type | enumeración | Valor que describe el tipo general de contenido representado por TveItem. Los valores enumerados incluyen: emisión de películaEpisodio noEmisiónEpisodio músicaPremios de vídeoMostrar clip concierto noticias de conferenciaEvento sportingEvent trailer | [Práctica recomendada de fuente de metadatos OATC](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | broadcastEpisode | El campo debe corresponder a uno de los elementos de la enumeración |
 |                 | contentType | cadena | Este campo determina si el contenido solicitado está activo o es VOD | N/D | en directo, vod | live o vod |
 |                 | género | cadena | El género del contenido que se transmite. Describe el tipo de programación general | [Fuente de metadatos OATC recomendada](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} Práctica | Comedia | Tipo de género válido |
@@ -48,7 +48,7 @@ Con [API v2.0](http://docs.adobeptime.io/cm-api-v2/)Sin embargo, si cualquiera d
 |                 | marketingName | cadena | El nombre de marketing (o el nombre descriptivo) de un dispositivo | [Propiedades de Device Atlas](https://deviceatlas.com/device-data/properties){target=_blank} | iPhone 6s | nombre de marketing válido |
 |                 | mobileDevice | booleano | El valor es True si el dispositivo está pensado para utilizarse mientras se está desplazando | [Propiedades de Device Atlas](https://deviceatlas.com/device-data/properties){target=_blank} | true, false | true, false |
 |                 | deviceModel | cadena | El nombre del modelo del dispositivo, explorador u otro componente | [Propiedades de Device Atlas](https://deviceatlas.com/device-data/properties){target=_blank} | tableta, teléfono, xbox. decodificador | nombre de modelo de dispositivo válido |
-|                 | osName | cadena | El sistema operativo que está ejecutando el dispositivo | [Device Atlas: valores de propiedad predefinidos del sistema operativo](https://deviceatlas.com/device-data/explorer/#defined_property_values/877430/4121272){target=_blank} | Android, Windows 10, OS X, Linux, Otros Nota: Debe iniciar sesión con un nombre de usuario y una contraseña en Device Atlas para ver los valores de las propiedades | el valor esperado es uno de los valores de las propiedades predefinidas de Device Atlas |
+|                 | osName | cadena | El sistema operativo que está ejecutando el dispositivo | [Device Atlas: valores de propiedad predefinidos del SO](https://deviceatlas.com/device-data/explorer/#defined_property_values/877430/4121272){target=_blank} | Android, Windows 10, OS X, Linux, Otros Nota: Debe iniciar sesión con un nombre de usuario y una contraseña en Device Atlas para ver los valores de las propiedades | el valor esperado es uno de los valores de las propiedades predefinidas de Device Atlas |
 |                 | browserName | cadena | Nombre o tipo de explorador del dispositivo | [Device Atlas: valores de propiedad predefinidos del explorador](https://deviceatlas.com/device-data/explorer/#defined_property_values/7/2705619){target=_blank} | Nombre o tipo del explorador del dispositivo.  Nota: Debe iniciar sesión con un nombre de usuario y una contraseña en Device Atlas para ver los valores de las propiedades | el valor esperado es uno de los valores de las propiedades predefinidas de Device Atlas |
 |                 | browserVersion | cadena | La versión del explorador del dispositivo | [Propiedades de Device Atlas](https://deviceatlas.com/device-data/properties){target=_blank} | La versión del explorador del dispositivo |                                                                                   |
 | Aplicación | applicationName | cadena | El nombre &quot;fácil de usar&quot; o legible para el consumidor de la aplicación | N/D | Sample_Application |                                                                                   |
@@ -77,9 +77,9 @@ Los campos de metadatos estándar se pueden utilizar para definir directivas del
    * no más de X códigos postales distintos: `HAVING DISTINCT COUNT(zipcode) <= 3`
 * Puede limitar el número de flujos activos por valor de campo. Algunos ejemplos son los siguientes:
    * no más de X flujos activos para un solo tipo de dispositivo: `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
-   * no más de X flujos activos para emisiones de contenido en directo: `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
+   * no más de X flujos activos para flujos de contenido en vivo: `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
 
-Póngase en contacto con el equipo de Monitorización de concurrencia llamando a [creación de un ticket en Zendesk](mailto:tve-support@adobe.com) e indicar qué políticas desea que se hayan implementado.
+Póngase en contacto con el equipo de Supervisión de concurrencia [creando un ticket en Zendesk](mailto:tve-support@adobe.com) e indique qué políticas desea haber implementado.
 
 Puede encontrar más ejemplos de directivas y libros de cocina de integración en los siguientes enlaces:
 

@@ -4,7 +4,7 @@ description: Dynamic Client Registration Management
 exl-id: 2c3ebb0b-c814-4b9e-af57-ce1403651e9e
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1338'
+source-wordcount: '1321'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Información general {#overview}
 
-Con la adopción generalizada de [Fichas personalizadas de Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target_blanck} y [Controladora de vista de Apple Safari](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target_blanck} en las aplicaciones de nuestros clientes, estamos actualizando el flujo de autenticación de usuarios en la autenticación de Adobe Pass. Más específicamente, ya no podemos lograr el objetivo de mantener el estado para que el flujo del agente de usuario de autenticación de un suscriptor de MVPD pueda rastrearse entre redirecciones. Anteriormente, esto se realizaba con cookies HTTP. Esta limitación es el controlador para empezar a migrar todas las API a OAuth 2.0 [RFC6749](https://tools.ietf.org/html/rfc6749){target_blanck}.
+Con la adopción generalizada de [Android Chrome Custom Tabs](https://developer.chrome.com/multidevice/android/customtabs){target_blanck} y [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target_blanck} en las aplicaciones de nuestros clientes, estamos actualizando el flujo de autenticación del usuario en la autenticación de Adobe Pass. Más específicamente, ya no podemos lograr el objetivo de mantener el estado para que el flujo del agente de usuario de autenticación de un suscriptor de MVPD pueda rastrearse entre redirecciones. Anteriormente, esto se realizaba con cookies HTTP. Esta limitación es el controlador para empezar a migrar todas las API a OAuth 2.0 [RFC6749](https://tools.ietf.org/html/rfc6749){target_blanck}.
 
 Con esta actualización, los clientes de autenticación de Adobe se convierten en clientes OAuth 2.0 y se implementa un servidor de autorización OAuth 2.0 personalizado para satisfacer las necesidades del servicio de autenticación de Adobe Pass.
 
@@ -25,16 +25,16 @@ Para que las aplicaciones cliente utilicen la autorización de OAuth 2.0, el ser
 
 Estos metadatos se comunican como una declaración de software, que contiene un &quot;software_id&quot; para permitir que nuestro servidor de autorización correlacione diferentes instancias de una aplicación utilizando la misma declaración de software.
 
-A **declaración programas informáticos** es un token web JSON (JWT) que afirma valores de metadatos sobre el software cliente como un paquete. Cuando se presenta al servidor de autorización como parte de una solicitud de registro de cliente, la instrucción de software debe estar firmada digitalmente o ser editada en MAC mediante la firma web JSON (JWS).
+Una **instrucción de software** es un token web JSON (JWT) que afirma valores de metadatos sobre el software cliente como un paquete. Cuando se presenta al servidor de autorización como parte de una solicitud de registro de cliente, la instrucción de software debe estar firmada digitalmente o ser editada en MAC mediante la firma web JSON (JWS).
 
-Puede encontrar una explicación más detallada sobre las declaraciones de software y cómo funcionan en la documentación oficial [RFC7591](https://tools.ietf.org/html/rfc7591).
+Puede encontrar una explicación más detallada sobre las instrucciones de software y cómo funcionan en la documentación oficial [RFC7591](https://tools.ietf.org/html/rfc7591).
 
 La instrucción de software debe implementarse con la aplicación en el dispositivo del usuario.
 
 Antes de esta actualización, teníamos dos mecanismos para permitir que las aplicaciones realicen llamadas a la autenticación de Adobe Pass:
 
-* los clientes basados en el explorador se registran mediante permitido [lista de dominios](/help/authentication/programmer-overview.md#reg-and-init)
-* los clientes de aplicaciones nativas, como las aplicaciones de iOS y Android, se registran mediante **solicitante firmado** mecanismo
+* los clientes basados en el explorador se han registrado mediante la [lista de dominios](/help/authentication/programmer-overview.md#reg-and-init) permitida
+* los clientes de aplicaciones nativas, como las aplicaciones de iOS y Android, se registran a través del mecanismo **solicitante firmado**
 
 
 Con el mecanismo de autorización de registro de cliente, debe añadir sus aplicaciones al panel de TVE.
@@ -47,13 +47,13 @@ Siga los pasos de las secciones siguientes para crear una aplicación registrada
 
 Existen dos formas de crear una aplicación registrada en el tablero de TVE:
 
-* [Nivel de programador](#prog-level) : permite crear una aplicación registrada y vincularla a uno o todos los canales del programador.
+* [Nivel de programador](#prog-level): permite crear una aplicación registrada y vincularla a cualquiera o todos los canales de programador.
 
-* [Nivel de canal](#channel-level) : permite crear una aplicación registrada que esté vinculada de forma permanente únicamente a este canal.
+* [Nivel de canal](#channel-level): permite crear una aplicación registrada que esté vinculada de forma permanente únicamente a este canal.
 
 ### Crear una aplicación registrada en el nivel de programador {#prog-level}
 
-Ir a **Programadores** > **Aplicaciones registradas** pestaña.
+Vaya a la ficha **Programadores** > **Aplicaciones registradas**.
 
 ![](assets/reg-app-progr-level.png)
 
@@ -63,13 +63,13 @@ Como se ve en la siguiente imagen, los campos que debe rellenar son los siguient
 
 * **Nombre de aplicación** - el nombre de la aplicación
 
-* **Asignado al canal** - el nombre de su canal, t</span>a la que está vinculada esta aplicación. La configuración predeterminada de la máscara desplegable es **Todos los canales.** La interfaz permite seleccionar un canal o todos los canales.
+* **Asignado al canal**: el nombre del canal al que está vinculada esta aplicación. </span> La configuración predeterminada de la máscara desplegable es **Todos los canales.** La interfaz le permite seleccionar uno o todos los canales.
 
-* **Versión de aplicación** : de forma predeterminada, se establece en &quot;1.0.0&quot;, pero le recomendamos encarecidamente que lo modifique con su propia versión de la aplicación. Si decide cambiar la versión de la aplicación, se recomienda reflejarla creando una nueva aplicación registrada para ella.
+* **Versión de la aplicación**: de forma predeterminada, se establece en &quot;1.0.0&quot;, pero le recomendamos encarecidamente que la modifique con su propia versión de la aplicación. Si decide cambiar la versión de la aplicación, se recomienda reflejarla creando una nueva aplicación registrada para ella.
 
-* **Plataformas de aplicaciones** : las plataformas con las que se vinculará la aplicación. Tiene la opción de seleccionarlos todos o varios valores.
+* **Plataformas de aplicación**: las plataformas con las que se vinculará la aplicación. Tiene la opción de seleccionarlos todos o varios valores.
 
-* **Nombres de dominio** : los dominios de la aplicación con los que se va a vincular. Los dominios de la lista desplegable son una selección unificada de todos los dominios de todos los canales. Tiene la opción de seleccionar varios dominios en la lista. El significado de los dominios es URL de redireccionamiento [RFC6749](https://tools.ietf.org/html/rfc6749). En el proceso de registro del cliente, la aplicación cliente puede solicitar que se le permita utilizar una URL de redireccionamiento para finalizar el flujo de autenticación. Cuando una aplicación cliente solicita una URL de redireccionamiento específica, se valida con los dominios incluidos en la lista blanca de esta aplicación registrada asociada a la declaración de software.
+* **Nombres de dominio**: los dominios con los que se vinculará la aplicación. Los dominios de la lista desplegable son una selección unificada de todos los dominios de todos los canales. Tiene la opción de seleccionar varios dominios en la lista. El significado de los dominios es URL de redireccionamiento [RFC6749](https://tools.ietf.org/html/rfc6749). En el proceso de registro del cliente, la aplicación cliente puede solicitar que se le permita utilizar una URL de redireccionamiento para finalizar el flujo de autenticación. Cuando una aplicación cliente solicita una URL de redireccionamiento específica, se valida con los dominios incluidos en la lista blanca de esta aplicación registrada asociada a la declaración de software.
 
 
 ![](assets/new-reg-app.png)
@@ -77,7 +77,7 @@ Como se ve en la siguiente imagen, los campos que debe rellenar son los siguient
 
 Después de rellenar los campos con los valores adecuados, debe hacer clic en &quot;Listo&quot; para que la aplicación se guarde en la configuración.
 
-Tenga en cuenta que hay **no hay opción de modificar una aplicación ya creada**. En caso de que se descubra que algo creado ya no cumple los requisitos , se deberá crear y utilizar una nueva aplicación registrada con la aplicación cliente cuyos requisitos cumpla.
+Tenga en cuenta que no hay **ninguna opción para modificar una aplicación ya creada**. En caso de que se descubra que algo creado ya no cumple los requisitos , se deberá crear y utilizar una nueva aplicación registrada con la aplicación cliente cuyos requisitos cumpla.
 
 
 ### Registrar una nueva solicitud en el nivel de canal {#channel-level}
@@ -143,4 +143,4 @@ Para obtener más información sobre cómo funciona el proceso de extremo a extr
 
 ## Demostración de funciones {#tutorial}
 
-Por favor, mírelo [este seminario web](https://my.adobeconnect.com/pzkp8ujrigg1/) que proporciona más contexto sobre las funciones y contiene una demostración sobre cómo administrar las instrucciones de software mediante el panel de TVE y cómo probar las generadas mediante una aplicación de demostración proporcionada por Adobe como parte del SDK de Android.
+Vea [este seminario web](https://my.adobeconnect.com/pzkp8ujrigg1/) que ofrece más contexto de las funciones y contiene una demostración sobre cómo administrar las instrucciones de software mediante el tablero de TVE y cómo probar las generadas mediante una aplicación de demostración proporcionada por Adobe como parte del SDK de Android.

@@ -1,10 +1,11 @@
 ---
 title: Información general sobre Harman Primetime
 description: Harman mantiene los productos de publicidad y publicación de Primetime, mientras que Adobe administra los productos de Adobe Pass para la supervisión de AccountIQ, autenticación y concurrencia.
-source-git-commit: f24e0a7e81ed23e69d038e14fb8585e89e248e27
+exl-id: e9215d1b-00bc-44ee-82d7-c0df20796818
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '144'
-ht-degree: 0%
+source-wordcount: '139'
+ht-degree: 48%
 
 ---
 
@@ -26,6 +27,6 @@ Harman mantiene los productos de publicidad y publicación de Primetime, mientra
 
 | Guía | Descripción |
 |--- |--- |
-| [Autenticación de Adobe Pass](/help/authentication/home.md) | La autenticación de Adobe Pass es una solución de asignación de derechos para TV en todas partes, que proporciona un marco modular para determinar si alguien que solicita acceso a un recurso tiene derecho a él. |
-| [Monitorización de concurrencia de Adobe Pass](/help/concurrency-monitoring/cm-home.md) | Aprenda a definir y aplicar límites en el uso simultáneo en varias aplicaciones. |
-| [IQ de cuenta Adobe Pass](/help/accountiq/home.md) | La ayuda de Adobe Pass Account IQ proporciona información sobre los componentes de Account IQ y le acompaña a través de las recorridos de usuario para utilizar los distintos componentes. |
+| [Autenticación de Adobe Pass](/help/authentication/home.md) | Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder. |
+| [Supervisión de concurrencia de Adobe Pass](/help/concurrency-monitoring/cm-home.md) | Aprenda a definir y aplicar límites en el uso simultáneo en varias aplicaciones. |
+| [Adobe Pass Account IQ](/help/accountiq/home.md) | La ayuda de Adobe Pass Account IQ proporciona información sobre los componentes de Account IQ y le acompaña a través de los recorridos de usuario para utilizar los distintos componentes. |

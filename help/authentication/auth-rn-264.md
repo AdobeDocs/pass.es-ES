@@ -4,7 +4,7 @@ description: Notas de la versión de autenticación de Adobe Pass 2.64
 exl-id: 4db21026-a0c2-4e33-b01f-4ccae824a110
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '132'
+source-wordcount: '136'
 ht-degree: 0%
 
 ---
@@ -25,9 +25,9 @@ En esta página se describen las nuevas funciones, los cambios y los problemas c
 
 ### Número de compilación {#build-no-264}
 
-Autenticación de Adobe Pass: adobe-pass-end **2,64**
+Autenticación de Adobe Pass: adobe-pass-**2.64**
 
-Fecha de versión: **08/11/2022 - 10/11/2022**
+Fecha de versión: **11/08/2022 - 10/11/2022**
 
 ### Nuevas funciones {#new-featres-264}
 

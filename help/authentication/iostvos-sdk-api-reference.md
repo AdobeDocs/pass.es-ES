@@ -17,18 +17,19 @@ ht-degree: 0%
 
 ## Introducción {#intro}
 
-En esta página se describen los métodos y las funciones de llamada de retorno expuestos por el cliente nativo de iOS/tvOS para la autenticación de Adobe Pass. Los métodos y las funciones de llamada de retorno descritos aquí se definen en la variable `AccessEnabler.h` y `EntitlementDelegate.h` archivos de encabezado; puede encontrarlos en el SDK de iOS AccessEnabler aquí: `[SDK directory]/AccessEnabler/headers/api/`
+En esta página se describen los métodos y las funciones de llamada de retorno expuestos por el cliente nativo de iOS/tvOS para la autenticación de Adobe Pass. Los métodos y las funciones de devolución de llamada descritos aquí se definen en los archivos de encabezado `AccessEnabler.h` y `EntitlementDelegate.h`; puede encontrarlos en el SDK de iOS AccessEnabler aquí: `[SDK directory]/AccessEnabler/headers/api/`
 
 
 Documentación asociada:
 
-* Para obtener una descripción del flujo de derechos de autenticación básico de Adobe Pass, consulte [Flujo de derecho](/help/authentication/entitlement-flow.md).
-* Para obtener una guía paso a paso sobre cómo implementar el flujo de derechos de autenticación de Adobe Pass mediante esta API, consulte la [Guía de integración de iOS](/help/authentication/iostvos-sdk-cookbook.md).
-* Para obtener el SDK de iOS AccessEnabler más reciente, consulte [Biblioteca del habilitador de acceso nativo de iOS](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
+* Para obtener una descripción del flujo de derechos básicos de autenticación de Adobe Pass, consulte [Flujo de derechos](/help/authentication/entitlement-flow.md).
+* Para obtener una guía paso a paso sobre cómo implementar Adobe Pass
+flujo de derechos de autenticación mediante esta API, consulte [Guía de integración de iOS](/help/authentication/iostvos-sdk-cookbook.md).
+* Para obtener el SDK de iOS AccessEnabler más reciente, consulte la [Biblioteca del habilitador de acceso nativo de iOS](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
 
 >[!NOTE]
 >
->El Adobe de le recomienda utilizar únicamente la autenticación de Adobe Pass *público* API:
+>El Adobe recomienda usar únicamente las API *public* de autenticación de Adobe Pass:
 >
 >* Las API públicas están disponibles y se han probado completamente en todos los tipos de cliente admitidos. Para cualquier función pública, nos aseguramos de que cada tipo de cliente tenga una versión correspondiente de los métodos asociados.
 >* Las API públicas deben ser lo más estables posible, admitir la compatibilidad con versiones anteriores y garantizar que las integraciones de socios no se rompan. Sin embargo, para las API no públicas, nos reservamos el derecho de cambiar su firma en cualquier momento futuro. Si se encuentra con un flujo particular que no se puede admitir a través de una combinación de las llamadas públicas actuales a la API de autenticación de Adobe Pass, el mejor enfoque es hacérnoslo saber. Teniendo en cuenta sus necesidades, podemos modificar las API públicas y proporcionar una solución estable en el futuro.
@@ -39,75 +40,75 @@ Documentación asociada:
 
 * [init](#initWithSoftwareStatement):softwareStatement: crea una instancia del objeto AccessEnabler.
 
-* **[OBSOLETO]** [init](#init) : crea una instancia del objeto AccessEnabler.
+* **[OBSOLETO]** [init](#init): crea una instancia del objeto AccessEnabler.
 
-* [`setOptions:options:`](#setOptions) : configura opciones globales del SDK como profile o visitorID.
+* [`setOptions:options:`](#setOptions): configura opciones globales del SDK como profile o visitorID.
 
-* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Establece la identidad del Programador.
+* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3),[`setRequestor:requestorID:serviceProviders:`](#setReqV3) - Establece la identidad del programador.
 
-* **[OBSOLETO]** [`setRequestor:signedRequestorId:`](#setReq),[`setRequestor:signedRequestorId:serviceProviders:`](#setReq) - Establece la identidad del Programador.
+* **[OBSOLETO]** [`setRequestor:signedRequestorId:`](#setReq),[`setRequestor:signedRequestorId:serviceProviders:`](#setReq): establece la identidad del programador.
 
-* **[OBSOLETO]** [`setRequestor:signedRequestorId:secret:publicKey`](#setReq_tvos), [`setRequestor:signedRequestorId:serviceProviders:secret:publicKey`](#setReq_tvos)-Establece la identidad del Programador.
+* **[OBSOLETO]** [`setRequestor:signedRequestorId:secret:publicKey`](#setReq_tvos), [`setRequestor:signedRequestorId:serviceProviders:secret:publicKey`](#setReq_tvos): establece la identidad del programador.
 
-* [`setRequestorComplete:`](#setReqComplete) - Informa a la aplicación de que la fase de configuración ha finalizado.
+* [`setRequestorComplete:`](#setReqComplete): informa a la aplicación de que se ha completado la fase de configuración.
 
 * [`checkAuthentication`](#checkAuthN) - Comprueba el estado de autenticación del usuario actual.
 
-* [`getAuthentication`](#getAuthN), [`getAuthentication:withData:`](#getAuthN) : inicia el flujo de trabajo de autenticación completo.
+* [`getAuthentication`](#getAuthN), [`getAuthentication:withData:`](#getAuthN): inicia el flujo de trabajo de autenticación completo.
 
-* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) : inicia el flujo de trabajo de autenticación completo.
+* [`getAuthentication:filter`](#getAuthN_filter),[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter): inicia el flujo de trabajo de autenticación completo.
 
-* [`displayProviderDialog:`](#dispProvDialog) : informa a la aplicación para que cree una instancia de los elementos de interfaz de usuario adecuados para que el usuario seleccione una MVPD.
+* [`displayProviderDialog:`](#dispProvDialog): informa a la aplicación de que debe crear una instancia de los elementos de la interfaz de usuario adecuados para que el usuario seleccione una MVPD.
 
-* [`setSelectedProvider:`](#setSelProv) - Informa al AccessEnabler de la selección de MVPD del usuario.
+* [`setSelectedProvider:`](#setSelProv): informa al AccessEnabler de la selección de MVPD del usuario.
 
-* [`navigateToUrl:`](#nav2url) : informa a la aplicación de que el usuario debe tener la página de inicio de sesión de MVPD.
+* [`navigateToUrl:`](#nav2url): informa a la aplicación de que el usuario debe recibir la página de inicio de sesión de MVPD.
 
-* [`navigateToUrl:useSVC:`](#nav2urlSVC) - Informa a la aplicación de que el usuario debe tener la página de inicio de sesión de MVPD, utilizando SFSafariViewController
+* [`navigateToUrl:useSVC:`](#nav2urlSVC): informa a la aplicación de que el usuario debe recibir la página de inicio de sesión de MVPD mediante SFSafariViewController
 
-* [`handleExternalURL:url`](#handleExternalURL) - Completa el flujo de autenticación/cierre de sesión.
+* [`handleExternalURL:url`](#handleExternalURL): completa el flujo de autenticación/cierre de sesión.
 
-* **[OBSOLETO]** [`getAuthenticationToken`](#getAuthNToken) - Solicita el token de autenticación del servidor back-end.
+* **[OBSOLETO]** [`getAuthenticationToken`](#getAuthNToken): solicita el token de autenticación del servidor back-end.
 
-* [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) : informa a la aplicación del estado del flujo de autenticación.
+* [`setAuthenticationStatus:errorCode:`](#setAuthNStatus): informa a su aplicación del estado del flujo de autenticación.
 
-* [`checkPreauthorizedResources:`](#checkPreauth) : Determina si el usuario ya está autorizado para ver recursos protegidos específicos.
+* [`checkPreauthorizedResources:`](#checkPreauth): determina si el usuario ya está autorizado para ver recursos protegidos específicos.
 
-* [`checkPreauthorizedResources:cache:`](#checkPreauthCache) : Determina si el usuario ya está autorizado para ver recursos protegidos específicos.
+* [`checkPreauthorizedResources:cache:`](#checkPreauthCache): determina si el usuario ya está autorizado para ver recursos protegidos específicos.
 
-* [`preauthorizedResources:`](#preauthResources) : Proporciona una lista de recursos que el usuario ya está autorizado a ver.
+* [`preauthorizedResources:`](#preauthResources): proporciona una lista de recursos que el usuario ya tiene autorización para ver.
 
 * [`checkAuthorization:`](#checkAuthZ), [`checkAuthorization:withData:`](#checkAuthZ) - Comprueba el estado de autorización del usuario actual.
 
 * [`getAuthorization:`](#getAuthZ), [`getAuthorization:withData:`](#getAuthZ) - Inicia el flujo de autorización.
 
-* [`setToken:forResource:`](#setToken) - Informa a la aplicación de que el flujo de autorización se completó correctamente.
+* [`setToken:forResource:`](#setToken): informa a la aplicación de que el flujo de autorización se completó correctamente.
 
-* [`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed) - Informa a la aplicación de que el flujo de autorización ha fallado.
+* [`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed): informa a la aplicación de que el flujo de autorización ha fallado.
 
-* [`logout`](#logout) - Inicia el flujo de cierre de sesión.
+* [`logout`](#logout): inicia el flujo de cierre de sesión.
 
-* [`getSelectedProvider`](#getSelProv) - Determina el proveedor seleccionado actualmente.
+* [`getSelectedProvider`](#getSelProv): determina el proveedor seleccionado actualmente.
 
-* [`selectedProvider:`](#selProv) - Entrega información sobre la MVPD seleccionada actualmente a su aplicación.
+* [`selectedProvider:`](#selProv): envía información sobre la MVPD seleccionada actualmente a su aplicación.
 
-* [`getMetadata:`](#getMeta) : recupera información expuesta como metadatos por la biblioteca AccessEnabler.
+* [`getMetadata:`](#getMeta): recupera información expuesta como metadatos por la biblioteca AccessEnabler.
 
-* [`presentTvProviderDialog:`](#presentTvDialog) : Informa a la aplicación para que muestre el cuadro de diálogo SSO de Apple.
+* [`presentTvProviderDialog:`](#presentTvDialog): informa a la aplicación para que muestre el cuadro de diálogo de SSO de Apple.
 
-* [`dismissTvProviderDialog:`](#dismissTvDialog) : Informa a la aplicación para ocultar el cuadro de diálogo SSO de Apple.
+* [`dismissTvProviderDialog:`](#dismissTvDialog): informa a la aplicación que oculte el cuadro de diálogo de SSO de Apple.
 
-* [`setMetadataStatus:encrypted:forKey:andArguments:`](#setMetaStatus) - Envía los metadatos solicitados por un [`getMetadata:`](#getMeta) llamada.
+* [`setMetadataStatus:encrypted:forKey:andArguments:`](#setMetaStatus) - Envía los metadatos solicitados por una llamada a [`getMetadata:`](#getMeta).
 
-* [`sendTrackingData:forEventType:`](#sendTracking) : Proporciona información de datos de seguimiento.
+* [`sendTrackingData:forEventType:`](#sendTracking): entrega información de datos de seguimiento.
 
-* [`MVPD`](#mvpd) - La clase MVPD. [Contiene información sobre MVPD]
+* [`MVPD`](#mvpd): la clase MVPD. [Contiene información sobre MVPD]
 
 ### init:softwareStatement {#initWithSoftwareStatement}
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** Crea una instancia del objeto AccessEnabler. Debe haber una sola instancia de AccessEnabler por cada instancia de aplicación.
+**Descripción:** crea una instancia del objeto AccessEnabler. Debe haber una sola instancia de AccessEnabler por cada instancia de aplicación.
 
 | **Llamada de API: constructor de iOS AccessEnabler** |
 | --- |
@@ -119,7 +120,7 @@ Documentación asociada:
 
 **Parámetros:**
 
-* **softwareStatement:** Cadena que identifica la aplicación en el sistema de Adobe. Consulte cómo obtener una declaración de software.
+* **softwareStatement:** Una cadena que identifica la aplicación en el sistema de Adobe. Consulte cómo obtener una declaración de software.
 
 [Volver al principio...](#apis)
 
@@ -129,13 +130,13 @@ Documentación asociada:
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** Crea una instancia del objeto AccessEnabler. Debe haber una sola instancia de AccessEnabler por cada instancia de aplicación.
+**Descripción:** crea una instancia del objeto AccessEnabler. Debe haber una sola instancia de AccessEnabler por cada instancia de aplicación.
 
 | Llamada de API: constructor de iOS AccessEnabler |
 | --- |
 | ```- (id) init;``` |
 
-**Disponibilidad:** v1.0+ **Hasta:** Versión 3.0
+**Disponibilidad:** v1.0+ **Hasta:** v3.0
 
 **Parámetros:** Ninguno
 
@@ -147,9 +148,9 @@ Documentación asociada:
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** Configura las opciones globales del SDK. Acepta un NSDictionary como argumento. Los valores del diccionario se pasarán al servidor junto con cada llamada de red que realice el SDK.
+**Descripción:** configura las opciones globales del SDK. Acepta un NSDictionary como argumento. Los valores del diccionario se pasarán al servidor junto con cada llamada de red que realice el SDK.
 
-**Nota:** Los valores se pasan al servidor independientemente del flujo actual (autenticación/autorización). Si desea cambiar los valores, puede llamar a este método en cualquier momento.
+**Nota:** Los valores se pasarán al servidor independientemente del flujo actual (autenticación/autorización). Si desea cambiar los valores, puede llamar a este método en cualquier momento.
 
 | Llamada de API: setOptions |
 | --- |
@@ -159,12 +160,12 @@ Documentación asociada:
 
 **Parámetros:**
 
-* *opciones*: NSDictionary que contiene las opciones globales del SDK. Actualmente están disponibles las siguientes opciones:
-   * **applicationProfile** : se puede utilizar para realizar configuraciones de servidor basadas en este valor.
-   * **visitorID** : El servicio de ID de Experience Cloud. Este valor puede utilizarse posteriormente en informes de análisis avanzados.
-   * **handleSVC** - Valor booleano que indica si el programador controlará SFSafariViewControllers. Consulte lo siguiente [Compatibilidad con SFSafariViewController en el SDK 3.2+ de iOS](/help/authentication/sfsafariviewcontroller-support-on-ios-sdk-32.md) para obtener más información.
+* *options*: un NSDictionary que contiene opciones globales del SDK. Actualmente están disponibles las siguientes opciones:
+   * **applicationProfile**: se puede usar para realizar configuraciones de servidor basadas en este valor.
+   * **visitorID** - Servicio de ID de Experience Cloud. Este valor puede utilizarse posteriormente en informes de análisis avanzados.
+   * **handleSVC**: valor booleano que indica si el programador controlará SFSafariViewControllers. Para obtener más información, consulte [Compatibilidad con SFSafariViewController en el SDK 3.2+](/help/authentication/sfsafariviewcontroller-support-on-ios-sdk-32.md) de iOS.
       * Si se establece en **false,** el SDK presentará automáticamente al usuario final un SFSafariViewController. El SDK se desplazará aún más a la URL de la página de inicio de sesión de MVPD.
-      * Si se establece en **true,** el SDK **NO** presentar automáticamente al usuario final un SFSafariViewController. El SDK proporcionará más déclencheur **navegar(toUrl:{url}, useSVC:SÍ)**.
+      * Si se establece en **true,**, el SDK **NO** presentará automáticamente al usuario final un SFSafariViewController. El SDK almacenará en déclencheur aún más **navegar(toUrl:{url}, useSVC:YES)**.
 * **device\_info** - Información del cliente como se describe en [Pasar información del cliente](/help/authentication/passing-client-information-device-connection-and-application.md).
 
 [Volver al principio...](#apis)
@@ -174,14 +175,14 @@ Documentación asociada:
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** Establece la identidad del programador. A cada programador se le asigna un ID único al registrarse con el Adobe en el sistema de autenticación de Adobe Pass. Cuando se trata de SSO y tokens remotos, el estado de autenticación puede cambiar cuando la aplicación está en segundo plano, se puede volver a llamar a setRequestor cuando la aplicación se pone en primer plano para sincronizar con el estado del sistema (recupere un token remoto si el SSO está habilitado o elimine el token local si se ha cerrado la sesión mientras tanto).
+**Descripción:** establece la identidad del programador. A cada programador se le asigna un ID único al registrarse con el Adobe en el sistema de autenticación de Adobe Pass. Cuando se trata de SSO y tokens remotos, el estado de autenticación puede cambiar cuando la aplicación está en segundo plano, se puede volver a llamar a setRequestor cuando la aplicación se pone en primer plano para sincronizar con el estado del sistema (recupere un token remoto si el SSO está habilitado o elimine el token local si se ha cerrado la sesión mientras tanto).
 
-La respuesta del servidor contiene una lista de MVPD junto con información de configuración adjunta a la identidad del programador. El código AccessEnabler utiliza internamente la respuesta del servidor. Solo el estado de la operación (es decir, SUCCESS/FAIL) se presenta a la aplicación a través de la variable `setRequestorComplete:` devolución de llamada.
+La respuesta del servidor contiene una lista de MVPD junto con información de configuración adjunta a la identidad del programador. El código AccessEnabler utiliza internamente la respuesta del servidor. Solo el estado de la operación (es decir, SUCCESS/FAIL) se presenta a su aplicación a través de la llamada de retorno `setRequestorComplete:`.
 
-Si la variable `urls` no se utiliza, la llamada de red resultante se dirige a la URL del proveedor de servicios predeterminada: el entorno de Adobe RELEASE/production.
+Si no se usa el parámetro `urls`, la llamada de red resultante se dirigirá a la dirección URL del proveedor de servicios predeterminado: el entorno de producción/VERSIÓN de Adobe.
 
 
-Si se proporciona un valor para `urls` , la llamada de red resultante se dirige a todas las direcciones URL proporcionadas en el parámetro `urls` parámetro. Todas las solicitudes de configuración se activan simultáneamente en subprocesos independientes. El primer respondedor tiene prioridad al compilar la lista de MVPD. Para cada MVPD de la lista, AccessEnabler recuerda la dirección URL del proveedor de servicios asociado. Todas las solicitudes de derechos subsiguientes se dirigen a la URL asociada al proveedor de servicios emparejado con la MVPD de destino durante la fase de configuración.
+Si se proporciona un valor para el parámetro `urls`, la llamada de red resultante se dirigirá a todas las direcciones URL proporcionadas en el parámetro `urls`. Todas las solicitudes de configuración se activan simultáneamente en subprocesos independientes. El primer respondedor tiene prioridad al compilar la lista de MVPD. Para cada MVPD de la lista, AccessEnabler recuerda la dirección URL del proveedor de servicios asociado. Todas las solicitudes de derechos subsiguientes se dirigen a la URL asociada al proveedor de servicios emparejado con la MVPD de destino durante la fase de configuración.
 
 | Llamada de API: configuración del solicitante |
 | --- |
@@ -200,13 +201,13 @@ Si se proporciona un valor para `urls` , la llamada de red resultante se dirige 
 **Parámetros:**
 
 * *requestorID*: ID único asociado con el programador. Pase el ID único asignado por el Adobe a su sitio cuando se registre por primera vez en el servicio de autenticación de Adobe Pass.
-* *url*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista de MVPD se compone de los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
+* *urls*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista de MVPD se compone de los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
 
 >[!NOTE]
 >
->Si se llama sin el `serviceProviders` , la biblioteca recuperará la configuración del proveedor de servicios predeterminado (es decir, `https://sp.auth.adobe.com` para el perfil de producción o `https://sp.auth-staging.adobe.com` para el perfil de ensayo). Si la variable `serviceProviders` Cuando se proporciona un parámetro, debe ser una matriz de direcciones URL. La información de configuración se recupera de todos los extremos especificados y se combina. Si existe información duplicada en diferentes respuestas del proveedor de servicios, el conflicto se resuelve en favor del servidor que responde más rápido (es decir, el servidor con el tiempo de respuesta más corto tiene prioridad).
+>Si se llama sin el parámetro `serviceProviders`, la biblioteca recuperará la configuración del proveedor de servicios predeterminado (es decir, `https://sp.auth.adobe.com` para el perfil de producción o `https://sp.auth-staging.adobe.com` para el perfil de ensayo). Si se proporciona el parámetro `serviceProviders`, debe ser una matriz de direcciones URL. La información de configuración se recupera de todos los extremos especificados y se combina. Si existe información duplicada en diferentes respuestas del proveedor de servicios, el conflicto se resuelve en favor del servidor que responde más rápido (es decir, el servidor con el tiempo de respuesta más corto tiene prioridad).
 
-**Llamadas activadas:** [`setRequestorComplete:`](#setReqComplete)
+**Llamadas de retorno activadas:** [`setRequestorComplete:`](#setReqComplete)
 
 [Volver al principio...](#apis)
 
@@ -216,35 +217,35 @@ Si se proporciona un valor para `urls` , la llamada de red resultante se dirige 
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** Establece la identidad del programador. A cada programador se le asigna un ID único al registrarse con el Adobe en el sistema de autenticación de Adobe Pass. Cuando se trata de SSO y tokens remotos, el estado de autenticación puede cambiar cuando la aplicación está en segundo plano. Se puede volver a llamar a setRequestor cuando la aplicación se pone en primer plano para sincronizar con el estado del sistema (recupere un token remoto si está habilitado el SSO o elimine el token local si se ha cerrado la sesión mientras tanto).
+**Descripción:** establece la identidad del programador. A cada programador se le asigna un ID único al registrarse con el Adobe en el sistema de autenticación de Adobe Pass. Cuando se trata de SSO y tokens remotos, el estado de autenticación puede cambiar cuando la aplicación está en segundo plano. Se puede volver a llamar a setRequestor cuando la aplicación se pone en primer plano para sincronizar con el estado del sistema (recupere un token remoto si está habilitado el SSO o elimine el token local si se ha cerrado la sesión mientras tanto).
 
-La respuesta del servidor contiene una lista de MVPD junto con información de configuración adjunta a la identidad del programador. El código AccessEnabler utiliza internamente la respuesta del servidor. Solo el estado de la operación (es decir, SUCCESS/FAIL) se presenta a la aplicación a través de la variable `setRequestorComplete:` devolución de llamada.
+La respuesta del servidor contiene una lista de MVPD junto con información de configuración adjunta a la identidad del programador. El código AccessEnabler utiliza internamente la respuesta del servidor. Solo el estado de la operación (es decir, SUCCESS/FAIL) se presenta a su aplicación a través de la llamada de retorno `setRequestorComplete:`.
 
-Si la variable `urls` no se utiliza, la llamada de red resultante se dirige a la URL del proveedor de servicios predeterminada: el entorno de Adobe RELEASE/production.
+Si no se usa el parámetro `urls`, la llamada de red resultante se dirigirá a la dirección URL del proveedor de servicios predeterminado: el entorno de producción/VERSIÓN de Adobe.
 
-Si se proporciona un valor para `urls` , la llamada de red resultante se dirige a todas las direcciones URL proporcionadas en el parámetro `urls` parámetro. Todas las solicitudes de configuración se activan simultáneamente en subprocesos independientes. El primer respondedor tiene prioridad al compilar la lista de MVPD. Para cada MVPD de la lista, AccessEnabler recuerda la dirección URL del proveedor de servicios asociado. Todas las solicitudes de derechos subsiguientes se dirigen a la URL asociada al proveedor de servicios emparejado con la MVPD de destino durante la fase de configuración.
+Si se proporciona un valor para el parámetro `urls`, la llamada de red resultante se dirigirá a todas las direcciones URL proporcionadas en el parámetro `urls`. Todas las solicitudes de configuración se activan simultáneamente en subprocesos independientes. El primer respondedor tiene prioridad al compilar la lista de MVPD. Para cada MVPD de la lista, AccessEnabler recuerda la dirección URL del proveedor de servicios asociado. Todas las solicitudes de derechos subsiguientes se dirigen a la URL asociada al proveedor de servicios emparejado con la MVPD de destino durante la fase de configuración.
 
 | Llamada de API: configuración del solicitante |
 | --- |
 | </br>`- (void) setRequestor:(NSString *)requestorID`</br>`signedRequestorID:(NSString *)signedRequestorID;` </br></br> |
 
-**Disponibilidad:** v1.0+ **Hasta:** Versión 3.0
+**Disponibilidad:** v1.0+ **Hasta:** v3.0
 
 | Llamada de API: configuración del solicitante |
 | --- |
 | `- (void) setRequestor:(NSString *)requestorID ` <br> `       signedRequestorID:(NSString *)signedRequestorID` <br> `         serviceProviders:(NSArray *)urls;` |
 
-**Disponibilidad:** v1.0+ **Hasta:** Versión 3.0
+**Disponibilidad:** v1.0+ **Hasta:** v3.0
 
 **Parámetros:**
 
 * *requestorID*: ID único asociado con el programador. Pase el ID único asignado por el Adobe a su sitio cuando se registró por primera vez en el servicio de autenticación de Adobe Pass.
-* *signedRequestorID*: **Este parámetro existe en las versiones 1.2 y posteriores de iOS AccessEnabler.** Una copia del ID del solicitante firmado digitalmente con su clave privada. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
-* *url*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista de MVPD se compone de los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
+* *signedRequestorID*: **Este parámetro existe en iOS AccessEnabler versiones 1.2 y posteriores.** Una copia del ID del solicitante firmado digitalmente con su clave privada. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
+* *urls*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista de MVPD se compone de los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
 
-**Notas:** Si se llama sin el `serviceProviders` , la biblioteca recuperará la configuración del proveedor de servicios predeterminado (es decir,`https://sp.auth.adobe.com` para el perfil de producción o `https://sp.auth-staging.adobe.com` para el perfil de ensayo). Si la variable `serviceProviders` Cuando se proporciona un parámetro, debe ser una matriz de direcciones URL. La información de configuración se recupera de todos los extremos especificados y se combina. Si existe información duplicada en diferentes respuestas del proveedor de servicios, el conflicto se resuelve en favor del servidor que responde más rápido (es decir, el servidor con el tiempo de respuesta más corto tiene prioridad).
+**Notas:** Si se llama sin el parámetro `serviceProviders`, la biblioteca recuperará la configuración del proveedor de servicios predeterminado (es decir, `https://sp.auth.adobe.com` para el perfil de producción o `https://sp.auth-staging.adobe.com` para el perfil de ensayo). Si se proporciona el parámetro `serviceProviders`, debe ser una matriz de direcciones URL. La información de configuración se recupera de todos los extremos especificados y se combina. Si existe información duplicada en diferentes respuestas del proveedor de servicios, el conflicto se resuelve en favor del servidor que responde más rápido (es decir, el servidor con el tiempo de respuesta más corto tiene prioridad).
 
-**Llamadas activadas:** [`setRequestorComplete:`](#setReqComplete)
+**Llamadas de retorno activadas:** [`setRequestorComplete:`](#setReqComplete)
 
 
 [Volver al principio...](#apis)
@@ -253,13 +254,13 @@ Si se proporciona un valor para `urls` , la llamada de red resultante se dirige 
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** Establece la identidad del programador. A cada programador se le asigna un ID único al registrarse con el Adobe en el sistema de autenticación de Adobe Pass. Esta configuración solo debe realizarse una vez durante el ciclo de vida de la aplicación.
+**Descripción:** establece la identidad del programador. A cada programador se le asigna un ID único al registrarse con el Adobe en el sistema de autenticación de Adobe Pass. Esta configuración solo debe realizarse una vez durante el ciclo de vida de la aplicación.
 
-La respuesta del servidor contiene una lista de MVPD junto con información de configuración adjunta a la identidad del programador. El código AccessEnabler utiliza internamente la respuesta del servidor. Solo el estado de la operación (es decir, SUCCESS/FAIL) se presenta a la aplicación a través de la variable `setRequestorComplete:` devolución de llamada.
+La respuesta del servidor contiene una lista de MVPD junto con información de configuración adjunta a la identidad del programador. El código AccessEnabler utiliza internamente la respuesta del servidor. Solo el estado de la operación (es decir, SUCCESS/FAIL) se presenta a su aplicación a través de la llamada de retorno `setRequestorComplete:`.
 
-Si la variable `urls` no se utiliza, la llamada de red resultante se dirige a la URL del proveedor de servicios predeterminada: el entorno de Adobe RELEASE/production.
+Si no se usa el parámetro `urls`, la llamada de red resultante se dirigirá a la dirección URL del proveedor de servicios predeterminado: el entorno de producción/VERSIÓN de Adobe.
 
-Si se proporciona un valor para `urls` , la llamada de red resultante se dirige a todas las direcciones URL proporcionadas en el parámetro `urls` parámetro. Todas las solicitudes de configuración se activan simultáneamente en subprocesos independientes. El primer respondedor tiene prioridad al compilar la lista de MVPD. Para cada MVPD de la lista, AccessEnabler recuerda la dirección URL del proveedor de servicios asociado. Todas las solicitudes de derechos subsiguientes se dirigen a la URL asociada al proveedor de servicios emparejado con la MVPD de destino durante la fase de configuración.
+Si se proporciona un valor para el parámetro `urls`, la llamada de red resultante se dirigirá a todas las direcciones URL proporcionadas en el parámetro `urls`. Todas las solicitudes de configuración se activan simultáneamente en subprocesos independientes. El primer respondedor tiene prioridad al compilar la lista de MVPD. Para cada MVPD de la lista, AccessEnabler recuerda la dirección URL del proveedor de servicios asociado. Todas las solicitudes de derechos subsiguientes se dirigen a la URL asociada al proveedor de servicios emparejado con la MVPD de destino durante la fase de configuración.
 
 
 
@@ -283,7 +284,7 @@ Si se proporciona un valor para `urls` , la llamada de red resultante se dirige 
 </table>
 
 
-**Disponibilidad:** v2.0+ **Hasta:** Versión 3.0
+**Disponibilidad:** v2.0+ **Hasta:** v3.0
 
 <table class="pass_api_table">
 <colgroup>
@@ -305,18 +306,18 @@ Si se proporciona un valor para `urls` , la llamada de red resultante se dirige 
 </tbody>
 </table>
 
-**Disponibilidad:** v2.0+ **Hasta:** Versión 3.0
+**Disponibilidad:** v2.0+ **Hasta:** v3.0
 
 **Parámetros:**
 
-* *requestorID*: ID único asociado con el programador. Pase el ID único asignado por el Adobe a su sitio cuando se registró por primera vez en el servicio de autenticación de Adobe Pass.
-* *signedRequestorID*: **Este parámetro existe en las versiones 1.2 y posteriores de iOS AccessEnabler.** Una copia del ID del solicitante firmado digitalmente con su clave privada. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
-* *url*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista de MVPD se compone de los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
+* *requestorID*: ID único asociado con el programador. Pase el ID único asignado por el Adobe a su sitio la primera vez que   esté registrado con el servicio de autenticación de Adobe Pass.
+* *signedRequestorID*: **Este parámetro existe en iOS AccessEnabler   versiones 1.2 y posteriores.** Una copia del ID del solicitante firmado digitalmente con su clave privada. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
+* *urls*: Parámetro opcional; de forma predeterminada, el proveedor de servicios de Adobe   (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista de MVPD se compone de los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
 * secret y publicKey: La clave secreta y pública utilizada para firmar las segundas llamadas de pantalla. Para obtener más información, consulte [Documentación sin cliente](#create_dev).
 
-Si se llama sin el `serviceProviders` , la biblioteca recuperará la configuración del proveedor de servicios predeterminado (es decir, `https://sp.auth.adobe.com` para el perfil de producción o https://sp.auth-staging.adobe.com para el perfil de ensayo). Si la variable `serviceProviders` Cuando se proporciona un parámetro, debe ser una matriz de direcciones URL. La información de configuración se recupera de todos los extremos especificados y se combina. Si existe información duplicada en diferentes respuestas del proveedor de servicios, el conflicto se resuelve en favor del servidor que responde más rápido (es decir, el servidor con el tiempo de respuesta más corto tiene prioridad).
+Si se llama sin el parámetro `serviceProviders`, la biblioteca recuperará la configuración del proveedor de servicios predeterminado (es decir, `https://sp.auth.adobe.com` para el perfil de producción o https://sp.auth-staging.adobe.com para el perfil de ensayo). Si se proporciona el parámetro `serviceProviders`, debe ser una matriz de direcciones URL. La información de configuración se recupera de todos los extremos especificados y se combina. Si existe información duplicada en diferentes respuestas del proveedor de servicios, el conflicto se resuelve en favor del servidor que responde más rápido (es decir, el servidor con el tiempo de respuesta más corto tiene prioridad).
 
-**Llamadas activadas:** [`setRequestorComplete:`](#setReqComplete)
+**Llamadas de retorno activadas:** [`setRequestorComplete:`](#setReqComplete)
 
 [Volver al principio...](#apis)
 
@@ -326,7 +327,7 @@ Si se llama sin el `serviceProviders` , la biblioteca recuperará la configuraci
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción** Llamada de retorno activada por AccessEnabler que informa a la aplicación de que la fase de configuración ha finalizado. Esto indica que la aplicación puede empezar a emitir solicitudes de derechos. La aplicación no puede emitir solicitudes de asignación de derechos hasta que se complete la fase de configuración.
+**Descripción** La devolución de llamada desencadenada por AccessEnabler informa a la aplicación de que la fase de configuración ha finalizado. Esto indica que la aplicación puede empezar a emitir solicitudes de derechos. La aplicación no puede emitir solicitudes de asignación de derechos hasta que se complete la fase de configuración.
 
 <table class="pass_api_table">
 <colgroup>
@@ -350,8 +351,8 @@ Si se llama sin el `serviceProviders` , la biblioteca recuperará la configuraci
 **Parámetros**:
 
 * *status*: puede tomar uno de los siguientes valores:
-   * `ACCESS_ENABLER_STATUS_SUCCESS` - la fase de configuración se completó correctamente
-   * `ACCESS_ENABLER_STATUS_ERROR` - fase de configuración fallida
+   * `ACCESS_ENABLER_STATUS_SUCCESS`: la fase de configuración se completó correctamente
+   * `ACCESS_ENABLER_STATUS_ERROR`: error en la fase de configuración
 
 **Activado por:**
 
@@ -365,9 +366,13 @@ Si se llama sin el `serviceProviders` , la biblioteca recuperará la configuraci
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** Comprueba el estado de autenticación del usuario actual.
-Para ello, busca un token de autenticación válido en el espacio de almacenamiento del token local. Este método no realiza llamadas de red y se recomienda llamarlo en el subproceso principal.
-La aplicación la utiliza para consultar el estado de autenticación del usuario y actualizar la interfaz de usuario en consecuencia (es decir, actualizar la interfaz de usuario de inicio de sesión/cierre de sesión). El estado de autenticación se comunica a la aplicación a través de la [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) devolución de llamada.
+**Descripción:** comprueba el estado de autenticación del usuario actual.
+Para ello, busca un token de autenticación válido en la biblioteca local de
+espacio de almacenamiento de token. Este método no realiza llamadas de red y se recomienda llamarlo en el subproceso principal.
+La aplicación la utiliza para consultar el estado de autenticación del usuario y
+actualice la interfaz de usuario en consecuencia (es decir, actualice la interfaz de usuario de inicio de sesión/cierre de sesión). El
+el estado de autenticación se comunica a la aplicación a través de
+la llamada de retorno [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
 
 
 <table class="pass_api_table">
@@ -390,7 +395,7 @@ La aplicación la utiliza para consultar el estado de autenticación del usuario
 
 **Parámetros:** Ninguno
 
-**Llamadas activadas:**
+**Llamadas de retorno activadas:**
 [`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
 
 [Volver al principio...](#apis)
@@ -401,14 +406,14 @@ La aplicación la utiliza para consultar el estado de autenticación del usuario
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** Inicia el flujo de trabajo de autenticación completo. Se inicia comprobando el estado de autenticación. Si no se ha autenticado ya, se inicia el flujo de autenticación estado-máquina:
+**Descripción:** inicia el flujo de trabajo de autenticación completo. Se inicia comprobando el estado de autenticación. Si no se ha autenticado ya, se inicia el flujo de autenticación estado-máquina:
 
-* si el último intento de autenticación se realizó correctamente, se omite la fase de selección de MVPD y la variable [`navigateToUrl:`](#nav2url) se activa la devolución de llamada. La aplicación utiliza esta llamada de retorno para crear una instancia del control WebView que presenta al usuario la página de inicio de sesión de la MVPD. **[NOTA: A partir de Access Enabler 1.5, esta funcionalidad no está disponible debido a una limitación del SDK].**
-* si el último intento de autenticación no se realizó correctamente o si el usuario cerró sesión explícitamente, la variable [`displayProviderDialog:`](#dispProvDialog) se activa la devolución de llamada. La aplicación utiliza esta llamada de retorno para mostrar la interfaz de usuario de selección de MVPD. Además, la aplicación debe reanudar el flujo de autenticación informando a la biblioteca AccessEnabler sobre la selección de MVPD del usuario a través de la [`setSelectedProvider:`](#setSelProv) método.
+* si el último intento de autenticación se realizó correctamente, la MVPD   se omite la fase de selección y   se activa la devolución de llamada [`navigateToUrl:`](#nav2url). El   La aplicación utiliza esta llamada de retorno para crear una instancia del control WebView que presenta al usuario la página de inicio de sesión de la MVPD. **[NOTA: a partir de Access Enabler 1.5, esta funcionalidad no está disponible debido a una limitación en el SDK].**
+* si el último intento de autenticación no se realizó correctamente o si el usuario cerró la sesión explícitamente, la llamada de retorno [`displayProviderDialog:`](#dispProvDialog) es   activado. La aplicación utiliza esta llamada de retorno para mostrar la interfaz de usuario de selección de MVPD. Además, la aplicación debe reanudar el flujo de autenticación informando a la biblioteca AccessEnabler sobre la selección de MVPD del usuario mediante el método [`setSelectedProvider:`](#setSelProv).
 
-A medida que las credenciales del usuario se verifican en la página de inicio de sesión de MVPD, la aplicación debe supervisar las operaciones de redirección múltiples que se producen mientras el usuario se autentica en la página de inicio de sesión de MVPD. Cuando se especifican las credenciales correctas, el control WebView se redirige a una dirección URL personalizada definida por el `ADOBEPASS_REDIRECT_URL` constante. WebView no pretende cargar esta dirección URL. La aplicación debe interceptar esta URL e interpretar este evento como una señal de que la fase de inicio de sesión ha finalizado. Luego debe entregar el control al AccessEnabler para completar el flujo de autenticación (llamando a la función [handleExternalURL](#handleExternalURL) método).
+A medida que las credenciales del usuario se verifican en la página de inicio de sesión de MVPD, la aplicación debe supervisar las operaciones de redirección múltiples que se producen mientras el usuario se autentica en la página de inicio de sesión de MVPD. Cuando se especifican las credenciales correctas, el control WebView se redirige a una dirección URL personalizada definida por la constante `ADOBEPASS_REDIRECT_URL`. WebView no pretende cargar esta dirección URL. La aplicación debe interceptar esta URL e interpretar este evento como una señal de que la fase de inicio de sesión ha finalizado. Luego debe entregar el control a AccessEnabler para completar el flujo de autenticación (llamando al método [handleExternalURL](#handleExternalURL)).
 
-Finalmente, el estado de autenticación se comunica a la aplicación a través de la [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) devolución de llamada.
+Por último, el estado de autenticación se comunica a la aplicación a través de la llamada de retorno [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
 
 <table class="pass_api_table">
 <colgroup>
@@ -454,10 +459,10 @@ Finalmente, el estado de autenticación se comunica a la aplicación a través d
 
 **Parámetros:**
 
-* *forceAuthen*: un indicador que especifica si se debe iniciar el flujo de autenticación, independientemente de si el usuario ya se ha autenticado o no.
+* *forceAuthn*: Un indicador que especifica si el flujo de autenticación debe iniciarse, independientemente de si el usuario ya se ha autenticado o no.
 * *datos*: Un diccionario que consta de pares de clave-valor que se enviarán al servicio de pase de TV de pago. El Adobe de puede utilizar estos datos para habilitar futuras funciones sin cambiar el SDK.
 
-**Llamadas activadas:** `setAuthenticationStatus:errorCode:`, [`displayProviderDialog:`](#dispProvDialog), `sendTrackingData:forEventType:`
+**Llamadas de retorno activadas:** `setAuthenticationStatus:errorCode:`, [`displayProviderDialog:`](#dispProvDialog), `sendTrackingData:forEventType:`
 
 
 [Volver al principio...](#apis)
@@ -468,12 +473,12 @@ Finalmente, el estado de autenticación se comunica a la aplicación a través d
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** Inicia el flujo de trabajo de autenticación completo. Se inicia comprobando el estado de autenticación. Si no se ha autenticado ya, se inicia el flujo de autenticación estado-máquina:
+**Descripción:** inicia el flujo de trabajo de autenticación completo. Se inicia comprobando el estado de autenticación. Si no se ha autenticado ya, se inicia el flujo de autenticación estado-máquina:
 
-* [presentTvProviderDialog()](#presentTvDialog) se llamará si el solicitante actual tiene al menos una MVPD que admita SSO. Si ninguna MVPD admite SSO, comenzará el flujo de autenticación clásico y se omitirá el parámetro de filtro.
-* Una vez que el usuario completa el flujo de SSO de Apple [`dismissTvProviderDialog()`](#dismissTvDialog) se activará y el proceso de autenticación finalizará.
+* Se llamará a [presentTvProviderDialog()](#presentTvDialog) si el solicitante actual tiene al menos una MVPD que admita SSO. Si ninguna MVPD admite SSO, comenzará el flujo de autenticación clásico y se omitirá el parámetro de filtro.
+* Una vez que el usuario finalice, el flujo de SSO de Apple [`dismissTvProviderDialog()`](#dismissTvDialog) se activará y el proceso de autenticación finalizará.
 
-Finalmente, el estado de autenticación se comunica a la aplicación a través de la [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) devolución de llamada.
+Por último, el estado de autenticación se comunica a la aplicación a través de la llamada de retorno [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
 
 **Disponibilidad:** v2.4+
 
@@ -519,13 +524,13 @@ Finalmente, el estado de autenticación se comunica a la aplicación a través d
 
 **Parámetros:**
 
-* *forceAuthen*: un indicador que especifica si se debe iniciar el flujo de autenticación, independientemente de si el usuario ya se ha autenticado o no.
+* *forceAuthn*: Un indicador que especifica si el flujo de autenticación debe iniciarse, independientemente de si el usuario ya se ha autenticado o no.
 * *datos*: Un diccionario que consta de pares de clave-valor que se enviarán al servicio de pase de TV de pago. El Adobe de puede utilizar estos datos para habilitar futuras funciones sin cambiar el SDK.
 * filtro: diccionario con dos listas de ID de MVPD que deben aparecer en el cuadro de diálogo SSO de Apple. Cualquier MVPD que no admita SSO será ignorada, pero se respetará el orden. El diccionario debe tener dos claves:
    * TV\_PROVIDERS: Una lista con todas las MVPD que deben aparecer en el selector
    * FEATURED\_TV\_PROVIDERS: Una lista con todas las MVPD que deben marcarse como destacadas en el selector. Las MVPD de esta lista también deben especificarse en la lista TV\_PROVIDERS.
 
-**Disponibilidad:** Versión 2.0: versión 2.3.1
+**Disponibilidad:** v2.0 - v2.3.1
 
 
 <table class="pass_api_table">
@@ -571,11 +576,11 @@ Finalmente, el estado de autenticación se comunica a la aplicación a través d
 
 **Parámetros:**
 
-* *forceAuthen*: un indicador que especifica si se debe iniciar el flujo de autenticación, independientemente de si el usuario ya se ha autenticado o no.
+* *forceAuthn*: Un indicador que especifica si el flujo de autenticación debe iniciarse, independientemente de si el usuario ya se ha autenticado o no.
 * *datos*: Un diccionario que consta de pares de clave-valor que se enviarán al servicio de pase de TV de pago. El Adobe de puede utilizar estos datos para habilitar futuras funciones sin cambiar el SDK.
 * filtro: una lista de los ID de MVPD que deben aparecer en el cuadro de diálogo SSO de Apple. Cualquier MVPD que no admita SSO será ignorada, pero se respetará el orden.
 
-**Llamadas activadas:** `setAuthenticationStatus:errorCode:, presentTvProviderDialog, dismissTvProviderDialog`
+**Llamadas de retorno activadas:** `setAuthenticationStatus:errorCode:, presentTvProviderDialog, dismissTvProviderDialog`
 
 
 [Volver al principio...](#apis)
@@ -586,11 +591,11 @@ Finalmente, el estado de autenticación se comunica a la aplicación a través d
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción** La llamada de retorno activada por AccessEnabler para informar a la aplicación de que es necesario crear una instancia de los elementos de la interfaz de usuario adecuados para permitir que el usuario seleccione la MVPD deseada. La llamada de retorno proporciona una lista de objetos MVPD con información adicional que puede ayudar a crear correctamente el panel de la interfaz de usuario de selección (como la URL que señala al logotipo de MVPD, un nombre para mostrar descriptivo, etc.)
+**Descripción** La llamada de retorno desencadenada por AccessEnabler para informar a la aplicación de que es necesario crear una instancia de los elementos de la interfaz de usuario apropiados para permitir que el usuario seleccione la MVPD deseada. La llamada de retorno proporciona una lista de objetos MVPD con información adicional que puede ayudar a crear correctamente el panel de la interfaz de usuario de selección (como la URL que señala al logotipo de MVPD, un nombre para mostrar descriptivo, etc.)
 
 Una vez que el usuario ha seleccionado la MVPD deseada, la aplicación de capa superior debe reanudar el flujo de autenticación llamando a `setSelectedProvider:` y pasándole el ID de la MVPD correspondiente a la selección del usuario.
 
-**Cancelación del flujo de autenticación** - Este es un punto en el que el usuario tiene la posibilidad de pulsar el botón &quot;Atrás&quot;, lo que equivale a anular el flujo de autenticación. En ese caso, la aplicación debe llamar a la función [setSelectedProvider:](#setSelProv) , pasando null como parámetro, para dar al AccessEnabler la oportunidad de restablecer su estado de autenticación-máquina.
+**Anulando el flujo de autenticación**. En este punto, el usuario tiene la posibilidad de presionar el botón &quot;Atrás&quot;, lo que equivale a anular el flujo de autenticación. En ese caso, la aplicación debe llamar al método [setSelectedProvider:](#setSelProv), pasando null como parámetro, para dar al AccessEnabler la oportunidad de restablecer su equipo de estado de autenticación.
 
 <table class="pass_api_table">
 <colgroup>
@@ -613,7 +618,7 @@ Una vez que el usuario ha seleccionado la MVPD deseada, la aplicación de capa s
 
 **Parámetros**:
 
-* *mvpds*: lista de objetos MVPD que contienen información relacionada con MVPD que la aplicación puede utilizar para crear los elementos de la IU de selección de MVPD.
+* *mvpds*: lista de objetos MVPD que contienen información relacionada con MVPD que la aplicación puede utilizar para crear los elementos de la interfaz de usuario de selección de MVPD.
 
 **Activado por:** `getAuthentication`, [`getAuthentication:withData:`](#getAuthN),`getAuthorization:`, [`getAuthorization:withData:`](#getAuthZ)
 
@@ -626,13 +631,13 @@ Una vez que el usuario ha seleccionado la MVPD deseada, la aplicación de capa s
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** La aplicación llama a este método para informar al Habilitador de acceso de la selección de MVPD del usuario. La aplicación puede utilizar este método para seleccionar o cambiar el proveedor de servicios utilizado para la autenticación.
+**Descripción:** Su aplicación llama a este método para informar al Habilitador de acceso de la selección de MVPD del usuario. La aplicación puede utilizar este método para seleccionar o cambiar el proveedor de servicios utilizado para la autenticación.
 
 Si la MVPD seleccionada es una MVPD TempPass, se autenticará automáticamente con esa MVPD sin necesidad de llamar posteriormente a getAuthentication().
 
 Tenga en cuenta que esto no es posible en el caso del pase temporal promocional, en el que se proporcionan parámetros adicionales en el método getAuthentication().
 
-Al pasar *null* como parámetro, el Access Enabler supone que el usuario ha cancelado el flujo de autenticación (es decir, ha pulsado el botón &quot;Atrás&quot;), y responde restableciendo el estado de autenticación-máquina y llamando a [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) devolución de llamada con `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` código de error.
+Al pasar *null* como parámetro, Access Enabler supone que el usuario ha cancelado el flujo de autenticación (es decir, ha presionado el botón &quot;Atrás&quot;), y responde restableciendo el estado-máquina de autenticación y llamando a la llamada de retorno [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) con el código de error `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR`.
 
 <table class="pass_api_table">
 <colgroup>
@@ -654,7 +659,7 @@ Al pasar *null* como parámetro, el Access Enabler supone que el usuario ha canc
 
 **Parámetros:** Ninguno
 
-**Llamadas activadas:** `setAuthenticationStatus:errorCode:`,`sendTrackingData:forEventType:`,  [`navigateToUrl:`](#nav2url)
+**Llamadas de retorno activadas:** `setAuthenticationStatus:errorCode:`, `sendTrackingData:forEventType:`, [`navigateToUrl:`](#nav2url)
 
 [Volver al principio...](#apis)
 
@@ -664,11 +669,11 @@ Al pasar *null* como parámetro, el Access Enabler supone que el usuario ha canc
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción:** Llamada de retorno activada por AccessEnabler para solicitar a su aplicación que cree una instancia de un controlador UIWebView/WKWebView y que cargue la URL proporcionada en la llamada de retorno **`url`** parámetro. La llamada de retorno pasa el **`url`** parámetro que representa la dirección URL del extremo de autenticación o la dirección URL del extremo de cierre de sesión.
+**Descripción:** La devolución de llamada desencadenada por AccessEnabler para solicitar a su aplicación que cree una instancia de un controlador UIWebView/WKWebView y que cargue la dirección URL proporcionada en el parámetro **`url`** de la devolución de llamada. La devolución de llamada pasa el parámetro **`url`** que representa la dirección URL del extremo de autenticación o la dirección URL del extremo de cierre de sesión.
 
-Como UIWebView/WKWebView` `El controlador pasa por varias redirecciones, la aplicación debe supervisar la actividad del controlador y detectar el momento en que carga una dirección URL personalizada específica definida por `ADOBEPASS_REDIRECT_URL `constante (es decir, `adobepass://ios.app`). Tenga en cuenta que esta dirección URL personalizada específica no es válida y no está pensada para que el controlador la cargue. Su aplicación debe interpretarlo únicamente como una señal de que el flujo de autenticación o cierre de sesión se ha completado y de que es seguro cerrar el controlador. Cuando el controlador carga esta URL personalizada específica, la aplicación debe cerrar UIWebView/WKWebView y llamar al servicio AccessEnabler `handleExternalURL:url `Método de API.
+A medida que el controlador UIWebView/WKWebView` `pasa por varias redirecciones, su aplicación debe supervisar la actividad del controlador y detectar el momento en que carga una dirección URL personalizada específica definida por la constante `ADOBEPASS_REDIRECT_URL `i.e. `adobepass://ios.app`). Tenga en cuenta que esta dirección URL personalizada específica no es válida y no está pensada para que el controlador la cargue. Su aplicación debe interpretarlo únicamente como una señal de que el flujo de autenticación o cierre de sesión se ha completado y de que es seguro cerrar el controlador. Cuando el controlador carga esta dirección URL personalizada específica, la aplicación debe cerrar UIWebView/WKWebView y llamar al método de API `handleExternalURL:url `de AccessEnabler.
 
-**Nota:** Tenga en cuenta que en el caso del flujo de autenticación, este es un punto en el que el usuario tiene la capacidad de pulsar el botón &quot;Atrás&quot;, lo que equivale a anular el flujo de autenticación. En este caso, la aplicación debe llamar a la función [setSelectedProvider:](#setSelProv) paso de método **`nil`** como el parámetro y dando la oportunidad al AccessEnabler de restablecer su estado de autenticación-máquina.
+**Nota:** Tenga en cuenta que en el caso del flujo de autenticación, este es un punto en el que el usuario tiene la capacidad de presionar el botón &quot;Atrás&quot;, lo que equivale a anular el flujo de autenticación. En este caso, la aplicación debe llamar al método [setSelectedProvider:](#setSelProv) pasando **`nil`** como parámetro y dando la oportunidad al AccessEnabler de restablecer su equipo de estado de autenticación.
 
 <table class="pass_api_table">
 <colgroup>
@@ -704,13 +709,13 @@ Como UIWebView/WKWebView` `El controlador pasa por varias redirecciones, la apli
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción:** La llamada de retorno se activa mediante AccessEnabler en lugar de con el `navigateToUrl:` devolución de llamada en caso de que la aplicación haya habilitado anteriormente la gestión manual de Safari View Controller (SVC) mediante el [setOptions(\[&quot;handleSVC&quot;:true&quot;\])](#setOptions) y solo en el caso de las MVPD que requieran el controlador de vista de Safari (SVC). Para todas las demás MVPD, la variable `navigateToUrl:` se llamará a la devolución de llamada. Consulte lo siguiente[Compatibilidad con SFSafariViewController en el SDK 3.2+ de iOS](/help/authentication/sfsafariviewcontroller-support-on-ios-sdk-32.md) para obtener más información sobre cómo se debe administrar Safari View Controller (SVC).
+**Descripción:** La devolución de llamada se activó mediante AccessEnabler en lugar de la devolución de llamada `navigateToUrl:` en el caso de que la aplicación habilitara previamente la administración manual de Safari View Controller (SVC) mediante la llamada [setOptions(\[&quot;handleSVC&quot;:true&quot;\])](#setOptions), y solo en el caso de las MVPD que requieran Safari View Controller (SVC). Para todas las demás MVPD se llamará a la devolución de llamada `navigateToUrl:`. Consulte la compatibilidad con [SFSafariViewController en el SDK 3.2+](/help/authentication/sfsafariviewcontroller-support-on-ios-sdk-32.md) de iOS para obtener detalles sobre cómo se debe administrar Safari View Controller (SVC).
 
-Similar a la `navigateToUrl:` devolución de llamada de `navigateToUrl:useSVC:` se activa mediante AccessEnabler para solicitar a la aplicación que cree una instancia de `SFSafariViewController` y para cargar la dirección URL proporcionada en el **`url`** parámetro. La llamada de retorno pasa el **`url`** que representa la URL del extremo de autenticación o la URL del extremo de cierre de sesión, y el parámetro **`useSVC`** parámetro que especifica que la aplicación debe utilizar un `SFSafariViewController`.
+De forma similar a la llamada de retorno `navigateToUrl:`, AccessEnabler activa la llamada `navigateToUrl:useSVC:` para solicitar a su aplicación que cree una instancia de un controlador `SFSafariViewController` y que cargue la URL proporcionada en el parámetro **`url`** de la llamada de retorno. La devolución de llamada pasa el parámetro **`url`** que representa la dirección URL del extremo de autenticación o la dirección URL del extremo de cierre de sesión, y el parámetro **`useSVC`** que especifica que la aplicación debe usar un `SFSafariViewController`.
 
-Como el `SFSafariViewController` El controlador pasa por varias redirecciones, la aplicación debe supervisar la actividad del controlador y detectar el momento en que carga una dirección URL personalizada específica definida por el `application's custom scheme` (p. ej.** **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Tenga en cuenta que esta dirección URL personalizada específica no es válida y no está pensada para que el controlador la cargue. Su aplicación debe interpretarlo únicamente como una señal de que el flujo de autenticación o cierre de sesión se ha completado y de que es seguro cerrar el controlador. Cuando el controlador carga esta dirección URL personalizada específica, la aplicación debe cerrar el `SFSafariViewController` y llame al servicio AccessEnabler `handleExternalURL:url `Método de API.
+A medida que el controlador `SFSafariViewController` pasa por varias redirecciones, su aplicación debe supervisar la actividad del controlador y detectar el momento en que carga una dirección URL personalizada específica definida por su `application's custom scheme` (por ejemplo** **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Tenga en cuenta que esta dirección URL personalizada específica no es válida y no está pensada para que el controlador la cargue. Su aplicación debe interpretarlo únicamente como una señal de que el flujo de autenticación o cierre de sesión se ha completado y de que es seguro cerrar el controlador. Cuando el controlador carga esta dirección URL personalizada específica, la aplicación debe cerrar `SFSafariViewController` y llamar al método de API `handleExternalURL:url `de AccessEnabler.
 
-**Nota:** Tenga en cuenta que en el caso del flujo de autenticación, este es un punto en el que el usuario tiene la capacidad de pulsar el botón &quot;Atrás&quot;, lo que equivale a anular el flujo de autenticación. En este caso, la aplicación debe llamar a la función [setSelectedProvider:](#setSelProv) paso de método **`nil`** como el parámetro y dando la oportunidad al AccessEnabler de restablecer su estado de autenticación-máquina.
+**Nota:** Tenga en cuenta que en el caso del flujo de autenticación, este es un punto en el que el usuario tiene la capacidad de presionar el botón &quot;Atrás&quot;, lo que equivale a anular el flujo de autenticación. En este caso, la aplicación debe llamar al método [setSelectedProvider:](#setSelProv) pasando **`nil`** como parámetro y dando la oportunidad al AccessEnabler de restablecer su equipo de estado de autenticación.
 
 <table class="pass_api_table">
 <colgroup>
@@ -733,10 +738,10 @@ Como el `SFSafariViewController` El controlador pasa por varias redirecciones, l
 
 **Parámetros**:
 
-* *url:* la URL que señala a la página de inicio de sesión de la MVPD
-* *useSVC:* si la dirección URL debe cargarse en SFSafariViewController.
+* *url:* URL que señala a la página de inicio de sesión de la MVPD
+* *useSVC:* indica si la dirección URL debe cargarse en SFSafariViewController.
 
-**Activado por:**[ setOptions:](#setOptions) antes [setSelectedProvider:](#setSelProv)
+**Activado por:**[ setOptions:](#setOptions) antes de [setSelectedProvider:](#setSelProv)
 
 [Volver al principio...](#apis)
 
@@ -746,9 +751,9 @@ Como el `SFSafariViewController` El controlador pasa por varias redirecciones, l
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** La aplicación llama a este método para completar el flujo de autenticación o cierre de sesión. Se debe llamar a este método justo después de que la aplicación detecte el momento en que se produce el error `UIWebView/WKWebView or SFSafariViewController` se redirige a una dirección URL personalizada específica. En caso de que la aplicación deba utilizar un `SFSafariViewController `la dirección URL personalizada específica está definida por su `application's custom scheme` (p. ej.,`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`); de lo contrario, esta dirección URL personalizada específica se define mediante `ADOBEPASS_REDIRECT_URL `constante (es decir, `adobepass://ios.app`).
+**Descripción:** su aplicación llama a este método para completar el flujo de autenticación o cierre de sesión. Se debe llamar a este método justo después de que la aplicación detecte el momento en que se redirige el controlador `UIWebView/WKWebView or SFSafariViewController` a una dirección URL personalizada específica. Si la aplicación necesita usar un controlador `SFSafariViewController `la dirección URL personalizada específica está definida por su `application's custom scheme` (p. ej.`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`); de lo contrario, esta dirección URL personalizada específica está definida por la constante `ADOBEPASS_REDIRECT_URL `es decir, `adobepass://ios.app`.
 
-En el caso del flujo de autenticación, AccessEnabler completa el flujo recuperando el token de autenticación del servidor back-end y almacenándolo localmente en el almacenamiento de tokens. AccessEnabler informará a su aplicación de que el flujo de autenticación se ha completado llamando a la función `setAuthenticationStatus()`<!--(http://tve.helpdocsonline.com/ios-technical-overview#setAuthNStatus)--> llamada de retorno con un código de estado de 1, que indica que se ha realizado correctamente. Si se produce un error durante la ejecución de estos pasos, la variable `setAuthenticationStatus()`<!--(http://tve.helpdocsonline.com/ios-technical-overview#setAuthNStatus)--> la llamada de retorno se activa con un código de estado de 0, que indica un error de autenticación, así como un código de error correspondiente.
+En el caso del flujo de autenticación, AccessEnabler completa el flujo recuperando el token de autenticación del servidor back-end y almacenándolo localmente en el almacenamiento de tokens. AccessEnabler informará a su aplicación de que el flujo de autenticación se ha completado llamando a la devolución de llamada `setAuthenticationStatus()`<!--(http://tve.helpdocsonline.com/ios-technical-overview#setAuthNStatus)--> con un código de estado de 1, lo que indica que se ha realizado correctamente. Si hay un error durante la ejecución de estos pasos, la llamada de retorno `setAuthenticationStatus()`<!--(http://tve.helpdocsonline.com/ios-technical-overview#setAuthNStatus)--> se activa con un código de estado de 0, lo que indica un error de autenticación, así como un código de error correspondiente.
 
 <table class="pass_api_table">
 <colgroup>
@@ -770,10 +775,10 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Parámetros:**
 
-* *url*: la dirección URL interceptada del ` UIWebView/WKWebView or SFSafariViewController ` control como cadena.
+* *url*: La dirección URL interceptada del control ` UIWebView/WKWebView or SFSafariViewController ` como cadena.
 
 
-**Llamadas activadas:** `setAuthenticationStatus:errorCode, sendTrackingData:forEventType:`
+**Llamadas de retorno activadas:** `setAuthenticationStatus:errorCode, sendTrackingData:forEventType:`
 
 [Volver al principio...](#apis)
 
@@ -783,7 +788,7 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** Completa el flujo de autenticación solicitando el token de autenticación al servidor back-end. La aplicación debe llamar a este método únicamente en respuesta a un evento en el que el control WebView que aloja la página de inicio de sesión de MVPD se redirige a la dirección URL personalizada definida por la variable `ADOBEPASS_REDIRECT_URL` constante.
+**Descripción:** completa el flujo de autenticación al solicitar el token de autenticación del servidor back-end. Su aplicación debería llamar a este método únicamente en respuesta a un evento en el que el control WebView que aloja la página de inicio de sesión de MVPD se redirija a la dirección URL personalizada definida por la constante `ADOBEPASS_REDIRECT_URL`.
 
 
 <table class="pass_api_table">
@@ -802,11 +807,11 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 </tbody>
 </table>
 
-**Disponibilidad:** v1.0+ **Hasta:** Versión 3.0
+**Disponibilidad:** v1.0+ **Hasta:** v3.0
 
 **Parámetros:** Ninguno
 
-**Llamadas activadas:** `setAuthenticationStatus:errorCode,sendTrackingData:forEventType:`
+**Llamadas de retorno activadas:** `setAuthenticationStatus:errorCode,sendTrackingData:forEventType:`
 
 [Volver al principio...](#apis)
 
@@ -816,7 +821,7 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción** Llamada de retorno activada por AccessEnabler que informa a la aplicación del estado del flujo de autenticación. Hay muchos lugares donde este flujo puede fallar, ya sea como resultado de la interacción del usuario o debido a otros escenarios imprevistos (es decir, problemas de conectividad de red, etc.). Esta llamada de retorno informa a la aplicación del estado de éxito/error del flujo de autenticación, a la vez que proporciona información adicional sobre el motivo del error, cuando es necesario.
+**Descripción** La llamada de retorno desencadenada por AccessEnabler informa a la aplicación del estado del flujo de autenticación. Hay muchos lugares donde este flujo puede fallar, ya sea como resultado de la interacción del usuario o debido a otros escenarios imprevistos (es decir, problemas de conectividad de red, etc.). Esta llamada de retorno informa a la aplicación del estado de éxito/error del flujo de autenticación, a la vez que proporciona información adicional sobre el motivo del error, cuando es necesario.
 
 <table class="pass_api_table">
 <colgroup>
@@ -841,12 +846,12 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 **Parámetros**:
 
 * *status*: puede tomar uno de los siguientes valores:
-   * `ACCESS_ENABLER_STATUS_SUCCESS` - el flujo de autenticación se completó correctamente
-   * `ACCESS_ENABLER_STATUS_ERROR` - error del flujo de autenticación
-* *código*: motivo del error. If *status* es `ACCESS_ENABLER_STATUS_SUCCESS`, entonces *código* es una cadena vacía (es decir, definida por la variable `USER_AUTHENTICATED` constante). En caso de error, este parámetro puede tomar uno de los siguientes valores:
-   * `USER_NOT_AUTHENTICATED_ERROR` - El usuario no está autenticado. En respuesta a la [checkAuthentication:](#checkAuthN) llamada al método cuando no hay ningún token de autenticación válido en la caché de token local.
-   * `PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler ha restablecido el estado de autenticación-máquina después de que se aprobara la aplicación de capa superior *null* hasta [`setSelectedProvider:`](#setSelProv) para anular el flujo de autenticación.  Es de suponer que el usuario ha cancelado el flujo de autenticación (es decir, ha presionado el botón &quot;Atrás&quot;).
-   * `GENERIC_AUTHENTICATION_ERROR` - El flujo de autenticación falló debido a razones como la no disponibilidad de la red o el usuario canceló el flujo de autenticación explícitamente.
+   * `ACCESS_ENABLER_STATUS_SUCCESS`: el flujo de autenticación se completó correctamente
+   * `ACCESS_ENABLER_STATUS_ERROR` - error en el flujo de autenticación
+* *código*: motivo del error. Si *status* es `ACCESS_ENABLER_STATUS_SUCCESS`, entonces *code* es una cadena vacía (es decir, definida por la constante `USER_AUTHENTICATED`). En caso de error, este parámetro puede tomar uno de los siguientes valores:
+   * `USER_NOT_AUTHENTICATED_ERROR` - El usuario no está autenticado. En respuesta a la llamada al método [checkAuthentication:](#checkAuthN) cuando no hay un token de autenticación válido en la caché de token local.
+   * `PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler ha restablecido el       estado de autenticación-máquina después de la aplicación de capa superior       pasó *null* a [`setSelectedProvider:`](#setSelProv) para anular el flujo de autenticación.  Es de suponer que el usuario ha cancelado el flujo de autenticación (es decir, ha presionado el botón &quot;Atrás&quot;).
+   * `GENERIC_AUTHENTICATION_ERROR`: error en el flujo de autenticación debido a motivos como la no disponibilidad de la red o que el usuario canceló explícitamente el flujo de autenticación.
 
 **Activado por:** `checkAuthentication`, `getAuthentication`, [`getAuthentication:withData:`](#getAuthN), `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ)
 
@@ -859,7 +864,7 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** La aplicación utiliza este método para determinar si el usuario ya está autorizado para ver recursos protegidos específicos. El propósito principal de este método es recuperar información para utilizarla en la decoración de la interfaz de usuario **(por ejemplo, para indicar el estado del acceso con los iconos de bloqueo y desbloqueo).**
+**Descripción:** La aplicación utiliza este método para determinar si el usuario ya tiene autorización para ver recursos protegidos específicos. El propósito principal de este método es recuperar información para utilizarla en la decoración de la interfaz de usuario **(por ejemplo, para indicar el estado de acceso con los iconos de bloqueo y desbloqueo).**
 
 <table class="pass_api_table">
 <colgroup>
@@ -881,9 +886,9 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Parámetros:**
 
-* *recursos:* matriz de recursos cuya autorización debe comprobarse. Cada elemento de la lista debe ser una cadena que represente el ID de recurso. El ID de recurso está sujeto a las mismas limitaciones que el ID de recurso de la llamada, es decir, debe ser un valor acordado entre el programador y la MVPD o un fragmento de RSS de medios.
+* *recursos:* matriz de recursos para los que se debe comprobar la autorización. Cada elemento de la lista debe ser una cadena que represente el ID de recurso. El     El ID de recurso está sujeto a las mismas limitaciones que el ID de recurso de la llamada, es decir, debe ser un valor acordado entre el programador y la MVPD o un fragmento de RSS de medios.
 
-**Llamada de retorno activada:** [`preauthorizedResources:`](#preauthResources)
+**Devolución de llamada desencadenada:** [`preauthorizedResources:`](#preauthResources)
 
 [Volver al principio...](#apis)
 
@@ -893,7 +898,7 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** La aplicación utiliza este método para determinar si el usuario ya está autorizado para ver recursos protegidos específicos. El propósito principal de este método es recuperar información para utilizarla en la decoración de la interfaz de usuario (por ejemplo, para indicar el estado de acceso con los iconos de bloqueo y desbloqueo). El **escondrijo** controla si la caché interna se utiliza para resolver recursos.
+**Descripción:** La aplicación utiliza este método para determinar si el usuario ya tiene autorización para ver recursos protegidos específicos. El propósito principal de este método es recuperar información para utilizarla en la decoración de la interfaz de usuario (por ejemplo, para indicar el estado de acceso con los iconos de bloqueo y desbloqueo). El parámetro **cache** controla si la caché interna se usa para resolver recursos.
 
 <table class="pass_api_table">
 <colgroup>
@@ -919,10 +924,10 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Parámetros:**
 
-* *recursos:* matriz de recursos cuya autorización debe comprobarse. Cada elemento de la lista debe ser una cadena que represente el ID de recurso. El ID de recurso está sujeto a las mismas limitaciones que el ID de recurso de la variable `getAuthorization:` llamada, es decir, debe ser un valor acordado establecido entre el Programador y el MVPD o un fragmento de medios RSS.
-* *caché:* Valor booleano que especifica si se debe utilizar la caché interna para resolver recursos. Si es false, se omitirá la caché, lo que dará como resultado llamadas al servidor cada vez que se realice una llamada a esta API.
+* *recursos:* matriz de recursos para los que se debe comprobar la autorización. Cada elemento de la lista debe ser una cadena que represente el ID de recurso. El id. de recurso está sujeto a las mismas limitaciones que el id. de recurso de la llamada `getAuthorization:`; es decir, debe ser un valor acordado establecido entre el programador y la MVPD o un fragmento de RSS multimedia.
+* *caché:* booleano que especifica si se debe usar la caché interna para resolver recursos. Si es false, se omitirá la caché, lo que dará como resultado llamadas al servidor cada vez que se realice una llamada a esta API.
 
-**Llamada de retorno activada:** [`preauthorizedResources:`](#preauthResources)
+**Devolución de llamada desencadenada:** [`preauthorizedResources:`](#preauthResources)
 
 [Volver al principio...](#apis)
 
@@ -932,7 +937,7 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción:** Llamada de retorno activada por `checkPreauthorizedResources:`. Proporciona una lista de recursos que el usuario ya tiene autorización para ver.
+**Descripción:** Llamada de retorno desencadenada por `checkPreauthorizedResources:`. Proporciona una lista de recursos que el usuario ya tiene autorización para ver.
 
 <table class="pass_api_table">
 <colgroup>
@@ -954,7 +959,7 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Parámetros:**
 
-* `resources`: matriz de recursos para la que el usuario ya tiene autorización para ver.
+* `resources`: matriz de recursos para los que el usuario ya tiene autorización para ver.
 
 **Activado por:** [`checkPreauthorizedResources:`](#checkPreauth)
 
@@ -968,7 +973,7 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** La aplicación utiliza este método para comprobar el estado de autorización. Se inicia comprobando primero el estado de autenticación. Si no se autentica, la variable [`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed) la llamada de retorno se activa y el método se cierra. Si el usuario está autenticado, también almacena en déclencheur el flujo de autorización. Consulte los detalles en la [`getAuthorization:`](#getAuthZ) método.
+**Descripción:** La aplicación utiliza este método para comprobar el estado de autorización. Se inicia comprobando primero el estado de autenticación. Si no se autentica, se activa la devolución de llamada [`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed) y se cierra el método. Si el usuario está autenticado, también almacena en déclencheur el flujo de autorización. Ver detalles del método [`getAuthorization:`](#getAuthZ).
 
 
 <table class="pass_api_table">
@@ -1010,10 +1015,10 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Parámetros:**
 
-* *resource*: el ID del recurso para el que el usuario solicita autorización.
+* *recurso*: el identificador del recurso para el cual el usuario solicita autorización.
 * *datos*: Un diccionario que consta de pares de clave-valor que se enviarán al servicio de pase de TV de pago. El Adobe de puede utilizar estos datos para habilitar futuras funciones sin cambiar el SDK.
 
-**Llamadas activadas:**
+**Llamadas de retorno activadas:**
 
 [`tokenRequestFailed:errorCode:errorDescription:`](#tokenReqFailed),`setToken:forResource:`, `sendTrackingData:forEventType:`, `setAuthenticationStatus:errorCode:`
 
@@ -1025,7 +1030,7 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** La aplicación utiliza este método para iniciar el flujo de autorización. Si el usuario aún no se ha autenticado, también inicia el flujo de autenticación. Si el usuario se autentica, AccessEnabler procede a emitir solicitudes para el token de autorización (si no hay ningún token de autorización válido en la caché de token local) y para el token de medios de corta duración. Una vez obtenido el token de medios corto, el flujo de autorización se considera completo. El [`setToken:forResource:`](#setToken) la llamada de retorno se activa y el token de medios corto se entrega como parámetro a la aplicación. Si, por cualquier motivo, la autorización falla, la variable [`tokenRequestFailed:forEventType:`](#tokenReqFailed) la llamada de retorno se activa y se proporcionan el código o los detalles del error.
+**Descripción:** La aplicación utiliza este método para iniciar el flujo de autorización. Si el usuario aún no se ha autenticado, también inicia el flujo de autenticación. Si el usuario se autentica, AccessEnabler procede a emitir solicitudes para el token de autorización (si no hay ningún token de autorización válido en la caché de token local) y para el token de medios de corta duración. Una vez obtenido el token de medios corto, el flujo de autorización se considera completo. La llamada de retorno [`setToken:forResource:`](#setToken) se activa y el token de medios corto se entrega como parámetro a la aplicación. Si, por cualquier motivo, la autorización falla, la llamada de retorno de [`tokenRequestFailed:forEventType:`](#tokenReqFailed) se activa y se proporcionan el código o los detalles del error.
 
 <table class="pass_api_table">
 <colgroup>
@@ -1068,17 +1073,17 @@ En el caso del flujo de autenticación, AccessEnabler completa el flujo recupera
 
 **Parámetros:**
 
-* *resource*: el ID del recurso para el que el usuario solicita autorización.
+* *recurso*: el identificador del recurso para el cual el usuario solicita autorización.
 * *datos*: Un diccionario que consta de pares de clave-valor que se enviarán al servicio de pase de TV de pago. El Adobe de puede utilizar estos datos para habilitar futuras funciones sin cambiar el SDK.
 
-**Llamadas activadas:** `tokenRequestFailed:errorCode:errorDescription:, setToken:forResource:,sendTrackingData:forEventType:`
+**Llamadas de retorno activadas:** `tokenRequestFailed:errorCode:errorDescription:, setToken:forResource:,sendTrackingData:forEventType:`
 
-**Llamadas de retorno adicionales activadas:**\
+**Se desencadenaron llamadas de retorno adicionales:**\
 Este método también puede almacenar en déclencheur las siguientes llamadas de retorno (si también se inicia el flujo de autenticación): `setAuthenticationStatus:errorCode:`, `displayProviderDialog:`
 
 >[!NOTE]
 >
->Utilice `checkAuthorization:` / `checkAuthorization:withData:` en lugar de `getAuthorization:` / `getAuthorization:withData:` siempre que sea posible. El `getAuthorization:` / `getAuthorization:withData:` iniciará un flujo de autenticación completo (si el usuario no está autenticado), lo que podría provocar una implementación complicada por parte del programador.
+>Use `checkAuthorization:` / `checkAuthorization:withData:` en lugar de `getAuthorization:` / `getAuthorization:withData:` siempre que sea posible. El método `getAuthorization:` / `getAuthorization:withData:` iniciará un flujo de autenticación completo (si el usuario no está autenticado) y esto podría provocar una implementación complicada por parte del programador.
 
 [Volver al principio...](#apis)
 
@@ -1088,7 +1093,7 @@ Este método también puede almacenar en déclencheur las siguientes llamadas de
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción** Llamada de retorno activada por AccessEnabler que informa a la aplicación de que el flujo de autorización se completó correctamente. El token de medios de corta duración también se entrega como parámetro.
+**Descripción** La llamada de retorno desencadenada por AccessEnabler informa a la aplicación de que el flujo de autorización se completó correctamente. El token de medios de corta duración también se entrega como parámetro.
 
 
 <table class="pass_api_table">
@@ -1113,9 +1118,9 @@ Este método también puede almacenar en déclencheur las siguientes llamadas de
 **Parámetros**:
 
 * *token*: el token de medios de corta duración
-* *resource*: el recurso para el que se obtuvo la autorización
+* *recurso*: recurso para el que se obtuvo la autorización
 
-**Activado por:** [`checkAuthorization:`](#checkAuthZ) , [`checkAuthorization:withData:`](#checkAuthZ), [`getAuthorization:`](#getAuthZ), [`getAuthorization:withData:`](#getAuthZ)
+**Activado por:** [`checkAuthorization:`](#checkAuthZ), [`checkAuthorization:withData:`](#checkAuthZ), [`getAuthorization:`](#getAuthZ), [`getAuthorization:withData:`](#getAuthZ)
 
 [Volver al principio...](#apis)
 
@@ -1125,7 +1130,7 @@ Este método también puede almacenar en déclencheur las siguientes llamadas de
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción** Llamada de retorno activada por AccessEnabler que informa a la aplicación de capa superior de que el flujo de autorización ha fallado.
+**Descripción** Llamada de retorno desencadenada por AccessEnabler que informa a la aplicación de capa superior de que el flujo de autorización ha fallado.
 
 <table class="pass_api_table">
 <colgroup>
@@ -1149,11 +1154,12 @@ Este método también puede almacenar en déclencheur las siguientes llamadas de
 
 **Parámetros**:
 
-* *resource*: El recurso para el que se obtuvo la autorización.
-* *código*: el código de error asociado con el escenario de error. Valores posibles:
-   * `USER_NOT_AUTHORIZED_ERROR` - el usuario no ha podido autorizar el recurso en cuestión
-* *description*: Detalles adicionales sobre el escenario de error. Si esta cadena descriptiva no está disponible por ningún motivo, la autenticación de Adobe Pass envía una cadena vacía **(&quot;&quot;)**.\
-  Una MVPD puede utilizar esta cadena para pasar mensajes de error personalizados o mensajes relacionados con las ventas. Por ejemplo, si se deniega a un suscriptor la autorización para un recurso, la MVPD podría enviar un mensaje como: &quot;Actualmente no tiene acceso a este canal en su paquete. Si desea actualizar el paquete, haga clic en **aquí**.&quot; El mensaje lo pasa la autenticación de Adobe Pass a través de esta llamada de retorno al programador, que tiene la opción de mostrarlo o ignorarlo. La autenticación de Adobe Pass también puede utilizar este parámetro para notificar la condición que podría haber provocado un error. Por ejemplo, &quot;Se produjo un error de red al comunicarse con el servicio de autorización del proveedor&quot;.
+* *recurso*: El recurso para el que se obtuvo la autorización.
+* *código*: El código de error asociado con el escenario de error. Valores posibles:
+   * `USER_NOT_AUTHORIZED_ERROR` - el usuario no pudo autorizar
+para el recurso determinado
+* *description*: Detalles adicionales acerca del escenario de error. Si esta cadena descriptiva no está disponible por algún motivo, la autenticación de Adobe Pass enviará una cadena vacía **(&quot;&quot;)**.\
+  Una MVPD puede utilizar esta cadena para pasar mensajes de error personalizados o mensajes relacionados con las ventas. Por ejemplo, si se deniega a un suscriptor la autorización para un recurso, la MVPD podría enviar un mensaje como: &quot;Actualmente no tiene acceso a este canal en su paquete. Si desea actualizar el paquete, haga clic **aquí**.&quot; El mensaje lo pasa la autenticación de Adobe Pass a través de esta llamada de retorno al programador, que tiene la opción de mostrarlo o ignorarlo. La autenticación de Adobe Pass también puede utilizar este parámetro para notificar la condición que podría haber provocado un error. Por ejemplo, &quot;Se produjo un error de red al comunicarse con el servicio de autorización del proveedor&quot;.
 
 **Activado por:** `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ), `getAuthorization:`, [`getAuthorization:withData:`](#getAuthZ)
 
@@ -1165,15 +1171,15 @@ Este método también puede almacenar en déclencheur las siguientes llamadas de
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** La aplicación llama a este método para iniciar el flujo de cierre de sesión. El cierre de sesión es el resultado de una serie de operaciones de redirección HTTP debido al hecho de que el usuario debe cerrar la sesión tanto desde los servidores de autenticación de Adobe Pass como desde los servidores de MVPD. Dado que este flujo no se puede completar con una simple solicitud HTTP emitida por la biblioteca AccessEnabler, `UIWebView/WKWebView or SFSafariViewController` debe crearse una instancia del controlador para poder seguir las operaciones de redirección HTTP.
+**Descripción:** su aplicación llama a este método para iniciar el flujo de cierre de sesión. El cierre de sesión es el resultado de una serie de operaciones de redirección HTTP debido al hecho de que el usuario debe cerrar la sesión tanto desde los servidores de autenticación de Adobe Pass como desde los servidores de MVPD. Dado que este flujo no se puede completar con una simple solicitud HTTP emitida por la biblioteca AccessEnabler, es necesario crear una instancia de un controlador `UIWebView/WKWebView or SFSafariViewController` para poder seguir las operaciones de redirección HTTP.
 
-El flujo de cierre de sesión difiere del flujo de autenticación en que el usuario no tiene que interactuar con el `UIWebView/WKWebView or SFSafariViewController`  controlador de cualquier manera. Por lo tanto, Adobe recomienda hacer que el control sea invisible (es decir, oculto) durante el proceso de cierre de sesión.
+El flujo de cierre de sesión difiere del flujo de autenticación en que el usuario no tiene que interactuar con el controlador `UIWebView/WKWebView or SFSafariViewController` de ninguna manera. Por lo tanto, Adobe recomienda hacer que el control sea invisible (es decir, oculto) durante el proceso de cierre de sesión.
 
-Se utiliza un patrón similar al flujo de autenticación. El iOS AccessEnabler almacena en déclencheur `navigateToUrl:` devolución de llamada o `navigateToUrl:useSVC:` para crear un `UIWebView/WKWebView or SFSafariViewController` y para cargar la dirección URL proporcionada en el `url` parámetro. Dirección URL del extremo de cierre de sesión en el servidor back-end. Para el AccessEnabler de tvOS, ni la variable `navigateToUrl:` devolución de llamada o `navigateToUrl:useSVC:` se llama a la devolución de llamada.
+Se utiliza un patrón similar al flujo de autenticación. El AccessEnabler de iOS déclencheur la llamada de retorno `navigateToUrl:` o `navigateToUrl:useSVC:` para crear un controlador `UIWebView/WKWebView or SFSafariViewController` y cargar la URL proporcionada en el parámetro `url` de la llamada de retorno. Dirección URL del extremo de cierre de sesión en el servidor back-end. Para el AccessEnabler de tvOS, no se llama ni a la devolución de llamada `navigateToUrl:` ni a la devolución de llamada `navigateToUrl:useSVC:`.
 
-A medida que pasa por varias redirecciones, la aplicación debe monitorizar la actividad del `UIWebView/WKWebView or SFSafariViewController `y detectar el momento en que carga una dirección URL personalizada específica. Tenga en cuenta que esta dirección URL personalizada específica no es válida y no está pensada para que el controlador la cargue. Su aplicación debe interpretarlo únicamente como una señal de que el flujo de cierre de sesión se ha completado y de que es seguro cerrar el controlador. Cuando el controlador carga esta dirección URL personalizada específica, la aplicación debe cerrar el controlador y llamar al servicio AccessEnabler `handleExternalURL:url `Método de API. En caso de que la aplicación deba utilizar un `SFSafariViewController `la dirección URL personalizada específica está definida por su `application's custom scheme` (p. ej.,`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`); de lo contrario, esta dirección URL personalizada específica se define mediante `ADOBEPASS_REDIRECT_URL `constante (es decir, `adobepass://ios.app`).
+A medida que pasa por varias redirecciones, la aplicación debe supervisar la actividad del controlador `UIWebView/WKWebView or SFSafariViewController `y detectar el momento en que carga una dirección URL personalizada específica. Tenga en cuenta que esta dirección URL personalizada específica no es válida y no está pensada para que el controlador la cargue. Su aplicación debe interpretarlo únicamente como una señal de que el flujo de cierre de sesión se ha completado y de que es seguro cerrar el controlador. Cuando el controlador carga esta dirección URL personalizada específica, la aplicación debe cerrar el controlador y llamar al método de API `handleExternalURL:url `de AccessEnabler. Si la aplicación necesita usar un controlador `SFSafariViewController `la dirección URL personalizada específica está definida por su `application's custom scheme` (p. ej.`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`); de lo contrario, esta dirección URL personalizada específica está definida por la constante `ADOBEPASS_REDIRECT_URL `es decir, `adobepass://ios.app`.
 
-Al final, AccessEnabler llama al método [`setAuthenticationStatus()`](#setAuthNStatus) llamada de retorno con un código de estado de 0, que indica que el flujo de cierre de sesión se ha realizado correctamente.
+Al final, AccessEnabler llamará a la llamada de retorno [`setAuthenticationStatus()`](#setAuthNStatus) con un código de estado de 0, lo que indica que el flujo de cierre de sesión se ha realizado correctamente.
 
 **Nota:** Si el usuario ha iniciado sesión con Apple SSO, se activará el estado de VSA203. En este caso, se debe indicar al usuario que también cierre la sesión desde la configuración del sistema. Si no se hace esto, se volverá a autenticar cuando se reinicie la aplicación.
 
@@ -1198,7 +1204,7 @@ Al final, AccessEnabler llama al método [`setAuthenticationStatus()`](#setAuthN
 
 **Parámetros:** Ninguno
 
-**Llamadas activadas:** `navigateToUrl:`, [`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
+**Llamadas de retorno activadas:** `navigateToUrl:`, [`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
 
 
 
@@ -1232,7 +1238,7 @@ Al final, AccessEnabler llama al método [`setAuthenticationStatus()`](#setAuthN
 
 **Parámetros:** Ninguno
 
-**Llamadas activadas:** [`selectedProvider:`](#selProv)
+**Llamadas de retorno activadas:** [`selectedProvider:`](#selProv)
 
 [Volver al principio...](#apis)
 
@@ -1242,7 +1248,7 @@ Al final, AccessEnabler llama al método [`setAuthenticationStatus()`](#setAuthN
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción** Llamada de retorno activada por AccessEnabler que envía información sobre la MVPD seleccionada actualmente a la aplicación.
+**Descripción** La llamada de retorno desencadenada por AccessEnabler que envía información sobre la MVPD seleccionada actualmente a la aplicación.
 
 <table class="pass_api_table">
 <colgroup>
@@ -1276,7 +1282,7 @@ Al final, AccessEnabler llama al método [`setAuthenticationStatus()`](#setAuthN
 
 **Archivo:** AccessEnabler/headers/AccessEnabler.h
 
-**Descripción:** Utilice este método para recuperar información expuesta como metadatos por la biblioteca AccessEnabler. La aplicación puede acceder a estos datos mediante un diccionario *key* parámetro de entrada.
+**Descripción:** Utilice este método para recuperar información expuesta como metadatos por la biblioteca AccessEnabler. La aplicación puede obtener acceso a estos datos proporcionando un parámetro de entrada *key* basado en diccionario.
 
 Hay dos tipos de metadatos disponibles para los programadores:
 
@@ -1303,25 +1309,26 @@ Hay dos tipos de metadatos disponibles para los programadores:
 
 **Parámetros:**
 
-* *keyDictionary*: una estructura de datos de diccionario, con el siguiente formato:
-   * Si la clave es `METADATA_OPCODE_KEY` y el valor es `METADATA_AUTHENTICATION`, se realiza la consulta para obtener el tiempo de caducidad del token de autenticación.
+* *keyDictionary*: una estructura de datos de diccionario, con lo siguiente
+formato:
+   * Si la clave es `METADATA_OPCODE_KEY` y el valor es `METADATA_AUTHENTICATION`, se realiza la consulta para obtener la hora de caducidad del token de autenticación.
    * Si la clave es `METADATA_OPCODE_KEY` y el valor es `METADATA_AUTHORIZATION` **y**\
-     la clave es `METADATA_RESOURCE_ID_KEY` y el valor es un ID de recurso determinado, se realiza la consulta para obtener la hora de caducidad del token de autorización asociado al recurso especificado.
-   * Si la clave es `METADATA_OPCODE_KEY` y el valor es `METADATA_DEVICE_ID`, se realiza la consulta para obtener el id del dispositivo actual. Tenga en cuenta que esta función está desactivada de forma predeterminada y los programadores deben ponerse en contacto con el Adobe para obtener información sobre la habilitación y las tarifas.
-   * Si la clave es `METADATA_OPCODE_KEY` y el valor es `METADATA_USER_META` **y** la clave es `METADATA_USER_META_KEY` y value es el nombre de los metadatos, y se realiza la consulta de los metadatos del usuario. La lista de tipos de metadatos de usuario disponibles:
+     la clave es `METADATA_RESOURCE_ID_KEY` y el valor es un ID de recurso en particular; a continuación, se realiza la consulta para obtener la hora de caducidad del token de autorización asociado al recurso especificado.
+   * Si la clave es `METADATA_OPCODE_KEY` y el valor es `METADATA_DEVICE_ID`, se realiza la consulta para obtener el ID del dispositivo actual. Tenga en cuenta que esta función está desactivada de forma predeterminada y los programadores deben ponerse en contacto con el Adobe para obtener información sobre la habilitación y las tarifas.
+   * Si la clave es `METADATA_OPCODE_KEY` y el valor es `METADATA_USER_META` **y la clave** es `METADATA_USER_META_KEY` y el valor es el nombre de los metadatos, se realiza la consulta de los metadatos del usuario. La lista de tipos de metadatos de usuario disponibles:
       * `zip` - Lista de códigos postales
-      * `householdID` - Identificador del hogar. En el caso de que una MVPD no admita subcuentas, esto será idéntico a `userID`.
-      * `maxRating` - Una colección de calificaciones paternas máximas para el usuario
-      * `userID` : el identificador de usuario. Si una MVPD admite subcuentas y el usuario no es la cuenta principal, `userID` será diferente a `householdID.`
-      * `channelID` - Una lista de canales que un usuario tiene derecho a ver.
+      * `householdID` - Identificador del hogar. En caso de que una MVPD no admita subcuentas, será idéntica a `userID`.
+      * `maxRating`: una colección de clasificaciones paternas máximas para el usuario
+      * `userID`: el identificador de usuario. Si una MVPD admite subcuentas y el usuario no es la cuenta principal, `userID` será diferente de `householdID.`
+      * `channelID`: lista de canales que un usuario tiene derecho a ver.
 
   >[!NOTE]
   >
   >Los metadatos de usuario reales disponibles para un programador dependen de lo que una MVPD ponga a disposición. Esta lista se ampliará a medida que haya nuevos metadatos disponibles y añadidos al sistema de autenticación de Adobe Pass.
 
-**Llamadas activadas:** [`setMetadataStatus:encrypted:forKey:andArguments:`](#setMetaStatus)
+**Llamadas de retorno activadas:** [`setMetadataStatus:encrypted:forKey:andArguments:`](#setMetaStatus)
 
-**Más información:** [Metadatos del usuario](/help/authentication/user-metadata.md)
+**Más información:** [Metadatos de usuario](/help/authentication/user-metadata.md)
 
 [Volver al principio...](#apis)
 
@@ -1331,7 +1338,7 @@ Hay dos tipos de metadatos disponibles para los programadores:
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción** Llamada de retorno activada por AccessEnabler después de llamar a[getAuthentication()](#getAuthN) si el solicitante actual admite al menos una MVPD compatible con SSO.
+**Descripción** La llamada de retorno desencadenada por AccessEnabler después de llamar a[getAuthentication()](#getAuthN) si el solicitante actual admite al menos una MVPD compatible con SSO.
 
 <table class="pass_api_table">
 <colgroup>
@@ -1367,7 +1374,7 @@ Hay dos tipos de metadatos disponibles para los programadores:
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción** Llamada de retorno activada por AccessEnabler después de que el usuario cierre el cuadro de diálogo de SSO de Apple.
+**Descripción** La llamada de retorno desencadenada por AccessEnabler después de que el usuario cierre el cuadro de diálogo de SSO de Apple.
 
 <table class="pass_api_table">
 <colgroup>
@@ -1391,7 +1398,7 @@ Hay dos tipos de metadatos disponibles para los programadores:
 
 * viewController: representa el cuadro de diálogo de SSO de Apple. Este viewController debe eliminarse de la pantalla.
 
-**Activado por:** Acción del usuario
+**Desencadenado por:** acción del usuario
 
 **Más información:** [Inicio de sesión único de iOS/tvOS](#presentTvDialog)
 
@@ -1403,7 +1410,7 @@ Hay dos tipos de metadatos disponibles para los programadores:
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción** Llamada de retorno activada por AccessEnabler que envía los metadatos solicitados mediante una llamada de retorno [`getMetadata:`](#getMeta) llamada.
+**Descripción** La llamada de retorno desencadenada por AccessEnabler que entrega los metadatos solicitados mediante una llamada de [`getMetadata:`](#getMeta).
 
 <table class="pass_api_table">
 <colgroup>
@@ -1428,7 +1435,7 @@ Hay dos tipos de metadatos disponibles para los programadores:
 
 **Parámetros**:
 
-* *metadatos*: los metadatos solicitados. Este valor es un `NSString` en el caso de los metadatos estáticos (TTL de autenticación, TTL de autorización, ID de dispositivo).  Es un objeto complejo al solicitar metadatos específicos del usuario. Este objeto complejo suele ser la representación Objective-C de una carga útil JSON (por ejemplo &#39;{&quot;street&quot;: &quot;Main Avenue&quot;, &quot;edificios&quot;: [&quot;150&quot;, &quot;320&quot;]}&#39; se traduce en Objective-C como NSDictionary(&quot;street&quot; -> &quot;Main Avenue&quot;, &quot;edificios&quot; -> NSArray(&quot;150&quot;, &quot;320&quot;))).   Objeto JSON de metadatos de muestra:
+* *metadatos*: Los metadatos solicitados. Este valor es un `NSString` en el caso de los metadatos estáticos (TTL de autenticación, TTL de autorización, ID de dispositivo).  Es un objeto complejo al solicitar metadatos específicos del usuario. Este objeto complejo suele ser la representación Objective-C de una carga útil JSON (por ejemplo, &#39;{&quot;street&quot;: &quot;Main Avenue&quot;, &quot;edificios&quot;: [&quot;150&quot;, &quot;320&quot;]}&#39; se traduce en Objective-C como NSDictionary(&quot;street&quot; -> &quot;Main Avenue&quot;, &quot;edificios&quot; -> NSArray(&quot;150&quot;, &quot;320&quot;))).   Objeto JSON de metadatos de muestra:
 
 ```JSON
         {
@@ -1447,15 +1454,15 @@ Hay dos tipos de metadatos disponibles para los programadores:
             }
 ```
 
-* *cifrado*: Valor booleano que especifica si los metadatos recuperados están cifrados o no. Este parámetro solo es significativo para solicitudes de metadatos del usuario, no tiene significado para metadatos estáticos (por ejemplo, TTL de autenticación) que siempre se reciben sin cifrar. Si este parámetro se establece en true, depende del programador obtener el valor de metadatos del usuario sin cifrar realizando un descifrado RSA con la clave privada de la lista blanca (la misma clave privada que se utiliza para la firma del ID del solicitante en el [`setRequestor:setSignedRequestorId:`](#setReq) y `setRequestor:setSignedRequestorId:serviceProviders: `llamadas).
+* *cifrado*: valor booleano que especifica si los metadatos recuperados están cifrados o no. Este parámetro solo es significativo para solicitudes de metadatos del usuario, no tiene significado para metadatos estáticos (por ejemplo, TTL de autenticación) que siempre se reciben sin cifrar. Si este parámetro se establece en true, depende del programador obtener el valor de metadatos de usuario sin cifrar realizando un descifrado RSA con la clave privada incluida en la lista de elementos permitidos (la misma clave privada que se utiliza para la firma del ID de solicitante en las llamadas [`setRequestor:setSignedRequestorId:`](#setReq) y `setRequestor:setSignedRequestorId:serviceProviders: `s).
 
-* *key*: clave utilizada para formular la solicitud de recuperación de metadatos.
+* *key*: La clave utilizada para formular la solicitud de recuperación de metadatos.
 
-* *argumentos*: El mismo diccionario que se pasó al [`getMetadata:`](#getMeta) llamada. Esto se proporciona para permitir que la aplicación combine las solicitudes con las respuestas.
+* *argumentos*: El mismo diccionario que se pasó a la llamada [`getMetadata:`](#getMeta). Esto se proporciona para permitir que la aplicación combine las solicitudes con las respuestas.
 
 **Activado por:** [`getMetadata:`](#getMeta)
 
-**Más información:** [Metadatos del usuario](/help/authentication/user-metadata.md)
+**Más información:** [Metadatos de usuario](/help/authentication/user-metadata.md)
 
 
 [Volver al principio...](#apis)
@@ -1468,14 +1475,14 @@ Hay dos tipos de metadatos disponibles para los programadores:
 
 **Descripción** Describe el objeto MVPD. Se puede utilizar para obtener información sobre las propiedades de la MVPD.
 
-**Disponibilidad:** v1.0+ [la propiedad boardingStatus está disponible en la versión 2.2]
+**Disponibilidad:** v1.0+ [La propiedad boardingStatus está disponible en v2.2]
 
 **Propiedades**:
 
 * ID de (NSString): el ID de MVPD.
-* (NSString) displayName: el nombre de MVPD. [Debe utilizarse para mostrar en el selector]
+* (NSString) displayName: el nombre de MVPD. [Se debe usar para mostrar en el selector]
 * (NSString) logoURL: la dirección del logotipo de MVPD.
-* (BOOL) enablePlatformServices: si es true, MVPD admite servicios SSO como [APPLE SSO](#presentTvDialog).
+* (BOOL) enablePlatformServices: si es true, MVPD admite servicios SSO como [Apple SSO](#presentTvDialog).
 * (NSString) boardingStatus: puede tener 3 valores:
    * nil: la MVPD no es compatible con el SSO de Apple.
    * SELECTOR: la MVPD puede aparecer en el selector de Apple, pero el flujo de autenticación se realiza por Adobe.
@@ -1487,15 +1494,15 @@ Hay dos tipos de metadatos disponibles para los programadores:
 
 ## Seguimiento de eventos {#tracking}
 
-AccessEnabler almacena en déclencheur una llamada de retorno adicional que no está necesariamente relacionada con los flujos de derechos. Implementación de [`sendTrackingData()`](#sendTracking) callback es opcional, pero permite a la aplicación realizar un seguimiento de eventos específicos y compilar estadísticas como el número de intentos de autenticación/autorización correctos/fallidos.
+AccessEnabler almacena en déclencheur una llamada de retorno adicional que no está necesariamente relacionada con los flujos de derechos. La implementación de la función de devolución de llamada [`sendTrackingData()`](#sendTracking) es opcional, pero permite a la aplicación realizar un seguimiento de eventos específicos y compilar estadísticas como el número de intentos de autenticación/autorización correctos/fallidos.
 
 ### sendTrackingData:forEventType: {#sendTracking}
 
 **Archivo:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descripción** Llamada de retorno activada por AccessEnabler que indica a la aplicación la ocurrencia de varios eventos, como la finalización o el error de los flujos de autenticación o autorización. Con la autenticación de Adobe Pass 1.6, el tipo de dispositivo, el tipo de cliente de AccessEnabler y el sistema operativo se informan mediante [`sendTrackingData()`](#sendTracking). El [`sendTrackingData()`](#sendTracking) la devolución de llamada sigue siendo compatible con versiones anteriores.
+**Descripción** La llamada de retorno desencadenada por AccessEnabler indica a la aplicación la ocurrencia de varios eventos, como la finalización o el error de los flujos de autenticación o autorización. Con la autenticación de Adobe Pass 1.6, el tipo de dispositivo, el tipo de cliente de AccessEnabler y el sistema operativo se registran en [`sendTrackingData()`](#sendTracking). La llamada de retorno [`sendTrackingData()`](#sendTracking) sigue siendo compatible con versiones anteriores.
 
-**Callback: seguimiento de eventos**
+**Llamada de retorno: seguimiento de eventos**
 
 ```
 (void) sendTrackingData:(NSArray *)data 
@@ -1504,7 +1511,7 @@ AccessEnabler almacena en déclencheur una llamada de retorno adicional que no e
 
 **Disponibilidad:** v1.0+
 
-**Nota:** El tipo de dispositivo y el sistema operativo se derivan del uso de una biblioteca Java pública (<http://java.net/projects/user-agent-utils>) y la cadena del agente de usuario. Tenga en cuenta que esta información se proporciona solo como una forma grosera de desglosar las métricas operativas en categorías de dispositivos, pero que ese Adobe no puede responsabilizarse de los resultados incorrectos. Utilice la nueva funcionalidad en consecuencia.
+**Nota:** El tipo de dispositivo y el sistema operativo se derivan mediante el uso de una biblioteca Java pública (<http://java.net/projects/user-agent-utils>) y la cadena del agente de usuario. Tenga en cuenta que esta información se proporciona solo como una forma grosera de desglosar las métricas operativas en categorías de dispositivos, pero que ese Adobe no puede responsabilizarse de los resultados incorrectos. Utilice la nueva funcionalidad en consecuencia.
 
 * Valores posibles para el tipo de dispositivo:
    * `computer`
@@ -1522,39 +1529,39 @@ AccessEnabler almacena en déclencheur una llamada de retorno adicional que no e
 
 **Parámetros**:
 
-* *evento*: el código del evento del que se está realizando un seguimiento. Existen tres tipos de eventos de seguimiento posibles:
+* *event*: el código del evento que se está rastreando. Existen tres tipos de eventos de seguimiento posibles:
    * **authorizationDetection:** cada vez que se devuelve una solicitud de token de autorización (el evento es `TRACKING_AUTHORIZATION`)
    * **authenticationDetection:** cada vez que se produce una comprobación de autenticación (el evento es `TRACKING_AUTHENTICATION`)
    * **mvpdSelection:** cuando el usuario selecciona una MVPD en el formulario de selección de MVPD (el evento es `TRACKING_GET_SELECTED_PROVIDER`)
-* *datos*: datos adicionales asociados al evento del que se informa. Estos datos se presentan en forma de lista de valores.
+* *datos*: datos adicionales asociados al evento del que se informó. Estos datos se presentan en forma de lista de valores.
 
 **Activado por:** `checkAuthentication`, `getAuthentication`, [`getAuthentication:withData:`](#getAuthN), `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ), `getAuthorization:`, [`getAuthorization:withData:`](#getAuthZ), `setSelectedProvider:`
 
-Instrucciones para interpretar los valores de *datos* matriz:
+Instrucciones para interpretar los valores de la matriz *data*:
 
 * Para trackingEventType `TRACKING_AUTHENTICATION:`
-   * **0** - Si la solicitud de token se realizó correctamente (verdadero/falso) y, si se realizó correctamente:
-   * **1** - Cadena de ID de MVPD
-   * **2** - GUID (MD5 con hash)
-   * **3** - El token ya está en la caché (verdadero/falso)
+   * **0** - Si la solicitud de token se realizó correctamente (verdadero/falso) y si se realizó correctamente:
+   * **1** - cadena de ID de MVPD
+   * **2** - GUID (md5 con hash)
+   * **3**: el token ya está en la caché (verdadero/falso)
    * **4** - Tipo de dispositivo
    * **5** - Tipo de cliente de AccessEnabler
    * **6** - Tipo de sistema operativo
 
 * Para trackingEventType `TRACKING_AUTHORIZATION:`
-   * **0** - Si la solicitud de token se realizó correctamente (verdadero/falso) y, si se realizó correctamente:
-   * **1** - ID de MVPD
-   * **2** - GUID (MD5 con hash)
-   * **3** - El token ya está en la caché (verdadero/falso)
+   * **0** - Si la solicitud de token se realizó correctamente (verdadero/falso) y si se realizó correctamente:
+   * **1** - ID DE MVPD
+   * **2** - GUID (md5 con hash)
+   * **3**: el token ya está en la caché (verdadero/falso)
    * **4** - Error
    * **5** - Detalles
    * **6** - Tipo de dispositivo
    * **7** - Tipo de cliente de AccessEnabler
    * **8** - Tipo de sistema operativo
 * Para trackingEventType `TRACKING_GET_SELECTED_PROVIDER:`
-   * **0** - ID de la MVPD seleccionada actualmente
+   * **0**: ID de la MVPD seleccionada actualmente
    * **1** - Tipo de dispositivo
-   * **2** - Tipo de cliente de AccessEnabler
+   * **2** - tipo de cliente AccessEnabler
    * **3** - Tipo de sistema operativo
 
 </br>

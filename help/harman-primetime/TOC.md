@@ -4,7 +4,7 @@ user-guide-description: Aprenda a definir y aplicar límites en el uso simultán
 source-git-commit: 9ef162a028768b4b9898d70efd085a3ef6a4b5ef
 workflow-type: tm+mt
 source-wordcount: '21'
-ht-degree: 0%
+ht-degree: 85%
 
 ---
 

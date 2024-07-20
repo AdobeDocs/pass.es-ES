@@ -4,7 +4,7 @@ description: Guía del SDK para JavaScript
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '934'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,10 @@ ht-degree: 0%
 
 ## Introducción {#intro}
 
-En este documento se describen los flujos de trabajo de derechos que implementa la aplicación de nivel superior de un programador para una integración de JavaScript con el servicio de autenticación de Adobe Pass. Los vínculos a la Referencia de la API de JavaScript se incluyen en.
+En este documento se describen los flujos de trabajo de asignación de derechos que implementa la aplicación de nivel superior de un programador para una integración de JavaScript con el servicio de autenticación de Adobe Pass. Los vínculos a la Referencia de la API de JavaScript se incluyen en.
 
-Tenga en cuenta también que la variable [Información relacionada](#related) Esta sección incluye un vínculo a un conjunto de ejemplos de código JavaScript.
+Tenga en cuenta también que la sección [Información relacionada](#related) incluye una
+vínculo a un conjunto de ejemplos de código JavaScript.
 
 ## Flujos de derecho {#entitlement}
 
@@ -46,16 +47,17 @@ Cree sus funciones de devolución de llamada:
 - `entitlementLoaded`
 </br>
 
-**Déclencheur:** AccessEnabler se ha cargado y terminado de inicializar.
+**Déclencheur:** AccessEnabler se ha cargado y ha finalizado la inicialización.
 
 - `displayProviderDialog(mvpds)`
 
-  **Déclencheur:** `getAuthentication(),` sólo si el usuario no ha seleccionado ningún proveedor (una MVPD) y aún no está autenticado. El parámetro mvpds es una matriz de proveedores disponibles para el usuario.
+  **Déclencheur:** `getAuthentication(),` solo si el usuario no ha seleccionado ningún proveedor (un MVPD) y aún no se ha autenticado
+El parámetro mvpds es una matriz de proveedores disponibles para el usuario.
 
 - `setAuthenticationStatus(status, errorcode)`
 
   **Déclencheur:**
-   - `checkAuthentication()`cada vez.
+   - `checkAuthentication()` cada vez.
    - `getAuthentication()` solo si el usuario ya se ha autenticado y ha seleccionado un proveedor.
 
   El estado devuelto es éxito o error; el código de error describe el tipo de error.
@@ -70,27 +72,28 @@ Cree sus funciones de devolución de llamada:
 
 - `sendTrackingData(event, data)`
 
-  **Déclencheur:** `checkAuthentication(), getAuthentication(),checkAuthorization(), getAuthorization(), setSelectedProvider()`.  El `event` indica qué evento de asignación de derechos se produjo; el parámetro `data` parámetro es una lista de valores relacionados con el evento.
+  **Déclencheur:** `checkAuthentication(), getAuthentication(),checkAuthorization(), getAuthorization(), setSelectedProvider()`.  El parámetro `event` indica qué evento de asignación de derechos se produjo; el parámetro `data` es una lista de valores relacionados con el evento.
 - `setToken(token, resource)`
-  **Déclencheur:** `checkAuthorization()`y `getAuthorization()` después de una autorización correcta para ver un recurso.   El `token` parámetro es el token de medios de corta duración; el `resource` parámetro es el contenido que el usuario tiene autorización para ver.
+  **Déclencheur:** `checkAuthorization()`y `getAuthorization()` después de una autorización correcta para ver un recurso.   El parámetro `token` es el token de medios de corta duración; el parámetro `resource` es el contenido que el usuario tiene autorización para ver.
 
 - `tokenRequestFailed(resource, code, description)`
-  **Déclencheur:**`checkAuthorization()` y`getAuthorization()`  después de una autorización fallida.\
-  El `resource` parámetro es el contenido que el usuario intentaba ver; la variable `code` parámetro es el código de error que indica qué tipo de error se produjo; la variable `description` describe el error asociado con el código de error.
+  **Déclencheur:**`checkAuthorization()` y`getAuthorization()` tras una autorización incorrecta.\
+  El parámetro `resource` es el contenido que el usuario intentaba ver; el parámetro `code` es el código de error que indica qué tipo de error se produjo; el parámetro `description` describe el error asociado con el código de error.
 
 - `selectedProvider(mvpd)`
 
-  **Déclencheur:** [`getSelectedProvider()`](#$getSelProv El `mvpd` proporciona información sobre el proveedor seleccionado por el usuario.
+  **Déclencheur:** [`getSelectedProvider()`](#$getSelProv El parámetro `mvpd` proporciona información sobre el proveedor seleccionado por
+el usuario.
 
 - `setMetadataStatus(metadata, key, arguments)`
 
   **Déclencheur:** `getMetadata().`\
-  El `metadata` proporciona los datos específicos solicitados; el parámetro clave es la clave utilizada en el `getMetadata()`solicitud; y la `arguments` El parámetro es el mismo diccionario que se pasó a `getMetadata()`.
+  El parámetro `metadata` proporciona los datos específicos solicitados; el parámetro clave es la clave utilizada en la `getMetadata()`solicitud; y el parámetro `arguments` es el mismo diccionario que se pasó a `getMetadata()`.
 
 
 ## 2. Flujo de inicio
 
-**I. Cargue el JavaScript de AccessEnabler:**
+**I. Cargue el JavaScript AccessEnabler:**
 
 **Para el perfil de ensayo**
 
@@ -110,31 +113,34 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 </script>"
 ```
 
-**Déclencheur:** Una vez finalizada la inicialización, la autenticación de Adobe Pass llama a su `entitlementLoaded()` función de llamada de retorno. Este es el punto de entrada a la comunicación de la aplicación con AccessEnabler.
+**Déclencheur:** Una vez completada la inicialización, Adobe Pass
+la autenticación llama a su función de devolución de llamada `entitlementLoaded()`. Este es el punto de entrada a la comunicación de la aplicación con AccessEnabler.
 
 
-**II.** Llamada `setRequestor()`para establecer la identidad del Programador; pase en el `requestorID` y (opcionalmente) una matriz de puntos finales de autenticación de Adobe Pass.
+**II.** Llame a `setRequestor()`para establecer el
+identidad del programador; pase en `requestorID` del programador y
+(Opcional) una matriz de puntos finales de autenticación de Adobe Pass.
 
-**Déclencheur:** Ninguno, pero habilita `displayProviderDialog()` para que se le llame cuando sea necesario.
+**Déclencheur:** Ninguno, pero permite llamar a `displayProviderDialog()` cuando sea necesario.
 
 
-**III.** Llamada `checkAuthentication()` para buscar una autenticación existente sin iniciar el [flujo de autenticación].  Si esta llamada se realiza correctamente, puede continuar directamente a la `authorization flow`.  Si no es así, continúe con el `authentication flow`.
+**III.** Llame a `checkAuthentication()` para comprobar si hay una autenticación existente sin iniciar el [flujo de autenticación completo].  Si esta llamada se realiza correctamente, puede continuar directamente a `authorization flow`.  Si no es así, continúe con `authentication flow`.
 
-**Dependencia:** Una llamada a correcta a `setRequestor()`(esta dependencia también se aplica a todas las llamadas subsiguientes).
+**Dependencia:** Una llamada correcta a `setRequestor()` (esta dependencia también se aplica a todas las llamadas subsiguientes).
 
-**Déclencheur:** `setAuthenticationStatus()` callback
+**Déclencheur:** `setAuthenticationStatus()` devolución de llamada
 
 </br>
 
 ## 3. Flujo de autenticación</span>
 
 
-**Dependencia:** Una llamada a correcta a `setRequestor()`(esta dependencia también se aplica a todas las llamadas subsiguientes).
+**Dependencia:** Una llamada correcta a `setRequestor()` (esta dependencia también se aplica a todas las llamadas subsiguientes).
 
 
-Llamada `getAuthentication()` para obtener el estado de autenticación O para almacenar en déclencheur el flujo de autenticación del proveedor.
+Llame a `getAuthentication()` para obtener el estado de autenticación O para almacenar en déclencheur el flujo de autenticación del proveedor.
 
-**Activadores:**
+**Desencadenadores:**
 
 - `displayProviderDialog()`si el usuario aún no se ha autenticado
 - `setAuthenticationStatus()` si la autenticación ya se ha realizado
@@ -145,10 +151,10 @@ Se llega a la finalización del flujo de autenticación cuando AccessEnabler lla
 
 **Dependencias:**
 
-- Una llamada a correcta a `setRequestor()` (esta dependencia también se aplica a todas las llamadas subsiguientes).
+- Una llamada correcta a `setRequestor()` (esta dependencia se aplica también a todas las llamadas subsiguientes).
 - ResourceID(s) válidos acordados con los MVPD. Tenga en cuenta que los ResourceID deben ser los mismos que se usan en cualquier otro dispositivo o plataforma, y serán los mismos en todas las MVPD.
 
-Llamada `getAuthorization()` y pase el ResourceID para los medios solicitados. Una llamada correcta devolverá un token de medios corto, que confirma que el usuario está autorizado para ver los medios solicitados.
+Llame a `getAuthorization()` y pase el ResourceID para los medios solicitados. Una llamada correcta devolverá un token de medios corto, que confirma que el usuario está autorizado para ver los medios solicitados.
 
 - Si la llamada pasa: El usuario tiene un token de AuthN válido y está autorizado para ver el contenido solicitado.
 - Si la llamada falla: Examine la excepción producida para determinar su tipo (AuthN, AuthZ o algo más):
@@ -156,10 +162,11 @@ Llamada `getAuthorization()` y pase el ResourceID para los medios solicitados. U
 - Si la llamada fue un error de AuthZ, el usuario no tiene autorización para ver el contenido solicitado y se debe mostrar algún tipo de mensaje de error al usuario.
 - Si hubo algún otro error (error de conexión, error de red, etc.) a continuación, mostrar un mensaje de error apropiado al usuario.
 
-Utilice el verificador de tokens de medios para validar el shortMediaToken devuelto por un correcto `getAuthorization()` llamada.
+Utilice el verificador de tokens de medios para validar el shortMediaToken devuelto por una llamada correcta de `getAuthorization()`.
 
 
-**Dependencia:** El Comprobador de tokens de medios cortos (incluido en la biblioteca AccessEnabler)
+**Dependencia:** El Verificador de token de medios corto (incluido con el
+AccessEnabler (biblioteca)
 
 - Si se supera la validación: mostrar/reproducir el medio solicitado para el usuario.
 - Si falla: El token de AuthZ no era válido, la solicitud de medios debe rechazarse y se debe mostrar un mensaje de error al usuario.
@@ -175,7 +182,7 @@ Utilice el verificador de tokens de medios para validar el shortMediaToken devue
 
 ## Configuración del ID de visitante {#visitorID}
 
-Configuración de un [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html) El valor de es muy importante desde el punto de vista del análisis. Una vez establecido un valor EC visitorID, el SDK enviará esta información junto con cada llamada de red y el servicio de autenticación de Adobe Pass recopilará esta información. De este modo, podrá correlacionar los datos de análisis del servicio de autenticación de Adobe Pass con cualquier otro informe de análisis que pueda tener de otras aplicaciones o sitios web. Se puede encontrar información sobre cómo configurar el ID de visitante de EC [aquí](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
+La configuración de un valor [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html) es muy importante desde el punto de vista del análisis. Una vez establecido un valor EC visitorID, el SDK enviará esta información junto con cada llamada de red y el servicio de autenticación de Adobe Pass recopilará esta información. De este modo, podrá correlacionar los datos de análisis del servicio de autenticación de Adobe Pass con cualquier otro informe de análisis que pueda tener de otras aplicaciones o sitios web. Encontrará información sobre cómo configurar el ID de visitante de EC [aquí](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

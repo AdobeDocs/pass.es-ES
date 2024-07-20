@@ -53,25 +53,25 @@ ht-degree: 3%
          + [Intercambio de tokens](token-exchange.md)
          + [Vista previa gratuita para Pase temporal y Pase temporal promocional](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + SDK de AccessEnabler {#accessenabler-sdk}
-      + SDK de JavaScript {#javascriptsdk}
-         + [Información general del SDK de JavaScript](javascript-sdk-overview.md)
+      + SDK para JavaScript {#javascriptsdk}
+         + [Información general del SDK para JavaScript](javascript-sdk-overview.md)
          + [Guía del SDK para JavaScript](javascript-sdk-cookbook.md)
-         + [Referencia de API del SDK de JavaScript](javascript-sdk-api-reference.md)
+         + [Referencia de API de SDK para JavaScript](javascript-sdk-api-reference.md)
          + Directrices {#js-sdk-guidelines}
             + [Inicio y cierre de sesión sin actualización](refreshless-login-and-logout.md)
          + API de JavaScript {#js-api}
             + [Preautorizar](js-preauthorize.md)
-      + SDK de iOS/tvOS {#ios-sdk}
+      + SDK {#ios-sdk} de iOS/tvOS
          + [Información general del SDK para iOS/tvOS](iostvos-sdk-overview.md)
          + [Guía del SDK para iOS/tvOS](iostvos-sdk-cookbook.md)
-         + [Referencia de la API del SDK para iOS/tvOS](iostvos-sdk-api-reference.md)
+         + [Referencia de API de SDK para iOS/tvOS](iostvos-sdk-api-reference.md)
          + Directrices {#ios-tvos-sdk-guidelines}
             + [Registro de aplicaciones de iOS/tvOS](iostvos-application-registration.md)
             + Directrices de migración {#migration-guidelines}
                + [Guía de migración de iOS/tvOS v3.x](iostvos-v3x-migration-guide.md)
             + [Comprobaciones de integridad del almacenamiento de iOS/tvOS](iostvos-sdk-storage-integrity-checks.md)
          + API de iOS/tvOS {#ios-tvos-api}
-            + [Preautorizar](preauthorize.md)
+            + [Autorizar Previamente](preauthorize.md)
       + SDK para Android {#androidsdk}
          + [Información general del SDK para Android](android-sdk-overview.md)
          + [Guía del SDK para Android](android-sdk-cookbook.md)
@@ -79,9 +79,9 @@ ht-degree: 3%
          + Directrices {#androidguidelines}
             + [Registro de aplicaciones Android](android-application-registration.md)
             + [SDK de Android con registro de cliente dinámico](android-sdk-with-dynamic-client-registration.md)
-         + API de Android{#androidapi}
+         + API de Android {#androidapi}
             + [Preautorizar](preauthorize-android.md)
-      + SDK de Amazon FireOS {#fireossdk}
+      + SDK {#fireossdk} de Amazon FireOS
          + [Amazon FireOS SSO - Guía de inicio del programador](amazon-firetv-sso-programmer-kickoff-guide.md)
          + [Amazon FireOS SSO con la API de cliente Cookbook](amazon-fireos-sso-using-clientless-api-cookbook.md)
          + [Información general técnica de Amazon FireOS](amazon-fireos-technical-overview.md)
@@ -89,12 +89,12 @@ ht-degree: 3%
          + [Referencia de la API de Amazon FireOS](amazon-fireos-native-client-api-reference.md)
          + [Registro de aplicaciones de Amazon FireOS](amazon-fireos-application-registration.md)
          + [FireOS SDK con registro de cliente dinámico](fireos-sdk-with-dynamic-client-registration.md)
-   + Plataforma SSO {#platform-sso}
-      + APPLE SSO {#apple-sso}
+   + SSO de plataforma {#platform-sso}
+      + Apple SSO {#apple-sso}
          + [Información general sobre Apple SSO](apple-sso-overview.md)
          + [Guía de Apple SSO (API de REST)](apple-sso-cookbook-rest-api.md)
          + [Guía de Apple SSO (SDK de iOS/tvOS)](apple-sso-cookbook-iostvos-sdk.md)
-      + Roku SSO {#roku-sso}
+      + SSO de Roku {#roku-sso}
          + [Roku SSO](roku-sso-overview.md)
    + Metadatos de contenido {#content-metadata}
       + [Identificar recurso protegido](identify-protected-resources.md)
@@ -123,7 +123,7 @@ ht-degree: 3%
       + [Resumen de monitorización del servicio de derechos](entitlement-service-monitoring-overview.md)
       + [API de monitorización del servicio de derechos](entitlement-service-monitoring-api.md)
       + [Métricas del lado del servidor](understanding-serverside-metrics.md)
-   + Pase temporal {#temp-pass}
+   + Paso temporal {#temp-pass}
       + [Pase temporal](temp-pass.md)
       + [Pase temporal promocional](promotional-temp-pass.md)
       + [Restablecer pase temporal](reset-temp-pass.md)
@@ -133,10 +133,10 @@ ht-degree: 3%
    + Autenticación basada en inicio {#home-based-auth}
       + [Autenticación basada en el hogar para TV en todas partes](home-based-authn-tve.md)
       + [Estado de HBA para MVPD](hba-status-mvpds.md)
-   + Metadatos del usuario {#user-metadat}
+   + Metadatos de usuario {#user-metadat}
       + [Metadatos del usuario](user-metadata-feature.md)
    + [Autorización de verificación previa](preflight-authz.md)
-   + Informes de errores {#error-reportn}
+   + Informe de errores {#error-reportn}
       + [Informes de errores](error-reporting.md)
       + [Códigos de error mejorados](enhanced-error-codes.md)
    + Registro de cliente {#client-regn}
@@ -145,17 +145,17 @@ ht-degree: 3%
       + [Dynamic Client Registration Management](dynamic-client-registration-management.md)
    + Servicio de degradación {#degrn-service}
       + [Resumen de API de degradación](degradation-api-overview.md)
-   + Preparación para privacidad {#privacy-readiness}
+   + Preparación para la privacidad {#privacy-readiness}
       + [Información general de soporte de privacidad](privacy-supp-overview.md)
       + [Cómo realizar una solicitud de privacidad](make-privacy-req.md)
 + Sugerencias y solución de problemas {#tips-troubleshoot}
    + [Permitir MVPD en el cuadro de diálogo de selección](allow-mvpd-selectn-dialog.md)
    + [Evitar que las MVPD aparezcan en el cuadro de diálogo de selección](prevent-mvpd-selectn-dialog.md)
-+ Asistencia {#support}
++ Compatibilidad {#support}
    + [Procedimientos de escalación](escalation-procedures.md)
    + [Monitorización de Adobe Pass Adobe PayTV Pass](monitoring-adobe-pay-tv-pass.md)
    + [Requisitos mínimos del sistema](minimum-system-requirements.md)
-+ Notas de versión {#release-notes}
++ Notas de la versión {#release-notes}
    + [Notas de la versión de Adobe Pass Authentication 2.70](auth-rn-270.md)
    + [Notas de la versión de Adobe Pass Authentication 2.69](auth-rn-269.md)
    + [Notas de la versión de Adobe Pass Authentication 2.68](auth-rn-268.md)
@@ -167,35 +167,35 @@ ht-degree: 3%
    + [Notas de la versión de Adobe Pass Authentication 2.64](auth-rn-264.md)
    + [Notas de la versión de Adobe Pass Authentication 2.63](auth-rn-263.md)
    + [Notas de la versión de autenticación de Adobe Pass 2.62.1](auth-rn-2621.md)
-   + Notas de la versión del SDK de JavaScript  {#release-notes-javascript}
-      + [Notas de la versión de JavaScript 4.7.0 de autenticación de Adobe Pass](authn-rn-javascript-470.md)
-      + [Notas de la versión JavaScript 4.6.0 de autenticación de Adobe Pass](authn-rn-javascript-460.md)
-      + [Notas de la versión JavaScript 4.4.0 de autenticación de Adobe Pass](authn-rn-javascript-440.md)
-      + [Notas de la versión JavaScript 4.2.0 de autenticación de Adobe Pass](authn-rn-javascript-420.md)
-      + [Notas de la versión de JavaScript 4.1.1 de autenticación de Adobe Pass](authn-rn-javascript-411.md)
-      + [Notas de la versión JavaScript 4.1.0 de autenticación de Adobe Pass](authn-rn-javascript-410.md)
-      + [Notas de la versión JavaScript 4.0.0 de autenticación de Adobe Pass](authn-rn-javascript-400.md)
+   + Notas de la versión de JavaScript SDK {#release-notes-javascript}
+      + [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.0](authn-rn-javascript-470.md)
+      + [Notas de la versión de Adobe Pass Authentication JavaScript 4.6.0](authn-rn-javascript-460.md)
+      + [Notas de la versión de Adobe Pass Authentication JavaScript 4.4.0](authn-rn-javascript-440.md)
+      + [Notas de la versión de Adobe Pass Authentication JavaScript 4.2.0](authn-rn-javascript-420.md)
+      + [Notas de la versión de Adobe Pass Authentication JavaScript 4.1.1](authn-rn-javascript-411.md)
+      + [Notas de la versión de Adobe Pass Authentication JavaScript 4.1.0](authn-rn-javascript-410.md)
+      + [Notas de la versión de Adobe Pass Authentication JavaScript 4.0.0](authn-rn-javascript-400.md)
       + [Notas de la versión de Adobe Pass Authentication JavaScript 3.5.0](authn-rn-javascript-350.md)
-   + Notas de la versión de iOS/tvOS SDK  {#release-notes-ios}
+   + Notas de la versión de iOS/tvOS SDK {#release-notes-ios}
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.9.2](authn-rn-ios-tvos-392.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.4](authn-rn-ios-tvos-384.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.3](authn-rn-ios-tvos-383.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.2](authn-rn-ios-tvos-382.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.1](authn-rn-ios-tvos-381.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.7.0](authn-rn-ios-tvos-370.md)
-   + Notas de la versión de SDK para Android {#release-notes-android}
+   + Notas de la versión de Android SDK {#release-notes-android}
       + [Notas de la versión de Adobe Pass Authentication Android 3.7.3](authn-rn-android-373.md)
 + Notas técnicas {#tech-notes}
    + SDK de autenticación de Adobe Pass {#primetime-authentication-sdks}
       + [Preguntas y respuestas de certificados](certificates-qa.md)
-      + SDK de JavaScript {#javascript}
+      + SDK para JavaScript {#javascript}
          + [Evaluación de la prevención del seguimiento: Apple Safari](tracking-prevention-assessment-apple-safari.md)
          + [Evaluación de la prevención de seguimiento: Google Chrome](tracking-prevention-assessment-google-chrome.md)
          + [Actualizaciones de cookies: indicadores SameSite y Secure](cookies-updates-samesite-and-secure-flags.md)
       + SDK para Android {#android}
-         + [Acceso Habilitar el inicio de sesión único (SSO) del SDK de Android en aplicaciones de Android 10](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
-         + [Autenticación de Adobe Pass y el modelo de nuevos permisos de Android 6 &quot;Marshmallow&quot;](adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
-      + SDK de iOS/tvOS {#iostvos}
+         + [Inicio de sesión único (SSO) del SDK de Android con acceso habilitado en aplicaciones de Android 10](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
+         + [Autenticación de Adobe Pass y el nuevo modelo de permisos de Android 6 &quot;Marshmallow&quot;](adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
+      + SDK {#iostvos} de iOS/tvOS
          + [Compatibilidad con WKWebView en el SDK 3.1+ de iOS](wkwebview-support-on-ios-sdk-31.md)
          + [Compatibilidad con SFSafariViewController en el SDK 3.2+ de iOS](sfsafariviewcontroller-support-on-ios-sdk-32.md)
          + [SSO en iOS al utilizar el Habilitador de acceso a autenticación de Adobe Pass](sso-on-ios-when-using-the-primetime-authentication-access-enabler.md)
@@ -221,7 +221,7 @@ ht-degree: 3%
    + Conceptos {#concepts}
       + [Explicación de los ID de usuario](understanding-user-ids.md)
 + [Guía del usuario del Tablero de TVE](tve-dashboard-user-guide.md)
-+ Nueva guía del usuario del Tablero de TVE {#user-guide}
++ Nueva guía de usuario del panel de TVE {#user-guide}
    + [Resumen del panel de TVE](/help/authentication/tve-dashboard-overview.md)
    + [Entornos](/help/authentication/tve-dashboard-environments.md)
    + [Revisar y enviar cambios](/help/authentication/tve-dashboard-review-push-changes.md)

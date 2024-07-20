@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# Compatibilidad con SFSafariViewController en el SDK 3.2+ de iOS {#sfsafariviewcontroller-support-on-ios-sdk-3.2}
+# Compatibilidad con SFSafariViewController en iOS SDK 3.2+ {#sfsafariviewcontroller-support-on-ios-sdk-3.2}
 
 >[!NOTE]
 >
@@ -35,9 +35,9 @@ Para estos casos, la versión 3.2 introduce la capacidad para que el programador
 Para administrar manualmente SVC, el implementador debe realizar los siguientes pasos:
 
 
-1. llamada **setOptions()[&quot;handleSVC&quot;:true])** después de la inicialización de AccessEnabler (asegúrese de que esta llamada se realiza antes de que comience la autenticación). Esto habilitará la administración &quot;manual&quot; de SVC, el SDK no presentará automáticamente el SVC, sino que, cuando sea necesario, llamará a **navegar(toUrl:*{url}* useSVC:true)**.
+1. llame a **setOptions([&quot;handleSVC&quot;:true])** después de la inicialización de AccessEnabler (asegúrese de que esta llamada se realice antes de que comience la autenticación). Esto habilitará la administración &quot;manual&quot; de SVC, el SDK no presentará automáticamente el SVC, sino que, cuando sea necesario, lo hará     llamar a **navegar(toUrl:*{url}* useSVC:true)**.
 
-1. implementar la llamada de retorno opcional **`navigateToUrl:useSVC:`** dentro de la implementación debe crear una instancia de servicio con la instancia de SFSafariViewController utilizando la dirección url proporcionada y presentarla en la pantalla:
+1. implementar la llamada de retorno opcional **`navigateToUrl:useSVC:`** dentro de la implementación debe crear una instancia de servicio mediante la instancia de SFSafariViewController mediante la dirección url proporcionada y presentarla en la pantalla:
 
    ```obj-c
    func navigate(toUrl url: String!, useSVC: Bool) {
@@ -49,12 +49,12 @@ Para administrar manualmente SVC, el implementador debe realizar los siguientes 
 
    ***Notas:***
 
-   - *Puede personalizar SFSafariViewController como desee. Por ejemplo, en iOS 11+ puede cambiar la etiqueta &quot;Listo&quot; a &quot;Cancelar&quot;.*
-   - *para poder descartar el svc, necesita una referencia a él, no lo cree en el ámbito de **navegarAurl:usarSVC***
-   - *use su propio controlador de vista para &quot;myController&quot;*
+   - *Puede personalizar SFSafariViewController como desee. Por ejemplo, en iOS 11+, puede cambiar la etiqueta &quot;Listo&quot; a &quot;Cancelar&quot;.*
+   - *para poder descartar el servicio, necesita una referencia a él, no lo cree en el ámbito de **navegarToUrl:useSVC***
+   - *usar su propio controlador de vista para &quot;myController&quot;*
 
 
-1. En la implementación delegada de la aplicación de **application(\_app: UIApplication, abrir url: URL, opciones: \[UIApplicationOpenURLOptionsKey: Any\]) -\> Bool**, agregue código para cerrar el svc. Ya debería tener algún código allí que llame a **accessEnabler.handleExternalURL()**. Justo debajo añada:
+1. En la implementación delegada de la aplicación de **application(\_app: UIApplication, abra la URL: URL, opciones: \[UIApplicationOpenURLOptionsKey: Any\]) -\> Bool**, agregue código para cerrar el servicio. Ya debería tener código allí que llame a **accessEnabler.handleExternalURL()**. Justo debajo añada:
 
    ```obj-c
    if(svc != nil) {
@@ -65,7 +65,7 @@ Para administrar manualmente SVC, el implementador debe realizar los siguientes 
    De nuevo, svc es una referencia al SFSafariViewController que creó en el paso 2.
 
 
-1. Implementación **safariViewControllerDidFinish(\_ controller: SFSafariViewController)** de **SFSafariViewControllerDelegate** para detectar cuándo el usuario canceló el servicio con el botón &quot;Listo&quot;. En esta función, para informar al SDK de que la autenticación se ha cancelado, debe llamar a:
+1. Implemente **safariViewControllerDidFinish(\_ controller: SFSafariViewController)** desde **SFSafariViewControllerDelegate** para detectar cuándo el usuario canceló el servicio con el botón &quot;Listo&quot;. En esta función, para informar al SDK de que la autenticación se ha cancelado, debe llamar a:
 
    ```obj-c
    accessEnabler.setSelectedProvider(nil)

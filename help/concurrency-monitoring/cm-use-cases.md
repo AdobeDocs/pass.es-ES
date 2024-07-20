@@ -1,13 +1,13 @@
 ---
 title: Casos de uso
 description: Casos de uso en Monitorización de concurrencia.
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 6cc30bb6-e985-4d9a-9f99-a7f04ae8deb7
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
 
 ---
-
 
 # Casos de uso {#use-cases}
 
@@ -17,8 +17,8 @@ Para monitorizar el uso por parte del suscriptor, es necesario un servicio centr
 
 Los principales casos de uso admitidos por este servicio centralizado deben ser:
 
-1. En cuanto un suscriptor comienza a ver un vídeo, la aplicación puede **Inicialización de una sesión de flujo continuo** y comenzar **actividad de informe** datos.
-1. En el mismo servicio central, otra instancia recibirá ***Decisiones de CM*** - en caso de que la aplicación tenga una o más políticas registradas en el servicio CM, el servicio responderá con una decisión de acceso basada en la actividad actual.
+1. Tan pronto como un suscriptor comience a ver un vídeo, la aplicación puede **inicializar una sesión de streaming** e iniciar **datos de actividad de informes**.
+1. En el mismo servicio central, otra instancia recibirá ***decisiones CM***; en caso de que la aplicación tenga una o más directivas registradas en el servicio CM, el servicio responderá con una decisión de acceso basada en la actividad actual.
 
 
 ## Creación de una sesión {#create-session}

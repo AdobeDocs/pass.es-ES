@@ -1,9 +1,10 @@
 ---
 title: Mecanismo de comprobación de integridad del almacenamiento de iOS/tvOS
 description: Mecanismo de comprobación de integridad de iOS/tvOS
-source-git-commit: 444a81ad18afcb26dcf3ae8b41f4d02c465f4655
+exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
+source-git-commit: e8a9e53f8bb0a06379d90a91a57335d2897342b0
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '323'
 ht-degree: 0%
 
 ---
@@ -68,5 +69,5 @@ La enumeración IntegrityCheckType se expone a la aplicación cliente y tiene lo
 | Valor | Comprobaciones realizadas | Almacenamiento borrado | Descripción | Caso de uso recomendado |
 |-----------------------|-----------------------------------------------------|-----------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | INTEGRITY_CHECK_NONE | Ninguno | Nunca | No se realizan comprobaciones de integridad en la inicialización del almacenamiento | Cuando los flujos del SDK funcionan según lo esperado |
-| INTEGRITY_CHECK_ALL | Funcionalidad de almacenamiento <br/> Validez de los valores almacenados | Error al comprobar | Todas las comprobaciones de integridad disponibles se realizan durante la inicialización del almacenamiento | Cuando se sospecha que el almacenamiento del SDK está dañado. <br/> Si alguna de las comprobaciones de integridad falla, se cerrará la sesión del usuario |
+| INTEGRITY_CHECK_ALL | Operabilidad de almacenamiento <br/> Validez de los valores almacenados | Error al comprobar | Todas las comprobaciones de integridad disponibles se realizan durante la inicialización del almacenamiento | Cuando se sospecha que el almacenamiento del SDK está dañado. <br/> En caso de que alguna de las comprobaciones de integridad falle, se cerrará la sesión del usuario |
 | INTEGRITY_CHECK_CLEAR | Ninguno | Siempre | El almacenamiento se borra al inicializar el almacenamiento | Cuando los flujos del SDK no se pueden completar según lo esperado |

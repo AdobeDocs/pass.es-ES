@@ -4,7 +4,7 @@ description: SDK de Amazon FireOS con registro de cliente dinámico
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1150'
+source-wordcount: '1145'
 ht-degree: 0%
 
 ---
@@ -21,14 +21,14 @@ ht-degree: 0%
 
 El SDK de FireOS AccessEnabler para FireTV se ha modificado para habilitar la autenticación sin usar cookies de sesión. Como cada vez más exploradores restringen el acceso a las cookies, se necesitaba otro método para permitir la autenticación.
 
-**FireOS SDK 3.0.4** reemplaza el mecanismo de registro de la aplicación actual basado en el ID del solicitante firmado y la autenticación de cookie de sesión por [Registro dinámico de clientes](/help/authentication/dynamic-client-registration.md).
+**FireOS SDK 3.0.4** reemplaza el mecanismo de registro de la aplicación actual basado en la autenticación de ID de solicitante y cookie de sesión firmada con [Registro de cliente dinámico](/help/authentication/dynamic-client-registration.md).
 
 
 ## Cambios de API {#API}
 
 ### Factory.getInstance
 
-**Descripción:** Crea una instancia del objeto Habilitador de acceso. Debe haber una sola instancia de Access Enabler por cada instancia de aplicación.
+**Descripción:** crea una instancia del objeto de habilitación de acceso. Debe haber una sola instancia de Access Enabler por cada instancia de aplicación.
 
 | Llamada de API: constructor |
 | --- |
@@ -39,8 +39,8 @@ El SDK de FireOS AccessEnabler para FireTV se ha modificado para habilitar la au
 **Parámetros:**
 
 - *appContext*: contexto de aplicación de Android
-- *softwareStatement*: valor obtenido del tablero de TVE o *null* si &quot;software\_statement&quot; está definido en strings.xml
-- *redirectUrl* : para implementaciones de FireTV, este parámetro debe ser nulo. Se ignorará cualquier configuración de este atributo.
+- *softwareStatement*: valor obtenido del Tablero de TVE o *null* si &quot;software\_statement&quot; está establecido en strings.xml
+- *redirectUrl* : para implementaciones FireTV, este parámetro debe ser nulo. Se ignorará cualquier configuración de este atributo.
 
 **Notas**
 
@@ -49,13 +49,13 @@ El SDK de FireOS AccessEnabler para FireTV se ha modificado para habilitar la au
 
 ### setRequestor
 
-**Descripción:** Establece la identidad del canal. A cada canal se le asigna un ID único al registrarse con el Adobe en el sistema de autenticación de Adobe Pass. Cuando se trata de SSO y tokens remotos, el estado de autenticación puede cambiar cuando la aplicación está en segundo plano. Se puede volver a llamar a setRequestor cuando la aplicación se pone en primer plano para sincronizar con el estado del sistema (recupere un token remoto si está habilitado el SSO o elimine el token local si se ha cerrado la sesión mientras tanto).
+**Descripción:** establece la identidad del canal. A cada canal se le asigna un ID único al registrarse con el Adobe en el sistema de autenticación de Adobe Pass. Cuando se trata de SSO y tokens remotos, el estado de autenticación puede cambiar cuando la aplicación está en segundo plano. Se puede volver a llamar a setRequestor cuando la aplicación se pone en primer plano para sincronizar con el estado del sistema (recupere un token remoto si está habilitado el SSO o elimine el token local si se ha cerrado la sesión mientras tanto).
 
 La respuesta del servidor contiene una lista de MVPD junto con información de configuración adjunta a la identidad del canal. El código Access Enabler utiliza internamente la respuesta del servidor. Solo el estado de la operación (es decir, SUCCESS/FAIL) se presenta a la aplicación a través de la llamada de retorno setRequestorComplete().
 
-Si la variable *url* no se utiliza, la llamada de red resultante se dirige a la dirección URL del proveedor de servicios predeterminado: el entorno de producción de versiones de Adobe.
+Si no se usa el parámetro *urls*, la llamada de red resultante se dirigirá a la dirección URL del proveedor de servicios predeterminado: el entorno de producción de versiones de Adobe.
 
-Si se proporciona un valor para *url* , la llamada de red resultante se dirige a todas las direcciones URL proporcionadas en el parámetro *url* parámetro. Todas las solicitudes de configuración se activan simultáneamente en subprocesos independientes. El primer respondedor tiene prioridad al compilar la lista de MVPD. Para cada MVPD de la lista, el Habilitador de acceso recuerda la URL del proveedor de servicios asociado. Todas las solicitudes de derechos subsiguientes se dirigen a la URL asociada al proveedor de servicios emparejado con la MVPD de destino durante la fase de configuración.
+Si se proporciona un valor para el parámetro *urls*, la llamada de red resultante se dirigirá a todas las direcciones URL proporcionadas en el parámetro *urls*. Todas las solicitudes de configuración se activan simultáneamente en subprocesos independientes. El primer respondedor tiene prioridad al compilar la lista de MVPD. Para cada MVPD de la lista, el Habilitador de acceso recuerda la URL del proveedor de servicios asociado. Todas las solicitudes de derechos subsiguientes se dirigen a la URL asociada al proveedor de servicios emparejado con la MVPD de destino durante la fase de configuración.
 
 | Llamada de API: configuración del solicitante |
 | --- |
@@ -71,14 +71,14 @@ Si se proporciona un valor para *url* , la llamada de red resultante se dirige a
 
 **Parámetros:**
 
-- *requestorID*: ID único asociado con el canal. Pase el ID único asignado por el Adobe a su sitio cuando se registre por primera vez en el servicio de autenticación de Adobe Pass.
-- *url*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista de MVPD se compone de los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
+- *requestorID*: El ID único asociado con el canal. Pase el ID único asignado por el Adobe a su sitio cuando se registre por primera vez en el servicio de autenticación de Adobe Pass.
+- *urls*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista de MVPD se compone de los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
 
 Obsoleto:
 
-- *signedRequestorID*: una copia del ID del solicitante firmado digitalmente con su clave privada. <!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
+- *signedRequestorID*: Una copia del identificador del solicitante firmado digitalmente con su clave privada. <!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
-**Llamadas activadas:** `setRequestorComplete()`
+**Llamadas de retorno activadas:** `setRequestorComplete()`
 
 </br>
 
@@ -94,7 +94,7 @@ Obsoleto:
 
 **Parámetros:** Ninguno
 
-**Llamadas activadas:** `setAuthenticationStatus()`
+**Llamadas de retorno activadas:** `setAuthenticationStatus()`
 
 ## Flujo de implementación del programador {#Progr}
 
@@ -118,23 +118,23 @@ Obsoleto:
 
   El SDK realizará las siguientes operaciones:
 
-   - solicitud de registro: utilizando **software\_statement**, el SDK obtendrá una **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Esta información se almacena en el almacenamiento interno de la aplicación.
+   - solicitud de registro: con **software\_statement**, el SDK obtendrá **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Esta información se almacena en el almacenamiento interno de la aplicación.
    - obtenga un **access\_token** usando client\_id, client\_secret y grant\_type=&quot;client\_credentials&quot; . Este access\_token se usará en cada llamada realizada por el SDK a los servidores de Adobe Pass.
 
 | Respuestas de error de token: |  |  |
 |--- | --- | --- |
 | HTTP 400 (solicitud incorrecta) | {&quot;error&quot;: &quot;invalid\_request&quot;} | A la solicitud le falta un parámetro requerido, incluye un valor de parámetro no admitido (que no sea el tipo de concesión), repite un parámetro, incluye varias credenciales, utiliza más de un mecanismo para autenticar al cliente o tiene un formato incorrecto. |
-| HTTP 400 (solicitud incorrecta) | {&quot;error&quot;: &quot;invalid\_client&quot;} | Error de autenticación del cliente porque se desconocía el cliente. El SDK *MUST* vuelva a registrarse en el servidor de autorización. |
+| HTTP 400 (solicitud incorrecta) | {&quot;error&quot;: &quot;invalid\_client&quot;} | Error de autenticación del cliente porque se desconocía el cliente. El SDK *DEBE* volver a registrarse con el servidor de autorización. |
 | HTTP 400 (solicitud incorrecta) | {&quot;error&quot;: &quot;unauthorized\_client&quot;} | El cliente autenticado no tiene autorización para utilizar este tipo de concesión de autorización. |
 
 - en caso de que una MVPD requiera autenticación pasiva, se abrirá un WebView para ejecutar pasive con esa MVPD y se cerrará cuando se complete
 
 - b. checkAuthentication()
 
-   - *true* : vaya a Autorización
+   - *true* : ir a Autorización
    - *false* : vaya a Seleccionar MVPD
 
-- c. getAuthentication : el SDK incluye **access_token** en parámetros de llamada
+- c. getAuthentication : el SDK incluirá **access_token** en los parámetros de llamada
 
    - mvpd recordó : vaya a setSelectedProvider(mvpd\_id)
    - mvpd no seleccionado: displayProviderDialog
@@ -154,13 +154,13 @@ Obsoleto:
 - f. cierre de sesión:
 
    - El SDK eliminará el token válido para el solicitante actual (las autenticaciones obtenidas por otras aplicaciones y no a través de SSO seguirán siendo válidas)
-   - El SDK abrirá las fichas personalizadas de Chrome para llegar al extremo de cierre de sesión de mvpd\_id. Una vez finalizado, se cerrarán las fichas personalizadas de Chrome
+   - El SDK abrirá las fichas personalizadas de Chrome para alcanzar el extremo de cierre de sesión mvpd\_id. Una vez finalizado, se cerrarán las fichas personalizadas de Chrome
    - El esquema de URL se establece como &quot;adobepass://logout&quot; para capturar el momento en que se completa el cierre de sesión
    - el cierre de sesión almacenará en déclencheur sendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) y una llamada de retorno : setAuthenticationStatus(0,&quot;Logout&quot;)
 
 
 
-**Nota:** ya que cada llamada requiere un **access_token**, los posibles códigos de error siguientes se gestionan en el SDK.
+**Nota:** ya que cada llamada requiere un **token_de_acceso**, los posibles códigos de error siguientes se gestionan en el SDK.
 
 | Respuestas de error |  |  |
 |--- | --- | --- |

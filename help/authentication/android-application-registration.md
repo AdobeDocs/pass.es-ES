@@ -25,7 +25,7 @@ Para obtener más información, consulte [Registro dinámico de clientes](/help/
 
 Una declaración de software es un token JWT que contiene información sobre su aplicación. Cada aplicación debe tener una declaración de software única que nuestros servidores utilicen para identificar la aplicación en el sistema de Adobe.
 
-Debe pasarse la Declaración de software al inicializar el `AccessEnabler` SDK. Se utiliza para registrar la aplicación con el Adobe. Tras el registro, el SDK recibe un ID de cliente y un secreto de cliente, que se utilizan para obtener un token de acceso. Cualquier llamada que el SDK realice a los servidores de Adobe de requiere un token de acceso válido. El SDK es responsable de registrar la aplicación, obtener y actualizar el token de acceso.
+Se debe pasar la instrucción de software al inicializar el SDK `AccessEnabler`. Se utiliza para registrar la aplicación con el Adobe. Tras el registro, el SDK recibe un ID de cliente y un secreto de cliente, que se utilizan para obtener un token de acceso. Cualquier llamada que el SDK realice a los servidores de Adobe de requiere un token de acceso válido. El SDK es responsable de registrar la aplicación, obtener y actualizar el token de acceso.
 
 >[!NOTE]
 >
@@ -37,13 +37,13 @@ A continuación se indican formas de obtener una Declaración de software.
 
 ### Si tiene acceso al Tablero de TVE de Adobe
 
-1. Abra el explorador y vaya a [Tablero de Adobe Pass TVE](https://console.auth.adobe.com).
+1. Abra el explorador y vaya al [Panel de Adobe Pass TVE](https://console.auth.adobe.com).
 
-1. Vaya a **[!UICONTROL Channels]** y, a continuación, seleccione su canal.
+1. Vaya a la sección **[!UICONTROL Channels]** y, a continuación, seleccione su canal.
 
-1. Vaya a **[!UICONTROL Registered Applications]** pestaña.
+1. Vaya a la ficha **[!UICONTROL Registered Applications]**.
 
-1. Clic **[!UICONTROL Add new application]**.
+1. Haga clic en **[!UICONTROL Add new application]**.
 
 1. Asigne un nombre a la aplicación y especifique una versión.
 
@@ -51,17 +51,17 @@ A continuación se indican formas de obtener una Declaración de software.
 
 1. Proporcione un **[!UICONTROL Domain Name]** eligiendo de una lista de dominios ya configurados para su programador.
 
-1. Inserte los cambios en el servidor y, a continuación, vuelva a la página de **[!UICONTROL Registered Applications]** pestaña.
+1. Inserte los cambios en el servidor y vuelva a la pestaña **[!UICONTROL Registered Applications]** del canal.
 
-   Debería ver una lista con todas las aplicaciones registradas. Seleccionar **[!UICONTROL Download]** en la aplicación que ha creado. Es posible que tenga que esperar unos minutos antes de que su declaración de software esté lista para su descarga.
+   Debería ver una lista con todas las aplicaciones registradas. Seleccione **[!UICONTROL Download]** en la aplicación que creó. Es posible que tenga que esperar unos minutos antes de que su declaración de software esté lista para su descarga.
 
    Se descarga un archivo de texto. Utilice su contenido como Declaración de software.
 
-Para obtener más información, consulte [Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md)
+Para obtener más información, vea [Administración dinámica del registro de clientes](/help/authentication/dynamic-client-registration-management.md)
 
 ### Si no tiene acceso al Tablero de TVE de Adobe
 
-Envíe un ticket a `tve-support@adobe.com`. Incluya la información necesaria como canal, nombre de aplicación, versión y plataformas. Alguien de nuestro equipo de soporte creará una declaración de software para usted.
+Enviar un ticket a `tve-support@adobe.com`. Incluya la información necesaria como canal, nombre de aplicación, versión y plataformas. Alguien de nuestro equipo de soporte creará una declaración de software para usted.
 
 ## Cómo utilizar la declaración de software {#how-to-use-ss}
 
@@ -75,7 +75,7 @@ El vínculo profundo creado debe tener un valor único en el dispositivo Android
 
 ## Cómo utilizar la Declaración de software y el vínculo profundo {#use-both}
 
-En el archivo de recursos de su aplicación `strings.xml` agregue el siguiente código:
+Agregue el siguiente código en el archivo de recursos de su aplicación `strings.xml`:
 
 ```JAVA
     <string name="software_statement">softwarestatement value</string>

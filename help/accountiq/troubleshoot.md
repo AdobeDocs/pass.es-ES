@@ -19,4 +19,4 @@ Si está experimentando retrasos en la carga de datos y gráficos, dificultades 
 
 * Si no puede ver ningún dato o gráfico incluso después de actualizar, cierre la sesión de Account IQ y vuelva a iniciarla.
 
-* Si ninguno de los métodos de solución de problemas anteriores ayuda, o si tiene otras preguntas relacionadas con los datos o la incapacidad para exportar estadísticas, póngase en contacto con el Soporte técnico de Adobe enviando un correo electrónico a <tve-support@adobe.com>.
+* Si ninguno de los métodos de solución de problemas anteriores ayuda, o si tiene otras preguntas relacionadas con datos o la incapacidad para exportar estadísticas, póngase en contacto con el Soporte técnico de Adobe enviando un correo electrónico a <tve-support@adobe.com>.

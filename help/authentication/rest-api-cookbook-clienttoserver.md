@@ -18,14 +18,14 @@ ht-degree: 0%
 
 ## Información general {#overview}
 
-Este documento proporciona instrucciones paso a paso para que el equipo de ingeniería de un programador integre un &quot;dispositivo inteligente&quot; (consola de juegos, aplicación de televisión inteligente, decodificador, etc.) con autenticación de Adobe Pass mediante servicios de API de REST. Este método de cliente a servidor, que utiliza API de REST en lugar de un SDK de cliente, ofrece una compatibilidad más amplia con diferentes plataformas para las que no sería posible desarrollar un número significativo de SDK únicos. Para obtener una amplia descripción técnica del funcionamiento de la solución sin cliente, consulte la [Información técnica de Clientless](/help/authentication/rest-api-overview.md).
+Este documento proporciona instrucciones paso a paso para que el equipo de ingeniería de un programador integre un &quot;dispositivo inteligente&quot; (consola de juegos, aplicación de televisión inteligente, decodificador, etc.) con autenticación de Adobe Pass mediante servicios de API de REST. Este método de cliente a servidor, que utiliza API de REST en lugar de un SDK de cliente, ofrece una compatibilidad más amplia con diferentes plataformas para las que no sería posible desarrollar un número significativo de SDK únicos. Para obtener una amplia descripción técnica del funcionamiento de la solución sin cliente, vea [Información general técnica sin cliente](/help/authentication/rest-api-overview.md).
 
 
 Este método requiere dos componentes (aplicación de streaming y aplicación AuthN) para completar los flujos necesarios: los flujos de inicio, registro, autorización y medios de visualización en la aplicación de streaming, y el flujo de autenticación en la aplicación AuthN.
 
 ### Mecanismo de limitación
 
-La API de REST de autenticación de Adobe Pass se rige por un [Mecanismo de limitación](/help/authentication/throttling-mechanism.md).
+La API de REST de autenticación de Adobe Pass se rige por un [mecanismo de restricción](/help/authentication/throttling-mechanism.md).
 
 ## Componentes {#components}
 
@@ -44,13 +44,13 @@ En una solución de cliente a servidor en funcionamiento están implicados los s
 
 
 
-Los términos adicionales utilizados en el flujo se definen en la variable [Glosario](/help/authentication/glossary.md).
+Los términos adicionales utilizados en el flujo se definen en el [Glosario](/help/authentication/glossary.md).
 
 ## Flujos{#flows}
 
 ### Registro dinámico de clientes (DCR)
 
-Adobe Pass utiliza DCR para proteger las comunicaciones de cliente entre una aplicación o un servidor de programación y los servicios de Adobe Pass. El flujo DCR es independiente, dependiente y de requisito previo, y se puede encontrar en [Registro dinámico de clientes](/help/authentication/dynamic-client-registration.md)
+Adobe Pass utiliza DCR para proteger las comunicaciones de cliente entre una aplicación o un servidor de programación y los servicios de Adobe Pass. El flujo de DCR es independiente, dependiente y de requisito previo, y se puede encontrar en [Registro dinámico de clientes](/help/authentication/dynamic-client-registration.md)
 
 
 ### Flujos de aplicaciones de streaming (Smart Device)
@@ -65,7 +65,7 @@ Adobe Pass utiliza DCR para proteger las comunicaciones de cliente entre una apl
 
 3. Ejecute una llamada de autenticación de comprobación para ver si el dispositivo ya está autenticado.  Por ejemplo: [`<SP_FQDN>/api/v1/checkauthn [device ID]`](/help/authentication/check-authentication-token.md)
 
-4. Si la variable `checkauthn` La llamada se ha realizado correctamente, continúe con el flujo de autorización a partir del paso 2.  Si se produce un error, inicie el flujo de registro.
+4. Si la llamada a `checkauthn` se realiza correctamente, continúe con el Flujo de autorización a partir del paso 2.  Si se produce un error, inicie el flujo de registro.
 
 
 
@@ -83,7 +83,7 @@ Adobe Pass utiliza DCR para proteger las comunicaciones de cliente entre una apl
 
 #### Flujo de autorización
 
-1. El usuario vuelve de la aplicación de la segunda pantalla y pulsa el botón &quot;Continuar&quot; del dispositivo. Alternativamente, puede implementar un mecanismo de sondeo para comprobar el estado de autenticación, pero la autenticación de Adobe Pass recomienda el método del botón Continuar sobre el sondeo. <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> Por ejemplo: [\&lt;sp _fqdn=&quot;&quot;>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md)
+1. El usuario vuelve de la aplicación de la segunda pantalla y pulsa el botón &quot;Continuar&quot; del dispositivo. Alternativamente, puede implementar un mecanismo de sondeo para comprobar el estado de autenticación, pero la autenticación de Adobe Pass recomienda el método del botón Continuar sobre el sondeo. <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> Por ejemplo: [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md)
 
 2. Envíe una solicitud de GET al servicio de autorización de autenticación de Adobe Pass para iniciar la autorización. Por ejemplo: `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
@@ -109,9 +109,11 @@ Adobe Pass utiliza DCR para proteger las comunicaciones de cliente entre una apl
 
    a. La aplicación comprueba si los medios están protegidos.
 
-   b. Si el medio está protegido, la aplicación inicia el flujo de autorización (AuthZ) anterior.
+   b. Si el medio está protegido, la aplicación inicia la Autorización
+(AuthZ) Flujo superior.
 
-   c. Si los medios no están protegidos, reproduzca los medios para el usuario.
+   c. Si los medios no están protegidos, reproduzca los medios para el
+usuario.
 
 3. Reproducción de los medios.
 
@@ -139,7 +141,7 @@ Algunas plataformas proporcionan compatibilidad dedicada con el inicio de sesió
 
 En el caso de las implementaciones de TempPass y Promotional TempPass en las que no se requiere que el usuario introduzca sus credenciales, la autenticación se puede implementar directamente en la aplicación de streaming.
 
-**Para utilizar esta API, la aplicación de streaming debe asegurarse de que el ID del dispositivo sea único, ya que se utiliza para identificar el token, junto con los datos adicionales opcionales.**
+**Para usar esta API, la aplicación de streaming debe asegurarse de que el ID del dispositivo sea único, ya que se está usando para identificar el token, junto con los datos adicionales opcionales.**
 
 
 ![](assets/temp-pass-promo-temppass.png)

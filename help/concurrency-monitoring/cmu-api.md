@@ -1,13 +1,13 @@
 ---
 title: Resumen de API
 description: Resumen de API
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '2054'
+source-wordcount: '2043'
 ht-degree: 0%
 
 ---
-
 
 # API de uso de supervisión de concurrencia {#cmu-api-usage}
 
@@ -17,18 +17,18 @@ ht-degree: 0%
 
 ## Resumen de API {#api-overview}
 
-El uso de supervisión de concurrencia (CMU) se implementa como WOLAP (basado en Web) [Procesamiento analítico en línea](http://en.wikipedia.org/wiki/Online_analytical_processing)) proyecto. CMU es una API web genérica para informes empresariales respaldada por un almacén de datos. Actúa como lenguaje de consulta HTTP que permite realizar operaciones OLAP típicas con RESTful.
+El uso de supervisión de concurrencia (CMU) se implementa como un proyecto WOLAP (Web-based [Online Analytical Processing](http://en.wikipedia.org/wiki/Online_analytical_processing)). CMU es una API web genérica para informes empresariales respaldada por un almacén de datos. Actúa como lenguaje de consulta HTTP que permite realizar operaciones OLAP típicas con RESTful.
 
 
 >[!NOTE]
 >
 >La API de CMU no está disponible de forma general. Póngase en contacto con el representante del Adobe para preguntas sobre disponibilidad.
 
-La API de CMU proporciona una vista jerárquica de los cubos OLAP subyacentes. Cada recurso ([dimensión](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) en la jerarquía de dimensiones, asignado como segmento de ruta de URL) genera informes con (agregados) [métricas](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) para la selección actual. Cada recurso señala a su recurso principal (para el resumen) y a sus subrecursos (para el desglose). El corte y el trozo se logran mediante parámetros de cadena de consulta que anclan dimensiones a valores o rangos específicos.
+La API de CMU proporciona una vista jerárquica de los cubos OLAP subyacentes. Cada recurso ([dimensión](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) en la jerarquía de dimensiones, asignado como segmento de ruta de URL) genera informes con [métricas](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) (agregadas) para la selección actual. Cada recurso señala a su recurso principal (para el resumen) y a sus subrecursos (para el desglose). El corte y el trozo se logran mediante parámetros de cadena de consulta que anclan dimensiones a valores o rangos específicos.
 
 La API de REST proporciona los datos disponibles en un intervalo de tiempo especificado en la solicitud (volviendo a los valores predeterminados si no se proporciona ninguno), según la ruta de dimensión, los filtros proporcionados y las métricas seleccionadas. El intervalo de tiempo no se aplicará a los informes que no contengan dimensiones de tiempo (año, mes, día, hora, minuto, segundo).
 
-La ruta raíz de la URL del punto de conexión devolverá las métricas agregadas generales dentro de un único registro, junto con los vínculos a las opciones de desglose disponibles. La versión de la API se asigna como el segmento final de la ruta del URI del extremo. Por ejemplo, https://mgmt.auth.adobe.com/cmu/*Versión 2* significa que los clientes tendrán acceso a WOLAP versión 2.
+La ruta raíz de la URL del punto de conexión devolverá las métricas agregadas generales dentro de un único registro, junto con los vínculos a las opciones de desglose disponibles. La versión de la API se asigna como el segmento final de la ruta del URI del extremo. Por ejemplo, https://mgmt.auth.adobe.com/cmu/*v2* significa que los clientes tendrán acceso a WOLAP versión 2.
 
 Las rutas URL disponibles se pueden detectar mediante los vínculos contenidos en la respuesta. Las rutas de URL válidas se mantienen para asignar una ruta dentro del árbol de desglose subyacente que contiene las métricas agregadas (previamente). Una ruta con el formato /dimension1/dimension2/dimension3 reflejará una agregación previa de esas tres dimensiones (el equivalente de una cláusula SQL GROUP BY dimension1, dimension2, dimension3). Si esta agregación previa no existe y el sistema no puede calcularla sobre la marcha, la API devolverá una respuesta 404 Not Found.
 
@@ -40,7 +40,7 @@ Los siguientes árboles desplegables ilustran las dimensiones (recursos) disponi
 
 ![](assets/new_breakdown.png)
 
-A `GET` a la `https://mgmt.auth.adobe.com/cmu/v2` El extremo de la API devolverá una representación que contiene:
+Un(a) `GET` al extremo de API `https://mgmt.auth.adobe.com/cmu/v2` devolverá una representación que contiene:
 
 * Vínculos a las rutas desplegables raíz disponibles:
 
@@ -62,10 +62,10 @@ Excepto para las dimensiones de fecha y hora, cualquier dimensión disponible pa
 
 Están disponibles las siguientes opciones de filtrado:
 
-* **Igual a** Los filtros se proporcionan estableciendo el nombre de la dimensión en un valor en particular en la cadena de consulta.
-* **IN** los filtros se pueden especificar agregando el mismo parámetro de nombre de dimensión varias veces con valores diferentes: dimension=value1&amp;dimension=value2
-* **No es igual a** los filtros deben utilizar &#39;!&#39; símbolo después del nombre de cota, lo que da como resultado &#39;!=&#39; &quot;operator&quot;: dimension!=valor
-* **NO EN** Los filtros requieren el elemento &#39;!=&#39; operador que se utilizará varias veces, una vez para cada valor del conjunto: dimensión!=valor1&amp;dimensión!=valor2&amp;...
+* Los filtros **Es igual que** se proporcionan al establecer el nombre de dimensión en un valor en particular en la cadena de consulta.
+* Los filtros **IN** se pueden especificar agregando el mismo parámetro de nombre de dimensión varias veces con valores diferentes: dimension=value1&amp;dimension=value2
+* **No es igual a** filtros que deben usar &#39;!&#39; símbolo después del nombre de cota, lo que da como resultado &#39;!=&#39; &quot;operator&quot;: dimension!=valor
+* **NO EN** filtros requieren &#39;!=&#39; operador que se utilizará varias veces, una vez para cada valor del conjunto: dimensión!=valor1&amp;dimensión!=valor2&amp;...
 
 
 También existe un uso especial para los nombres de dimensión en la cadena de consulta: Si el nombre de dimensión se utiliza como parámetro de cadena de consulta sin valor, se indica a la API que devuelva una proyección que incluya esa dimensión en el informe.
@@ -76,9 +76,9 @@ Ejemplo de consultas de CMU:
 |:---|:---|
 | /dimension1/dimension2/dimension3?dimension1=value1 | SELECT * desde la proyección WHERE dimensión1 = &#39;valor1&#39; GROUP BY dimensión1, dimensión2, dimensión3 |
 | /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * desde la proyección WHERE dimensión1 IN (&#39;valor1&#39;, &#39;valor2&#39;) GROUP BY dimensión1, dimensión2, dimensión3 |
-| /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * desde proyección WHERE dimensión1 &lt;> &#39;valor1&#39; GROUP BY dimensión1, dimensión2, dimensión3 |
-| /dimension1/dimension2/dimension3?dimension1!=valor1&amp;dimensión2!=value2 | SELECT * desde la proyección WHERE dimensión1 NOT IN (&#39;valor1&#39;, &#39;valor2&#39;) GROUP BY dimensión1, dimensión2, dimensión3 |
-| Suponiendo que no hay una ruta directa: /dimension1/dimension3 pero hay una ruta: /dimension1/dimension2/dimension3  </br></br> /dimension1?dimension3 | SELECT * desde la proyección GROUP BY dimensión1,dimensión3 |
+| /dimension1/dimension2/dimension3?dimension1!=valor1 | SELECT * desde proyección WHERE dimensión1 &lt;> &#39;valor1&#39; GROUP BY dimensión1, dimensión2, dimensión3 |
+| /dimension1/dimension2/dimension3?dimension1!=valor1&amp;dimensión2!=valor2 | SELECT * desde la proyección WHERE dimensión1 NOT IN (&#39;valor1&#39;, &#39;valor2&#39;) GROUP BY dimensión1, dimensión2, dimensión3 |
+| Suponiendo que no hay una ruta directa: /dimension1/dimension3 pero hay una ruta: /dimension1/dimension2/dimension3 </br></br> /dimension1?dimension3 | SELECT * desde la proyección GROUP BY dimensión1,dimensión3 |
 
 >[!NOTE]
 >
@@ -130,8 +130,8 @@ Los datos están disponibles en los siguientes formatos:
 Los clientes pueden utilizar las siguientes estrategias de negociación de contenido (la prioridad viene dada por la posición en la lista: lo primero es lo primero):
 
 1. Una &quot;extensión de archivo&quot; anexada al último segmento de la ruta URL, por ejemplo, /cmu/v2/tenant/year/month/day.xml. Si la dirección URL contiene una cadena de consulta, la extensión debe ir antes del signo de interrogación: `/cmu/v2/tenant/year/month/day.csv?mvpd=SomeMVPD`
-1. Un parámetro de cadena de consulta de formato: p. ej., `/cmu/report?format=json`
-1. El encabezado HTTP Accept estándar: por ejemplo,. `Accept: application/xml`
+1. Un parámetro de cadena de consulta de formato: por ejemplo, `/cmu/report?format=json`
+1. El encabezado HTTP Accept estándar: por ejemplo, `Accept: application/xml`
 
 Tanto la &quot;extensión&quot; como el parámetro de consulta admiten los siguientes valores:
 
@@ -144,7 +144,7 @@ Si ninguna de las estrategias especifica ningún tipo de medio, la API producir�
 
 ## Lenguaje de aplicación de hipertexto (HAL) {#hypertext-app-lang}
 
-Para JSON y XML, la carga útil se codificará como HAL, como se describe aquí: `http://stateless.co/hal_specification.html`.
+Para JSON y XML, la carga útil se codificará como HAL, tal como se describe aquí: `http://stateless.co/hal_specification.html`.
 
 El informe real (una etiqueta o propiedad anidada denominada &quot;informe&quot;) constará de la lista real de registros que contienen todas las dimensiones y métricas seleccionadas o aplicables con sus valores, codificados de la siguiente manera:
 
@@ -174,7 +174,7 @@ El informe real (una etiqueta o propiedad anidada denominada &quot;informe&quot;
 
 Para los formatos XML y JSON, el orden de los campos (dimensiones y métricas) dentro de un registro no está especificado, pero es coherente (el orden será el mismo en todos los registros). Sin embargo, los clientes no deben depender de ningún orden en particular de los campos de un registro.
 
-El vínculo de recurso (la base &quot;self&quot; en JSON y el atributo de recurso &quot;href&quot; en XML) contiene la ruta actual y la cadena de consulta utilizada para el informe en línea. La cadena de consulta revelará todos los parámetros implícitos y explícitos, de modo que la carga útil señalará explícitamente el intervalo de tiempo utilizado, los filtros implícitos (si los hay), etc. El resto de los vínculos dentro del recurso contienen todos los segmentos disponibles que se pueden seguir para explorar en profundidad los datos actuales. También se proporciona un vínculo para el resumen y señalará la ruta principal (si la hay). El `href` El valor de los vínculos de desglose/resumen solo contiene la ruta de la URL (no incluye la cadena de consulta, por lo que el cliente debe añadirla si es necesario). Tenga en cuenta que no todos los parámetros de cadena de consulta utilizados (o implícitos) por el recurso actual serán aplicables para los vínculos de &quot;resumen&quot; o &quot;desglose&quot; (por ejemplo, es posible que los filtros no se apliquen a los subrecursos o superrecursos).
+El vínculo de recurso (la base &quot;self&quot; en JSON y el atributo de recurso &quot;href&quot; en XML) contiene la ruta actual y la cadena de consulta utilizada para el informe en línea. La cadena de consulta revelará todos los parámetros implícitos y explícitos, de modo que la carga útil señalará explícitamente el intervalo de tiempo utilizado, los filtros implícitos (si los hay), etc. El resto de los vínculos dentro del recurso contienen todos los segmentos disponibles que se pueden seguir para explorar en profundidad los datos actuales. También se proporciona un vínculo para el resumen y señalará la ruta principal (si la hay). El valor `href` de los vínculos de exploración o resumen solo contiene la ruta de acceso a la dirección URL (no incluye la cadena de consulta, por lo que el cliente debe agregarla si es necesario). Tenga en cuenta que no todos los parámetros de cadena de consulta utilizados (o implícitos) por el recurso actual serán aplicables para los vínculos de &quot;resumen&quot; o &quot;desglose&quot; (por ejemplo, es posible que los filtros no se apliquen a los subrecursos o superrecursos).
 
 Ejemplo (suponiendo que tenemos una sola métrica llamada clientes y que hay una agregación previa para `year/month/day/...`):
 
@@ -232,7 +232,7 @@ El CSV contendrá una fila de encabezado y, a continuación, los datos del infor
 
 El orden de los campos en la fila de encabezado reflejará el orden de los datos de tabla.
 
-Ejemplo: https://mgmt.auth.adobe.com/cmu/v2/year/month.csv producirá un archivo denominado ```report__2012-07-20_2012-08-20_1000.csv``` con el siguiente contenido:
+Ejemplo: https://mgmt.auth.adobe.com/cmu/v2/year/month.csv producirá un archivo de nombre ```report__2012-07-20_2012-08-20_1000.csv``` con el siguiente contenido:
 
 | Año | Mes | Clientes |
 |:----:|:-----:|:-------:|
@@ -241,14 +241,14 @@ Ejemplo: https://mgmt.auth.adobe.com/cmu/v2/year/month.csv producirá un archivo
 
 ## Actualización de datos {#data-freshness}
 
-Aunque la solicitud contiene el encabezado Última modificación, puede **NO LO HACE** reflejan la hora en la que se actualizó por última vez el informe del cuerpo. Los informes generales se calculan de forma periódica, con las siguientes reglas:
+Aunque la solicitud contiene un encabezado Última modificación, **NO** refleja la hora en que se actualizó por última vez el informe del cuerpo. Los informes generales se calculan de forma periódica, con las siguientes reglas:
 
-* si la granularidad de tiempo es **año** o **mes**, el informe se actualiza cada dos días
-* si la granularidad de tiempo es **día**, el informe se actualiza cada tres horas
-* si la granularidad de tiempo es **hora**, el informe se actualiza cada hora
+* si la granularidad de tiempo es **year** o **month**, el informe se actualiza cada 2 días
+* si la granularidad de la hora es **day**, el informe se actualiza cada 3 horas
+* si la granularidad de la hora es **hour**, el informe se actualiza cada hora
 * si la granularidad de tiempo es **minuto**, el informe se actualiza cada minuto
 
-El **nivel de actividad** y **nivel de concurrencia** los informes se actualizan todos los días, independientemente de la granularidad de tiempo.
+Los informes de **nivel de actividad** y **nivel de concurrencia** se actualizan todos los días, independientemente de la granularidad de tiempo.
 
 ## Compresión GZIP {#gzip-compression}
 

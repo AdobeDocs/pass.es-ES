@@ -4,12 +4,12 @@ description: Compatibilidad con WKWebView en el SDK 3.1+ de iOS
 exl-id: 90062be0-1a0a-44ae-8d8e-f4d97a92b17a
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '311'
 ht-degree: 0%
 
 ---
 
-# Compatibilidad con WKWebView en el SDK 3.1+ de iOS {#wkwebview-support-on-ios-sdk-3.1}
+# Compatibilidad con WKWebView en iOS SDK 3.1+ {#wkwebview-support-on-ios-sdk-3.1}
 
 >[!NOTE]
 >
@@ -27,7 +27,7 @@ Tenga en cuenta que la migración implicaría simplemente cambiar la clase UIWeb
 
 ## Problemas conocidos {#known-issues}
 
-AccessEnabler de Adobe utilizó una instancia de UIWebView interna oculta para realizar &quot;[autenticación pasiva](/help/authentication/sso-passive-authn.md)&quot; para ciertas MVPD. El flujo &quot;pasivo&quot; resultó útil para las MVPD que requieren autenticación para cada ID de solicitante y, a partir de este flujo, se beneficiaron los programadores que utilizaron el mismo ID de equipo en varias aplicaciones de iOS para simular una experiencia SSO (Adobe SSO). Actualmente, esta función la utilizan un número limitado de MVPD.
+AccessEnabler de Adobe utilizó una instancia de UIWebView interna oculta para realizar &quot;[autenticación pasiva](/help/authentication/sso-passive-authn.md)&quot; en determinadas MVPD. El flujo &quot;pasivo&quot; resultó útil para las MVPD que requieren autenticación para cada ID de solicitante y, a partir de este flujo, se beneficiaron los programadores que utilizaron el mismo ID de equipo en varias aplicaciones de iOS para simular una experiencia SSO (Adobe SSO). Actualmente, esta función la utilizan un número limitado de MVPD.
 
 La función utilizaba un comportamiento de UIWebView que permitía al Adobe capturar las cookies de autenticación y reproducirlas durante el flujo &quot;pasivo&quot;. WKWebView presenta una seguridad más sólida que evita que el Adobe capture las cookies configuradas al iniciar sesión y las reproduzca utilizando una instancia oculta de WKWebView. Debido a esta mejora de la seguridad y teniendo en cuenta que el flujo &quot;pasivo&quot; solo beneficiaba a un conjunto muy limitado de MVPD en un escenario de implementación muy específico (varias aplicaciones que utilizan el mismo ID de equipo), Adobe eliminó la función de &quot;autenticación pasiva&quot; para MVPD que utilizan vistas web para autenticarse.
 

@@ -11,9 +11,9 @@ ht-degree: 0%
 
 # Patrones de uso {#usage-patterns}
 
-Account IQ clasifica a los usuarios de cuentas de suscriptor en varias categorías en términos de comportamiento social, como viajero o viajero habitual, familia numerosa y uso compartido de la comunidad. El **Patrones de uso** Esta página muestra varios análisis e informes diferentes para estas tipologías de usuario. Por ejemplo, **Distribución de patrones de uso** Los informes comparan el comportamiento de uso del segmento actual con el de todas sus cuentas.
+Account IQ clasifica a los usuarios de cuentas de suscriptor en varias categorías en términos de comportamiento social, como viajero o persona que viaja al trabajo, familia numerosa y uso compartido en la comunidad. La página **Patrones de uso** muestra diferentes análisis e informes para estas tipologías de usuario. Por ejemplo, los informes **Distribución de patrones de uso** comparan el comportamiento de uso del segmento actual con el de todas sus cuentas.
 
-Al igual que las demás páginas de la aplicación, los análisis e informes se basan en el segmento actual definido en la variable [panel de segmentos](/help/accountiq/segments-timeinterval.md).
+Al igual que las demás páginas de la aplicación, los análisis e informes se basan en el segmento actual definido en el [panel de segmentos](/help/accountiq/segments-timeinterval.md).
 
 ## Distribución de patrones de uso {#usage-pattern-dis}
 
@@ -41,7 +41,7 @@ Además de comparar cada patrón de uso en el segmento actual con todo el sector
 
 ## Distribución del patrón de uso en el segmento {#usage-pattern-dis-segment}
 
-El **[!UICONTROL Usage patterns distribution in segment]** el panel tabula la siguiente información para cada patrón de usuario:
+El panel **[!UICONTROL Usage patterns distribution in segment]** tabula la siguiente información para cada patrón de usuario:
 
 * Rango de probabilidad de uso compartido en el que se encuentran las cuentas individuales.
 * Número y porcentaje de cuentas en ese patrón.
@@ -63,7 +63,7 @@ Por ejemplo, en la visualización anterior:
 
 Servicios +++D2C: Distribución del patrón de uso para regiones
 
-El **[!UICONTROL Usage pattern distribution]** proporciona una comparación de patrones de uso entre [categorías de vídeo](product-concepts.md##video-category-def) en el segmento actual.
+La tabla **[!UICONTROL Usage pattern distribution]** proporciona una comparación de patrones de uso en [categorías de vídeo](product-concepts.md##video-category-def) del segmento actual.
 
 ![](assets/d2c-usage-patterns-regions.png)
 
@@ -77,7 +77,7 @@ El **[!UICONTROL Usage pattern distribution]** proporciona una comparación de p
 
 +++Programador: Distribución del patrón de uso para MVPD
 
-El **[!UICONTROL Usage pattern distribution]** proporciona una comparación de la distribución del patrón de uso para las MVPD del segmento actual.
+La tabla **[!UICONTROL Usage pattern distribution]** proporciona una comparación de la distribución del patrón de uso para las MVPD del segmento actual.
 
 ![](assets/usage-patterns-mvpdwise.png)
 
@@ -87,7 +87,7 @@ El **[!UICONTROL Usage pattern distribution]** proporciona una comparación de l
 
 +++MVPD: Distribución del patrón de uso para programadores
 
-El **[!UICONTROL Usage pattern distribution]** proporciona una comparación de la distribución del patrón de uso para los programadores o canales del segmento actual.
+La tabla **[!UICONTROL Usage pattern distribution]** proporciona una comparación de la distribución del patrón de uso para los programadores o canales del segmento actual.
 
 ![](assets/usage-patterns-programmerwise.png)
 

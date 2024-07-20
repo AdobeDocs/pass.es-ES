@@ -1,13 +1,13 @@
 ---
 title: MVPD en modo de aislamiento
 description: Obtenga información sobre las MVPD de modo de aislamiento para programadores de TV Everywhere
-source-git-commit: 5639319ce8915f0c33d927ca9554c405b3b2e87d
+exl-id: 7ffe4ce3-e9cb-4382-a421-bb57d1927b53
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 0%
 
 ---
-
 
 # MVPD en modo de aislamiento para programadores de TV Everywhere {#isolation-mode-tve}
 
@@ -45,7 +45,7 @@ El sistema funciona automáticamente en modo de aislamiento cuando el segmento s
 >
 > El comportamiento en el modo de aislamiento es incompatible con el modo estándar, el modo de aislamiento MVPD no se puede mezclar con otras MVPD y viceversa.
 
-Para crear un segmento analizado en el modo de aislamiento, arrastre MVPD del modo de aislamiento como **Xfinity**, a la sección MVPD de la definición del segmento.
+Para crear un segmento analizado en el modo de aislamiento, arrastre MVPD del modo de aislamiento, como **Xfinity**, a la sección MVPD de la definición del segmento.
 
 >[!NOTE]
 >
@@ -57,10 +57,10 @@ Para crear un segmento analizado en el modo de aislamiento, arrastre MVPD del mo
 
 >[!IMPORTANT]
 >
-> El uso compartido de cuentas es más relevante cuando se mide para su transmisión por secuencias en todas las aplicaciones del programador. Esperar menos **Compartir puntuaciones** y alguna variación en las métricas en el modo de aislamiento.
+> El uso compartido de cuentas es más relevante cuando se mide para su transmisión por secuencias en todas las aplicaciones del programador. Se esperan **puntuaciones de uso compartido** más bajas y alguna variación en las métricas cuando se encuentre en modo de aislamiento.
 
 ![](assets/aggregate-sharing-isolation.png)
 
-*Uso compartido de indicadores de probabilidad en modo de aislamiento*
+*Indicadores de probabilidad de uso compartido en modo de aislamiento*
 
 Los indicadores anteriores muestran que solo el 9% de todas las cuentas se comparten, y entre ellas, solo se consume el 11% del contenido. Debido a las puntuaciones naturalmente más bajas, los resultados en el modo Aislamiento deben interpretarse de forma diferente a los resultados en el modo estándar.

@@ -1,13 +1,13 @@
 ---
 title: 'Monitorización de la concurrencia de Adobe Pass: Notas de la versión 2.8.2'
 description: 'Monitorización de la concurrencia de Adobe Pass: Notas de la versión 2.8.2'
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: bc1086ba-cd75-4c00-8632-33b8178b429b
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '48'
+source-wordcount: '55'
 ht-degree: 0%
 
 ---
-
 
 # Monitorización de la concurrencia de Adobe Pass: Notas de la versión 2.8.2 {#cm-rns-282}
 

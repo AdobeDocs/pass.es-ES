@@ -1,13 +1,13 @@
 ---
 title: Glosario
 description: Glosario de términos de supervisión de concurrencia
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
-
 
 # Glosario {#glossary}
 
@@ -17,26 +17,26 @@ ht-degree: 0%
 
 ## Acción {#action-defn}
 
-* El tipo de acceso que solicita el sujeto; los valores posibles para CM son ***iniciar*** o ***continuar*** una sesión de streaming.
+* El tipo de acceso que solicita el sujeto; los valores posibles para CM son ***iniciar*** o ***continuar*** una sesión de flujo continuo.
 
 ## Flujo activo {#active-stream-defn}
 
 * Un flujo que ha recibido al menos 1 evento (latido) en los últimos 90 segundos.
 
-* ***Nota:*** Si el último evento de la secuencia es del tipo parada (`?event=stop`), no se va a contar. Se trata de una optimización que permite a un reproductor cerrar explícitamente un flujo para que ya no se considere &quot;activo&quot;.
+* ***Nota:*** Si el último evento de la secuencia es de tipo parada (`?event=stop`), no se contará. Se trata de una optimización que permite a un reproductor cerrar explícitamente un flujo para que ya no se considere &quot;activo&quot;.
 
 ## Aplicación {#application-defn}
 
 * Desarrollado por el inquilino para el acceso al contenido de vídeo
-* Toma y aplica decisiones sobre el acceso al contenido en función de la información proporcionada por el Servicio de monitoreo de concurrencia (esto es válido en el [Punto de información de política](/help/concurrency-monitoring/policy-info-pt-versionone.md) case)
-* Tendrá un único **ID de aplicación** proporcionadas por el Adobe.
+* Toma y aplica decisiones sobre el acceso al contenido basándose en la información proporcionada por el Servicio de supervisión de concurrencia (esto es válido en el caso de [Punto de información de directiva](/help/concurrency-monitoring/policy-info-pt-versionone.md))
+* Tendrá un **ID de aplicación** único proporcionado por el Adobe.
 
 ## Servicio de supervisión de concurrencia {#cm-service-defn}
 
 * Actúa como un sistema de monitorización para los suscriptores, apoyando a los MVPD y programadores en sus requisitos de aplicación de políticas entre aplicaciones.
 * Recibe latidos que indican actividad de flujo.
-* Actúa como _Punto de decisión de política_ evaluando las solicitudes de autorización en función de la actividad del usuario y proporcionando una respuesta de permitir/denegar.
-* Actúa como _Punto de información de política_ al informar del número de flujos activos (y metadatos de flujo adicionales) para un suscriptor.
+* Actúa como _punto de decisión de directiva_ al evaluar las solicitudes de autorización en función de la actividad del usuario y proporcionar una respuesta de permitir/denegar.
+* Actúa como _punto de información de directiva_ al informar sobre el número de flujos activos (y metadatos de flujo adicionales) para un suscriptor.
 
 ## Entorno {#env-defn}
 
@@ -76,9 +76,9 @@ ht-degree: 0%
 * Necesita admitir la MVPD para recopilar la actividad del suscriptor y aplicar las reglas de limitación en sus propiedades.
 * También puede estar interesado en limitar el acceso simultáneo a su contenido en todos los portales de destino, como regla independiente.
 
-  *P: ¿Por qué al programador y no al solicitante les gusta el ID en el resto de la autenticación de Adobe Pass?*
+  *Q: ¿Por qué el programador y no el solicitante tienen un ID similar al del resto de la autenticación de Adobe Pass?*
 
-  *R: El motivo es permitir que los programadores utilicen este parámetro de forma flexible para pasar o aislar datos entre sus propiedades según sus casos de uso.*
+  *A: el motivo es permitir que los programadores usen este parámetro de forma flexible para pasar o aislar datos entre sus propiedades según sus casos de uso.*
 
 ## Recurso {#resource-defn}
 
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Asunto {#subj-defn}
 
-* El consumidor del contenido (vídeo) a través de Internet. Estamos evitando deliberadamente el término _**usuario**_, ya que la Monitorización de la concurrencia generalmente trata con los ID de cuenta de MVPD (que implican a varios usuarios reales que comparten el mismo contrato, por ejemplo, miembros de la familia de un hogar).
+* El consumidor del contenido (vídeo) a través de Internet. Estamos evitando deliberadamente el término _**usuario**_, ya que la Monitorización de concurrencia generalmente trata con los ID de cuenta de MVPD (que involucran a varios usuarios reales que comparten el mismo contrato, por ejemplo, miembros de la familia de un hogar).
 
 * Para cada flujo, el asunto se puede mejorar con atributos relacionados con la persona real que utiliza el servicio, su dispositivo conectado a la red, etc.
 

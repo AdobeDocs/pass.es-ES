@@ -4,7 +4,7 @@ description: Plan de integración directa de MVPD
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1067'
+source-wordcount: '1071'
 ht-degree: 0%
 
 ---
@@ -21,13 +21,13 @@ Bienvenido a la autenticación de Adobe Pass para TV en todas partes.  Esperamos
 
 >[!NOTE]
 >
->Esta es la Guía de KickStart para Distribuidores de Programación de Vídeo Multicanal (MVPD). Si es programador (proveedor de contenido), consulte la [Guía de KickStart para programadores](/help/authentication/programmer-kickstart-guide.md).
+>Esta es la Guía de KickStart para Distribuidores de Programación de Vídeo Multicanal (MVPD). Si usted es un programador (proveedor de contenido), consulte la [Guía de KickStart para programadores](/help/authentication/programmer-kickstart-guide.md).
 
-El soporte está disponible en todo momento a través del sistema de tickets de autenticación de Adobe Pass en Zendesk. Aquí también puede encontrar ejemplos, documentación y tutoriales de vídeo para nuestros procesos. Para utilizar [Zendesk](https://adobeprimetime.zendesk.com/), tendrá que registrarse y crear una cuenta en https://tve.zendesk.com/home. No hay límite en la cantidad de usuarios que puede registrar y que pueden ver o publicar comentarios en un ticket archivado. Todas las preguntas de soporte deben dirigirse a: tve-support en adobe.com
+El soporte está disponible en todo momento a través del sistema de tickets de autenticación de Adobe Pass en Zendesk. Aquí también puede encontrar ejemplos, documentación y tutoriales de vídeo para nuestros procesos. Para usar [Zendesk](https://adobeprimetime.zendesk.com/), tendrás que registrarte y crear una cuenta en https://tve.zendesk.com/home. No hay límite en la cantidad de usuarios que puede registrar y que pueden ver o publicar comentarios en un ticket archivado. Todas las preguntas de soporte deben dirigirse a: tve-support en adobe.com
 
 **Contactos del equipo**:
 
-**Asistencia** - Para todas las preguntas, incidentes o solicitudes de funcionalidades **tve-support@adobe.com**.
+**Soporte** - Para todas las preguntas, incidentes o solicitudes de características **tve-support@adobe.com**.
 
 ## 1. Reuniones de inicio {#kickoff-meetings}
 
@@ -37,14 +37,14 @@ El ámbito de estas reuniones es el inicio de los debates técnicos entre el Ado
 
 El Adobe configurará una llamada de estado semanal para analizar y rastrear la programación general, los pasos, el cronograma y los detalles de implementación de la integración. En esta fase, el Adobe realiza una revisión de las especificaciones de la MVPD. El resultado de esto debería ser una página de especificaciones que detalla todas las características necesarias para la MVPD. La MVPD enviará al Adobe un documento de especificación en el que se detalla la implementación de autenticación/autorización de la MVPD.
 
-Elementos para aclarar, consulte [Funciones de integración de MVPD](/help/authentication/mvpd-integr-features.md).
+Elementos para aclarar, vea [Características de integración de MVPD](/help/authentication/mvpd-integr-features.md).
 
 Hay varias configuraciones que se deben describir en detalle en este punto:
 
-* **URL del logotipo de MVPD** - Este es un archivo con las siguientes dimensiones: 112 x 33 píxeles. Los programadores muestran el logotipo en sus sitios cuando el usuario hace clic en el botón &quot;Iniciar sesión&quot; para seleccionar su proveedor de TV de pago.
-* **Valores TTL (tiempo de vida)** - El TTL lo suele establecer la MVPD durante el proceso de autenticación/autorización. Sin embargo, el Adobe puede anular esos valores TTL y proporcionar valores diferentes según lo que acuerden el programador y la MVPD.
-* **Nombre para mostrar** - Esto se muestra por los programadores en sus sitios cuando el usuario hace clic en el botón &quot;Iniciar sesión&quot; para seleccionar su proveedor de TV de pago.
-* **Credenciales de prueba** : Ambos perfiles (ensayo y producción) deben tener una lista de credenciales de prueba.
+* URL del logotipo de **MVPD** - Este es un archivo con las siguientes dimensiones: 112 x 33 píxeles. Los programadores muestran el logotipo en sus sitios cuando el usuario hace clic en el botón &quot;Iniciar sesión&quot; para seleccionar su proveedor de TV de pago.
+* **Valores TTL (tiempo de vida)**: el TTL lo establece normalmente la MVPD durante el proceso de autenticación/autorización. Sin embargo, el Adobe puede anular esos valores TTL y proporcionar valores diferentes según lo que acuerden el programador y la MVPD.
+* **Nombre para mostrar**: esto lo muestran los programadores en sus sitios cuando el usuario hace clic en el botón &quot;Iniciar sesión&quot; para seleccionar su proveedor de TV de pago.
+* **Credenciales de prueba**: ambos perfiles (ensayo y producción) deben tener una lista de credenciales de prueba.
 
 >[!IMPORTANT]
 >
@@ -59,8 +59,8 @@ Hay varias configuraciones que se deben describir en detalle en este punto:
 Las dos partes deben intercambiar los metadatos de todos los entornos implicados (producción, ensayo, etc.).
 
 * **Adobe**
-   * Para el entorno de ensayo, los metadatos de SP del Adobe se pueden recuperar de: [Metadatos del sp de ensayo de autenticación](https://sp.auth-staging.adobe.com/sp/metadata)
-   * Para el entorno de producción, los metadatos de SP del Adobe se pueden recuperar de: [Metadatos del sp de producción de autenticación](https://sp.auth.adobe.com/sp/metadata)
+   * Para el entorno de ensayo, los metadatos de SP del Adobe se pueden recuperar de: [Metadatos de SP de ensayo de autenticación](https://sp.auth-staging.adobe.com/sp/metadata)
+   * Para el entorno de producción, los metadatos de SP del Adobe se pueden recuperar de: [Metadatos de SP de producción de autenticación](https://sp.auth.adobe.com/sp/metadata)
 
 * **MVPD**
    * Para agregar metadatos (ensayo/producción).
@@ -85,10 +85,10 @@ La duración de la fase de desarrollo se determinará después de revisar las es
 
 Adobe proporciona diferentes entornos para diferentes etapas del proceso de desarrollo:
 
-* **Precalificación** (PRE-QUAL): El entorno PRE-QUAL contiene el candidato a la próxima versión. Adobe integra inicialmente nuevos socios en este entorno, antes de actualizar la integración al entorno de lanzamiento. Los socios tienen dos semanas para probar el entorno PRE-QUAL y deben solicitar explícitamente cualquier cambio en la configuración PRE-QUAL (póngase en contacto con su representante de Adobe para obtener más detalles sobre el proceso de solicitud de cambio). Las correcciones de errores almacenan en déclencheur las nuevas implementaciones en este entorno.
-* **Versión** (VERSIÓN): La versión de producción actual de Adobe se implementa en un entorno activo aquí.
+* **Calificación previa** (PRE-QUAL): el entorno PRE-QUAL contiene el candidato a la próxima versión. Adobe integra inicialmente nuevos socios en este entorno, antes de actualizar la integración al entorno de lanzamiento. Los socios tienen dos semanas para probar el entorno PRE-QUAL y deben solicitar explícitamente cualquier cambio en la configuración PRE-QUAL (póngase en contacto con su representante de Adobe para obtener más detalles sobre el proceso de solicitud de cambio). Las correcciones de errores almacenan en déclencheur las nuevas implementaciones en este entorno.
+* **Versión** (VERSIÓN): la compilación de producción actual de Adobe se implementa en un entorno activo aquí.
 
-Para obtener más información sobre cómo utilizar los entornos de Adobe, consulte [Explicación de los entornos de Adobe](/help/authentication/understanding-the-adobe-environments.md)
+Para obtener más información sobre cómo usar los entornos de Adobe, vea [Comprender los entornos de Adobe](/help/authentication/understanding-the-adobe-environments.md)
 
 ## 7. Implementación de ensayo {#stag-env}
 
@@ -98,7 +98,7 @@ Las MVPD deben realizar la misma implementación en su entorno de control de cal
 
 ## 8. Comprobación y solución de problemas {#tes-troubleshoot}
 
-En esta fase, el Adobe y la MVPD prueban y solucionan el problema de la integración. Para probar la integración, el equipo de autenticación de Adobe Pass puede usar el sitio de prueba de la API de Adobe. Para obtener más información sobre el uso del sitio de prueba de la API de Adobe, consulte [Prueba de flujos de autenticación y autorización mediante el sitio de prueba de la API de Adobe](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).
+En esta fase, el Adobe y la MVPD prueban y solucionan el problema de la integración. Para probar la integración, el equipo de autenticación de Adobe Pass puede usar el sitio de prueba de la API de Adobe. Para obtener más información sobre el uso del sitio de prueba de API de Adobe, consulte [Comprobar los flujos de autenticación y autorización mediante el sitio de prueba de API de Adobe](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).
 
 Cuando las pruebas y la solución de problemas han finalizado correctamente, la integración se activa en el entorno de ensayo de la versión de Adobe. En este punto, el Adobe puede integrar el MVPD con un programador real.
 

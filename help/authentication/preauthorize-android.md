@@ -34,9 +34,10 @@ En caso de error inesperado (por ejemplo, problema de red, punto final de autori
 
 **Parámetros:**
 
-- *PreauthorizeRequest*: objeto de creación utilizado para definir la solicitud
+- *PreauthorizeRequest*: objeto de generador utilizado para definir la solicitud
 - AccessEnablerCallback : llamada de retorno utilizada para devolver la respuesta de la API
-- PreauthorizeResponse : objeto utilizado para devolver el contenido de respuesta de API
+- PreauthorizeResponse : objeto utilizado para devolver la API
+contenido de respuesta
 
 
 ### public class PreauthorizeRequest {#androidpreauthorizerequest}
@@ -62,7 +63,7 @@ En caso de error inesperado (por ejemplo, problema de red, punto final de autori
     ///
 ```
 
-**public Builder setResources(List\&lt;string> recursos)**
+**recursos setResources de generador público(List\&lt;String\>)**
 
 ```
     ///
@@ -84,8 +85,8 @@ En caso de error inesperado (por ejemplo, problema de red, punto final de autori
 ```
 
 
-**public Builder disableFeatures(Set\&lt;preauthorizerequest.feature>
-funciones)**
+**public Builder disableFeatures(Set\&lt;PreauthorizeRequest.Feature\>
+características)**
 
 ```
     ///
@@ -105,7 +106,7 @@ funciones)**
     ///
 ```
 
-**public PreauthorizeRequest build()**
+**versión pública de PreauthorizeRequest()**
 
 **enum PreauthorizeRequest.Feature**
 
@@ -162,7 +163,7 @@ funciones)**
 ```
 
 
-**Estado de clase** {#status}
+**estado de clase** {#status}
 
 ```java
 ///
@@ -226,7 +227,7 @@ funciones)**
 
 </br>
 
->**decisión colectiva** {#decision}
+>**Decisión de clase** {#decision}
 
 ```
     ///

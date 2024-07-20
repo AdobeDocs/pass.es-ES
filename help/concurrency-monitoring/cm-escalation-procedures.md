@@ -1,32 +1,32 @@
 ---
 title: Procedimientos de escalación de supervisión de concurrencia
 description: Procedimientos de escalación de supervisión de concurrencia
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: eb110465-3a74-489e-a521-0e17f5aeecb8
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '849'
 ht-degree: 0%
 
 ---
-
 
 # Procedimientos de escalación de supervisión de concurrencia {#esc-procedures}
 
 >[!NOTE]
 >
->Llame a la línea directa: +1-205-693-9813 y envíe un correo electrónico a `tve-support@adobe.com` incluyendo &quot;URGENTE - INCIDENTE&quot; en la línea de asunto.
+>Llame a la línea directa: +1-205-693-9813 y envíe un mensaje de correo electrónico a `tve-support@adobe.com`, incluido &quot;URGENTE - INCIDENTE&quot; en la línea de asunto.
 
 
 ## Introducción {#cm-escalation-intro}
 
-Este documento describe los procedimientos de apoyo para incidentes graves (**GRAVEDAD 1** nivel) que afecta a la autenticación de Adobe Pass, a la supervisión de la concurrencia de Adobe Pass y a sus socios.
+En este documento se describen los procedimientos de soporte para incidentes importantes (nivel **SEVERITY 1**) que afecten a la autenticación de Adobe Pass, la supervisión de la concurrencia de Adobe Pass y sus asociados.
 
 ## Definición de Nivel de Gravedad de Escalación 1 {#defn-escl-sevrityone-level}
 
-A **GRAVEDAD 1** el incidente de nivel es un **ACTIVO** situación, **ocurre en el entorno de producción**, que no permite la finalización de los flujos de autenticación y/o autorización para un canal y un MVPD, afectando a un gran número de suscriptores del MVPD que realizan el flujo.
+Un incidente de nivel **SEVERITY 1** es una situación de **LIVE**, **que ocurre en el entorno de producción**, que no permite la finalización de los flujos de autenticación y/o autorización para un canal y una MVPD, lo que afecta a un gran número de suscriptores de la MVPD que realizan el flujo.
 
 ## Ejemplos de incidentes de Gravedad 1 {#exampl-sevone-incident}
 
-* El activador de acceso a la producción alojado en <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> no está disponible.
+* El Habilitador de acceso a la producción hospedado en <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> no está disponible.
 
 * Para una MVPD específica, el Adobe ya no redirige ni muestra la página de inicio de sesión, una vez que el usuario selecciona la MVPD (en cualquiera de los exploradores admitidos).
 
@@ -35,14 +35,14 @@ A **GRAVEDAD 1** el incidente de nivel es un **ACTIVO** situación, **ocurre en 
 * Durante el proceso de autenticación, el usuario se queda atascado en una página de error de Adobe sin la posibilidad de volver a iniciar el flujo de autenticación/autorización.
 
 
-## Ejemplos de lo que es *NO* un incidente de gravedad 1 {#exampl-not-sev1}
+## Ejemplos de lo que es *NOT* un incidente de gravedad 1 {#exampl-not-sev1}
 
-*En el caso de problemas de este tipo, el Adobe prestará apoyo a las investigaciones, pero no se trata de incidentes de gravedad 1:*
+*Para problemas de este tipo, el Adobe proporcionará soporte para las investigaciones, pero no son incidentes de Gravedad 1:*
 
 * Uno o unos pocos suscriptores no pueden realizar el flujo debido a un problema con la versión del Flash (falta Flash, bloqueadores de Flash, versión de Flash incorrecta).
 * Uno o algunos suscriptores no pueden autenticarse y permanecer en la página de inicio de sesión de MVPD.
 * Uno o varios suscriptores están autenticados, pero no pueden reproducir vídeos.
-* Uno/pocos/todos los suscriptores encuentran un error de JavaScript en el sitio del programador.
+* Uno o pocos o todos los suscriptores encuentran un error de JavaScript en el sitio del programador.
 
 ## Flujos de escalación de gravedad 1 {#sevone-escalation-flows}
 
@@ -66,7 +66,7 @@ Los incidentes de gravedad 1 pueden iniciarlos el Adobe o un socio de autenticac
    * **1-205-693-9813**
 
 
-**Si no incluyes &quot;URGENTE-INCIDENTE&quot; en el título del ticket, no será recogido por nuestro sistema de notificación.**
+**Si no incluye &quot;URGENT-INCIDENT&quot; en el título del ticket, nuestro sistema de notificación no lo recogerá.**
 
 ### flujo iniciado por Adobe {#adobe-initiated-flow}
 
@@ -83,7 +83,7 @@ Los incidentes de gravedad 1 pueden iniciarlos el Adobe o un socio de autenticac
 
 1. El Adobe identifica un problema relacionado con la integración con una MVPD o en uno de los sitios del programador.
 
-1. Adobe notifica al socio afectado **seguir los procedimientos de apoyo establecidos con ese socio** y abre un ticket con la organización de soporte del socio.
+1. El Adobe notifica al socio **afectado siguiendo los procedimientos de soporte establecidos con ese socio** y abre un ticket con la organización de soporte del socio.
 
 1. Si, durante el análisis de impacto, el Adobe identifica que el problema pertenece a una de las decisiones preacordadas sobre escenarios de incidente (consulte la sección &quot;Decisiones preacordadas sobre escenarios de incidente&quot; a continuación), actuará en consecuencia sin esperar al socio1. La entrada de.
 

@@ -4,7 +4,7 @@ description: Flujo de API sin cliente en ausencia de ID de dispositivo
 exl-id: 6549a6d6-03a9-4d95-99fb-d3ada832323d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '238'
+source-wordcount: '242'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ No todas las aplicaciones de dispositivos inteligentes podrán proporcionar un I
 
 Para clientes sin ID de dispositivo:
 
-1. Llame al servicio de código de registro la primera vez con `deviceId=dummy`
+1. Llamar al servicio de código de registro la primera vez con `deviceId=dummy`
 1. En la respuesta, extraiga el UUID. El UUID está disponible en el elemento &quot;id&quot; de la respuesta del código de registro (formatos de respuesta XML y JSON).
 1. Vuelva a llamar al servicio de registro. Esta vez, pase `deviceId=<uuid obtained in step #2>`
 1. Mostrar el código de registro obtenido en el paso 3 en la interfaz de usuario de la consola
@@ -39,7 +39,7 @@ Una vez completados estos pasos, la autenticación de Adobe Pass utilizará el U
 
 ## Solución permanente
 
-El Adobe cambiará esto en una versión futura, realizando lo siguiente `deviceId` una carga útil opcional al crear el código reg y al utilizar UUID como clave de token en lugar de `deviceId`, cuando `deviceId` no está presente.
+El Adobe cambiará esto en una versión futura, al hacer que `deviceId` sea una carga útil opcional al crear el código de registro y al usar UUID como clave de token en lugar de `deviceId`, cuando `deviceId` no está presente.
 
 <!--
 ## Related Information

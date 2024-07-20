@@ -1,7 +1,8 @@
 ---
 title: Notas de la versión de autenticación de Adobe Pass 2.69
 description: Notas de la versión de autenticación de Adobe Pass 2.69
-source-git-commit: 4417c5c50873c73c615f9845cadd4a42c26f3068
+exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '215'
 ht-degree: 0%
@@ -23,7 +24,7 @@ En esta página se describen las nuevas funciones, los cambios y los problemas c
 
 ### Número de compilación {#build-number-269}
 
-Autenticación de Adobe Pass: adobe-pass-end **2,69**
+Autenticación de Adobe Pass: adobe-pass-**2.69**
 Fecha de versión: **27/02/2024 - 29/02/2024**
 
 ### Nuevas funciones {#new-features-269}
@@ -47,7 +48,7 @@ Fecha de versión: **27/02/2024 - 29/02/2024**
    * Una próxima versión dedicada presentará el nuevo Tablero de TVE, que se anunciará en una notificación separada.
    * Se está actualizando la documentación para el uso de este nuevo tablero de TVE.
 
-#### SDK de JavaScript 4.7.0 {#js-sdk}
+#### SDK para JavaScript 4.7.0 {#js-sdk}
 
-* Se ha eliminado la versión obsoleta 2.0.1 del SDK de JavaScript de Access Enabler debido a vulnerabilidades de seguridad.
-   * Siga el vínculo para obtener más información: [Notas de la versión de JavaScript 4.7.0 de autenticación de Adobe Pass](authn-rn-javascript-470.md)
+* Se ha eliminado la versión 2.0.1 obsoleta del SDK de JavaScript del activador de acceso debido a vulnerabilidades de seguridad.
+   * Siga el enlace para obtener más detalles: [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.0](authn-rn-javascript-470.md)

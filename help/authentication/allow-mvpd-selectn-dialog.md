@@ -4,7 +4,7 @@ description: Permitir MVPD en el cuadro de diálogo de selección
 exl-id: 2c0e0f06-ddc6-4bea-90dc-d7ef8e78d27e
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '129'
+source-wordcount: '128'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Es posible que el programador desee probar o comprobar la experiencia del usuari
 
 ## Solución {#solution}
 
-En el `displayProviderDialog()` llamada de retorno, la autenticación de Adobe Pass devuelve todas las MVPD integradas con el programador seleccionado (ID del solicitante). Sin embargo, el programador puede aplicar un filtro en la matriz de retorno de MVPD y mostrar solo las que están en ambas listas.
+En la llamada de retorno `displayProviderDialog()`, la autenticación de Adobe Pass devuelve todas las MVPD integradas con el programador seleccionado (ID del solicitante). Sin embargo, el programador puede aplicar un filtro en la matriz de retorno de MVPD y mostrar solo las que están en ambas listas.
 
 ## Ejemplo {#example}
 

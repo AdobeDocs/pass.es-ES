@@ -43,7 +43,7 @@ Si utiliza un identificador de recurso simple, como &quot;TNT&quot;, se supone q
 ```
 
 
-Un especificador más complejo podría incluir, por ejemplo, información de clasificación adicional. Puede pasar toda la cadena RSS a las funciones del Habilitador de acceso que requieren un ID de recurso, como [`getAuthorization()`](/help/authentication/rest-api-reference.md):
+Un especificador más complejo podría incluir, por ejemplo, información de clasificación adicional. Puede pasar toda la cadena RSS a las funciones del Habilitador de acceso que requieren un identificador de recurso, como [`getAuthorization()`](/help/authentication/rest-api-reference.md):
 
 ```rss
     var resource = 
@@ -56,7 +56,7 @@ Un especificador más complejo podría incluir, por ejemplo, información de cla
     getAuthorization(resource);
 ```
 
-Los especificadores de recursos son opacos para la autenticación de Adobe Pass; simplemente se pasan a la MVPD. Si el MVPD no reconoce o no puede analizar el especificador de recursos, devuelve un error a la autenticación de Adobe Pass, que devuelve el error a su `tokenRequestFailed()` devolución de llamada.
+Los especificadores de recursos son opacos para la autenticación de Adobe Pass; simplemente se pasan a la MVPD. Si el MVPD no reconoce o no puede analizar el especificador de recursos, devuelve un error de autenticación de Adobe Pass, que vuelve a pasar el error a la llamada de retorno de `tokenRequestFailed()`.
 
 <!--
 ## Related Information {#related}

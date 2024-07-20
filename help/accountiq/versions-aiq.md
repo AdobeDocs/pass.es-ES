@@ -1,7 +1,8 @@
 ---
 title: Versiones de Account IQ
-description: Obtenga información acerca de las versiones utilizadas para diferentes servicios en Account IQ.
-source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
+description: Obtenga información sobre las versiones utilizadas para los distintos servicios de Account IQ.
+exl-id: b8b014d5-a8a8-4327-b6aa-15f7e6a63274
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '312'
 ht-degree: 0%
@@ -10,7 +11,7 @@ ht-degree: 0%
 
 # Versiones de Account IQ {#aiq-versions}
 
-Account IQ está diseñado para identificar automáticamente el uso compartido de contraseñas, especialmente dentro del sector de la transmisión de vídeo. En esta industria, hay dos categorías principales de servicios: Directo al consumidor (D2C) y TV en todas partes (TVE).
+Account IQ está diseñado para identificar automáticamente el uso compartido de contraseñas, especialmente en el sector de la transmisión de vídeo. En esta industria, hay dos categorías principales de servicios: Directo al consumidor (D2C) y TV en todas partes (TVE).
 
 Esta guía aborda las necesidades de los suscriptores de D2C, los programadores de TV Everywhere y las empresas de MVPD de TV Everywhere dentro de la industria de transmisión de video.
 
@@ -26,7 +27,7 @@ TV Everywhere se refiere al componente en línea de la suscripción tradicional 
 
 Hay dos versiones de TV en todas partes: [Programadores](/help/accountiq/product-concepts.md#programmer-def) y [MVPD](/help/accountiq/product-concepts.md#mvpd-def).
 
-Cuando usted [a bordo](/help/accountiq/get-started.md) Si envía su organización a Account IQ, se le asignará una versión de Programador o MVPD.
+Cuando [incorpora](/help/accountiq/get-started.md) su organización en Account IQ, se le asigna una versión de Programador o MVPD.
 
 ### Programadores {#programmers}
 
@@ -38,8 +39,4 @@ Las MVPD ofrecen múltiples canales de televisión a los suscriptores a través 
 
 >[!NOTE]
 >
-> Según la versión de Account IQ en la que inicie sesión, determinadas etiquetas cambiarán y es posible que algunas vistas no estén disponibles.
-
-
-
-
+> Según la versión de Account IQ en la que inicie sesión, algunas etiquetas cambiarán y es posible que algunas vistas no estén disponibles.

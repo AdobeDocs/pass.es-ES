@@ -4,7 +4,7 @@ description: Guía de migración de iOS/tvOS v3.x
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '559'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 ## Actualizar configuración de compilación {#update}
 
-Esta versión incluye funciones escritas en el idioma de SWIFT. Si la aplicación es completamente Objective-C, debe establecer la casilla &quot;Incorporar siempre bibliotecas estándar de Swift&quot; en la configuración de compilación de Target en &quot;Sí&quot;. Cuando se establece esta opción, Xcode analiza los marcos agrupados en la aplicación y, si alguno de ellos contiene código Swift, copia las bibliotecas pertinentes en el paquete de la aplicación. Si no actualiza la configuración de la versión, la aplicación podría bloquearse con errores que indican que no puede cargar AccessEnabler.framework o varios `ibswift*` bibliotecas.
+Esta versión incluye funciones escritas en el idioma de SWIFT. Si la aplicación es completamente Objective-C, debe establecer la casilla &quot;Incorporar siempre bibliotecas estándar de Swift&quot; en la configuración de compilación de Target en &quot;Sí&quot;. Cuando se establece esta opción, Xcode analiza los marcos agrupados en la aplicación y, si alguno de ellos contiene código Swift, copia las bibliotecas pertinentes en el paquete de la aplicación. Si no actualiza la configuración de compilación, es posible que la aplicación se bloquee con errores que indiquen que no puede cargar AccessEnabler.framework o varias bibliotecas de `ibswift*`.
 
 </br>
 
@@ -34,7 +34,7 @@ Esta versión incluye funciones escritas en el idioma de SWIFT. Si la aplicació
 
 > Para obtener información sobre cómo obtener la declaración del software, consulte esta sección
 > página:
-> [Registro de aplicaciones](/help/authentication/iostvos-application-registration.md)
+> [Registro de aplicación](/help/authentication/iostvos-application-registration.md)
 
 Una vez que tenga la declaración de software, le recomendamos que la aloje en un servidor remoto para que pueda revocarla o cambiarla fácilmente sin implementar una nueva versión de la aplicación en App Store. Cuando se inicie la aplicación, obtenga la instrucción de software de la ubicación remota y pásela en el constructor AccessEnabler:
 
@@ -42,15 +42,15 @@ Una vez que tenga la declaración de software, le recomendamos que la aloje en u
     accessEnabler = AccessEnabler("YOUR_SOFTWARE_STATEMENT_HERE");
 ```
 
-> Información de API aquí: [Referencia de la API de iOS/tvOS](/help/authentication/iostvos-sdk-api-reference.md)
+> Información de la API aquí: [Referencia de la API de iOS/tvOS](/help/authentication/iostvos-sdk-api-reference.md)
 
 </br>
 
 ## Añadir el esquema de URL personalizado {#add-custom}
 
-> Para obtener información sobre cómo obtener un esquema de URL personalizado, consulte esta página: [Obtener un esquema de URL de cliente](/help/authentication/iostvos-application-registration.md)
+> Para obtener información sobre cómo obtener un esquema de URL personalizado, vaya a esta página: [Obtener un esquema de URL de cliente](/help/authentication/iostvos-application-registration.md)
 
-Después de obtener el esquema de URL personalizado, debe añadirlo al archivo info.plist de la aplicación. El esquema personalizado tiene este formato: `adbe.u-XFXJeTSDuJiIQs0HVRAg://`. Debe omitir los dos puntos y las barras diagonales al agregarlos al archivo. El ejemplo anterior se convierte en `adbe.u-XFXJeTSDuJiIQs0HVRAg`.
+Después de obtener el esquema de URL personalizado, debe añadirlo al archivo info.plist de la aplicación. El esquema personalizado tiene este formato: `adbe.u-XFXJeTSDuJiIQs0HVRAg://`. Debe omitir los dos puntos y las barras diagonales al agregarlos al archivo. El ejemplo anterior se convertirá en `adbe.u-XFXJeTSDuJiIQs0HVRAg`.
 
 ```plist
     <key>CFBundleURLTypes</key>
@@ -68,11 +68,11 @@ Después de obtener el esquema de URL personalizado, debe añadirlo al archivo i
 
 ## Interceptación de llamadas en el esquema de URL personalizado {#intercept}
 
-Esto solo se aplica en el caso de que la aplicación haya habilitado anteriormente la gestión manual del controlador de vista de Safari (SVC) mediante el [setOptions(\[&quot;handleSVC&quot;:true&quot;\])](/help/authentication/iostvos-sdk-api-reference.md) llamar a y para MVPD específicas que requieren el controlador de vista de Safari (SVC), por lo que es necesario cargar las direcciones URL de los extremos de autenticación y cierre de sesión mediante un controlador SFSafariViewController en lugar de un controlador UIWebView/WKWebView.
+Esto solo se aplica en el caso de que la aplicación haya habilitado anteriormente la administración manual de Safari View Controller (SVC) a través de la llamada [setOptions(\[&quot;handleSVC&quot;:true&quot;\])](/help/authentication/iostvos-sdk-api-reference.md) y para MVPD específicas que requieren Safari View Controller (SVC), por lo que es necesario cargar las direcciones URL de los extremos de autenticación y cierre de sesión mediante un controlador SFSafariViewController en lugar de un controlador UIWebView/WKWebView.
 
-Durante los flujos de autenticación y cierre de sesión, la aplicación debe supervisar la actividad del `SFSafariViewController `a medida que pasa por varias redirecciones. La aplicación debe detectar el momento en que carga una dirección URL personalizada específica definida por el `application's custom URL scheme` (p. ej.,`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`. Cuando el controlador carga esta dirección URL personalizada específica, la aplicación debe cerrar el `SFSafariViewController` y llame al servicio AccessEnabler `handleExternalURL:url `Método de API.
+Durante los flujos de autenticación y cierre de sesión, la aplicación debe supervisar la actividad del controlador `SFSafariViewController ` a medida que pasa por varias redirecciones. Su aplicación debe detectar el momento en que carga una dirección URL personalizada específica definida por su `application's custom URL scheme` (p. ej.`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`. Cuando el controlador carga esta dirección URL personalizada específica, la aplicación debe cerrar `SFSafariViewController` y llamar al método de API `handleExternalURL:url `de AccessEnabler.
 
-En su `AppDelegate` añada el siguiente método:
+En su `AppDelegate` agregue el siguiente método:
 
 ```swift
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
@@ -83,13 +83,13 @@ En su `AppDelegate` añada el siguiente método:
         }
 ```
 
-> Información de API aquí: [Gestionar URL externa](/help/authentication/iostvos-sdk-api-reference.md)
+> Información de API aquí: [Administrar URL externa](/help/authentication/iostvos-sdk-api-reference.md)
 
 </br>
 
 ## Actualizar la firma del método setRequestor {#update-setreq}
 
-Dado que el nuevo SDK utiliza un nuevo mecanismo de autenticación, no es necesario el parámetro signedRequestId ni la clave pública y secreto (para tvOS). El `setRequestor` se simplifica y solo necesita el requestorID.
+Dado que el nuevo SDK utiliza un nuevo mecanismo de autenticación, no es necesario el parámetro signedRequestId ni la clave pública y secreto (para tvOS). El método `setRequestor` se ha simplificado y solo necesita el requestorID.
 
 ### iOS
 
@@ -128,7 +128,7 @@ se convierte en:
 
 ## Reemplace el método getAuthenticationToken por el método handleExternalURL {#replace}
 
-`getAuthentication` Este método se utilizó en el pasado para completar el flujo de autenticación. Como su nombre era engañoso, se le cambió el nombre a `handleExternalURL` y toma la dirección url como parámetro.
+El método `getAuthentication` se ha usado en el pasado para completar el flujo de autenticación. Dado que su nombre era engañoso, se le cambió el nombre a `handleExternalURL` y toma la dirección URL como parámetro.
 
 Cambiar todas las apariciones de esto:
 
@@ -142,4 +142,4 @@ en esto:
     accessEnabler.handleExternalURL(request.url?.description);
 ```
 
-> Información de API aquí: [Gestionar URL externa](/help/authentication/iostvos-sdk-api-reference.md)
+> Información de API aquí: [Administrar URL externa](/help/authentication/iostvos-sdk-api-reference.md)

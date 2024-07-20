@@ -4,7 +4,7 @@ description: Uso del ID de Experience Cloud en la autenticación de Adobe Pass
 exl-id: 03354c01-5aad-4d81-beee-1c3834599134
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '397'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,7 @@ accessEnabler.setOptions(options);
 
 ### API sin cliente {#clientless-api}
 
-Cuando se utiliza Adobe Pass a través de su API de REST, la variable **ECID** debe enviarse el valor **en todas las API** como parámetro denominado **&#39;ap_vi&#39;**.
+Cuando se usa Adobe Pass a través de su API de REST, el valor **ECID** debe enviarse **en todas las API** como un parámetro denominado **&#39;ap_vi&#39;**.
 
 **Ejemplo de uso:**
 

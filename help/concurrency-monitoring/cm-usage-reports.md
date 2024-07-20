@@ -1,13 +1,13 @@
 ---
 title: Informes de uso de supervisión de concurrencia
 description: Informes de uso de supervisión de concurrencia
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 20220436-e748-4b22-8e7c-e074e0bfe242
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '723'
+source-wordcount: '757'
 ht-degree: 0%
 
 ---
-
 
 # Informes de uso de supervisión de concurrencia {#cm-usage-reports}
 
@@ -19,11 +19,11 @@ ht-degree: 0%
 
 ## Información general {#usage-rep-overview}
 
-El **Informes de uso de supervisión de concurrencia** El servicio está disponible a través de una API de REST que proporciona una perspectiva del uso simultáneo según lo informado por las aplicaciones del cliente.
+El servicio **Informes de uso de supervisión de concurrencia** está disponible a través de una API de REST que proporciona una perspectiva del uso simultáneo según lo informado por las aplicaciones del cliente.
 
 ## Requisitos previos {#usage-rep-prerequisites}
 
-Para acceder al producto Informes de uso de supervisión de concurrencia, un cliente debe ponerse en contacto primero con la supervisión de concurrencia [Equipo de soporte](mailto:tve-support@adobe.com) y llevarán a cabo los pasos necesarios para permitirle acceder al producto API.
+Para tener acceso al producto de informes de uso de supervisión de concurrencia, un cliente debe ponerse en contacto primero con el [equipo de soporte](mailto:tve-support@adobe.com) de supervisión de concurrencia y realizará los pasos necesarios para permitirle tener acceso al producto de API.
 
 ## Métricas y desgloses generales de informes {#general-rep-metrics-breakdown}
 
@@ -68,7 +68,7 @@ Para acceder al producto Informes de uso de supervisión de concurrencia, un cli
 
 ## Métricas y desgloses de informes de simultaneidad {#concurrency-reports-metrics-breakdown}
 
-A partir de la versión 2.9.0 de Monitorización de concurrencia, hemos introducido un nuevo informe para comprender el uso simultáneo: un histograma para **nivel de concurrencia** y **nivel de actividad**.
+A partir de la versión 2.9.0 de supervisión de concurrencia, presentamos un nuevo informe para comprender el uso simultáneo: un histograma para **nivel de concurrencia** y **nivel de actividad**.
 
 El objetivo principal de este informe es ayudarle a comprender el impacto de establecer una directiva con un determinado límite de concurrencia y proporcionarle suficiente información para decidir si debe aumentar el límite.
 
@@ -85,6 +85,6 @@ El objetivo principal de este informe es ayudarle a comprender el impacto de est
 | año | El año expresado con 4 dígitos |
 | mes | El mes del año (1-12) |
 | día | El día del mes (1-31) |
-| nivel de concurrencia | Representa cualquier elemento distinto **actividad de flujo aprobada en la fase de inicialización de la sesión** para que un usuario pueda observar cuántos flujos simultáneos **se han abierto** por un usuario y comprender el impacto de aplicar un determinado límite de concurrencia |
-| nivel de actividad | Representa cualquier elemento distinto **actividad de flujo (independientemente de su estado: iniciada, activa, detenida, rechazada)** para que un usuario pueda observar cuántos flujos simultáneos intentó abrir un usuario y comprender el impacto de aplicar un determinado límite de concurrencia |
+| nivel de concurrencia | Representa cualquier actividad de flujo **distinta que se aprobó en la fase de inicialización de la sesión** para que un usuario pueda observar cuántos flujos simultáneos **abrió** un usuario y comprender el impacto de aplicar un determinado límite de concurrencia |
+| nivel de actividad | Representa cualquier actividad de flujo **distinta (independientemente de su estado: iniciada, activa, detenida, rechazada)** para un usuario con el fin de poder observar cuántas secuencias simultáneas intentó abrir un usuario y comprender el impacto de aplicar un determinado límite de concurrencia |
 | mvpd | La MVPD proporcionada en la administración de sesiones |

@@ -22,7 +22,7 @@ Debe evitar que las MVPD específicas (&quot;lista de bloqueados&quot;) aparezca
 
 ## Solución {#solution-prevent-mvpd-sel-dialog}
 
-La solución consiste en incluir en la lista de bloqueados cuando `displayProviderDialog()` se llama.
+La solución es incluir en la lista de bloqueados cuando se llama a `displayProviderDialog()`.
 
 Por ejemplo, si desea que CableCompany_1 y CableCompany_2 no se muestren dentro del selector de MVPD, debe hacer algo similar a lo que se muestra en el siguiente ejemplo.
 

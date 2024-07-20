@@ -1,13 +1,13 @@
 ---
 title: Mecanismo de limitación
 description: Obtenga información acerca del mecanismo de limitación utilizado en la autenticación de Adobe Pass. Explore una descripción general de este mecanismo en esta página.
-source-git-commit: 4f81f39427d87e4274c27d8f1b4bd1eb366d9abb
+exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
 
 ---
-
 
 # Mecanismo de limitación {#throttling-mechanism}
 
@@ -76,23 +76,23 @@ Dado que los clientes que utilizan los SDK proporcionados de autenticación de A
 
 #### setRequestor
 
-Al alcanzar el límite del acelerador utilizando `setRequestor` desde el SDK, el SDK devolverá un código de error CFG429 mediante `errorHandler` devolución de llamada.
+Al alcanzar el límite de aceleración utilizando la función `setRequestor` del SDK, el SDK devolverá un código de error CFG429 mediante la llamada de retorno `errorHandler`.
 
 #### getAuthorization
 
-Al alcanzar el límite del acelerador utilizando `getAuthorization` desde el SDK, el SDK devolverá un código de error Z100 mediante `errorHandler` devolución de llamada.
+Al alcanzar el límite de aceleración utilizando la función `getAuthorization` del SDK, el SDK devolverá un código de error Z100 mediante la llamada de retorno `errorHandler`.
 
 #### checkPreauthorizedResources
 
-Al alcanzar el límite del acelerador utilizando `checkPreauthorizedResources` del SDK, el SDK devolverá un código de error P100 mediante `errorHandler` devolución de llamada.
+Al alcanzar el límite de aceleración utilizando la función `checkPreauthorizedResources` del SDK, el SDK devolverá un código de error P100 mediante la llamada de retorno `errorHandler`.
 
 #### getMetadata
 
-Al alcanzar el límite del acelerador utilizando `getMetadata` desde el SDK, el SDK devolverá una respuesta vacía mediante `setMetadataStatus` devolución de llamada.
+Al alcanzar el límite de aceleración utilizando la función `getMetadata` del SDK, el SDK devolverá una respuesta vacía mediante la llamada de retorno `setMetadataStatus`.
 
 Para cada detalle de implementación específico, consulte la documentación específica del SDK.
 
-- [Referencia de API del SDK de JavaScript](javascript-sdk-api-reference.md)
+- [Referencia de API de SDK para JavaScript](javascript-sdk-api-reference.md)
 - [Referencia de API de SDK para Android](android-sdk-api-reference.md)
 - [Referencia de la API de iOS/tvOS](iostvos-sdk-api-reference.md)
 
@@ -135,7 +135,7 @@ p3p: CP="NOI DSP COR CURa ADMa DEVa OUR BUS IND UNI COM NAV STA"
 
 Los clientes que utilizan una implementación personalizada (incluidas las de servidor a servidor) para interactuar con la API de autenticación Pass deben asegurarse de que pueden capturar su dirección IP de usuario y reenviarla correctamente, utilizando el encabezado X-Forwarded-For más allá de la API de autenticación Pass.
 
-Consulte [aquí](rest-api-cookbook-servertoserver.md) para obtener más información.
+Ver [aquí](rest-api-cookbook-servertoserver.md) para obtener más detalles.
 
 ### Reacción al nuevo código de respuesta
 

@@ -1,13 +1,13 @@
 ---
 title: Política de retención de datos
 description: Política de retención de datos
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: aa7d2d5e-9a8b-404b-874c-9e5923417784
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '298'
 ht-degree: 0%
 
 ---
-
 
 # Política de retención de datos {#data-retention-policy}
 
@@ -22,7 +22,7 @@ El Adobe, en su calidad de encargado del tratamiento de datos, debe tomar las me
 
 ## Definiciones {#definitions}
 
-Una directiva de retención de datos determina cuánto tiempo almacena el Adobe los datos del cliente. La política de retención de datos predeterminada para la monitorización de concurrencia es **25 meses**.
+Una directiva de retención de datos determina cuánto tiempo almacena el Adobe los datos del cliente. La directiva de retención de datos predeterminada para la supervisión de concurrencia es de **25 meses**.
 
 | Período de retención de datos | El período de retención de datos es el período de retención de datos predeterminado (25 meses). |
 |---|---|
@@ -30,7 +30,7 @@ Una directiva de retención de datos determina cuánto tiempo almacena el Adobe 
 
 ## Recopilación de datos {#data-collection}
 
-*Datos del flujo de navegación* representa los datos compartidos por los clientes en los latidos de la sesión (por ejemplo, subjectID, mvpdName y metadata). Se hace referencia a todos los campos de metadatos personalizados en la variable [Atributos de metadatos estándar](/help/concurrency-monitoring/standard-metadata-attributes.md).
+*Los datos del flujo de navegación* representan datos compartidos por clientes en los latidos de la sesión (por ejemplo, subjectID, mvpdName y metadatos). Se hace referencia a todos los campos de metadatos personalizados en los [atributos de metadatos estándar](/help/concurrency-monitoring/standard-metadata-attributes.md).
 
 ## Tipos de cliente {#customer-types}
 
@@ -38,15 +38,14 @@ Una directiva de retención de datos determina cuánto tiempo almacena el Adobe 
 
 A menos que el cliente compre extensiones de retención de datos, la monitorización de concurrencia cumplirá con los siguientes requisitos de retención de datos del cliente:
 
-* *Datos del flujo de navegación* recopilado por la Monitorización de concurrencia debe eliminarse antes de **25 meses** desde la fecha de recopilación.
+* Los *datos del flujo de navegación* recopilados por la Monitorización de simultaneidad se deben eliminar a más tardar **25 meses** a partir de la fecha de recopilación.
 
 ### Clientes finalizados {#terminated-customers}
 
 Un cliente terminado es un cliente que ha finalizado la relación con el Adobe y ya no utiliza la supervisión de concurrencia.
 
-* *Datos del flujo de navegación* recopilado por el control de concurrencia debe eliminarse en **6 meses** desde la fecha de finalización del contrato del cliente.
+* Los *datos del flujo de navegación* recopilados por el monitoreo de concurrencia deben eliminarse en un plazo de **6 meses** a partir de la fecha de finalización del contrato del cliente.
 
 ## Eliminación de datos {#data-deletion}
 
 El Adobe se reserva el derecho de borrar los datos de las fechas posteriores al período de retención de datos sin opción de recuperarlos. Los datos de los clientes actuales deben eliminarse mensualmente de forma gradual.
-

@@ -4,7 +4,7 @@ description: Explicación de las métricas del lado del servidor
 exl-id: 516884e9-6b0b-451a-b84a-6514f571aa44
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '2207'
+source-wordcount: '2232'
 ht-degree: 0%
 
 ---
@@ -24,22 +24,23 @@ En este documento se describen las métricas del lado del servidor de autenticac
 
 Desde el punto de vista del lado del servidor de autenticación de Adobe Pass se generan los siguientes eventos:
 
-* **Eventos generados en el flujo de autenticación**(Inicio de sesión real con MVPD)
+* **Eventos generados en el flujo de autenticación**(un inicio de sesión real con la MVPD)
 
    * Notificación de intento de autenticación: esto se genera cuando se envía al usuario al sitio de inicio de sesión de MVPD.
-   * Notificación de autenticación pendiente: si el usuario logra iniciar sesión con su MVPD, esto se genera cuando se redirige al usuario a la autenticación de Adobe Pass.
+   * Notificación de autenticación pendiente: si el usuario logra iniciar sesión con su MVPD, esto se genera cuando el usuario está        se ha redirigido a Autenticación de Adobe Pass.
    * Notificación de autenticación concedida: esto se genera cuando el usuario vuelve al sitio del programador y ha recuperado correctamente el token de autenticación de la autenticación de Adobe Pass.
-* **Flujo de autorización** (Solo un cheque para la autorización con un MVPD)\
-  *Requisito previo:* Un token de AuthN válido
+* **Flujo de autorización** (solo una comprobación de autorización con un
+MVPD)\
+  *Requisito previo:* Un token AuthN válido
    * Notificación de intento de AuthZ
    * Notificación de AuthZ concedida
 * **Solicitud de reproducción correcta**\
-  *Requisito previo:* Tokens válidos de AuthN y AuthZ
+  *Requisito previo:* tokens AuthN y AuthZ válidos
    * Notificación de una comprobación con autenticación de Adobe Pass
    * Una solicitud de reproducción requiere tanto una autenticación concedida como una autorización concedida
 
 
-El número de usuarios únicos se explica en detalle en la [Usuarios únicos](#unique-users) más abajo. Como descripción general, dado que las respuestas de autenticación y autorización concedidas suelen almacenarse en caché, suelen aplicarse las siguientes fórmulas:
+La cantidad de usuarios únicos se explica en detalle en la sección [Usuarios únicos](#unique-users) a continuación. Como descripción general, dado que las respuestas de autenticación y autorización concedidas suelen almacenarse en caché, suelen aplicarse las siguientes fórmulas:
 
 * Número de intentos de AuthN \> Número de AuthN concedidos
 * Número de intentos de AuthZ \> Número de AuthZ concedidos
@@ -49,9 +50,10 @@ El número de usuarios únicos se explica en detalle en la [Usuarios únicos](#u
 
 ### Ejemplo {#example}
 
-El siguiente ejemplo muestra las métricas del lado del servidor de un mes para una marca:
+El siguiente ejemplo muestra las métricas del lado del servidor de un mes para
+una marca:
 
-| Métrica | MVPD 1 | MVPD 2 | … | MVPD n | Total |
+| Métrica | MVPD 1 | MVPD 2 | ... | MVPD n | Total |
 | -------------------------- | ------ | ------ | - | ------ | ---------------------------------------------- |
 | Autenticaciones correctas | 1125 | 2892 |   | 2203 | SUM(MVP1+...MVPD n) |
 | Autorizaciones correctas | 2527 | 5603 |   | 5904 | SUM(MVP1+...MVPD n) |
@@ -88,14 +90,15 @@ Una vez completado el flujo, los tokens de autenticación y autorización se alm
 
 ### Usuario que regresa: tokens de AuthZ y AuthN almacenados en caché
 
-Para los usuarios que tienen tokens de AuthZ y AuthN válidos almacenados en caché, se siguen los siguientes pasos:
+Para los usuarios que tienen tokens de AuthZ y AuthN válidos almacenados en caché, lo siguiente
+Los pasos son:
 
 
 ![](assets/ae-flow-tokens-cached-web.png)
 
 
 
-Se activa automáticamente al llamar a `getAuthorization()`, e implica solo comprobaciones con la autenticación de Adobe Pass. La MVPD no participa en este flujo.
+Esto se activa automáticamente al llamar a `getAuthorization()` e implica solo comprobaciones con la autenticación de Adobe Pass. La MVPD no participa en este flujo.
 
 
 | Eventos del lado del servidor activados | * Solicitud de reproducción correcta |
@@ -136,7 +139,7 @@ Este evento se produce cuando se ha iniciado el proceso de redirección a la aut
 
 El usuario es un suscriptor conocido de la MVPD, por lo general con una suscripción de TV de pago, pero a veces solo con acceso a Internet. Puede producirse una autenticación correcta ya sea porque el usuario ha especificado explícitamente credenciales válidas con su MVPD o porque anteriormente había introducido credenciales válidas y había marcado &quot;Recordarme&quot; (y la sesión anterior no había caducado).
 
-Por lo tanto, la MVPD envía la autenticación de Adobe Pass una respuesta positiva a la solicitud de autenticación y la autenticación de Adobe Pass crea un *Token de AuthN*.
+Por lo tanto, la MVPD envía una respuesta positiva a la solicitud de autenticación mediante la autenticación de Adobe Pass y la autenticación de Adobe Pass crea un *token AuthN*.
 
 * La autenticación se almacena generalmente en caché durante un largo período de tiempo (un mes o más). Debido a esto, los eventos de autenticación ya no estarán presentes hasta que caduque el token y se vuelva a iniciar el flujo.
 * Al entrar desde otro sitio o aplicación a través del inicio de sesión único, no se almacenarán en déclencheur los eventos de autenticación.
@@ -149,11 +152,12 @@ Comcast tiene un flujo AuthN diferente en comparación con el resto de las MVPD.
 
 Las siguientes funciones describen las diferencias:
 
-* **Comportamiento de cookie de sesión**: Esto provoca la eliminación completa de cualquier token de autenticación después de que el usuario haya cerrado el explorador. Esta función solo está presente en la web. El objetivo principal es garantizar que su sesión de Comcast no persista en equipos no seguros o compartidos. El impacto es que habrá más intentos de autenticación / flujos concedidos que para el resto de las MVPD.
+* **Comportamiento de cookie de sesión**: Esto provoca la eliminación completa de todos los tokens de autenticación después de que el usuario haya cerrado el explorador. Esta función solo está presente en la web. El objetivo principal es garantizar que su sesión de Comcast no persista en equipos no seguros o compartidos. El impacto es que habrá más intentos de autenticación / flujos concedidos que para el resto de las MVPD.
 
-* **AuthN por requestorID**: Comcast no permite almacenar en caché el estado AuthN de un ID de solicitante a otro. Debido a esto, cada sitio/aplicación tiene que ir a Comcast para obtener un token de autenticación. Además de las consideraciones de experiencia del usuario, el impacto, como se ha indicado anteriormente, es que se generarán más intentos de autenticación o eventos concedidos.
+* **AuthN por requestorID**: Comcast no permite que el estado AuthN se almacene en caché de un ID de solicitante a otro. Debido a esto, cada sitio/aplicación tiene que ir a Comcast para obtener un token de autenticación. Además de las consideraciones de experiencia del usuario, el impacto, como se ha indicado anteriormente, es que se generarán más intentos de autenticación o eventos concedidos.
 
-* **Autenticación pasiva**: Para mejorar la experiencia del usuario y mantener la funcionalidad AuthN per requestorID, se produce un flujo de autenticación pasivo en un iFrame oculto. El usuario no verá nada, pero los eventos se activarán como antes.
+* **Autenticación pasiva**: Para mejorar la experiencia del usuario, pero
+Si bien se mantiene la funcionalidad AuthN per requestorID, se produce un flujo de autenticación pasivo en un iFrame oculto. El usuario no verá nada, pero los eventos se activarán como antes.
 
 Si el usuario hace clic en &quot;recordarme&quot; en la página de inicio de sesión de Comcast, las visitas posteriores a esta página (en un periodo de 2 semanas) serán solo una redirección rápida. De lo contrario, los usuarios tendrán que autenticarse en la página.
 
@@ -207,7 +211,7 @@ Un usuario autenticado y autorizado puede ver el contenido protegido.
 
 Una vez solicitada la reproducción correcta, la autenticación de Adobe Pass genera un token de medios de corta duración que afirma que el usuario tiene derecho a ver el vídeo solicitado. El programador utiliza este token de medios para una validación posterior del visor potencial. Los tokens de medios se rastrean como solicitudes de reproducción correctas.
 
-* La autenticación de Adobe Pass sí *no* rastree si la reproducción de vídeo comenzó realmente después de generar el token de medios. Por ejemplo, si hay una restricción geográfica en el contenido, la transacción sigue contando como una solicitud de reproducción correcta, aunque el flujo nunca se inicie.
+* La autenticación de Adobe Pass *no* realiza el seguimiento de si la reproducción del vídeo comenzó después de generar el token de medios. Por ejemplo, si hay una restricción geográfica en el contenido, la transacción sigue contando como una solicitud de reproducción correcta, aunque el flujo nunca se inicie.
 * Dado que los tokens AuthN y AuthZ almacenan en caché la respuesta de MVPD durante un periodo de tiempo, el evento de solicitud de reproducción correcta es el evento más frecuente en las métricas.
 
 ## Usuarios únicos {#unique-users}
@@ -274,9 +278,10 @@ En algunos casos, el número de usuarios únicos puede ser mayor que el número 
 
 ### Comparación de usuarios únicos del lado del cliente y del lado del servidor {#comparing-client-side-and-server-side-unique-users}
 
-Si el valor de ID de usuario de `sendTrackingData()` se utiliza en el lado del cliente para contar los usuarios únicos, por lo que los números del lado del cliente y del lado del servidor deben coincidir.
+Si el valor de identificador de usuario de `sendTrackingData()` se usa en el lado del cliente para contar usuarios únicos, los números del lado del cliente y del lado del servidor deberían coincidir.
 
-Si las diferencias son importantes, las siguientes razones suelen explicar la diferencia:
+Si las diferencias son importantes, las siguientes razones suelen explicar el
+diferencia:
 
 * Reproducción de vídeo única frente a todos los eventos únicos. Como se ha mencionado, la autenticación de Adobe Pass cuenta usuarios únicos para todos los eventos, excepto para los intentos de autenticación. Esto significa que si el usuario solo se autentica (en la página) pero no ve un vídeo, se sigue activando un aumento en la cantidad de usuarios únicos.
 

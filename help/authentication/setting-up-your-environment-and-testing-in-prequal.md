@@ -4,7 +4,7 @@ description: Configurar el entorno y realizar pruebas en la calidad previa
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 El propósito de esta nota técnica es ayudar a nuestros socios a configurar sus entorno y inicio probar un nuevo versión implementado en el Adobe Systems entorno de precalificación.
 
-Dado que hay dos versión sabores: ***producción y*** puesta en escena, en este documento enfocar en la configuración de producción ***con la mención de que todos los pasos son iguales para la puesta en escena***, solo que las URL son diferentes.
+Dado que hay dos versión sabores: ***producción*** y ***puesta en escena***, en este documento enfocar en la configuración de producción con la mención de que todos los pasos son iguales para la puesta en escena, solo que las URL son diferentes.
 
 Los pasos 1 y 2 están configurando el prueba entorno en una de las máquinas de prueba, el paso 3 es una verificación del flujo básico y los pasos 4 y 5 presentan algunas pautas de prueba.
 
@@ -65,14 +65,14 @@ Los pasos 1 y 2 están configurando el prueba entorno en una de las máquinas de
 
 ## PASO 2.  Suplantación de la precalificación entorno para ser producción {#spoofing-the-prequalification-environment}
 
-* Editar el archivo c:\\windows\\System32\\drivers\\etc\\hosts (en Windows) o *el* archivo /etc/hosts ** (en Macintosh/Linux/Android) y añada lo siguiente:
+* Editar el archivo c:\\windows\\System32\\drivers\\etcetera\\hosts *(en Windows) o* el *archivo /etcetera/hosts* (en Macintosh/Linux/Android) y añada lo siguiente:
 
 * Producción de suplantación de identidad perfil
    * 52.13.71.11 http://entitlement.auth.adobe.com, http://sp.auth.adobe.com http://api.auth.adobe.com
 
-**Suplantación en Android:** Para falsificar en Android, debe utilizar un emulador de Android.
+**Suplantación de identidad en Android:** Para suplantar a Android, debe usar un emulador de Android.
 
-* Una vez configurada la suplantación, puede utilizar las direcciones URL normales para los perfiles de producción y ensayo: (es decir, `http://sp.auth-staging.adobe.com` y `http://entitlement.auth-staging.adobe.com` y de hecho le darás a la *entorno/producción de precalificación* de la* nueva compilación.
+* Una vez que se implemente la suplantación, solo tiene que usar las direcciones URL normales para los perfiles de producción y ensayo: (es decir, `http://sp.auth-staging.adobe.com` y `http://entitlement.auth-staging.adobe.com`. De hecho, llegará al *entorno de precalificación/ producción* de la nueva compilación*.
 
 
 ## PASO 3.  Compruebe que está apuntando al entorno correcto {#Verify-you-are-pointing-to-the-right-environment}
@@ -93,6 +93,6 @@ Los pasos 1 y 2 están configurando el prueba entorno en una de las máquinas de
 
 ## PASO 6.  Realizar pruebas mediante el sitio de prueba de la API {#perform-testing-using-api-testing-site}
 
-* Si desea profundizar en la prueba de la autenticación de Adobe Pass, le recomendamos que utilice la variable [Sitio de prueba de API](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
+* Si desea profundizar en la prueba de la autenticación de Adobe Pass, le recomendamos que utilice el [sitio de prueba de API](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
 
-Puede encontrar más detalles sobre el sitio de prueba de la API en [Prueba de los flujos de autenticación y autorización mediante el sitio de prueba de la API de Adobe](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).
+Puede encontrar más detalles en el sitio de prueba de API en [Cómo probar los flujos de autenticación y autorización mediante el sitio de prueba de API de Adobe](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).

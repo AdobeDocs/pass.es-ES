@@ -21,15 +21,15 @@ ht-degree: 0%
 
 ## Extremos de API de REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -40,9 +40,9 @@ Inicia el proceso de autenticación al informar de un evento de selección de MV
 
 
 
-| Extremo | Llamado  </br>Por | Entrada   </br>Parámetros | HTTP  </br>Método | Respuesta | HTTP  </br>Respuesta |
+| Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/authenticate | Módulo AuthN | 1. requestor_id (obligatorio)</br>2.  mso_id (obligatorio)</br>3.  reg_code (Obligatorio)</br>4.  domain_name (obligatorio)</br>5.  noflash=true -  </br>    (Obligatorio, Parámetro residual)</br>6.  no_iframe=true (obligatorio, parámetro residual)</br>7.  parámetros adicionales (opcional)</br>8.  redirect_url (obligatorio) | GET | La aplicación web Login se redirige a la página de inicio de sesión de MVPD. | 302 para implementaciones de redirección completas |
+| &lt;SP_FQDN>/api/v1/authentication | Módulo AuthN | 1. requestor_id (obligatorio)</br>2.  mso_id (obligatorio)</br>3.  reg_code (obligatorio)</br>4.  nombre_dominio (obligatorio)</br>5.  noflash=true - </br>    (obligatorio, parámetro residual)</br>6.  no_iframe=true (obligatorio, parámetro residual)</br>7.  parámetros adicionales (opcional)</br>8.  redirect_url (obligatorio) | GET | La aplicación web Login se redirige a la página de inicio de sesión de MVPD. | 302 para implementaciones de redirección completas |
 
 {style="table-layout:auto"}
 
@@ -61,7 +61,7 @@ Inicia el proceso de autenticación al informar de un evento de selección de MV
 
 >[!IMPORTANT]
 > 
->**Importante: Parámetros obligatorios -** Independientemente de la implementación del lado del cliente, todos los parámetros anteriores son obligatorios.
+>**Importante: parámetros obligatorios -** Independientemente de la implementación del lado del cliente, todos los parámetros anteriores son obligatorios.
 >
 >
 >Ejemplo:
@@ -81,7 +81,7 @@ Inicia el proceso de autenticación al informar de un evento de selección de MV
 >
 >La llamada también puede contener parámetros opcionales que habilitan otras funcionalidades como:
 >
-> * generic\_data: habilita el uso de [TempPass promocional](/help/authentication/promotional-temp-pass.md)
+> * generic\_data: habilita el uso de [Promotional TempPass](/help/authentication/promotional-temp-pass.md)
 >
 >```JSON
 >Example:
@@ -91,10 +91,10 @@ Inicia el proceso de autenticación al informar de un evento de selección de MV
 
 ### **Notas** {#notes}
 
-* El valor del `domain_name` El parámetro debe establecerse en uno de los nombres de dominio registrados con autenticación de Adobe Pass. Para obtener más información, consulte [Registro e inicialización](/help/authentication/programmer-overview.md).
+* El valor del parámetro `domain_name` debe establecerse en uno de los nombres de dominio registrados con autenticación de Adobe Pass. Para obtener más información, consulte [Registro e inicialización](/help/authentication/programmer-overview.md).
 
 * [Evite utilizar &#39;&amp;&#39;reg\_code en la solicitud /authentication (Nota técnica)](/help/authentication/clientless-avoid-using-reg-code-in-authenticate-request.md)
 
-* El `redirect_url` el parámetro debe ser el último en orden
+* El parámetro `redirect_url` debe ser el último en orden
 
-* El valor del `redirect_url` El parámetro debe tener codificación URL
+* El valor del parámetro `redirect_url` debe tener codificación de dirección URL

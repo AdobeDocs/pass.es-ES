@@ -21,15 +21,15 @@ ht-degree: 2%
 
 ## Extremos de API de REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -37,9 +37,9 @@ ht-degree: 2%
 
 Devuelve la lista de MVPD configuradas para el solicitante.
 
-| Extremo | Llamado  </br>Por | Entrada   </br>Parámetros | HTTP  </br>Método | Respuesta | HTTP  </br>Respuesta |
+| Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/config/{requestorId}</br></br>Por ejemplo:</br></br>&lt;sp_fqdn>/api/v1/config/sampleRequestorId | Adobe Pass Authentication | 1. Solicitante</br>    (Componente Ruta)</br>_2.  deviceType (obsoleto)_ | GET | XML o JSON que contienen la lista de MVPD. | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Por ejemplo:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass Authentication | 1. Solicitante</br>    (Componente de ruta de acceso)</br>_2.  deviceType (obsoleto)_ | GET | XML o JSON que contienen la lista de MVPD. | 200 |
 
 {style="table-layout:auto"}
 
@@ -57,8 +57,8 @@ Igual que la respuesta XML de MVPD existente al servlet /config
 
 Nota: Todas las MVPD configuradas para utilizar el SSO de Platform tendrán las siguientes propiedades adicionales dentro de su nodo correspondiente (JSON/XML):
 
-* **enablePlatformServices (booleano):** indicador que indica si este MVPD está integrado mediante el SSO de la plataforma
-* **boardingStatus (cadena):** Indicador que indica si la MVPD es totalmente compatible con el SSO de la plataforma (COMPATIBLE) o si la MVPD solo aparece en el selector de plataformas (SELECTOR)
+* **enablePlatformServices (booleano):** indicador que indica si este MVPD está integrado mediante SSO de plataforma
+* **boardingStatus (cadena):** indicador que indica si la MVPD es totalmente compatible con el SSO de plataforma (COMPATIBLE) o si la MVPD solo aparece en el selector de plataforma (SELECTOR)
 * **displayInPlatformPicker (booleano):** si este MVPD aparece en el selector de plataformas
-* **platformMappingId (cadena):** el identificador de esta MVPD conocido por la plataforma
+* **platformMappingId (cadena):** el identificador de esta MVPD como lo conoce la plataforma
 * **requiredMetadataFields (matriz de cadenas):** se espera que los campos de metadatos del usuario estén disponibles cuando el inicio de sesión se realice correctamente

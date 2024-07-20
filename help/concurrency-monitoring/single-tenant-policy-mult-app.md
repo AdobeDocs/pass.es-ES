@@ -1,13 +1,13 @@
 ---
 title: Implementar CM para un único inquilino/política y varias aplicaciones
 description: Implementar CM para un único inquilino/política y varias aplicaciones
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 5c579c7d-f235-4dba-95c2-8485021d9065
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
-
 
 # Implementar CM para un único inquilino/política y varias aplicaciones {#imp-cm}
 
@@ -29,7 +29,7 @@ Se utilizan dos aplicaciones y un sitio web para iniciar flujos:
 
 1. El usuario inicia un flujo desde la aplicación de iPhone y otro desde la aplicación de iPad. La directiva lo permite.
 1. A continuación, el usuario inicia un tercer flujo desde el sitio web del programador.
-1. La regla de la directiva (máximo de 2 flujos, últimas victorias) permite que se reproduzca el flujo más reciente **el primer flujo que se inició se marcará como no compatible con la directiva y se detendrá.**
+1. La regla de la directiva (máximo de 2 secuencias, últimas ganancias) permite que se reproduzca la secuencia más reciente, de modo que **la primera secuencia que se inició se marcará como no compatible con la directiva y se detendrá.**
 
 
 

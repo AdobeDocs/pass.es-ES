@@ -4,7 +4,7 @@ description: Amazon fireTV SSO - Guía de inicio del programador
 exl-id: cf9ba614-57ad-46c3-b154-34204b38742d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '793'
+source-wordcount: '782'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## Introducción {#intro}
 
-Este documento describe la información necesaria para integrar el nuevo **SDK de fireTV de autenticación de Adobe Pass** en su aplicación fireTV. Este nuevo SDK aprovecha la integración a nivel del sistema operativo en la plataforma fireTV de Amazon y ofrece lo siguiente **Inicio de sesión único** soporte. Para beneficiarse del inicio de sesión único se requiere un pequeño esfuerzo por su parte para migrar la aplicación de la API sin cliente al nuevo SDK de fireTV. A continuación se detallan algunos cambios en los flujos de autenticación.
+Este documento describe la información necesaria para integrar el nuevo SDK de **Adobe Pass Authentication para fireTV** en su aplicación fireTV. Este nuevo SDK aprovecha la integración a nivel del SO en la plataforma fireTV de Amazon y ofrece compatibilidad con el inicio de sesión único **Single Sign On**. Para beneficiarse del inicio de sesión único se requiere un pequeño esfuerzo por su parte para migrar la aplicación de la API sin cliente al nuevo SDK de fireTV. A continuación se detallan algunos cambios en los flujos de autenticación.
 
 ## Arquitectura de alto nivel e integración a nivel del sistema operativo {#high}
 
@@ -43,39 +43,39 @@ En comparación con la aplicación basada en la API sin cliente, con el nuevo SD
 
 Esto requiere que los programadores agreguen un selector de MVPD en sus aplicaciones para que los usuarios puedan elegir su proveedor de TV directamente en el dispositivo fireTV. Al seleccionar MVPD, se mostrará al usuario la página de inicio de sesión de MVPD en el dispositivo fireTV.
 
-Puede encontrar modelos de los flujos de usuario que describen los escenarios normales, HBA y SSO en fireTV en [Flujo de usuario de inicio de sesión de Amazon Fire TV - MVVPD](https://xd.adobe.com/view/9058288e-4b67-43a1-9d5b-5f76ede6c51e/).
+Puede encontrar mallas metálicas de los flujos de usuario que describen los escenarios normales, HBA y SSO en fireTV en [Flujo de usuario de inicio de sesión de Amazon Fire TV - MVVPD](https://xd.adobe.com/view/9058288e-4b67-43a1-9d5b-5f76ede6c51e/).
 
-## Migración de una aplicación basada en SDK de Android a una aplicación basada en SDK de FireTV {#migra2}
+## Migración de una aplicación basada en SDK de Android a una aplicación basada en SDK de fireTV {#migra2}
 
-Este nuevo SDK de FireTV es muy similar al SDK de Android existente y a la documentación actual que tenemos para **integración del SDK para Android** <!--http://tve.helpdocsonline.com/android-technical-overview-->se puede usar hasta que tengamos listos los documentos del SDK de fireTV. Si ya tiene aplicaciones de Android que usan nuestro SDK de Android, la integración del SDK de fireTV en su aplicación fireTV debería ser sencilla.
+Este nuevo SDK de fireTV es muy similar a nuestro SDK de Android existente, y la documentación actual que tenemos para **integrar nuestro SDK de Android** <!--http://tve.helpdocsonline.com/android-technical-overview-->se puede usar hasta que tengamos listos los documentos del SDK de fireTV. Si ya tiene aplicaciones de Android que utilizan nuestro SDK de Android, la integración del SDK de fireTV en su aplicación fireTV debería ser sencilla.
 
-En comparación con el SDK de Android existente, en el SDK de fireTV el proceso de autenticación será más sencillo de desarrollar, ya que las tareas de gestión/presentación de la página de inicio de sesión de MVPD y la recuperación del token de AuthN se realizarán internamente por la biblioteca de AccessEnabler.
+En comparación con el SDK de Android existente, en el SDK de fireTV el proceso de autenticación será más fácil de desarrollar, ya que las tareas de gestión/presentación de la página de inicio de sesión de MVPD y la recuperación del token de AuthN se realizarán internamente por la biblioteca de AccessEnabler.
 
 ## Preguntas frecuentes {#faq}
 
-1. ¿Cómo se **SSO** ¿trabajar?
+1. ¿Cómo funcionará el **SSO**?
 
    * SSO funcionará en todas las aplicaciones de Programador con autenticación de Adobe Pass que estén usando el nuevo SDK de fireTV en el mismo dispositivo Amazon fireTV
-   * SSO entre aplicaciones de programador implementadas en la API de REST sin cliente y aplicaciones implementadas en el SDK de fireTV **NO será compatible**
+   * No se admitirá SSO entre aplicaciones de programador implementadas en la API de REST sin cliente y aplicaciones implementadas en el SDK **de fireTV**
 
 1. ¿Cuál es la cobertura de MVPD de FireTV SSO?
 
-   * **Todas las MVPD** La integración de mediante la autenticación de Adobe Pass será técnicamente compatible con SSO en el SDK de fireTV.
+   * **Todas las MVPD** integradas por la autenticación de Adobe Pass serán técnicamente compatibles con SSO en el SDK de fireTV.
 
-1. Además de utilizar el nuevo SDK, ¿qué más **cambios de flujo de trabajo** ¿Deben tener en cuenta los programadores?
+1. Además de usar el nuevo SDK, ¿qué otros **cambios en el flujo de trabajo** deben tener en cuenta los programadores?
 
    * Los programadores necesitan implementar un selector de MVPD para la plataforma fireTV.
 
-1. ¿Se producirá algún cambio en la autenticación? **TTL**?
+1. ¿Habrá algún cambio en la autenticación **TTL**?
 
    * No hay cambios en el comportamiento con respecto a los TTL de autenticación.
    * El primer token de autenticación válido se utilizará para realizar el SSO y, en este caso, todas las demás aplicaciones que se autenticarán mediante SSO utilizarán el mismo TTL hasta que caduque. Por lo tanto, al navegar de una aplicación a otra, la segunda aplicación compartirá el TTL de la primera aplicación que se autentica.
 
-1. ¿Cómo? **API de degradación** ¿trabajar?
+1. ¿Cómo funciona la **API de degradación**?
 
    * No se necesitan cambios para la API de degradación; la experiencia del usuario será la misma que en los dispositivos Android.
 
-1. Cómo **TempPass** ¿se ven afectados los flujos?
+1. ¿Cómo se ven afectados los flujos **TempPass**?
 
    * Los flujos TempPass son de una sola pantalla y se comportan como en cualquier otro dispositivo nativo.
 

@@ -21,15 +21,15 @@ ht-degree: 0%
 
 ## Extremos de API de REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -38,9 +38,9 @@ ht-degree: 0%
 Esta API debe ser consumida por la aplicación web de inicio de sesión en la segunda pantalla para confirmar que la autenticación de Adobe Pass ha confirmado que el inicio de sesión se ha realizado correctamente desde MVPD. Se recomienda llamar a esta API antes de mostrar un mensaje de éxito al usuario final que le indique que continúe con los flujos de trabajo en la consola del dispositivo.
 
 
-| Extremo | Llamado  </br>Por | Entrada   </br>Parámetros | HTTP  </br>Método | Respuesta | HTTP  </br>Respuesta |
+| Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{código de registro} | Iniciar sesión en aplicación web | 1. código de registro  </br>    (Componente Ruta)</br>2.  solicitante  </br>    (Obligatorio) | GET | XML o JSON con detalles de error si no se ha realizado correctamente. | 200 - Éxito   </br>403 - Prohibido |
+| SP_FQDN/api/v1/checkauthn/{código de registro} | Iniciar sesión en aplicación web | 1. código de registro </br>    (Componente de ruta de acceso)</br>2.  solicitante </br>    (Obligatorio) | GET | XML o JSON con detalles de error si no se ha realizado correctamente. | 200 - Éxito   </br>403 - Prohibido |
 
 </br>
 
@@ -59,4 +59,4 @@ Esta API debe ser consumida por la aplicación web de inicio de sesión en la se
     }
 ```
 
-### [Volver a la referencia de la API de REST](/help/authentication/rest-api-reference.md)
+### [Volver a la referencia de API de REST](/help/authentication/rest-api-reference.md)

@@ -23,13 +23,13 @@ ht-degree: 2%
 
 `<REGGIE_FQDN>`:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 `<SP_FQDN>`:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 
 
@@ -43,9 +43,9 @@ Devuelve el registro del código de registro que contiene el UUID del código de
 
 
 
-| Extremo | Llamado  </br>Por | Entrada   </br>Parámetros | HTTP  </br>Método | Respuesta | HTTP  </br>Respuesta |
+| Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Por ejemplo:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK?format=xml | Aplicación de streaming</br></br>o</br></br>Servicio de programador | 1. solicitante  </br>    (Componente Ruta)</br>2.  código de registro  </br>    (Componente Ruta) | GET | XML o JSON que contienen un código de registro e información. Consulte esquema y ejemplo a continuación. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Por ejemplo:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK?format=xml | Servicio de programador </br></br>o</br></br>de aplicación de streaming | 1. solicitante </br>    (Componente de ruta de acceso)</br>2.  código de registro </br>    (Componente Ruta) | GET | XML o JSON que contienen un código de registro e información. Consulte esquema y ejemplo a continuación. | 200 |
 
 {style="table-layout:auto"}
 

@@ -22,7 +22,7 @@ La API de REST de autenticación de Adobe Pass proporciona acceso directo a los 
 
 ### Mecanismo de limitación
 
-La API de REST de autenticación de Adobe Pass se rige por un [Mecanismo de limitación](/help/authentication/throttling-mechanism.md).
+La API de REST de autenticación de Adobe Pass se rige por un [mecanismo de restricción](/help/authentication/throttling-mechanism.md).
 
 
 ### De servidor a servidor
@@ -58,7 +58,7 @@ Una arquitectura de servidor a servidor proporciona una forma de consolidar la m
 * Implementación única para la lógica empresarial de autenticación y autorización.
 * Evite la necesidad de implementar esa lógica en cada plataforma admitida mediante las herramientas nativas de esas plataformas.
 * La capacidad de actualizar las funcionalidades sin tener que actualizar a los clientes con todos sus requisitos asociados (por ejemplo, actualizaciones de la tienda de aplicaciones).
-* **Más fácilmente** ampliar y personalizar las capacidades de authN y authZ (por ejemplo, agregar D2C).
+* **Es más fácil** ampliar y personalizar las capacidades de authN y authZ (por ejemplo, agregar D2C).
 * Gestión directa del tráfico asociado para un mayor control, calidad y monitorización.
 
 
@@ -79,9 +79,9 @@ Para la mayoría de los dispositivos conectados, la API de REST debe utilizarse 
 
 Lo siguiente se aplica tanto a las aplicaciones servidor a servidor como a las de dispositivos conectados.
 
-| **Funcionalidad** | **Responsable de gestionar la funcionalidad** | **Descripción de las limitaciones de la API actual sin cliente y las diferencias con los SDK nativos** |
+| **Funcionalidad** | **Responsable de administrar la funcionalidad** | **Descripción de las limitaciones de la API sin cliente actual y diferencias con los SDK nativos** |
 | --- | --- | --- |
-| Ajustes de configuración aplicados por plataforma | Adobe | Uno **limitación importante** Al usar la API de REST en todas las plataformas (incluidos dispositivos móviles como iOS y Android), los ajustes de configuración correspondientes a la API de REST en nuestra herramienta de configuración del TVE Dashboard se aplican a todos los dispositivos (incluso si hay un dispositivo iOS que ejecuta una aplicación nativa implementada sobre nuestra API de REST). Esta limitación **se puede romper** los TTL acordados y los ajustes de plataforma acordados con los MVPD, si estos difieren según cada plataforma. [1](#1) |
+| Ajustes de configuración aplicados por plataforma | Adobe | Una **limitación importante** al usar la API de REST en todas las plataformas (incluidos dispositivos móviles como iOS y Android) es que los ajustes de configuración correspondientes a la API de REST en nuestra herramienta de configuración de TVE Dashboard se aplican a todos los dispositivos (incluso si hay un dispositivo iOS que ejecuta una aplicación nativa implementada sobre nuestra API de REST). Esta limitación **puede romper** los TTL acordados y la configuración de plataforma acordada con las MVPD, si estas difieren según cada plataforma. [1](#1) |
 | Inicio de sesión único | Programadores | Mediante la API de REST, el SSO solo está disponible en plataformas compatibles con el SSO de Platform (por ejemplo, Apple, Roku, Amazon), mientras que el SSO no se puede garantizar para otras plataformas al utilizar la API de REST. Los SDK almacenan en caché los datos de forma multisitio/aplicación. Esto significa que el usuario inicia sesión una vez en un sitio o aplicación y ya ha iniciado sesión en los sitios participantes, sin que sea necesaria la interacción del usuario. [2](#2) |
 | Cierre de sesión único | Programadores | En un escenario de SSO de SDK nativo, al cerrar la sesión desde una aplicación participante, se cerrará la sesión del usuario desde cualquier lugar. En la API de REST actual no se admite el SLO, al cerrar la sesión desde una aplicación, se cerrará la sesión del usuario solo para esa aplicación en particular. |
 | Almacenamiento en caché | Programadores | Las implementaciones de la API de REST tendrán que implementar su propio mecanismo de almacenamiento en caché para los elementos de datos acordados por las empresas. Los SDK almacenan automáticamente en caché varios elementos de datos, teniendo en cuenta al mismo tiempo diversas reglas empresariales. Por ejemplo, los metadatos del usuario se almacenan en caché con el mismo TTL que el token de autenticación, mientras que algunos elementos se pueden excluir mediante programación del almacenamiento en caché (comprobaciones). |
@@ -101,4 +101,4 @@ Lo siguiente se aplica tanto a las aplicaciones servidor a servidor como a las d
 
 ## Requisitos mínimos del dispositivo {#min_reqs}
 
-Para utilizar la API de REST de autenticación de Adobe Pass, los dispositivos deben cumplir o superar los requisitos técnicos mínimos enumerados en la sección API de REST de la [Documento de requisitos de la plataforma de autenticación de Adobe Pass/dispositivo/herramientas](#general_clientless_reqs).
+Para usar la API de REST de autenticación de Adobe Pass, los dispositivos deben cumplir o superar los requisitos técnicos mínimos enumerados en la sección de API de REST del [documento de requisitos de plataforma/dispositivo/herramientas de autenticación de Adobe Pass](#general_clientless_reqs).

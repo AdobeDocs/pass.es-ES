@@ -4,7 +4,7 @@ description: Ruta de actualización de AccessEnabler iOS/tvOS 3.7.0
 exl-id: f15c7414-ec9b-4e21-b457-1ecf59f47441
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 0%
 
 </br>
 
-Cambios en el almacenamiento de llaveros de [nuevo AccessEnabler versión 3.7.0](/help/authentication/authn-rn-ios-tvos-370.md) no son compatibles con la implementación del almacenamiento de llavero de la versión de AccessEnabler anterior a la 3.7.0.
+Los cambios en el almacenamiento de llaveros de la [nueva versión 3.7.0](/help/authentication/authn-rn-ios-tvos-370.md) de AccessEnabler son incompatibles con la implementación del almacenamiento de llaveros de la versión inferior a la 3.7.0 de AccessEnabler.
 
-La ruta de actualización para una aplicación que adopte la nueva versión 3.7.0 de AccessEnabler migrará todos los tokens de las versiones anteriores del almacenamiento de llaveros. Por lo tanto, usuarios finales **no debería experimentar pérdida de sesiones de autenticación/autorización** durante el proceso de actualización del marco de AccessEnabler.
+La ruta de actualización para una aplicación que adopte la nueva versión 3.7.0 de AccessEnabler migrará todos los tokens de las versiones anteriores del almacenamiento de llaveros. Por lo tanto, los usuarios finales **no deben experimentar la pérdida de sesiones de autenticación/autorización** durante el proceso de actualización del marco de AccessEnabler.
 
 ## Limitaciones conocidas
 

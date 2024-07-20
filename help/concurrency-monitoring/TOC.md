@@ -15,7 +15,7 @@ ht-degree: 9%
 # Ayuda de supervisión de concurrencia de Adobe Pass {#cm}
 
 + [Introducción a la monitorización de concurrencia](cm-home.md)
-+ [Glosario de monitorización de concurrencia](cm-glossary.md)
++ [Glosario de supervisión de simultaneidad](cm-glossary.md)
 + [Casos de uso de monitorización de concurrencia](cm-use-cases.md)
 + [Punto de decisión de política](cm-policy-decision-point.md)
 + [Resumen de API de supervisión de concurrencia](cm-api-overview.md)
@@ -23,18 +23,18 @@ ht-degree: 9%
 + [Política de retención de datos](data-retention-policy.md)
 + [Mecanismo de limitación](throttling-mechanism.md)
 + [Procedimientos de escalación](cm-escalation-procedures.md)
-+ Uso de supervisión de concurrencia {#cmu}
++ Uso de supervisión de simultaneidad {#cmu}
    + [Informes de uso de supervisión de concurrencia](cm-usage-reports.md)
    + [API de uso de supervisión de concurrencia](cmu-api.md)
    + [Acceso a API de uso de supervisión de concurrencia](cmu-api-access.md)
-+ API versión 1{#v1-api}
++ API versión 1 {#v1-api}
    + [Punto de información de política](policy-info-pt-versionone.md)
    + [Metadatos personalizados](custom-metadata.md)
    + Libros de integración {#int-cookbooks}
       + [Restricción del uso simultáneo con varias aplicaciones que pertenecen a propietarios diferentes](restrict-concurr-usage-mult-apps.md)
       + [Inquilino/política único y varias aplicaciones](single-tenant-policy-mult-app.md)
    + [Modelos de implementación](implementation-models.md)
-+ Notas de versión {#cm-release-notes}
++ Notas de la versión {#cm-release-notes}
    + [Notas de la versión de Concurrency Monitoring services 3.1](rn-cm-services-31.md)
    + [Notas de la versión de Concurrency Monitoring services 3.0](rn-cm-services-30.md)
    + [Notas de la versión de Concurrency Monitoring 2.9.6](rn-cm-296.md)

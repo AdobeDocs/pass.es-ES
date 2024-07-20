@@ -1,10 +1,10 @@
 ---
 title: Notas de la versión de autenticación de Adobe Pass 2.62.1
 description: Notas de la versión de autenticación de Adobe Pass 2.62.1
-exl-id: 7a43cb64-27c7-41ec-b02a-64cf7f476c5d
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: 5c173a0e-512f-40ca-85ce-10ea1ddbe8c6
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '79'
+source-wordcount: '89'
 ht-degree: 0%
 
 ---
@@ -24,8 +24,8 @@ En esta página se describen las nuevas funciones, los cambios y los problemas c
 
 ### Número de compilación {#build-number-2621}
 
-Autenticación de Adobe Pass: adobe-pass-end **2.62.1**
-Fecha de versión: **02/08/2022 - 04/08/2022**
+Autenticación de Adobe Pass: adobe-pass-**2.62.1**
+Fecha de versión: **08/02/2022 - 08/04/2022**
 
 ### Nuevas funciones {#new-features-2621}
 

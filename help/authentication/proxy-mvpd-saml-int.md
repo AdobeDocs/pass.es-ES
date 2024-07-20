@@ -5,7 +5,7 @@ exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
 source-wordcount: '711'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -48,24 +48,24 @@ Para que la autenticación de Adobe Pass se integre con una MVPD proxy se necesi
 * (Recomendado): la MVPD proxy gestiona la redirección adicional a la URL de la página de inicio de sesión de la MVPD proxy
 
 * El proxy MVPD debe abrir los puertos 443 y 80 para las siguientes IP:
-   * 192.150.4.5
-   * 192.150.10.200
+   * 192 150 4.5
+   * 192 150 10 200
    * 192.150.11.4
    * 4.53.93.130
-   * 193.105.140.131
-   * 193.105.140.132
+   * 193 105 140 131
+   * 193 105 140 132
    * 76.74.170.204
-   * 63.140.39.4
-   * 66.235.132.38
-   * 66.235.139.38
-   * 66.235.139.168
+   * 63 140 39 4
+   * 66 235 132 38
+   * 66 235 139 38
+   * 66 235 139 168
 
 
 #### Solicitud y respuesta de SAML de autenticación {#authn-saml-req-resp}
 
 En la solicitud de AUTHn de SAML, las integraciones de proxy incluyen la siguiente propiedad adicional que debe gestionar el proxy MVPD.  Esta propiedad es necesaria para procesar correctamente el solicitante en nombre de la MVPD de proxy y para procesar la experiencia de inicio de sesión correcta. (Esta propiedad se resalta en la solicitud de ejemplo que aparece a continuación).
 
-**Propiedad Scoping** : incluye un elemento IDPEntry que incluye el MVPD_ID y el nombre de MVPD específicos.  Representa el MVPD que el usuario seleccionó realmente del selector del programador y coincide con el MVPD_ID especificado en el servicio web proxy.
+**Propiedad de ámbito**: incluye un elemento IDPEntry que incluye el nombre MVPD_ID y MVPD específico.  Representa el MVPD que el usuario seleccionó realmente del selector del programador y coincide con el MVPD_ID especificado en el servicio web proxy.
 
 Hay una propiedad de ámbito adicional para RequestorID que se puede utilizar para personalizar el inicio de sesión a la marca concreta del programador (si es necesario). O bien, se puede utilizar simplemente para análisis sobre el origen de la solicitud.
 

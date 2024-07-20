@@ -19,13 +19,13 @@ ht-degree: 0%
 
 El pase temporal promocional permite a los programadores ofrecer acceso temporal a su contenido protegido para usuarios que no tengan credenciales de cuenta con una MVPD.
 
-Promotional Temp Pass está diseñado para utilizarse para ejecutar campañas promocionales en las que un usuario, después de proporcionar información de identificación válida (por ejemplo, una dirección de correo electrónico) al Programador, podrá consumir un **número predefinido de títulos de VOD diferentes durante un período de tiempo predefinido**.
+Promotional Temp Pass está diseñado para utilizarse para ejecutar campañas promocionales en las que un usuario, después de proporcionar información de identificación válida (por ejemplo, una dirección de correo electrónico) al Programador, podrá consumir un número predefinido de **títulos de VOD diferentes durante un período de tiempo predefinido**.
 
 >[!IMPORTANT]
 >
 >El Adobe no almacena ninguna información de identificación personal (PII). Por lo tanto, el programador debe establecer un hash con la información proporcionada por el usuario único en las API de autenticación de Adobe Pass.
 
-El pase temporal promocional se crea sobre el [Pase temporal](/help/authentication/temp-pass.md) función, lo que significa que incluye toda la funcionalidad Pase temporal.
+El pase temporal promocional se basa en la función [Pase temporal](/help/authentication/temp-pass.md), lo que significa que incluye toda la funcionalidad Pase temporal.
 
 Una vez que se supera el número máximo predefinido de títulos de VOD o el período de tiempo predefinido, ese usuario no podrá acceder al contenido en el mismo dispositivo ni utilizar la misma información de identificador de usuario (por ejemplo, la dirección de correo electrónico) hasta que se borren los tokens de autorización del servidor de autenticación de Adobe Pass.
 
@@ -58,7 +58,7 @@ En función del ID del dispositivo y de la información que proporcionó el usua
 >[!NOTE]
 >La validación y el hash de la información proporcionada por el usuario la gestiona el programador, no el Adobe.
 
-**La función Promotional Temp Pass se puede configurar en función de las siguientes propiedades:**
+**La característica Promotional Temp Pass se puede configurar según las siguientes propiedades:**
 
 * Clave de información proporcionada por el usuario (por ejemplo, correo electrónico)
 * Número de recursos que el usuario tiene derecho a consumir
@@ -66,9 +66,9 @@ En función del ID del dispositivo y de la información que proporcionó el usua
 
 ### Metadatos del usuario {#user-metadata}
 
-Para facilitar la implementación de la aplicación del Programador, lo siguiente **se expone la información de metadatos del usuario** en el Promotional Temp Pass, con las claves correspondientes (para activar las claves, póngase en contacto con tve-support@adobe.com):
+Para facilitar la implementación de la aplicación del programador, se expone la siguiente información de metadatos de **usuario** en el Promotional Temp Pass, con las claves correspondientes (para activar las claves, póngase en contacto con tve-support@adobe.com):
 
-* **remaining_recursos**: el número de recursos restantes que el usuario actual tiene derecho a consumir
+* **recursos_restantes**: el número de recursos restantes que el usuario actual tiene derecho a consumir
 * **used_assets**: la lista de recursos que el usuario actual ya ha consumido
 * **expiration_date**: la fecha de caducidad del usuario actual
 
@@ -78,11 +78,11 @@ La cantidad de tiempo que un pase temporal sigue siendo válido no se correlacio
 
 ### Autenticación y autorización {#authn-authz}
 
-Para los flujos Promotional Temp Pass, la autenticación y la autorización no se comunican con una MVPD real, **por lo tanto, todas las solicitudes de autorización se procesarán correctamente** siempre que se cumplan todas estas condiciones:
+Para los flujos Promotional Temp Pass, la autenticación y la autorización no se comunican con una MVPD real, **por lo que todas las solicitudes de autorización se realizarán correctamente** siempre y cuando se cumplan todas estas condiciones:
 
 * los tokens de autorización son válidos para los recursos especificados
-* número de **used_assets** es inferior al límite establecido por el programador
-* **expiration_date** el valor es posterior a la fecha actual.
+* el número de **activos_usados** es inferior al límite establecido por el programador
+* El valor de **expiration_date** es posterior a la fecha actual.
 
 ### Comportamiento de comprobación preliminar {#preflight-beh}
 
@@ -96,7 +96,7 @@ SSO no está habilitado para instancias de Promotional Temp Pass, que está conf
 
 ### Cerrar sesión {#logout}
 
-Todos los tokens de un dispositivo se eliminan al cerrar la sesión. Por lo tanto, cambiar del pase temporal promocional a una MVPD regular seleccionada por el usuario no debería depender de esta implementación. La recomendación es utilizar el `setSelectedProvider(null)` para borrar el estado de la aplicación y reiniciar el flujo de autenticación, que ofrece una mejor experiencia de usuario.
+Todos los tokens de un dispositivo se eliminan al cerrar la sesión. Por lo tanto, cambiar del pase temporal promocional a una MVPD regular seleccionada por el usuario no debería depender de esta implementación. Se recomienda utilizar la función `setSelectedProvider(null)` para borrar el estado de la aplicación y reiniciar el flujo de autenticación, que ofrece una mejor experiencia de usuario.
 
 ### Diagrama de flujo de pase temporal promocional {#promo-tempass-flowdia}
 
@@ -108,34 +108,34 @@ Todos los tokens de un dispositivo se eliminan al cerrar la sesión. Por lo tant
 
 El pase temporal promocional requiere las siguientes funcionalidades del lado del cliente:
 
-* **Información de identificador de usuario, por ejemplo, propagación de direcciones de correo electrónico** (envío de la dirección de correo electrónico del usuario en los flujos de autenticación y autorización). La autenticación de Adobe Pass requiere el correo electrónico para enlazar los tokens de autenticación y autorización (como en el caso del `device_ID`, requerido en todas las llamadas).
-* **Forzar autenticación** - permitiendo al programador forzar un flujo de autenticación cuando el usuario ya está autenticado. Esta funcionalidad es necesaria para forzar una actualización de los metadatos del usuario (la clave de metadatos del usuario) **used_assets** contiene el número de recursos disponibles) cada vez que se inicia la aplicación. Dado que el usuario puede iniciar sesión en varios dispositivos, los metadatos de usuario presentes en el dispositivo durante el inicio de la aplicación no son fiables y es necesario actualizarlos para reflejar el estado actual de ese usuario específico (identificado por dirección de correo electrónico).
+* **Información del identificador de usuario, por ejemplo, propagación de direcciones de correo electrónico** (envío de la dirección de correo electrónico del usuario en los flujos de autenticación y autorización). La autenticación de Adobe Pass requiere el correo electrónico para enlazar los tokens de autenticación y autorización (como en el caso de `device_ID`, requerido en todas las llamadas).
+* **Forzar autenticación**: permite al programador forzar un flujo de autenticación cuando el usuario ya está autenticado. Esta funcionalidad es necesaria para forzar una actualización de los metadatos del usuario (la clave de metadatos del usuario **used_assets** contiene el número de recursos disponibles) cada vez que se inicia la aplicación. Dado que el usuario puede iniciar sesión en varios dispositivos, los metadatos de usuario presentes en el dispositivo durante el inicio de la aplicación no son fiables y es necesario actualizarlos para reflejar el estado actual de ese usuario específico (identificado por dirección de correo electrónico).
 
 
 >[!IMPORTANT]
 >La autenticación forzada solo es posible en iOS y Android.
->La autenticación de Adobe Pass no tiene un mecanismo integrado para detener la transmisión gratuita después de que hayan pasado los minutos X. La autenticación de Adobe Pass dejará de emitirse **autorización** y **medios cortos** tokens una vez que el usuario consume los recursos libres de Y. Depende de los programadores restringir el acceso una vez que caduque el pase temporal promocional.
+>La autenticación de Adobe Pass no tiene un mecanismo integrado para detener la transmisión gratuita después de que hayan pasado los minutos X. La autenticación de Adobe Pass dejará de emitir tokens de **authorization** y **short media** una vez que el usuario consuma los recursos libres de Y. Depende de los programadores restringir el acceso una vez que caduque el pase temporal promocional.
 
 ## Seguridad {#security}
 
 >[!IMPORTANT]
 >El Adobe no almacena ninguna información de identificación personal (PII). Por lo tanto, el programador debe establecer un hash con la información proporcionada por el usuario único en las API de autenticación de Adobe Pass.
 
-**Hash de la información del identificador de usuario**
+**Hash de información de identificador de usuario**
 
-El Adobe recomienda utilizar la variable **SHA-2** familia o sus características específicas **SHA-256**, **SHA-512** funciona en los datos antes de enviarse al Adobe.
+El Adobe recomienda usar las funciones **SHA-2** de la familia **SHA-256**, **SHA-512** en los datos antes de enviarlos al Adobe.
 
 Por ejemplo, **SHA-256** sobre **&quot;user@domain.com&quot;** es **&quot;f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7&quot;**.
 
 ## Restablecer o purgar pase temporal promocional {#reset-promo-tempass}
 
-Ciertas reglas comerciales requieren una depuración regular de Promotional Temp Pass. Para ello, la autenticación de Adobe Pass proporciona a los programadores una *público* API web, que se describe a continuación:
+Ciertas reglas comerciales requieren una depuración regular de Promotional Temp Pass. Para hacerlo, la autenticación de Adobe Pass proporciona a los programadores una API web *public*, que se describe a continuación:
 
 | `DELETE https://mgmt.auth.adobe.com/reset-tempass/v2/reset` |
 |----|
-| <ul><li>Protocolo: **https**</li><li>Host:<ul><li>Versión: **mgmt.auth.adobe.com**</li><li>Precuación: **mgmt-prequal.auth.adobe.com**</li></ul></li><li>Ruta: **/reset-tempass/v2/reset**</li><li>Parámetros de consulta: **device_id=all&amp;requestor_id=THE_REQUESTOR_ID&amp;mvpd_id=THE_TEMPASS_MVPD_ID**</li><li>encabezados: ApiKey: **1232293681726481**</li> <li>Respuesta:<ul><li>Correcto: **HTTP 204**</li><li>Error: **HTTP 400** para solicitudes incorrectas, **HTTP 401** si no se especifica ApiKey, **HTTP 403** si ApiKey no es válida</li></ul></li></ul> |
+| <ul><li>Protocolo: **https**</li><li>Host:<ul><li>Versión: **mgmt.auth.adobe.com**</li><li>Preferencia: **mgmt-prequal.auth.adobe.com**</li></ul></li><li>Ruta: **/reset-tempass/v2/reset**</li><li>Parámetros de consulta: **device_id=all&amp;requestor_id=THE_REQUESTOR_ID&amp;mvpd_id=THE_TEMPASS_MVPD_ID**</li><li>encabezados: ApiKey: **1232293681726481**</li> <li>Respuesta:<ul><li>Éxito: **HTTP 204**</li><li>Error: **HTTP 400** para solicitudes incorrectas, **HTTP 401** si no se especifica ApiKey, **HTTP 403** si ApiKey no es válido</li></ul></li></ul> |
 
-Además de los requisitos para purgar el pase temporal, el pase temporal promocional utiliza el hash para transmitir la información del identificador de usuario enviada como **generic_data** sobre la autenticación y la autorización para la depuración.
+Además de los requisitos para purgar el pase temporal, el pase temporal promocional usa el hash con la información del identificador de usuario enviada como **generic_data** en la autenticación y autorización para la purga.
 
 Se envía el hash, no el JSON completo:
 
@@ -159,11 +159,11 @@ Esta sección describe las limitaciones que se aplican a la implementación actu
 
 ### Sin Cliente {#lim-clientless}
 
-**Dispositivos inteligentes sin un ID de dispositivo único**
+**Dispositivos inteligentes sin ID de dispositivo único**
 
 No todas las aplicaciones de dispositivos inteligentes pueden proporcionar un ID de dispositivo único. A falta de uno, la autenticación de Adobe Pass puede utilizar el UUID generado por el servicio de código de registro de Adobe como ID de dispositivo único. Esto significa que, cuando el usuario cierra la sesión, se eliminan los tokens de autenticación y autorización. Una vez que el usuario intente autenticarse de nuevo, esta vez con información de usuario diferente (por ejemplo, correo electrónico), el usuario podrá volver a autorizar. El Adobe recomienda añadir un flujo de interfaz de usuario que no permita a los usuarios &quot;engañar&quot; al sistema y añadir lógica para determinar si se trata de un nuevo usuario que solicita una prueba o una prueba existente.
 
-**Restablecimiento/depuración de Pase temporal**
+**Restableciendo/purgando pase temporal**
 
 Reset Temp Pass for Clientless no está disponible en los casos específicos de Xbox360 y Xbox One, porque estas plataformas requieren un análisis de ID de dispositivo adicional, no es posible en la herramienta Reset Temp Pass.
 

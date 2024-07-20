@@ -1,14 +1,15 @@
 ---
-title: Notas de la versión de JavaScript 4.7.0 de autenticación de Adobe Pass
-description: Notas de la versión de JavaScript 4.7.0 de autenticación de Adobe Pass
-source-git-commit: 9c491478a5560d1f9208e786de285733997bb24b
+title: Notas de la versión de Adobe Pass Authentication JavaScript 4.7.0
+description: Notas de la versión de Adobe Pass Authentication JavaScript 4.7.0
+exl-id: 07f90270-e64a-4c6b-a072-183af0f53352
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '121'
 ht-degree: 0%
 
 ---
 
-# Notas de la versión de JavaScript 4.7.0 de autenticación de Adobe Pass {#javascript-sdk-470-release-notes}
+# Notas de la versión de Adobe Pass Authentication JavaScript 4.7.0 {#javascript-sdk-470-release-notes}
 
 >[!NOTE]
 >
@@ -24,7 +25,7 @@ Fecha de versión: **27/02/2024 - 29/02/2024**
 
 ## Información general de versión {#overview-javascript-sdk-470}
 
-* Se ha eliminado la versión obsoleta 2.0.1 del SDK de JavaScript de Access Enabler debido a vulnerabilidades de seguridad.
+* Se ha eliminado la versión 2.0.1 obsoleta del SDK de JavaScript del activador de acceso debido a vulnerabilidades de seguridad.
 Las siguientes direcciones URL ya no son compatibles y devolverán un código de estado HTTP 410:
    * https://entitlement.auth.adobe.com/entitlement/AccessEnabler.js
    * http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js

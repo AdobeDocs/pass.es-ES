@@ -1,9 +1,10 @@
 ---
 title: Notas de la versión de autenticación de Adobe Pass 2.66
 description: Notas de la versión de autenticación de Adobe Pass 2.66
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 7c3cd007-ed2b-455f-8f70-6ec5d0a6552a
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: '154'
 ht-degree: 0%
 
 ---
@@ -23,7 +24,7 @@ En esta página se describen las nuevas funciones, los cambios y los problemas c
 
 ### Número de compilación {#build-number-266}
 
-Autenticación de Adobe Pass: adobe-pass-end **2.66.0.1**
+Autenticación de Adobe Pass: adobe-pass-**2.66.0.1**
 Fecha de versión: **11/07/2023 - 13/07/2023**
 
 ### Información general de versión {#release-overview-266}
@@ -33,5 +34,5 @@ Con esta versión continuamos con las actualizaciones internas de la nueva API d
 #### Correcciones de errores {#release-overview-bugfixes-266}
 
 * Se ha corregido el flujo de cierre de sesión de las MVPD basadas en SAML, en las que faltaba el parámetro RelayState en la solicitud de cierre de sesión. Nos centraremos en las actualizaciones de configuración después de la versión para restaurar el flujo de cierre de sesión de las MVPD afectadas.
-* Se ha añadido la capacidad de actualizar certificados SSL en la configuración para extremos de autorización SOAP.
+* SOAP Se ha agregado la capacidad de actualizar certificados SSL en nuestra configuración para extremos de autorización de la.
 * Se ha corregido un caso límite en el que se registraban datos incorrectos en el campo Programador en algunos informes de ESM.

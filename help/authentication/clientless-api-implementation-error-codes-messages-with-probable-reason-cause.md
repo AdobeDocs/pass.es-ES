@@ -31,7 +31,7 @@ ht-degree: 0%
 
 1. El servidor no encontró el código registro, que fue creado para un solicitante y un entorno específicos.
 1. Podría estar teniendo problemas de script entre dominios
-1. Se debe agregar la suplantación de identidad adecuada al archivo /etc/hosts
+1. Se debe añadir la suplantación de identidad adecuada al archivo /etcetera/hosts
 
 ## Error: 400 Solicitud errónea
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 ### Causas:
 
 1. Demasiadas solicitudes rápidas: una característica de la administración de API para evitar ataques DoS.
-2. Si utiliza prequal entorno agregue suplantación de identidad, de lo contrario, asegúrese de que la suplantación de identidad se haya eliminado del archivo /etc/hosts.
+2. Si utiliza prequal entorno añada suplantación de identidad, de lo contrario, asegúrese de que la suplantación de identidad se ha eliminado del archivo /etcetera/hosts
 
 ## Error: No se puede iniciar sesión en MVPD Página
 

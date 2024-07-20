@@ -62,6 +62,6 @@ No todas las MVPD permitirán el SSO de Roku.
 
   Toda la funcionalidad de autenticación de Adobe Pass funcionará como antes.
 
-* **¿Existe un proceso de inclusión/exclusión del programador que se beneficia de SSO en la plataforma Roku?**
+* **¿Hay un proceso de inclusión/exclusión del programador que se beneficia de SSO en la plataforma Roku?**
 
   Este será un cambio de configuración en el Tablero de TVE de Adobe. Cada programador puede activar o desactivar el SSO en la plataforma Roku para integraciones específicas.

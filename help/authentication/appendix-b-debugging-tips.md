@@ -4,7 +4,7 @@ description: Apéndice B "Sugerencias de depuración"
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '161'
 ht-degree: 0%
 
 ---
@@ -31,19 +31,19 @@ Es fiable para el navegador, pero en Firefox: &quot;Herramientas&quot; -\> &quot
 
 ## Borrando caché de LSO {#clearing-lsos-cache}
 
-Acceda a la [ayuda de Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+Obtener acceso a la [ayuda de Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
 
-Seleccione el ```entitlement.\*``` (según lo que se pruebe) y haga clic en &quot;Eliminar sitio web&quot;.
+Seleccione ```entitlement.\*``` (según lo que se haya probado) y haga clic en &quot;Eliminar sitio web&quot;.
 
 
 ## Herramientas de depuración {#tools}
 
 Los ingenieros de autenticación de Adobe Pass utilizan las siguientes herramientas de depuración:
 
-- Firebug - <http://www.getfirebug.com/>
+- Firebug: <http://www.getfirebug.com/>
 - Flashbug (funciona con la versión de depuración del reproductor Flash)
-- Fiddler - <http://www.fiddler2.com/fiddler2/>
-- Charles: <http://www.charlesproxy.com/>
+- Viddler - <http://www.fiddler2.com/fiddler2/>
+- Charles - <http://www.charlesproxy.com/>
 - Wireshark: <http://www.wireshark.org/>
 
 

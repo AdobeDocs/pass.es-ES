@@ -23,7 +23,7 @@ Este gráfico de anillo y barras muestra los porcentajes (y números absolutos) 
 * Baja (20%-40%)
 * Muy bajo (0%-20%)
 
-La línea roja marca el rango de umbral seleccionado en la [Cuentas por encima del umbral en el segmento actual](#threshold-selector) y el área roja clara contiene el total de todas las cuentas por encima de ese umbral.
+La línea roja marca el rango de umbral seleccionado en el panel [Cuentas sobre el umbral en el segmento actual](#threshold-selector) y el área roja clara contiene el total de todas las cuentas por encima de ese umbral.
 
 ![](assets/accounts-sharing-probability-pie.png)
 
@@ -41,13 +41,13 @@ Una vez más, la línea roja marca el umbral actual y el área roja clara contie
 
 Este panel le permite seleccionar el rango de umbral para los gráficos de anillo y de barras de arriba. Las cuatro opciones son:
 
-* Cuentas **muy bajo** uso compartido **probabilidad**
+* Cuentas **muy bajas** que comparten **probabilidad**
 
-* Cuentas **demasiado bajo** uso compartido **probabilidad**
+* Cuentas **más de baja** que comparten **probabilidad**
 
-* Cuentas **demasiado moderado** uso compartido **probabilidad**
+* Cuentas **con exceso de moderación** que comparten **probabilidad**
 
-* Cuentas **demasiado alto** uso compartido **probabilidad**
+* Cuentas **más altas** que comparten **probabilidad**
 
 ![](assets/threshold-selector-shared-accounts.png)
 
@@ -77,7 +77,7 @@ Este gráfico le informa sobre el número de suscriptores del segmento actual qu
 
 >[!NOTE]
 >
->Puede ampliar las barras que representan más de un conjunto de códigos postales, representados por un **+** (más) (por ejemplo, 10+), haciendo doble clic en ellos.
+>Puede ampliar las barras que representan más de un conjunto de códigos postales, representados con un signo **+** (más) (por ejemplo, 10+), haciendo doble clic en ellas.
 
 
 ## Intervalo geográfico de segmentos por período por cuenta {#geo-span-period-account}
@@ -88,8 +88,8 @@ Este gráfico de barras representa el número de cuentas de suscriptor que consu
 
 >[!NOTE]
 >
-> Puede ampliar las barras que representan más de un conjunto de distancias geográficas, representadas con un **+** (más) (por ejemplo, 1000+), haciendo doble clic en ellos.
+> Puede ampliar las barras que representan más de un conjunto de distancias geográficas, representadas con un signo **+** (más) (por ejemplo, 1000+), haciendo doble clic en ellas.
 
 >[!MORELIKETHIS]
 >
->* Obtenga información sobre cómo exportar informes para los 1000 suscriptores principales del segmento seleccionado mediante filtros en Informes de cuentas compartidas mediante [Exportar las 1000 cuentas principales](/help/accountiq/export-acc-information.md) opción.
+>* Obtenga información sobre cómo exportar informes para los 1000 suscriptores principales del segmento seleccionado mediante filtros en Informes de cuentas compartidas mediante la opción [Exportar las 1000 cuentas principales](/help/accountiq/export-acc-information.md).

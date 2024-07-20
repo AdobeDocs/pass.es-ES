@@ -21,15 +21,15 @@ ht-degree: 1%
 
 ## Extremos de API de REST {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;REGGIE_FQDN>:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
-* Producción - [api.auth.adobe.com](http://api.auth.adobe.com/)
-* Ensayo - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
+* Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -38,9 +38,9 @@ ht-degree: 1%
 
 Elimina el registro de código reg y libera el código reg para su reutilización.
 
-| Extremo | Llamado  </br>Por | Entrada   </br>Parámetros | HTTP  </br>Método | Respuesta | HTTP  </br>Respuesta |
+| Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Por ejemplo:</br></br>&lt;reggie_fqdn>/reggie/v1/regcode/ER45RTY | Aplicación de streaming</br></br>o</br></br>Servicio de programador | 1. ID del solicitante  </br>    (Componente Ruta)</br>2.  Código de registro  </br>    (Componente Ruta) | DELETE | Ninguno | 204 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Por ejemplo:</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | Servicio de programador </br></br>o</br></br>de aplicación de streaming | 1. Id. de solicitante </br>    (Componente de ruta de acceso)</br>2.  Código de registro </br>    (Componente Ruta) | DELETE | Ninguno | 204 |
 
 {style="table-layout:auto"}
 
@@ -55,4 +55,4 @@ Elimina el registro de código reg y libera el código reg para su reutilizació
 
 </br>
 
-### [Volver a la referencia de la API de REST](/help/authentication/rest-api-reference.md)
+### [Volver a la referencia de API de REST](/help/authentication/rest-api-reference.md)

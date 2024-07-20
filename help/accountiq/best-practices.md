@@ -1,6 +1,6 @@
 ---
 title: Prácticas recomendadas de Account IQ
-description: Más información [!UICONTROL Account IQ] en Adobe Pass.
+description: Obtenga información sobre [!UICONTROL Account IQ] en Adobe Pass.
 exl-id: 55901f5d-d9c1-4ee5-9349-afa28445b324
 source-git-commit: 60aeba449cae1c4dc510a23aaf1ba793a7a60db0
 workflow-type: tm+mt
@@ -11,11 +11,11 @@ ht-degree: 0%
 
 # Prácticas recomendadas {#aiq-best-practices}
 
-[!UICONTROL Account IQ] le permite identificar el uso compartido de credenciales, medir su ámbito e impacto, segmentar cohortes relevantes y realizar un seguimiento del efecto de las acciones segmentadas. Ofrece una variedad de herramientas, gráficos e informes utilizados para comprender y administrar cuentas compartidas que se pueden utilizar de muchas maneras. Cada servicio de streaming aborda este comportamiento y desarrolla procesos que coinciden con sus objetivos únicos, y el producto está diseñado para satisfacer de forma flexible esas necesidades.  Sin embargo, hay algunas reglas de prácticas generales que se pueden aplicar a un amplio conjunto de escenarios.
+[!UICONTROL Account IQ] le permite identificar el uso compartido de credenciales, medir su ámbito e impacto, segmentar cohortes relevantes y realizar un seguimiento del efecto de las acciones de destino. Ofrece una variedad de herramientas, gráficos e informes utilizados para comprender y administrar cuentas compartidas que se pueden utilizar de muchas maneras. Cada servicio de streaming aborda este comportamiento y desarrolla procesos que coinciden con sus objetivos únicos, y el producto está diseñado para satisfacer de forma flexible esas necesidades.  Sin embargo, hay algunas reglas de prácticas generales que se pueden aplicar a un amplio conjunto de escenarios.
 
 ## Analizar y comprender {#analyze-understand}
 
-[!UICONTROL Account IQ] las herramientas le ayudarán a comprender la naturaleza y la amplitud del uso compartido de credenciales en su empresa, desde los gráficos de nivel superior que muestran el porcentaje de cuentas compartidas hasta las exportaciones de nivel inferior que informan las características de las cuentas individuales. Especialmente al principio, utilice estas herramientas para explorar los datos e identificar cohortes o patrones de comportamiento inusuales o interesantes, lo que indica, por ejemplo, altos niveles de uso compartido. A continuación, se pueden identificar segmentos que representen una oportunidad u objetivo determinados.
+Las herramientas de [!UICONTROL Account IQ] le ayudarán a comprender la naturaleza y la amplitud del uso compartido de credenciales en su negocio, desde los gráficos de nivel superior que muestran el porcentaje de cuentas compartidas hasta las exportaciones de nivel inferior que informan las características de las cuentas individuales. Especialmente al principio, utilice estas herramientas para explorar los datos e identificar cohortes o patrones de comportamiento inusuales o interesantes, lo que indica, por ejemplo, altos niveles de uso compartido. A continuación, se pueden identificar segmentos que representen una oportunidad u objetivo determinados.
 
 Para comprender la naturaleza y el impacto del uso compartido en su negocio:
 
