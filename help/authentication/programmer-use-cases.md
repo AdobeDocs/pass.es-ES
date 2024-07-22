@@ -2,7 +2,7 @@
 title: Casos de uso del programador
 description: Casos de uso del programador
 exl-id: 51ca7e4f-b0d8-4e35-8398-2efb4879de2a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 189d0e5c83d1bc171c6ff3057f22dbf4055ea6b1
 workflow-type: tm+mt
 source-wordcount: '1654'
 ht-degree: 0%
@@ -131,11 +131,12 @@ Habilite el derecho de TVE para eventos especiales que puedan no ser recursos qu
 **Prioridad**- Medium
 
 Habilitar la validación de tokens de medios antes de lanzar el flujo de vídeo al reproductor cliente.
-| Prioridad  |                                                   Caso de uso                                                  |                                                                                                                                                              Descripción                                                                                                                                                             | Plataformas | Notas de MVPD |
----------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|----------
-| Alta      | Reproductor Federado De Programador: Con Autorización A Nivel De Página                                                 | Las API de autenticación de Adobe Pass se realizan en JavaScript en la página y el token se pasa al reproductor. El token se puede pasar al servicio de validación de un par de maneras:                                 Obtener parámetro en la URL del servicio de validación                    Se ha pasado un parámetro de URL en la cadena de consulta de la URL de flujo                    API de interfaz externa                    FlashVars                           |           |            |
-| Medium    | Reproductor Federado De Programador: Con Autorización Interna Del Reproductor                                            | Las API de autenticación de Adobe Pass se realizan en ActionScript en el SWF del reproductor, por lo que el token está disponible para el reproductor desde la llamada de retorno.                                                                                                                                                                                         |           |            |
-| Alta      | Reproductor sindicado: alojado en el portal MVPD con autorización a nivel de página mediante un iFrame para envolver el reproductor  | Similar al reproductor con autorización de nivel de página, pero con el contenedor de página del reproductor iFramed en el portal de MVPD. La autenticación debe realizarse por separado en el portal de MVPD.                                                                                                                                                    |           |                        |
+
+| Prioridad | Caso de uso | Descripción | Plataformas | Notas de MVPD |
+|---------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|----------|
+| Alta | Reproductor Federado De Programador: Con Autorización A Nivel De Página | Las API de autenticación de Adobe Pass se realizan en JavaScript en la página y el token se pasa al reproductor. El token se puede pasar al servicio de validación de un par de maneras:                                 Obtener parámetro en la URL del servicio de validación                    Se ha pasado un parámetro de URL en la cadena de consulta de la URL de flujo                    API de interfaz externa                    FlashVars |           |            |
+| Medium | Reproductor Federado De Programador: Con Autorización Interna Del Reproductor | Las API de autenticación de Adobe Pass se realizan en ActionScript en el SWF del reproductor, por lo que el token está disponible para el reproductor desde la llamada de retorno. |           |            |
+| Alta | Reproductor sindicado: alojado en el portal MVPD con autorización a nivel de página mediante un iFrame para envolver el reproductor | Similar al reproductor con autorización de nivel de página, pero con el contenedor de página del reproductor iFramed en el portal de MVPD. La autenticación debe realizarse por separado en el portal de MVPD. |           |                        |
 
 
 <!--
