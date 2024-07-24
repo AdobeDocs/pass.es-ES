@@ -2,7 +2,7 @@
 title: Configurar el entorno y realizar pruebas en la calidad previa
 description: Configurar el entorno y realizar pruebas en la calidad previa
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 3a6a5633c728398a3847ee3e341e82aba915f0d9
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 0%
@@ -68,7 +68,7 @@ Los pasos 1 y 2 están configurando el prueba entorno en una de las máquinas de
 * Editar el archivo c:\\windows\\System32\\drivers\\etcetera\\hosts *(en Windows) o* el *archivo /etcetera/hosts* (en Macintosh/Linux/Android) y añada lo siguiente:
 
 * Producción de suplantación de identidad perfil
-   * 52.13.71.11 http://entitlement.auth.adobe.com, http://sp.auth.adobe.com http://api.auth.adobe.com
+   * 52.13.71.11 entitlement.auth.adobe.com sp.auth.adobe.com api.auth.adobe.com
 
 **Suplantación de identidad en Android:** Para suplantar a Android, debe usar un emulador de Android.
 
