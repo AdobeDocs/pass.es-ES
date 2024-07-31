@@ -2,7 +2,7 @@
 title: Referencia de API de SDK para Android
 description: Referencia de API de SDK para Android
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: 854698397d9d14c1bfddcc10eecc61c7e3c32b71
+source-git-commit: e4567dd870790d11b9c5904d635fc00bdd1a23d2
 workflow-type: tm+mt
 source-wordcount: '4537'
 ht-degree: 0%
@@ -95,6 +95,7 @@ Si se proporciona un valor para el parámetro *urls*, la llamada de red resultan
 | Llamada de API: configuración del solicitante |
 | --- |
 | ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+
 **Disponibilidad:** v3.0+
 
 
