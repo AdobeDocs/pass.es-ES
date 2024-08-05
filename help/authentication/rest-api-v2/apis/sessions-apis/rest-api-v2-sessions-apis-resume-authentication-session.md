@@ -1,7 +1,7 @@
 ---
 title: Reanudar sesión de autenticación
 description: 'API de REST V2: reanudar sesión de autenticación'
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
 workflow-type: tm+mt
 source-wordcount: '755'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Reanudar sesión de autenticación {#resume-authentication-session}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
