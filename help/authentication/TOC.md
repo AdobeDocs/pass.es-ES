@@ -4,10 +4,10 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: 26236fbd4b2d5703bcf99fc0cc5e0460e75ed185
+source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
 workflow-type: tm+mt
-source-wordcount: '957'
-ht-degree: 3%
+source-wordcount: '1125'
+ht-degree: 2%
 
 ---
 
@@ -28,7 +28,7 @@ ht-degree: 3%
    + [Casos de uso del programador](programmer-use-cases.md)
    + [Pasar información del cliente (dispositivo, conexión y aplicación)](passing-client-information-device-connection-and-application.md)
    + [Mecanismo de limitación](throttling-mechanism.md)
-   + API DE REST {#restapi}
+   + API DE REST V1 {#rest-api-v1}
       + [Información general de API REST](rest-api-overview.md)
       + [Guía de la API de REST (servidor a servidor)](rest-api-cookbook-servertoserver.md)
       + [Guía de la API de REST (de cliente a servidor)](rest-api-cookbook-clienttoserver.md)
@@ -52,6 +52,52 @@ ht-degree: 3%
          + [Recuperar solicitud de perfil](retrieve-profilerequest.md)
          + [Intercambio de tokens](token-exchange.md)
          + [Vista previa gratuita para Pase temporal y Pase temporal promocional](free-preview-for-temp-pass-and-promotional-temp-pass.md)
+   + API DE REST V2 {#rest-api-v2}
+      + API {#rest-api-v2-apis}
+         + Configuración {#rest-api-v2-configuration-apis}
+            + [Recuperar la configuración de un proveedor de servicios específico](./rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
+         + Sesiones {#rest-api-v2-sessions-apis}
+            + [Crear sesión de autenticación](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
+            + [Reanudar sesión de autenticación](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
+            + [Recuperar sesión de autenticación](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
+         + Perfiles {#rest-api-v2-profiles-apis}
+            + [Recuperación de perfiles](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
+            + [Recuperar perfil para mvpd específico](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles-for-specific-mvpd.md)
+            + [Recuperar perfil para código específico](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles-for-specific-code.md)
+         + Decisiones {#rest-api-v2-decisions-apis}
+            + [Recuperar decisiones de autorización utilizando mvpd específico](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
+            + [Recuperar decisiones de preautorización utilizando mvpd específico](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+         + Cerrar sesión {#rest-api-v2-logout-apis}
+            + [Iniciar el cierre de sesión de un mvpd específico](./rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+         + Inicio de sesión único de socio {#rest-api-v2-partner-single-sign-on-apis}
+            + [Recuperar solicitud de autenticación de socio](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
+            + [Recuperar perfil mediante la respuesta de autenticación del socio](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+      + Flujos {#rest-api-v2-flows}
+         + Flujos básicos {#rest-api-v2-basic-flows}
+            + [Flujo de perfiles básicos realizado dentro de la aplicación principal](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
+            + [Flujo de perfiles básicos realizado en la aplicación secundaria](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+            + [Flujo de autenticación básico realizado en la aplicación principal](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+            + [Flujo de autenticación básico realizado en la aplicación secundaria](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+            + [Flujo de autorización básico realizado en la aplicación principal](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
+            + [Flujo de preautorización básico realizado en la aplicación principal](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
+            + [Flujo de cierre de sesión básico realizado en la aplicación principal](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-logout-primary-application-flow.md)
+         + Flujos de acceso degradados {#rest-api-v2-degraded-access-flows}
+            + [Flujos de acceso degradados](rest-api-v2/flows/access-degraded-flows/rest-api-v2-access-degraded-flows.md)
+         + Flujos de acceso temporales {#rest-api-v2-temporary-access-flows}
+            + [Flujos de acceso temporales](rest-api-v2/flows/access-temporary-flows/rest-api-v2-access-temporary-flows.md)
+         + Flujos de inicio de sesión único {#rest-api-v2-single-sign-on-flows}
+            + [Inicio de sesión único con flujos de socios](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md)
+            + [Inicio de sesión único con flujos de identidad de plataforma](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
+            + [Inicio de sesión único mediante flujos de token de servicio](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md)
+            + [Flujo de cierre de sesión único](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-logout-flow.md)
+      + Apéndice {#rest-api-v2-appendix}
+         + Encabezados {#rest-api-v2-appendix-headers}
+            + [Encabezado: AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
+            + [Encabezado: Adobe-Subject-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
+            + [Encabezado: AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
+            + [Encabezado: AP-Partner-Framework-Status](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
+            + [Encabezado: AP-TempPass-Identity](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
+            + [Encabezado: X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
    + SDK de AccessEnabler {#accessenabler-sdk}
       + SDK para JavaScript {#javascriptsdk}
          + [Información general del SDK para JavaScript](javascript-sdk-overview.md)
