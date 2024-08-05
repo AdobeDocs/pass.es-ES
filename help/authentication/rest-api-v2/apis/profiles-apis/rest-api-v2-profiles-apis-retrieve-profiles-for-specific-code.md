@@ -1,9 +1,9 @@
 ---
 title: Recuperar perfil para código específico
 description: 'API de REST V2: recuperar el perfil de un código específico'
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
 workflow-type: tm+mt
-source-wordcount: '559'
+source-wordcount: '570'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+> El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+
+>[!IMPORTANT]
+>
+> La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/throttling-mechanism.md).
 
 ## Solicitud {#request}
 
