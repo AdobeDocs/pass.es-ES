@@ -1,7 +1,7 @@
 ---
 title: Recuperar sesión de autenticación mediante código
 description: 'API REST V2: Recuperar sesión de autenticación mediante código'
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '409'
 ht-degree: 2%
@@ -11,7 +11,7 @@ ht-degree: 2%
 
 # Recuperar sesión de autenticación mediante código {#retrieve-authentication-session-using-code}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 

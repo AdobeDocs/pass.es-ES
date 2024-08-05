@@ -1,7 +1,7 @@
 ---
 title: Iniciar el cierre de sesión de un mvpd específico
 description: 'API de REST V2: iniciar el cierre de sesión para un mvpd específico'
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '911'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Iniciar el cierre de sesión de un mvpd específico {#initiate-logout-for-specific-mvpd}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
@@ -110,7 +110,7 @@ ht-degree: 1%
       <td>
         La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la documentación de <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
         <br/><br/>
-        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan una identidad de plataforma, consulte la documentación de <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Inicio de sesión único mediante flujos de identidad de plataforma</a>.
+        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan una identidad de plataforma, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Inicio de sesión único mediante flujos de identidad de plataforma</a>.
       </td>
       <td>opcional</td>
    </tr>
@@ -119,7 +119,7 @@ ht-degree: 1%
       <td>
         La generación de la carga de inicio de sesión único para el método del token de servicio se describe en la documentación de <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
         <br/><br/>
-        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan un token de servicio, consulte la documentación de <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md">Inicio de sesión único mediante flujos de token de servicio</a>.
+        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan un token de servicio, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Inicio de sesión único mediante flujos de token de servicio</a>.
       </td>
       <td>opcional</td>
    </tr>

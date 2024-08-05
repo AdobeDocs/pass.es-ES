@@ -1,7 +1,7 @@
 ---
 title: Recuperar la configuración de un proveedor de servicios específico
 description: 'API de REST V2: recupere la configuración de un proveedor de servicios específico'
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '521'
 ht-degree: 2%
@@ -11,7 +11,7 @@ ht-degree: 2%
 
 # Recuperar la configuración de un proveedor de servicios específico {#retrieve-configuration-for-specific-service-provider}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 

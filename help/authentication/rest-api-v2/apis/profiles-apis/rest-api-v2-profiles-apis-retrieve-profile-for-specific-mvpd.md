@@ -1,15 +1,15 @@
 ---
-title: Recuperación de perfiles
-description: 'API de REST V2: recuperar perfiles'
+title: Recuperar perfil para mvpd específico
+description: 'API de REST V2: recuperar el perfil de mvpd específico'
 source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '965'
 ht-degree: 1%
 
 ---
 
 
-# Recuperación de perfiles {#retrieve-profiles}
+# Recuperar perfil para mvpd específico {#retrieve-profile-for-specific-mvpd}
 
 >[!IMPORTANT]
 >
@@ -29,7 +29,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">ruta</td>
-      <td>/api/v2/{serviceProvider}/profiles</td>
+      <td>/api/v2/{serviceProvider}/profiles/{mvpd}</td>
       <td></td>
    </tr>
    <tr>
@@ -45,6 +45,11 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
       <td>El identificador único interno asociado con el proveedor de servicios durante el proceso de incorporación.</td>
+      <td><i>obligatorio</i></td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">mvpd</td>
+      <td>El identificador único interno asociado con el proveedor de identidad durante el proceso de incorporación.</td>
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
@@ -110,6 +115,11 @@ ht-degree: 1%
         La generación de la carga de inicio de sesión único para el método Partner se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">documentación de AP-Partner-Framework-Status</a>.
         <br/><br/>
         Para obtener más información sobre los flujos habilitados para el inicio de sesión único que usan un socio, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Inicio de sesión único con flujos de socios</a>.</td>
+      <td>opcional</td>
+    </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-TempPass-Identity</td>
+      <td>La generación de la carga del identificador único de usuario se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md">documentación de AP-TempPass-Identity</a>.</td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -254,6 +264,16 @@ ht-degree: 1%
                         </td>
                      </tr>
                      <tr>
+                        <td style="background-color: #DEEBFF;">Adobe</td>
+                        <td>
+                            El perfil se creó como resultado de lo siguiente:
+                            <ul>
+                                <li>Acceso degradado</li>
+                                <li>Acceso temporal</li>
+                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
                         <td style="background-color: #DEEBFF;">Apple</td>
                         <td>
                             El perfil se creó como resultado de lo siguiente:
@@ -282,6 +302,24 @@ ht-degree: 1%
                             El perfil se creó como resultado de lo siguiente:
                             <ul>
                                 <li>Autenticación básica</li>
+                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="background-color: #DEEBFF;">degradado</td>
+                        <td>
+                            El perfil se creó como resultado de lo siguiente:
+                            <ul>
+                                <li>Acceso degradado</li>
+                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="background-color: #DEEBFF;">temporal</td>
+                        <td>
+                            El perfil se creó como resultado de lo siguiente:
+                            <ul>
+                                <li>Acceso temporal</li>
                             </ul>
                         </td>
                      </tr>
@@ -371,15 +409,15 @@ ht-degree: 1%
 
 ## Muestras {#samples}
 
-### 1. Recupere todos los perfiles autenticados existentes y válidos obtenidos mediante autenticación básica
+### 1. Recupere todos los perfiles autenticados existentes y válidos obtenidos mediante autenticación básica para mvpd específico
 
 >[!BEGINTABS]
 
 >[!TAB Solicitud]
 
 ```JSON
-GET /api/v2/REF30/profiles
- 
+GET /api/v2/REF30/profiles/Spectrum  
+
 Authorization: Bearer ....
 AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
 X-Device-Info ....
@@ -395,10 +433,10 @@ Content-Type: application/json; charset=utf-8
  
 {
     "profiles" : {
-        "Cablevision" : {
+        "Spectrum" : {
             "notBefore" : 1623943955,
             "notAfter" : 1623951155,
-            "issuer" : "Cablevision",
+            "issuer" : "Spectrum",
             "type" : "regular",
             "attributes" : {
                 "userId" : {
@@ -416,18 +454,6 @@ Content-Type: application/json; charset=utf-8
                 "parental-controls" : {
                     "value" : BASE64_value_parental-controls,
                     "state" : "plain"
-                }          
-            }
-        },
-        "Spectrum" : {
-            "notBefore" : 1623943955,
-            "notAfter" : 1623951155,
-            "issuer" : "Spectrum",
-            "type" : "regular",
-            "attributes" : {
-                "userId" : {
-                    "value" : "BASE64_value_userId",
-                    "state" : "plain"
                 }
             }
         }
@@ -437,15 +463,15 @@ Content-Type: application/json; charset=utf-8
 
 >[!ENDTABS]
 
-### 2. Recupere todos los perfiles autenticados existentes y válidos, incluidos los obtenidos mediante la autenticación de inicio de sesión único mediante el método de token de servicio
+### 2. Recupere todos los perfiles autenticados existentes y válidos, incluidos los obtenidos a través de la autenticación de inicio de sesión único utilizando el método de token de servicio para mvpd específico
 
 >[!BEGINTABS]
 
 >[!TAB Solicitud]
 
 ```JSON
-GET /api/v2/REF30/profiles
- 
+GET /api/v2/REF30/profiles/AdobeShibboleth  
+
 Authorization: Bearer ....
 AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
 X-Device-Info ....
@@ -481,18 +507,6 @@ Content-Type: application/json; charset=utf-8
                "state": "plain"
             }
          }
-      },
-      "Spectrum": {
-         "notBefore": 1623943955,
-         "notAfter": 1623951155,
-         "issuer": "Spectrum",
-         "type": "regular",
-         "attributes": {
-            "userId": {
-               "value": "BASE64_value_userId",
-               "state": "plain"
-            }
-         }
       }
    }
 }
@@ -500,14 +514,14 @@ Content-Type: application/json; charset=utf-8
 
 >[!ENDTABS]
 
-### 3. Recupere todos los perfiles autenticados existentes y válidos, incluidos los obtenidos a través de la autenticación de inicio de sesión único mediante el método de identidad de Platform
+### 3. Recupere todos los perfiles autenticados existentes y válidos, incluidos los obtenidos a través de la autenticación de inicio de sesión único utilizando el método de identidad de plataforma para mvpd específico
 
 >[!BEGINTABS]
 
 >[!TAB Solicitud]
 
 ```JSON
-GET /api/v2/REF30/profiles
+GET /api/v2/REF30/profiles/AdobePass_SMI  
  
 Authorization: Bearer ....
 AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
@@ -544,21 +558,320 @@ Content-Type: application/json; charset=utf-8
                "state": "plain"
             }
          }
-      },
-      "Cablevision": {
-         "notBefore": 1623943955,
-         "notAfter": 1623951155,
-         "issuer": "Spectrum",
-         "type": "regular",
-         "attributes": {
-            "userId": {
-               "value": "BASE64_value_userId",
-               "state": "plain"
-            }
-         }
       }
    }
 }
 ```
+
+>[!ENDTABS]
+
+### 4. Recuperar información de perfil para pase temporal
+
+>[!BEGINTABS]
+
+>[!TAB Solicitud]
+
+```JSON
+GET /api/v2/REF30/profiles/TempPass_TEST40
+ 
+Authorization: Bearer ....
+AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+X-Device-Info ....
+Accept: application/json
+User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
+```
+
+>[!TAB Respuesta - Disponible]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ 
+{
+    "profiles": {
+        "TempPass_TEST40": {
+            "notBefore": 1697718650206,
+            "notAfter": 1697718710206,
+            "issuer": "Adobe",
+            "type": "temporary",
+            "attributes": {
+                "expiration_date": {
+                    "value": 1697718710206,
+                    "state": "plain"
+                },
+                "userID": {
+                    "value": "temppass_0bdf451aa9c8fa60e80f6b99ab48310c73b480f1",
+                    "state": "plain"
+                }
+            }
+        }
+    }
+}
+```
+
+>[!TAB Respuesta - Iniciada]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8  
+ 
+{
+    "profiles": {
+        "TempPass_TEST40": {
+            "notBefore": 1697719584085,
+            "notAfter": 1697719704085,
+            "issuer": "Adobe",
+            "type": "temporary",
+            "attributes": {
+                "expiration_date": {
+                    "value": 1697719704085,
+                    "state": "plain"
+                },
+                "userID": {
+                    "value": "temppass_0bdf451aa9c8fa60e80f6b99ab48310c73b480f1",
+                    "state": "plain"
+                }
+            }
+        }
+    }
+}
+```
+
+>[!TAB Respuesta - Caducada]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8    
+ 
+{
+    "status": 200,
+    "code": "temppass_expired",
+    "message": "TempPass has expired.",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+    "action": "none"
+}
+```
+
+>[!TAB Respuesta: configuración no válida]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8      
+ 
+{
+    "status": 500,
+    "code": "temppass_invalid_configuration",
+    "message": "TempPass configuration is invalid.",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+    "action": "none"
+}
+```
+
+>[!ENDTABS]
+
+### 5. Recuperar información de perfil para pase temporal promocional
+
+>[!BEGINTABS]
+
+>[!TAB Solicitud]
+
+```JSON
+GET /api/v2/REF30/profiles/flexibleTempPass
+ 
+Authorization: Bearer ....
+AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+X-Device-Info ....
+AP-TempPass-Identity: eyJlbWFpbCI6ImZvb0BiYXIuY29tIn0=
+Accept: application/json
+User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
+```
+
+>[!TAB Respuesta - Disponible]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ 
+{
+    "profiles": {
+        "flexibleTempPass": {
+            "notBefore": 1697719042666,
+            "notAfter": 1697719102666,
+            "issuer": "Adobe",
+            "type": "temporary",
+            "attributes": {
+                "remaining_resources": {
+                    "value": 5,
+                    "state": "plain"
+                },
+                "used_assets": {
+                    "value": 0,
+                    "state": "plain"
+                },
+                "expiration_date": {
+                    "value": 1697719102666,
+                    "state": "plain"
+                },
+                "userID": {
+                    "value": "temppass_0bdf451aa9c8fa60e80f6b99ab48310c73b480f1",
+                    "state": "plain"
+                }
+            }
+        }
+    }
+}
+```
+
+>[!TAB Respuesta - Iniciada]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ 
+{
+    "profiles": {
+        "flexibleTempPass": {
+            "notBefore": 1697720528524,
+            "notAfter": 1697720588524,
+            "issuer": "Adobe",
+            "type": "temporary",
+            "attributes": {
+                "remaining_resources": {
+                    "value": 1,
+                    "state": "plain"
+                },
+                "used_assets": {
+                    "value": [
+                        "res04",
+                        "res02",
+                        "res03",
+                        "res01"
+                    ],
+                    "state": "plain"
+                },
+                "expiration_date": {
+                    "value": 1697720528524,
+                    "state": "plain"
+                },
+                "userID": {
+                    "value": "temppass_0bdf451aa9c8fa60e80f6b99ab48310c73b480f1",
+                    "state": "plain"
+                }
+            }
+        }
+    }
+}
+```
+
+>[!TAB Respuesta - Caducada]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ 
+{
+    "status": 200,
+    "code": "temppass_expired",
+    "message": "TempPass has expired.",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+    "action": "none"
+}
+```
+
+>[!TAB Respuesta - Consumida]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ 
+{
+    "decisions": [
+        {
+            "authorized": false,
+            "error": {
+                "status": 200,
+                "code": "temppass_max_resources_exceeded",
+                "message": "Flexible TempPass maximum resources exceeded.",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+                "action": "none"
+            }
+        }
+    ]
+}
+```
+
+>[!TAB Respuesta: configuración no válida]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8      
+ 
+{
+    "status": 500,
+    "code": "temppass_invalid_configuration",
+    "message": "TempPass configuration is invalid.",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+    "action": "none"
+}
+```
+
+>[!TAB Respuesta - Identidad no válida]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ 
+{
+    "status": 400,
+    "code": "temppass_invalid_identity",
+    "message": "TempPass is not available for the specified identity.",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+    "action": "none"
+}
+```
+
+>[!ENDTABS]
+
+### 6. Recuperar información de perfil para mvpd degradado
+
+>[!BEGINTABS]
+
+>[!TAB Solicitud]
+
+```JSON
+GET /api/v2/REF30/profiles/degradedMvpd
+ 
+Authorization: Bearer ....
+AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+X-Device-Info ....
+Accept: application/json
+User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
+```
+
+>[!TAB Respuesta - Degradación de AuthNAll]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ 
+{
+    "profiles": {
+        "degradedMvpd": {
+            "notBefore": 1697719042666,
+            "notAfter": 1697719102666,
+            "issuer": "Adobe",
+            "type": "degraded",
+            "attributes":
+                "userID": {
+                    "value": "95cf93bcd183214a0bdf451aa9c8fa60e80f6b99ab48310c73b480f1",
+                    "state": "plain"
+                }
+            }
+        }
+    }
+}
+```
+
+**Nota:** 95cf93bcd183214a es un prefijo específico de degradación.
 
 >[!ENDTABS]

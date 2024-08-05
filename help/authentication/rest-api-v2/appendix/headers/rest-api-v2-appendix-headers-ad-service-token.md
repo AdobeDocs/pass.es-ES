@@ -1,7 +1,7 @@
 ---
 title: 'Encabezado: AD-Service-Token'
 description: 'API de REST V2: encabezado: AD-Service-Token'
-source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 1%
@@ -21,7 +21,7 @@ El encabezado de la solicitud <b>AD-Service-Token</b> contiene el identificador 
 
 Este encabezado está diseñado para utilizarse en flujos habilitados para el inicio de sesión único (SSO) que aprovechan el método del token de servicio.
 
-Para obtener más información sobre los flujos habilitados para el inicio de sesión único (SSO) que aprovechan el método del token de servicio, consulte la documentación de [Inicio de sesión único mediante flujos de token de servicio](../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md).
+Para obtener más información sobre los flujos habilitados para el inicio de sesión único (SSO) que aprovechan el método del token de servicio, consulte la documentación de [Inicio de sesión único mediante flujos de token de servicio](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 ## Sintaxis {#syntax}
 
