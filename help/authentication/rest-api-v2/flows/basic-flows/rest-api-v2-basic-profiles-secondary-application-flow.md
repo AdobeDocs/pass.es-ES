@@ -1,15 +1,19 @@
 ---
 title: Perfiles básicos - Aplicación secundaria - Flujo
 description: API REST V2 - Perfiles básicos - Aplicación secundaria - Flujo
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '371'
+source-wordcount: '397'
 ht-degree: 0%
 
 ---
 
 
 # Flujo de perfiles básicos realizado en la aplicación secundaria {#basic-profiles-flow-secondary-application}
+
+>[!NOTE]
+>
+> El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
 El **flujo de perfiles** dentro del derecho de autenticación de Adobe Pass permite que la aplicación secundaria acceda a la información sobre los inicios de sesión activos de los usuarios.
 

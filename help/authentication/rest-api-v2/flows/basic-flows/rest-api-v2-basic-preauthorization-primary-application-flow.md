@@ -1,15 +1,19 @@
 ---
 title: Preautorización básica - Aplicación principal - Flujo
 description: 'API de REST V2: preautorización básica: aplicación principal: flujo'
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
 
 
 # Flujo de preautorización básico realizado en la aplicación principal {#basic-preauthorization-flow-performed-within-primary-application}
+
+>[!NOTE]
+>
+> El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
 El **flujo de preautorización** dentro del derecho de autenticación de Adobe Pass permite que la aplicación de streaming determine si una MVPD puede permitir o denegar el acceso del usuario a una lista de recursos. Esta verificación garantiza que la aplicación pueda presentar información precisa al usuario sobre el contenido que podría poder ver.
 

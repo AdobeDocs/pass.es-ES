@@ -1,15 +1,19 @@
 ---
 title: 'Encabezado: AD-Service-Token'
 description: 'API de REST V2: encabezado: AD-Service-Token'
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '252'
 ht-degree: 1%
 
 ---
 
 
 # Encabezado: AD-Service-Token {#header-ad-service-token}
+
+>[!NOTE]
+>
+> El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
 ## Información general {#overview}
 
