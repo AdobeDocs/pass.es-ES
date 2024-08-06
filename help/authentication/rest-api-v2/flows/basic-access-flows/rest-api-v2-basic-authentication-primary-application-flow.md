@@ -1,7 +1,7 @@
 ---
 title: Autenticación básica - Aplicación principal - Flujo
 description: 'API de REST V2: autenticación básica: aplicación principal: flujo'
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
@@ -91,6 +91,8 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
    >
    > * Los parámetros y encabezados _required_ deben ser válidos.
    > * La integración entre `serviceProvider` y `mvpd` proporcionados debe estar activa.
+   > 
+   > <br/>
    > 
    > Si la validación falla, se generará una respuesta de error, que proporcionará información adicional que se ajustará a la documentación de [Códigos de error mejorados](../../../enhanced-error-codes.md).
 

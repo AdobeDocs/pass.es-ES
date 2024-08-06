@@ -1,7 +1,7 @@
 ---
 title: Recuperar perfil para código específico
 description: 'API de REST V2: recuperar el perfil de un código específico'
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '570'
 ht-degree: 1%
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## Solicitud {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">ruta</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parámetros de ruta</th>
+      <th style="background-color: #EFF2F7;">Parámetros de ruta</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Encabezados</th>
+      <th style="background-color: #EFF2F7;">Encabezados</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorización</td>
@@ -91,10 +91,10 @@ ht-degree: 1%
 
 ## Respuesta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Código</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texto</th>
+      <th style="background-color: #EFF2F7;">Código</th>
+      <th style="background-color: #EFF2F7;">Texto</th>
       <th style="background-color: #EFF2F7;">Descripción</th>
    </tr>
    <tr>
@@ -136,11 +136,11 @@ ht-degree: 1%
 
 ### Correcto {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Encabezados</th>
+      <th style="background-color: #EFF2F7;">Encabezados</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Estado</td>
@@ -153,9 +153,9 @@ ht-degree: 1%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cuerpo</th>
+      <th style="background-color: #EFF2F7;">Cuerpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">perfiles</td>
@@ -163,11 +163,11 @@ ht-degree: 1%
         JSON que contiene un mapa de pares de clave y valor.
         <br/><br/>
         El elemento clave se define con el siguiente valor:
-        <table>
+        <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Valor</th>
+               <th style="background-color: #EFF2F7;">Valor</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -176,11 +176,11 @@ ht-degree: 1%
             </tr>
          </table>
          El elemento value se define mediante los atributos siguientes:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Atributo</th>
+               <th style="background-color: #EFF2F7;">Atributo</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
@@ -198,31 +198,10 @@ ht-degree: 1%
                   La entidad propietaria del perfil.
                   <br/><br/>
                   Los valores posibles son:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">mvpd<br/><br/>p. ej., Spectrum, Cablevision, etc.</td>
-                        <td>
-                            El perfil se creó como resultado de lo siguiente:
-                            <ul>
-                                <li>Autenticación básica</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">Adobe</td>
-                        <td>
-                            El perfil se creó como resultado de lo siguiente:
-                            <ul>
-                                <li>Acceso degradado</li>
-                                <li>Acceso temporal</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>mvpd (por ejemplo, Spectrum, Cablevision, etc.)</b><br/>El perfil se creó como resultado de: autenticación básica.</li>
+                    <li><b>Adobe</b><br/>El perfil se creó como resultado de: acceso degradado, acceso temporal.</li>
+                  </ul>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
@@ -231,39 +210,11 @@ ht-degree: 1%
                   El tipo de perfil.
                   <br/><br/>
                   Los valores posibles son:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">normal</td>
-                        <td>
-                            El perfil se creó como resultado de lo siguiente:
-                            <ul>
-                                <li>Autenticación básica</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">degradado</td>
-                        <td>
-                            El perfil se creó como resultado de lo siguiente:
-                            <ul>
-                                <li>Acceso degradado</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">temporal</td>
-                        <td>
-                            El perfil se creó como resultado de lo siguiente:
-                            <ul>
-                                <li>Acceso temporal</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>regular</b><br/>El perfil se creó como resultado de: autenticación básica.</li>
+                    <li><b>degradado</b><br/>El perfil se creó como resultado de: acceso degradado.</li>
+                    <li><b>temporal</b><br/>El perfil se creó como resultado de: acceso temporal.</li>
+                  </ul>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
@@ -292,11 +243,11 @@ ht-degree: 1%
 
 ### Error {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Encabezados</th>
+      <th style="background-color: #EFF2F7;">Encabezados</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Estado</td>
@@ -309,9 +260,9 @@ ht-degree: 1%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cuerpo</th>
+      <th style="background-color: #EFF2F7;">Cuerpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">error</td>

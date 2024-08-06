@@ -1,9 +1,9 @@
 ---
 title: Iniciar el cierre de sesión de un mvpd específico
 description: 'API de REST V2: iniciar el cierre de sesión para un mvpd específico'
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '911'
+source-wordcount: '909'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## Solicitud {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">ruta</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parámetros de ruta</th>
+      <th style="background-color: #EFF2F7;">Parámetros de ruta</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parámetros de consulta</th>
+      <th style="background-color: #EFF2F7;">Parámetros de consulta</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
@@ -67,9 +67,9 @@ ht-degree: 1%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Encabezados</th>
+      <th style="background-color: #EFF2F7;">Encabezados</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorización</td>
@@ -141,10 +141,10 @@ ht-degree: 1%
 
 ## Respuesta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Código</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texto</th>
+      <th style="background-color: #EFF2F7;">Código</th>
+      <th style="background-color: #EFF2F7;">Texto</th>
       <th style="background-color: #EFF2F7;">Descripción</th>
    </tr>
    <tr>
@@ -186,11 +186,11 @@ ht-degree: 1%
 
 ### Correcto {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Encabezados</th>
+      <th style="background-color: #EFF2F7;">Encabezados</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Estado</td>
@@ -203,9 +203,9 @@ ht-degree: 1%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cuerpo</th>
+      <th style="background-color: #EFF2F7;">Cuerpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">cierres de sesión</td>
@@ -213,11 +213,11 @@ ht-degree: 1%
          JSON que contiene un mapa de pares de clave y valor.
          <br/><br/>
          El elemento clave se define con el siguiente valor:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Valor</th>
+               <th style="background-color: #EFF2F7;">Valor</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -225,11 +225,11 @@ ht-degree: 1%
                <td><i>obligatorio</i></td>
          </table>
          El elemento value se define mediante los atributos siguientes:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Atributo</th>
+               <th style="background-color: #EFF2F7;">Atributo</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -237,47 +237,11 @@ ht-degree: 1%
                   Acción que el dispositivo de flujo continuo debe realizar para completar el flujo de cierre de sesión.
                   <br/><br/>
                   Los valores posibles son:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">cierre de sesión</td>
-                        <td>
-                            El dispositivo de streaming debe abrir la dirección URL proporcionada en un agente de usuario.
-                            <br/><br/>
-                            Esta acción se aplica a los siguientes escenarios:
-                            <ul>
-                                <li>Cerrar sesión de MVPD con un punto final de cierre de sesión</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">complete</td>
-                        <td>
-                            El dispositivo de streaming no necesita realizar ninguna acción posterior.
-                            <br/><br/>
-                            Esta acción se aplica a los siguientes escenarios:
-                            <ul>\
-                                <li>Cerrar sesión de MVPD sin un punto final de cierre de sesión (función de cierre de sesión ficticio)</li>
-                                <li>Cerrar sesión durante el acceso degradado</li>
-                                <li>Cerrar sesión durante el acceso temporal</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">inválido</td>
-                        <td>
-                            El dispositivo de streaming no necesita realizar ninguna acción posterior.
-                            <br/><br/>
-                            Esta acción se aplica a los siguientes escenarios:
-                            <ul>
-                                <li>Cierre la sesión de MVPD cuando no se encuentre ningún perfil válido</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>cierre de sesión</b><br/>El dispositivo de flujo continuo debe abrir la dirección URL proporcionada en un agente de usuario.<br/>Esta acción se aplica a los siguientes escenarios: cierre la sesión de MVPD con un punto final de cierre de sesión.</li>
+                    <li><b>completado</b><br/>El dispositivo de transmisión por secuencias no necesita realizar ninguna acción posterior.<br/>Esta acción se aplica a los siguientes escenarios: cierre la sesión de MVPD sin un punto final de cierre de sesión (función de cierre de sesión ficticio), cierre la sesión durante el acceso degradado o cierre la sesión durante el acceso temporal.</li>
+                    <li><b>no válido</b><br/>El dispositivo de transmisión por secuencias no necesita realizar ninguna acción posterior.<br/>Esta acción se aplica a los siguientes escenarios: cierre la sesión de MVPD cuando no se encuentre ningún perfil válido.</li>
+                  </ul>  
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
@@ -286,31 +250,10 @@ ht-degree: 1%
                   El tipo de interacción que debe realizar el dispositivo de flujo continuo para continuar el flujo con la acción especificada por el atributo actionName.
                   <br/><br/>
                   Los valores posibles son:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interactivo</td>
-                        <td>
-                            Este tipo se aplica a los siguientes valores del atributo actionName:
-                            <ul>
-                                <li>cierre de sesión</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">ninguno</td>
-                        <td>
-                            Este tipo se aplica a los siguientes valores del atributo actionName:
-                            <ul>
-                                <li>complete</li>
-                                <li>inválido</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interactive</b><br/>Este tipo se aplica a los siguientes valores del atributo actionName: <b>logout</b>.</li>
+                    <li><b>none</b><br/>Este tipo se aplica a los siguientes valores del atributo actionName: <b>complete</b>, <b>invalid</b>.</li>
+                  </ul>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
@@ -325,8 +268,8 @@ ht-degree: 1%
                   <br/><br/>
                   Esto no está presente para los siguientes valores del atributo actionName:
                   <ul>
-                    <li>complete</li>
-                    <li>inválido</li>
+                    <li><b>complete</b></li>
+                    <li><b>inválido</b></li>
                   </ul>
                </td>
                <td>opcional</td>
@@ -338,11 +281,11 @@ ht-degree: 1%
 
 ### Error {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Encabezados</th>
+      <th style="background-color: #EFF2F7;">Encabezados</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Estado</td>
@@ -355,9 +298,9 @@ ht-degree: 1%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cuerpo</th>
+      <th style="background-color: #EFF2F7;">Cuerpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">error</td>

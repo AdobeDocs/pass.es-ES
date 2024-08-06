@@ -1,10 +1,10 @@
 ---
 title: Recuperar solicitud de autenticación de socio
 description: 'API de REST V2: recuperar la solicitud de autenticación del socio'
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '1104'
-ht-degree: 0%
+source-wordcount: '1092'
+ht-degree: 1%
 
 ---
 
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 ## Solicitud {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">ruta</td>
@@ -38,9 +38,9 @@ ht-degree: 0%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parámetros de ruta</th>
+      <th style="background-color: #EFF2F7;">Parámetros de ruta</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 0%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parámetros de cuerpo</th>
+      <th style="background-color: #EFF2F7;">Parámetros de cuerpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
@@ -82,9 +82,9 @@ ht-degree: 0%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Encabezados</th>
+      <th style="background-color: #EFF2F7;">Encabezados</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorización</td>
@@ -155,10 +155,10 @@ ht-degree: 0%
 
 ## Respuesta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Código</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texto</th>
+      <th style="background-color: #EFF2F7;">Código</th>
+      <th style="background-color: #EFF2F7;">Texto</th>
       <th style="background-color: #EFF2F7;">Descripción</th>
    </tr>
    <tr>
@@ -200,11 +200,11 @@ ht-degree: 0%
 
 ### Correcto {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Encabezados</th>
+      <th style="background-color: #EFF2F7;">Encabezados</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Estado</td>
@@ -217,19 +217,19 @@ ht-degree: 0%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cuerpo</th>
+      <th style="background-color: #EFF2F7;">Cuerpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
          El objeto JSON tiene los atributos siguientes:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Atributo</th>
+               <th style="background-color: #EFF2F7;">Atributo</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -237,36 +237,12 @@ ht-degree: 0%
                   La acción que debe realizar el dispositivo de flujo continuo para completar el flujo de autenticación.
                   <br/><br/>
                   Los valores posibles son:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">partner_profile</td>
-                        <td>El dispositivo de streaming puede utilizar la solicitud de autenticación de socio proporcionada para obtener una respuesta de autenticación de socio que se pueda aprovechar para recuperar un perfil.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autentificar</td>
-                        <td>
-                            Cuando el flujo de inicio de sesión único del socio no puede continuar, el dispositivo de flujo puede volver al flujo de autenticación básico.
-                            <br/><br/>
-                            El dispositivo de streaming u otro dispositivo deben abrir la dirección URL proporcionada en un agente de usuario.
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">reanudar</td>
-                        <td>
-                            Cuando el flujo de inicio de sesión único del socio no puede continuar, el dispositivo de flujo puede volver al flujo de autenticación básico.
-                            <br/><br/>
-                            El dispositivo de streaming u otro dispositivo debe proporcionar los parámetros que faltan y reanudar la sesión de autenticación con el código.
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autorizar</td>
-                        <td>El dispositivo de streaming puede continuar directamente con los flujos de decisiones.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>perfil_de_socio</b><br/>El dispositivo de transmisión puede usar la solicitud de autenticación de socio proporcionada para obtener una respuesta de autenticación de socio que se pueda aprovechar para recuperar un perfil.</li>
+                    <li><b>autenticar</b><br/>Cuando el flujo de inicio de sesión único del socio no puede continuar, el dispositivo de flujo puede volver al flujo de autenticación básico.<br/>El dispositivo de transmisión por secuencias u otro dispositivo debe abrir la dirección URL proporcionada en un agente de usuario.</li>
+                    <li><b>reanudar</b><br/>Cuando el flujo de inicio de sesión único del socio no puede continuar, el dispositivo de flujo puede volver al flujo de autenticación básico.<br/>El dispositivo de transmisión por secuencias u otro dispositivo debe proporcionar los parámetros que faltan y reanudar la sesión de autenticación mediante el código.</li>
+                    <li><b>authorize</b><br/>El dispositivo de transmisión puede continuar directamente con los flujos de decisiones.</li>
+                  </ul>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
@@ -275,20 +251,10 @@ ht-degree: 0%
                   El tipo de interacción que debe realizar el dispositivo de flujo continuo para continuar el flujo con la acción especificada por el atributo actionName.
                   <br/><br/>
                   Los valores posibles son:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">dirigir</td>
-                        <td>El flujo continúa con una llamada directa a la URL proporcionada mediante un cliente HTTP disponible para la implementación del cliente.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interactivo</td>
-                        <td>El flujo continúa con una navegación a la URL proporcionada mediante un agente de usuario.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interactivo</b><br/>El flujo continúa con una navegación a la dirección URL proporcionada mediante un agente de usuario.</li>
+                    <li><b>direct</b><br/>El flujo continúa con una llamada directa a la dirección URL proporcionada mediante un cliente HTTP disponible para la implementación del cliente.</li>
+                  </ul>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
@@ -322,38 +288,11 @@ ht-degree: 0%
                     Este campo está presente cuando puede continuar el flujo de inicio de sesión único del socio.
                     <br/><br/>
                     El objeto JSON tiene los atributos siguientes:
-                    <table>
-                        <tr>
-                            <th style="background-color: #EFF2F7; width: 30%;">Atributo</th>
-                            <th style="background-color: #EFF2F7;"></th>
-                        </tr>
-                        <tr>
-                            <td style="background-color: #DEEBFF;">type</td>
-                            <td>
-                                Indica el tipo de protocolo admitido por la MVPD.
-                                <br/><br/>
-                                Los valores posibles son:
-                                <table>
-                                    <tr>
-                                        <th style="background-color: #EFF2F7; width: 30%;">Valor</th>
-                                        <th style="background-color: #EFF2F7;"></th>
-                                    </tr>
-                                    <tr>
-                                        <td style="background-color: #DEEBFF;">saml</td>
-                                        <td>La MVPD admite el protocolo SAML.</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="background-color: #DEEBFF;">solicitud</td>
-                            <td>La solicitud de SAML.</td>
-                        </tr>
-                        <tr>
-                            <td style="background-color: #DEEBFF;">atributos</td>
-                            <td>Atributos de solicitud de SAML.</td>
-                        </tr>
-                    </table>
+                    <ul>
+                        <li><b>type</b><br/>Indica el tipo de protocolo admitido por MVPD (solo SAML).</li>
+                        <li><b>solicitud</b><br/>La solicitud SAML.</li>
+                        <li><b>atributos</b><br/>Atributos de solicitud de SAML.</li>
+                    </ul>
                </td>
                <td>opcional</td>
             </tr>
@@ -378,11 +317,11 @@ ht-degree: 0%
 
 ### Error {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Encabezados</th>
+      <th style="background-color: #EFF2F7;">Encabezados</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Estado</td>
@@ -395,9 +334,9 @@ ht-degree: 0%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cuerpo</th>
+      <th style="background-color: #EFF2F7;">Cuerpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">error</td>

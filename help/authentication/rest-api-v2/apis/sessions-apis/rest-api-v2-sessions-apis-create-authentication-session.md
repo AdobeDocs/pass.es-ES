@@ -1,23 +1,23 @@
 ---
 title: Crear sesión de autenticación
 description: 'API de REST V2: crear sesión de autenticación'
-source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '964'
 ht-degree: 1%
 
 ---
 
 
-# Crear sesión de autenticación: prueba {#create-authentication-session}
+# Crear sesión de autenticación {#create-authentication-session}
 
 >[!IMPORTANT]
 >
->El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+> El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
 >[!IMPORTANT]
 >
->La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/throttling-mechanism.md).
+> La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/throttling-mechanism.md).
 
 ## Solicitud {#request}
 
@@ -247,18 +247,9 @@ ht-degree: 1%
                   <br/><br/>
                   Los valores posibles son:
                   <ul>
-                    <li><b>autentificar</b></li>
-                    <ul>
-                        <li>El dispositivo de streaming u otro dispositivo deben abrir la dirección URL proporcionada en un agente de usuario.</li>
-                    </ul>
-                    <li><b>reanudar</b></li>
-                    <ul>
-                        <li>El dispositivo de streaming u otro dispositivo debe proporcionar los parámetros que faltan y reanudar la sesión de autenticación con el código.</li>
-                    </ul>
-                    <li><b>autorizar</b></li>
-                    <ul>
-                        <li>El dispositivo de streaming puede continuar directamente con los flujos de decisiones.</li>
-                    </ul>
+                    <li><b>autenticar</b><br/>El dispositivo de transmisión por secuencias u otro dispositivo debe abrir la dirección URL proporcionada en un agente de usuario.</li>
+                    <li><b>reanudar</b><br/>El dispositivo de transmisión por secuencias u otro dispositivo debe proporcionar los parámetros que faltan y reanudar la sesión de autenticación mediante el código.</li>
+                    <li><b>authorize</b><br/>El dispositivo de transmisión puede continuar directamente con los flujos de decisiones.</li>
                   </ul>
                <td><i>obligatorio</i></td>
             </tr>
@@ -269,14 +260,8 @@ ht-degree: 1%
                   <br/><br/>
                   Los valores posibles son:
                   <ul>
-                    <li><b>interactivo</b></li>
-                    <ul>
-                        <li>El flujo continúa con una navegación a la URL proporcionada mediante un agente de usuario.</li>
-                    </ul>
-                    <li><b>dirigir</b></li>
-                    <ul>
-                        <li>El flujo continúa con una llamada directa a la URL proporcionada mediante un cliente HTTP disponible para la implementación del cliente.</li>
-                    </ul>
+                    <li><b>interactivo</b><br/>El flujo continúa con una navegación a la dirección URL proporcionada mediante un agente de usuario.</li>
+                    <li><b>direct</b><br/>El flujo continúa con una llamada directa a la dirección URL proporcionada mediante un cliente HTTP disponible para la implementación del cliente.</li>
                   </ul>
                <td><i>obligatorio</i></td>
             </tr>

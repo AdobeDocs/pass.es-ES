@@ -1,7 +1,7 @@
 ---
 title: Autenticación básica - Aplicación secundaria - Flujo
-description: Autenticación básica - API de REST V2 - Aplicación secundaria - Flujo
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+description: 'API de REST V2: autenticación básica: aplicación secundaria: flujo'
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '1756'
 ht-degree: 0%

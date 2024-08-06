@@ -1,7 +1,7 @@
 ---
 title: Recuperar la configuración de un proveedor de servicios específico
 description: 'API de REST V2: recupere la configuración de un proveedor de servicios específico'
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '521'
 ht-degree: 2%
@@ -21,11 +21,11 @@ ht-degree: 2%
 
 ## Solicitud {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">ruta</td>
@@ -38,9 +38,9 @@ ht-degree: 2%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parámetros de ruta</th>
+      <th style="background-color: #EFF2F7;">Parámetros de ruta</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -48,9 +48,9 @@ ht-degree: 2%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parámetros de consulta</th>
+      <th style="background-color: #EFF2F7;">Parámetros de consulta</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">perfil</td>
@@ -58,9 +58,9 @@ ht-degree: 2%
       <td>opcional</td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Encabezados</th>
+      <th style="background-color: #EFF2F7;">Encabezados</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorización</td>
@@ -114,10 +114,10 @@ ht-degree: 2%
 
 ## Respuesta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Código</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Texto</th>
+      <th style="background-color: #EFF2F7;">Código</th>
+      <th style="background-color: #EFF2F7;">Texto</th>
       <th style="background-color: #EFF2F7;">Descripción</th>
    </tr>
    <tr>
@@ -159,11 +159,11 @@ ht-degree: 2%
 
 ### Correcto {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Encabezados</th>
+      <th style="background-color: #EFF2F7;">Encabezados</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Estado</td>
@@ -176,19 +176,19 @@ ht-degree: 2%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cuerpo</th>
+      <th style="background-color: #EFF2F7;">Cuerpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
          JSON que contiene una lista de elementos, cada uno con los siguientes atributos:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Atributo</th>
+               <th style="background-color: #EFF2F7;">Atributo</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">dispositivo</td>
@@ -207,62 +207,32 @@ ht-degree: 2%
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">solicitante</td>
-                <td>JSON con los atributos siguientes:
-                <table>
-                    <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Atributo</th>
-                    </tr>
-                    <tr>
-                        <td>id</td>
-                    </tr>
-                    <tr>
-                        <td>name</td>
-                    </tr>
-                    <tr>
-                        <td>dominios</td>
-                    </tr>
-                </table>
+                <td>
+                    El objeto JSON tiene los atributos siguientes:
+                    <ul>
+                        <li><b>id</b></li>
+                        <li><b>name</b></li>
+                        <li><b>dominios</b></li>
+                    </ul>
                 </td>
                 <td><i>obligatorio</i></td>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">mvpds</td>
-                <td>JSON con los atributos siguientes:
-                <table>
-                    <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Atributo</th>
-                    </tr>
-                    <tr>
-                        <td>id</td>
-                    </tr>
-                    <tr>
-                        <td>displayName</td>
-                    </tr>
-                    <tr>
-                        <td>logoUrl</td>
-                    </tr>
-                    <tr>
-                        <td>isTempPass</td>
-                    </tr>
-                    <tr>
-                        <td>isProxy</td>
-                    </tr>
-                    <tr>
-                        <td>boardingStatus</td>
-                    </tr>
-                    <tr>
-                        <td>platformMappingId</td>
-                    </tr>
-                    <tr>
-                        <td>enablePlatformServices</td>
-                    </tr>
-                    <tr>
-                        <td>displayInPlatformPicker</td>
-                    </tr>
-                    <tr>
-                        <td>forcePlatformPermissions</td>
-                    </tr>
-                </table>
+                <td>
+                    El objeto JSON tiene los atributos siguientes:
+                    <ul>
+                        <li><b>id</b></li>
+                        <li><b>displayName</b></li>
+                        <li><b>logoUr</b></li>
+                        <li><b>isTempPass</b></li>
+                        <li><b>isProxy</b></li>
+                        <li><b>boardingStatus</b></li>
+                        <li><b>platformMappingId</b></li>
+                        <li><b>enablePlatformServices</b></li>
+                        <li><b>displayInPlatformPicker</b></li>
+                        <li><b>forcePlatformPermissions</b></li>
+                    </ul>
                 </td>
                 <td><i>obligatorio</i></td>
             </tr>
@@ -278,11 +248,11 @@ ht-degree: 2%
 
 ### Error {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Encabezados</th>
+      <th style="background-color: #EFF2F7;">Encabezados</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Estado</td>
@@ -295,9 +265,9 @@ ht-degree: 2%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Cuerpo</th>
+      <th style="background-color: #EFF2F7;">Cuerpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">error</td>
