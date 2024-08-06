@@ -1,9 +1,9 @@
 ---
 title: Crear sesión de autenticación
 description: 'API de REST V2: crear sesión de autenticación'
-source-git-commit: 9c04ec17c848d6734dc2ca2d6357ed5fb49341ec
+source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '965'
 ht-degree: 1%
 
 ---
@@ -246,24 +246,20 @@ ht-degree: 1%
                   Acción que el dispositivo de flujo continuo debe realizar para completar el flujo de autenticación.
                   <br/><br/>
                   Los valores posibles son:
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autentificar</td>
-                        <td>El dispositivo de streaming u otro dispositivo deben abrir la dirección URL proporcionada en un agente de usuario.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">reanudar</td>
-                        <td>El dispositivo de streaming u otro dispositivo debe proporcionar los parámetros que faltan y reanudar la sesión de autenticación con el código.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autorizar</td>
-                        <td>El dispositivo de streaming puede continuar directamente con los flujos de decisiones.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>autentificar</b></li>
+                    <ul>
+                        <li>El dispositivo de streaming u otro dispositivo deben abrir la dirección URL proporcionada en un agente de usuario.</li>
+                    </ul>
+                    <li><b>reanudar</b></li>
+                    <ul>
+                        <li>El dispositivo de streaming u otro dispositivo debe proporcionar los parámetros que faltan y reanudar la sesión de autenticación con el código.</li>
+                    </ul>
+                    <li><b>autorizar</b></li>
+                    <ul>
+                        <li>El dispositivo de streaming puede continuar directamente con los flujos de decisiones.</li>
+                    </ul>
+                  </ul>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
@@ -272,20 +268,16 @@ ht-degree: 1%
                   El tipo de interacción que debe realizar el dispositivo de flujo continuo para continuar el flujo con la acción especificada por el atributo actionName.
                   <br/><br/>
                   Los valores posibles son:
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">Valor</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">dirigir</td>
-                        <td>El flujo continúa con una llamada directa a la URL proporcionada mediante un cliente HTTP disponible para la implementación del cliente.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interactivo</td>
-                        <td>El flujo continúa con una navegación a la URL proporcionada mediante un agente de usuario.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interactivo</b></li>
+                    <ul>
+                        <li>El flujo continúa con una navegación a la URL proporcionada mediante un agente de usuario.</li>
+                    </ul>
+                    <li><b>dirigir</b></li>
+                    <ul>
+                        <li>El flujo continúa con una llamada directa a la URL proporcionada mediante un cliente HTTP disponible para la implementación del cliente.</li>
+                    </ul>
+                  </ul>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
