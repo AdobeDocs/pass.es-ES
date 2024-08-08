@@ -1,7 +1,7 @@
 ---
 title: Reanudar sesión de autenticación
 description: 'API de REST V2: reanudar sesión de autenticación'
-source-git-commit: c849882286c88d16a5652717d381700287c53277
+source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
 workflow-type: tm+mt
 source-wordcount: '753'
 ht-degree: 1%

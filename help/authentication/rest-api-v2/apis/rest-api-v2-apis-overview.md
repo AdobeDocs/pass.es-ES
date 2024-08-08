@@ -1,7 +1,7 @@
 ---
 title: 'API de REST V2: API: información general'
 description: 'API de REST V2: API: información general'
-source-git-commit: c849882286c88d16a5652717d381700287c53277
+source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
 workflow-type: tm+mt
 source-wordcount: '184'
 ht-degree: 1%

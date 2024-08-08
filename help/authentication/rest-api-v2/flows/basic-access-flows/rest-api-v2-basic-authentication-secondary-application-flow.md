@@ -1,7 +1,7 @@
 ---
 title: Autenticación básica - Aplicación secundaria - Flujo
 description: 'API de REST V2: autenticación básica: aplicación secundaria: flujo'
-source-git-commit: c849882286c88d16a5652717d381700287c53277
+source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
 workflow-type: tm+mt
 source-wordcount: '2000'
 ht-degree: 0%
@@ -139,7 +139,7 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
 
    >[!NOTE]
    >
-   > Sugerencia: la aplicación secundaria puede informar a los usuarios de que el `code` utilizado no es válido en caso de una respuesta de error que indique que falta una sesión de autenticación y aconsejarles que lo reintenten con uno nuevo.
+   > Sugerencia: la aplicación secundaria puede informar a los usuarios de que el `code` utilizado no es válido en caso de una respuesta de error que indique que falta una sesión de autenticación y aconsejarles que lo reintenten usando uno nuevo.
 
 1. **Abrir URL en el agente de usuario:** La aplicación secundaria abre un agente de usuario para cargar el elemento autocalculado `url`, realizando una solicitud al extremo Authenticate. Este flujo puede incluir varias redirecciones, lo que finalmente lleva al usuario a la página de inicio de sesión de MVPD y proporciona credenciales válidas.
 
