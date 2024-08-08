@@ -1,9 +1,9 @@
 ---
 title: Autenticación básica - Aplicación secundaria - Flujo
 description: 'API de REST V2: autenticación básica: aplicación secundaria: flujo'
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
-source-wordcount: '1756'
+source-wordcount: '2000'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,46 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
 
    Si el servidor de Adobe Pass no identifica un perfil válido, la aplicación de flujo continuo muestra `code` que se puede usar para reanudar la sesión de autenticación en una aplicación secundaria.
 
+1. **Validar código de autenticación:** La aplicación secundaria valida el usuario proporcionado `code` para asegurarse de que puede continuar con la autenticación MVPD en el agente de usuario.
+
+   >[!IMPORTANT]
+   >
+   > Consulte la documentación de la API [Recuperar información de sesión de autenticación](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) para obtener detalles sobre:
+   >
+   > * Todos los _parámetros necesarios_, como `serviceProvider` y `code`
+   > * Todos los _encabezados_ requeridos, como `Authorization`
+   > * Todos los _parámetros y encabezados_ opcionales
+
+1. **Devolver información sobre la sesión de autenticación:** La respuesta del extremo de sesiones contiene los siguientes datos:
+   * El atributo `existing` contiene los parámetros existentes que ya se proporcionaron.
+   * El atributo `missing` contiene los parámetros que faltan y que deben proporcionarse para completar el flujo de autenticación.
+
+   >[!IMPORTANT]
+   >
+   > Consulte la documentación de la API [Recuperar información de sesión de autenticación](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) para obtener más información sobre la información proporcionada en una respuesta de validación de sesión.
+   >
+   > <br/>
+   >
+   > El punto final de sesiones valida los datos de solicitud para garantizar que se cumplan las condiciones básicas:
+   >
+   > * Los parámetros y encabezados _required_ deben ser válidos.
+   >
+   > <br/>
+   >
+   > Si la validación falla, se generará una respuesta de error, que proporcionará información adicional que se ajustará a la documentación de [Códigos de error mejorados](../../../enhanced-error-codes.md).
+
+   >[!NOTE]
+   >
+   > Sugerencia: la aplicación secundaria puede informar a los usuarios de que el `code` utilizado no es válido en caso de una respuesta de error que indique que falta una sesión de autenticación y aconsejarles que lo reintenten con uno nuevo.
+
 1. **Abrir URL en el agente de usuario:** La aplicación secundaria abre un agente de usuario para cargar el elemento autocalculado `url`, realizando una solicitud al extremo Authenticate. Este flujo puede incluir varias redirecciones, lo que finalmente lleva al usuario a la página de inicio de sesión de MVPD y proporciona credenciales válidas.
+
+   >[!IMPORTANT]
+   >
+   > Consulte la documentación de la API [Realizar autenticación en el agente de usuario](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) para obtener más información sobre:
+   >
+   > * Todos los _parámetros necesarios_, como `serviceProvider` y `code`
+   > * Todos los _parámetros y encabezados_ opcionales
 
 1. **Autenticación MVPD completa:** Si el flujo de autenticación es correcto, la interacción del agente de usuario guarda un perfil normal en el servidor de Adobe Pass y alcanza el valor de `redirectUrl` proporcionado.
 
@@ -231,6 +270,10 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
    > <br/>
    > 
    > Si la validación falla, se generará una respuesta de error, que proporcionará información adicional que se ajustará a la documentación de [Códigos de error mejorados](../../../enhanced-error-codes.md).
+
+   >[!NOTE]
+   >
+   > Sugerencia: la aplicación secundaria puede informar a los usuarios de que el `code` utilizado no es válido en caso de una respuesta de error que indique que falta una sesión de autenticación y aconsejarles que lo reintenten usando uno nuevo.
 
 1. **Indique el perfil existente:** La respuesta del extremo de sesiones contiene los siguientes datos:
    * El atributo `actionName` está establecido en &quot;authorize&quot;.

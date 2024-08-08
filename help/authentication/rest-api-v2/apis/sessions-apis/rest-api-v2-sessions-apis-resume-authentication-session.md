@@ -1,7 +1,7 @@
 ---
 title: Reanudar sesión de autenticación
 description: 'API de REST V2: reanudar sesión de autenticación'
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
 source-wordcount: '753'
 ht-degree: 1%
@@ -47,7 +47,7 @@ ht-degree: 1%
       <td>El identificador único interno asociado con el proveedor de servicios durante el proceso de incorporación.</td>
       <td><i>obligatorio</i></td>
    </tr>
-    <tr>
+   <tr>
       <td style="background-color: #DEEBFF;">código</td>
       <td>El código de autenticación obtenido después de crear la sesión de autenticación en el dispositivo de flujo continuo.</td>
       <td><i>obligatorio</i></td>
