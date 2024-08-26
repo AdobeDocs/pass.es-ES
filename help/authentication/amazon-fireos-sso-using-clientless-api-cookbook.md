@@ -2,9 +2,9 @@
 title: Amazon FireOS SSO con la API de cliente Cookbook
 description: Amazon FireOS SSO con la API de cliente Cookbook
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '761'
 ht-degree: 0%
 
 ---
@@ -149,9 +149,9 @@ Si esta es su primera implementación, consulte la **Información general técni
 
 La API sin cliente de Adobe requiere que las aplicaciones utilicen el registro de cliente dinámico para realizar llamadas a los servidores de Adobe.
 
-* Para usar el registro de cliente dinámico en su aplicación, siga las instrucciones de [Dynamic Client Registration Management para registrar la aplicación](/help/authentication/dynamic-client-registration-management.md).
+* Para usar el registro de cliente dinámico en su aplicación, siga las instrucciones de [Dynamic Client Registration Management](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management) para crear una aplicación registrada y descargar una instrucción de software.
 
-* Para implementar la API de registro de cliente dinámico para realizar solicitudes de autenticación y autorización en los servidores de Adobe Pass, siga las instrucciones de [API de registro de cliente dinámico](/help/authentication/dynamic-client-registration-api.md) .
+* Para implementar la API de registro de cliente dinámico con el fin de realizar solicitudes de autenticación y autorización en los servidores de Adobe Pass, siga las instrucciones de [Flujo de registro de cliente dinámico](./dcr-api/flows/dynamic-client-registration-flow.md).
 
 ### Actualización de la API de Adobe Pass sin cliente para utilizar Amazon SSO {#clientlesssso}
 

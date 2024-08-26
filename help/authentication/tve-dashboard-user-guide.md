@@ -2,9 +2,9 @@
 title: Guía del usuario del panel de TVE Primetime
 description: Guía del usuario del panel de TVE Primetime
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '4377'
+source-wordcount: '5504'
 ht-degree: 0%
 
 ---
@@ -112,12 +112,11 @@ Esta sección permite ver y editar la configuración de los canales disponibles 
   Contiene la lista de integraciones con MVPD disponibles, junto con el estado de cada integración que puede estar activada o no. Para navegar a la página Integración, haga clic en una entrada específica.
 * **Aplicaciones registradas**
 
-  Contiene la lista de registros de aplicaciones. Para obtener más información, revise el documento [Dynamic client registration management](/help/authentication/dynamic-client-registration-management.md).
+  Contiene la lista de registros de aplicaciones. Para obtener más información, revise el documento [Dynamic Client Registration Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 * **Esquemas personalizados**
 
-  Contiene la lista de esquemas personalizados. Para obtener más información, consulte [Registro de aplicaciones de iOS/tvOS](/help/authentication/iostvos-application-registration.md) y [Administración dinámica de registro de clientes](/help/authentication/dynamic-client-registration-management.md)
-
+  Contiene la lista de esquemas personalizados. Para obtener más información, consulte [Registro de aplicaciones de iOS/tvOS](/help/authentication/iostvos-application-registration.md) y [Dynamic Client Registration Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)
 
 #### Agregar o eliminar dominios {#add-delete-domains}
 
@@ -126,6 +125,50 @@ Para iniciar el proceso de añadir un nuevo dominio para el canal seleccionado, 
 ![Agregar un nuevo dominio a la sección de un canal seleccionado](assets/add-domain-to-channel-sec.png)
 
 *Figura: ficha Dominios en los canales*
+
+#### Crear una aplicación registrada en el nivel de canal {#create-registered-application-channel-level}
+
+Para crear una aplicación registrada a nivel de canal, vaya al menú &quot;Canales&quot; y elija para el que desea crear una aplicación. Luego, después de navegar a la pestaña &quot;Aplicaciones registradas&quot;, haga clic en el botón &quot;Agregar nueva aplicación&quot;.
+
+![](./assets/reg-new-app-channel-level.png)
+
+Como se ve en la siguiente imagen, los campos que debe rellenar son los siguientes:
+
+* **Nombre de aplicación** - el nombre de la aplicación
+
+* **Asignado al canal**: como se muestra a continuación, lo que es ligeramente diferente aquí, en comparación con la misma acción realizada en el nivel de programador, es la lista desplegable &quot;Canales asignados&quot; que no está habilitada, por lo que no hay opción de enlazar la aplicación registrada a una ubicación que no sea el canal actual.
+
+* **Versión de la aplicación**: de forma predeterminada, se establece en &quot;1.0.0&quot;, pero le recomendamos encarecidamente que la modifique con su propia versión de la aplicación. Si decide cambiar la versión de la aplicación, se recomienda reflejarla creando una nueva aplicación registrada para ella.
+
+* **Plataformas de aplicación**: las plataformas con las que se vinculará la aplicación. Tiene la opción de seleccionarlos todos o varios valores.
+
+* **Nombres de dominio**: los dominios con los que se vinculará la aplicación. Los dominios de la lista desplegable son una selección unificada de todos los dominios de todos los canales. Tiene la opción de seleccionar varios dominios en la lista. El significado de los dominios es URL de redireccionamiento [RFC6749](https://tools.ietf.org/html/rfc6749). En el proceso de registro del cliente, la aplicación cliente puede solicitar que se le permita utilizar una URL de redireccionamiento para finalizar el flujo de autenticación. Cuando una aplicación cliente solicita una URL de redireccionamiento específica, se valida con los dominios incluidos en la lista blanca de esta aplicación registrada asociada a la declaración de software.
+
+![](./assets/new-reg-app-channel.png)
+
+Después de rellenar los campos con los valores adecuados, debe hacer clic en &quot;Listo&quot; para que la aplicación se guarde en la configuración.
+
+Tenga en cuenta que no hay **ninguna opción para modificar una aplicación ya creada**. En caso de que se descubra que algo creado ya no cumple los requisitos, se deberá crear y utilizar una nueva aplicación registrada con la aplicación cliente cuyos requisitos cumpla.
+
+##### Descargar una declaración de software {#download-software-statement-channel-level}
+
+![](./assets/reg-app-list.png)
+
+Hacer clic en el botón &quot;Descargar&quot; en la entrada de la lista para la que se necesita una declaración de software generará un archivo de texto. Este archivo contendrá algo similar a la siguiente salida de ejemplo.
+
+![](./assets/download-software-statement.png)
+
+El nombre del archivo se identifica de forma exclusiva añadiendo como prefijo &quot;software_statement&quot; y la marca de tiempo actual.
+
+Tenga en cuenta que, para la misma aplicación registrada, se recibirán diferentes declaraciones de software cada vez que se haga clic en el botón de descarga, pero esto no invalida las declaraciones de software obtenidas anteriormente para esta aplicación. Esto sucede porque se generan en el momento, por cada solicitud de acción.
+
+Hay una **limitación** con respecto a la acción de descarga. Si se solicita una declaración de software haciendo clic en el botón &quot;Descargar&quot; poco después de crear la aplicación registrada y esto aún no se ha guardado y el json de configuración no se ha sincronizado, aparecerá el siguiente mensaje de error en la parte inferior de la página.
+
+![](./assets/error-sw-statement-notready.png)
+
+Esto ajusta un código de error HTTP 404 Not Found recibido del núcleo, ya que el ID de la aplicación registrada aún no se ha propagado y el núcleo no lo conoce.
+
+Después de crear la aplicación registrada, la solución consiste en esperar 2 minutos como máximo para sincronizar la configuración. Cuando esto sucede, el mensaje de error deja de recibirse y el archivo de texto con la declaración del software queda disponible para su descarga.
 
 ### Programadores {#tve-db-programmers-section}
 
@@ -147,12 +190,57 @@ Esta sección permite ver y editar la configuración de los programadores dispon
 
 * **Aplicaciones registradas**
 
-  Contiene la lista de registros de aplicaciones. Para obtener más información, consulte [Administración dinámica del registro de clientes](/help/authentication/dynamic-client-registration-management.md).
+  Contiene la lista de registros de aplicaciones. Para obtener más información, consulte [Dynamic Client Registration Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 * **Esquemas personalizados**
 
-  Contiene la lista de esquemas personalizados. Para obtener más información, consulte [Registro de aplicaciones de iOS/tvOS](/help/authentication/iostvos-application-registration.md) y [Administración dinámica de registro de clientes](/help/authentication/dynamic-client-registration-management.md).
+  Contiene la lista de esquemas personalizados. Para obtener más información, consulte [Registro de aplicaciones de iOS/tvOS](/help/authentication/iostvos-application-registration.md).
 
+#### Crear una aplicación registrada en el nivel de programador {#create-registered-application-programmer-level}
+
+Vaya a la ficha **Programadores** > **Aplicaciones registradas**.
+
+![](./assets/reg-app-progr-level.png)
+
+En la ficha Aplicaciones registradas, haga clic en **Agregar nueva aplicación**. Rellene los campos obligatorios en la nueva ventana.
+
+Como se ve en la siguiente imagen, los campos que debe rellenar son los siguientes:
+
+* **Nombre de aplicación** - el nombre de la aplicación
+
+* **Asignado al canal**: el nombre del canal al que está vinculada esta aplicación. </span> La configuración predeterminada de la máscara desplegable es **Todos los canales.** La interfaz le permite seleccionar uno o todos los canales.
+
+* **Versión de la aplicación**: de forma predeterminada, se establece en &quot;1.0.0&quot;, pero le recomendamos encarecidamente que la modifique con su propia versión de la aplicación. Si decide cambiar la versión de la aplicación, se recomienda reflejarla creando una nueva aplicación registrada para ella.
+
+* **Plataformas de aplicación**: las plataformas con las que se vinculará la aplicación. Tiene la opción de seleccionarlos todos o varios valores.
+
+* **Nombres de dominio**: los dominios con los que se vinculará la aplicación. Los dominios de la lista desplegable son una selección unificada de todos los dominios de todos los canales. Tiene la opción de seleccionar varios dominios en la lista. El significado de los dominios es URL de redireccionamiento [RFC6749](https://tools.ietf.org/html/rfc6749). En el proceso de registro del cliente, la aplicación cliente puede solicitar que se le permita utilizar una URL de redireccionamiento para finalizar el flujo de autenticación. Cuando una aplicación cliente solicita una URL de redireccionamiento específica, se valida con los dominios incluidos en la lista blanca de esta aplicación registrada asociada a la declaración de software.
+
+![](./assets/new-reg-app.png)
+
+Después de rellenar los campos con los valores adecuados, debe hacer clic en &quot;Listo&quot; para que la aplicación se guarde en la configuración.
+
+Tenga en cuenta que no hay **ninguna opción para modificar una aplicación ya creada**. En caso de que se descubra que algo creado ya no cumple los requisitos, se deberá crear y utilizar una nueva aplicación registrada con la aplicación cliente cuyos requisitos cumpla.
+
+##### Descargar una declaración de software {#download-software-statement-programmer-level}
+
+![](./assets/reg-app-list.png)
+
+Hacer clic en el botón &quot;Descargar&quot; en la entrada de la lista para la que se necesita una declaración de software generará un archivo de texto. Este archivo contendrá algo similar a la siguiente salida de ejemplo.
+
+![](./assets/download-software-statement.png)
+
+El nombre del archivo se identifica de forma exclusiva añadiendo como prefijo &quot;software_statement&quot; y la marca de tiempo actual.
+
+Tenga en cuenta que, para la misma aplicación registrada, se recibirán diferentes declaraciones de software cada vez que se haga clic en el botón de descarga, pero esto no invalida las declaraciones de software obtenidas anteriormente para esta aplicación. Esto sucede porque se generan en el momento, por cada solicitud de acción.
+
+Hay una **limitación** con respecto a la acción de descarga. Si se solicita una declaración de software haciendo clic en el botón &quot;Descargar&quot; poco después de crear la aplicación registrada y esto aún no se ha guardado y el json de configuración no se ha sincronizado, aparecerá el siguiente mensaje de error en la parte inferior de la página.
+
+![](./assets/error-sw-statement-notready.png)
+
+Esto ajusta un código de error HTTP 404 Not Found recibido del núcleo, ya que el ID de la aplicación registrada aún no se ha propagado y el núcleo no lo conoce.
+
+Después de crear la aplicación registrada, la solución consiste en esperar 2 minutos como máximo para sincronizar la configuración. Cuando esto sucede, el mensaje de error deja de recibirse y el archivo de texto con la declaración del software queda disponible para su descarga.
 
 ### Integraciones {#tve-db-integrations-sec}
 

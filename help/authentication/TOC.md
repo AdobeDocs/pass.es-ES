@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1142'
+source-wordcount: '1149'
 ht-degree: 2%
 
 ---
@@ -54,7 +54,7 @@ ht-degree: 2%
          + [Vista previa gratuita para Pase temporal y Pase temporal promocional](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + API DE REST V2 {#rest-api-v2}
       + API {#rest-api-v2-apis}
-         + [API de REST V2 - API - Información general](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
+         + [API de REST V2: API: información general](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
          + Configuración {#rest-api-v2-configuration-apis}
             + [Recuperar la configuración de un proveedor de servicios específico](./rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
          + Sesiones {#rest-api-v2-sessions-apis}
@@ -95,12 +95,13 @@ ht-degree: 2%
             + [Flujo de cierre de sesión único](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
       + Apéndice {#rest-api-v2-appendix}
          + Encabezados {#rest-api-v2-appendix-headers}
+            + [Encabezado: autorización](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
+            + [Encabezado: AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
+            + [Encabezado: X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
             + [Encabezado: AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
             + [Encabezado: Adobe-Subject-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
-            + [Encabezado: AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
             + [Encabezado: AP-Partner-Framework-Status](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
             + [Encabezado: AP-TempPass-Identity](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
-            + [Encabezado: X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
    + SDK de AccessEnabler {#accessenabler-sdk}
       + SDK para JavaScript {#javascriptsdk}
          + [Información general del SDK para JavaScript](javascript-sdk-overview.md)
@@ -113,14 +114,14 @@ ht-degree: 2%
       + SDK {#ios-sdk} de iOS/tvOS
          + [Información general del SDK para iOS/tvOS](iostvos-sdk-overview.md)
          + [Guía del SDK para iOS/tvOS](iostvos-sdk-cookbook.md)
-         + [Referencia de API de SDK para iOS/tvOS](iostvos-sdk-api-reference.md)
+         + [Referencia de la API del SDK para iOS/tvOS](iostvos-sdk-api-reference.md)
          + Directrices {#ios-tvos-sdk-guidelines}
             + [Registro de aplicaciones de iOS/tvOS](iostvos-application-registration.md)
             + Directrices de migración {#migration-guidelines}
                + [Guía de migración de iOS/tvOS v3.x](iostvos-v3x-migration-guide.md)
             + [Comprobaciones de integridad del almacenamiento de iOS/tvOS](iostvos-sdk-storage-integrity-checks.md)
          + API de iOS/tvOS {#ios-tvos-api}
-            + [Autorizar Previamente](preauthorize.md)
+            + [Preautorizar](preauthorize.md)
       + SDK para Android {#androidsdk}
          + [Información general del SDK para Android](android-sdk-overview.md)
          + [Guía del SDK para Android](android-sdk-cookbook.md)
@@ -188,10 +189,13 @@ ht-degree: 2%
    + Informe de errores {#error-reportn}
       + [Informes de errores](error-reporting.md)
       + [Códigos de error mejorados](enhanced-error-codes.md)
-   + Registro de cliente {#client-regn}
-      + [Registro dinámico de clientes](dynamic-client-registration.md)
-      + [API de registro de cliente dinámico](dynamic-client-registration-api.md)
-      + [Dynamic Client Registration Management](dynamic-client-registration-management.md)
+   + Registro de cliente {#dcr-api}
+      + [Información general sobre el registro dinámico de clientes](./dcr-api/dynamic-client-registration-overview.md)
+      + API {#dcr-api-apis}
+         + [Recuperar credenciales de cliente](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
+         + [Recuperar token de acceso](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+      + Flujos {#dcr-api-flows}
+         + [Flujo de registro de cliente dinámico](./dcr-api/flows/dynamic-client-registration-flow.md)
    + Servicio de degradación {#degrn-service}
       + [Resumen de API de degradación](degradation-api-overview.md)
    + Preparación para la privacidad {#privacy-readiness}
@@ -282,4 +286,3 @@ ht-degree: 2%
    + [Informes](/help/authentication/tve-dashboard-reports.md)
    + [Registro de cambios](/help/authentication/tve-dashboard-changes-log.md)
 + [Glosario](glossary.md)
-

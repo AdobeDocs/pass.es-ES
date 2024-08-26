@@ -2,29 +2,28 @@
 title: Resumen de API de degradación
 description: Resumen de API de degradación
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: f918d7f9f7b2af5b4364421f6703211e413eafb4
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '427'
 ht-degree: 0%
 
 ---
 
+
 # Resumen de API de degradación {#degradation-api-overview}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
->Para utilizar la API de degradación, deberá:
->- solicitar al equipo de soporte técnico una declaración de software para la aplicación registrada
->- obtenga un token de acceso basado en [Registro dinámico de clientes](dynamic-client-registration.md)
-> 
+> El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Para utilizar la API de degradación, deberá:
->- solicitar al equipo de soporte técnico una declaración de software para la aplicación registrada
->- obtenga un token de acceso basado en [Registro dinámico de clientes](dynamic-client-registration.md)
-> 
+> Antes de usar la API de degradación, asegúrese de que se cumplan los siguientes requisitos previos:
+>
+> * Obtenga las credenciales del cliente como se describe en la [Documentación de la API Retrieve client credentials](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
+> * Obtenga el token de acceso como se describe en la [Documentación de la API Recuperar token de acceso](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+>
+> Consulte la documentación de [Información general sobre el registro dinámico de clientes](./dcr-api/dynamic-client-registration-overview.md) para obtener más información sobre cómo crear una aplicación registrada y descargar la instrucción de software.
 
 ## Información general {#general_info}
 

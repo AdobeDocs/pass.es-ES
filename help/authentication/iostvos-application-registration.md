@@ -2,12 +2,13 @@
 title: Registro de aplicaciones de iOS/tvOS
 description: Registro de aplicaciones de iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '609'
 ht-degree: 0%
 
 ---
+
 
 # Registro de aplicaciones de iOS/tvOS {#iostvos-application-registration}
 
@@ -19,7 +20,7 @@ ht-degree: 0%
 
 A partir de la versión 3.0 del SDK de AccessEnabler de iOS/tvOS, estamos cambiando el mecanismo de autenticación con los servidores de Adobe. En lugar de utilizar una clave pública y un sistema secreto para firmar el ID de solicitante, presentamos el concepto de una cadena de declaración de software que se puede utilizar para obtener un token de acceso que luego se utiliza para todas las llamadas que el SDK realiza a nuestros servidores. Además de una declaración de software, también necesitará un esquema de URL personalizado para su aplicación.
 
-Para obtener más información, consulte [Registro dinámico de clientes](/help/authentication/dynamic-client-registration.md)
+Para obtener más información, vea [Información general sobre el registro dinámico de clientes](./dcr-api/dynamic-client-registration-overview.md).
 
 ## ¿Qué es una declaración de software? {#Soft_state}
 
@@ -40,7 +41,7 @@ Una declaración de software es un token JWT que contiene información sobre su 
 - Debería ver una lista con todas las aplicaciones registradas. Haga clic en   `Download` botón en la aplicación que acaba de crear. Es posible que tenga que esperar unos minutos antes de que su declaración de software esté lista para su descarga.
 - Se descargará un archivo de texto. Utilice su contenido como Declaración de software.
 
-Para obtener más información, consulte [Administración dinámica del registro de clientes](/help/authentication/dynamic-client-registration-management.md).
+Para obtener más información, vea [Administración del registro de cliente dinámico](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Si no tiene acceso al Tablero de TVE de Adobe:
 

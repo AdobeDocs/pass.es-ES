@@ -2,12 +2,13 @@
 title: SDK de Amazon FireOS con registro de cliente dinámico
 description: SDK de Amazon FireOS con registro de cliente dinámico
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1145'
+source-wordcount: '1146'
 ht-degree: 0%
 
 ---
+
 
 # SDK de Amazon FireOS con registro de cliente dinámico {#amazon-fireos-sdk-with-dynamic-client-registration}
 
@@ -21,7 +22,7 @@ ht-degree: 0%
 
 El SDK de FireOS AccessEnabler para FireTV se ha modificado para habilitar la autenticación sin usar cookies de sesión. Como cada vez más exploradores restringen el acceso a las cookies, se necesitaba otro método para permitir la autenticación.
 
-**FireOS SDK 3.0.4** reemplaza el mecanismo de registro de la aplicación actual basado en la autenticación de ID de solicitante y cookie de sesión firmada con [Registro de cliente dinámico](/help/authentication/dynamic-client-registration.md).
+**FireOS SDK 3.0.4** reemplaza el mecanismo de registro de la aplicación actual basado en la autenticación de ID de solicitante y cookie de sesión firmada con [Información general sobre el registro de clientes dinámicos](./dcr-api/dynamic-client-registration-overview.md).
 
 
 ## Cambios de API {#API}
