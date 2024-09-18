@@ -2,7 +2,7 @@
 title: Bienvenido a Adobe&reg; Pass Authentication.
 description: Bienvenido a Adobe&reg; Pass Authentication overview
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 6699f37915551a19252dc84b6a37cc4565011fd5
+source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 0%
@@ -27,7 +27,7 @@ La autenticación de Adobe Pass es una solución de asignación de derechos para
 
 | **Elementos destacados** |
 |-|
-| <ul><li>[Inicio de sesión único para iOS](/help/authentication/apple-sso-overview.md)</li><li>[Pase temporal promocional](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticación basada en el hogar (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infografía HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guía del usuario del panel de Adobe Pass TVE](/help/authentication/tve-dashboard-user-guide.md)</li></ul> |
+| <ul><li>[Inicio de sesión único para iOS](/help/authentication/apple-sso-overview.md)</li><li>[Pase temporal promocional](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticación basada en el hogar (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infografía HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guía del usuario del panel de Adobe Pass TVE](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)</li></ul> |
 
 | **Para programadores** | **Para MVPD** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|

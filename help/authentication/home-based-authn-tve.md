@@ -2,7 +2,7 @@
 title: Autenticación basada en el hogar para TV en todas partes
 description: Autenticación basada en el hogar para TV en todas partes
 exl-id: abdc7724-4290-404a-8f93-953662cdc2bc
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
 workflow-type: tm+mt
 source-wordcount: '1638'
 ht-degree: 0%
@@ -115,7 +115,7 @@ Descripción del flujo de autenticación HBA para el protocolo de autenticación
 ## Cómo activar HBA {#how-to-activate-hba}
 
 * **Protocolo OAuth:**
-   * Para habilitar HBA, consulte [Guía del usuario del panel de Adobe Pass TVE](/help/authentication/tve-dashboard-user-guide.md)
+   * Para habilitar HBA, consulte [Guía del usuario del panel de Adobe Pass TVE](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)
 * **Protocolo SAML:** La autenticación basada en inicio está activada en el lado de MVPD. El programador o el Adobe no requieren ninguna acción.
 Para obtener más información sobre las MVPD que admiten la autenticación basada en inicio, consulte [Estado de HBA para MVPD](/help/authentication/hba-status-mvpds.md).
 
@@ -156,5 +156,5 @@ Para obtener más información sobre las MVPD que admiten la autenticación basa
 * [Infografía de autenticación basada en inicio](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf?dc=201604260953-2640){target=_blank} - por Adobe
 * [Autenticación mediante el protocolo OAuth 2.0](/help/authentication/authn-oauth2-protocol.md)
 * [Autenticación con MVPD de SAML](/help/authentication/authn-usecase.md)
-* [Guía del usuario del panel de Adobe Pass TVE](/help/authentication/tve-dashboard-user-guide.md)
+* [Guía del usuario del panel de Adobe Pass TVE](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)
 * [Metadatos de usuario de hba_status](/help/authentication/user-metadata-feature.md#obtaining)
