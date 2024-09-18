@@ -2,9 +2,9 @@
 title: Informes de uso de supervisión de concurrencia
 description: Informes de uso de supervisión de concurrencia
 exl-id: 20220436-e748-4b22-8e7c-e074e0bfe242
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 36da78fd66cfbc86e7bea7575c757fef536c0755
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '799'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ El servicio **Informes de uso de supervisión de concurrencia** está disponible
 
 ## Requisitos previos {#usage-rep-prerequisites}
 
-Para tener acceso al producto de informes de uso de supervisión de concurrencia, un cliente debe ponerse en contacto primero con el [equipo de soporte](mailto:tve-support@adobe.com) de supervisión de concurrencia y realizará los pasos necesarios para permitirle tener acceso al producto de API.
+Para tener acceso al producto de informes de uso de supervisión de concurrencia, un cliente debe ponerse en contacto primero con el [equipo de soporte](mailto:tve-support@adobe.com) de supervisión de concurrencia y realizará los pasos necesarios para permitirle tener acceso al producto de API. Más detalles sobre [Acceso a la API de CMU](/help/concurrency-monitoring/cmu-api-access.md).
 
 ## Métricas y desgloses generales de informes {#general-rep-metrics-breakdown}
 
@@ -54,12 +54,12 @@ Para tener acceso al producto de informes de uso de supervisión de concurrencia
 ### Los usuarios de los informes de uso pueden filtrar las métricas enumeradas anteriormente según las siguientes dimensiones: {#dimensions-2-filter-metrics}
 
 | Nombre del Dimension | Descripción |
-|:---|:---|
+|:---------------|:------------------------------------------------------------------------------------------------------------------|
 | año | El año expresado con 4 dígitos |
 | mes | El mes del año (1-12) |
 | día | El día del mes (1-31) |
 | hora | La hora del día |
-| minuto | El minuto de la hora |
+| minuto | El minuto de la hora[^1] |
 | aplicación | El nombre de la aplicación registrada en la Monitorización de concurrencia que se utiliza para administrar sesiones |
 | application-id | El ID de aplicación registrado en la Monitorización de concurrencia utilizado para administrar sesiones |
 | canal | Los metadatos de canal enviados durante la inicialización de la sesión (marcados como Desconocido si no se envían metadatos). |
@@ -88,3 +88,9 @@ El objetivo principal de este informe es ayudarle a comprender el impacto de est
 | nivel de concurrencia | Representa cualquier actividad de flujo **distinta que se aprobó en la fase de inicialización de la sesión** para que un usuario pueda observar cuántos flujos simultáneos **abrió** un usuario y comprender el impacto de aplicar un determinado límite de concurrencia |
 | nivel de actividad | Representa cualquier actividad de flujo **distinta (independientemente de su estado: iniciada, activa, detenida, rechazada)** para un usuario con el fin de poder observar cuántas secuencias simultáneas intentó abrir un usuario y comprender el impacto de aplicar un determinado límite de concurrencia |
 | mvpd | La MVPD proporcionada en la administración de sesiones |
+
+### Ejemplos de informes
+
+Para obtener la mejor precisión de los datos, recomendamos los informes presentados en esta página [Ejemplos de informes de CMU](/help/concurrency-monitoring/cm-usage-reports-examples.md)
+
+[^1]: Los informes por minuto no están disponibles de forma predeterminada. Póngase en contacto con el [Equipo de soporte](mailto:tve-support@adobe.com) de supervisión de concurrencia para solicitarlas.

@@ -2,7 +2,7 @@
 title: Resumen de API
 description: Resumen de API
 exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 301825253b21746684df9b6372a239b03305d50e
 workflow-type: tm+mt
 source-wordcount: '2043'
 ht-degree: 0%
@@ -24,7 +24,7 @@ El uso de supervisión de concurrencia (CMU) se implementa como un proyecto WOLA
 >
 >La API de CMU no está disponible de forma general. Póngase en contacto con el representante del Adobe para preguntas sobre disponibilidad.
 
-La API de CMU proporciona una vista jerárquica de los cubos OLAP subyacentes. Cada recurso ([dimensión](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) en la jerarquía de dimensiones, asignado como segmento de ruta de URL) genera informes con [métricas](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) (agregadas) para la selección actual. Cada recurso señala a su recurso principal (para el resumen) y a sus subrecursos (para el desglose). El corte y el trozo se logran mediante parámetros de cadena de consulta que anclan dimensiones a valores o rangos específicos.
+La API de CMU proporciona una vista jerárquica de los cubos OLAP subyacentes. Cada recurso ([dimensión](/help/concurrency-monitoring/cm-usage-reports.md#dimensions-2-filter-metrics) en la jerarquía de dimensiones, asignado como segmento de ruta de URL) genera informes con [métricas](/help/concurrency-monitoring/cm-usage-reports.md#monitor-metrics) (agregadas) para la selección actual. Cada recurso señala a su recurso principal (para el resumen) y a sus subrecursos (para el desglose). El corte y el trozo se logran mediante parámetros de cadena de consulta que anclan dimensiones a valores o rangos específicos.
 
 La API de REST proporciona los datos disponibles en un intervalo de tiempo especificado en la solicitud (volviendo a los valores predeterminados si no se proporciona ninguno), según la ruta de dimensión, los filtros proporcionados y las métricas seleccionadas. El intervalo de tiempo no se aplicará a los informes que no contengan dimensiones de tiempo (año, mes, día, hora, minuto, segundo).
 
