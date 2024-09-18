@@ -1,7 +1,7 @@
 ---
 title: 'API de REST V2: Guía - Pasos de implementación de cliente/servidor'
 description: 'API de REST V2: Guía - Pasos de implementación de cliente/servidor'
-source-git-commit: 5ba888b35731ef64b3dd1878f2fa55083989f857
+source-git-commit: 5ba538bdb13d121ba27005df82d4ae604f912241
 workflow-type: tm+mt
 source-wordcount: '698'
 ht-degree: 0%
@@ -26,6 +26,7 @@ Para implementar la API de REST de Adobe Pass V2, debe seguir los pasos a contin
 ## A. Fase de registro {#registration-phase}
 
 ### Paso 1: Registro de la aplicación {#step-1-register-your-application}
+
 Para que la aplicación pueda llamar a la API de REST de Adobe Pass V2, necesita un token de acceso requerido por la capa de seguridad de la API.
 Para obtener el token de acceso, la aplicación debe seguir los pasos descritos:
 [Registro dinámico de clientes](./dynamic-client-registration.md)
@@ -33,6 +34,7 @@ Para obtener el token de acceso, la aplicación debe seguir los pasos descritos:
 ## B. Fase de autenticación {#authentication-phase}
 
 ### Paso 2: Compruebe si hay perfiles autenticados existentes {#step-2-check-for-existing-authenticated-profiles}
+
 La aplicación de streaming comprueba los perfiles autenticados existentes: <b>/api/v2/{serviceProvider}/profiles</b><br>
 ([Recuperar perfiles autenticados](./apis/profiles-apis/rest-api-v2-retrieve-authenticated-profiles.md))
 
@@ -49,6 +51,7 @@ La aplicación de streaming comprueba los perfiles autenticados existentes: <b>/
       * si se encuentra un perfil, la aplicación de transmisión puede continuar a <a href="#preauthorization-phase">C. Fase de preautorización</a> o <a href="#authorization-phase">D. Fase de autorización</a>
 
 ### Paso 3: Autenticar al usuario {#step-3-authenticate-the-user}
+
 Uso de un explorador o una aplicación basada en Web de Second Screen:
 
 * Opción 1. La aplicación de streaming puede abrir un navegador o una vista web, cargar la URL para autenticarse y el usuario aterriza en la página de inicio de sesión de MVPD donde deben enviarse las credenciales
@@ -57,6 +60,7 @@ Uso de un explorador o una aplicación basada en Web de Second Screen:
    * usuario: introducir nombre de usuario y contraseña, redirección final: mostrar una página de éxito
 
 ### Paso 4: Comprobación de perfiles autenticados {#step-4-check-for-authenticated-profiles}
+
 La aplicación de streaming comprueba la autenticación con MVPD para completarla en el explorador o en la segunda pantalla
 
 * se recomienda sondear cada 15 segundos en <b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br>
@@ -70,8 +74,10 @@ La aplicación de streaming comprueba la autenticación con MVPD para completarl
 ## C. Fase previa a la autorización {#preauthorization-phase}
 
 ### Paso 5: buscar recursos autorizados previamente {#step-5-check-for-preauthorized-resources}
+
 La aplicación de streaming se prepara para mostrar los vídeos disponibles para el usuario autenticado y tiene la posibilidad de comprobar los
 acceso a estos recursos.
+
 * Este paso es opcional y se ejecuta si la aplicación desea filtrar los recursos no disponibles en el paquete de usuario autenticado
 * llamada a <b>/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}</b><br>
 ([Recuperar la decisión de preautorización utilizando MVPD específico](.apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md))
@@ -80,6 +86,7 @@ acceso a estos recursos.
 ## D. Fase de autorización {#authorization-phase}
 
 ### Paso 6: buscar recursos autorizados {#step-6-check-for-authorized-resources}
+
 La aplicación de streaming se prepara para reproducir un vídeo, recurso o recurso seleccionado por el usuario.
 
 * Este paso es necesario para cada inicio de reproducción
@@ -91,6 +98,7 @@ La aplicación de streaming se prepara para reproducir un vídeo, recurso o recu
 ## E. Fase de cierre {#logout-phase}
 
 ### Paso 7: Cerrar sesión {#step-7-logout}
+
 Dispositivo de streaming: el usuario quiere cerrar la sesión de la MVPD
 
 * llamar a <b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
