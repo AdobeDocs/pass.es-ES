@@ -1,9 +1,9 @@
 ---
 title: Ejemplos de informes de uso de supervisión de concurrencia
 description: Ejemplos de informes de uso de supervisión de concurrencia
-source-git-commit: 1ee6ba156364b183e7b5271e38af2c34687fca65
+source-git-commit: 7adfa5c803d27ac63f4fde64cf86edfb6bfca9cd
 workflow-type: tm+mt
-source-wordcount: '2400'
+source-wordcount: '2387'
 ht-degree: 0%
 
 ---
@@ -37,8 +37,6 @@ ht-degree: 0%
 | Informe mensual de nivel de actividad | &quot;año&quot;, &quot;mes&quot;, &quot;nivel de actividad&quot; | cmu/v2/year/month/activity-level | &quot;nivel de actividad&quot;, &quot;usuarios&quot; |
 | Informe mensual del nivel de actividad por inquilino | &quot;año&quot;, &quot;mes&quot;, &quot;nivel de actividad&quot;, &quot;inquilino&quot; | cmu/v2/year/month/activity-level/tenant | &quot;nivel de actividad&quot;, &quot;inquilino&quot;, &quot;usuarios&quot; |
 | Informe mensual de nivel de actividad por mvpd de inquilino | &quot;año&quot;, &quot;mes&quot;, &quot;nivel de actividad&quot;, &quot;inquilino&quot;, &quot;mvpd&quot; | cmu/v2/year/month/activity-level/tenant/mvpd | &quot;nivel de actividad&quot;, &quot;inquilino&quot;, &quot;mvpd&quot;, &quot;usuarios&quot; |
-
-*TODO: compruebe con BG si los informes de nivel de actividad y concurrencia son correctos*
 
 ## Ejemplos de informes diarios {#daily-reports-examples}
 
