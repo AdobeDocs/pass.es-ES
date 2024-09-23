@@ -1,9 +1,9 @@
 ---
 title: Ejemplos de informes de uso de supervisión de concurrencia
 description: Ejemplos de informes de uso de supervisión de concurrencia
-source-git-commit: 7adfa5c803d27ac63f4fde64cf86edfb6bfca9cd
+source-git-commit: ca9bfb964ad7e7437bbea4704bca4ac5105874f1
 workflow-type: tm+mt
-source-wordcount: '2387'
+source-wordcount: '2374'
 ht-degree: 0%
 
 ---
@@ -67,8 +67,6 @@ ht-degree: 0%
 | Informe diario de nivel de actividad | &quot;año&quot;, &quot;mes&quot;, &quot;día&quot;, &quot;nivel de actividad&quot; | cmu/v2/año/mes/día/nivel de actividad | &quot;nivel de actividad&quot;, &quot;usuarios&quot; |
 | Informe diario de nivel de actividad por inquilino | &quot;año&quot;, &quot;mes&quot;, &quot;día&quot;, &quot;nivel de actividad&quot;, &quot;inquilino&quot; | cmu/v2/year/month/day/activity-level/tenant | &quot;nivel de actividad&quot;, &quot;inquilino&quot;, &quot;usuarios&quot; |
 | Informe diario de nivel de actividad por mvpd de inquilino | &quot;año&quot;, &quot;mes&quot;, &quot;día&quot;, &quot;nivel de actividad&quot;, &quot;inquilino&quot;, &quot;mvpd&quot; | cmu/v2/year/month/day/activity-level/tenant/mvpd | &quot;nivel de actividad&quot;, &quot;inquilino&quot;, &quot;mvpd&quot;, &quot;usuarios&quot; |
-
-*TODO: compruebe con BG si los informes de nivel de actividad y concurrencia son correctos*
 
 ## Ejemplos de informes horarios {#hourly-reports-examples}
 
