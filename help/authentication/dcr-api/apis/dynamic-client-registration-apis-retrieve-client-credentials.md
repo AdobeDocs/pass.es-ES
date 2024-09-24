@@ -1,13 +1,13 @@
 ---
 title: Recuperar credenciales de cliente
 description: 'API de registro de cliente dinámico: Recuperar credenciales de cliente'
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '431'
 ht-degree: 1%
 
 ---
-
 
 # Recuperar credenciales de cliente {#retrieve-client-credentials}
 
@@ -45,7 +45,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">software_statement</td>
       <td>
-            La declaración de software asociada con la aplicación registrada creada y descargada desde <a href="https://console.auth.adobe.com/">Adobe Pass TVE Dashboard</a>.
+            La declaración de software asociada con la aplicación registrada creada y descargada desde <a href="https://experience.adobe.com/#/pass/authentication">Adobe Pass TVE Dashboard</a>.
             <br/><br/>
             La administración de aplicaciones registradas se describe en la <a href="../dynamic-client-registration-overview.md">descripción general del registro de cliente dinámico</a>.
       </td>

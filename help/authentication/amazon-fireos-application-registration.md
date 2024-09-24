@@ -2,7 +2,7 @@
 title: Registro de aplicaciones de Amazon FireOS
 description: Registro de aplicaciones de Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '515'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Una declaración de software es un token JWT que contiene información sobre su 
 
 ### Si tiene acceso al Tablero de TVE de Adobe:
 
-1. Abra el explorador y vaya a `https://console.auth.adobe.com`.
+1. Abra el explorador y vaya a `https://experience.adobe.com/#/pass/authentication`.
 
 1. Vaya a la sección **[!UICONTROL Channels]** y, a continuación, seleccione su canal.
 

@@ -2,9 +2,9 @@
 title: Acceso a API de CMU
 description: Acceso a API de CMU
 exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
-source-git-commit: 52c0ffe75f6ac9fda3da39ff08b0dc4c5d5ca428
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '420'
 ht-degree: 0%
 
 ---
@@ -27,20 +27,22 @@ Siga los pasos de las secciones siguientes para obtener acceso.
 ## Pasos del procedimiento de acceso {#access-procedure-steps}
 
 1. Tener una aplicación registrada en el servidor de Adobe Pass DCR. Para este paso, comuníquese con nuestro [Equipo de atención al cliente](mailto:tve-support@adobe.com).
+
 2. Obtener la declaración del software
-   1. Ir a TVE Dashboard <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-Prod </a> o <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. Ir a [Panel de Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication)
    2. Seleccionar programador
-   3. Vaya a la pestaña Aplicaciones
+   3. Vaya a la ficha *Aplicaciones registradas*
    4. Seleccionar aplicación
-   5. Haga clic en DownLoad Software Statement para obtener un archivo similar a la siguiente captura
+   5. Haga clic en descargar en la fila de la aplicación registrada para la que desea obtener una declaración de software y guárdela como un archivo en el equipo local
       <figure>
-          <img src="assets/software_statement_1_download.png"
+          <img src="assets/programmer-download-software-statement-button.png"
                alt="Descargar declaración de software">
-       </figure>
+      </figure>
+
       <figure>
           <img src="assets/software_statement_2.png"
                alt="Ejemplo de declaración de software">
-       </figure>
+      </figure>
 
 3. Obtener token de acceso
    1. Obtenga las credenciales del cliente utilizando la instrucción de software obtenida anteriormente y realizando la llamada siguiente. De este modo se obtiene un par client_id - client_secret que se puede utilizar para obtener el token de acceso.

@@ -2,7 +2,7 @@
 title: Información general sobre Apple SSO
 description: Información general sobre Apple SSO
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '1417'
 ht-degree: 0%
@@ -39,7 +39,7 @@ Para beneficiarse de la experiencia de usuario de inicio de sesión único (SSO)
 
 1. Tenga el [derecho de inicio de sesión único del suscriptor de vídeo](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on) configurado en su cuenta de desarrollador de Apple. Póngase en contacto con Apple para habilitar [módulo de cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) para el identificador de equipo de Apple.
 
-1. Habilite el inicio de sesión único (SÍ) para cada integración deseada (Canal x MVPD) y plataforma deseada (iOS / tvOS) a través del [Panel de Adobe Primetime TVE](https://console.auth.adobe.com/).
+1. Habilite el inicio de sesión único (SÍ) para cada integración deseada (Canal x MVPD) y plataforma deseada (iOS / tvOS) a través del [Panel de Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication).
 
 1. Integre los flujos de trabajo de SSO de Apple con una de las dos soluciones siguientes que ofrece el equipo de autenticación de Adobe Pass:
 
@@ -90,7 +90,7 @@ MVPD debe:
 ## FAQ {#FAQ}
 
 1. En caso de que algo salga mal con el flujo de trabajo de SSO de Apple, ¿puede la aplicación que utiliza el SDK de AccessEnabler para iOS/tvOS tener la capacidad de volver al flujo de autenticación normal?
-   - Esto es posible, pero requiere que se realice un cambio de configuración en el [Panel de Adobe Primetime TVE](https://console.auth.adobe.com/). *Habilitar el inicio de sesión único* debe estar establecido en *NO* para la integración deseada (canal x MVPD) y la plataforma deseada (iOS/tvOS).
+   - Esto es posible, pero requiere que se realice un cambio de configuración en el [Panel de Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication). *Habilitar el inicio de sesión único* debe estar establecido en *NO* para la integración deseada (canal x MVPD) y la plataforma deseada (iOS/tvOS).
    - La aplicación reconocería el cambio de configuración solo después de llamar a la API [setRequestor](/help/authentication/iostvos-sdk-api-reference.md#setReqV3) en caso de que utilice el SDK iOS/tvOS de AccessEnabler.
 1. ¿Sabrá la aplicación cuándo se ha producido una autenticación como resultado de un inicio de sesión a través del SSO de la plataforma en otro dispositivo u otra aplicación?
    - Esta información no estará disponible.
@@ -98,13 +98,13 @@ MVPD debe:
    - Esta información está disponible como parte de la clave de metadatos del usuario: *tokenSource*, que debería devolver el valor de cadena: &quot;Apple&quot; en este caso.
 1. ¿Qué sucede si un usuario inicia sesión en la sección *`Settings -> TV Provider`* en iOS/iPadOS o *`Settings -> Accounts -> TV Provider`* en tvOS usando una MVPD que no está integrada con la aplicación?
    - Cuando el usuario inicia la aplicación, no se autentica mediante el flujo de trabajo de SSO de Apple. Por lo tanto, la aplicación tendría que volver al flujo de autenticación normal y presentar su propio selector de MVPD.
-1. ¿Qué sucede si un usuario inicia sesión yendo a *`Settings -> TV Provider`* en iOS/iPadOS o a *`Settings -> Accounts -> TV Provider`* en la sección de tvOS usando una MVPD que tiene *Activar inicio de sesión único* establecido en *NO* en el [Panel de Adobe Primetime TVE](https://console.auth.adobe.com/) para la plataforma iOS/tvOS?
+1. ¿Qué sucede si un usuario inicia sesión yendo a *`Settings -> TV Provider`* en iOS/iPadOS o a *`Settings -> Accounts -> TV Provider`* en la sección de tvOS usando una MVPD que tiene *Activar inicio de sesión único* establecido en *NO* en el [Panel de Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication) para la plataforma iOS/tvOS?
    - Cuando el usuario inicia la aplicación, no se autentica mediante el flujo de trabajo de SSO de Apple. Por lo tanto, la aplicación tendría que volver al flujo de autenticación normal y presentar su propio selector de MVPD.
 1. ¿Qué sucede si un usuario tiene una MVPD que no está integrada (no es compatible) en Apple, pero está presente en el selector de Apple?
    - Cuando el usuario inicia la aplicación, solo selecciona la MVPD mediante el flujo de trabajo de SSO de Apple sin completar el flujo de autenticación. Por lo tanto, la aplicación tendría que volver al flujo de autenticación normal, pero podría utilizar la MVPD ya seleccionada.
 1. ¿Qué sucede si un usuario tiene una MVPD que no está integrada (no es compatible) en Apple?
    - Cuando el usuario inicia la aplicación, selecciona la opción de selector &quot;Otros proveedores de TV&quot; mediante el flujo de trabajo de SSO de Apple. Por lo tanto, la aplicación tendría que volver al flujo de autenticación normal y presentar su propio selector de MVPD.
-1. ¿Qué sucede si un usuario tiene una MVPD que se degrada a través del [Tablero de TVE de Adobe Primetime](https://console.auth.adobe.com/)?
+1. ¿Qué sucede si un usuario tiene una MVPD que se degrada a través del [Tablero de TVE de Adobe Pass](https://experience.adobe.com/#/pass/authentication)?
    - Cuando el usuario inicia la aplicación, se autentica mediante el mecanismo de degradación y no mediante el flujo de trabajo de SSO de Apple.
    - La experiencia debería ser perfecta para el usuario, mientras que a la aplicación se le informará a través del código de advertencia *N010* en caso de que esté usando el SDK iOS/tvOS de AccessEnabler.
 1. ¿Cambiará el ID de usuario de MVPD entre el SSO de Apple y el flujo de autenticación SSO que no es de Apple?
