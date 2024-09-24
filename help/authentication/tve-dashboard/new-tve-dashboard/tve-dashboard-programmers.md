@@ -2,9 +2,9 @@
 title: Programadores
 description: Obtenga información sobre los programadores y sus configuraciones en el tablero de TVE.
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: c29af84963b010ef9d2a2d318486aae8fffccecc
 workflow-type: tm+mt
-source-wordcount: '701'
+source-wordcount: '1139'
 ht-degree: 0%
 
 ---
@@ -122,11 +122,87 @@ Se ha creado un nuevo cambio de configuración y está listo para la actualizaci
 
 ### Aplicaciones registradas {#registered-applications}
 
-Esta pestaña proporciona una lista de los registros de aplicaciones.
+Esta pestaña muestra una lista de las aplicaciones registradas. Para obtener más información relacionada con el uso de aplicaciones registradas, consulte la [descripción general del registro dinámico de clientes](../../dcr-api/dynamic-client-registration-overview.md).
+
+Puede realizar las siguientes acciones con las aplicaciones registradas:
+
+* [Agregar una nueva aplicación registrada](#add-registered-applications)
+* [Descargar una declaración de software](#download-software-statement)
+
+#### Agregar nueva aplicación registrada {#add-registered-applications}
+
+Siga estos pasos para agregar una nueva aplicación registrada.
+
+1. Seleccione **Agregar nueva aplicación** en la esquina superior derecha de la sección **Aplicaciones registradas**.
+
+   ![Agregar nueva aplicación](../../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-application-button.png)
+
+   *Agregar nueva aplicación*
+
+1. Seleccione **Asignado al canal** en el menú desplegable del cuadro de diálogo **Nueva aplicación**.
+
+   >[!IMPORTANT]
+   >
+   > Se recomienda crear aplicaciones registradas con permisos más específicos y limitados para mejorar la seguridad y evitar el acceso no autorizado. Por lo tanto, cuando cree aplicaciones registradas, considere la posibilidad de utilizar opciones más reducidas para el `channel` asignado.
+
+1. Seleccione **Plataformas** en el menú desplegable.
+
+   >[!IMPORTANT]
+   >
+   > Se recomienda crear aplicaciones registradas con permisos más específicos y limitados para mejorar la seguridad y evitar el acceso no autorizado. Por lo tanto, cuando cree aplicaciones registradas, considere la posibilidad de utilizar opciones más reducidas para el `platforms` asignado.
+
+1. Seleccione **Dominios** en el menú desplegable.
+
+   >[!IMPORTANT]
+   >
+   > En el proceso de registro del cliente, la aplicación cliente puede solicitar que se le permita utilizar una URL de redireccionamiento para finalizar el flujo de autenticación. Cuando una aplicación cliente utiliza una dirección URL de redireccionamiento específica, se valida con el `domains` seleccionado en esta selección.
+
+1. Escriba **Name** de la aplicación.
+
+1. Escriba **Version** de la aplicación.
+
+   >[!IMPORTANT]
+   >
+   > Se recomienda crear una nueva aplicación registrada para cada actualización principal de la aplicación cliente para administrar su ciclo de vida y uso. Si es necesario, cree un ticket a través de [Zendesk](https://adobeprimetime.zendesk.com) y pídale al administrador de cuentas técnico (TAM) que revoque una aplicación registrada para bloquear la funcionalidad de una versión específica de la aplicación cliente.
+
+1. Seleccione el valor &quot;DIRECT&quot; de **Type** en el menú desplegable.
+
+1. Seleccione **Agregar aplicación**.
+
+Se ha creado un nuevo cambio de configuración y está listo para la actualización del servidor. Para usar la nueva aplicación registrada que aparece en la sección **Aplicaciones registradas**, continúe con el flujo [revisar e insertar cambios](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md).
+
+#### Descargar declaración de software {#download-software-statement}
+
+Siga estos pasos para descargar una declaración de software.
+
+1. Pase el ratón sobre la aplicación registrada donde quiera descargar el extracto de software de la lista de **Aplicaciones registradas**.
+
+1. Seleccione **Descargar**.
+
+   ![Descargar una declaración de software](../../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-download-software-statement-button.png)
+
+   *Descargar una declaración de software*
+
 
 ### Esquemas personalizados {#custom-schemes}
 
-Esta pestaña muestra una lista de esquemas personalizados. Ver [registro de aplicación de iOS/tvOS](/help/authentication/iostvos-application-registration.md).
+Esta pestaña muestra una lista de esquemas personalizados. Para obtener más información relacionada con el uso de esquemas personalizados, consulte [Registro de aplicaciones de iOS/tvOS](/help/authentication/iostvos-application-registration.md).
+
+Puede realizar los siguientes cambios en las combinaciones personalizadas:
+
+* [Generar un nuevo esquema personalizado](#generate-custom-schemes)
+
+#### Generar nuevo esquema personalizado {#generate-custom-schemes}
+
+Siga estos pasos para generar un nuevo esquema personalizado.
+
+1. Seleccione **Generar nuevo esquema personalizado**.
+
+   ![Generar un nuevo esquema personalizado](../../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-custom-scheme-button.png)
+
+   *Generar un nuevo esquema personalizado*
+
+Se ha creado un nuevo cambio de configuración y está listo para la actualización del servidor. Para usar el nuevo esquema personalizado que aparece en la sección **Esquemas personalizados**, continúe con el flujo [revisar y enviar cambios](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 ## Agregar nuevo programador {#add-new-programmer}
 
