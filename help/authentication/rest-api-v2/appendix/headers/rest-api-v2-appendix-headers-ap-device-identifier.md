@@ -1,13 +1,13 @@
 ---
 title: 'Encabezado: AP-Device-Identifier'
 description: 'API de REST V2: encabezado: AP-Device-Identifier'
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
+source-git-commit: 8f4fb5d6cc8b45b300010438c56d4af2e8fc0a76
 workflow-type: tm+mt
-source-wordcount: '103'
+source-wordcount: '413'
 ht-degree: 0%
 
 ---
-
 
 # Encabezado: AP-Device-Identifier {#header-ap-device-identifier}
 
@@ -50,7 +50,11 @@ Solo hay un tipo compatible como se muestra a continuación.
    </tr>
    <tr>
       <td>huella digital</td>
-      <td>El identificador del dispositivo consiste en un identificador opaco y lo crea la aplicación cliente.</td>
+      <td>
+            El identificador de dispositivo consiste en un identificador estable y único creado y administrado por la aplicación cliente.
+            <br/>
+            La aplicación cliente debe evitar los cambios de valor causados por las acciones del usuario, como la desinstalación, reinstalación o actualizaciones de la aplicación.
+      </td>
    </tr>
 </table>
 
@@ -70,3 +74,63 @@ El valor `Base64-encoded` del identificador del dispositivo.
 
 AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
 ```
+
+## Libros {#cookbooks}
+
+>[!IMPORTANT]
+>
+> Los recursos de documentación se proporcionan con fines de referencia.
+>
+> Los recursos de documentación no son exhaustivos y pueden requerir modificaciones adicionales para trabajar en el proyecto.
+> 
+> Independientemente de su implementación real, el encabezado `AP-Device-Identifier` debe contener un valor con el formato descrito en la sección [Directivas](#directives).
+
+### Navegadores {#browsers}
+
+Para generar el encabezado `AP-Device-Identifier` para los dispositivos que se ejecutan en un explorador, la aplicación cliente necesita calcular un identificador estable y único basado en los datos disponibles, como el explorador, el dispositivo o datos específicos del usuario.
+
+_(*) Se recomienda integrar una biblioteca o servicio que proporcione un mecanismo de huella digital de explorador o dispositivo._
+
+### Dispositivos móviles {#mobile-devices}
+
+#### iOS y iPadOS {#ios-ipados}
+
+Para generar el encabezado `AP-Device-Identifier` para los dispositivos que ejecutan [iOS o iPadOS](https://developer.apple.com/documentation/ios-ipados-release-notes), puede consultar los siguientes documentos:
+
+* Documentación para desarrolladores de Apple para [identifierForVendor](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor).
+
+_(*) Se recomienda aplicar una función hash SHA-256 sobre el valor proporcionado por el sistema operativo._
+
+#### Android {#android}
+
+Para generar el encabezado `AP-Device-Identifier` para los dispositivos que ejecutan [Android](https://developer.android.com/about/versions), puede consultar los siguientes documentos:
+
+* Documentación para desarrolladores de Android para [ANDROID_ID](https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID).
+
+_(*) Se recomienda aplicar una función hash SHA-256 sobre el valor proporcionado por el sistema operativo._
+
+### Dispositivos conectados a TV {#tv-connected-devices}
+
+#### tvOS {#tvos}
+
+Para generar el encabezado `AP-Device-Identifier` para los dispositivos que ejecutan [tvOS](https://developer.apple.com/documentation/tvos-release-notes), puede consultar los siguientes documentos:
+
+* Documentación para desarrolladores de Apple para [identifierForVendor](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor).
+
+_(*) Se recomienda aplicar una función hash SHA-256 sobre el valor proporcionado por el sistema operativo._
+
+#### Fire OS {#fireos}
+
+Para generar el encabezado `AP-Device-Identifier` para los dispositivos que ejecutan [Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html), puede consultar los siguientes documentos:
+
+* Documentación para desarrolladores de Android para [ANDROID_ID](https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID).
+
+_(*) Se recomienda aplicar una función hash SHA-256 sobre el valor proporcionado por el sistema operativo._
+
+#### Roku OS {#rokuos}
+
+Para generar el encabezado `AP-Device-Identifier` para los dispositivos que ejecutan [Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md), puede consultar los siguientes documentos:
+
+* Documentación para desarrolladores de Roku para [GetChannelClientId](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string).
+
+_(*) Se recomienda aplicar una función hash SHA-256 sobre el valor proporcionado por el sistema operativo._
