@@ -1,21 +1,21 @@
 ---
-title: 'API de REST V2: API: información general'
-description: 'API de REST V2: API: información general'
+title: Información general sobre las API de REST V2
+description: Información general sobre las API de REST V2
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '144'
 ht-degree: 1%
 
 ---
 
-# API de REST V2: API: información general {#rest-api-v2-apis-overview}
+# Información general sobre las API de REST V2 {#rest-api-v2-apis-overview}
 
 >[!IMPORTANT]
 >
 > El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
-Para empezar, visite la documentación pública de cada entrada de la lista siguiente.
+Para empezar, visite la documentación pública de las API que le interesan en la lista siguiente.
 
 ## Configuración {#rest-api-v2-apis-configuration}
 

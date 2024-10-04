@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: 837276ce85445da5c3877592b194e37adf35fa32
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '1165'
+source-wordcount: '1169'
 ht-degree: 2%
 
 ---
@@ -53,9 +53,10 @@ ht-degree: 2%
          + [Intercambio de tokens](token-exchange.md)
          + [Vista previa gratuita para Pase temporal y Pase temporal promocional](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + API DE REST V2 {#rest-api-v2}
-      + [Resumen de la API de REST 2](./rest-api-v2/rest-api-v2-overview.md)
+      + [Información general de la API REST 2](./rest-api-v2/rest-api-v2-overview.md)
+      + [Glosario de la API de REST 2](./rest-api-v2/rest-api-v2-glossary.md)
       + API {#rest-api-v2-apis}
-         + [API de REST V2: API: información general](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
+         + [Información general sobre las API de REST V2](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
          + Configuración {#rest-api-v2-configuration-apis}
             + [Recuperar la configuración de un proveedor de servicios específico](./rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
          + Sesiones {#rest-api-v2-sessions-apis}
@@ -76,7 +77,7 @@ ht-degree: 2%
             + [Recuperar solicitud de autenticación de socio](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
             + [Recuperar perfil mediante la respuesta de autenticación del socio](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
       + Flujos {#rest-api-v2-flows}
-         + [API de REST V2: Flujos: información general](./rest-api-v2/flows/rest-api-v2-flows-overview.md)
+         + [Información general sobre flujos de la API REST V2](./rest-api-v2/flows/rest-api-v2-flows-overview.md)
          + Flujos de acceso básicos {#rest-api-v2-basic-access-flows}
             + [Flujo de perfiles básicos realizado dentro de la aplicación principal](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
             + [Flujo de perfiles básicos realizado en la aplicación secundaria](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)

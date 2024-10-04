@@ -1,21 +1,21 @@
 ---
-title: 'API de REST V2: Flujos: información general'
-description: 'API de REST V2: Flujos: información general'
+title: Información general sobre flujos de la API REST V2
+description: Información general sobre flujos de la API REST V2
 exl-id: 84a9ac0f-c26a-4159-82a8-3a31bb31f529
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '167'
+source-wordcount: '170'
 ht-degree: 0%
 
 ---
 
-# API de REST V2: Flujos: información general {#rest-api-v2-flows-overview}
+# Información general sobre flujos de la API REST V2 {#rest-api-v2-flows-overview}
 
 >[!IMPORTANT]
 >
 > El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
-Para empezar, visite la documentación pública de cada entrada de la lista siguiente.
+Para empezar, visite la documentación pública de los flujos que le interesan en la lista siguiente.
 
 ## Flujos de acceso básicos {#rest-api-v2-flows-access-basic}
 
