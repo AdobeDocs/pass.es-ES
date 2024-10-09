@@ -2,9 +2,9 @@
 title: Función de metadatos de usuario
 description: Función de metadatos de usuario
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 8c5203aa4a897a5e119a9886afc64a1b1556ee4f
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1654'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Puntos clave de metadatos de usuario:
 - Pasado a la aplicación del programador durante los flujos de autenticación y autorización
 - Los valores se guardan en el token
 - Los valores se pueden normalizar si diferentes MVPD proporcionan datos en diferentes formatos
-- Algunos parámetros se pueden cifrar con la clave del programador (por ejemplo, código postal)
+- Algunos parámetros se pueden cifrar con la clave del programador (por ejemplo, código postal); consulte [Certificado de metadatos de usuario para cifrado](./user-metadata-certificate.md) para la generación de certificados de cifrado
 - Los valores específicos están disponibles por Adobe, a través de un cambio de configuración
 
 ## Obtención de metadatos de usuario {#obtaining}
