@@ -1,13 +1,13 @@
 ---
 title: Recuperar perfil mediante la respuesta de autenticación del socio
 description: 'API de REST V2: recuperar el perfil mediante la respuesta de autenticación del socio'
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '732'
+source-wordcount: '734'
 ht-degree: 1%
 
 ---
-
 
 # Recuperar perfil mediante la respuesta de autenticación del socio {#retrieve-profile-using-partner-authentication-response}
 
@@ -313,8 +313,8 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">error</td>
-      <td>El error proporciona información adicional que se adhiere a la documentación de <a href="../../../enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>El cuerpo de respuesta puede proporcionar información de error adicional que se adhiera a la documentación de <a href="../../../enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
       <td><i>obligatorio</i></td>
    </tr>
 </table>

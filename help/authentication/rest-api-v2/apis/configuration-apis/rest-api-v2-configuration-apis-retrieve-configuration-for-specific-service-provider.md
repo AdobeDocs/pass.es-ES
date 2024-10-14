@@ -1,13 +1,13 @@
 ---
 title: Recuperar la configuración de un proveedor de servicios específico
 description: 'API de REST V2: recupere la configuración de un proveedor de servicios específico'
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '525'
 ht-degree: 2%
 
 ---
-
 
 # Recuperar la configuración de un proveedor de servicios específico {#retrieve-configuration-for-specific-service-provider}
 
@@ -270,8 +270,8 @@ ht-degree: 2%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">error</td>
-      <td>El error proporciona información adicional que se adhiere a la documentación de <a href="../../../enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>El cuerpo de respuesta puede proporcionar información de error adicional que se adhiera a la documentación de <a href="../../../enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
       <td><i>obligatorio</i></td>
    </tr>
 </table>

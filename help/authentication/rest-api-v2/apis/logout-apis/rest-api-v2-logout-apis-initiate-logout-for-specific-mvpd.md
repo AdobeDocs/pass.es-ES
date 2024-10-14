@@ -1,13 +1,13 @@
 ---
 title: Iniciar el cierre de sesión de un mvpd específico
 description: 'API de REST V2: iniciar el cierre de sesión para un mvpd específico'
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '915'
 ht-degree: 1%
 
 ---
-
 
 # Iniciar el cierre de sesión de un mvpd específico {#initiate-logout-for-specific-mvpd}
 
@@ -303,8 +303,8 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">error</td>
-      <td>El error proporciona información adicional que se adhiere a la documentación de <a href="../../../enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>El cuerpo de respuesta puede proporcionar información de error adicional que se adhiera a la documentación de <a href="../../../enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
       <td><i>obligatorio</i></td>
    </tr>
 </table>
