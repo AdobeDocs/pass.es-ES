@@ -2,9 +2,9 @@
 title: Mecanismo de limitación
 description: Obtenga información acerca del mecanismo de limitación utilizado en la autenticación de Adobe Pass. Explore una descripción general de este mecanismo en esta página.
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
+source-git-commit: 83998257b25465c109cac56ae753291d1572696c
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '1141'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Puede encontrar más detalles sobre cómo pasar el encabezado X-Forwarded-For [a
 
 ### Límites y extremos reales
 
-Actualmente, el límite predeterminado permite un máximo de 1 solicitud por segundo., con una ráfaga inicial de 3 solicitudes (asignación única en la primera interacción del cliente identificado, que debería permitir que la inicialización finalice correctamente). Esto no debería afectar a ningún caso comercial normal en todos nuestros clientes.
+Actualmente, el límite predeterminado permite un máximo de 1 solicitud por segundo, con una ráfaga inicial de 10 solicitudes (asignación única en la primera interacción del cliente identificado, que debería permitir que la inicialización termine correctamente). Esto no debería afectar a ningún caso comercial normal en todos nuestros clientes.
 
 El mecanismo de restricción se habilitará en los siguientes extremos:
 
@@ -67,6 +67,7 @@ El mecanismo de restricción se habilitará en los siguientes extremos:
 - /api/v1/authenticate/
 - /api/v1/.+/profile-requests/.+
 - /api/v1/identities
+- /adobe-services/config/
 - /reggie/v1/.+/regcode
 - /reggie/v1/.+/regcode/.+
 
@@ -144,13 +145,21 @@ Los clientes que utilizan una implementación personalizada (incluidas las de se
 ## Ejemplo de escenario para regulación
 
 | Tiempo desde la primera solicitud | Respuesta recibida | Explicación |
-|--------------------------|-----------------------------------|----------------------------------------------------------------------------------------------------------|
+|--------------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | Segundo 0 | La llamada recibe el código de estado correcto | 1 llamadas consumidas desde el límite |
 | Segundo 0,3 | La llamada recibe el código de estado correcto | 1 llamada consumida desde el límite y 1 llamada marcada como ráfaga |
 | Segundo 0,6 | La llamada recibe el código de estado correcto | 1 llamada consumida desde el límite y 2 llamadas marcadas como ráfaga |
 | Segundo 0,9 | La llamada recibe el código de estado correcto | 1 llamada consumida desde el límite y 3 llamadas marcadas como ráfaga |
 | Second 1.2 | La llamada recibe el código de estado correcto | 2 llamadas consumidas desde el límite y 3 llamadas marcadas como ráfaga |
-| Second 1.4 | La llamada recibe el código de estado 429 | 2 llamadas consumidas desde el límite y 3 llamadas marcadas como ráfaga y 1 llamada recibe &quot;429 Too many requests&quot; (Demasiadas solicitudes) |
-| Second 1.6 | La llamada recibe el código de estado 429 | 2 llamadas consumidas desde el límite y 3 llamadas marcadas como ráfaga y 2 llamadas reciben &quot;429 Demasiadas solicitudes&quot; |
-| Second 1.8 | La llamada recibe el código de estado 429 | 2 llamadas consumidas desde el límite y 3 llamadas marcadas como ráfaga y 3 llamadas reciben &quot;429 Too many requests&quot; (Demasiadas solicitudes) |
-| Segundo 2.1 | La llamada recibe el código de estado correcto | 3 llamadas consumidas desde el límite y 3 llamadas marcadas como ráfaga y 3 llamadas reciben &quot;429 Too many requests&quot; (Demasiadas solicitudes) |
+| Second 1.3 | La llamada recibe el código de estado correcto | 2 llamadas consumidas desde el límite y 4 llamadas marcadas como ráfaga |
+| Second 1.4 | La llamada recibe el código de estado correcto | 2 llamadas consumidas desde el límite y 5 llamadas marcadas como ráfaga |
+| Second 1.5 | La llamada recibe el código de estado correcto | 2 llamadas consumidas desde el límite y 6 llamadas marcadas como ráfaga |
+| Second 1.6 | La llamada recibe el código de estado correcto | 2 llamadas consumidas desde el límite y 7 llamadas marcadas como ráfaga |
+| Second 1.7 | La llamada recibe el código de estado correcto | 2 llamadas consumidas desde el límite y 8 llamadas marcadas como ráfaga |
+| Second 1.8 | La llamada recibe el código de estado correcto | 2 llamadas consumidas desde el límite y 9 llamadas marcadas como ráfaga |
+| Segundo 2.1 | La llamada recibe el código de estado correcto | 3 llamadas consumidas desde el límite y 9 llamadas marcadas como ráfaga |
+| Segundo 2.2 | La llamada recibe el código de estado correcto | 3 llamadas consumidas desde el límite y 10 llamadas marcadas como ráfaga |
+| Segundo 2.4 | La llamada recibe el código de estado 429 | 3 llamadas consumidas desde el límite y 10 llamadas marcadas como ráfaga y 1 llamada recibe &quot;429 Too many requests&quot; (Demasiadas solicitudes) |
+| Segundo 2.6 | La llamada recibe el código de estado 429 | 3 llamadas consumidas desde el límite y 10 llamadas marcadas como ráfaga y 2 llamadas reciben &quot;429 Too many requests&quot; (Demasiadas solicitudes) |
+| Segundo 2,8 | La llamada recibe el código de estado 429 | 3 llamadas consumidas desde el límite y 10 llamadas marcadas como ráfaga y 3 llamadas reciben &quot;429 Too many requests&quot; (Demasiadas solicitudes) |
+| Segundo 3.1 | La llamada recibe el código de estado correcto | 4 llamadas consumidas desde el límite y 10 llamadas marcadas como ráfaga y 3 llamadas reciben &quot;429 Too many requests&quot; (Demasiadas solicitudes) |
