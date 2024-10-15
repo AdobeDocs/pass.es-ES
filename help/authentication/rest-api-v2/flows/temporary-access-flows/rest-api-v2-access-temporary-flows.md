@@ -1,13 +1,13 @@
 ---
 title: Flujos de acceso temporales
 description: 'API de REST V2: Flujos de acceso temporales'
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
+source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
 workflow-type: tm+mt
-source-wordcount: '3210'
+source-wordcount: '3215'
 ht-degree: 0%
 
 ---
-
 
 # Flujos de acceso temporales {#temporary-access-flows}
 
@@ -369,7 +369,7 @@ Antes de recuperar las decisiones de autorización cuando caduque TempPass bási
 > <br/>
 > 
 > * Debe haber una configuración válida de TempPass básico o promocional aplicado a la integración entre el `serviceProvider` proporcionado y el `mvpd`.
-> * El tiempo de vida (TTL) configurado para el TempPass básico o promocional ha caducado.
+> * El tiempo de vida (TTL) configurado para el básico o promocional: se ha superado el límite de duración de acceso temporal.
 
 ### Flujo de trabajo {#workflow-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 

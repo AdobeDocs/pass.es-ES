@@ -2,9 +2,9 @@
 title: Recuperar decisiones de preautorización utilizando mvpd específico
 description: 'API REST V2: Recupere decisiones de preautorización utilizando mvpd específico'
 exl-id: 8647e4fb-00b6-45cd-b81b-d00618b2e08b
-source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
+source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '789'
 ht-degree: 1%
 
 ---
@@ -306,21 +306,21 @@ ht-degree: 1%
 
 ## Muestras {#samples}
 
-### 1. Recupere las decisiones de preautorización utilizando mvpd regular
+### 1. Recupere las decisiones de preautorización utilizando mvpd específico
 
 >[!BEGINTABS]
 
 >[!TAB Solicitud]
 
-```JSON
-POST /api/v2/REF30/decisions/preauthorize/Cablevision
+```HTTPS
+POST /api/v2/REF30/decisions/preauthorize/Cablevision HTTP/1.1
 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info ....
-Accept: application/json
-Content-Type: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    Content-Type: application/json
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
 
 Body:       
 
@@ -329,11 +329,12 @@ Body:
 }
 ```
 
->[!TAB Respuesta: permitir y denegar decisiones]
+>[!TAB Respuesta]
 
-```JSON
-HTTP/1.1 200 OK 
-Content-Type: application/json  
+```HTTPS
+HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
 
 {
    "decisions": [
@@ -358,7 +359,7 @@ Content-Type: application/json
          "source": "mvpd",
          "authorized": false,
          "error": {
-            "status": 202,
+            "status": 403,
             "code": "preauthorization_denied_by_mvpd",
             "message": "The MVPD has returned a \"Deny\" decision when requesting pre-authorization for the specified resource.",
             "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
@@ -371,21 +372,21 @@ Content-Type: application/json
 
 >[!ENDTABS]
 
-### 2. Recuperar decisiones de preautorización utilizando mvpd degradado
+### 2. Recuperar decisiones de preautorización utilizando mvpd específico mientras se aplica la degradación
 
 >[!BEGINTABS]
 
 >[!TAB Solicitud]
 
-```JSON
-POST /api/v2/REF30/decisions/preauthorize/degradedMvpd
+```HTTPS
+POST /api/v2/REF30/decisions/preauthorize/${degradedMvpd} HTTP/1.1
 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info ....
-Accept: application/json
-Content-Type: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    Content-Type: application/json
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
 
 Body:
 
@@ -396,75 +397,75 @@ Body:
 
 >[!TAB Respuesta - Degradación de AuthNAll]
 
-```JSON
-HTTP/1.1 200 OK 
-Content-Type: application/json
+```HTTPS
+HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
  
 {
     "decisions": [
         {
             "resource": "REF30",
             "serviceProvider": "REF30",
-            "mvpd": "degradedMvpd",
+            "mvpd": "${degradedMvpd}",
             "source": "degradation",
             "authorized": true
         }
         {
             "resource": "apasstest1",
             "serviceProvider": "REF30",
-            "mvpd": "degradedMvpd",
+            "mvpd": "${degradedMvpd}",
             "source": "degradation",
             "authorized": true
         }
     ]
 }
 ```
-
-**Nota:** En este caso, la regla AuthZAll tiene &quot;channel&quot; : &quot;apasstest1&quot;
 
 >[!TAB Respuesta: degradación de AuthZAll]
 
-```JSON
+```HTTPS
 HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8 
+
+Content-Type: application/json;charset=UTF-8
  
 {
     "decisions": [
         {
             "resource": "REF30",
             "serviceProvider": "REF30",
-            "mvpd": "degradedMvpd",
+            "mvpd": "${degradedMvpd}",
             "source": "degradation",
             "authorized": true
         }
         {
             "resource": "apasstest1",
             "serviceProvider": "REF30",
-            "mvpd": "degradedMvpd",
+            "mvpd": "${degradedMvpd}",
             "source": "degradation",
             "authorized": true
         }
     ]
 }
 ```
-
-**Nota:** En este caso, la regla AuthZAll tiene &quot;channel&quot; : &quot;apasstest1&quot;
 
 >[!TAB Respuesta: degradación de AuthZNone]
 
-```JSON
+```HTTPS
 HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8 
+
+Content-Type: application/json;charset=UTF-8
  
 {
     "decisions": [
         {
             "resource": "REF30",
             "serviceProvider": "REF30",
-            "mvpd": "degradedMvpd",
+            "mvpd": "${degradedMvpd}",
+            "source": "degradation",
             "authorized": false,
             "error": {
-                "status": 200,
+                "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
                 "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
@@ -474,37 +475,13 @@ Content-Type: application/json; charset=utf-8
         {
             "resource": "apasstest1",
             "serviceProvider": "REF30",
-            "mvpd": "degradedMvpd",
+            "mvpd": "${degradedMvpd}",
+            "source": "degradation",
             "authorized": false,
             "error": {
-                "status": 200,
+                "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
-                "action": "none"
-            }
-        }
- 
-    ]
-}
-```
-
-**Nota:** En este caso, la regla AuthZNone tiene &quot;channel&quot; : &quot;apasstest1&quot;
-
->[!TAB Respuesta: Regla de degradación caducada]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8     
- 
-{
-    "decisions": [
-        {
-            "authorized": false,
-            "error": {
-                "status": 200,
-                "code": "authorization_denied_by_degradation_configuration_change",
-                "message": "AuthXAll degradation configuration changed, please try again!",
                 "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
