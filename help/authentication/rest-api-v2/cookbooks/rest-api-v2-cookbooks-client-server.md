@@ -1,9 +1,9 @@
 ---
 title: Guía de API de REST V2 (de cliente a servidor)
 description: Guía de API de REST V2 (de cliente a servidor)
-source-git-commit: 709835276710ec4b92abec3e39aaecae99872e77
+source-git-commit: 0d6693d51887c9e794401e984f3a4075be091ee5
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '695'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## Pasos para implementar la API de REST V2 en aplicaciones del lado del cliente {#steps-to-implement-the-rest-api-v2-in-client-side-applications}
 
-Para implementar la API de REST de Adobe Pass V2, debe seguir los pasos a continuación agrupados en fases.
+Para implementar la API de REST de Adobe Pass V2, debe seguir los pasos a continuación, agrupados en fases.
 
 ## A. Fase de registro {#registration-phase}
 
@@ -38,14 +38,14 @@ Para obtener el token de acceso, la aplicación debe seguir los pasos descritos:
 La aplicación de streaming comprueba los perfiles autenticados existentes: <b>/api/v2/{serviceProvider}/profiles</b><br>
 ([Recuperar perfiles autenticados](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md))
 
-* Si no se encuentra ningún perfil, la aplicación de streaming implementa un flujo TempPass
+* Si no se encuentra ningún perfil y la aplicación de transmisión implementa un flujo TempPass
    * Siga la documentación sobre cómo implementar [Flujos de acceso temporales](../flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)
-* Si no se encuentra ningún perfil, la aplicación de streaming implementará un flujo de autenticación
+* Si no se encuentra ningún perfil, la aplicación de streaming implementa un flujo de autenticación
    * La aplicación de streaming recupera la lista de MVPD disponibles para serviceProvider: <b>/api/v2/{serviceProvider}/configuration</b><br>
 ([Recuperar lista de MVPD disponibles](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md))
    * La aplicación de streaming puede implementar el filtrado en la lista de MVPD y mostrar solo las MVPD previstas mientras oculta otras (TempPass, prueba de MVPD, MVPD en desarrollo, etc.)
-   * Selector de visualización de la aplicación de streaming, el usuario selecciona la MVPD
-   * Aplicación de streaming para crear una sesión: <b>/api/v2/{serviceProvider}/session</b><br>
+   * La aplicación de streaming muestra el selector, el usuario selecciona la MVPD
+   * La aplicación de streaming crea una sesión: <b>/api/v2/{serviceProvider}/session</b><br>
 ([Crear sesión de autenticación](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md))<br>
       * se devuelve un CÓDIGO y una URL que se utilizarán para la autenticación
       * si se encuentra un perfil, la aplicación de transmisión puede continuar a <a href="#preauthorization-phase">C. Fase de preautorización</a> o <a href="#authorization-phase">D. Fase de autorización</a>
@@ -55,7 +55,7 @@ La aplicación de streaming comprueba los perfiles autenticados existentes: <b>/
 Uso de un explorador o una aplicación basada en Web de Second Screen:
 
 * Opción 1. La aplicación de streaming puede abrir un navegador o una vista web, cargar la URL para autenticarse y el usuario aterriza en la página de inicio de sesión de MVPD donde deben enviarse las credenciales
-   * usuario: introducir nombre de usuario y contraseña, redirección final: mostrar una página de éxito
+   * el usuario introduce el inicio de sesión/contraseña, la redirección final muestra una página de éxito
 * Opción 2. La aplicación de streaming no puede abrir un explorador y solo muestra el CÓDIGO. <b>Es necesario desarrollar una aplicación web independiente</b> para pedir al usuario que introduzca el CÓDIGO, cree y abra la URL : <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
    * usuario: introducir nombre de usuario y contraseña, redirección final: mostrar una página de éxito
 
@@ -68,7 +68,7 @@ La aplicación de streaming comprueba la autenticación con MVPD para completarl
    * Si la selección de MVPD no se realiza en la aplicación de transmisión, ya que el selector de MVPD se presenta en la aplicación de segunda pantalla, el sondeo debe realizarse con CODE <b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>
 ([Recuperar perfiles autenticados para CÓDIGO específico](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md))
 * El sondeo no debe superar los 30 minutos, en caso de que se alcancen los 30 minutos y la aplicación de streaming siga activa, deberá iniciarse una nueva sesión y se devolverá un nuevo CÓDIGO y una URL
-* Cuando se completa la autenticación, la devolución es de 200 con un perfil autenticado
+* Cuando se completa la autenticación, el resultado es 200 con un perfil autenticado
 * La aplicación de transmisión por secuencias puede continuar en <a href="#preauthorization-phase">C. Fase de preautorización</a> o <a href="#authorization-phase">D. Fase de autorización</a>
 
 ## C. Fase previa a la autorización {#preauthorization-phase}
