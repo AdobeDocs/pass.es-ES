@@ -2,9 +2,9 @@
 title: Página de registro
 description: Página de registro
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 3c44f1dfbbb5b9ec31f13e267dc691e14dd2ddfa
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '493'
 ht-degree: 0%
 
 ---
@@ -31,36 +31,37 @@ ht-degree: 0%
 * Producción: [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Ensayo: [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-</br>
+<br>
 
 ## Descripción {#create-reg-code-svc}
 
 Devuelve el código de registro generado aleatoriamente y el URI de la página de inicio de sesión.
 
-| Extremo | Llamado </br> por | Entrada   </br>Parámetro | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
+| Extremo | Llamado <br> por | Entrada   <br>Parámetro | Método HTTP <br> | Respuesta | Respuesta HTTP <br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode</br>Por ejemplo:</br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Servicio de programador </br>o</br>de aplicación de streaming | 1. solicitante </br>    (Componente de ruta de acceso)</br>2.  deviceId (con hash)   </br>    (Obligatorio)</br>3.  device_info/X-Device-Info (obligatorio)</br>4.  mvpd (opcional)</br>5.  ttl (opcional)</br>6.  _deviceType_</br> 7.  _deviceUser_ (obsoleto)</br>8.  _appId_ (obsoleto) | POST | XML o JSON que contienen un código de registro y detalles de información o error si no se consigue. Consulte esquemas y ejemplos a continuación. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Por ejemplo:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Servicio de programador <br>o<br>de aplicación de streaming | 1. solicitante <br>    (Componente de ruta de acceso)<br>2.  deviceId (con hash)   <br>    (Obligatorio)<br>3.  device_info/X-Device-Info (obligatorio)<br>4.  mvpd (opcional)<br>5.  ttl (opcional)<br> | POST | XML o JSON que contienen un código de registro y detalles de información o error si no se consigue. Consulte los ejemplos siguientes. | 201 |
 
 {style="table-layout:auto"}
 
-| Parámetro de entrada | Descripción |
-| --- | --- |
-| solicitante | Identificador de solicitante del programador para el que es válida esta operación. |
-| deviceId | El ID de dispositivo bytes. |
-| device_info/</br>X-Device-Info | Información del dispositivo de streaming.</br>**Nota**: Esto PUEDE pasarse a device_info como parámetro de URL, pero debido al tamaño potencial de este parámetro y a las limitaciones en la longitud de una URL de GET, DEBE pasarse como X-Device-Info en el encabezado http. </br>Ver los detalles completos en [Pasar información de conexión y dispositivo](/help/authentication/passing-client-information-device-connection-and-application.md). |
-| mvpd | ID de MVPD para el que es válida esta operación. |
-| ttl | El tiempo que debe permanecer este código de registro en segundos.</br>**Nota**: el valor máximo permitido para ttl es de 36000 segundos (10 horas). Los valores más altos dan como resultado una respuesta HTTP 400 (solicitud incorrecta). Si `ttl` se deja vacío, la autenticación de Adobe Pass establece un valor predeterminado de 30 minutos. |
-| _deviceType_ | El tipo de dispositivo (por ejemplo, Roku, PC).</br>Si este parámetro está configurado correctamente, ESM ofrece métricas que están [desglosadas por tipo de dispositivo](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) al usar Clientless, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, Roku, AppleTV y Xbox.</br>Vea, [Ventajas de usar el parámetro de tipo de dispositivo sin cliente en las métricas de pase ](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**Nota**: device_info reemplazará este parámetro. |
-| _deviceUser_ | El identificador de usuario del dispositivo. |
-| _appId_ | El nombre o ID de la aplicación. </br>**Nota**: device_info reemplaza este parámetro. |
+| Parámetro de entrada | Tipo | Descripción |
+| --- |------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Autorización | Valor del encabezado <br>: portador &lt;access_token> | Token de acceso de DCR |
+| Aceptar | Encabezado <br> Valor: application/json | indicar qué tipo de contenido debe comprender el cliente |
+| solicitante | Parámetro de consulta | Identificador de solicitante del programador para el que es válida esta operación. |
+| deviceId | Parámetro de consulta | El ID de dispositivo bytes. |
+| device_info/<br>X-Device-Info | device_info: Cuerpo <br> X-Device-Info: Header | Información del dispositivo de streaming.<br>**Nota**: Esto PUEDE pasarse a device_info como parámetro de URL, pero debido al tamaño potencial de este parámetro y a las limitaciones en la longitud de una URL de GET, DEBE pasarse como X-Device-Info en el encabezado http. <br>Ver los detalles completos en [Pasar información de conexión y dispositivo](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| mvpd | Parámetro de consulta | ID de MVPD para el que es válida esta operación. |
+| ttl | Parámetro de consulta | El tiempo que debe permanecer este código de registro en segundos.<br>**Nota**: el valor máximo permitido para ttl es de 36000 segundos (10 horas). Los valores más altos dan como resultado una respuesta HTTP 400 (solicitud incorrecta). Si `ttl` se deja vacío, la autenticación de Adobe Pass establece un valor predeterminado de 30 minutos. |
+| _deviceType_ | Parámetro de consulta | En desuso, no debe utilizarse. |
+| _deviceUser_ | Parámetro de consulta | En desuso, no debe utilizarse. |
+| _appId_ | Parámetro de consulta | En desuso, no debe utilizarse. |
 
 {style="table-layout:auto"}
-
 
 >[!CAUTION]
 >
 >**Dirección IP del dispositivo de transmisión**
-></br>
+><br>
 >En implementaciones de cliente a servidor, la dirección IP del dispositivo de streaming se envía implícitamente con esta llamada.  En implementaciones de servidor a servidor, donde la llamada **regcode** se realiza como servicio de programador y no como dispositivo de transmisión, se requiere el siguiente encabezado para pasar la dirección IP del dispositivo de transmisión:
 >
 >
@@ -69,136 +70,72 @@ Devuelve el código de registro generado aleatoriamente y el URI de la página d
 >```
 >
 >donde `<streaming\_device\_ip>` es la dirección IP pública del dispositivo de streaming.
-></br></br>
->Ejemplo :</br>
+><br><br>
+>Ejemplo :<br>
 >
 >```
->POST /reggie/v1/{req_id}/regcode HTTP/1.1</br>X-Forwarded-For:203.45.101.20
+>POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-</br>
+<br>
 
-### Esquema XML de respuesta {#xml-schema}
+### Respuesta JSON
 
 
-#### Código de registro XSD {#registration-code-xsd}
+#### Ejemplos de JSON de código de registro
 
-```XML
-    <?xml version="1.0" encoding="UTF-8"?>
-    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="model.mvc.reggie.pass.adobe.com"
-            targetNamespace="model.mvc.reggie.pass.adobe.com"
-            attributeFormDefault="unqualified"
-            elementFormDefault="unqualified">
-        <xs:element name="regcode">
-            <xs:complexType>
-                <xs:all>
-                    <xs:element name="id" type="xs:string" />
-                    <xs:element name="code" type="xs:string" />
-                    <xs:element name="requestor" type="xs:string" minOccurs="1" maxOccurs="1"/>
-                    <xs:element name="mvpd" type="xs:string" minOccurs="1" maxOccurs="1"/
-                    <xs:element name="generated" type="xs:long" />
-                    <xs:element name="expires" type="xs:long" />
-                    <xs:element name="info" type="infoType" maxOccurs="1"/>
-                </xs:all>
-            </xs:complexType>
-        </xs:element>
-        <xs:complexType name="infoType">
-            <xs:all>
-                <xs:element name="deviceId" type="xs:base64Binary" minOccurs="1" maxOccurs="1"/>
-                <xs:element name="deviceType" type="xs:string" minOccurs="0" maxOccurs="1"/>
-                <xs:element name="deviceUser" type="xs:string" minOccurs="0" maxOccurs="1"/>
-                <xs:element name="appId" type="xs:string" minOccurs="0" maxOccurs="1"/>
-                <xs:element name="appVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
-                <xs:element name="registrationURL" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
-            </xs:all>
-        </xs:complexType>
-    </xs:schema>
+```JSON
+{
+  "id": "ef5a79e8-7c8a-41d6-a45a-e378c6c7c8b5",
+  "code": "IYQD5JQ",
+  "requestor": "sampleRequestorId",
+  "mvpd": "sampleMvpdId",
+  "generated": 1704963921144,
+  "expires": 1704965721144,
+  "info": {
+    "deviceId": "c28tZGV2aWQtMDAz",
+    "deviceInfo": "eyJ0eXBlIjoiU2V0VG9wQm94IiwibW9kZWwiOiJBRlRNTSIsInZlcnNpb24iOnsibWFqb3IiOjAsIm1pbm9yIjowLCJwYXRjaCI6MCwicHJvZmlsZSI6IiJ9LCJoYXJkd2FyZSI6eyJuYW1lIjoiQUZUTU0iLCJ2ZW5kb3IiOiJVbmtub3duIiwidmVyc2lvbiI6eyJtYWpvciI6MCwibWlub3IiOjAsInBhdGNoIjowLCJwcm9maWxlIjoiIn0sIm1hbnVmYWN0dXJlciI6IlJva3UifSwib3BlcmF0aW5nU3lzdGVtIjp7Im5hbWUiOiJBbmRyb2lkIiwiZmFtaWx5IjoiQW5kcm9pZCIsInZlbmRvciI6IkFtYXpvbiIsInZlcnNpb24iOnsibWFqb3IiOjcsIm1pbm9yIjoxLCJwYXRjaCI6MiwicHJvZmlsZSI6IiJ9fSwiYnJvd3NlciI6eyJuYW1lIjoiQ2hyb21lIiwidmVuZG9yIjoiR29vZ2xlIiwidmVyc2lvbiI6eyJtYWpvciI6MTEyLCJtaW5vciI6MCwicGF0Y2giOjU2MTUsInByb2ZpbGUiOiIifSwidXNlckFnZW50IjoiTW96aWxsYS81LjAgKExpbnV4OyBBbmRyb2lkIDcuMS4yOyBBRlRNTSBCdWlsZC9OUzYyOTc7IHd2KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBWZXJzaW9uLzQuMCBDaHJvbWUvMTEyLjAuNTYxNS4xOTcgTW9iaWxlIFNhZmFyaS81MzcuMzYgQWRvYmVQYXNzTmF0aXZlRmlyZVRWLzMuMC44Iiwib3JpZ2luYWxVc2VyQWdlbnQiOiJNb3ppbGxhLzUuMCAoTGludXg7IEFuZHJvaWQgNy4xLjI7IEFGVE1NIEJ1aWxkL05TNjI5Nzsgd3YpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIFZlcnNpb24vNC4wIENocm9tZS8xMTIuMC41NjE1LjE5NyBNb2JpbGUgU2FmYXJpLzUzNy4zNiBBZG9iZVBhc3NOYXRpdmVGaXJlVFYvMy4wLjgifSwiZGlzcGxheSI6eyJ3aWR0aCI6MCwiaGVpZ2h0IjowLCJwcGkiOjAsIm5hbWUiOiJESVNQTEFZIiwidmVuZG9yIjpudWxsLCJ2ZXJzaW9uIjpudWxsLCJkaWFnb25hbFNpemUiOm51bGx9LCJhcHBsaWNhdGlvbklkIjpudWxsLCJjb25uZWN0aW9uIjp7ImlwQWRkcmVzcyI6IjE5My4xMDUuMTQwLjEzMSIsInBvcnQiOiI5OTM0Iiwic2VjdXJlIjpmYWxzZSwidHlwZSI6bnVsbH19",
+    "userAgent": "Mozilla/5.0 (Linux; Android 7.1.2; AFTMM Build/NS6297; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/112.0.5615.197 Mobile Safari/537.36 AdobePassNativeFireTV/3.0.8",
+    "originalUserAgent": "Mozilla/5.0 (Linux; Android 7.1.2; AFTMM Build/NS6297; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/112.0.5615.197 Mobile Safari/537.36 AdobePassNativeFireTV/3.0.8",
+    "authorizationType": "OAUTH2",
+    "sourceApplicationInformation": {
+      "id": "14138364-application-id",
+      "name": "application name",
+      "version": "1.0.0"
+    }
+  }
+}
 ```
 
-</br>
+<br>
 
 | Nombre de elemento | Descripción |
-| --------------- | ------------------------------------------------------------------------------------ |
+|-----------------------------------|------------------------------------------------------------------------------------------------------------------|
 | id | UUID generado por el servicio de código de registro |
 | código | Código de registro generado por el servicio de código de registro |
 | solicitante | ID de solicitante |
 | mvpd | ID de Mvpd |
 | generado | Marca de tiempo de creación del código de registro (en milisegundos desde el 1 de enero de 1970 GMT) |
 | caduca | Marca de tiempo cuando caduca el código de registro (en milisegundos desde el 1 de enero de 1970 GMT) |
-| deviceId | ID de dispositivo único (o token XSTS) |
-| deviceType | Tipo de dispositivo |
-| deviceUser | El usuario ha iniciado sesión en el dispositivo |
-| appId | ID de aplicación |
-| appVersion | Versión de aplicación |
-| registrationURL | URL de la aplicación web de inicio de sesión que se mostrará al usuario final |
+| deviceId | ID de dispositivo único base64 |
+| información:deviceId | Tipo de dispositivo Base64 |
+| info:deviceInfo | La información normalizada de dispositivos de Base64 se basa en la información recibida de User-Agent, X-Device-Info o device_info |
+| información:userAgent | Agente de usuario enviado por la aplicación |
+| info:originalUserAgent | Agente de usuario enviado por la aplicación |
+| info:authorizationType | OAUTH2 para llamadas que utilizan DCR |
+| info:sourceApplicationInformation | Información de aplicación según se ha configurado en DCR |
 
 {style="table-layout:auto"}
 
 
-</br>
+<br>
 
-### Mensaje de error XSD  {#error-message}
-
-```XML
-    <?xml version="1.0" encoding="UTF-8"?>
-    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="rest.pass.adobe.com"
-               targetNamespace="rest.pass.adobe.com"
-               attributeFormDefault="unqualified"
-               elementFormDefault="unqualified">
-        <xs:element name="error">
-            <xs:complexType>
-                <xs:all>
-                    <xs:element name="status" type="xs:int" minOccurs="1" maxOccurs="1"/>
-                    <xs:element name="message" type="xs:string" minOccurs="1" maxOccurs="1"/>
-                    <xs:element name="details" type="xs:string" minOccurs="0" maxOccurs="1"/>
-                </xs:all>
-            </xs:complexType>
-        </xs:element>
-    </xs:schema>
-```
-
-
-### Respuesta de ejemplo {#sample-response}
-
-**XML:**
-
-```XML
-    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <ns2:regcode xmlns:ns2="model.mvc.reggie.pass.adobe.com">
-        <id>678f9fea-a1cafec8-1ff0-4a26-8564-f6cd020acf13</id>
-        <code>TJJCFK</code>
-        <requestor>sampleRequestorId</requestor>
-        <mvpd>sampleMvpdId</mvpd>
-        <generated>1348039846647</generated>
-        <expires>1348043446647</expires>
-        <info>
-            <deviceId>dGhpc0lkQUR1bW15RGV2aWNlSWQ=</deviceId>
-            <deviceType>xbox</deviceType>
-            <deviceUser>JD</deviceUser>
-            <appId>2345</appId>
-            <appVersion>2.0</appVersion>
-            <registrationURL>http://loginwebapp.com</registrationURL>
-        </info>
-    </ns2:regcode>
-```
-
-**JSON:**
+### Mensaje de error: muestra de respuesta JSON (#error-sample-response)
 
 ```JSON
-    {
-        "id": "678f9fea-9d364b29-246c-488f-b97e-298566d1b9e0",
-        "code": "D4BDU2W",
-        "requestor": "sampleRequestorId",
-        "mvpd": "sampleMvpdId",
-        "generated": 1348039555877,
-        "expires": 1348043155877,
-        "info": {
-            "deviceId": "dGhpc0l.kQUR1bW15RGV2.aWNlSWQ=",
-            "deviceType": "xboxOne",
-            "deviceUser": "JD",
-            "appId": "2345",
-            "appVersion": "2.0",
-            "registrationURL": "http://loginwebapp.com"
-        }
-    }
+{
+  "status": 400,
+  "message": "Required '<>' is not present"
+}
 ```
+
