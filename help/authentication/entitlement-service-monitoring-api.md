@@ -2,7 +2,7 @@
 title: API de supervisión del servicio de derechos
 description: API de supervisión del servicio de derechos
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 8fa1e63619f4e22794d701a218c77649f73d9f60
+source-git-commit: 59ece09a8a72e67ea0944059064dba65e3137bd7
 workflow-type: tm+mt
 source-wordcount: '2027'
 ht-degree: 0%
@@ -122,11 +122,11 @@ Los siguientes parámetros de cadena de consulta tienen significados reservados 
 | --- | ---- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ---- | --- |
 | access_token | Sí | El token de DCR se puede pasar como un token de portador de autorización estándar. | Ninguno | access_token=XXXXXX |
 | dimension-name | Sí | Cualquier nombre de dimensión: contenido en la ruta URL actual o en cualquier subruta válida; el valor se tratará como un filtro igual a. Si no se proporciona ningún valor, esto obligará a que la dimensión especificada se incluya en la salida aunque no esté incluida o sea adyacente a la ruta actual | Ninguno | someDimension=someValue&amp;someOtherDimension |
-| fin | Sí | Hora de finalización del informe en milis | Hora actual del servidor | end=30-07-2012 |
+| fin | Sí | Hora de finalización del informe en milis | Hora actual del servidor | end=30-07-2024 |
 | formato | Sí | Se utiliza para la negociación de contenido (con el mismo efecto, pero con una prioridad menor que la ruta &quot;extensión&quot;; consulte a continuación). | Ninguno: la negociación de contenido probará las otras estrategias | format=json |
 | límite | Sí | Número máximo de filas que se devolverán | Valor predeterminado notificado por el servidor en el autovínculo si no se especifica ningún límite en la solicitud | limit=1500 |
 | métricas | Sí | Lista separada por comas de los nombres de métricas que se van a devolver; esto debe utilizarse tanto para filtrar un subconjunto de las métricas disponibles (para reducir el tamaño de la carga útil) como para forzar a la API a que devuelva una proyección que contenga las métricas solicitadas (en lugar de la proyección óptima predeterminada). | Todas las métricas disponibles para la proyección actual se devolverán en caso de que no se proporcione este parámetro. | métricas=m1,m2 |
-| start | Sí | Hora de inicio del informe como ISO8601; el servidor rellenará la parte restante si solo se proporciona un prefijo: por ejemplo, start=2012 resultará en start=2012-01-01:00:00:00 | Notificado por el servidor en el autovínculo; el servidor intenta proporcionar valores predeterminados razonables en función de la granularidad de tiempo seleccionada | inicio=15-07-2012 |
+| start | Sí | Hora de inicio del informe como ISO8601; el servidor rellenará la parte restante si solo se proporciona un prefijo: por ejemplo, start=2024 resultará en start=2024-01-01:00:00:00 | Notificado por el servidor en el autovínculo; el servidor intenta proporcionar valores predeterminados razonables en función de la granularidad de tiempo seleccionada | inicio=15-07-2024 |
 
 El único método HTTP disponible actualmente es GET.
 
@@ -207,14 +207,14 @@ Ejemplo (suponiendo que tenemos una sola métrica llamada `clients` y que hay un
 * https://mgmt.auth.adobe.com/esm/v3/year/month.xml
 
 ```XML
-   <resource href="/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21">
+   <resource href="/esm/v3/year/month?start=2024-07-20T00:00:00&end=2024-08-20T14:35:21">
    <links>
    <link rel="roll-up" href="/esm/v3/year"/>
    <link rel="drill-down" href="/esm/v3/year/month/day"/>
    </links>
    <report>
-   <record month="6" year="2012" clients="205"/>
-   <record month="7" year="2012" clients="466"/>
+   <record month="6" year="2024" clients="205"/>
+   <record month="7" year="2024" clients="466"/>
    </report>
    </resource>
 ```
@@ -225,7 +225,7 @@ Ejemplo (suponiendo que tenemos una sola métrica llamada `clients` y que hay un
       {
         "_links" : {
           "self" : {
-            "href" : "/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21"
+            "href" : "/esm/v3/year/month?start=2024-07-20T00:00:00&end=2024-08-20T14:35:21"
           },
           "roll-up" : {
             "href" : "/esm/v3/year"
@@ -236,11 +236,11 @@ Ejemplo (suponiendo que tenemos una sola métrica llamada `clients` y que hay un
         },
         "report" : [ {
           "month" : "6",
-          "year" : "2012",
+          "year" : "2024",
           "clients" : "205"
         }, {
           "month" : "7",
-          "year" : "2012",
+          "year" : "2024",
           "clients" : "466"
         } ]
       }
@@ -259,13 +259,13 @@ El CSV contendrá una fila de encabezado y, a continuación, los datos del infor
 El orden de los campos en la fila de encabezado reflejará el orden de los datos de tabla.
 
 
-Ejemplo: https://mgmt.auth.adobe.com/esm/v3/year/month.csv producirá un archivo de nombre `report__2012-07-20_2012-08-20_1000.csv` con el siguiente contenido:
+Ejemplo: https://mgmt.auth.adobe.com/esm/v3/year/month.csv producirá un archivo de nombre `report__2024-07-20_2024-08-20_1000.csv` con el siguiente contenido:
 
 
 | Año | Mes | Clientes |
 | ---- | :---: | ------- |
-| 2012 | 6 | 580 |
-| 2012 | 7 | 231 |
+| 2024 | 6 | 580 |
+| 2024 | 7 | 231 |
 
 ## Actualización de datos {#data-freshness}
 
