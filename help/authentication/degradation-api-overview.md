@@ -2,9 +2,9 @@
 title: Resumen de API de degradación
 description: Resumen de API de degradación
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 95c3b1cbce4a591ce387ae3b242721e50ba2ddb1
 workflow-type: tm+mt
-source-wordcount: '427'
+source-wordcount: '428'
 ht-degree: 0%
 
 ---
@@ -40,7 +40,7 @@ Una regla de degradación solo se aplica durante un periodo de tiempo fijo. Aunq
 Notas de degradación:
 
 : Esta función está diseñada para utilizarse junto con la API de monitorización de uso, que proporciona información en tiempo real sobre el número de autenticaciones y autorizaciones por MVPD, la latencia de autorización promedio y otras métricas necesarias para una descripción general completa del servicio.
-: Esta función no permite omitir el servicio de autenticación de Adobe Primetime. Si la autenticación de Adobe Pass está caída, no hay ningún mecanismo dentro del servicio que se pueda usar para permitir que los usuarios vean el contenido. Sin embargo, los sitios o las aplicaciones podrían enrutar la autenticación de Adobe Pass por sí mismos.
+: Esta función no permite omitir el servicio de autenticación de Adobe Pass. Si la autenticación de Adobe Pass está caída, no hay ningún mecanismo dentro del servicio que se pueda usar para permitir que los usuarios vean el contenido. Sin embargo, los sitios o las aplicaciones podrían enrutar la autenticación de Adobe Pass por sí mismos.
 - El Adobe no va a degradar el déclencheur directamente actualmente, la decisión siempre debe estar en manos de un programador específico que haya aceptado tales condiciones con MVPD. En el futuro, la autenticación de Adobe Pass podría activar reglas de degradación de forma proactiva si se pueden alcanzar acuerdos (protección de SLA) con MVPD.
 
 <!--
