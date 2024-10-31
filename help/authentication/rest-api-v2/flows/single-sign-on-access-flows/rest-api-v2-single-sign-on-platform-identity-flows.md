@@ -1,13 +1,13 @@
 ---
 title: 'Inicio de sesión único: identidad de plataforma: flujos'
 description: 'API de REST V2: inicio de sesión único, identidad de plataforma, flujos'
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '1830'
 ht-degree: 0%
 
 ---
-
 
 # Inicio de sesión único con flujos de identidad de plataforma {#single-sign-on-platform-identity-full-flows}
 
@@ -117,7 +117,7 @@ Realice los pasos dados para implementar el flujo de autenticación mediante el 
    > * Todos los _encabezados_ necesarios, como `Authorization`, `AP-Device-Identifier`
    > * Todos los _parámetros y encabezados_ opcionales
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugerencia: la aplicación de streaming puede esperar a que el agente de usuario alcance el `redirectUrl` proporcionado para comprobar si el perfil normal se generó y guardó correctamente.
 

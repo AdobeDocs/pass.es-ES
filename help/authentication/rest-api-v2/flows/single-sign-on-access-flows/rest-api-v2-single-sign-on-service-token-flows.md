@@ -1,13 +1,13 @@
 ---
 title: Inicio de sesión único - Token de servicio - Flujos
 description: API de REST V2 - Inicio de sesión único - Token de servicio - Flujos
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '1848'
 ht-degree: 0%
 
 ---
-
 
 # Inicio de sesión único mediante flujos de token de servicio{#single-sign-on-service-token-full-flows}
 
@@ -120,7 +120,7 @@ Realice los pasos dados para implementar el flujo de autenticación mediante el 
    > * Todos los _encabezados_ necesarios, como `Authorization`, `AP-Device-Identifier`
    > * Todos los _parámetros y encabezados_ opcionales
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugerencia: la aplicación de streaming puede esperar a que el agente de usuario alcance el `redirectUrl` proporcionado para comprobar si el perfil normal se generó y guardó correctamente.
 

@@ -2,7 +2,7 @@
 title: Códigos de error mejorados
 description: Códigos de error mejorados
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2593'
 ht-degree: 2%
@@ -301,8 +301,8 @@ En la tabla siguiente se enumeran los posibles códigos de error mejorados que u
 | **ninguno** | *proveedor_servicio_parámetros_no_válido* | 400 | Falta el valor del parámetro del proveedor de servicios o no es válido. |
 |                              | *parámetro_mvpd_no válido* | 400 | Falta el valor del parámetro mvpd o no es válido. |
 |                              | *código_parámetro_no_válido* | 400 | Falta el valor del parámetro de código o no es válido. |
-|                              | *recursos_parámetro_no_válidos* | 400 | Falta el valor del parámetro de URL de redireccionamiento o no es válido. |
-|                              | *url_redirect_parameter_invalid_parameter* | 400 | Falta el valor del parámetro de recursos o no es válido. |
+|                              | *recursos_parámetro_no_válidos* | 400 | Falta el valor del parámetro de recursos o no es válido. |
+|                              | *url_redirect_parameter_invalid_parameter* | 400 | Falta el valor del parámetro de URL de redireccionamiento o no es válido. |
 |                              | *socio_parámetro_no_válido* | 400 | Falta el valor del parámetro del socio o no es válido. |
 |                              | *invalid_parameter_saml_response* | 400 | Falta el valor del parámetro de respuesta SAML o no es válido. |
 |                              | *información_dispositivo_encabezado_no válida* | 400 | Falta el valor del encabezado de información del dispositivo o no es válido. |

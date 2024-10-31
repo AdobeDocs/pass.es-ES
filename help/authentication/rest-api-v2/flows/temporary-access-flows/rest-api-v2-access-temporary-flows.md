@@ -2,7 +2,7 @@
 title: Flujos de acceso temporales
 description: 'API de REST V2: Flujos de acceso temporales'
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '3215'
 ht-degree: 0%
@@ -349,7 +349,7 @@ Siga los pasos dados para implementar el flujo de autorización al consumir un n
 
 1. **Controlar los detalles de la decisión `Deny`:** La aplicación de transmisión procesa la información de error de la respuesta y puede utilizarla para mostrar opcionalmente un mensaje específico en la interfaz de usuario.
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugerencia: La aplicación de streaming puede informar a los usuarios de que se ha superado el número máximo de recursos y aconsejarles que inicien un flujo de autenticación básico con una MVPD normal para seguir viendo.
 
@@ -429,7 +429,7 @@ Siga los pasos dados para implementar el flujo de autorización cuando caduque T
 
 1. **Controlar los detalles de la decisión `Deny`:** La aplicación de transmisión procesa la información de error de la respuesta y puede utilizarla para mostrar opcionalmente un mensaje específico en la interfaz de usuario.
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugerencia: La aplicación de streaming puede informar a los usuarios de que el acceso temporal ha caducado y aconsejarles que inicien un flujo de autenticación básico mediante una MVPD normal para seguir viendo.
 

@@ -2,9 +2,9 @@
 title: Guía de la API de REST (de cliente a servidor)
 description: Rest API cookbook de cliente a servidor.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '876'
 ht-degree: 0%
 
 ---
@@ -130,16 +130,22 @@ usuario.
 
 1. Envíe al usuario de nuevo a la aplicación de Smart Device para completar el flujo de autorización.
 
-## Plataforma SSO {#platform-sso}
+## Inicio de sesión único de socio {#partner-sso}
 
-Algunas plataformas proporcionan compatibilidad dedicada con el inicio de sesión único (SSO). Se pueden encontrar los detalles de implementación para cada plataforma respectiva:
+Algunos dispositivos proporcionan compatibilidad dedicada para el inicio de sesión único (SSO) de Partner:
 
-* [APPLE SSO](/help/authentication/apple-sso-cookbook-rest-api.md)
-* AMAZON SSO
+* [APPLE SSO](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v1.md)
+
+## Inicio de sesión único de Platform {#platform-sso}
+
+Algunos dispositivos proporcionan compatibilidad dedicada para el inicio de sesión único (SSO) de Platform:
+
+* [AMAZON SSO](./single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [Roku SSO](./single-sign-on/platform-single-sign-on/roku-single-sign-on/roku-sso-overview.md)
 
 ## TempPass y TempPass promocional para la API de REST {#temppass}
 
-En el caso de las implementaciones de TempPass y Promotional TempPass en las que no se requiere que el usuario introduzca sus credenciales, la autenticación se puede implementar directamente en la aplicación de streaming.
+En el caso de implementaciones de TempPass y Promotional TempPass en las que no se requiere que el usuario introduzca credenciales, la autenticación se puede implementar directamente en la aplicación de streaming.
 
 **Para usar esta API, la aplicación de streaming debe asegurarse de que el ID del dispositivo sea único, ya que se está usando para identificar el token, junto con los datos adicionales opcionales.**
 

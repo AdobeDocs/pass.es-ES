@@ -1,13 +1,13 @@
 ---
 title: 'Encabezado: Adobe-Subject-Token'
 description: 'API de REST V2: encabezado: Adobe-Subject-Token'
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '166'
 ht-degree: 1%
 
 ---
-
 
 # Encabezado: Adobe-Subject-Token {#header-adobe-subject-token}
 
@@ -47,10 +47,10 @@ La firma web JSON (`JWS`) o el cifrado web JSON (`JWE`) que es un token web JSON
 
 Esta opción está disponible para las siguientes plataformas:
 
-* [Amazon](../../../amazon-fireos-sso-using-clientless-api-cookbook.md)
+* [Guía de Amazon SSO (API REST V2)](../../../single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
 
 ## Ejemplos {#examples}
 
 Consulte los ejemplos tal como se describe para las siguientes plataformas:
 
-* [Amazon](../../../amazon-fireos-sso-using-clientless-api-cookbook.md)
+* [Guía de Amazon SSO (API REST V2)](../../../single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)

@@ -1,13 +1,13 @@
 ---
 title: Autenticación básica - Aplicación secundaria - Flujo
 description: 'API de REST V2: autenticación básica: aplicación secundaria: flujo'
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2000'
 ht-degree: 0%
 
 ---
-
 
 # Flujo de autenticación básico realizado en la aplicación secundaria {#basic-authentication-flow-performed-within-secondary-application}
 
@@ -137,7 +137,7 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
    >
    > Si la validación falla, se generará una respuesta de error, que proporcionará información adicional que se ajustará a la documentación de [Códigos de error mejorados](../../../enhanced-error-codes.md).
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugerencia: la aplicación secundaria puede informar a los usuarios de que el `code` utilizado no es válido en caso de una respuesta de error que indique que falta una sesión de autenticación y aconsejarles que lo reintenten usando uno nuevo.
 
@@ -162,7 +162,7 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
    > * Todos los _encabezados_ necesarios, como `Authorization`, `AP-Device-Identifier`
    > * Todos los _parámetros y encabezados_ opcionales
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugerencia: la aplicación de streaming puede implementar un mecanismo de sondeo usando `code` para comprobar si el perfil regular se generó y guardó correctamente.
 
@@ -271,7 +271,7 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
    > 
    > Si la validación falla, se generará una respuesta de error, que proporcionará información adicional que se ajustará a la documentación de [Códigos de error mejorados](../../../enhanced-error-codes.md).
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugerencia: la aplicación secundaria puede informar a los usuarios de que el `code` utilizado no es válido en caso de una respuesta de error que indique que falta una sesión de autenticación y aconsejarles que lo reintenten usando uno nuevo.
 
@@ -300,7 +300,7 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
    > * Todos los _encabezados_ necesarios, como `Authorization`, `AP-Device-Identifier`
    > * Todos los _parámetros y encabezados_ opcionales
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugerencia: la aplicación de streaming puede implementar un mecanismo de sondeo usando `code` para comprobar si el perfil regular se generó y guardó correctamente.
 

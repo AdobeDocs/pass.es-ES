@@ -2,9 +2,9 @@
 title: Inicio de sesión único (SSO) del SDK de Android con acceso habilitado en aplicaciones de Android 10
 description: Inicio de sesión único (SSO) del SDK de Android con acceso habilitado en aplicaciones de Android 10
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
-source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '383'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
@@ -23,8 +23,6 @@ Sin embargo, en la última versión de Android 10, Google produjo algunos cambio
 
 Como resultado de estos cambios, el inicio de sesión único (SSO) ofrecido por el SDK **3.2.1 del activador de acceso (versión más reciente)** de Android y las versiones anteriores se pueden ver afectadas en los dispositivos Android 10, como se explica en la siguiente sección.
 
-Consulte [Información general sobre Roku SSO](/help/authentication/roku-sso-overview.md).
-
 ## Comportamiento
 
 Según el **[!UICONTROL target SDK level]** de su aplicación o el uso del atributo de manifiesto **android:requestLegacyExternalStorage**, el inicio de sesión único (SSO) ofrecido por el SDK de Android versión 3.2.1 del Habilitador de acceso (más reciente) y las versiones anteriores se comportarán de la siguiente manera:
@@ -32,7 +30,6 @@ Según el **[!UICONTROL target SDK level]** de su aplicación o el uso del atrib
 - Su aplicación se dirige a **Android 9 (nivel de API 28)** o inferior **-\>** El inicio de sesión único (SSO) **funcionará**
 - La aplicación se dirige a **Android 10** **(nivel de API 29)** y **establece** el valor de **requestLegacyExternalStorage en true** en el archivo de manifiesto de la aplicación **-\>** El inicio de sesión único (SSO) **funcionará**
 - La aplicación se dirige a **Android 10** **(nivel de API 29)** y **no establece** el valor de **requestLegacyExternalStorage en true** en el archivo de manifiesto de la aplicación **-\>** El inicio de sesión único (SSO) **no funcionará**
-
 
 >[!TIP]
 >

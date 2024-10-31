@@ -1,13 +1,13 @@
 ---
 title: Autenticación básica - Aplicación principal - Flujo
 description: 'API de REST V2: autenticación básica: aplicación principal: flujo'
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
 
 ---
-
 
 # Flujo de autenticación básico realizado en la aplicación principal {#basic-authentication-flow-performed-within-primary-application}
 
@@ -121,7 +121,7 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
    > * Todos los _encabezados_ necesarios, como `Authorization`, `AP-Device-Identifier`
    > * Todos los _parámetros y encabezados_ opcionales
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Sugerencia: la aplicación de streaming puede esperar a que el agente de usuario alcance el `redirectUrl` proporcionado para comprobar si el perfil normal se generó y guardó correctamente.
 
