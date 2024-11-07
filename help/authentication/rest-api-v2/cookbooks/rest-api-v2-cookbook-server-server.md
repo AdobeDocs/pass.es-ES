@@ -1,7 +1,7 @@
 ---
 title: Guía de API de REST V2 (servidor a servidor)
 description: Guía de API de REST V2 (servidor a servidor)
-source-git-commit: e1e1835d0d523377c48b39170919f7120cc3ef90
+source-git-commit: c17e52dd52fa14c50d59945598d1913f02be2468
 workflow-type: tm+mt
 source-wordcount: '1566'
 ht-degree: 0%
@@ -186,4 +186,4 @@ El servicio de programador debe mantener los certificados compartidos con el Ado
 
 ## Información relacionada {#related}
 
-* [Referencia de la API de REST 2](/help/authentication/rest-api-v2/rest-api-v2-flows-overview.md)
+* [Referencia de la API de REST 2](/help/authentication/rest-api-v2/rest-api-v2-overview.md)
