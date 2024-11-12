@@ -1,13 +1,13 @@
 ---
 title: Guía de API de REST V2 (de cliente a servidor)
 description: Guía de API de REST V2 (de cliente a servidor)
-source-git-commit: e1e1835d0d523377c48b39170919f7120cc3ef90
+exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
+source-git-commit: 563e0b17de3be9290a661242355b4835b8c386e1
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '699'
 ht-degree: 0%
 
 ---
-
 
 # Guía de API de REST V2 (de cliente a servidor) {#rest-api-v2-cookbook-clientserver}
 
@@ -29,7 +29,7 @@ Para implementar la API de REST de Adobe Pass V2, debe seguir los pasos a contin
 
 Para que la aplicación pueda llamar a la API de REST de Adobe Pass V2, necesita un token de acceso requerido por la capa de seguridad de la API.
 
-Para obtener el token de acceso, la aplicación debe seguir los pasos descritos: [Registro dinámico de clientes](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+Para obtener el token de acceso, la aplicación debe seguir los pasos descritos en la [documentación de registro dinámico de cliente](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
 ## B. Fase de autenticación {#authentication-phase}
 
@@ -55,9 +55,9 @@ La aplicación de streaming comprueba los perfiles autenticados existentes: <b>/
 Uso de un explorador o una aplicación basada en Web de Second Screen:
 
 * Opción 1. La aplicación de streaming puede abrir un navegador o una vista web, cargar la URL para autenticarse y el usuario aterriza en la página de inicio de sesión de MVPD donde deben enviarse las credenciales
-   * el usuario introduce el inicio de sesión/contraseña, la redirección final muestra una página de éxito
-* Opción 2. La aplicación de streaming no puede abrir un explorador y solo muestra el CÓDIGO. <b>Es necesario desarrollar una aplicación web independiente</b> para pedir al usuario que introduzca el CÓDIGO, cree y abra la URL : <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
-   * usuario: introducir nombre de usuario y contraseña, redirección final: mostrar una página de éxito
+   * El usuario introduce el inicio de sesión/contraseña, la redirección final muestra una página de éxito
+* Opción 2. La aplicación de streaming no puede abrir un explorador y solo muestra el CÓDIGO. <b>Es necesario desarrollar una aplicación web independiente</b> para pedir al usuario que introduzca el CÓDIGO, cree y abra la URL: <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
+   * El usuario introduce el inicio de sesión/contraseña, la redirección final muestra una página de éxito
 
 ### Paso 4: Comprobación de perfiles autenticados {#step-4-check-for-authenticated-profiles}
 
@@ -67,7 +67,7 @@ La aplicación de streaming comprueba la autenticación con MVPD para completarl
 ([Recuperar perfiles autenticados para MVPD específicos](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md))
    * Si la selección de MVPD no se realiza en la aplicación de transmisión, ya que el selector de MVPD se presenta en la aplicación de segunda pantalla, el sondeo debe realizarse con CODE <b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>
 ([Recuperar perfiles autenticados para CÓDIGO específico](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md))
-* El sondeo no debe superar los 30 minutos, en caso de que se alcancen los 30 minutos y la aplicación de streaming siga activa, deberá iniciarse una nueva sesión y se devolverá un nuevo CÓDIGO y una URL
+* El sondeo no debe exceder los 30 minutos, en caso de que se alcancen los 30 minutos y la aplicación de streaming siga activa, deberá iniciarse una nueva sesión y se devolverá un nuevo CÓDIGO y una URL
 * Cuando se completa la autenticación, el resultado es 200 con un perfil autenticado
 * La aplicación de transmisión por secuencias puede continuar en <a href="#preauthorization-phase">C. Fase de preautorización</a> o <a href="#authorization-phase">D. Fase de autorización</a>
 
@@ -91,7 +91,7 @@ La aplicación de streaming se prepara para reproducir un vídeo, recurso o recu
 * El paso es necesario para cada inicio de reproducción
 * Llamar a <b>/api/v2/{serviceProvider}/decision/authorize/{mvpd}</b><br>
 ([Recuperar la decisión de autorización utilizando MVPD específico](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md))
-   * decision = &#39;Permit&#39; , El dispositivo de streaming inicia el streaming
+   * decision = &#39;Permiso&#39;, El dispositivo de streaming inicia la transmisión
    * decision = &#39;Denegar&#39;, el dispositivo de streaming informa al usuario de que no tiene acceso a ese vídeo
 
 ## E. Fase de cierre {#logout-phase}
