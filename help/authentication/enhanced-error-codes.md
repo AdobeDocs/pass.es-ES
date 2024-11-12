@@ -2,9 +2,9 @@
 title: Códigos de error mejorados
 description: Códigos de error mejorados
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+source-git-commit: ce9659074bfa3fac3ea62a70a6da470f15bad3fe
 workflow-type: tm+mt
-source-wordcount: '2593'
+source-wordcount: '2606'
 ht-degree: 2%
 
 ---
@@ -313,6 +313,7 @@ En la tabla siguiente se enumeran los posibles códigos de error mejorados que u
 |                              | *no válido_header_pfs_permission_access_not_granted* | 400 | No se ha concedido el valor de estado de acceso de permiso del encabezado de estado del marco de trabajo del socio. |
 |                              | *id_de_proveedor_pfs_header_invalid_not_defined* | 400 | El valor de ID del proveedor del encabezado de estado del marco de socios no está asociado a un mvpd conocido. |
 |                              | *invalid_header_pfs_provider_id_mismatch* | 400 | El valor de id del proveedor del encabezado de estado del marco de socios no coincide con el mvpd enviado como parámetro. |
+|                              | *invalid_header_pfs_provider_info_expire* | 400 | La información del proveedor del encabezado de estado del marco de trabajo del socio ha caducado. |
 |                              | *integración_no_válida* | 400 | La integración entre el proveedor de servicios especificado y mvpd no existe o está deshabilitada. |
 |                              | *sesión_autenticación_no_válida* | 400 | Falta la sesión de autenticación asociada con esta solicitud o no es válida. |
 |                              | *preauthorization_denied_by_mvpd* | 403 | La MVPD ha devuelto una decisión &quot;Denegar&quot; al solicitar la preautorización del recurso especificado. |
