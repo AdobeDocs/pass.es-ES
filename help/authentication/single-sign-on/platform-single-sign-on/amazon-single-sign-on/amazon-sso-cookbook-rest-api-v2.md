@@ -1,23 +1,22 @@
 ---
-title: Guía de Amazon SSO (API de REST V1)
-description: Guía de Amazon SSO (API de REST V1)
-exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
+title: Guía de Amazon SSO (API REST V2)
+description: Guía de Amazon SSO (API REST V2)
 source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '542'
 ht-degree: 0%
 
 ---
 
-# Guía de Amazon SSO (API de REST V1) {#amazon-sso-cookbook-rest-api-v1}
+# Guía de Amazon SSO (API REST V2) {#amazon-sso-cookbook-rest-api-v2}
 
 >[!IMPORTANT]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
-La API de REST de autenticación de Adobe Pass V1 es compatible con el inicio de sesión único (SSO) de Platform para los usuarios finales de aplicaciones cliente que se ejecutan en FireOS.
+La API de REST de autenticación de Adobe Pass V2 es compatible con el inicio de sesión único (SSO) de Platform para los usuarios finales de aplicaciones cliente que se ejecutan en FireOS.
 
-Este documento actúa como una extensión de la [Información general de la API REST V1](/help/authentication/rest-api-overview.md) existente que proporciona una vista de alto nivel.
+Este documento actúa como una extensión de la [Información general de la API REST V2](/help/authentication/rest-api-v2/rest-api-v2-overview.md) existente que proporciona una vista de alto nivel y el documento que describe cómo implementar el [inicio de sesión único mediante flujos de identidad de la plataforma](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md).
 
 ## Inicio de sesión único de Amazon con flujos de identidad de plataforma {#cookbook}
 
@@ -139,56 +138,31 @@ Asegúrese de que la aplicación de flujo continuo administra lo siguiente:
 
 ### Flujo de trabajo {#workflow}
 
-La carga del token SSO de Amazon (identidad de plataforma) debe estar presente en todas las solicitudes HTTP realizadas con los extremos de autenticación de Adobe Pass:
+La carga del token SSO de Amazon (identidad de plataforma) debe estar presente en todas las solicitudes HTTP realizadas con los extremos de la API de REST de autenticación de Adobe Pass V2:
 
 ```
-/adobe-services/*
-/reggie/*
-/api/*
+/api/v2/*
 ```
+
+La API de REST de autenticación de Adobe Pass V2 admite los siguientes métodos para recibir la carga útil de token de SSO (identidad de plataforma), que es un identificador con ámbito de dispositivo o de plataforma:
+
+* Como encabezado denominado: `Adobe-Subject-Token`
 
 >[!IMPORTANT]
 > 
-> La aplicación de streaming puede omitir el envío de la carga útil de token SSO de Amazon (identidad de plataforma) en la llamada `/authenticate`, ya que se proporcionó en la llamada `/regcode`.
-
-La autenticación de Adobe Pass admite los siguientes métodos para recibir la carga útil del token SSO (identidad de plataforma), que es un identificador con ámbito de dispositivo o de plataforma:
-
-* Como encabezado denominado: `Adobe-Subject-Token`
-* Como parámetro de consulta denominado: `ast`
-* Como parámetro de publicación denominado: `ast`
-
->[!IMPORTANT]
->
-> Si se envía como parámetro de consulta, toda la dirección URL puede llegar a ser muy larga y rechazarse.
->
-> Si se envía como parámetro de consulta/publicación, debe incluirse al generar la firma de solicitud.
+> Para obtener más información sobre el encabezado `Adobe-Subject-Token`, consulte la documentación de [Adobe-Subject-Token](/help/authentication/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
 
 #### Muestras
 
 **Envío como encabezado**
 
 ```HTTPS
-GET /api/v1/config/{requestorId} HTTP/1.1 
+GET /api/v2/{serviceProvider}/sessions HTTP/1.1 
 Host: sp-preprod.auth.adobe.com
 
 Adobe-Subject-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA
 ```
 
-**Envío como parámetro de consulta**
-
-```HTTPS
-GET /api/v1/config/{requestorId}?ast=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA HTTP/1.1
-Host: sp.auth.adobe.com
-```
-
-**Envío como parámetro de publicación**
-
-```HTTPS
-POST /api/v1/config/{requestorId}?ast=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.Jl\_BFhN\_h\_NCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA HTTP/1.1
-Host: sp.auth.adobe.com 
-Content-Type: multipart/form-data;
-```
-
 >[!IMPORTANT]
 >
-> En caso de que falte el encabezado `Adobe-Subject-Token` o el valor del parámetro `ast`, o no sea válido, la autenticación de Adobe Pass atenderá las solicitudes sin tener en cuenta el inicio de sesión único.
+> En caso de que falte el valor del encabezado `Adobe-Subject-Token` o no sea válido, la autenticación de Adobe Pass atenderá las solicitudes sin tener en cuenta el inicio de sesión único.

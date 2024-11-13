@@ -2,7 +2,7 @@
 title: 'Encabezado: Adobe-Subject-Token'
 description: 'API de REST V2: encabezado: Adobe-Subject-Token'
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 1%
@@ -47,10 +47,10 @@ La firma web JSON (`JWS`) o el cifrado web JSON (`JWE`) que es un token web JSON
 
 Esta opción está disponible para las siguientes plataformas:
 
-* [Guía de Amazon SSO (API REST V2)](../../../single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [Guía de Amazon SSO (API REST V2)](../../../single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
 
 ## Ejemplos {#examples}
 
 Consulte los ejemplos tal como se describe para las siguientes plataformas:
 
-* [Guía de Amazon SSO (API REST V2)](../../../single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [Guía de Amazon SSO (API REST V2)](../../../single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)

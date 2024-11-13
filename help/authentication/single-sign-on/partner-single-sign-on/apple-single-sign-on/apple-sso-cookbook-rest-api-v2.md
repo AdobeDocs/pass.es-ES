@@ -1,9 +1,10 @@
 ---
 title: Guía de Apple SSO (API REST V2)
 description: Guía de Apple SSO (API REST V2)
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
+source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
 workflow-type: tm+mt
-source-wordcount: '3402'
+source-wordcount: '3410'
 ht-degree: 0%
 
 ---
@@ -16,11 +17,11 @@ ht-degree: 0%
 
 La API de REST de autenticación de Adobe Pass V2 es compatible con el inicio de sesión único (SSO) de socio para usuarios finales de aplicaciones cliente que se ejecutan en iOS, iPadOS o tvOS.
 
-Este documento actúa como una extensión de la documentación de la API V2 de REST existente que describe cómo implementar el inicio de sesión único de [mediante flujos de socios](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md).
+Este documento actúa como una extensión de la [Información general de la API REST V2](/help/authentication/rest-api-v2/rest-api-v2-overview.md) existente que proporciona una vista de alto nivel y el documento que describe cómo implementar el [inicio de sesión único mediante flujos de socios](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md).
 
-## Inicio de sesión único de Apple con flujos de socios {#apple-sso-cookbook-rest-api-v2-cookbook}
+## Inicio de sesión único de Apple con flujos de socios {#cookbook}
 
-### Requisitos previos {#apple-sso-cookbook-rest-api-v2-prerequisites}
+### Requisitos previos {#prerequisites}
 
 Antes de continuar con el inicio de sesión único de Apple mediante flujos de socios, asegúrese de que se cumplan los siguientes requisitos previos:
 
@@ -40,7 +41,7 @@ Antes de continuar con el inicio de sesión único de Apple mediante flujos de s
 >
 > * La aplicación de streaming ha completado los [requisitos previos de incorporación](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md#apple-sso-prerequisites-programmer) que se aplican a un programador y que son necesarios para habilitar la experiencia del usuario de inicio de sesión único de Apple.
 
-### Flujo de trabajo {#apple-sso-cookbook-rest-api-v2-workflow}
+### Flujo de trabajo {#workflow}
 
 Realice los pasos dados para implementar el inicio de sesión único de Apple mediante flujos de socios como se muestra en el diagrama siguiente.
 
