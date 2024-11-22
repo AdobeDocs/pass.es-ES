@@ -2,9 +2,9 @@
 title: Guía de Apple SSO (API REST V2)
 description: Guía de Apple SSO (API REST V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
+source-git-commit: dbf68d75962e3e34f0c569c409f8c98ae6b9e036
 workflow-type: tm+mt
-source-wordcount: '3410'
+source-wordcount: '3442'
 ht-degree: 0%
 
 ---
@@ -508,7 +508,10 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
    > * Todos los _encabezados_ necesarios, como `Authorization`, `AP-Device-Identifier`
    > * Todos los _parámetros y encabezados_ opcionales
 
-1. **Indique la siguiente acción:** La respuesta del extremo de cierre de sesión de Adobe Pass contiene los datos necesarios para guiar a la aplicación de flujo continuo con respecto a la siguiente acción.
+1. **Indique la siguiente acción:** La respuesta del extremo de cierre de sesión de Adobe Pass contiene los datos necesarios para guiar a la aplicación de flujo continuo con respecto a la siguiente acción:
+   * Falta el atributo `url` porque el usuario debe interactuar con el nivel de socio (sistema) para completar el flujo de cierre de sesión.
+   * El atributo `actionName` está establecido en &quot;partner_logout&quot;.
+   * El atributo `actionType` está establecido en &quot;partner_interactive&quot;.
 
    >[!IMPORTANT]
    >
