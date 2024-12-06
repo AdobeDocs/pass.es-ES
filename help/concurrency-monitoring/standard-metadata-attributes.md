@@ -2,7 +2,7 @@
 title: Atributos de metadatos estándar
 description: Atributos de metadatos estándar
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '1053'
 ht-degree: 0%
@@ -24,7 +24,7 @@ La API de supervisión de simultaneidad obliga a los clientes a enviar los sigui
 |-------------|---------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | applicationId | 75b4-431b-adb2-eb6b9e546013 | Encabezado de autorización | Billete de Zendesk en integración |
 | mvpdName | Sample_MVPD | Ruta de URI | Autenticación de Adobe Pass desde el punto final de configuración cuando el usuario selecciona la MVPD |
-| accountId | 12345 | Ruta de URI | Metadatos de upstreamUserID de autenticación de Adobe Pass después de que el usuario inicie sesión [Metadatos de usuario upstreamUserID - Autenticación de Adobe Pass](/help/authentication/user-metadata-feature.md) |
+| accountId | 12345 | Ruta de URI | Metadatos de upstreamUserID de autenticación de Adobe Pass después de que el usuario inicie sesión [Metadatos de usuario upstreamUserID - Autenticación de Adobe Pass](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) |
 
 
 ## Atributos de metadatos {#metadata-attr}

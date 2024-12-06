@@ -2,7 +2,7 @@
 title: Bienvenido a Adobe&reg; Pass Authentication.
 description: Bienvenido a Adobe&reg; Pass Authentication overview
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 0%
@@ -26,16 +26,16 @@ La autenticación de Adobe Pass es una solución de asignación de derechos para
 ## Ayuda popular y preguntas frecuentes {#help-faqs}
 
 | **Elementos destacados** |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <ul><li>[Inicio de sesión único para iOS](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md)</li><li>[Pase temporal promocional](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticación basada en el hogar (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infografía HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guía del usuario del panel de Adobe Pass TVE](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <ul><li>[Inicio de sesión único para iOS](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)</li><li>[Pase temporal promocional](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)</li><li>[Autenticación basada en el hogar (HBA)](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authn-tve.md)</li><li>[Infografía HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guía del usuario del panel de Adobe Pass TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
 
 | **Para programadores** | **Para MVPD** |
-|------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| <ul><li>[Guía de Kickstart para programadores](/help/authentication/programmer-kickstart-guide.md)</li><li>[Metadatos de usuario](/help/authentication/user-metadata.md)</li></ul> | <ul><li>[Guía de Kickstart de MVPD](/help/authentication/mvpd-kickstart-guide.md)</li><li>[Autenticación](/help/authentication/authn-usecase.md)</li><li>[Autorización](/help/authentication/authz-usecase.md)</li><li>[Cerrar sesión](/help/authentication/usecase-mvpd-logout.md)</li></ul> |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <ul><li>[Guía de Kickstart para programadores](/help/authentication/kickstart/programmer-kickstart-guide.md)</li><li>[Metadatos de usuario](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)</li></ul> | <ul><li>[Guía de Kickstart de MVPD](/help/authentication/kickstart/mvpd-kickstart-guide.md)</li><li>[Autenticación](/help/authentication/integration-guide-mvpds/authn-usecase.md)</li><li>[Autorización](/help/authentication/integration-guide-mvpds/authz-usecase.md)</li><li>[Cerrar sesión](/help/authentication/integration-guide-mvpds/usecase-mvpd-logout.md)</li></ul> |
 | **Para clientes de aplicaciones nativas** | **Para Todos** |
-| <ul><li>[Información general técnica de iOS](/help/authentication/iostvos-sdk-overview.md)</li><li>[Información general técnica de Android](/help/authentication/android-sdk-overview.md)</li></ul> | <ul><li>[Documento técnico](/help/authentication/technical-paper.md)</li><li>[Procedimientos de escalación](/help/authentication/escalation-procedures.md)</li><li>[Glosario](/help/authentication/glossary.md)</li></ul> |
-| **Para Smart Devices** | |
-| <ul><li>[Información general técnica sin cliente](/help/authentication/rest-api-overview.md)</li><li>[API sin cliente](/help/authentication/rest-api-reference.md)</li></ul> | |
+| <ul><li>[Información general técnica de iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Información general técnica de Android](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[Documento técnico](/help/authentication/kickstart/technical-paper.md)</li><li>[Procedimientos de escalación](/help/authentication/notes-technical/escalation-procedures.md)</li><li>[Glosario](/help/authentication/kickstart/glossary.md)</li></ul> |
+| **Para Smart Devices** |                                                                                                                                                                                                                                                                                                                                                                       |
+| <ul><li>[Información general técnica sin cliente](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/rest-api-overview.md)</li><li>[API sin cliente](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)</li></ul> |                                                                                                                                                                                                                                                                                                                                                                       |
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ La autenticación de Adobe Pass es una solución de asignación de derechos para
 >
 >[Enviar un correo electrónico a nuestro equipo de atención al cliente](mailto:tve-support@adobe.com) es también el primer paso para cualquier informe de problema o incidente.
 >
->Si tienes un problema con [SEVERITY 1 LIVE](/help/authentication/escalation-procedures.md) y nos has enviado un correo electrónico y han transcurrido 30 minutos sin respuesta, consulta el documento [Procedimientos de escalación](/help/authentication/escalation-procedures.md) para obtener los números de teléfono a los que llamar.
+>Si tienes un problema con [SEVERITY 1 LIVE](/help/authentication/notes-technical/escalation-procedures.md) y nos has enviado un correo electrónico y han transcurrido 30 minutos sin respuesta, consulta el documento [Procedimientos de escalación](/help/authentication/notes-technical/escalation-procedures.md) para obtener los números de teléfono a los que llamar.
 >
 
 
