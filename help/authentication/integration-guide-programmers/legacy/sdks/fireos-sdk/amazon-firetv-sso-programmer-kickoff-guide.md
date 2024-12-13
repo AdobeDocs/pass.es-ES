@@ -2,14 +2,14 @@
 title: Amazon fireTV SSO - Guía de inicio del programador
 description: Amazon fireTV SSO - Guía de inicio del programador
 exl-id: cf9ba614-57ad-46c3-b154-34204b38742d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '782'
+source-wordcount: '783'
 ht-degree: 0%
 
 ---
 
-# Amazon fireTV SSO - Guía de inicio del programador {#amazon-firetv-sso---programmer-kick-off-guide}
+# (Heredado) Amazon fireTV SSO - Guía de inicio del programador {#amazon-firetv-sso---programmer-kick-off-guide}
 
 >[!NOTE]
 >
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## Introducción {#intro}
 
-Este documento describe la información necesaria para integrar el nuevo SDK de **Adobe Pass Authentication para fireTV** en su aplicación fireTV. Este nuevo SDK aprovecha la integración a nivel del SO en la plataforma fireTV de Amazon y ofrece compatibilidad con el inicio de sesión único **Single Sign On**. Para beneficiarse del inicio de sesión único se requiere un pequeño esfuerzo por su parte para migrar la aplicación de la API sin cliente al nuevo SDK de fireTV. A continuación se detallan algunos cambios en los flujos de autenticación.
+Este documento describe la información necesaria para integrar el nuevo SDK de **Adobe Pass Authentication fireTV** en tu aplicación fireTV. Este nuevo SDK aprovecha la integración a nivel del SO en la plataforma fireTV de Amazon y ofrece compatibilidad con el inicio de sesión único **Single Sign On**. Para beneficiarse del inicio de sesión único se requiere un pequeño esfuerzo por su parte para migrar su aplicación de la API sin cliente al nuevo SDK fireTV. A continuación se detallan algunos cambios en los flujos de autenticación.
 
 ## Arquitectura de alto nivel e integración a nivel del sistema operativo {#high}
 
@@ -31,40 +31,40 @@ Hasta que Amazon proporcione un simulador fireTV que incorpore nuestra bibliotec
 
 * Inicio de sesión único entre todas las aplicaciones de TV por Adobe en todas partes en Amazon fireTV platform con todas las MVPD integradas.
 * Posibilidad de beneficiarse de HBA (con MVPD compatibles).
-* Capacidad para utilizar el SDK de fireTV más reciente sin necesidad de actualizar las aplicaciones cada vez que se lanza una nueva versión del SDK.
-* Todas las aplicaciones de TVE se benefician del uso de la biblioteca del sistema compartido al eliminar la necesidad de tener una copia local de la biblioteca AccessEnabler. Esto también garantiza que todas las aplicaciones utilicen la misma versión del SDK.
+* Capacidad de usar la última versión de FireTV SDK sin necesidad de actualizar las aplicaciones cada vez que se lanza una nueva versión de SDK.
+* Todas las aplicaciones de TVE se benefician del uso de la biblioteca del sistema compartido al eliminar la necesidad de tener una copia local de la biblioteca AccessEnabler. Esto también garantiza que todas las aplicaciones utilicen la misma versión de SDK.
 * Autenticación de pantalla única: sin necesidad de código de registro y flujos de trabajo de segunda pantalla.
 
-## Migración de una aplicación basada en API sin cliente a una aplicación basada en SDK de fireTV {#migra1}
+## Migración de la aplicación basada en API sin cliente a la aplicación basada en SDK fireTV {#migra1}
 
-Para migrar de la API sin cliente al SDK de fireTV, debe eliminar el código base relacionado con la API sin cliente e integrar el nuevo SDK de fireTV.
+Para migrar de la API sin cliente a fireTV SDK, debe eliminar el código base relacionado con la API sin cliente e integrar el nuevo SDK fireTV.
 
-En comparación con la aplicación basada en la API sin cliente, con el nuevo SDK de fireTV la autenticación se mueve a la primera pantalla, ya no hay necesidad de una segunda autenticación de pantalla.
+En comparación con la aplicación basada en la API sin cliente, con el nuevo FireTV SDK la autenticación se mueve a la primera pantalla, ya no hay necesidad de una segunda autenticación de pantalla.
 
-Esto requiere que los programadores agreguen un selector de MVPD en sus aplicaciones para que los usuarios puedan elegir su proveedor de TV directamente en el dispositivo fireTV. Al seleccionar MVPD, se mostrará al usuario la página de inicio de sesión de MVPD en el dispositivo fireTV.
+Esto requiere que los programadores agreguen un selector de MVPD a sus aplicaciones para que los usuarios puedan elegir su proveedor de TV directamente en el dispositivo fireTV. Una vez seleccionado MVPD, se mostrará al usuario la página de inicio de sesión de MVPD en el dispositivo fireTV.
 
 Puede encontrar mallas metálicas de los flujos de usuario que describen los escenarios normales, HBA y SSO en fireTV en [Flujo de usuario de inicio de sesión de Amazon Fire TV - MVVPD](https://xd.adobe.com/view/9058288e-4b67-43a1-9d5b-5f76ede6c51e/).
 
-## Migración de una aplicación basada en SDK de Android a una aplicación basada en SDK de fireTV {#migra2}
+## Migración de la aplicación basada en Android SDK a la aplicación basada en SDK fireTV {#migra2}
 
-Este nuevo SDK de fireTV es muy similar a nuestro SDK de Android existente, y la documentación actual que tenemos para **integrar nuestro SDK de Android** <!--http://tve.helpdocsonline.com/android-technical-overview-->se puede usar hasta que tengamos listos los documentos del SDK de fireTV. Si ya tiene aplicaciones de Android que utilizan nuestro SDK de Android, la integración del SDK de fireTV en su aplicación fireTV debería ser sencilla.
+Esta nueva SDK de fireTV es muy similar a nuestra SDK de Android existente y la documentación actual que tenemos para **integrar nuestra SDK de Android** <!--http://tve.helpdocsonline.com/android-technical-overview-->se puede usar hasta que tengamos listos los documentos de SDK de fireTV. Si ya tiene aplicaciones de Android que usan nuestro SDK de Android, entonces la integración de fireTV SDK en su aplicación de fireTV debería ser sencilla.
 
-En comparación con el SDK de Android existente, en el SDK de fireTV el proceso de autenticación será más fácil de desarrollar, ya que las tareas de gestión/presentación de la página de inicio de sesión de MVPD y la recuperación del token de AuthN se realizarán internamente por la biblioteca de AccessEnabler.
+En comparación con Android SDK existente, en fireTV SDK el proceso de autenticación será más fácil de desarrollar, ya que las tareas de administrar/presentar la página de inicio de sesión de MVPD y recuperar el token de AuthN las realizará internamente la biblioteca AccessEnabler.
 
 ## Preguntas frecuentes {#faq}
 
 1. ¿Cómo funcionará el **SSO**?
 
-   * SSO funcionará en todas las aplicaciones de Programador con autenticación de Adobe Pass que estén usando el nuevo SDK de fireTV en el mismo dispositivo Amazon fireTV
-   * No se admitirá SSO entre aplicaciones de programador implementadas en la API de REST sin cliente y aplicaciones implementadas en el SDK **de fireTV**
+   * SSO funcionará en todas las aplicaciones de Programador con autenticación de Adobe Pass que estén usando el nuevo SDK fireTV en el mismo dispositivo Amazon fireTV
+   * No se admitirá SSO entre aplicaciones de programador implementadas en la API de REST sin cliente y aplicaciones implementadas en fireTV SDK ****
 
 1. ¿Cuál es la cobertura de MVPD de FireTV SSO?
 
-   * **Todas las MVPD** integradas por la autenticación de Adobe Pass serán técnicamente compatibles con SSO en el SDK de fireTV.
+   * **Todas las MVPD** integradas por la autenticación de Adobe Pass serán técnicamente compatibles con SSO en fireTV SDK.
 
 1. Además de usar el nuevo SDK, ¿qué otros **cambios en el flujo de trabajo** deben tener en cuenta los programadores?
 
-   * Los programadores necesitan implementar un selector de MVPD para la plataforma fireTV.
+   * Los programadores deben implementar un selector de MVPD para FireTV.
 
 1. ¿Habrá algún cambio en la autenticación **TTL**?
 

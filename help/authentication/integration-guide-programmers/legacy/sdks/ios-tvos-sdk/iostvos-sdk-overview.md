@@ -1,15 +1,15 @@
 ---
-title: Información general del SDK para iOS/tvOS
-description: Información general del SDK para iOS/tvOS
+title: Información general sobre iOS/tvOS SDK
+description: Información general sobre iOS/tvOS SDK
 exl-id: b02a6234-d763-46c0-bc69-9cfd65917a19
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '3731'
+source-wordcount: '3732'
 ht-degree: 0%
 
 ---
 
-# Información general del SDK para iOS/tvOS {#iostvos-sdk-overview}
+# Información general sobre iOS/tvOS SDK (heredado) {#iostvos-sdk-overview}
 
 >[!NOTE]
 >
@@ -25,7 +25,7 @@ iOS AccessEnabler es una biblioteca de Objective-C iOS/tvOS que permite a las ap
 
 ## Requisitos de iOS y tvOS {#reqs}
 
-Para conocer los requisitos técnicos actuales relacionados con la plataforma iOS y tvOS y la autenticación de Adobe Pass, consulte [Requisitos de plataforma/dispositivo/herramienta](#ios) y consulte las notas de la versión incluidas con la descarga del SDK. En el resto de esta página, verá secciones que indican cambios que se aplican a versiones de SDK particulares y posteriores. Por ejemplo, la siguiente es una nota legítima sobre el SDK 1.7.5:
+Para conocer los requisitos técnicos actuales relacionados con la plataforma iOS y tvOS y la autenticación de Adobe Pass, consulte [Requisitos de plataforma/dispositivo/herramienta](#ios) y consulte las notas de la versión incluidas con la descarga de SDK. En el resto de esta página, verá secciones que indican cambios que se aplican a versiones de SDK específicas y posteriores. Por ejemplo, la siguiente es una nota legítima sobre SDK 1.7.5:
 
 ## Explicación de los flujos de trabajo de cliente nativos {#flows}
 
@@ -61,10 +61,10 @@ Tenga en cuenta que, aunque este flujo de trabajo difiere para los clientes nati
 
 1. La aplicación inicia el flujo de trabajo de autenticación con una llamada al método de API `getAuthentication() `de AccessEnabler, que comprueba si hay un token de autenticación en caché válido.
 1. Si el usuario está autenticado actualmente, AccessEnabler llama a la función de devolución de llamada [`setAuthenticationStatus()`](#setAuthNStatus), pasando un estado de autenticación que indica que se ha realizado correctamente y finalizando el flujo.
-1. Si el usuario no está autenticado actualmente, AccessEnabler continúa el flujo de autenticación determinando si el último intento de autenticación del usuario se realizó correctamente con una MVPD determinada. Si se almacena en caché un ID de MVPD Y el indicador `canAuthenticate` es verdadero O si se seleccionó una MVPD con [`setSelectedProvider()`](#setSelProv), no se pide al usuario el cuadro de diálogo de selección de MVPD. El flujo de autenticación sigue utilizando el valor almacenado en caché de la MVPD (es decir, la misma MVPD que se utilizó durante la última autenticación correcta). Se realiza una llamada de red al servidor back-end y se redirige al usuario a la página de inicio de sesión de MVPD (paso 6 a continuación).
-1. Si no se almacena en caché ningún ID de MVPD Y no se seleccionó ninguna MVPD con [`setSelectedProvider()`](#setSelProv) O si el indicador `canAuthenticate` está establecido en falso, se llama a la devolución de llamada [`displayProviderDialog()`](#dispProvDialog). Esta llamada de retorno indica a la aplicación que cree la interfaz de usuario que presenta al usuario una lista de MVPD para elegir. Se proporciona una matriz de objetos MVPD, que contiene la información necesaria para crear el selector MVPD. Cada objeto MVPD describe una entidad MVPD y contiene información como el ID de la MVPD (por ejemplo, XFINITY, AT\&amp;T, etc.) y la URL donde se puede encontrar el logotipo de MVPD.
-1. Una vez que se selecciona una MVPD en particular, la aplicación debe informar al AccessEnabler de la elección del usuario. Una vez que el usuario selecciona la MVPD deseada, se informa al AccessEnabler de la selección del usuario mediante una llamada al método [`setSelectedProvider()`](#setSelProv).
-1. El AccessEnabler de iOS llama a la devolución de llamada `navigateToUrl:` o a la devolución de llamada `navigateToUrl:useSVC:` para redirigir al usuario a la página de inicio de sesión de MVPD. Al activar cualquiera de ellas, AccessEnabler realiza una solicitud a la aplicación para crear un controlador `UIWebView/WKWebView or SFSafariViewController` y cargar la dirección URL proporcionada en el parámetro `url` de la devolución de llamada. Dirección URL del extremo de autenticación en el servidor back-end. Para tvOS AccessEnabler, se llama a la devolución de llamada [status()](#status_callback_implementation) con un parámetro `statusDictionary` y se inicia inmediatamente el sondeo para la segunda autenticación de pantalla. El `statusDictionary` contiene el `registration code` que debe usarse para la segunda autenticación de pantalla.
+1. Si el usuario no está autenticado actualmente, AccessEnabler continúa el flujo de autenticación determinando si el último intento de autenticación del usuario se realizó correctamente con un MVPD determinado. Si se almacena en caché un MVPD ID Y el indicador `canAuthenticate` es verdadero O si se seleccionó un MVPD mediante [`setSelectedProvider()`](#setSelProv), no se solicitará al usuario el cuadro de diálogo de selección de MVPD. El flujo de autenticación sigue utilizando el valor almacenado en caché de MVPD (es decir, el mismo MVPD que se utilizó durante la última autenticación correcta). Se realiza una llamada de red al servidor back-end y se redirige al usuario a la página de inicio de sesión de MVPD (paso 6 a continuación).
+1. Si no se almacena en caché ningún MVPD ID Y no se seleccionó ningún MVPD con [`setSelectedProvider()`](#setSelProv) O si el indicador `canAuthenticate` está establecido en falso, se llama a la devolución de llamada [`displayProviderDialog()`](#dispProvDialog). Esta llamada de retorno indica a la aplicación que cree la interfaz de usuario que presenta al usuario una lista de MVPD para elegir. Se proporciona una matriz de objetos de MVPD que contiene la información necesaria para crear el selector de MVPD. Cada objeto de MVPD describe una entidad de MVPD y contiene información como el ID de MVPD (por ejemplo, XFINITY, AT\&amp;T, etc.) y la URL donde se puede encontrar el logotipo de MVPD.
+1. Una vez seleccionada una MVPD determinada, la aplicación debe informar al AccessEnabler de la elección del usuario. Una vez que el usuario selecciona el MVPD deseado, se informa al AccessEnabler de la selección del usuario mediante una llamada al método [`setSelectedProvider()`](#setSelProv).
+1. IOS AccessEnabler llama a su llamada de retorno `navigateToUrl:` o a su llamada de retorno `navigateToUrl:useSVC:` para redirigir al usuario a la página de inicio de sesión de MVPD. Al activar cualquiera de ellas, AccessEnabler realiza una solicitud a la aplicación para crear un controlador `UIWebView/WKWebView or SFSafariViewController` y cargar la dirección URL proporcionada en el parámetro `url` de la devolución de llamada. Dirección URL del extremo de autenticación en el servidor back-end. Para tvOS AccessEnabler, se llama a la devolución de llamada [status()](#status_callback_implementation) con un parámetro `statusDictionary` y se inicia inmediatamente el sondeo para la segunda autenticación de pantalla. El `statusDictionary` contiene el `registration code` que debe usarse para la segunda autenticación de pantalla.
 1. En el caso del AccessEnabler de iOS, el usuario aterriza en la página de inicio de sesión de MVPD para escribir sus credenciales a través del medio del controlador `UIWebView/WKWebView or SFSafariViewController ` de la aplicación. Tenga en cuenta que durante esta transferencia se producen varias operaciones de redireccionamiento y la aplicación debe supervisar las direcciones URL que carga el controlador durante las diversas operaciones de redireccionamiento.
 1. En el caso del AccessEnabler de iOS, cuando el controlador `UIWebView/WKWebView or SFSafariViewController` carga una dirección URL personalizada específica, la aplicación debe cerrar el controlador y llamar al método de API `handleExternalURL:url `de AccessEnabler. Tenga en cuenta que esta dirección URL personalizada específica no es válida y no está pensada para que el controlador la cargue. Su aplicación debe interpretarlo únicamente como una señal de que el flujo de autenticación se ha completado y de que es seguro cerrar el controlador `UIWebView/WKWebView or SFSafariViewController`. En caso de que la aplicación necesite utilizar un controlador `SFSafariViewController `la dirección URL personalizada específica está definida por `application's custom scheme` (p. ej.: `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`); de lo contrario, esta dirección URL personalizada específica está definida por la constante `ADOBEPASS_REDIRECT_URL` (p. ej. `adobepass://ios.app`).
 1. Una vez que la aplicación cierra el controlador `UIWebView/WKWebView or SFSafariViewController` y llama al método de API `handleExternalURL:url `de AccessEnabler, AccessEnabler recupera el token de autenticación del servidor back-end e informa a la aplicación de que el flujo de autenticación ha finalizado. AccessEnabler llama a la llamada de retorno [`setAuthenticationStatus()`](#setAuthNStatus) con un código de estado de 1, que indica que se ha realizado correctamente. Si hay un error durante la ejecución de estos pasos, la llamada de retorno [`setAuthenticationStatus()`](#setAuthNStatus) se activa con un código de estado de 0, lo que indica un error de autenticación, así como un código de error correspondiente.
@@ -127,12 +127,12 @@ Una vez que la autenticación y la autorización se hayan realizado correctament
 
 #### Testigo de autenticación
 
-- **AccessEnabler 1.7:** Este SDK presenta un nuevo método de almacenamiento de tokens, que permite varios contenedores de MVPD de programador y, por lo tanto, varios tokens de autenticación. Ahora se utiliza el mismo diseño de almacenamiento tanto para el escenario &quot;Autenticación por solicitante&quot; como para el flujo de autenticación normal. La única diferencia entre los dos es la forma en que se realiza la autenticación: &quot;Autenticación por solicitante&quot; contiene una nueva mejora (Autenticación pasiva) que permite que AccessEnabler realice la autenticación de canal de retorno, basada en la existencia de un token de autenticación en el almacenamiento (para un programador diferente). El usuario solo tiene que autenticarse una vez, y esta sesión se utilizará para obtener tokens de autenticación en aplicaciones adicionales. Este flujo de canal de retorno tiene lugar durante la llamada de [`setRequestor()`](#setReq) y es mayormente transparente para el programador. **Sin embargo, hay un requisito importante aquí: el programador DEBE llamar a setRequestor() desde el subproceso de la interfaz de usuario principal.**
-- **AccessEnabler 1.6 y versiones anteriores:** La forma en que se almacenan en caché los tokens de autenticación en el dispositivo depende del indicador &quot;**Autenticación por solicitante&quot;** asociado con la MVPD actual:
+- **AccessEnabler 1.7:** Este SDK presenta un nuevo método de almacenamiento de tokens, que permite varios contenedores de Programmer-MVPD y, por lo tanto, varios tokens de autenticación. Ahora se utiliza el mismo diseño de almacenamiento tanto para el escenario &quot;Autenticación por solicitante&quot; como para el flujo de autenticación normal. La única diferencia entre los dos es la forma en que se realiza la autenticación: &quot;Autenticación por solicitante&quot; contiene una nueva mejora (Autenticación pasiva) que permite que AccessEnabler realice la autenticación de canal de retorno, basada en la existencia de un token de autenticación en el almacenamiento (para un programador diferente). El usuario solo tiene que autenticarse una vez, y esta sesión se utilizará para obtener tokens de autenticación en aplicaciones adicionales. Este flujo de canal de retorno tiene lugar durante la llamada de [`setRequestor()`](#setReq) y es mayormente transparente para el programador. **Sin embargo, hay un requisito importante aquí: el programador DEBE llamar a setRequestor() desde el subproceso de la interfaz de usuario principal.**
+- **AccessEnabler 1.6 y versiones anteriores:** La forma en que se almacenan en caché los tokens de autenticación en el dispositivo depende del indicador &quot;**Autenticación por solicitante&quot;** asociado con el MVPD actual:
 
 <!-- end list -->
 
-1. Si la función &quot;Autenticación por solicitante&quot; está deshabilitada, se almacenará un único token de autenticación localmente en la mesa de trabajo global; este token se compartirá entre todas las aplicaciones que estén integradas con la MVPD actual.
+1. Si la función &quot;Autenticación por solicitante&quot; está deshabilitada, se almacenará un solo token de autenticación localmente en la mesa de trabajo global; este token se compartirá entre todas las aplicaciones integradas con la MVPD actual.
 1. Si la función &quot;Autenticación por solicitante&quot; está habilitada, se asociará explícitamente un token con el programador que realizó el flujo de autenticación (el token no se almacenará en la mesa de trabajo global, sino en un archivo privado visible solo para la aplicación de ese programador). Más específicamente, se deshabilitará el inicio de sesión único (SSO) entre diferentes aplicaciones; el usuario deberá realizar el flujo de autenticación explícitamente al cambiar a una nueva aplicación (siempre que el programador de la segunda aplicación esté integrado con la MVPD actual y que no exista ningún token de autenticación para ese programador en la caché local).
 
 
@@ -186,7 +186,7 @@ Como en tvOS la mesa de trabajo no está disponible, la biblioteca de tvOS Acces
 
 - El ID de raíz del paquete/ID del equipo es el mismo entre dos aplicaciones si las genera el mismo perfil de aprovisionamiento. Encontrará más información en este enlace:
   [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
-- Esta limitación &quot;Cross SSO&quot; estará presente en iOS 7 independientemente del SDK de autenticación de Adobe Pass utilizado.
+- Esta limitación de &quot;SSO cruzado&quot; estará presente en iOS 7 independientemente de la autenticación de Adobe Pass que se use en SDK.
 
 Lea esta nota técnica para obtener más información sobre la configuración de SSO en iOS 7 y versiones posteriores (la nota técnica se aplica a Access Enabler v1.8 y versiones posteriores): <https://tve.zendesk.com/entries/58233434-Configuring-Pay-TV-pass-SSO-on-iOS>
 
@@ -200,7 +200,7 @@ ilustra esta nueva funcionalidad:
 1. Abra App1 (desarrollado por Programmer1).
 1. Autenticar con MVPD1 (que está integrado con Programmer1).
 1. Suspenda/cierre la aplicación actual y abra App2 (desarrollada por Programmer2).
-1. Supongamos que Programmer2 no está integrado con MVPD2; por lo tanto, el usuario NO será autenticado en App2.
+1. Supongamos que Programmer2 no está integrado con MVPD2; por lo tanto, el usuario NO se autenticará en App2.
 1. Autentique con MVPD2 (que está integrado con Programmer2) en App2.
 1. Cambie a App1; el usuario se autenticará con Programmer1.
 
@@ -208,7 +208,7 @@ En versiones anteriores de AccessEnabler, el paso 6 hacía que el usuario no est
 
 
 
-Si se cierra la sesión de un programador/MVPD, se borrará todo el almacenamiento subyacente, incluidos todos los demás tokens de autenticación de programador/MVPD del dispositivo. Por otro lado, cancelar el flujo de autenticación (invocando [`setSelectedProvider(null)`](#setSelProv)) NO borrará el almacenamiento subyacente, pero solo afectará el intento de autenticación actual del Programador / MVPD (borrando la MVPD para el Programador actual).
+Si se cierra la sesión de un programador/MVPD, se borrará todo el almacenamiento subyacente, incluidos todos los demás tokens de autenticación de programador/MVPD del dispositivo. Por otro lado, cancelar el flujo de autenticación (invocando [`setSelectedProvider(null)`](#setSelProv)) NO borrará el almacenamiento subyacente, pero solo afectará el intento de autenticación actual del Programador/MVPD (borrando MVPD para el Programador actual).
 
 
 
@@ -318,7 +318,7 @@ Dado que esta es, obviamente, una función relacionada con la seguridad, esta in
 
 
 
-**Nota sobre el enlace de dispositivos en AccessEnabler 1.7.5:** A partir de AccessEnabler 1.7.5, hay un cambio en la forma en que se calcula el ID del dispositivo para proporcionar información de individualización para un dispositivo iOS. Este cambio refleja un cambio en iOS 7: a partir de iOS 7, Apple ya no proporciona la dirección de WiFi MAC como opción de seguimiento, a favor de su identificador para anunciantes (IDFA). Dado que la información de individualización de una aplicación que se ejecuta en iOS 7 se basa en el IDFA y que esa información está incrustada en los tokens de flujo de derechos, esto significa que hay una serie de posibles efectos diferentes en la experiencia del usuario que resultan de este cambio. Los diferentes efectos posibles se basan en la versión de iOS desde la que el usuario está actualizando, junto con la versión del AccessEnabler desde la que el programador está actualizando. Para obtener más información sobre este cambio, consulte las Notas de la versión incluidas con el SDK 1.7.5 de AccessEnabler.
+**Nota sobre el enlace de dispositivos en AccessEnabler 1.7.5:** A partir de AccessEnabler 1.7.5, hay un cambio en la forma en que se calcula el ID del dispositivo para proporcionar información de individualización para un dispositivo iOS. Este cambio refleja un cambio en iOS 7: a partir de iOS 7, Apple ya no proporciona la dirección de WiFi MAC como opción de seguimiento, a favor de su identificador para anunciantes (IDFA). Dado que la información de individualización de una aplicación que se ejecuta en iOS 7 se basa en el IDFA y que esa información está incrustada en los tokens de flujo de derechos, esto significa que hay una serie de posibles efectos diferentes en la experiencia del usuario que resultan de este cambio. Los diferentes efectos posibles se basan en la versión de iOS desde la que el usuario está actualizando, junto con la versión del AccessEnabler desde la que el programador está actualizando. Para obtener más información sobre este cambio, consulte las Notas de la versión incluidas con AccessEnabler SDK 1.7.5.
 
 <!--
 ## Related Information {#related}

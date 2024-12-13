@@ -2,14 +2,14 @@
 title: Guía de migración de iOS/tvOS v3.x
 description: Guía de migración de iOS/tvOS v3.x
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '559'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
 
-# Guía de migración de iOS/tvOS v3.x {#iostvos-v3x-migration-guide}
+# Guía de migración de iOS/tvOS v3.x (heredada) {#iostvos-v3x-migration-guide}
 
 >[!NOTE]
 >

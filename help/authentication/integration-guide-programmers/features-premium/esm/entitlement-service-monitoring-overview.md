@@ -2,7 +2,7 @@
 title: Información general sobre supervisión del servicio de derechos
 description: Información general sobre supervisión del servicio de derechos
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '1303'
 ht-degree: 0%
@@ -62,8 +62,8 @@ La API de ESM no está disponible de forma general.  Póngase en contacto con el
 | minuto | El minuto de la hora |
 | media-company | Compañía de medios propietaria del sitio web que inició el proceso de asignación de derechos para el usuario |
 | dc | (Centro de datos) La región de origen en la que se recibió la solicitud. |
-| proxy | La MVPD proxy (que será &quot;Directa&quot; para integraciones directas) |
-| mvpd | La MVPD responsable de conceder el derecho al usuario |
+| proxy | El MVPD proxy (que será &quot;Directo&quot; para integraciones directas) |
+| mvpd | MVPD responsable de conceder el derecho al usuario |
 | requestor-id | ID del solicitante utilizado para realizar la solicitud de asignación de derechos |
 | canal | El sitio web del canal, extraído del campo de recurso (extraído de la carga útil MRSS como canal/título si se proporciona, o asignado al valor del recurso si no está en formato RSS). |
 | resource-id | El título real del recurso implicado en la solicitud de autorización (extraído de la carga útil MRSS como el artículo/título si se proporciona) |
@@ -71,19 +71,19 @@ La API de ESM no está disponible de forma general.  Póngase en contacto con el
 | bisiesto | El proveedor de autenticación externa cuando el flujo de autenticación se realiza a través de un sistema externo. </br> Los valores pueden ser: </br> - N/D - la autenticación fue proporcionada por la autenticación de Adobe Pass </br> - Apple - el sistema externo que proporcionó la autenticación es Apple |
 | os-family | Sistema operativo en ejecución en el dispositivo |
 | browser-family | Agente de usuario utilizado para acceder a la autenticación de Adobe Pass |
-| cdt | La plataforma del dispositivo (alternativa), utilizada actualmente para Clientes sin conexión. </br> Los valores pueden ser: </br> - N/D - el evento no se originó desde un SDK sin cliente </br> - Desconocido - Dado que el parámetro deviceType de una API sin cliente es opcional, hay llamadas que no contienen ningún valor. </br>: cualquier otro valor enviado a través de la API sin cliente, como xbox, appletv, roku, etc. </br> |
-| platform-version | La versión del SDK sin cliente |
+| cdt | La plataforma del dispositivo (alternativa), utilizada actualmente para Clientes sin conexión. </br> Los valores pueden ser: </br> - N/D - el evento no se originó desde una SDK sin cliente </br> - Desconocido - Dado que el parámetro deviceType de una API sin cliente es opcional, hay llamadas que no contienen ningún valor. </br>: cualquier otro valor enviado a través de la API sin cliente, como xbox, appletv, roku, etc. </br> |
+| platform-version | La versión de SDK sin cliente |
 | os-type | Sistema operativo en ejecución en el dispositivo, alternativo (no utilizado actualmente) |
 | browser-version | Versión del agente de usuario |
 | nsdk | El SDK de cliente utilizado (android, fireTV, js, iOS, tvOS, que no es sdk) |
-| nsdk-version | La versión del SDK del cliente de autenticación de Adobe Pass |
+| nsdk-version | La versión de SDK del cliente de autenticación de Adobe Pass |
 | evento | El nombre del evento de autenticación de Adobe Pass |
 | razonar | El motivo de los errores, según la información de Autenticación de Adobe Pass |
 | sso-type | El mecanismo SSO subyacente: platform/pasive/adobe. Indica que el token de autorización se emitió reutilizando AuthN en una aplicación diferente |
 | plataforma | El dispositivo identificó la plataforma. Valores posibles: </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - etc |
 | application-name | El nombre de la aplicación configurada, en Tablero de TVE, para la aplicación registrada DCR configurada para utilizarse. |
 | application-version | La versión de la aplicación configurada, en Tablero de TVE, para la aplicación registrada de DCR configurada para utilizarse. |
-| customer-app | Id. de aplicación personalizada que se pasó a través de [Información del dispositivo](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md). |
+| customer-app | Id. de aplicación personalizada que se pasó a través de [Información del dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | content-category | La categoría del contenido solicitado por la aplicación. |
 
 ## ESM para MVPD {#esm-for-mvpds}
@@ -114,17 +114,17 @@ La API de ESM no está disponible de forma general.  Póngase en contacto con el
 | mvpd | ID de mvpd utilizado para realizar la solicitud de asignación de derechos |
 | requestor-id | ID del solicitante utilizado para realizar la solicitud de asignación de derechos |
 | bisiesto | El proveedor de autenticación externa cuando el flujo de autenticación se realiza a través de un sistema externo. </br> Los valores pueden ser: </br> - N/D - la autenticación fue proporcionada por la autenticación de Adobe Pass </br> - Apple - el sistema externo que proporcionó la autenticación es Apple |
-| cdt | La plataforma del dispositivo (alternativa), utilizada actualmente para Clientes sin conexión. </br> Los valores pueden ser: </br> - N/D - el evento no se originó desde un SDK sin cliente </br> - Desconocido - Dado que el parámetro deviceType de una API sin cliente es opcional, hay llamadas que no contienen ningún valor. </br>: cualquier otro valor enviado a través de la API sin cliente, como xbox, appletv, roku, etc. </br> |
-| sdk-type | El SDK de cliente utilizado (Flash, HTML5, nativo de Android, iOS, sin cliente, etc.) |
+| cdt | La plataforma del dispositivo (alternativa), utilizada actualmente para Clientes sin conexión. </br> Los valores pueden ser: </br> - N/D - el evento no se originó desde una SDK sin cliente </br> - Desconocido - Dado que el parámetro deviceType de una API sin cliente es opcional, hay llamadas que no contienen ningún valor. </br>: cualquier otro valor enviado a través de la API sin cliente, como xbox, appletv, roku, etc. </br> |
+| sdk-type | El SDK de cliente utilizado (Flash, HTML 5, Android nativo, iOS, sin cliente, etc.) |
 | plataforma | El dispositivo identificó la plataforma. Valores posibles: </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - etc |
 | nsdk | El SDK de cliente utilizado (android, fireTV, js, iOS, tvOS, que no es sdk) |
-| nsdk-version | La versión del SDK del cliente de autenticación de Adobe Pass |
+| nsdk-version | La versión de SDK del cliente de autenticación de Adobe Pass |
 
 ## Casos de uso {#use-cases}
 
 Puede utilizar los datos de ESM para los siguientes casos de uso:
 
-- **Supervisión**: los equipos de operaciones o supervisión pueden crear un tablero o gráfico que llame a la API cada minuto. Con la información mostrada, pueden detectar un problema (con la autenticación de Adobe Pass o con una MVPD) en el momento en que aparece.
+- **Supervisión**: los equipos de operaciones o supervisión pueden crear un tablero o gráfico que llame a la API cada minuto. Con la información mostrada, pueden detectar un problema (con la autenticación de Adobe Pass o con una MVPD) en el minuto en que aparece.
 
 - **Depuración/Prueba de calidad**: como los datos también se desglosan por plataforma, dispositivo, explorador y sistema operativo, el análisis de los patrones de uso puede identificar problemas en combinaciones específicas (por ejemplo, Safari en OSX).
 

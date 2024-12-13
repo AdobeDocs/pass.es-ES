@@ -1,15 +1,15 @@
 ---
-title: SDK de Android con registro de cliente dinámico
-description: SDK de Android con registro de cliente dinámico
+title: Android SDK con registro dinámico de clientes
+description: Android SDK con registro dinámico de clientes
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1278'
+source-wordcount: '1279'
 ht-degree: 0%
 
 ---
 
-# SDK de Android con registro de cliente dinámico {#android-sdk-with-dynamic-client-registration}
+# (Heredado) Android SDK con registro de cliente dinámico {#android-sdk-with-dynamic-client-registration}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Introducción {#Intro}
 
-El SDK de Android AccessEnabler para Android se ha modificado para habilitar la autenticación sin usar cookies de sesión. Dado que cada vez más exploradores restringen el acceso a las cookies, es necesario utilizar otro método para permitir la autenticación.
+Android AccessEnabler SDK para Android se ha modificado para habilitar la autenticación sin usar cookies de sesión. Dado que cada vez más exploradores restringen el acceso a las cookies, es necesario utilizar otro método para permitir la autenticación.
 
 Para Android, el uso de fichas personalizadas de Chrome restringe el acceso a las cookies de otras aplicaciones.
 
@@ -28,7 +28,7 @@ Para Android, el uso de fichas personalizadas de Chrome restringe el acceso a la
 
 >[!NOTE]
 >
->Para las versiones de Android anteriores sin compatibilidad con Chrome Custom Tabs, se utilizará la autenticación de WebView similar a la de las versiones anteriores del SDK de AccessEnabler.
+>Para las versiones de Android anteriores sin compatibilidad con Chrome Custom Tabs, se utilizará la autenticación de WebView similar a la de las versiones de SDK de AccessEnabler anteriores.
 
 
 ## Registro dinámico de clientes {#DCR}
@@ -38,7 +38,7 @@ Android SDK v3.0+ utilizará el procedimiento de registro de cliente dinámico c
 
 ## Demostración de funciones {#Demo}
 
-Vea [este seminario web](https://my.adobeconnect.com/pzkp8ujrigg1/) que proporciona más contexto sobre la funcionalidad y contiene una demostración sobre cómo administrar las instrucciones de software mediante el tablero de TVE y cómo probar las generadas mediante una aplicación de demostración proporcionada por Adobe como parte del SDK de Android.
+Vea [este seminario web](https://my.adobeconnect.com/pzkp8ujrigg1/) que proporciona más contexto sobre la funcionalidad y contiene una demostración sobre cómo administrar las instrucciones de software mediante el tablero de TVE y cómo probar las generadas mediante una aplicación de demostración proporcionada por Adobe como parte de Android SDK.
 
 ## Cambios de API {#API}
 
@@ -73,7 +73,7 @@ La respuesta del servidor contiene una lista de MVPD junto con información de c
 
 Si no se usa el parámetro *urls*, la llamada de red resultante se dirigirá a la dirección URL del proveedor de servicios predeterminado: el entorno de producción/versión de Adobe.
 
-Si se proporciona un valor para el parámetro *urls*, la llamada de red resultante se dirigirá a todas las direcciones URL proporcionadas en el parámetro *urls*. Todas las solicitudes de configuración se activan simultáneamente en subprocesos independientes. El primer respondedor tiene prioridad al compilar la lista de MVPD. Para cada MVPD de la lista, el Habilitador de acceso recuerda la URL del proveedor de servicios asociado. Todas las solicitudes de derechos subsiguientes se dirigen a la URL asociada al proveedor de servicios emparejado con la MVPD de destino durante la fase de configuración.
+Si se proporciona un valor para el parámetro *urls*, la llamada de red resultante se dirigirá a todas las direcciones URL proporcionadas en el parámetro *urls*. Todas las solicitudes de configuración se activan simultáneamente en subprocesos independientes. El primer respondedor tiene prioridad al compilar la lista de MVPD. Para cada MVPD de la lista, el Habilitador de acceso recuerda la URL del proveedor de servicios asociado. Todas las solicitudes de derechos subsiguientes se dirigen a la URL asociada al proveedor de servicios emparejado con el MVPD de destino durante la fase de configuración.
 
 | Llamada de API: configuración del solicitante |
 | --- |
@@ -90,7 +90,7 @@ Si se proporciona un valor para el parámetro *urls*, la llamada de red resultan
 **Parámetros:**
 
 - *requestorID*: El ID único asociado con el canal. Pase el ID único asignado por el Adobe a su sitio cuando se registró por primera vez en el servicio de autenticación de Adobe Pass.
-- *urls*: Parámetro opcional; de forma predeterminada, el proveedor de servicios de Adobe se usa [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista de MVPD se compone de los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
+- *urls*: Parámetro opcional; de forma predeterminada, el proveedor de servicios de Adobe se usa [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista MVPD está compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
 
 Obsoleto:
 
@@ -119,7 +119,7 @@ Obsoleto:
 
 a. Obtenga software\_statement y redirect\_uri de Adobe Pass ( Tablero de TVE )
 
-b. Existen dos opciones para pasar estos valores al SDK de Adobe Pass:
+b. Existen dos opciones para pasar estos valores a Adobe Pass SDK:
 
 En strings.xml, agregue:
 
@@ -136,28 +136,28 @@ redirectUrl)
 
 a. setRequestor(solicitante\_id)
 
-El SDK realizará las siguientes operaciones:
+SDK realizará las siguientes operaciones:
 
-- solicitud de registro: con **software\_statement**, el SDK obtendrá **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Esta información se almacena en el almacenamiento interno de la aplicación.
+- solicitud de registro: con **software\_statement**, SDK obtendrá un **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Esta información se almacena en el almacenamiento interno de la aplicación.
 
-- obtenga un **access\_token** usando client\_id, client\_secret y grant\_type=&quot;client\_credentials&quot; . Este access\_token se usará en cada llamada realizada por el SDK a los servidores de Adobe Pass
+- obtenga un **access\_token** usando client\_id, client\_secret y grant\_type=&quot;client\_credentials&quot; . Este access\_token se usará en cada llamada realizada por SDK a los servidores de Adobe Pass
 
 **Respuestas de error de token :**
 
 | Respuestas de error | | |
 | --- | --- | --- |
 | HTTP 400 (solicitud incorrecta) | {&quot;error&quot;: &quot;invalid\_request&quot;} | A la solicitud le falta un parámetro requerido, incluye un valor de parámetro no admitido (que no sea el tipo de concesión), repite un parámetro, incluye varias credenciales, utiliza más de un mecanismo para autenticar al cliente o tiene un formato incorrecto. |
-| HTTP 400 (solicitud incorrecta) | {&quot;error&quot;: &quot;invalid\_client&quot;} | Error de autenticación del cliente porque se desconocía el cliente. El SDK DEBE volver a registrarse en el servidor de autorización. |
+| HTTP 400 (solicitud incorrecta) | {&quot;error&quot;: &quot;invalid\_client&quot;} | Error de autenticación del cliente porque se desconocía el cliente. SDK DEBE volver a registrarse en el servidor de autorización. |
 | HTTP 400 (solicitud incorrecta) | {&quot;error&quot;: &quot;unauthorized\_client&quot;} | El cliente autenticado no tiene autorización para utilizar este tipo de concesión de autorización. |
 
-- en caso de que una MVPD requiera autenticación pasiva, se abrirá una pestaña personalizada de Chrome para ejecutarla en modo pasivo con esa MVPD y se cerrará cuando se complete
+- en caso de que una MVPD requiera autenticación pasiva, se abrirá una pestaña personalizada de Chrome para ejecutar la autenticación pasiva con esa MVPD y se cerrará cuando se complete
 
 b. checkAuthentication()
 
 - true : vaya a Autorización
 - false : vaya a Seleccionar MVPD
 
-c. getAuthentication : el SDK incluirá **access_token** en los parámetros de llamada
+c. getAuthentication : SDK incluirá **access_token** en los parámetros de llamada
 
 - mvpd recordó : ir a setSelectedProvider(mvpd_id)
 - mvpd no seleccionado: displayProviderDialog
@@ -177,16 +177,16 @@ token de medios
 
 f. cierre de sesión:
 
-- El SDK eliminará el token válido para el solicitante actual (las autenticaciones obtenidas por otras aplicaciones y no a través de SSO seguirán siendo válidas)
-- El SDK abrirá las fichas personalizadas de Chrome para llegar al extremo de cierre de sesión de mvpd_id. Una vez finalizado, se cerrarán las fichas personalizadas de Chrome
+- SDK eliminará el token válido para el solicitante actual (las autenticaciones obtenidas por otras aplicaciones y no a través de SSO seguirán siendo válidas)
+- SDK abrirá las fichas personalizadas de Chrome para llegar al extremo de cierre de sesión de mvpd_id. Una vez finalizado, se cerrarán las fichas personalizadas de Chrome
 - El esquema de URL se establece como &quot;adobepass://logout&quot; para capturar el momento en que se completa el cierre de sesión
 - el cierre de sesión almacenará en déclencheur sendTrackingData(new Event(EVENT_LOGOUT,USER_NOT_AUTHENTICATED_ERROR) y una llamada de retorno : setAuthenticationStatus(0,&quot;Logout&quot;)
 
-**Nota:**, ya que cada llamada requiere un **token de acceso,** posibles códigos de error a continuación se gestionan en el SDK.
+**Nota:**, ya que cada llamada requiere un **token de acceso,** los posibles códigos de error que se indican a continuación se gestionan en SDK.
 
 
 | Respuestas de error | | |
 | --- | ---|--- |
-| invalid_request | 400 | La solicitud tiene un formato incorrecto. El SDK debe dejar de realizar llamadas al servidor. |
+| invalid_request | 400 | La solicitud tiene un formato incorrecto. SDK debe dejar de realizar llamadas al servidor. |
 | invalid_client | 403 | El ID de cliente ya no tiene permiso para realizar solicitudes. El SDK DEBE volver a realizar el registro de cliente. |
 | access_denied | 401 | El access\_token no es válido. El SDK DEBE solicitar un nuevo access_token. |

@@ -2,14 +2,14 @@
 title: Guía de iOS/tvOS
 description: Guía de iOS/tvOS
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2402'
+source-wordcount: '2403'
 ht-degree: 0%
 
 ---
 
-# Guía del SDK para iOS/tvOS {#iostvos-sdk-cookbook}
+# Guía de iOS/tvOS SDK (heredada) {#iostvos-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -44,7 +44,7 @@ La actividad de red de AccessEnabler tiene lugar en su propio subproceso, por lo
 
 ## Configuración del servicio de ID de Experience Cloud (ID de visitante) {#visitorIDSetup}
 
-La configuración del valor [ID de Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/home.html) es importante desde el punto de vista de [!DNL Analytics]. Una vez establecido el valor `visitorID`, el SDK envía esta información junto con cada llamada de red y el servidor de autenticación [!DNL Adobe Pass] recopila esta información. Puede correlacionar los análisis del servicio de autenticación de Adobe Pass con cualquier otro informe de análisis que pueda tener de otras aplicaciones o sitios web. Encontrará información sobre cómo configurar visitorID [aquí](#setOptions).
+La configuración del valor [ID de Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/home.html) es importante desde el punto de vista de [!DNL Analytics]. Una vez establecido el valor `visitorID`, SDK envía esta información junto con cada llamada de red y el servidor de autenticación [!DNL Adobe Pass] recopila esta información. Puede correlacionar los análisis del servicio de autenticación de Adobe Pass con cualquier otro informe de análisis que pueda tener de otras aplicaciones o sitios web. Encontrará información sobre cómo configurar visitorID [aquí](#setOptions).
 
 ## Flujos de derecho {#entitlement}
 
@@ -76,7 +76,7 @@ I. [Flujo de cierre de sesión con Apple SSO](#logout_flow_with_AppleSSO) </br>
       * El estado devuelto es éxito o error, el código de error describe el tipo de error.
 
    * [`navigateToUrl(url)`](#$nav2url) </br>
-      * Activado por [`getAuthentication()`](#$getAuthN) después de que el usuario seleccione una MVPD. El parámetro `url` proporciona la ubicación de la página de inicio de sesión de la MVPD.
+      * Activado por [`getAuthentication()`](#$getAuthN) después de que el usuario seleccione un MVPD. El parámetro `url` proporciona la ubicación de la página de inicio de sesión de MVPD.
 
    * `sendTrackingData(event, data)` </br>
       * Activado por `checkAuthentication()`, [`getAuthentication()`](#$getAuthN), `checkAuthorization()`, [`getAuthorization()`](#$getAuthZ), `setSelectedProvider()`.
@@ -108,7 +108,7 @@ tiene autorización para ver.
 
    * [`presentTvProviderDialog(viewController)`](#presentTvDialog)
 
-      * Se activa por [getAuthentication()](#getAuthN) cuando el solicitante actual admite al menos en MVPD compatibles con SSO.
+      * Se activa por [getAuthentication()](#getAuthN) cuando el solicitante actual admite al menos MVPD compatible con SSO.
       * El parámetro viewController es el cuadro de diálogo de SSO de Apple y debe presentarse en el controlador de vista principal.
 
    * [`dismissTvProviderDialog(viewController)`](#dismissTvDialog)
@@ -165,9 +165,9 @@ autenticado.
 1. Presentar al usuario la lista de proveedores enviados a
    [`displayProviderDialog()`](#dispProvDialog).
 
-1. Una vez que el usuario seleccione un proveedor, obtenga la URL de la MVPD del usuario de la llamada de retorno `navigateToUrl:` o `navigateToUrl:useSVC:`, abra un controlador `UIWebView/WKWebView` o `SFSafariViewController` y dirija ese controlador a la URL.
+1. Una vez que el usuario seleccione un proveedor, obtenga la dirección URL del MVPD del usuario de la llamada de retorno `navigateToUrl:` o `navigateToUrl:useSVC:`, abra un controlador `UIWebView/WKWebView` o `SFSafariViewController` y dirija ese controlador a la dirección URL.
 
-1. A través de `UIWebView/WKWebView` o `SFSafariViewController` creados en el paso anterior, el usuario aterriza en la página de inicio de sesión de la MVPD e introduce credenciales de inicio de sesión. Se realizan varias operaciones de redirección en el controlador.</br>
+1. A través de `UIWebView/WKWebView` o `SFSafariViewController` creados en la instancia en el paso anterior, el usuario aterriza en la página de inicio de sesión de MVPD e introduce las credenciales de inicio de sesión. Se realizan varias operaciones de redirección en el controlador.</br>
 
 >[!NOTE]
 >
@@ -177,7 +177,7 @@ autenticado.
 
 1. Cierre el controlador UIWebView/WKWebView o SFSafariViewController y llame al método de API `handleExternalURL:url` de AccessEnabler, que indica a AccessEnabler que recupere el token de autenticación del servidor back-end.
 
-1. (Opcional) Llame a [`checkPreauthorizedResources(resources)`](#$checkPreauth) para comprobar qué recursos puede ver el usuario. El parámetro `resources` es una matriz de recursos protegidos asociados al token de autenticación del usuario. Un uso de la información de autorización obtenida del MVPD del usuario es decorar su interfaz de usuario (por ejemplo, símbolos bloqueados/desbloqueados junto al contenido protegido).
+1. (Opcional) Llame a [`checkPreauthorizedResources(resources)`](#$checkPreauth) para comprobar qué recursos puede ver el usuario. El parámetro `resources` es una matriz de recursos protegidos asociados al token de autenticación del usuario. Un uso de la información de autorización obtenida del MVPD del usuario es decorar la interfaz de usuario (por ejemplo, símbolos bloqueados/desbloqueados junto al contenido protegido).
 
    * **Déclencheur:** [`preauthorizedResources()`](#preauthResources) devolución de llamada
    * **Punto de ejecución:** después del flujo de autenticación completado
@@ -195,7 +195,7 @@ autenticado.
 
 1. Se desencadenará la devolución de llamada [setAuthenticationsStatus()](#setAuthNStatus). En este punto, el usuario debe autenticarse con Apple SSO.
 
-1. [Opcional] Llame a [`checkPreauthorizedResources(resources)`](#$checkPreauth) para comprobar qué recursos puede ver el usuario. El parámetro `resources` es una matriz de recursos protegidos asociados al token de autenticación del usuario. Un uso de la información de autorización obtenida del MVPD del usuario es decorar su interfaz de usuario (por ejemplo, símbolos bloqueados / desbloqueados junto al contenido protegido).
+1. [Opcional] Llame a [`checkPreauthorizedResources(resources)`](#$checkPreauth) para comprobar qué recursos puede ver el usuario. El parámetro `resources` es una matriz de recursos protegidos asociados al token de autenticación del usuario. Un uso de la información de autorización obtenida del MVPD del usuario es decorar la interfaz de usuario (por ejemplo, símbolos bloqueados/desbloqueados junto al contenido protegido).
 
    * **Déclencheur:** [`preauthorizedResources()`](#preauthResources) devolución de llamada
    * **Punto de ejecución:** después del flujo de autenticación completado
@@ -208,12 +208,12 @@ autenticado.
 flujo de autenticación o para obtener confirmación de que el usuario ya está
 autenticado.
    **Déclencheur:**
-   * La llamada de retorno [`presentTvProviderDialog()`](#presentTvDialog), si el usuario no está autenticado y el solicitante actual tiene al menos una MVPD que admita SSO. Si ninguna MVPD admite SSO, se utilizará el flujo de autenticación clásico.
+   * La llamada de retorno [`presentTvProviderDialog()`](#presentTvDialog), si el usuario no está autenticado y el solicitante actual tiene al menos en MVPD que admita SSO. Si ninguna MVPD admite SSO, se utilizará el flujo de autenticación clásico.
 
 1. Una vez que el usuario seleccione un proveedor, se llamará a la devolución de llamada [`status()`](#status_callback_implementation). Se proporcionará un código de registro y la biblioteca AccessEnabler comenzará a sondear el servidor para obtener una autenticación de segunda pantalla correcta.
 
 1. Si el código de registro proporcionado se utilizó para autenticarse correctamente en la segunda pantalla, se activará la devolución de llamada [`setAuthenticatiosStatus()`](#setAuthNStatus). En este punto, el usuario debe autenticarse con Apple SSO.
-1. [Opcional] Llame a [`checkPreauthorizedResources(resources)`](#$checkPreauth) para comprobar qué recursos puede ver el usuario. El parámetro `resources` es una matriz de recursos protegidos asociados al token de autenticación del usuario. Un uso de la información de autorización obtenida del MVPD del usuario es decorar su interfaz de usuario (por ejemplo, símbolos bloqueados / desbloqueados junto al contenido protegido).
+1. [Opcional] Llame a [`checkPreauthorizedResources(resources)`](#$checkPreauth) para comprobar qué recursos puede ver el usuario. El parámetro `resources` es una matriz de recursos protegidos asociados al token de autenticación del usuario. Un uso de la información de autorización obtenida del MVPD del usuario es decorar la interfaz de usuario (por ejemplo, símbolos bloqueados/desbloqueados junto al contenido protegido).
 
    * **Déclencheur:** [`preauthorizedResources()`](#preauthResources) devolución de llamada
 

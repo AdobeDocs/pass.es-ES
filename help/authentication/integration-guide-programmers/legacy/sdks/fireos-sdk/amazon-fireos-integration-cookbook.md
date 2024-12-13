@@ -2,14 +2,14 @@
 title: Guía de integración de Amazon FireOS
 description: Guía de integración de Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1424'
+source-wordcount: '1425'
 ht-degree: 0%
 
 ---
 
-# Guía de integración de Amazon FireOS {#amazon-fireos-integration-cookbook}
+# Guía de integración de Amazon FireOS (heredada) {#amazon-fireos-integration-cookbook}
 
 >[!NOTE]
 >
@@ -70,7 +70,7 @@ La actividad de red de `AccessEnabler` tiene lugar en un subproceso diferente, p
 
    - [navigationToUrl(url)](#$navigateToUrl)
 
-      - Se ignora en el SDK de AmazonFireOS y se usa el método en plataformas Android donde `getAuthentication()` activa el método después de que el usuario selecciona una MVPD.  El parámetro `url` proporciona la ubicación de la página de inicio de sesión de la MVPD.
+      - Se ignora en AmazonFireOS SDK y se usa el método en plataformas Android donde se activa `getAuthentication()` después de que el usuario seleccione una MVPD.  El parámetro `url` proporciona la ubicación de la página de inicio de sesión de MVPD.
 
    - [sendTrackingData(event, data)](#$sendTrackingData)
 
@@ -194,6 +194,6 @@ El parámetro `event` indica qué evento de asignación de derechos se produjo; 
 
 ### F. Flujo de cierre de sesión {#logout_flow}
 
-1. Llame a [`logout()`](#$logout) para cerrar la sesión del usuario. `AccessEnabler` borra todos los valores en caché y tokens obtenidos por el usuario para la MVPD actual en todos los solicitantes que comparten el inicio de sesión mediante el inicio de sesión único. Después de borrar la caché, `AccessEnabler` realiza una llamada al servidor para limpiar las sesiones del lado del servidor.  Tenga en cuenta que, dado que la llamada al servidor podría provocar un redireccionamiento de SAML al IdP (esto permite la limpieza de la sesión en el lado del IdP), esta llamada debe seguir todas las redirecciones. Por este motivo, esta llamada se controlará dentro de un control WebView, invisible para el usuario.
+1. Llame a [`logout()`](#$logout) para cerrar la sesión del usuario. `AccessEnabler` borra todos los valores en caché y tokens obtenidos por el usuario para el MVPD actual en todos los solicitantes que comparten el inicio de sesión mediante el inicio de sesión único. Después de borrar la caché, `AccessEnabler` realiza una llamada al servidor para limpiar las sesiones del lado del servidor.  Tenga en cuenta que, dado que la llamada al servidor podría provocar un redireccionamiento de SAML al IdP (esto permite la limpieza de la sesión en el lado del IdP), esta llamada debe seguir todas las redirecciones. Por este motivo, esta llamada se controlará dentro de un control WebView, invisible para el usuario.
 
    **Nota:** El flujo de cierre de sesión difiere del flujo de autenticación en que el usuario no tiene que interactuar con WebView de ninguna manera. Por lo tanto, es posible (y recomendado) hacer que el control WebView sea invisible (es decir, oculto) durante el proceso de cierre de sesión.

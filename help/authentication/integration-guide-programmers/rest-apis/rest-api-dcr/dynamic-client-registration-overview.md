@@ -2,9 +2,9 @@
 title: Información general sobre el registro dinámico de clientes
 description: Información general sobre el registro dinámico de clientes
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '808'
+source-wordcount: '813'
 ht-degree: 0%
 
 ---
@@ -25,13 +25,13 @@ Adobe Pass proporciona un servicio de registro de cliente dinámico que permite 
    * [API de MVPD proxy](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
    * [API de supervisión del servicio de derechos](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * API de REST de autenticación de Adobe Pass:
-   * [API DE REST V1](../../legacy/rest-api-v1/rest-api-reference.md)
    * [API DE REST V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
+   * [API de REST (heredada) V1](../../legacy/rest-api-v1/rest-api-reference.md)
 * SDK de autenticación de Adobe Pass:
-   * [SDK de JavaScript](../../legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-   * [SDK de iOS/tvOS](../../legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
-   * [SDK de Android](../../legacy/sdks/android-sdk/android-sdk-api-reference.md)
-   * [FireOS SDK](../../legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
+   * [(Heredado) JavaScript SDK](../../legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
+   * [(Heredado) iOS/tvOS SDK](../../legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
+   * [(Heredado) Android SDK](../../legacy/sdks/android-sdk/android-sdk-api-reference.md)
+   * [(Heredado) FireOS SDK](../../legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
 
 >[!IMPORTANT]
 >

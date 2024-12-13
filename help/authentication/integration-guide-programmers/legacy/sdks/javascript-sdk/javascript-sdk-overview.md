@@ -1,15 +1,15 @@
 ---
-title: Información general del SDK para JavaScript
-description: Información general del SDK para JavaScript
+title: Información general sobre JavaScript SDK
+description: Información general sobre JavaScript SDK
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '511'
 ht-degree: 0%
 
 ---
 
-# Información general del SDK para JavaScript {#javascript-sdk-overview}
+# Información general sobre JavaScript SDK (heredado) {#javascript-sdk-overview}
 
 >[!NOTE]
 >
@@ -31,7 +31,7 @@ El flujo general de derechos de autenticación de Adobe Pass se cubre en [Flujo 
 
 Para que un usuario inicie sesión en su MVPD y se autentique, su página o reproductor debe proporcionar al usuario una forma de identificar su MVPD. Se proporciona una versión predeterminada de un cuadro de diálogo de selección de MVPD para el desarrollo. Para el uso en producción, debe implementar su propio selector de MVPD.
 
-Si ya sabe quién es el proveedor del cliente, puede [establecer la MVPD mediante programación](/help/authentication/home.md), sin que intervenga el usuario. La técnica es la misma, pero omite el paso de invocar el cuadro de diálogo Selector de proveedor y pedir al cliente que seleccione su MVPD.
+Si ya sabe quién es el proveedor del cliente, puede [establecer MVPD mediante programación](/help/authentication/home.md), sin que intervenga el usuario. La técnica es la misma, pero omite el paso de invocar el cuadro de diálogo Selector de proveedor y pedir al cliente que seleccione su MVPD.
 
 ## Visualización del proveedor de servicios {#displaying-the-service-provider}
 
@@ -76,7 +76,7 @@ En el siguiente ejemplo de código se muestra cómo detectar y mostrar el provee
 ```
 
 
-**JavaScript**: este archivo de JavaScript consulta al Habilitador de acceso del proveedor actual si el usuario ya ha iniciado sesión y muestra el resultado en la sección de la página reservada para él. También implementa un cuadro de diálogo de selector de MVPD:
+**JavaScript**: este archivo de JavaScript consulta al Habilitador de acceso del proveedor actual si el usuario ya ha iniciado sesión y muestra el resultado en la sección de la página reservada para él. También implementa un cuadro de diálogo selector de MVPD:
 
 ```JS
     $(function() {
@@ -203,11 +203,11 @@ Hay algunos casos en los que el reproductor no es responsable de administrar los
 
 
 
-- **Cuando el cierre de sesión se inicia desde un sitio que no está integrado con la autenticación de Adobe Pass.** En este caso, la MVPD puede invocar el servicio de cierre de sesión único de autenticación de Adobe Pass mediante una redirección del explorador. (Actualmente no se admite la invocación de SLO a través de una llamada a backchannel).
+- **Cuando el cierre de sesión se inicia desde un sitio que no está integrado con la autenticación de Adobe Pass.** En este caso, MVPD puede invocar el servicio de cierre de sesión único de autenticación de Adobe Pass mediante una redirección del explorador. (Actualmente no se admite la invocación de SLO a través de una llamada a backchannel).
 
 >[!NOTE]
 >
->Si el usuario deja el equipo inactivo el tiempo suficiente para que los tokens caduquen, aún puede volver a su sesión e iniciar correctamente el cierre de sesión. La autenticación de Adobe Pass garantiza que todos los tokens se eliminen y notifica a la MVPD que también elimine su sesión.
+>Si el usuario deja el equipo inactivo el tiempo suficiente para que los tokens caduquen, aún puede volver a su sesión e iniciar correctamente el cierre de sesión. La autenticación de Adobe Pass garantiza que todos los tokens se eliminen y notifica a MVPD para que elimine su sesión.
 
 El siguiente código de JavaScript muestra el cierre de sesión (desautenticación) de un usuario autenticado actualmente:
 

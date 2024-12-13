@@ -2,14 +2,14 @@
 title: Iniciar autenticación
 description: Iniciar autenticación
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '291'
+source-wordcount: '292'
 ht-degree: 0%
 
 ---
 
-# Iniciar autenticación {#initiate-authentication}
+# (Heredado) Iniciar autenticación {#initiate-authentication}
 
 >[!NOTE]
 >
@@ -42,7 +42,7 @@ Inicia el proceso de autenticación al informar de un evento de selección de MV
 
 | Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/authentication | Módulo AuthN | 1. requestor_id (obligatorio)</br>2.  mso_id (obligatorio)</br>3.  reg_code (obligatorio)</br>4.  nombre_dominio (obligatorio)</br>5.  noflash=true - </br>    (obligatorio, parámetro residual)</br>6.  no_iframe=true (obligatorio, parámetro residual)</br>7.  parámetros adicionales (opcional)</br>8.  redirect_url (obligatorio) | GET | La aplicación web Login se redirige a la página de inicio de sesión de MVPD. | 302 para implementaciones de redirección completas |
+| &lt;SP_FQDN>/api/v1/authentication | Módulo AuthN | 1. requestor_id (obligatorio)</br>2.  mso_id (obligatorio)</br>3.  reg_code (obligatorio)</br>4.  nombre_dominio (obligatorio)</br>5.  noflash=true - </br>    (obligatorio, parámetro residual)</br>6.  no_iframe=true (obligatorio, parámetro residual)</br>7.  parámetros adicionales (opcional)</br>8.  redirect_url (obligatorio) | GET | La aplicación web de inicio de sesión se redirige a la página de inicio de sesión de MVPD. | 302 para implementaciones de redirección completas |
 
 {style="table-layout:auto"}
 
@@ -93,7 +93,7 @@ Inicia el proceso de autenticación al informar de un evento de selección de MV
 
 * El valor del parámetro `domain_name` debe establecerse en uno de los nombres de dominio registrados con autenticación de Adobe Pass. Para obtener más información, consulte [Registro e inicialización](/help/authentication/kickstart/programmer-overview.md).
 
-* [Evite utilizar &#39;&amp;&#39;reg\_code en la solicitud /authentication (Nota técnica)](/help/authentication/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
+* [Evite utilizar &#39;&amp;&#39;reg\_code en la solicitud /authentication (Nota técnica)](/help/authentication/integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
 
 * El parámetro `redirect_url` debe ser el último en orden
 

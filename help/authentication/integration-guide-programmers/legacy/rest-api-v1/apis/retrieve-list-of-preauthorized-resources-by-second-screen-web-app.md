@@ -2,14 +2,14 @@
 title: Recuperar lista de recursos preautorizados por aplicación web de segunda pantalla
 description: Recuperar lista de recursos preautorizados por aplicación web de segunda pantalla
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '255'
 ht-degree: 0%
 
 ---
 
-# Recuperar lista de recursos preautorizados por aplicación web de segunda pantalla {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
+# (Heredado) Recuperar lista de recursos autorizados previamente por la aplicación web de segunda pantalla {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
 
 >[!NOTE]
 >

@@ -2,14 +2,14 @@
 title: Proporcionar lista de MVPD
 description: Proporcionar lista de MVPD
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '233'
 ht-degree: 2%
 
 ---
 
-# Proporcionar lista de MVPD {#provide-mvpd-list}
+# (Heredado) Proporcionar lista de MVPD {#provide-mvpd-list}
 
 >[!NOTE]
 >
@@ -58,7 +58,7 @@ Igual que la respuesta XML de MVPD existente al servlet /config
 Nota: Todas las MVPD configuradas para utilizar el SSO de Platform tendrán las siguientes propiedades adicionales dentro de su nodo correspondiente (JSON/XML):
 
 * **enablePlatformServices (booleano):** indicador que indica si este MVPD está integrado mediante SSO de plataforma
-* **boardingStatus (cadena):** indicador que indica si la MVPD es totalmente compatible con el SSO de plataforma (COMPATIBLE) o si la MVPD solo aparece en el selector de plataforma (SELECTOR)
+* **boardingStatus (cadena):** indicador que indica si MVPD es totalmente compatible con Platform SSO (COMPATIBLE) o si MVPD solo aparece en el selector de plataformas (SELECTOR)
 * **displayInPlatformPicker (booleano):** si este MVPD aparece en el selector de plataformas
-* **platformMappingId (cadena):** el identificador de esta MVPD como lo conoce la plataforma
+* **platformMappingId (cadena):** el identificador de este MVPD conocido por la plataforma
 * **requiredMetadataFields (matriz de cadenas):** se espera que los campos de metadatos del usuario estén disponibles cuando el inicio de sesión se realice correctamente

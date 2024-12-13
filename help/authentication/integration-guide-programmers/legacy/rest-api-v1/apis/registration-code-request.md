@@ -2,14 +2,14 @@
 title: Página de registro
 description: Página de registro
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '494'
 ht-degree: 0%
 
 ---
 
-# Página de registro {#registration-page}
+# Página de registro (heredada) {#registration-page}
 
 ## Extremos de API de REST {#clientless-endpoints}
 
@@ -49,7 +49,7 @@ Devuelve el código de registro generado aleatoriamente y el URI de la página d
 | Aceptar | Encabezado <br> Valor: application/json | indicar qué tipo de contenido debe comprender el cliente |
 | solicitante | Parámetro de consulta | Identificador de solicitante del programador para el que es válida esta operación. |
 | deviceId | Parámetro de consulta | El ID de dispositivo bytes. |
-| device_info/<br>X-Device-Info | device_info: Cuerpo <br> X-Device-Info: Header | Información del dispositivo de streaming.<br>**Nota**: Esto PUEDE pasarse a device_info como parámetro de URL, pero debido al tamaño potencial de este parámetro y a las limitaciones en la longitud de una URL de GET, DEBE pasarse como X-Device-Info en el encabezado http. <br>Ver los detalles completos en [Pasar información de conexión y dispositivo](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md). |
+| device_info/<br>X-Device-Info | device_info: Cuerpo <br> X-Device-Info: Header | Información del dispositivo de streaming.<br>**Nota**: Esto PUEDE pasarse a device_info como parámetro de URL, pero debido al tamaño potencial de este parámetro y a las limitaciones en la longitud de una URL de GET, DEBE pasarse como X-Device-Info en el encabezado http. <br>Ver los detalles completos en [Pasar información de conexión y dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | mvpd | Parámetro de consulta | ID de MVPD para el que es válida esta operación. |
 | ttl | Parámetro de consulta | El tiempo que debe permanecer este código de registro en segundos.<br>**Nota**: el valor máximo permitido para ttl es de 36000 segundos (10 horas). Los valores más altos dan como resultado una respuesta HTTP 400 (solicitud incorrecta). Si `ttl` se deja vacío, la autenticación de Adobe Pass establece un valor predeterminado de 30 minutos. |
 | _deviceType_ | Parámetro de consulta | En desuso, no debe utilizarse. |

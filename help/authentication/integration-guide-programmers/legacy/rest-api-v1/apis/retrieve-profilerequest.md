@@ -2,14 +2,14 @@
 title: Recuperar solicitud de perfil SSO de Platform
 description: Recuperar solicitud de perfil SSO de Platform
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '189'
+source-wordcount: '190'
 ht-degree: 1%
 
 ---
 
-# Recuperar solicitud de perfil SSO de Platform {#retrieve-platform-sso-profile-request}
+# (Heredado) Recuperar la solicitud de perfil SSO de Platform {#retrieve-platform-sso-profile-request}
 
 >[!NOTE]
 >
@@ -35,7 +35,7 @@ ht-degree: 1%
 
 ## Descripción {#description}
 
-Este recurso produce solicitudes de perfil para un ID de solicitante y una tupla MVPD.
+Este recurso produce solicitudes de perfil para un ID de solicitante y una tupla de MVPD.
 
 
 | Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
@@ -46,5 +46,5 @@ Este recurso produce solicitudes de perfil para un ID de solicitante y una tupla
 | Parámetro de entrada | Descripción |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | solicitante | Identificador de solicitante del programador para el que es válida esta operación. |
-| mvpd | Id de MVPD para el que es válida esta operación. |
+| mvpd | ID de MVPD para el que es válida esta operación. |
 | deviceType | La plataforma de Apple para la que intentamos obtener una solicitud de perfil.  **iOS** o **tvOS**. |

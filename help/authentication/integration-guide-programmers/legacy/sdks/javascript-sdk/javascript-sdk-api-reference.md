@@ -1,15 +1,15 @@
 ---
-title: Referencia de API de SDK para JavaScript
-description: Referencia de API de SDK para JavaScript
+title: Referencia de la API de JavaScript SDK
+description: Referencia de la API de JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2860'
+source-wordcount: '2861'
 ht-degree: 0%
 
 ---
 
-# Referencia de API de SDK para JavaScript {#javascript-sdk-api-reference}
+# Referencia de la API de JavaScript SDK (heredada) {#javascript-sdk-api-reference}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Referencia de API {#api-reference}
 
-Estas funciones inician solicitudes de interacción con una MVPD. Todas las llamadas son asincrónicas; debe implementar [callbacks](#callbacks) para gestionar las respuestas:
+Estas funciones inician solicitudes de interacción con un MVPD. Todas las llamadas son asincrónicas; debe implementar [callbacks](#callbacks) para gestionar las respuestas:
 
 - [setRequestor()](#setReq)
 - [getAuthorization()](#getAuthZ)
@@ -60,7 +60,7 @@ Estas funciones inician solicitudes de interacción con una MVPD. Todas las llam
   })
 ```
 
-- El programador puede anular la configuración de MVPD configurada en la autenticación de Adobe Pass, especificando si se requiere o no un iFrame para el inicio de sesión (clave *iFrameRequired*) y las dimensiones del iFrame (*iFrameWidth* y *iFrameHeight* claves). El objeto JSON tiene la siguiente plantilla:
+- El programador puede anular la configuración de MVPD establecida en la autenticación de Adobe Pass especificando si se requiere o no un iFrame para el inicio de sesión (clave *iFrameRequired*) y las dimensiones del iFrame (claves *iFrameWidth* y *iFrameHeight*). El objeto JSON tiene la siguiente plantilla:
 
 ```JSON
     {  
@@ -84,14 +84,14 @@ Estas funciones inician solicitudes de interacción con una MVPD. Todas las llam
 ```
 
 
-Todas las claves de nivel superior de la plantilla anterior son opcionales y tienen valores predeterminados (*backgroundLogin*, *backgroundLogut* son false de forma predeterminada y mvpdConfig es null, lo que significa que no se anula ninguna configuración de MVPD).
+Todas las claves de nivel superior de la plantilla anterior son opcionales y tienen valores predeterminados (*backgroundLogin*, *backgroundLogut* son false de forma predeterminada y mvpdConfig es null, lo que significa que no se invalida ninguna configuración de MVPD).
 
 
 - **Nota**: si se especifican valores o tipos no válidos para los parámetros anteriores, se producirá un comportamiento no definido.
 
 
 
-Esta es una configuración de ejemplo para el siguiente escenario: activación del inicio de sesión y cierre de sesión sin actualización, cambio de MVPD1 al inicio de sesión de redirección de página completo (no iFrame) y MVPD2 al inicio de sesión de iFrame con anchura=500 y altura=300:
+Este es un ejemplo de configuración para el siguiente escenario: activación del inicio de sesión y cierre de sesión sin actualización, cambio de MVPD1 al inicio de sesión de redirección de páginas completo (que no sea iFrame) y inicio de sesión de MVPD2 a iFrame con anchura=500 y altura=300:
 
 ```JSON
     {  
@@ -120,7 +120,7 @@ Esta es una configuración de ejemplo para el siguiente escenario: activación d
 
 ## getAuthorization(inResourceID, redirect_url) {#getauthorization(inresourceid,redirect_url)}
 
-**Descripción:** solicita autorización para el recurso especificado. Cada vez que un cliente intente acceder a un recurso autorizable, llame a esta función para obtener un token de autorización de corta duración del Habilitador de acceso. Los ID de recurso se acuerdan con la autorización de la MVPD.
+**Descripción:** solicita autorización para el recurso especificado. Cada vez que un cliente intente acceder a un recurso autorizable, llame a esta función para obtener un token de autorización de corta duración del Habilitador de acceso. Los ID de recurso se acuerdan con la autorización de MVPD.
 
 Utiliza el token de autenticación en caché para el cliente actual. Si no se encuentra ese token, inicia primero el proceso de autenticación y, a continuación, continúa con la autorización.
 
@@ -144,7 +144,7 @@ Se activaron **devoluciones de llamadas:** [setToken()](#settokeninrequestedreso
 
 ## getAuthentication(redirect_url) {#getauthentication(redirect_url}
 
-**Descripción:** solicita autenticación para el cliente actual. Normalmente se llama en respuesta a un clic en un botón de inicio de sesión. Busca un token de autenticación en caché para el cliente actual. Si no se encuentra ese token, inicia el proceso de autenticación. Esto invoca el cuadro de diálogo de selección de proveedor predeterminado o personalizado y, a continuación, utiliza el proveedor seleccionado para redirigir a la interfaz de inicio de sesión de la MVPD.
+**Descripción:** solicita autenticación para el cliente actual. Normalmente se llama en respuesta a un clic en un botón de inicio de sesión. Busca un token de autenticación en caché para el cliente actual. Si no se encuentra ese token, inicia el proceso de autenticación. Esto invoca el cuadro de diálogo de selección de proveedores predeterminado o personalizado y, a continuación, utiliza el proveedor seleccionado para redirigir a la interfaz de inicio de sesión de MVPD.
 
 Si se realiza correctamente, crea y almacena un token de autenticación para el usuario. Si la autenticación falla, el proveedor devuelve un mensaje de error apropiado a la llamada de retorno [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode).
 
@@ -197,18 +197,18 @@ recursos.
 
 **Parámetros:**
 
-- *resources*: el parámetro resources es una matriz de recursos cuya autorización se debe comprobar. Cada elemento de la lista debe ser una cadena que represente el ID de recurso. El id. de recurso está sujeto a las mismas limitaciones que el id. de recurso de la llamada `getAuthorization()`; es decir, se trata de un valor acordado entre el programador y la MVPD o un fragmento de RSS multimedia.
+- *resources*: el parámetro resources es una matriz de recursos cuya autorización se debe comprobar. Cada elemento de la lista debe ser una cadena que represente el ID de recurso. El id. de recurso está sujeto a las mismas limitaciones que el id. de recurso de la llamada `getAuthorization()`; es decir, se trata de un valor acordado entre el programador y MVPD, o un fragmento de RSS multimedia.
 
 </br>
 
 ## checkPreauthorizedResources(resources-cache=true) {#checkPreauthorizedResources(resources-cache=true)}
 
-Esta variante de API está disponible a partir de la versión 4.0 del SDK de JS
+Esta variante de la API está disponible a partir de la versión 4.0 de JS SDK
 
 
 **Parámetros:**
 
-- *resources*: el parámetro resources es una matriz de recursos cuya autorización se debe comprobar. Cada elemento de la lista debe ser una cadena que represente el ID de recurso. El id. de recurso está sujeto a las mismas limitaciones que el id. de recurso de la llamada `getAuthorization()`; es decir, se trata de un valor acordado entre el programador y la MVPD o un fragmento de RSS multimedia.
+- *resources*: el parámetro resources es una matriz de recursos cuya autorización se debe comprobar. Cada elemento de la lista debe ser una cadena que represente el ID de recurso. El id. de recurso está sujeto a las mismas limitaciones que el id. de recurso de la llamada `getAuthorization()`; es decir, se trata de un valor acordado entre el programador y MVPD, o un fragmento de RSS multimedia.
 
 - *cache*: Indica si se debe usar la caché interna cuando se comprueban recursos preautorizados. Este es un parámetro opcional, con el valor predeterminado **true**. Si es true, el comportamiento es idéntico al de la API anterior, lo que significa que las llamadas posteriores a esta función utilizarán una caché interna para resolver el recurso autorizado previamente. Si se pasa **false** para este parámetro, se deshabilitará la caché interna, lo que dará como resultado una llamada al servidor cada vez que se llame a la API **checkPreauthorizedResources**.
 
@@ -226,7 +226,7 @@ Esta variante de API está disponible a partir de la versión 4.0 del SDK de JS
 Existen dos tipos de metadatos:
 
 - **Estático** (TTL de token de autenticación, TTL de token de autorización e ID de dispositivo)
-- **Metadatos de usuario** (Esto incluye información específica del usuario que se pasa desde la MVPD al dispositivo del usuario durante los flujos de autenticación o autorización)
+- **Metadatos de usuario** (Esto incluye información específica del usuario que se pasa desde MVPD al dispositivo del usuario durante los flujos de autenticación o autorización)
 
 **Más información:** [Metadatos de usuario](#UserMetadata)
 
@@ -249,7 +249,7 @@ Existen dos tipos de metadatos:
 
    - `"maxRating"` - Clasificación parental máxima para el usuario
 
-   - `"userID"`: el identificador de usuario. En el caso de que una MVPD admita subcuentas y el usuario no sea la cuenta principal, userID será diferente a householdID.
+   - `"userID"`: el identificador de usuario. En el caso de que un MVPD admita subcuentas y el usuario no sea la cuenta principal, userID será diferente a householdID.
 
    - `"channelID"`: lista de canales que el usuario puede ver
 
@@ -267,7 +267,7 @@ Existen dos tipos de metadatos:
 
    - `"acctParentID"` - Identificador principal de la cuenta
 
-  **Nota**: Los metadatos de usuario reales disponibles para un programador dependen de lo que una MVPD ponga a disposición.  Consulte [Metadatos de usuario](#UserMetadata) para ver la lista actual de metadatos de usuario disponibles.
+  **Nota**: los metadatos de usuario reales disponibles para un programador dependen de lo que un MVPD ponga a disposición.  Consulte [Metadatos de usuario](#UserMetadata) para ver la lista actual de metadatos de usuario disponibles.
 
 
 Por ejemplo:
@@ -302,7 +302,7 @@ Por ejemplo:
 
 ## setSelectedProvider(providerid) {#setSelectedProvider}
 
-**Descripción:** Llame a esta función cuando el usuario haya seleccionado una MVPD en la interfaz de usuario de selección de proveedores para enviar la selección de proveedores al Habilitador de acceso o llame a esta función con un parámetro nulo en caso de que el usuario descarte la interfaz de usuario de selección de proveedores sin seleccionar un proveedor.
+**Descripción:** Llame a esta función cuando el usuario haya seleccionado un MVPD en la interfaz de usuario de selección de proveedores para enviar la selección de proveedores al Habilitador de acceso o llame a esta función con un parámetro nulo en caso de que el usuario descarte la interfaz de usuario de selección de proveedores sin seleccionar un proveedor.
 
 **Llamadas de retorno
 desencadenó:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
@@ -319,7 +319,7 @@ desencadenó:**[ setAuthenticationStatus()](#setauthenticationstatusisauthentica
 
 Esta función es asincrónica y devuelve su resultado a la función de devolución de llamada `selectedProvider()`.
 
-- **MVPD** El MVPD seleccionado actualmente, o nulo si no se seleccionó ningún MVPD.
+- **MVPD** MVPD seleccionado actualmente, o nulo si no se ha seleccionado ningún MVPD.
 - **AE_State**: el resultado de la autenticación para el cliente actual es &quot;Nuevo usuario&quot;, &quot;Usuario no autenticado&quot; o &quot;Usuario autenticado&quot;
 
 **Llamadas de retorno activadas:** [selectedProvider()](#getselectedprovider-getselectedprovider)
@@ -374,7 +374,7 @@ Debe implementar estas llamadas de retorno para gestionar las respuestas a sus l
 
 **Parámetros:**
 
-- *configXML*: objeto xml que contiene la configuración del REQUESTOR actual, incluida la lista de MVPD.
+- *configXML*: objeto xml que contiene la configuración del SOLICITANTE actual, incluida la lista de MVPD.
 
 
 **Activado por:** [setRequestor()](#setrequestor-inrequestorid-endpoints-optionssetreq)
@@ -409,7 +409,7 @@ Debe implementar estas llamadas de retorno para gestionar las respuestas a sus l
 
 ## createIFrame(inWidth, inHeight) {#createIFrame(inWidth,inHeight)}
 
-**Descripción:** Implemente esta llamada de retorno si el usuario seleccionó una MVPD que requiera un iFrame en el que mostrar su interfaz de usuario de la página de inicio de sesión de autenticación.
+**Descripción:** Implemente esta llamada de retorno si el usuario seleccionó un MVPD que requiera un iFrame en el que mostrar su interfaz de usuario de la página de inicio de sesión de autenticación.
 
 **Activado por:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
@@ -423,7 +423,7 @@ Debe implementar estas llamadas de retorno para gestionar las respuestas a sus l
 
 >[!NOTE]
 > 
->Si está usando el sistema actual [Informes de errores avanzados](/help/authentication/integration-guide-programmers/features-standard/error-reporting/error-reporting.md), puede ignorar el parámetro errorCode enviado a esta función.  Sin embargo, el indicador isAuthenticated sigue siendo útil para rastrear el estado de autenticación de un usuario en el flujo de derechos
+>Si está usando el sistema actual [Informes de errores avanzados](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md), puede ignorar el parámetro errorCode enviado a esta función.  Sin embargo, el indicador isAuthenticated sigue siendo útil para rastrear el estado de autenticación de un usuario en el flujo de derechos
 
 
 **Parámetros:**
@@ -463,7 +463,7 @@ Debe implementar estas llamadas de retorno para gestionar las respuestas a sus l
 
 Pasa el tipo de evento y una matriz de información asociada. Los tipos de eventos son:
 
-| mvpdSelection | El usuario seleccionó una MVPD en un cuadro de diálogo de selección de proveedores. |
+| mvpdSelection | El usuario seleccionó un MVPD en un cuadro de diálogo de selección de proveedores. |
 | ----------------------- | --------------------------------------------------------- |
 | authenticationDetection | Se ha completado una comprobación de autenticación. |
 | authorizationDetection | Se completó una solicitud de autorización. |
@@ -474,19 +474,19 @@ Los datos son específicos para cada tipo de evento:
 
 | Tipo de evento (cadena) | Datos (matriz) |
 |:--- | :--- |
-| mvpdSelection | 0: MVPD seleccionada |
+| mvpdSelection | 0: MVPD seleccionado |
 |  | 1: Tipo de dispositivo |
 |  | 2: Tipo de cliente del Habilitador de acceso |
 |  | 3: SO |
 | authenticationDetection | 0: Si la solicitud de token se realizó correctamente (verdadero/falso) |
-|  | 1: ID de MVPD |
+|  | 1: MVPD ID |
 |  | 2: GUID |
 |  | 3: El token ya está en la caché (verdadero/falso) |
 |  | 4: Tipo de dispositivo |
 |  | 5. Tipo de cliente del Habilitador de acceso |
 |  | 6: SO |
 | authorizationDetection | 0: Si la solicitud de token se realizó correctamente (verdadero/falso) |
-|  | 1: ID de MVPD |
+|  | 1: MVPD ID |
 |  | 2: GUID |
 |  | 3: El token ya está en la caché (verdadero/falso) |
 |  | 4: Error |
@@ -527,7 +527,7 @@ Los datos son específicos para cada tipo de evento:
 
 - *inRequestedResourceID*: cadena que proporciona el identificador de recurso que se utilizó en la solicitud de autorización.
 - *inRequestErrorCode*: cadena que muestra el código de error de autenticación de Adobe Pass, indicando el motivo del error; los valores posibles son &quot;Error de usuario no autenticado&quot; y &quot;Error de usuario no autorizado&quot;; para obtener más detalles, vea &quot;Códigos de error de devolución de llamada&quot; a continuación.
-- *inRequestDetailedErrorMessage*: una cadena descriptiva adicional adecuada para mostrar. Si esta cadena descriptiva no está disponible por algún motivo, la autenticación de Adobe Pass enviará una cadena vacía **(&quot;&quot;)**.  Un MVPD puede utilizarla para transmitir mensajes de error personalizados o mensajes relacionados con las ventas. Por ejemplo, si a un suscriptor se le niega la autorización para un recurso, la MVPD podría responder con un `*inRequestDetailedErrorMessage*` como: **&quot;Actualmente no tiene acceso a este canal en su paquete. Si desea actualizar el paquete, haga clic \*aquí\*.&quot;** Autenticación de Adobe Pass pasa el mensaje a través de esta devolución de llamada al sitio del programador. A continuación, el programador tiene la opción de mostrarlo u omitirlo. La autenticación de Adobe Pass también puede utilizar `*inRequestDetailedErrorMessage*` para notificar al programador la condición que podría haber provocado un error. Por ejemplo, **&quot;Se produjo un error de red al comunicarse con el servicio de autorización del proveedor&quot;.**
+- *inRequestDetailedErrorMessage*: una cadena descriptiva adicional adecuada para mostrar. Si esta cadena descriptiva no está disponible por algún motivo, la autenticación de Adobe Pass enviará una cadena vacía **(&quot;&quot;)**.  MVPD puede utilizarlo para pasar mensajes de error personalizados o mensajes relacionados con ventas. Por ejemplo, si se deniega a un suscriptor la autorización para un recurso, MVPD podría responder con un `*inRequestDetailedErrorMessage*` como: **&quot;Actualmente no tiene acceso a este canal en su paquete. Si desea actualizar el paquete, haga clic \*aquí\*.&quot;** Autenticación de Adobe Pass pasa el mensaje a través de esta devolución de llamada al sitio del programador. A continuación, el programador tiene la opción de mostrarlo u omitirlo. La autenticación de Adobe Pass también puede utilizar `*inRequestDetailedErrorMessage*` para notificar al programador la condición que podría haber provocado un error. Por ejemplo, **&quot;Se produjo un error de red al comunicarse con el servicio de autorización del proveedor&quot;.**
 
 
 
@@ -607,9 +607,9 @@ Por ejemplo:
 
 ## selectedProvider(resultado) {#selectedProvider(result)}
 
-**Descripción:** Implemente esta devolución de llamada para recibir la MVPD seleccionada actualmente y el resultado de la autenticación del usuario actual envuelto en el parámetro `result`. El parámetro `result` es un objeto con las siguientes propiedades:
+**Descripción:** Implemente esta devolución de llamada para recibir el MVPD seleccionado actualmente y el resultado de la autenticación del usuario actual ajustado en el parámetro `result`. El parámetro `result` es un objeto con las siguientes propiedades:
 
-- **MVPD** El MVPD seleccionado actualmente, o nulo si no se seleccionó ningún MVPD.
+- **MVPD** MVPD seleccionado actualmente, o nulo si no se ha seleccionado ningún MVPD.
 - **AE\_State** Resultado de la autenticación para el usuario actual, uno de &quot;Nuevo usuario&quot;, &quot;Usuario no autenticado&quot; o &quot;Usuario autenticado&quot;
 
 **Activado por:** [getSelectedProvider()](#getSelProv)

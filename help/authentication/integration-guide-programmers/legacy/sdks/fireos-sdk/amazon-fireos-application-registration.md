@@ -2,14 +2,14 @@
 title: Registro de aplicaciones de Amazon FireOS
 description: Registro de aplicaciones de Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '516'
 ht-degree: 0%
 
 ---
 
-# Registro de aplicaciones de Amazon FireOS {#amazon-fireos-application-registration}
+# (Heredado) Registro de aplicaciones de Amazon FireOS {#amazon-fireos-application-registration}
 
 >[!NOTE]
 >
@@ -19,13 +19,13 @@ ht-degree: 0%
 
 ## Introducción {#intro}
 
-A partir de la versión 3.0 del SDK de FireOS AccessEnabler, estamos cambiando el mecanismo de autenticación con los servidores de Adobe. En lugar de utilizar una clave pública y un sistema secreto para firmar el ID de solicitante, presentamos el concepto de una cadena de declaración de software que se puede utilizar para obtener un token de acceso que luego se utiliza para todas las llamadas que el SDK realiza a nuestros servidores. Además de una Declaración de software, también deberá crear un vínculo profundo para su aplicación.
+A partir de la versión 3.0 de FireOS AccessEnabler SDK, estamos cambiando el mecanismo de autenticación con los servidores de Adobe. En lugar de utilizar una clave pública y un sistema secreto para firmar el ID de solicitante, presentamos el concepto de una cadena de declaración de software que se puede utilizar para obtener un token de acceso que luego se utiliza para todas las llamadas que SDK realiza a nuestros servidores. Además de una Declaración de software, también deberá crear un vínculo profundo para su aplicación.
 
 Para obtener más información, vea [Información general sobre el registro dinámico de clientes](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## ¿Qué es una declaración de software? {#what}
 
-Una declaración de software es un token JWT que contiene información sobre su aplicación. Cada aplicación debe tener una Declaración de Software única que nuestros servidores utilizan para identificar la aplicación en el sistema de Adobe. La declaración de software debe pasarse al inicializar el SDK de AccessEnabler y se utilizará para registrar la aplicación con el Adobe. Tras el registro, el SDK recibirá un ID de cliente y un secreto de cliente que se utilizarán para obtener un token de acceso. Cualquier llamada que el SDK realice a nuestros servidores requerirá un token de acceso válido. El SDK es responsable de registrar la aplicación, obtener y actualizar el token de acceso.
+Una declaración de software es un token JWT que contiene información sobre su aplicación. Cada aplicación debe tener una Declaración de Software única que nuestros servidores utilizan para identificar la aplicación en el sistema de Adobe. La Declaración de software debe pasarse cuando inicialice AccessEnabler SDK y se utilizará para registrar la aplicación con Adobe. Tras el registro, SDK recibirá un ID de cliente y un secreto de cliente que se utilizarán para obtener un token de acceso. Cualquier llamada que SDK realice a nuestros servidores requerirá un token de acceso válido. SDK es responsable de registrar la aplicación, obtener y actualizar el token de acceso.
 
 **Nota:** las instrucciones de software son específicas de la aplicación y no se puede usar una instrucción de software individual para más de una aplicación. Tenga en cuenta que esto también se aplica a las aplicaciones que ofrecen acceso a varios canales.
 

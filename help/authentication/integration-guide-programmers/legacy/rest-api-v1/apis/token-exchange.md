@@ -2,14 +2,14 @@
 title: Intercambio de un token SSO de Platform por un token de Adobe
 description: Intercambio de un token SSO de Platform por un token de Adobe
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
 
-# Intercambio de un token SSO de Platform por un token de Adobe {#exchange-a-platform-sso-token-for-an-adobe-token}
+# (Heredado) Intercambie un token SSO de Platform por un token de Adobe {#exchange-a-platform-sso-token-for-an-adobe-token}
 
 >[!NOTE]
 >
@@ -46,7 +46,7 @@ Permite &quot;intercambiar&quot; un perfil SSO de Platform por un token de Adobe
 | --- | --- |
 | solicitante | Identificador de solicitante del programador para el que es válida esta operación. |
 | deviceId | El ID de dispositivo bytes. |
-| mvpd | Id de MVPD para el que es válida esta operación. |
+| mvpd | ID de MVPD para el que es válida esta operación. |
 | deviceType | La plataforma de Apple para la que intentamos obtener una solicitud de perfil.  **iOS** o **tvOS**. |
 | SAMLResponse | El perfil real devuelto por el SSO de Platform. |
 | _deviceUser_ | El identificador de usuario del dispositivo. |

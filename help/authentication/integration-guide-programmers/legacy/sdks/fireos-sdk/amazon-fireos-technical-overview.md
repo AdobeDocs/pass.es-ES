@@ -2,14 +2,14 @@
 title: Información general técnica de Amazon FireOS
 description: Información general técnica de Amazon FireOS
 exl-id: 939683ee-0dd9-42ab-9fde-8686d2dc0cd0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2166'
+source-wordcount: '2167'
 ht-degree: 0%
 
 ---
 
-# Información general técnica de Amazon FireOS {#amazon-fireos-technical-overview}
+# Información general técnica de Amazon FireOS (heredado) {#amazon-fireos-technical-overview}
 
 >[!NOTE]
 >
@@ -46,11 +46,11 @@ Tenga en cuenta que, aunque el siguiente flujo de trabajo de cliente nativo difi
 
 1. Su página o reproductor inicia el flujo de trabajo de autenticación con una llamada a [getAuthentication()](#getAuthN), que comprueba si hay un token de autenticación en caché válido. Este método tiene un parámetro `redirectURL` opcional; si no proporciona un valor para `redirectURL`, después de una autenticación correcta, el usuario vuelve a la dirección URL desde la que se inicializó la autenticación.
 1. AccessEnabler determina el estado de autenticación actual. Si el usuario está autenticado actualmente, AccessEnabler llama a la función de devolución de llamada `setAuthenticationStatus()` y pasa un estado de autenticación que indica que se ha realizado correctamente (paso 7 a continuación).
-1. Si el usuario no está autenticado, AccessEnabler continúa el flujo de autenticación determinando si el último intento de autenticación del usuario se realizó correctamente con una MVPD determinada. Si se almacena en caché un ID de MVPD Y el indicador `canAuthenticate` es verdadero O si se seleccionó una MVPD con [`setSelectedProvider()`](#setSelectedProvider), no se pide al usuario el cuadro de diálogo de selección de MVPD. El flujo de autenticación sigue utilizando el valor almacenado en caché de la MVPD (es decir, la misma MVPD que se utilizó durante la última autenticación correcta). Se realiza una llamada de red al servidor back-end y se redirige al usuario a la página de inicio de sesión de MVPD (paso 6 a continuación).
-1. Si no se almacena en caché ningún ID de MVPD Y no se seleccionó ninguna MVPD con [`setSelectedProvider()`](#setSelectedProvider) O si el indicador `canAuthenticate` está establecido en falso, se llama a la devolución de llamada [`displayProviderDialog()`](#displayProviderDialog). Esta llamada de retorno indica a su página o reproductor que cree la interfaz de usuario que presenta al usuario una lista de MVPD para elegir. Se proporciona una matriz de objetos MVPD, que contiene la información necesaria para crear el selector MVPD. Cada objeto MVPD describe una entidad MVPD y contiene información como el ID de la MVPD (por ejemplo, XFINITY, AT\&amp;T, etc.) y la URL donde se puede encontrar el logotipo de MVPD.
-1. Una vez que se selecciona una MVPD en particular, su página o reproductor debe informar al AccessEnabler de la elección del usuario. Para los clientes que no son de Flash, una vez que el usuario selecciona la MVPD deseada, se informa al AccessEnabler de la selección del usuario mediante una llamada al método [`setSelectedProvider()`](#setSelectedProvider). En su lugar, los clientes de Flash distribuyen un(a) `MVPDEvent` compartido(a) de tipo &quot;`mvpdSelection`&quot;, pasando el proveedor seleccionado.
+1. Si el usuario no está autenticado, AccessEnabler continúa el flujo de autenticación determinando si el último intento de autenticación del usuario se realizó correctamente con un MVPD determinado. Si se almacena en caché un MVPD ID Y el indicador `canAuthenticate` es verdadero O si se seleccionó un MVPD mediante [`setSelectedProvider()`](#setSelectedProvider), no se solicitará al usuario el cuadro de diálogo de selección de MVPD. El flujo de autenticación sigue utilizando el valor almacenado en caché de MVPD (es decir, el mismo MVPD que se utilizó durante la última autenticación correcta). Se realiza una llamada de red al servidor back-end y se redirige al usuario a la página de inicio de sesión de MVPD (paso 6 a continuación).
+1. Si no se almacena en caché ningún MVPD ID Y no se seleccionó ningún MVPD con [`setSelectedProvider()`](#setSelectedProvider) O si el indicador `canAuthenticate` está establecido en falso, se llama a la devolución de llamada [`displayProviderDialog()`](#displayProviderDialog). Esta llamada de retorno indica a su página o reproductor que cree la interfaz de usuario que presenta al usuario una lista de MVPD para elegir. Se proporciona una matriz de objetos de MVPD que contiene la información necesaria para crear el selector de MVPD. Cada objeto de MVPD describe una entidad de MVPD y contiene información como el ID de MVPD (por ejemplo, XFINITY, AT\&amp;T, etc.) y la URL donde se puede encontrar el logotipo de MVPD.
+1. Una vez que se selecciona un MVPD en particular, la página o el reproductor deben informar al AccessEnabler de la elección del usuario. Para los clientes que no son de Flash, una vez que el usuario selecciona el MVPD deseado, se informa al AccessEnabler de la selección del usuario mediante una llamada al método [`setSelectedProvider()`](#setSelectedProvider). En su lugar, los clientes de Flash distribuyen un(a) `MVPDEvent` compartido(a) de tipo &quot;`mvpdSelection`&quot;, pasando el proveedor seleccionado.
 1. Para aplicaciones de Amazon, se omitirá la llamada de retorno [`navigateToUrl()`](#navigagteToUrl). La biblioteca Access Enabler facilita el acceso a un control WebView común para autenticar a los usuarios.
-1. A través de `WebView`, el usuario llega a la página de inicio de sesión de la MVPD e introduce sus credenciales. Tenga en cuenta que durante esta transferencia se producen varias operaciones de redirección.
+1. A través de `WebView`, el usuario llega a la página de inicio de sesión de MVPD e introduce sus credenciales. Tenga en cuenta que durante esta transferencia se producen varias operaciones de redirección.
 1. Una vez que WebView finalice la autenticación, se cerrará e informará al AccessEnabler de que el usuario ha iniciado sesión correctamente, AccessEnabler recupera el token de autenticación real del servidor back-end. AccessEnabler llama a la llamada de retorno [`setAuthenticationStatus()`](#setAuthNStatus) con un código de estado de 1, que indica que se ha realizado correctamente. Si hay un error durante la ejecución de estos pasos, la llamada de retorno [`setAuthenticationStatus()`](#setAuthNStatus) se activa con un código de estado de 0, junto con un código de error correspondiente, lo que indica que el usuario no está autenticado.
 
 ### Flujo de trabajo de cierre {#logout}
@@ -80,7 +80,7 @@ Una vez que la autenticación y la autorización se hayan realizado correctament
 
 #### Testigo de autenticación
 
-- **AccessEnabler 1.10.1 para FireOS** se basa en AccessEnabler para Android 1.9.1 . Este SDK presenta un nuevo método de almacenamiento de tokens, que permite varios contenedores de MVPD de programador y, por lo tanto, varios tokens de autenticación.
+- **AccessEnabler 1.10.1 para FireOS** se basa en AccessEnabler para Android 1.9.1 . Este SDK presenta un nuevo método de almacenamiento de tokens, que permite varios contenedores de Programmer-MVPD y, por lo tanto, varios tokens de autenticación.
 
 #### Token de autorización
 
@@ -104,12 +104,12 @@ Una vez que un token particular se coloca en la caché de tokens, la biblioteca 
 - El TTL del token no ha caducado
 - El emisor del token se incluye en la lista de proveedores de identidad permitidos
 
-El almacenamiento de tokens puede admitir varias combinaciones de programador-MVPD, basándose en una estructura de mapas anidada de varios niveles que puede contener varios tokens de autenticación. Este nuevo almacenamiento no afecta a la API pública de AccessEnabler de ninguna manera y no requiere cambios por parte del programador. Este es un ejemplo que ilustra esta funcionalidad más reciente:
+El almacenamiento de tokens puede admitir varias combinaciones de Programador-MVPD, basándose en una estructura de mapas anidada de varios niveles que puede contener varios tokens de autenticación. Este nuevo almacenamiento no afecta a la API pública de AccessEnabler de ninguna manera y no requiere cambios por parte del programador. Este es un ejemplo que ilustra esta funcionalidad más reciente:
 
 1. Abra App1 (desarrollado por Programmer1).
 1. Autenticar con MVPD1 (que está integrado con Programmer1).
 1. Suspenda/cierre la aplicación actual y abra App2 (desarrollada por Programmer2).
-1. Supongamos que Programmer2 no está integrado con MVPD2; por lo tanto, el usuario NO será autenticado en App2.
+1. Supongamos que Programmer2 no está integrado con MVPD2; por lo tanto, el usuario NO se autenticará en App2.
 1. Autentique con MVPD2 (que está integrado con Programmer2) en App2.
 1. Cambie a App1; el usuario se autenticará con Programmer1.
 

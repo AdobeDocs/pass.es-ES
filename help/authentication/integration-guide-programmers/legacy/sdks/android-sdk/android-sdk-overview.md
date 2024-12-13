@@ -1,15 +1,15 @@
 ---
-title: Información general del SDK para Android
-description: Información general del SDK para Android
+title: Información general sobre Android SDK
+description: Información general sobre Android SDK
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2731'
+source-wordcount: '2732'
 ht-degree: 0%
 
 ---
 
-# Información general del SDK para Android {#android-sdk-overview}
+# Información general sobre Android SDK (heredado) {#android-sdk-overview}
 
 >[!NOTE]
 >
@@ -21,7 +21,7 @@ Android AccessEnabler es una biblioteca Android de Java que permite a las aplica
 
 ## Requisitos de Android {#reqs}
 
-Para conocer los requisitos técnicos actuales relacionados con la plataforma Android y la autenticación de Adobe Pass, consulte [Requisitos de plataforma/dispositivo/herramienta](#android) o las notas de la versión incluidas con la descarga del SDK de Android.
+Para conocer los requisitos técnicos actuales relacionados con la plataforma Android y la autenticación de Adobe Pass, consulte [Requisitos de plataforma/dispositivo/herramienta](#android), o bien consulte las notas de la versión incluidas con la descarga de Android SDK.
 
 ## Explicación de los flujos de trabajo de cliente nativos {#native_client_workflows}
 
@@ -54,12 +54,12 @@ Tenga en cuenta que, aunque el siguiente flujo de trabajo de cliente nativo difi
 
 1. Su página o reproductor inicia el flujo de trabajo de autenticación con una llamada a [getAuthentication()](#getAuthN), que comprueba si hay un token de autenticación en caché válido. Este método tiene un parámetro `redirectURL` opcional; si no proporciona un valor para `redirectURL`, después de una autenticación correcta, el usuario vuelve a la dirección URL desde la que se inicializó la autenticación.
 1. AccessEnabler determina el estado de autenticación actual. Si el usuario está autenticado actualmente, AccessEnabler llama a la función de devolución de llamada `setAuthenticationStatus()` y pasa un estado de autenticación que indica que se ha realizado correctamente (paso 7 a continuación).
-1. Si el usuario no está autenticado, AccessEnabler continúa el flujo de autenticación determinando si el último intento de autenticación del usuario se realizó correctamente con una MVPD determinada. Si se almacena en caché un ID de MVPD Y el indicador `canAuthenticate` es verdadero O si se seleccionó una MVPD con [`setSelectedProvider()`](#setSelectedProvider), no se pide al usuario el cuadro de diálogo de selección de MVPD. El flujo de autenticación sigue utilizando el valor almacenado en caché de la MVPD (es decir, la misma MVPD que se utilizó durante la última autenticación correcta). Se realiza una llamada de red al servidor back-end y se redirige al usuario a la página de inicio de sesión de MVPD (paso 6 a continuación).
-1. Si no se almacena en caché ningún ID de MVPD Y no se seleccionó ninguna MVPD con [`setSelectedProvider()`](#setSelectedProvider) O si el indicador `canAuthenticate` está establecido en falso, se llama a la devolución de llamada [`displayProviderDialog()`](#displayProviderDialog). Esta llamada de retorno indica a su página o reproductor que cree la interfaz de usuario que presenta al usuario una lista de MVPD para elegir. Se proporciona una matriz de objetos MVPD, que contiene la información necesaria para crear el selector MVPD. Cada objeto MVPD describe una entidad MVPD y contiene información como el ID de la MVPD (por ejemplo, XFINITY, AT\&amp;T, etc.) y la URL donde se puede encontrar el logotipo de MVPD.
-1. Una vez que se selecciona una MVPD en particular, su página o reproductor debe informar al AccessEnabler de la elección del usuario. Para los clientes que no son de Flash, una vez que el usuario selecciona la MVPD deseada, se informa al AccessEnabler de la selección del usuario mediante una llamada al método [`setSelectedProvider()`](#setSelectedProvider). En su lugar, los clientes de Flash distribuyen un(a) `MVPDEvent` compartido(a) de tipo &quot;`mvpdSelection`&quot;, pasando el proveedor seleccionado.
+1. Si el usuario no está autenticado, AccessEnabler continúa el flujo de autenticación determinando si el último intento de autenticación del usuario se realizó correctamente con un MVPD determinado. Si se almacena en caché un MVPD ID Y el indicador `canAuthenticate` es verdadero O si se seleccionó un MVPD mediante [`setSelectedProvider()`](#setSelectedProvider), no se solicitará al usuario el cuadro de diálogo de selección de MVPD. El flujo de autenticación sigue utilizando el valor almacenado en caché de MVPD (es decir, el mismo MVPD que se utilizó durante la última autenticación correcta). Se realiza una llamada de red al servidor back-end y se redirige al usuario a la página de inicio de sesión de MVPD (paso 6 a continuación).
+1. Si no se almacena en caché ningún MVPD ID Y no se seleccionó ningún MVPD con [`setSelectedProvider()`](#setSelectedProvider) O si el indicador `canAuthenticate` está establecido en falso, se llama a la devolución de llamada [`displayProviderDialog()`](#displayProviderDialog). Esta llamada de retorno indica a su página o reproductor que cree la interfaz de usuario que presenta al usuario una lista de MVPD para elegir. Se proporciona una matriz de objetos de MVPD que contiene la información necesaria para crear el selector de MVPD. Cada objeto de MVPD describe una entidad de MVPD y contiene información como el ID de MVPD (por ejemplo, XFINITY, AT\&amp;T, etc.) y la URL donde se puede encontrar el logotipo de MVPD.
+1. Una vez que se selecciona un MVPD en particular, la página o el reproductor deben informar al AccessEnabler de la elección del usuario. Para los clientes que no son de Flash, una vez que el usuario selecciona el MVPD deseado, se informa al AccessEnabler de la selección del usuario mediante una llamada al método [`setSelectedProvider()`](#setSelectedProvider). En su lugar, los clientes de Flash distribuyen un(a) `MVPDEvent` compartido(a) de tipo &quot;`mvpdSelection`&quot;, pasando el proveedor seleccionado.
 1. Para aplicaciones de Android, si com.android.chrome está disponible, la URL de autenticación se cargará en las fichas personalizadas de Chrome.
-1. A través de Chrome Custom Tabs, el usuario llega a la página de inicio de sesión de la MVPD e introduce sus credenciales. Tenga en cuenta que durante esta transferencia se producen varias operaciones de redirección.
-1. Cuando las fichas personalizadas de Chrome detectan que una dirección URL coincide con el esquema (adobepass://) y el vínculo profundo del recurso &quot;redirect\_uri&quot; (es decir, adobepass://com.adobepass ), AccessEnabler recupera el token de autenticación real de los servidores back-end. Tenga en cuenta que las direcciones URL de redireccionamiento finales no son válidas y no están pensadas para que las fichas personalizadas de Chrome las carguen. Solo el SDK debe interpretarlos como una señal de que el flujo de autenticación se ha completado.
+1. A través de las fichas personalizadas de Chrome, el usuario llega a la página de inicio de sesión de MVPD e introduce sus credenciales. Tenga en cuenta que durante esta transferencia se producen varias operaciones de redirección.
+1. Cuando las fichas personalizadas de Chrome detectan que una dirección URL coincide con el esquema (adobepass://) y el vínculo profundo del recurso &quot;redirect\_uri&quot; (es decir, adobepass://com.adobepass ), AccessEnabler recupera el token de autenticación real de los servidores back-end. Tenga en cuenta que las direcciones URL de redireccionamiento finales no son válidas y no están pensadas para que las fichas personalizadas de Chrome las carguen. SDK solo debe interpretarlos como una señal de que el flujo de autenticación se ha completado.
 1. AccessEnabler informa a la aplicación de que se ha completado el flujo de autenticación. AccessEnabler llama a la llamada de retorno [`setAuthenticationStatus()`](#setAuthNStatus) con un código de estado de 1, que indica que se ha realizado correctamente. Si hay un error durante la ejecución de estos pasos, la llamada de retorno [`setAuthenticationStatus()`](#setAuthNStatus) se activa con un código de estado de 0, junto con un código de error correspondiente, lo que indica un error de autenticación.
 
 ### Flujo de trabajo de cierre {#logout}
@@ -68,8 +68,8 @@ Para los clientes nativos, los cierres de sesión se gestionan de forma similar 
 
 
 
-**Nota:** Se borrará la sesión de un programador/MVPD
-el almacenamiento subyacente de esa MVPD específica, incluidos todos los
+**Nota:** Se borrará la sesión de un programador/sesión de MVPD
+el almacenamiento subyacente de ese MVPD específico, incluidos todos los
 otros tokens de autenticación de programador obtenidos mediante SSO en
 ese dispositivo. Los tokens obtenidos para otras MVPD o no a través de SSO no lo harán
 se eliminarán.
@@ -110,15 +110,15 @@ Una vez que la autenticación y la autorización se hayan realizado correctament
 
 #### Testigo de autenticación
 
-- **AccessEnabler 1.6 y versiones anteriores** - La forma en que se almacenan en caché los tokens de autenticación en el dispositivo depende del indicador &quot;**Autenticación por solicitante&quot;** asociado con la MVPD actual:
+- **AccessEnabler 1.6 y versiones anteriores** - La forma en que se almacenan en caché los tokens de autenticación en el dispositivo depende del indicador &quot;**Autenticación por solicitante&quot;** asociado con el MVPD actual:
 
 
-1. Si la característica &quot;Autenticación por solicitante&quot; está *deshabilitada*, se almacenará un solo token de autenticación localmente en la mesa de trabajo global. Este token se compartirá entre todas las aplicaciones que estén integradas con la MVPD actual.
-1. Si la característica &quot;Autenticación por solicitante&quot; está *habilitada*, se asociará explícitamente un token con el programador que realizó el flujo de autenticación (el token no se almacenará en la mesa de trabajo global, sino en un archivo privado visible solamente para la aplicación de ese programador). Más específicamente, se deshabilitará el inicio de sesión único (SSO) entre diferentes aplicaciones; el usuario deberá realizar el flujo de autenticación explícitamente al cambiar a una nueva aplicación (siempre que el Programador de la segunda aplicación esté integrado con la MVPD actual y que no exista ningún token de autenticación para ese Programador en la caché local).
+1. Si la característica &quot;Autenticación por solicitante&quot; está *deshabilitada*, se almacenará un solo token de autenticación localmente en la mesa de trabajo global. Este token se compartirá entre todas las aplicaciones integradas con el MVPD actual.
+1. Si la característica &quot;Autenticación por solicitante&quot; está *habilitada*, se asociará explícitamente un token con el programador que realizó el flujo de autenticación (el token no se almacenará en la mesa de trabajo global, sino en un archivo privado visible solamente para la aplicación de ese programador). Más específicamente, se deshabilitará el inicio de sesión único (SSO) entre diferentes aplicaciones; el usuario deberá realizar el flujo de autenticación explícitamente al cambiar a una nueva aplicación (siempre que el programador de la segunda aplicación esté integrado con la MVPD actual y que no exista ningún token de autenticación para ese programador en la caché local).
 
    **Nota:** AEM 1.6 Google GSON Nota técnica: [Cómo resolver dependencias Gson](https://tve.zendesk.com/entries/22902516-Android-AccessEnabler-1-6-How-to-resolve-Gson-dependencies)
 
-- **AccessEnabler 1.7**: este SDK introduce un nuevo método de almacenamiento de tokens, que permite varios contenedores de MVPD de programador y, por lo tanto, varios tokens de autenticación. A partir de AEM 1.7, se utiliza el mismo diseño de almacenamiento tanto para el escenario &quot;Autenticación por solicitante&quot; como para el flujo de autenticación normal. La única diferencia entre los dos es la forma en que se realiza la autenticación: &quot;Autenticación por solicitante&quot; contiene una nueva mejora (autenticación pasiva) que hace posible que AccessEnabler realice una autenticación de canal de retorno, basada en la existencia de un token de autenticación en el almacenamiento (para un programador diferente). El usuario solo tiene que autenticarse una vez, y esta sesión se utilizará para obtener tokens de autenticación en aplicaciones posteriores. Este flujo de canal de retorno tiene lugar durante la llamada de [`setRequestor()`](#setRequestor) y es mayormente transparente para el programador. Sin embargo, hay un requisito importante aquí: el programador DEBE llamar a [`setRequestor()`](#setRequestor) desde el subproceso de la interfaz de usuario principal y desde una actividad.
+- **AccessEnabler 1.7**: este SDK presenta un nuevo método de almacenamiento de tokens, que permite varios contenedores de Programmer-MVPD y, por lo tanto, varios tokens de autenticación. A partir de AEM 1.7, se utiliza el mismo diseño de almacenamiento tanto para el escenario &quot;Autenticación por solicitante&quot; como para el flujo de autenticación normal. La única diferencia entre los dos es la forma en que se realiza la autenticación: &quot;Autenticación por solicitante&quot; contiene una nueva mejora (autenticación pasiva) que hace posible que AccessEnabler realice una autenticación de canal de retorno, basada en la existencia de un token de autenticación en el almacenamiento (para un programador diferente). El usuario solo tiene que autenticarse una vez, y esta sesión se utilizará para obtener tokens de autenticación en aplicaciones posteriores. Este flujo de canal de retorno tiene lugar durante la llamada de [`setRequestor()`](#setRequestor) y es mayormente transparente para el programador. Sin embargo, hay un requisito importante aquí: el programador DEBE llamar a [`setRequestor()`](#setRequestor) desde el subproceso de la interfaz de usuario principal y desde una actividad.
 
 
 #### Token de autorización
@@ -158,14 +158,14 @@ A partir de AccessEnabler 1.7, el almacenamiento de tokens puede admitir varias 
 1. Abra App1 (desarrollado por Programmer1).
 1. Autenticar con MVPD1 (que está integrado con Programmer1).
 1. Suspenda/cierre la aplicación actual y abra App2 (desarrollada por Programmer2).
-1. Supongamos que Programmer2 no está integrado con MVPD2; por lo tanto, el usuario NO será autenticado en App2.
+1. Supongamos que Programmer2 no está integrado con MVPD2; por lo tanto, el usuario NO se autenticará en App2.
 1. Autentique con MVPD2 (que está integrado con Programmer2) en App2.
 1. Cambie a App1; el usuario se autenticará con Programmer1.
 
 En versiones anteriores de AccessEnabler, el paso 6 hacía que el usuario no estuviera autenticado, ya que el almacenamiento de tokens anteriormente solo admitía un token de autenticación.
 
 
-**NOTA:** Si se cierra la sesión de un programador/MVPD, se borrará el almacenamiento subyacente, incluidos todos los demás tokens de autenticación de programador en el dispositivo con SSO. No se eliminarán los tokens obtenidos para otras MVPD o no mediante SSO. Cancelar el flujo de autenticación (invocar [`setSelectedProvider(null)`](#setSelectedProvider)) NO borrará el almacenamiento subyacente, sino que solo afectará al intento de autenticación actual de Programador/MVPD (borrando MVPD para el Programador actual).
+**NOTA:** Si se cierra la sesión de un programador o MVPD, se borrará el almacenamiento subyacente, incluidos todos los demás tokens de autenticación de programador del dispositivo con SSO. No se eliminarán los tokens obtenidos para otras MVPD o no mediante SSO. Cancelar el flujo de autenticación (invocar [`setSelectedProvider(null)`](#setSelectedProvider)) NO borrará el almacenamiento subyacente, pero solo afectará al intento de autenticación actual del Programador/MVPD (borrando MVPD para el Programador actual).
 
 
 Otra función relacionada con el almacenamiento que se incluye en AccessEnabler 1.7 permite importar tokens de autenticación de áreas de almacenamiento antiguas. Este &quot;Importador de tokens&quot; ayuda a lograr la compatibilidad entre versiones consecutivas de AccessEnabler, manteniendo el estado de SSO incluso cuando se actualiza la versión de almacenamiento.

@@ -2,7 +2,7 @@
 title: Informes
 description: Descubra cómo se agregan los datos en los informes del Tablero de TVE.
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -35,7 +35,7 @@ Siga estos pasos para ver un informe específico.
 
 ### Informes TTL de AuthN {#authn-ttl-reports}
 
-Los informes TTL de AuthN, también denominados Tiempo de vida de autenticación (TTL), muestran la duración durante la cual se configuran los tokens de autenticación para sus integraciones de canales con varias MVPD en todas las [plataformas](#platforms). Estos informes le permiten inspeccionar la cantidad de tiempo que un usuario permanece autenticado para una MVPD y plataforma específicas. Los valores de duración se presentan en formatos descriptivos, como **days**, **hours**, **minutes** y **seconds**. La tabla Informes TTL de AuthN incluye un desplazamiento horizontal y vertical para acomodar diferentes tamaños de pantalla.
+Los informes TTL de AuthN, también denominados Tiempo de vida de autenticación (TTL), muestran la duración durante la cual se configuran los tokens de autenticación para sus integraciones de canales con varias MVPD en todas las [plataformas](#platforms). Estos informes le permiten inspeccionar el tiempo que un usuario permanece autenticado para una plataforma y MVPD específicos. Los valores de duración se presentan en formatos descriptivos, como **days**, **hours**, **minutes** y **seconds**. La tabla Informes TTL de AuthN incluye un desplazamiento horizontal y vertical para acomodar diferentes tamaños de pantalla.
 
 También puede ver y descargar datos de [canales específicos o MVPD](#selecting-specific-channels-mvpds).
 
@@ -51,7 +51,7 @@ Seleccione **Exportar informes** para guardar los datos como un archivo CSV en e
 
 ### Informes TTL de AuthZ {#authz-ttl-reports}
 
-Los informes TTL de AuthZ, también conocidos como Tiempo de vida de autorización (TTL), muestran la duración del token de autorización configurado para sus integraciones de canales con varias MVPD en todas las [plataformas](#platforms). Estos informes le permiten inspeccionar la cantidad de tiempo que un usuario permanece autorizado para ver contenido de una MVPD y una plataforma específicas. Los valores de duración se presentan en formatos descriptivos, como **days**, **hours**, **minutes** y **seconds**. La tabla Informes TTL de AuthZ incluye desplazamiento horizontal y vertical para acomodar diferentes tamaños de pantalla.
+Los informes TTL de AuthZ, también conocidos como Tiempo de vida de autorización (TTL), muestran la duración del token de autorización configurado para sus integraciones de canales con varias MVPD en todas las [plataformas](#platforms). Estos informes le permiten inspeccionar la cantidad de tiempo que un usuario permanece autorizado para ver contenido de una plataforma y un MVPD específicos. Los valores de duración se presentan en formatos descriptivos, como **days**, **hours**, **minutes** y **seconds**. La tabla Informes TTL de AuthZ incluye desplazamiento horizontal y vertical para acomodar diferentes tamaños de pantalla.
 
 También puede ver y descargar los datos de [canales específicos o MVPD](#selecting-specific-channels-mvpds).
 
@@ -67,7 +67,7 @@ Seleccione **Exportar informes** para guardar los datos como un archivo CSV en e
 
 ### Informes de SSO {#sso-reports}
 
-Los informes SSO, también denominados inicio de sesión único, muestran el estado de inicio de sesión único configurado para las integraciones de canales con varias MVPD en todas las [plataformas](#platforms). Estos informes le permiten inspeccionar la experiencia de SSO de autenticación de usuario esperada para una plataforma y MVPD específicas. Los valores se presentan en formatos descriptivos, como **SSO deshabilitado**, **SSO habilitado** y **SSO incierto**. La tabla Informes de SSO muestra el desplazamiento horizontal y vertical para acomodar diferentes tamaños de pantalla.
+Los informes SSO, también denominados inicio de sesión único, muestran el estado de inicio de sesión único configurado para las integraciones de canales con varias MVPD en todas las [plataformas](#platforms). Estos informes le permiten inspeccionar la experiencia de SSO de autenticación de usuario esperada para una MVPD y plataforma específicas. Los valores se presentan en formatos descriptivos, como **SSO deshabilitado**, **SSO habilitado** y **SSO incierto**. La tabla Informes de SSO muestra el desplazamiento horizontal y vertical para acomodar diferentes tamaños de pantalla.
 
 También puede ver y descargar datos de [canales específicos o MVPD](#selecting-specific-channels-mvpds).
 
@@ -89,13 +89,13 @@ Seleccione **Exportar informes** para guardar los datos como un archivo CSV en e
 
 Los [Informes TTL de AuthN](#authn-ttl-reports), [Informes TTL de AuthZ](#authz-ttl-reports) y [Informes SSO](#sso-reports) presentan datos en varias plataformas, como:
 
-* **Escritorio**: Muestra los valores aplicados a las implementaciones del programador a través del SDK de JavaScript de autenticación de Adobe Pass.
+* **Escritorio**: Muestra los valores aplicados a las implementaciones del programador a través de Adobe Pass Authentication JavaScript SDK.
 
 * **Móvil**
 
-  **iOS**: muestra los valores aplicados mediante el SDK de iOS de autenticación de Adobe Pass.
+  **iOS**: muestra los valores aplicados usando la autenticación de Adobe Pass en iOS SDK.
 
-  **Android**: muestra los valores aplicados a través del SDK de Android de autenticación de Adobe Pass.
+  **Android**: muestra los valores aplicados a través de la autenticación de Adobe Pass en Android SDK.
 
   **Otros**: Muestra los valores aplicados mediante la API de REST de autenticación de Adobe Pass desarrollada para dispositivos móviles.
 
@@ -103,15 +103,15 @@ Los [Informes TTL de AuthN](#authn-ttl-reports), [Informes TTL de AuthZ](#authz-
 
   **Roku**: Muestra los valores aplicados a través de la API de REST de autenticación de Adobe Pass, identificando Roku como un tipo de dispositivo.
 
-  **FireTV**: muestra los valores aplicados a través del SDK de Adobe Pass Authentication FireTV.
+  **FireTV**: muestra los valores aplicados a través de Adobe Pass Authentication FireTV SDK.
 
-  **AppleTV**: Muestra los valores aplicados mediante el SDK de Adobe Pass Authentication para tvOS.
+  **AppleTV**: Muestra los valores aplicados mediante la autenticación de Adobe Pass en tvOS SDK.
 
   **Otros**: Muestra los valores aplicados usando la API de REST de autenticación de Adobe Pass para dispositivos conectados a TV.
 
 * **Plataforma no identificada**: muestra los valores aplicados a las implementaciones del programador cuando los servicios de autenticación de Adobe Pass detectan un tipo de dispositivo desconocido.
 
-Para obtener más información sobre cómo compartir el tipo de dispositivo deseado, como **Roku** con las API de REST de autenticación de Adobe Pass o los SDK, vea el mecanismo de [pasar información de clientes](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md).
+Para obtener más información sobre cómo compartir el tipo de dispositivo deseado, como **Roku** con las API de REST de autenticación de Adobe Pass o los SDK, vea el mecanismo de [pasar información de clientes](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
 
 >[!IMPORTANT]
 >

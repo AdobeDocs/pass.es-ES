@@ -1,15 +1,15 @@
 ---
-title: Guía del SDK para Android
-description: Guía del SDK para Android
+title: Guía de Android SDK
+description: Guía de Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1681'
+source-wordcount: '1682'
 ht-degree: 0%
 
 ---
 
-# Guía del SDK para Android {#android-sdk-cookbook}
+# Guía de Android SDK (heredada) {#android-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -76,7 +76,7 @@ La actividad de red de AccessEnabler tiene lugar en un subproceso diferente, por
 
    - [navigationToUrl(url)](#$navigateToUrl)
 
-     Activado por `getAuthentication()` después de que el usuario seleccione una MVPD. El parámetro `url` proporciona la ubicación de la página de inicio de sesión de la MVPD.
+     Activado por `getAuthentication()` después de que el usuario seleccione un MVPD. El parámetro `url` proporciona la ubicación de la página de inicio de sesión de MVPD.
 
    - [sendTrackingData(event, data)](#$sendTrackingData)
 
@@ -148,9 +148,9 @@ Biblioteca de Android (AccessEnabler)
 
 1. Presente al usuario la lista de proveedores enviados a `displayProviderDialog()`.
 
-1. Una vez que el usuario seleccione un proveedor, obtenga la URL de la MVPD del usuario de la llamada de retorno `navigateToUrl()`.  Abra un control WebView y dirija ese control WebView a la dirección URL.
+1. Una vez que el usuario seleccione un proveedor, obtenga la dirección URL del MVPD del usuario de la llamada de retorno `navigateToUrl()`.  Abra un control WebView y dirija ese control WebView a la dirección URL.
 
-1. A través del WebView creado en el paso anterior, el usuario aterriza en la página de inicio de sesión de la MVPD e introduce credenciales de inicio de sesión. Varias operaciones de redirección tienen lugar dentro de WebView.
+1. A través de la instancia WebView del paso anterior, el usuario aterriza en la página de inicio de sesión de MVPD e introduce las credenciales de inicio de sesión. Varias operaciones de redirección tienen lugar dentro de WebView.
 
    **Nota:** En este momento, el usuario tiene la oportunidad de cancelar el flujo de autenticación. Si esto sucede, la capa de la interfaz de usuario es responsable de informar a AccessEnabler sobre este evento llamando a `setSelectedProvider()` con `null` como parámetro. Esto permite al AccessEnabler limpiar su estado interno y restablecer el flujo de autenticación.
 
@@ -203,7 +203,7 @@ Flujo.
 ### F. Flujo de cierre de sesión {#logout_flow}
 
 1. Llame a [`logout()`](#$logout) para cerrar la sesión del usuario.\
-   AccessEnabler borra todos los valores en caché y tokens de la MVPD actual para el solicitante actual y también para los solicitantes con inicio de sesión único. Después de borrar la caché, AccessEnabler realiza una llamada al servidor para limpiar las sesiones del lado del servidor.  Tenga en cuenta que, dado que la llamada al servidor podría provocar un redireccionamiento de SAML al IdP (esto permite la limpieza de la sesión en el lado del IdP), esta llamada debe seguir todas las redirecciones. Por este motivo, esta llamada debe controlarse dentro de un control WebView.
+   AccessEnabler borra todos los valores en caché y tokens del MVPD actual para el solicitante actual, así como para los solicitantes con inicio de sesión único. Después de borrar la caché, AccessEnabler realiza una llamada al servidor para limpiar las sesiones del lado del servidor.  Tenga en cuenta que, dado que la llamada al servidor podría provocar un redireccionamiento de SAML al IdP (esto permite la limpieza de la sesión en el lado del IdP), esta llamada debe seguir todas las redirecciones. Por este motivo, esta llamada debe controlarse dentro de un control WebView.
 
    a. Siguiendo el mismo patrón que el flujo de trabajo de autenticación, el dominio AccessEnabler realiza una solicitud a la capa de aplicación de la interfaz de usuario (a través de la llamada de retorno `navigateToUrl()`) para crear un control WebView e indicar a ese control que cargue la dirección URL del extremo de cierre de sesión en el servidor back-end.
 
@@ -217,4 +217,4 @@ Flujo.
 
 [Aquí](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) tiene un documento que describe el comportamiento al usar varias MVPD y lo que sucede cuando el usuario cierra la sesión de una aplicación.
 
-El comportamiento descrito está disponible al utilizar la versión >= 2.0.0 del SDK para Android.
+El comportamiento descrito está disponible al utilizar Android SDK versión >= 2.0.0.

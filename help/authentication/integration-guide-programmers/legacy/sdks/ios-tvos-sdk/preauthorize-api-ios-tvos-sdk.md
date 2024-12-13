@@ -2,14 +2,14 @@
 title: Autorización previa de API de iOS/tvOS
 description: Autorización previa de API de iOS/tvOS
 exl-id: 79c596a4-0e38-4b6c-bb85-f97c6af45ed8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '392'
 ht-degree: 0%
 
 ---
 
-# Preautorizar {#preauthorize}
+# (Heredado) Autorizar previamente {#preauthorize}
 
 >[!NOTE]
 >
@@ -27,7 +27,7 @@ Si el resultado de la respuesta de API de preautorización contiene uno o más r
 >
 >La función de informe de errores mejorada que agrega información de error adicional para las decisiones de preautorización denegadas está disponible bajo solicitud, ya que debe habilitarse en el lado de la configuración de autenticación de Adobe Pass.
 
-En caso de que la solicitud de API de preautorización no se haya podido atender debido a un error del SDK de autenticación de Adobe Pass o en caso de que se produzca un error de los servicios de autenticación de Adobe Pass, se incluirá una información de error adicional (independientemente de la configuración anterior) y no se incluirán recursos como parte del resultado de la respuesta de API de preautorización.
+En caso de que la solicitud de API de preautorización no se haya podido atender debido a un error de SDK de autenticación de Adobe Pass o en caso de que se produzca un error de servicios de autenticación de Adobe Pass, se incluirá una información de error adicional (independientemente de la configuración anterior) y no se incluirán recursos como parte del resultado de la respuesta de API de preautorización.
 
 </br>
 

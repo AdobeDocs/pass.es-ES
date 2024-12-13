@@ -2,14 +2,14 @@
 title: Guía de la API de REST (servidor a servidor)
 description: Rest API cookbook server to server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1844'
+source-wordcount: '1845'
 ht-degree: 0%
 
 ---
 
-# Guía de la API de REST (servidor a servidor) {#rest-api-cookbook-server-to-server}
+# Guía de la API de REST (heredada) (de servidor a servidor) {#rest-api-cookbook-server-to-server}
 
 >[!NOTE]
 >
@@ -37,8 +37,8 @@ En una solución de servidor a servidor en funcionamiento están implicados los 
 | \[Opcional\] Dispositivo AuthN | Aplicación AuthN | si el dispositivo de streaming no tiene un agente de usuario (es decir, un explorador web), la aplicación AuthN es una aplicación web de programador a la que se accede desde un dispositivo de un usuario independiente mediante un explorador web. |
 | Infraestructura del programador | Servicio de programador | Servicio que vincula el dispositivo de streaming con el servicio de Adobe Pass para obtener decisiones de autenticación y autorización. |
 | Infraestructura de Adobe | Servicio de Adobe Pass | Servicio que se integra con el servicio MVPD IdP y AuthZ y proporciona decisiones de autenticación y autorización. |
-| Infraestructura de MVPD | ID de MVPD | Punto final de MVPD que proporciona un servicio de autenticación basado en credenciales para validar la identidad de su usuario. |
-| | Servicio AuthZ de MVPD | Punto final de MVPD que proporciona decisiones de autorización basadas en las suscripciones del usuario, los controles parentales, etc. |
+| Infraestructura de MVPD | MVPD IdP | Punto final de MVPD que proporciona un servicio de autenticación basado en credenciales para validar la identidad de su usuario. |
+| | Servicio AuthZ de MVPD | Punto final de MVPD que proporciona decisiones de autorización basadas en las suscripciones del usuario, el control parental, etc. |
 
 
 Los términos adicionales utilizados en el flujo se definen en la variable
@@ -65,9 +65,9 @@ a su MVPD para determinar si el usuario tiene una cuenta válida.
 6. En el caso de que la llamada **checkauthn** devuelva el estado de que el dispositivo de usuario NO está autenticado, la aplicación debería esperar a que un usuario solicite iniciar sesión.
 7. Cuando el usuario solicita iniciar sesión directamente (por ejemplo, selecciona el botón de inicio de sesión) o indirectamente (por ejemplo, selecciona el contenido protegido cuando aún no se ha autenticado), la aplicación del Dispositivo de streaming realiza una solicitud al Servicio de programador para iniciar la autenticación de usuario. El servicio de programación solicita y recibe un código de registro único (regcode) llamando a la API del servicio de Adobe Pass **regcode**.
 8. El servicio Programador también recupera la lista de MVPD y atributos actuales llamando a la API **config** del servicio Adobe Pass. Nota: También se puede llamar a esta API antes en el flujo y almacenarla en la caché.
-9. El servicio Programador devuelve el regcode a la aplicación Streaming Device y la lista de MVPD procesadas solicitada en el paso \#7. Nota: El programador especifica el formato de lista de MVPD procesadas y se pueden filtrar para permitir o bloquear explícitamente MVPD específicas (es decir, listas de permitidos o de bloqueados).
+9. El servicio Programador devuelve el regcode a la aplicación Streaming Device y la lista de MVPD procesados solicitada en el paso \#7. Nota: El programador especifica el formato de lista de MVPD procesada y se puede filtrar para permitir o bloquear explícitamente MVPD específicos (es decir, listas de permitidos o de bloqueados).
 10. Si el es diferente del dispositivo AuthN (es decir, &quot;segunda pantalla&quot;), ya sea por elección o por necesidad (es decir, el dispositivo de streaming no admite un agente de usuario), el dispositivo de streaming debe mostrar el regcode y un URI para que el usuario acceda a la aplicación AuthN. El usuario escribe el URI en el agente de usuario del dispositivo AuthN para iniciar la aplicación AuthN y, a continuación, escribe el código de referencia en esa aplicación. Si el dispositivo de flujo continuo es el mismo que el dispositivo AuthN, el regcode se puede pasar mediante programación al módulo AuthN.
-11. El módulo AuthN inicia la autenticación del usuario con la MVPD mostrando un selector de MVPD. Una vez que el usuario selecciona la MVPD, el módulo AuthN llama a **authenticate** con el regcode, que redirige el agente de usuario al IdP de MVPD. Cuando el usuario se autentica correctamente con la MVPD, el agente de usuario se redirige de nuevo a través del servicio Adobe Pass, donde la autenticación correcta se registra con el regcode y, a continuación, se redirige de nuevo al módulo AuthN.
+11. El módulo AuthN inicia la autenticación del usuario con MVPD mostrando un selector de MVPD. Una vez que el usuario selecciona MVPD, el módulo AuthN llama a **authenticate** con el regcode, lo cual redirige el agente de usuario al MVPD IdP. Cuando el usuario se autentica correctamente con MVPD, el agente de usuario se redirige de nuevo a través del servicio de Adobe Pass, donde la autenticación correcta se registra con el regcode y, a continuación, se redirige de nuevo al módulo AuthN.
 12. Si el dispositivo de streaming es diferente del dispositivo AuthN, este debe mostrar un mensaje de autenticación al usuario y los pasos para continuar (p. ej., &quot;Success\! Ahora puede volver a la consola de juegos para continuar \[...\]&quot;). Si el dispositivo de streaming es el mismo que el dispositivo AuthN, el dispositivo de streaming puede detectar mediante programación la finalización de la autenticación.
 
 
@@ -94,7 +94,7 @@ El diagrama siguiente ilustra el flujo de autorización:
 El flujo de cierre de sesión permite al usuario eliminar la identidad actual
 asociadas a la aplicación.
 
-1. Cuando el usuario solicita cerrar la sesión (es decir, quitar del dispositivo la cuenta de MVPD actual asociada con la aplicación), la aplicación de dispositivos de streaming llama al servicio de programación para indicarle que cierre la sesión del dispositivo.
+1. Cuando el usuario solicita cerrar la sesión (es decir, quitar del dispositivo la cuenta actual de MVPD asociada con la aplicación), la aplicación de dispositivos de streaming llama al servicio de programador para indicarle que cierre la sesión del dispositivo.
 1. El servicio de programación debe llamar a la API de Adobe Pass **logout**.
 
 El diagrama siguiente ilustra el flujo de cierre de sesión:
@@ -107,9 +107,9 @@ La preautorización se puede utilizar para determinar rápidamente, a partir de 
 
 1. Una vez autenticado el usuario, el Dispositivo de streaming puede llamar al Servicio de programador para solicitar el contenido al que el usuario tiene derecho a transmitir.
 
-1. El servicio de programación debe llamar a la API de Adobe Pass **preauthorize** con una lista de ID de recursos, que son una cadena simple que normalmente representa un canal al que un usuario podría tener derecho de flujo. *Nota: actualmente, la llamada a* ***preauthorize*** *está configurada para limitar la lista a cinco (5) ID de recursos. Cuando se necesitan más de cinco recursos, se pueden realizar varias*** llamadas **** preautorizadas *, o bien se puede configurar la llamada para aceptar más de cinco recursos con un acuerdo de las MVPD. Los implementadores deben tener en cuenta el coste de una*** llamada preautorizada **** para los recursos de MVPD, así como el tiempo de respuesta al programador y estructurar su uso de la llamada con prudencia.**
+1. El servicio de programación debe llamar a la API de Adobe Pass **preauthorize** con una lista de ID de recursos, que son una cadena simple que normalmente representa un canal al que un usuario podría tener derecho de flujo. *Nota: actualmente, la llamada a* ***preauthorize*** *está configurada para limitar la lista a cinco (5) ID de recursos. Cuando se necesitan más de cinco recursos, se pueden realizar varias*** llamadas **** preautorizadas *, o bien se puede configurar la llamada para aceptar más de cinco recursos con un acuerdo de las MVPD. Los implementadores deben tener en cuenta el costo de una llamada de* ***preauthorize*** *a los recursos de MVPD, así como el tiempo de respuesta al programador y estructurar su uso de la llamada con prudencia.*
 
-1. La llamada **preauthorize** responderá al servicio de programador con un objeto JSON que contiene un valor TRUE o FALSE para cada ID de recurso en la solicitud que indica si el usuario tiene derecho al canal asociado o no. *Nota: Si una MVPD no proporciona una respuesta para un ID de recurso determinado (por ejemplo, debido a errores de red o tiempos de espera), el valor predeterminado será FALSO.*
+1. La llamada **preauthorize** responderá al servicio de programador con un objeto JSON que contiene un valor TRUE o FALSE para cada ID de recurso en la solicitud que indica si el usuario tiene derecho al canal asociado o no. *Nota: Si un MVPD no proporciona una respuesta para un Id. de recurso determinado (por ejemplo, debido a errores de red o tiempos de espera), el valor predeterminado será FALSO.*
 
 1. El servicio de programador debe usar la respuesta de llamada **preauthorize** para crear una respuesta personalizada definida por el programador al dispositivo de flujo, normalmente para personalizar la presentación al usuario en función de sus derechos.
 
@@ -120,7 +120,7 @@ El diagrama siguiente ilustra el flujo de preautorización:
 
 ### \[Opcional\] Metadatos
 
-Los metadatos se pueden utilizar para recuperar información de usuario compartida por MVPD.
+Los metadatos se pueden utilizar para recuperar la información de usuario que comparte MVPD.
 Algunos ejemplos de esto son el ID de usuario, el código postal, etc.
 
 1. Una vez autenticado el usuario, el servicio de programador puede llamar a la API de Adobe Pass **usermetadata** para solicitar información sobre el usuario autenticado.
@@ -182,7 +182,7 @@ El servicio Programador debe pasar información precisa de identificación del d
     
     
     
-    GET /api/v1/authorize/1 .1
+    GET /api/v1/authorize HTTP/1.1
     
     X-Forwarded-For:203.45.101.20
 
