@@ -2,9 +2,9 @@
 title: Uso del proxy Charles
 description: Uso del proxy Charles
 exl-id: bb38543f-f6bc-4b5a-91b8-41bc51ee4c56
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '370'
+source-wordcount: '392'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,9 @@ ht-degree: 0%
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
+>[!IMPORTANT]
+>
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
 
 **Charles:** <http://charlesproxy.com>
 

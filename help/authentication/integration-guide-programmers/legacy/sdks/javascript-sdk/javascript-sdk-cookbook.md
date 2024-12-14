@@ -2,9 +2,9 @@
 title: Guía de JavaScript SDK
 description: Guía de JavaScript SDK
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '935'
+source-wordcount: '957'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+
+>[!IMPORTANT]
+>
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
 
 ## Introducción {#intro}
 

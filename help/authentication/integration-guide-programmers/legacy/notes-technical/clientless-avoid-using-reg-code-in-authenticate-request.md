@@ -2,9 +2,9 @@
 title: Evite utilizar '&'reg_code en la solicitud /authentication
 description: Evite utilizar '&'reg_code en la solicitud /authentication
 exl-id: c0ecb6f9-2167-498c-8a2d-a692425b31c5
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '224'
+source-wordcount: '246'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+
+>[!IMPORTANT]
+>
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
 
 </br>
 

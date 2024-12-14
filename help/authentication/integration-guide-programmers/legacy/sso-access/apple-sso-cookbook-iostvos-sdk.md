@@ -2,9 +2,9 @@
 title: Guía de Apple SSO (iOS/tvOS SDK)
 description: Guía de Apple SSO (iOS/tvOS SDK)
 exl-id: 2d59cd33-ccfd-41a8-9697-1ace3165bc44
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1812'
+source-wordcount: '1834'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+
+>[!IMPORTANT]
+>
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
 
 El Adobe Pass Authentication AccessEnabler iOS/tvOS SDK es compatible con el inicio de sesión único (SSO) de socio para usuarios finales de aplicaciones cliente que se ejecuten en iOS, iPadOS o tvOS.
 

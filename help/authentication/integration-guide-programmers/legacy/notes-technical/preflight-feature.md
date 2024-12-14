@@ -2,9 +2,9 @@
 title: Función de comprobación preliminar, Cómo habilitar, solucionar problemas o determinar el problema
 description: Función de comprobación preliminar, Cómo habilitar, solucionar problemas o determinar el problema
 exl-id: 9e4ec343-371f-4116-915f-191e5f42cb47
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '521'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+
+>[!IMPORTANT]
+>
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
 
 Se ha producido un cambio en la forma en que la autenticación de Adobe Pass calcula los recursos preautorizados. La API de preautorización tiene una nueva implementación. Esta implementación reemplaza la solución antigua, que consiste en realizar varias llamadas de autorización únicamente.
 La interfaz externa para la API de preautorización no cambia y no se requieren actualizaciones en la aplicación del programador.

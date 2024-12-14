@@ -2,9 +2,9 @@
 title: 'Error de autenticación de iOS: no se encuentra adobepass.ios.app'
 description: 'Error de autenticación de iOS: no se encuentra adobepass.ios.app'
 exl-id: cd97c6fb-f0fa-45c2-82c1-f28aa6b2fd12
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '365'
+source-wordcount: '387'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+
+>[!IMPORTANT]
+>
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
 
 ## Problema {#issue}
 

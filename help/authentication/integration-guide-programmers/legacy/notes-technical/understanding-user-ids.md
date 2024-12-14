@@ -2,9 +2,9 @@
 title: Explicación de los ID de usuario
 description: Explicación de los ID de usuario
 exl-id: 813a8501-db72-4850-a387-c8db6120db80
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '625'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+
+>[!IMPORTANT]
+>
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
 
 Conceptualmente, cada usuario que inicia un flujo de asignación de derechos se asocia con un único ID de usuario único. Sin embargo, a lo largo de un flujo de derechos, ese ID de usuario se puede presentar de diferentes maneras, en función de la API de la que obtenga el ID.
 

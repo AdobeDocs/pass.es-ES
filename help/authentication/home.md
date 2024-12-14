@@ -2,26 +2,20 @@
 title: Bienvenido a Adobe&reg; Pass Authentication.
 description: Bienvenido a Adobe&reg; Pass Authentication overview
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '331'
+source-wordcount: '296'
 ht-degree: 0%
 
 ---
 
 # Bienvenido a Adobe ® aprobar autenticación {#pt-auth-overview}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
 
 La autenticación de Adobe Pass es una solución de asignación de derechos para TV en todas partes, que proporciona un marco modular para determinar si alguien que solicita acceso a un recurso tiene derecho a él. Para participar en la solución de asignación de derechos de autenticación de Adobe Pass, los proveedores de contenido (programadores) y los proveedores de TV de pago (MVPD) integran sus sistemas de asignación de derechos con los flujos de trabajo de autenticación de Adobe Pass. Este sitio de documentación proporciona detalles sobre el proceso de integración, así como sugerencias para los socios existentes.
-
-¡Sus comentarios siempre son apreciados!
-
->[!NOTE]
->
->El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
 ## Ayuda popular y preguntas frecuentes {#help-faqs}
 
@@ -39,13 +33,11 @@ La autenticación de Adobe Pass es una solución de asignación de derechos para
 
 >[!IMPORTANT]
 >
->Si no encuentra una respuesta, [**envíenos un correo electrónico**](mailto:tve-support@adobe.com).
+> Si no encuentra una respuesta, [**envíenos un correo electrónico**](mailto:tve-support@adobe.com).
 >
->[Enviar un correo electrónico a nuestro equipo de atención al cliente](mailto:tve-support@adobe.com) es también el primer paso para cualquier informe de problema o incidente.
+> [Enviar un correo electrónico a nuestro equipo de atención al cliente](mailto:tve-support@adobe.com) es también el primer paso para cualquier informe de problema o incidente.
 >
->Si tienes un problema con [SEVERITY 1 LIVE](/help/authentication/kickstart/escalation-procedures.md) y nos has enviado un correo electrónico y han transcurrido 30 minutos sin respuesta, consulta el documento [Procedimientos de escalación](/help/authentication/kickstart/escalation-procedures.md) para obtener los números de teléfono a los que llamar.
->
-
+> Si tiene un problema con [SEVERITY 1 LIVE](/help/authentication/kickstart/escalation-procedures.md), nos ha enviado un correo electrónico y han transcurrido 30 minutos sin obtener respuesta, consulte el documento [Procedimientos de escalación](/help/authentication/kickstart/escalation-procedures.md) para obtener los números de teléfono a los que llamar.
 
 ## Para encontrar lo que necesita {#how-to-search}
 

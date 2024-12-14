@@ -2,9 +2,9 @@
 title: Referencia de la API de JavaScript SDK
 description: Referencia de la API de JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '2861'
+source-wordcount: '2883'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+
+>[!IMPORTANT]
+>
+> Asegúrese de mantenerse informado sobre los últimos Adobe Pass Authentication anuncios de productos y los plazos de desmantelamiento agregados en el [Página de anuncios de](/help/authentication/product-announcements.md) productos.
 
 ## Referencia de API {#api-reference}
 
@@ -60,7 +64,7 @@ Estas funciones inician solicitudes de interacción con un MVPD. Todas las llama
   })
 ```
 
-- El programador puede anular la configuración de MVPD establecida en la autenticación de Adobe Pass especificando si se requiere o no un iFrame para el inicio de sesión (clave *iFrameRequired*) y las dimensiones del iFrame (claves *iFrameWidth* y *iFrameHeight*). El objeto JSON tiene la siguiente plantilla:
+- El programador puede anular la configuración de MVPD establecida en la autenticación de Adobe Pass especificando si se requiere o no un iFrame para el inicio de sesión (clave *iFrameRequired*) y las dimensiones del iFrame (claves *iFrameWidth* y *iFrameHeight*). El objeto JSON tiene las siguientes plantilla:
 
 ```JSON
     {  
@@ -84,14 +88,14 @@ Estas funciones inician solicitudes de interacción con un MVPD. Todas las llama
 ```
 
 
-Todas las claves de nivel superior de la plantilla anterior son opcionales y tienen valores predeterminados (*backgroundLogin*, *backgroundLogut* son false de forma predeterminada y mvpdConfig es null, lo que significa que no se invalida ninguna configuración de MVPD).
+Todas las claves de nivel superior de la plantilla anterior son opcionales y tienen valores predeterminados (*backgroundLogin*, *backgroundLogut* son falsas de forma predeterminada y mvpdConfig es nula, lo que significa que no se anula ninguna configuración MVPD).
 
 
-- **Nota**: si se especifican valores o tipos no válidos para los parámetros anteriores, se producirá un comportamiento no definido.
+- **Nota**: Si especifica no válido valores/tipos para los parámetros anteriores, se producirá un comportamiento indefinido.
 
 
 
-Este es un ejemplo de configuración para el siguiente escenario: activación del inicio de sesión y cierre de sesión sin actualización, cambio de MVPD1 al inicio de sesión de redirección de páginas completo (que no sea iFrame) y inicio de sesión de MVPD2 a iFrame con anchura=500 y altura=300:
+A continuación se muestra un ejemplo de configuración para el siguiente escenario: activación de inicio de sesión y cierre de sesión sin actualización, cambio de MVPD1 a inicio de sesión completo de Página-redirección (no iFrame) y MVPD2 a iFrame inicio de sesión con width=500 y height=300:
 
 ```JSON
     {  
@@ -174,7 +178,7 @@ Se desencadenaron **devoluciones de llamadas:** [setAuthenticationStatus()](#set
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**Descripción:** La aplicación utiliza este método para comprobar el estado de autorización del cliente actual y del recurso dado. Se inicia comprobando primero el estado de autenticación. Si no se autentica, se activa la llamada de retorno tokenRequestFailed() y se cierra el método. Si el usuario está autenticado, también almacena en déclencheur el flujo de autorización. Ver detalles del método [getAuthorization()](#getAuthZ.
+**Descripción:** el aplicación utiliza este método para comprobar el estado de autorización del cliente actual y del recurso determinado. Comienza comprobando primero el estado de autenticación. Si no se autentica, se activa la llamada de retorno tokenRequestFailed() y se cierra el método. Si el usuario está autenticado, también almacena en déclencheur el flujo de autorización. Ver detalles del método [getAuthorization()](#getAuthZ.
 
 >[!TIP]
 >
@@ -232,10 +236,10 @@ Existen dos tipos de metadatos:
 
 **Parámetros:**
 
-- *key*: ID que especifica los metadatos solicitados:
-   - Si la clave es `"TTL_AUTHN",`, se realiza la consulta para obtener el tiempo de caducidad del token de autenticación.
+- *clave*: un id que especifica el metadatos solicitado:
+   - Si la clave es `"TTL_AUTHN",` , entonces se realiza la consulta para obtener el tiempo de caducidad del token de autenticación.
 
-   - Si la clave es `"TTL_AUTHZ"` y params es una matriz que contiene el ID de recurso como una cadena, se realiza la consulta para obtener la hora de caducidad del token de autorización asociado al recurso especificado.
+   - Si key is `"TTL_AUTHZ"` and params es una matriz que contiene el identificador del recurso como una cadena, entonces se realiza la consulta para obtener el tiempo de expiración del token de autorización asociado al recurso especificado.
 
    - Si la clave es `"DEVICEID"`, se realiza la consulta para obtener el ID del dispositivo actual. Tenga en cuenta que esta función está desactivada de forma predeterminada y los programadores deben ponerse en contacto con el Adobe para obtener información sobre la habilitación y las tarifas.
 
@@ -317,9 +321,9 @@ desencadenó:**[ setAuthenticationStatus()](#setauthenticationstatusisauthentica
 
 **Descripción:** Recupera los resultados de la selección del cliente en el cuadro de diálogo de selección de proveedor. Esto se puede utilizar en cualquier momento después de la comprobación de autenticación inicial.
 
-Esta función es asincrónica y devuelve su resultado a la función de devolución de llamada `selectedProvider()`.
+Esta función es asíncrona y devuelve su resultado a la `selectedProvider()` función de llamada de retorno.
 
-- **MVPD** MVPD seleccionado actualmente, o nulo si no se ha seleccionado ningún MVPD.
+- **MVPD** El MVPD seleccionado actualmente, o nulo si no se seleccionó ningún MVPD.
 - **AE_State**: el resultado de la autenticación para el cliente actual es &quot;Nuevo usuario&quot;, &quot;Usuario no autenticado&quot; o &quot;Usuario autenticado&quot;
 
 **Llamadas de retorno activadas:** [selectedProvider()](#getselectedprovider-getselectedprovider)
@@ -451,7 +455,7 @@ Debe implementar estas llamadas de retorno para gestionar las respuestas a sus l
 - Valores posibles para el tipo de dispositivo:
    - ordenador
    - tableta
-   - mobile
+   - móvil
    - consola de juegos
    - desconocido
 
@@ -534,23 +538,23 @@ Los datos son específicos para cada tipo de evento:
 **Activado por:** [checkAuthorization()](#checkauthorizationinresourceid-checkauthorizationinresourceid), [getAuthorization()](#getauthorizationinresourceid-redirecturl-getauthorizationinresourceidredirecturl)
 </br>
 
-[Volver al principio](#top)
+[Atrás al principio](#top)
 
 </br>
 
 
 ## preauthorizedResources(authorizedResources) {#preauthorizedResources(authorizedResources)}
 
-**Descripción:** La llamada de retorno desencadenada por el Habilitador de acceso que entrega la lista de recursos autorizados devuelta después de una llamada a `checkPreauthorizedResources()`.
+**Descripción:** devolución de llamada desencadenada por Access Enabler que entrega los recursos autorizados lista devuelve después de una llamada a `checkPreauthorizedResources()`.
 
 **Parámetros:**
 
-- *authorizedResources*: La lista de recursos autorizados.
+- *authorizedResources*: El lista de recursos autorizados.
 
 **Activado por:** [checkPreauthorizedResources()](#checkPreauthRes)
 </br>
 
-[Volver al principio](#top)
+[Atrás al principio](#top)
 
 </br>
 

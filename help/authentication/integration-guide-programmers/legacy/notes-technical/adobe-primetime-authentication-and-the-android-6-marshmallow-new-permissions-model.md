@@ -2,9 +2,9 @@
 title: Autenticación de Adobe Pass y el nuevo modelo de permisos de Android 6 "Marshmallow"
 description: Autenticación de Adobe Pass y el nuevo modelo de permisos de Android 6 "Marshmallow"
 exl-id: 3c96769e-b25b-48ab-bb74-40f13d4e5a84
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '481'
+source-wordcount: '503'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+
+>[!IMPORTANT]
+>
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
 
 </br>
 
