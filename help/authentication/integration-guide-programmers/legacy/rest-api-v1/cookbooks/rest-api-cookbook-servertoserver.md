@@ -2,9 +2,9 @@
 title: Guía de la API de REST (servidor a servidor)
 description: Rest API cookbook server to server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '1867'
+source-wordcount: '1856'
 ht-degree: 0%
 
 ---
@@ -42,10 +42,6 @@ En una solución de servidor a servidor en funcionamiento están implicados los 
 | Infraestructura de Adobe | Servicio de Adobe Pass | Servicio que se integra con el servicio MVPD IdP y AuthZ y proporciona decisiones de autenticación y autorización. |
 | Infraestructura de MVPD | MVPD IdP | Punto final de MVPD que proporciona un servicio de autenticación basado en credenciales para validar la identidad de su usuario. |
 | | Servicio AuthZ de MVPD | Punto final de MVPD que proporciona decisiones de autorización basadas en las suscripciones del usuario, el control parental, etc. |
-
-
-Los términos adicionales utilizados en el flujo se definen en la variable
-[Glosario](/help/authentication/kickstart/glossary.md).
 
 ## Flujos {#flows}
 
@@ -197,10 +193,3 @@ El servicio Programador debe enviar los datos y el formato requeridos por las MV
 El servicio Programador debe respetar los TTL authN y authZ al almacenar en caché e invalidar las sesiones authN o authZ cuando se le notifique.
 
 El programador debe mantener los certificados compartidos con el Adobe.
-
-<!--
-## Related Information {#related}
-
-* [REST API Reference](/help/authentication/rest-api-reference.md)
-* [Glossary of Terms](/help/authentication/adobe-pass-glossary.md)
--->

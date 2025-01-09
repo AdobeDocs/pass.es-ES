@@ -2,9 +2,9 @@
 title: Guía de la API de REST (de cliente a servidor)
 description: Rest API cookbook de cliente a servidor.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '888'
 ht-degree: 0%
 
 ---
@@ -44,10 +44,6 @@ En una solución de cliente a servidor en funcionamiento están implicados los s
 | Infraestructura de Adobe | Servicio de Adobe Pass | Servicio que se integra con el servicio MVPD IdP y AuthZ y proporciona decisiones de autenticación y autorización. |
 | Infraestructura de MVPD | MVPD IdP | Punto final de MVPD que proporciona un servicio de autenticación basado en credenciales para validar la identidad de su usuario. |
 | | Servicio AuthZ de MVPD | Punto final de MVPD que proporciona decisiones de autorización basadas en las suscripciones del usuario, el control parental, etc. |
-
-
-
-Los términos adicionales utilizados en el flujo se definen en el [Glosario](/help/authentication/kickstart/glossary.md).
 
 ## Flujos{#flows}
 

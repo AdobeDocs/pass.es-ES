@@ -2,9 +2,9 @@
 title: Guía de Apple SSO (API REST V2)
 description: Guía de Apple SSO (API REST V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '3442'
+source-wordcount: '3443'
 ht-degree: 0%
 
 ---
@@ -189,15 +189,15 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
    >
    > <br/>
    >
-   > Si la validación falla, se generará una respuesta de error, que proporcionará información adicional que se ajustará a los [códigos de error mejorados](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
+   > Si la validación falla, se generará una respuesta de error, que proporcionará información adicional que se ajustará a la documentación de [Códigos de error mejorados](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
 
    >[!IMPORTANT]
    >
    > La aplicación de streaming debe garantizar que procesa los siguientes detalles proporcionados para cada MVPD al continuar:
    >
    > * `enablePlatformServices`: indica si MVPD admite actualmente el inicio de sesión único de Apple.
-   > * `displayInPlatformPicker`: indica si la MVPD se puede mostrar en el selector de Apple.
-   > * `boardingStatus`: indica si la MVPD está integrada en el inicio de sesión único de Apple.
+   > * `displayInPlatformPicker`: indica si MVPD se puede mostrar en el selector de Apple.
+   > * `boardingStatus`: indica si MVPD está incorporado en el inicio de sesión único de Apple.
 
 1. **Recuperar el estado del marco de trabajo del socio:** La aplicación de transmisión llama al [marco de trabajo de cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) desarrollado por Apple para obtener permisos de usuario e información del proveedor.
 
@@ -271,7 +271,7 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
    * El atributo `actionName` está establecido en &quot;authorize&quot;.
    * El atributo `actionType` está establecido en &quot;direct&quot;.
 
-   Si el servidor de Adobe Pass identifica un perfil válido, la aplicación de streaming no necesita volver a autenticarse con la MVPD seleccionada, ya que ya hay un perfil que se puede utilizar para flujos de decisiones posteriores.
+   Si el backend de Adobe Pass identifica un perfil válido, la aplicación de streaming no necesita volver a autenticarse con el MVPD seleccionado, ya que ya hay un perfil que se puede utilizar para flujos de decisiones posteriores.
 
 1. **Continúe con el flujo de autenticación básico:** La respuesta del extremo del asociado de sesiones contiene los siguientes datos:
    * El atributo `actionName` se ha establecido en &quot;autenticar&quot; o &quot;reanudar&quot;.
@@ -291,9 +291,9 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
    * El atributo `authenticationRequest - request` incluye la solicitud SAML que se pasa al marco de trabajo del socio.
    * El atributo `authenticationRequest - attributesNames` incluye los atributos SAML que se pasan al marco de trabajo del socio.
 
-   Si el backend de Adobe Pass no identifica un perfil válido y la validación del inicio de sesión único del socio pasa, la aplicación de streaming recibe una respuesta con acciones y datos para pasar al marco del socio para iniciar el flujo de autenticación con la MVPD.
+   Si el backend de Adobe Pass no identifica un perfil válido y la validación del inicio de sesión único del socio pasa, la aplicación de streaming recibe una respuesta con acciones y datos para pasar al marco del socio para iniciar el flujo de autenticación con MVPD.
 
-1. **Autenticación MVPD completa con el marco del socio:** Reenvíe la solicitud de autenticación del socio (solicitud SAML) obtenida en el paso anterior al [marco de cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount). Si el flujo de autenticación se realiza correctamente, la interacción de [Marco de cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) con la MVPD produce una respuesta de autenticación de socio (respuesta SAML) que se devuelve junto con la información de estado de la estructura de socio.
+1. **Completar la autenticación de MVPD con el marco del socio:** Reenviar la solicitud de autenticación del socio (solicitud SAML) obtenida en el paso anterior al [marco de la cuenta del suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount). Si el flujo de autenticación es correcto, la interacción de [Marco de trabajo de cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) con MVPD produce una respuesta de autenticación de socio (respuesta SAML) que se devuelve junto con la información de estado del marco de trabajo de socio.
 
    >[!IMPORTANT]
    >
