@@ -2,9 +2,9 @@
 title: Configurar el entorno y realizar pruebas en la calidad previa
 description: Configurar el entorno y realizar pruebas en la calidad previa
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: ca95bc45027410becf8987154c7c9f8bb8c2d5f8
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '478'
 ht-degree: 0%
 
 ---
@@ -41,6 +41,16 @@ Los pasos 1 y 2 están configurando el entorno de prueba en una de las máquinas
 
 ```Choose any IP from **addresses** section (e.g. `52.13.71.11)```
 
+```cmd
+C:\>nslookup entitlement-prequal.auth.adobe.com 
+...
+Addresses:  52.26.79.43
+            54.190.212.171
+```
+
+```Choose any IP from **addresses** section (e.g. `54.190.212.171)```
+
+
 * **En Linux/Mac**
 
 ```sh
@@ -53,6 +63,17 @@ Los pasos 1 y 2 están configurando el entorno de prueba en una de las máquinas
 ```
 
 ```Choose any IP from **A records (**e.g `52.13.71.11)```
+
+```sh
+    $ dig entitlement-prequal.auth.adobe.com
+    
+    ;; ANSWER SECTION:
+    ...
+    ............ 60 IN A      52.26.79.43
+    ............ 60 IN A      54.190.212.171
+```
+
+```Choose any IP from **A records (**e.g `54.190.212.171)```
 
 >[!NOTE]
 >
@@ -68,7 +89,8 @@ Los pasos 1 y 2 están configurando el entorno de prueba en una de las máquinas
 * Editar el archivo c:\\windows\\System32\\drivers\\etc\\hosts *(en Windows) o* el *archivo /etc/hosts* (en Macintosh/Linux/Android) y añada lo siguiente:
 
 * Producción de suplantación de identidad perfil
-   * 52.13.71.11 entitlement.auth.adobe.com sp.auth.adobe.com api.auth.adobe.com
+   * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
+   * 54.190.212.171 entitlement.auth.adobe.com
 
 **Suplantación de identidad en Android:** Para suplantar a Android, debe usar un emulador de Android.
 
@@ -86,13 +108,13 @@ Los pasos 1 y 2 están configurando el entorno de prueba en una de las máquinas
 
 * Este paso requiere la dirección del sitio web del programador y algunas credenciales MVPD válidas (un usuario de que esté autenticado y autorizado).
 
-## PASO 5.  Realizar pruebas de escenarios utilizando los sitios web del programador {#perform-scenario-testing-using-programmer-website}
+## PASO 5.  Realizar pruebas de situación utilizando los sitios web del programador {#perform-scenario-testing-using-programmer-website}
 
-* Después de completar la configuración entorno y asegurarse de que funciona el flujo básico de autenticación-autorización, puede continuar con las pruebas de escenarios más complejos.
+* Después de completar la configuración del entorno y asegurarse de que el flujo básico de autenticación-autorización funciona, puede continuar con la prueba de escenarios más complejos.
 
 
 ## PASO 6.  Realizar pruebas mediante el sitio de prueba de la API {#perform-testing-using-api-testing-site}
 
 * Si desea profundizar en la prueba de la autenticación de Adobe Pass, le recomendamos que utilice el [sitio de prueba de API](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
 
-Puede encontrar más detalles en el sitio de prueba de API en [Cómo probar los flujos de autenticación y autorización mediante el sitio de prueba de API de Adobe](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md).
+Puede encontrar más detalles sobre API prueba sitio en [Cómo prueba flujos de Authentication y autorización mediante el sitio](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md) de prueba API de Adobe Systems.
