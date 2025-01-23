@@ -2,9 +2,9 @@
 title: Prueba de los flujos de autenticación y autorización mediante el sitio de prueba de la API de Adobe
 description: Prueba de los flujos de autenticación y autorización mediante el sitio de prueba de la API de Adobe
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: 811feba1f2476bdfacb20e332e33df7f7ae8ac00
+source-git-commit: 65475d6da7a1b25cb2d8ebd6229a7cb360c7ab4a
 workflow-type: tm+mt
-source-wordcount: '380'
+source-wordcount: '368'
 ht-degree: 0%
 
 ---
@@ -33,8 +33,8 @@ Después de completar la parte I, realice los siguientes pasos:
 
 1. Abrir página web: [Prueba de la API de ensayo](https://sp.auth-staging.adobe.com/apitest/api.html).
 1. Cargar el habilitador de acceso mediante:
-   * Seleccionar en el menú desplegable qué versión de AccessEnabler se necesita (v3 o v4), desde dónde se desea acceder (ensayo o producción) y si debe estar en modo de depuración
-   * Introducción de la instrucción de software con la que se desea probar si se utiliza v4
+   * Selección del menú desplegable desde el que desea acceder (ensayo o producción) y si debe estar en modo de depuración
+   * Introducción de la instrucción de software con la que desea realizar la prueba
    * A continuación, haga clic en el botón &quot;**Cargar activador de acceso**&quot;.
 1. Ahora establezca el valor del id del solicitante en &quot;**requestorID**&quot; y haga clic en el botón &quot;setRequestor&quot;.
 1. Después, presione el botón &quot;getAuthentication&quot; y espere a que aparezca el selector de pantalla.
