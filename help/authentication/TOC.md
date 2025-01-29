@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '1262'
+source-wordcount: '1256'
 ht-degree: 2%
 
 ---
@@ -120,9 +120,9 @@ ht-degree: 2%
                + [Encabezado: AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + Características estándar {#standard-features}
       + Derechos {#entitlements}
-         + [Identificar recurso protegido](integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)
          + [Autorización de verificación previa](integration-guide-programmers/features-standard/entitlements/preflight-authz.md)
-         + [Cómo integrar el Media Token Verifier](integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md)
+         + [Recurso protegido](integration-guide-programmers/features-standard/entitlements/protected-resources.md)
+         + [Tokens de medios](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
          + [Metadatos del usuario](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + Informes de errores {#error-reporting}
          + [Códigos de error mejorados](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)

@@ -2,9 +2,9 @@
 title: Preguntas frecuentes sobre la API de REST V2
 description: Preguntas frecuentes sobre la API de REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '6668'
+source-wordcount: '6664'
 ht-degree: 0%
 
 ---
@@ -245,7 +245,7 @@ El identificador único del recurso puede tener dos formatos:
 * Un formato de cadena simple, como un identificador único de un canal (marca).
 * Un formato RSS (RSS) multimedia que contiene información adicional, como el título, las clasificaciones y los metadatos de control parental.
 
-Para obtener más información, consulte la [Documentación sobre la identificación de recursos protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md).
+Para obtener más información, consulte la documentación de [Recursos protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
 
 #### 6. ¿Para cuántos recursos puede la aplicación cliente obtener una decisión de preautorización a la vez? {#preauthorization-phase-faq6}
 
@@ -294,7 +294,7 @@ El token multimedia es un término definido en la documentación de [Glosario](/
 
 El token de medios consiste en una cadena firmada enviada en texto no cifrado que se puede recuperar del extremo de autorización de decisiones.
 
-Para obtener más información, consulte la documentación de [Integración del verificador de tokens de medios](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md).
+Para obtener más información, consulte la documentación de [Comprobador de token de medios](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 
 El token de medios es válido durante un periodo de tiempo limitado y corto especificado en el momento del problema, lo que indica la cantidad de tiempo que debe utilizar la aplicación cliente antes de requerir volver a consultar el extremo de autorización de decisiones.
 
@@ -316,7 +316,7 @@ El identificador único del recurso puede tener dos formatos:
 * Un formato de cadena simple, como un identificador único de un canal (marca).
 * Un formato RSS (RSS) multimedia que contiene información adicional, como el título, las clasificaciones y los metadatos de control parental.
 
-Para obtener más información, consulte la [Documentación sobre la identificación de recursos protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md).
+Para obtener más información, consulte la documentación de [Recursos protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
 
 #### 6. ¿Para cuántos recursos puede la aplicación cliente obtener una decisión de autorización a la vez? {#authorization-phase-faq6}
 

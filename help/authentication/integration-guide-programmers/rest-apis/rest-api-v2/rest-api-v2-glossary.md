@@ -2,9 +2,9 @@
 title: Glosario de la API de REST 2
 description: Glosario de la API de REST 2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '1747'
+source-wordcount: '1744'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ Sinónimo de término anterior utilizado para el token de autorización corto.
 
 Media Token Verifier es una biblioteca distribuida por Adobe Pass Authentication que se encarga de verificar la autenticidad de un [token multimedia](#media-token).
 
-Para obtener más información, consulte la documentación de [Integración del verificador de tokens de medios](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md).
+Para obtener más información, consulte la documentación de [Comprobador de token de medios](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 
 #### MVPD {#mvpd}
 
@@ -183,7 +183,7 @@ El recurso es un contenido protegido al que un usuario intenta obtener acceso de
 
 El recurso se identifica con un valor único acordado entre el programador y los MVPD.
 
-Para obtener más información, consulte la [Documentación sobre la identificación de recursos protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md).
+Para obtener más información, consulte la documentación de [Recursos protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
 
 ### S {#s}
 

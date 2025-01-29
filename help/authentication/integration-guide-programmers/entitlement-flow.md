@@ -2,7 +2,7 @@
 title: Flujo de asignación de derechos del programador
 description: Flujo de asignación de derechos del programador
 exl-id: b1c8623a-55da-4b7b-9827-73a9fe90ebac
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
 source-wordcount: '1823'
 ht-degree: 0%
@@ -22,11 +22,11 @@ En este documento se describe el flujo de derechos básico desde la perspectiva 
 La autenticación de Adobe Pass media el flujo de asignación de derechos entre los programadores y las MVPD al proporcionar interfaces seguras y coherentes para ambas partes.  Del lado del programador, la autenticación de Adobe Pass proporciona dos tipos generales de interfaz de asignación de derechos:
 
 1. AccessEnabler: componente de cliente que proporciona una biblioteca de API para aplicaciones en dispositivos que pueden procesar páginas web (por ejemplo, aplicaciones web, aplicaciones para smartphones y tabletas).
-2. API sin cliente: servicios web RESTful para dispositivos que no pueden procesar páginas web (por ejemplo, decodificadores, consolas de juegos, televisores inteligentes). El requisito para procesar páginas web proviene del requisito de la MVPD de que los usuarios se autentiquen en el sitio web de la MVPD.
+2. API sin cliente: servicios web RESTful para dispositivos que no pueden procesar páginas web (por ejemplo, decodificadores, consolas de juegos, televisores inteligentes). Los requisitos para procesar páginas web se derivan del requisito de MVPD de que los usuarios se autentiquen en el sitio web de MVPD.
 
 Además de la descripción general neutra para la plataforma que se presenta aquí, hay una descripción general específica de la API sin cliente aquí: Documentación de la API sin cliente. AccessEnabler se ejecuta de forma nativa en plataformas compatibles (AS/JS en la web, Objective-C en iOS y Java en Android). Las API de AccessEnabler son coherentes en todas las plataformas admitidas. Todas las plataformas que no admiten AccessEnabler utilizan la misma API sin cliente.
 
-Para ambos tipos de interfaz, la autenticación de Adobe Pass media de forma segura el flujo de asignación de derechos entre la aplicación del programador y la MVPD del usuario:
+Para ambos tipos de interfaz, la autenticación de Adobe Pass media de forma segura el flujo de asignación de derechos entre la aplicación del programador y el MVPD del usuario:
 
 ![](../assets/prog-entitlement-flow.png)
 
@@ -35,7 +35,7 @@ Para ambos tipos de interfaz, la autenticación de Adobe Pass media de forma seg
 
 >[!IMPORTANT]
 >
->Tenga en cuenta en el diagrama anterior que hay una parte del flujo de derechos que no pasa por los servidores de autenticación de Adobe Pass: el inicio de sesión de MVPD. Los usuarios deben iniciar sesión en la página de inicio de sesión de su MVPD. Debido a este requisito, en los dispositivos que no pueden procesar páginas web, la aplicación del programador debe indicar a los usuarios que cambien a un dispositivo compatible con la web para iniciar sesión con su MVPD, después de lo cual regresarán al dispositivo original durante el resto del flujo de asignación de derechos.
+>Tenga en cuenta en el diagrama anterior que hay una parte del flujo de derechos que no pasa por los servidores de autenticación de Adobe Pass: el inicio de sesión de MVPD. Los usuarios deben iniciar sesión en la página de inicio de sesión de MVPD. Debido a este requisito, en dispositivos que no pueden procesar páginas web, la aplicación del programador debe indicar a los usuarios que cambien a un dispositivo compatible con la web para iniciar sesión con su MVPD, después de lo cual regresarán al dispositivo original para el resto del flujo de derechos.
 
 ## Flujo de derecho {#entitlement-flow}
 
@@ -86,26 +86,26 @@ La autenticación correcta genera un token de AuthN vinculado al dispositivo y a
 
 * `<FQDN>/.../checkauthn` - La versión del servicio web de `checkAuthentication()` anterior.
 * `<FQDN>/.../config`: devuelve la lista de MVPD a la aplicación de segunda pantalla.
-* `<FQDN>/.../authenticate`: inicia el flujo de autenticación desde la aplicación de segunda pantalla, redireccionando a los usuarios a su MVPD seleccionada para el inicio de sesión. Si se realiza correctamente, la autenticación de Adobe Pass genera un token de AuthN y lo almacena en el servidor, y el usuario vuelve a su dispositivo original para completar el flujo de derechos.
+* `<FQDN>/.../authenticate`: inicia el flujo de autenticación desde la aplicación de segunda pantalla, redireccionando a los usuarios a su MVPD seleccionado para el inicio de sesión. Si se realiza correctamente, la autenticación de Adobe Pass genera un token de AuthN y lo almacena en el servidor, y el usuario vuelve a su dispositivo original para completar el flujo de derechos.
 
 Un token de AuthN se considera válido si se cumplen los dos puntos siguientes:
 
 * El token de AuthN no ha caducado
-* La MVPD asociada con el token de AuthN está en la lista de MVPD permitidas para el ID del solicitante actual
+* El MVPD asociado con el token de AuthN está en la lista de MVPD permitidas para el ID del solicitante actual
 
 #### Flujo de trabajo de autenticación inicial de Generic AccessEnabler {#generic-ae-initial-authn-flow}
 
 1. Su aplicación inicia el flujo de trabajo de autenticación con una llamada a `getAuthentication()`, que busca un token de autenticación en caché válido. Este método tiene un parámetro `redirectURL` opcional; si no proporciona un valor para `redirectURL`, después de una autenticación correcta, el usuario vuelve a la dirección URL desde la que se inicializó la autenticación.
 1. AccessEnabler determina el estado de autenticación actual. Si el usuario está autenticado actualmente, AccessEnabler llama a la función de devolución de llamada `setAuthenticationStatus()` y pasa un estado de autenticación que indica que la función se ha realizado correctamente.
-1. Si el usuario no está autenticado, AccessEnabler continúa el flujo de autenticación determinando si el último intento de autenticación del usuario se realizó correctamente con una MVPD determinada. Si se almacena en caché un ID de MVPD Y el indicador `canAuthenticate` es verdadero O si se seleccionó una MVPD con `setSelectedProvider()`, no se pide al usuario el cuadro de diálogo de selección de MVPD. El flujo de autenticación sigue utilizando el valor almacenado en caché de la MVPD (es decir, la misma MVPD que se utilizó durante la última autenticación correcta). Se realiza una llamada de red al servidor back-end y se redirige al usuario a la página de inicio de sesión de MVPD.
+1. Si el usuario no está autenticado, AccessEnabler continúa el flujo de autenticación determinando si el último intento de autenticación del usuario se realizó correctamente con un MVPD determinado. Si se almacena en caché un MVPD ID Y el indicador `canAuthenticate` es verdadero O si se seleccionó un MVPD mediante `setSelectedProvider()`, no se solicitará al usuario el cuadro de diálogo de selección de MVPD. El flujo de autenticación sigue utilizando el valor almacenado en caché de MVPD (es decir, el mismo MVPD que se utilizó durante la última autenticación correcta). Se realiza una llamada de red al servidor back-end y se redirige al usuario a la página de inicio de sesión de MVPD.
 
-1. Si no se almacena en caché ningún ID de MVPD Y no se seleccionó ninguna MVPD con `setSelectedProvider()` O si el indicador `canAuthenticate` está establecido en falso, se llama a la devolución de llamada `displayProviderDialog()`. Esta llamada de retorno indica a la aplicación que cree la interfaz de usuario que presenta al usuario una lista de MVPD para elegir. Se proporciona una matriz de objetos MVPD, que contiene la información necesaria para crear el selector MVPD. Cada objeto de MVPD describe una entidad de MVPD y contiene información como el ID de la MVPD y la dirección URL donde se puede encontrar el logotipo de MVPD.
+1. Si no se almacena en caché ningún MVPD ID Y no se seleccionó ningún MVPD con `setSelectedProvider()` O si el indicador `canAuthenticate` está establecido en falso, se llama a la devolución de llamada `displayProviderDialog()`. Esta llamada de retorno indica a la aplicación que cree la interfaz de usuario que presenta al usuario una lista de MVPD para elegir. Se proporciona una matriz de objetos de MVPD que contiene la información necesaria para crear el selector de MVPD. Cada objeto de MVPD describe una entidad de MVPD y contiene información como el ID de MVPD y la dirección URL donde se puede encontrar el logotipo de MVPD.
 
-1. Una vez seleccionada una MVPD, la aplicación debe informar al AccessEnabler de la elección del usuario. Para los clientes que no son de Flash, una vez que el usuario selecciona la MVPD deseada, se informa al AccessEnabler de la selección del usuario mediante una llamada al método `setSelectedProvider()`. En su lugar, los clientes de Flash distribuyen un(a) `MVPDEvent` compartido(a) de tipo &quot;`mvpdSelection`&quot;, pasando el proveedor seleccionado.
+1. Una vez seleccionada una MVPD, la aplicación debe informar al AccessEnabler de la elección del usuario. Para los clientes que no son de Flash, una vez que el usuario selecciona el MVPD deseado, se informa al AccessEnabler de la selección del usuario mediante una llamada al método `setSelectedProvider()`. En su lugar, los clientes de Flash distribuyen un(a) `MVPDEvent` compartido(a) de tipo &quot;`mvpdSelection`&quot;, pasando el proveedor seleccionado.
 
-1. Cuando se informa al AccessEnabler de la selección de MVPD por parte del usuario, se realiza una llamada de red al servidor back-end y se redirige al usuario a la página de inicio de sesión de MVPD.
+1. Cuando se informa al AccessEnabler de la selección de MVPD del usuario, se realiza una llamada de red al servidor back-end y se redirige al usuario a la página de inicio de sesión de MVPD.
 
-1. Dentro del flujo de trabajo de autenticación, AccessEnabler se comunica con la autenticación de Adobe Pass y la MVPD seleccionada para solicitar las credenciales del usuario (ID de usuario y contraseña) y comprobar su identidad. Mientras que algunas MVPD redirigen a su propio sitio para el inicio de sesión, otras requieren que muestre su página de inicio de sesión dentro de un iFrame. Su página debe incluir la llamada de retorno que crea un iFrame, en caso de que el cliente elija una de esas MVPD.<!-- For more information on creating a login iFrame, see  [Managing the Login IFrame](https://tve.helpdocsonline.com/managing-the-login-iframe)-->.
+1. Dentro del flujo de trabajo de autenticación, AccessEnabler se comunica con la autenticación de Adobe Pass y con el MVPD seleccionado para solicitar las credenciales del usuario (ID de usuario y contraseña) y comprobar su identidad. Mientras que algunas MVPD redirigen a su propio sitio para el inicio de sesión, otras requieren que muestre su página de inicio de sesión dentro de un iFrame. Su página debe incluir la llamada de retorno que crea un iFrame, en caso de que el cliente elija una de esas MVPD.<!-- For more information on creating a login iFrame, see  [Managing the Login IFrame](https://tve.helpdocsonline.com/managing-the-login-iframe)-->.
 
 1. Una vez que el usuario ha iniciado sesión correctamente, AccessEnabler recupera el token de autenticación e informa a la aplicación de que el flujo de autenticación ha finalizado. AccessEnabler llama a la llamada de retorno `setAuthenticationStatus()` con un código de estado de 1, que indica que se ha realizado correctamente. Si hay un error durante la ejecución de estos pasos, la llamada de retorno `setAuthenticationStatus()` se activa con un código de estado de 0, lo que indica un error de autenticación, así como un código de error correspondiente.
 
@@ -115,7 +115,7 @@ Un token de AuthN se considera válido si se cumplen los dos puntos siguientes:
 
 ### Flujo de autorización {#authorization}
 
-La autorización es un requisito previo para ver contenido protegido. La autorización correcta genera un token de AuthZ, junto con un token de medios de corta duración que se proporciona a la aplicación del programador por motivos de seguridad. Tenga en cuenta que, para admitir el flujo de trabajo de autorización, debe haber realizado previamente la configuración del solicitante necesaria y haber integrado el [Comprobador de token de medios](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md). Una vez completados, puede iniciar la autorización.
+La autorización es un requisito previo para ver contenido protegido. La autorización correcta genera un token de AuthZ, junto con un token de medios de corta duración que se proporciona a la aplicación del programador por motivos de seguridad. Tenga en cuenta que, para admitir el flujo de trabajo de autorización, debe haber realizado previamente la configuración del solicitante necesaria y haber integrado el [Comprobador de token de medios](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier). Una vez completados, puede iniciar la autorización.
 
 La aplicación inicia la autorización cuando un usuario solicita acceso a un recurso protegido. Se pasa un ID de recurso que especifica el recurso solicitado (por ejemplo, un canal, un episodio, etc.). La aplicación comprueba primero si hay un token de autenticación almacenado. Si no se encuentra ninguna, se inicia el proceso de autenticación.
 
@@ -208,7 +208,7 @@ La primera llamada sigue ejecutándose mientras se ejecuta la segunda llamada (c
 
 **Pregunta. ¿Hay un número máximo de llamadas simultáneas que AccessEnabler puede admitir?**
 
-No se ha establecido ningún límite explícitamente en el código AccessEnabler, por lo que sólo está limitado por los recursos de sistema disponibles, así como por la capacidad de la MVPD.
+No se ha establecido ningún límite explícitamente en el código AccessEnabler, por lo que sólo está limitado por los recursos de sistema disponibles, así como por la capacidad de MVPD.
 
 <!--
 
