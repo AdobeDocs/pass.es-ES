@@ -2,7 +2,7 @@
 title: Seguimiento de evaluación de prevención Apple Safari
 description: Seguimiento de evaluación de prevención Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -133,7 +133,7 @@ En este punto, estos requisitos/indicadores de Safari no se alinean con nuestros
 
 **Pase temporal**
 
-Para mitigar los problemas de individualización y tener una interacción de usuario, le recomendamos que use **[Promotional Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)** de manera interactiva y que proporcione al menos una información adicional sobre el usuario (por ejemplo, su dirección de correo electrónico).
+Para mitigar los problemas de individualización y tener una interacción de usuario, le recomendamos que use **[Promotional Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)** de manera interactiva y que proporcione al menos una información adicional sobre el usuario (por ejemplo, su dirección de correo electrónico).
 
 ## Safari 13 {#safari13}
 

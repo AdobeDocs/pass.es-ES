@@ -2,9 +2,9 @@
 title: Notas de la versión de autenticación de Adobe Pass 2.69
 description: Notas de la versión de autenticación de Adobe Pass 2.69
 exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '214'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Fecha de versión: **27/02/2024 - 29/02/2024**
 
 * Vulnerabilidades de seguridad parcheadas.
 * Mejoras para restablecer la capa de seguridad de Temp Pass con el registro dinámico de clientes (DCR).
-   * Puede encontrar más detalles aquí: [Restablecer pase temporal](../integration-guide-programmers/features-premium/temporary-access/reset-temp-pass.md)
+   * Puede encontrar más detalles aquí: [Función TempPass](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
 * Mejoras en la creación de informes de Platform Identification.
 
 #### API de REST {#rest-apis}
@@ -48,7 +48,7 @@ Fecha de versión: **27/02/2024 - 29/02/2024**
    * Una próxima versión dedicada presentará el nuevo Tablero de TVE, que se anunciará en una notificación separada.
    * Se está actualizando la documentación para el uso de este nuevo tablero de TVE.
 
-#### SDK para JavaScript 4.7.0 {#js-sdk}
+#### JavaScript SDK 4.7.0 {#js-sdk}
 
-* Se ha eliminado la versión 2.0.1 obsoleta del SDK de JavaScript del activador de acceso debido a vulnerabilidades de seguridad.
+* Se ha eliminado la versión obsoleta 2.0.1 del Access Enabler JavaScript SDK debido a vulnerabilidades de seguridad.
    * Siga el enlace para obtener más detalles: [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.0](authn-rn-javascript-470.md)

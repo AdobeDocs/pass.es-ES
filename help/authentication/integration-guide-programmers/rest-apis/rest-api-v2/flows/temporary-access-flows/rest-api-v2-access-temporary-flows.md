@@ -2,7 +2,7 @@
 title: Flujos de acceso temporales
 description: 'API de REST V2: Flujos de acceso temporales'
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '3215'
 ht-degree: 0%
@@ -19,9 +19,9 @@ ht-degree: 0%
 >
 > La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-TempPass permite a los programadores proporcionar acceso temporal a su contenido protegido sin pedir a los usuarios que se autentiquen con una cuenta MVPD válida.
+TempPass permite a los programadores proporcionar acceso temporal a su contenido protegido sin pedir a los usuarios que se autentiquen con una cuenta de MVPD válida.
 
-Para obtener más información sobre la característica TempPass, consulte la documentación de [TempPass](../../../../features-premium/temporary-access/temp-pass.md).
+Para obtener más información sobre la característica TempPass, consulte la documentación de [TempPass](../../../../features-premium/temporary-access/temp-pass-feature.md).
 
 Los flujos de acceso temporales le permiten consultar los siguientes escenarios:
 
@@ -351,7 +351,7 @@ Siga los pasos dados para implementar el flujo de autorización al consumir un n
 
    >[!TIP]
    >
-   > Sugerencia: La aplicación de streaming puede informar a los usuarios de que se ha superado el número máximo de recursos y aconsejarles que inicien un flujo de autenticación básico con una MVPD normal para seguir viendo.
+   > Sugerencia: La aplicación de streaming puede informar a los usuarios de que se ha superado el número máximo de recursos y aconsejarles que inicien un flujo de autenticación básico con un MVPD normal para seguir viendo.
 
 ## Recuperar decisiones de autorización cuando caduca el TempPass básico o promocional {#retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
@@ -431,7 +431,7 @@ Siga los pasos dados para implementar el flujo de autorización cuando caduque T
 
    >[!TIP]
    >
-   > Sugerencia: La aplicación de streaming puede informar a los usuarios de que el acceso temporal ha caducado y aconsejarles que inicien un flujo de autenticación básico mediante una MVPD normal para seguir viendo.
+   > Sugerencia: La aplicación de streaming puede informar a los usuarios de que el acceso temporal ha caducado y aconsejarles que inicien un flujo de autenticación básico con un MVPD normal para seguir viendo.
 
 ## Recuperar perfil para TempPass básico {#retrieve-profile-for-basic-temppass}
 

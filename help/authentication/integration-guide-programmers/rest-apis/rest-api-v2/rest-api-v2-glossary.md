@@ -2,9 +2,9 @@
 title: Glosario de la API de REST 2
 description: Glosario de la API de REST 2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
-source-wordcount: '1744'
+source-wordcount: '1743'
 ht-degree: 0%
 
 ---
@@ -229,13 +229,13 @@ El inicio de sesión único (SSO) es un proceso que permite a un usuario autenti
 
 TempPass básico es una función de autenticación de Adobe Pass que permite a un usuario acceder al contenido protegido durante un tiempo limitado sin necesidad de autenticarse con un [MVPD](#mvpd).
 
-Para obtener más información, consulte la documentación de [Pase temporal](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass.md).
+Para obtener más información, consulte la [documentación básica de TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#basic-temp-pass).
 
 #### Promocional de TempPass {#temp-pass-promotional}
 
 El TempPass promocional es una función de autenticación de Adobe Pass que permite a un usuario acceder al contenido protegido durante un número máximo de recursos y un tiempo limitado sin necesidad de autenticarse con un [MVPD](#mvpd).
 
-Para obtener más información, consulte la documentación de [Promotional Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md).
+Para obtener más información, consulte la [Documentación promocional de TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass).
 
 #### TTL {#ttl}
 

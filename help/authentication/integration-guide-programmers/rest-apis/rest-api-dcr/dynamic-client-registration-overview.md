@@ -2,7 +2,7 @@
 title: Información general sobre el registro dinámico de clientes
 description: Información general sobre el registro dinámico de clientes
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -20,7 +20,7 @@ El registro de cliente dinámico representa un mecanismo de autorización defini
 Adobe Pass proporciona un servicio de registro de cliente dinámico que permite acceder a las siguientes API protegidas:
 
 * API de administración de autenticación de Adobe Pass:
-   * [Restablecer API de pase temporal](../../features-premium/temporary-access/reset-temp-pass.md)
+   * [Restablecer API de pase temporal](../../features-premium/temporary-access/temp-pass-feature.md)
    * [API de degradación](../../features-premium/degraded-access/degradation-api-overview.md)
    * [API de MVPD proxy](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
    * [API de supervisión del servicio de derechos](../../features-premium/esm/entitlement-service-monitoring-api.md)
