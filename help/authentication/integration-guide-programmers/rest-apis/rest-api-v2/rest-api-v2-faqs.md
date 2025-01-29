@@ -2,7 +2,7 @@
 title: Preguntas frecuentes sobre la API de REST V2
 description: Preguntas frecuentes sobre la API de REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '6668'
 ht-degree: 0%
@@ -126,7 +126,7 @@ Para obtener más información, consulte los siguientes documentos:
 
 #### 3. ¿Cómo puede la aplicación cliente obtener la información de metadatos del usuario? {#authentication-phase-faq3}
 
-La aplicación cliente puede consultar uno de los siguientes extremos capaces de devolver información de [metadatos de usuario](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) como parte de la información de perfil:
+La aplicación cliente puede consultar uno de los siguientes extremos capaces de devolver información de [metadatos de usuario](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) como parte de la información de perfil:
 
 * [API de extremo de perfiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
 * [Extremo de perfiles para API de MVPD específica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
