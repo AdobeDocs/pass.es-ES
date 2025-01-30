@@ -2,7 +2,7 @@
 title: Preguntas frecuentes sobre la API de REST V2
 description: Preguntas frecuentes sobre la API de REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '6664'
 ht-degree: 0%
@@ -245,7 +245,7 @@ El identificador único del recurso puede tener dos formatos:
 * Un formato de cadena simple, como un identificador único de un canal (marca).
 * Un formato RSS (RSS) multimedia que contiene información adicional, como el título, las clasificaciones y los metadatos de control parental.
 
-Para obtener más información, consulte la documentación de [Recursos protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
+Para obtener más información, consulte la documentación de [Recursos protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
 #### 6. ¿Para cuántos recursos puede la aplicación cliente obtener una decisión de preautorización a la vez? {#preauthorization-phase-faq6}
 
@@ -316,7 +316,7 @@ El identificador único del recurso puede tener dos formatos:
 * Un formato de cadena simple, como un identificador único de un canal (marca).
 * Un formato RSS (RSS) multimedia que contiene información adicional, como el título, las clasificaciones y los metadatos de control parental.
 
-Para obtener más información, consulte la documentación de [Recursos protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
+Para obtener más información, consulte la documentación de [Recursos protegidos](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
 #### 6. ¿Para cuántos recursos puede la aplicación cliente obtener una decisión de autorización a la vez? {#authorization-phase-faq6}
 

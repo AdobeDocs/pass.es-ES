@@ -1,15 +1,15 @@
 ---
-title: Autorización de comprobación preliminar de MVPD
-description: Autorización de comprobación preliminar de MVPD
+title: Autorización de comprobaciones de MVPD
+description: Autorización de comprobaciones de MVPD
 exl-id: da2e7150-b6a8-42f3-9930-4bc846c7eee9
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '750'
 ht-degree: 0%
 
 ---
 
-# Autorización de comprobación preliminar de MVPD
+# Autorización de comprobaciones de MVPD
 
 >[!NOTE]
 >
@@ -21,9 +21,9 @@ La &quot;autorización de comprobación preliminar&quot; es una comprobación de
 
 Actualmente, la autenticación de Adobe Pass admite la autorización de comprobaciones de dos formas para MVPD, ya sea mediante atributos de respuesta AuthN o a través de una solicitud AuthZ multicanal.  Los siguientes escenarios describen el costo/beneficio de las diferentes maneras de implementar la autorización de comprobaciones:
 
-* **Mejor escenario posible**: la MVPD proporciona la lista de recursos autorizados previamente durante la fase de autorización (autenticación multicanal).
-* **Peor escenario posible**: si una MVPD no admite ninguna forma de autorización de varios recursos, el servidor de autenticación de Adobe Pass realiza una llamada de autorización a la MVPD para cada recurso de la lista de recursos. Este escenario tiene un impacto (proporcional al número de recursos) en el tiempo de respuesta de la solicitud de autorización de verificación previa. Puede aumentar la carga en los servidores de Adobe y MVPD, lo que provoca problemas de rendimiento. Además, generará eventos de solicitudes de autorización / respuestas sin la necesidad real de una obra de teatro.
-* **Obsoleto**: la MVPD proporciona la lista de recursos preautorizados durante la fase de autenticación, por lo que no se necesitarán llamadas de red, ni siquiera la solicitud de comprobación preliminar, ya que la lista se almacena en caché en el cliente.
+* **Mejor escenario posible**: MVPD proporciona la lista de recursos autorizados previamente durante la fase de autorización (autenticación multicanal).
+* **Peor escenario**: si un MVPD no admite ninguna forma de autorización de varios recursos, el servidor de autenticación de Adobe Pass realiza una llamada de autorización a MVPD para cada recurso de la lista de recursos. Este escenario tiene un impacto (proporcional al número de recursos) en el tiempo de respuesta de la solicitud de autorización de verificación previa. Puede aumentar la carga en los servidores de Adobe y MVPD, lo que provoca problemas de rendimiento. Además, generará eventos de solicitudes de autorización / respuestas sin la necesidad real de una obra de teatro.
+* **Obsoleto**: MVPD proporciona la lista de recursos preautorizados durante la fase de autenticación, por lo que no se necesitarán llamadas de red, ni siquiera la solicitud de verificación previa, ya que la lista se almacena en caché en el cliente.
 
 Aunque las MVPD no tienen que admitir la autorización de comprobaciones, las secciones siguientes describen algunos métodos de autorización de comprobaciones que puede admitir la autenticación de Adobe Pass antes de volver al peor escenario anterior.
 
@@ -33,7 +33,7 @@ Este escenario de comprobación preliminar es compatible con OLCA (cables). La s
 
 ### Lista de recursos personalizada en instrucción de atributo SAML {#custom-res-saml-attr}
 
-La respuesta de autenticación SAML del IdP incluirá una AttributeStatement que contiene nombres de recursos que AdobePass debe autorizar.  Algunas MVPD proporcionan esto en el siguiente formato:
+La respuesta de autenticación SAML del IdP incluirá una AttributeStatement que contiene nombres de recursos que AdobePass debe autorizar.  Algunos MVPD lo proporcionan en el siguiente formato:
 
 ```XML
 <saml:AttributeStatement>
@@ -50,10 +50,10 @@ Esto logra efectivamente el mejor escenario posible, y no se realizarán llamada
 
 ## Comprobación preliminar multicanal en AuthZ {#preflight-multich-authz}
 
-Esta implementación de comprobaciones también es compatible con OLCA (cables).  La Especificación de la Interfaz de Autenticación y Autorización 1.0 (secciones 7.5.3 y 7.5.4) describe métodos para solicitar información de Autorización de una MVPD utilizando Afirmaciones SAML o XACML. Esta es la forma recomendada de consultar el estado de autorización de las MVPD que no admiten esto como parte del flujo de autenticación. La autenticación de Adobe Pass emite una sola llamada de red a MVPD para recuperar la lista de recursos autorizados.
+Esta implementación de comprobaciones también es compatible con OLCA (cables).  En la especificación de la interfaz de autenticación y autorización 1.0 (secciones 7.5.3 y 7.5.4) se describen los métodos para solicitar información de autorización a una MVPD mediante aserciones SAML o XACML. Esta es la forma recomendada de consultar el estado de autorización de las MVPD que no admiten esto como parte del flujo de autenticación. La autenticación de Adobe Pass emite una sola llamada de red a MVPD para recuperar la lista de recursos autorizados.
 
 
-La autenticación de Adobe Pass recibe la lista de recursos de la aplicación del programador. La integración de MVPD de la autenticación de Adobe Pass puede entonces hacer una llamada de AuthZ que incluya todos esos recursos y luego analizar la respuesta y extraer las múltiples decisiones de permiso/denegación.  El flujo para la comprobación preliminar con el escenario de AuthZ multicanal funciona de la siguiente manera:
+La autenticación de Adobe Pass recibe la lista de recursos de la aplicación del programador. La integración de MVPD de la autenticación de Adobe Pass puede realizar una llamada de AuthZ que incluya todos esos recursos y luego analizar la respuesta y extraer las distintas decisiones de autorización o denegación.  El flujo para la comprobación preliminar con el escenario de AuthZ multicanal funciona de la siguiente manera:
 
 1. La aplicación del programador envía una lista de recursos separados por comas a través de la API del cliente de comprobaciones, por ejemplo: &quot;TestChannel1,TestChannel2,TestChannel3&quot;.
 1. La llamada de solicitud de AuthZ de comprobación preliminar de MVPD contiene varios recursos y tiene la siguiente estructura:
@@ -129,12 +129,3 @@ En la tabla siguiente se enumeran las MVPD que admiten la autorización de compr
 | Alineación de canales en metadatos de usuario | Suddenlink HTC | Todas las integraciones directas de Synacor también pueden admitir este enfoque. |
 | Bifurcar y unir | Todos los demás no enumerados anteriormente | El número máximo predeterminado de recursos comprobados = 5. |
 
-<!--
-![RelatedInformation]
->* [Logout](/help/authentication/usecase-mvpd-logout.md)
->* [Authorization](/help/authentication/authz-usecase.md)
->* [MVPD Integration Features](/help/authentication/mvpd-integr-features.md)
->* [MVPD User Metadata Exchange](/help/authentication/mvpd-user-metadata-exchng.md)
->* [Preflight Authorization - Programmer Integration Guide](/help/authentication/preflight-authz.md)
->* [AuthN and AuthZ Interface 1.0 Specification](https://www.cablelabs.com/specifications/CL-SP-AUTH1.0-I04-120621.pdf){target=_blank} 
--->

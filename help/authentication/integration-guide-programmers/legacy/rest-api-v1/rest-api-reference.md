@@ -2,7 +2,7 @@
 title: Referencia de API de REST
 description: Referencia de API de REST
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '669'
 ht-degree: 2%
@@ -57,7 +57,7 @@ En la tabla siguiente se enumeran los servicios web disponibles para el enfoque 
 
 
 | Sr | Punto final de servicio web | Descripción | <!--[Diag.  </br>Ref](http://tve.helpdocsonline.com/api-reference-v2-test#illustration)-->. | Alojado en | Llamado por |
-|-----|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------|
+|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------|
 | 1. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) | Devuelve el código de registro generado aleatoriamente y el URI de la página de inicio de sesión | 2 | Adobe </br>Servicio de código regular | Smart Device |
 | 2. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md) | Devuelve el registro del código de registro que contiene el UUID del código de registro, el código de registro y el ID del dispositivo con hash | 8 | Adobe </br>Servicio de código regular | Adobe Pass Authentication |
 | 3. | [&lt;SP_FQDN>/api/v1/config/ </br> {requestorId}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) | Devuelve la lista de MVPD configuradas para el solicitante | 5 | Adobe </br>Servicio de autenticación </br>Adobe Pass </br>de | Iniciar sesión en la aplicación </br>Web </br> |
