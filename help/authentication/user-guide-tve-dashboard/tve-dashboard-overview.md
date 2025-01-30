@@ -2,9 +2,9 @@
 title: Resumen del panel de TVE
 description: Conoce el Tablero de TVE y los recursos.
 exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '303'
+source-wordcount: '305'
 ht-degree: 0%
 
 ---
@@ -52,6 +52,6 @@ El Adobe sugiere utilizar los siguientes recursos para comprender a fondo los fl
 
 * [Documento técnico de TVE](/help/authentication/kickstart/technical-paper.md)
 * [Guía de KickStart del programador](/help/authentication/kickstart/programmer-kickstart-guide.md)
-* [Flujo de derecho](/help/authentication/integration-guide-programmers/entitlement-flow.md)
+* [Información general sobre la guía de integración del programador](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)
 * [Glosario de registro dinámico de clientes (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
 * [Glosario de la API de REST v2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)

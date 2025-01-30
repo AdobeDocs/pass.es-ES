@@ -2,9 +2,9 @@
 title: Tokens de medios
 description: Tokens de medios
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ ht-degree: 0%
 >
 > El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
-El token de medios es un token generado por la autenticación de Adobe Pass [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) como resultado de una decisión de autorización destinada a proporcionar acceso de visualización al contenido protegido (recurso). El token de medios es válido durante un periodo de tiempo limitado y corto (unos minutos) especificado en el momento del problema, lo que indica la cantidad de tiempo que la aplicación cliente debe verificarlo y utilizarlo.
+El token de medios es un token generado por la autenticación de Adobe Pass [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) como resultado de una decisión de autorización destinada a proporcionar acceso de visualización al contenido protegido (recurso).
+
+El token de medios es válido durante un periodo de tiempo limitado y corto (7 minutos predeterminados) especificado en el momento del problema, lo que indica el límite de tiempo antes de que la aplicación cliente deba verificarlo y utilizarlo. El token de medios está restringido a un solo uso y nunca debe almacenarse en caché.
 
 El token de medios consiste en una cadena firmada basada en la Infraestructura de claves públicas (PKI) enviada en texto no cifrado. Con la protección basada en PKI, el token se firma con una clave asimétrica emitida para su Adobe por una entidad de certificación (CA).
 
@@ -25,7 +27,7 @@ El verificador de tokens de medios es una biblioteca distribuida por la autentic
 
 ## Media Token Verifier {#media-token-verifier}
 
-La autenticación de Adobe Pass recomienda que los programadores envíen el token de medios a un servicio back-end que integre la biblioteca del verificador de tokens de medios para garantizar el acceso seguro antes de iniciar el flujo de vídeo. El tiempo de vida (TTL) del token de medios está diseñado para tener en cuenta los posibles problemas de sincronización de reloj entre el servidor que genera el token y el servidor de validación.
+La autenticación de Adobe Pass recomienda que los programadores envíen el token de medios a su propio servicio back-end que integra la biblioteca del verificador de tokens de medios para garantizar el acceso seguro antes de iniciar el flujo de vídeo. El tiempo de vida (TTL) del token de medios está diseñado para tener en cuenta los posibles problemas de sincronización de reloj entre el servidor que genera el token y el servidor de validación.
 
 La autenticación de Adobe Pass recomienda encarecidamente no analizar el token de medios y extraer directamente sus datos, ya que el formato del token no está garantizado y puede cambiar en el futuro. La biblioteca del verificador de tokens de medios debe ser la única herramienta utilizada para analizar el contenido del token.
 

@@ -2,9 +2,9 @@
 title: Guía de KickStart del programador
 description: Guía de KickStart del programador
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '972'
+source-wordcount: '969'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Bienvenido a la autenticación de Adobe Pass para TV en todas partes. Esperamos 
 
 >[!NOTE]
 >
->Esta es la Guía de KickStart para programadores (proveedores de contenido). Si trabaja con un Distribuidor de programación de vídeo multicanal (MVPD), asegúrese de consultar la [guía de inicio de MVPD](/help/authentication/kickstart/mvpd-kickstart-guide.md).
+>Esta es la Guía de KickStart para programadores (proveedores de contenido). Si trabaja con un Distribuidor de programación de vídeo multicanal (MVPD), asegúrese de consultar la [guía de inicio rápido de MVPD](/help/authentication/kickstart/mvpd-kickstart-guide.md).
 
 
 Contactos de autenticación de Adobe Pass:
@@ -51,12 +51,11 @@ El Adobe proporcionará:
 
 * Guía de implementación: **`https://tve.zendesk.com/entries/498741-tve-deployment-guide`**
 * Acceso a nuestro sistema de atención al cliente de Zendesk. Aquí también puede encontrar ejemplos, información y tutoriales de vídeo sobre algunos de los procesos. Para acceder a este documento en Zendesk, junto con otros documentos publicados allí, tendrá que registrarse y crear una cuenta en `https://tve.zendesk.com/home`. No hay límite en la cantidad de usuarios que puede registrar.  Puede ver y compartir comentarios en cualquier ticket archivado. Todas las preguntas de soporte técnico deben dirigirse a `tve-support@adobe.com`.
-* [Guía de integración del programador](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)
 * Biblioteca de comprobador de tokens de medios: `https://tve.zendesk.com/entries/471323-media-token-validator-library`.
 
 ## Configuración del entorno de prueba {#test-env-setup}
 
-Adobe le configurará primero con el sitio de prueba de Adobe, donde Adobe actúa como MVPD para fines de prueba. A continuación, su equipo puede configurar un sitio web de prueba que llame a la API de Adobe. Utilice el selector predeterminado de MVPD y seleccione &quot;Adobe&quot; como idP.
+Adobe le configurará primero con el sitio de prueba de Adobe, donde Adobe actúa como un MVPD para fines de prueba. A continuación, su equipo puede configurar un sitio web de prueba que llame a la API de Adobe. Utilice el selector predeterminado de MVPD y seleccione &quot;Adobe&quot; como idP.
 
 Proporcionará lo siguiente:
 
@@ -70,26 +69,26 @@ El Adobe configurará la cuenta y el Adobe proporcionará:
 
 ## Configuración con MVPD {#setup-mvpd}
 
-En esta sección se describe lo que necesita al migrar del sitio de prueba de Adobe para trabajar con una MVPD.
+En esta sección se describe lo que necesita al migrar del sitio de prueba de Adobe para trabajar con un MVPD.
 
 Proporcionará (a través de MVPD):
 
 * **Dos conjuntos de credenciales**:
    * AuthN + AuthZ : nombre de usuario y contraseña para un usuario autenticado y autorizado
    * AuthN + Non-AuthZ : nombre de usuario y contraseña para un usuario autenticado pero no autorizado
-* **Id. de recurso**. Este es un identificador de contenido específico que se validará con una MVPD a través del protocolo AuthZ. Esto puede ser a nivel de canal, programa, episodio o recurso; debe acordarse con su MVPD.
+* **Id. de recurso**. Es un identificador de contenido específico que se valida con una MVPD sobre el protocolo AuthZ. Esto puede ser a nivel de canal, programa, episodio o recurso; debe acordarse con su MVPD.
 
-La autenticación de Adobe Pass admite un esquema de metadatos basado en MRSS, lo que significa que los ID de recurso pueden ser tan específicos como sea necesario y pueden incluir identificadores que pueden ser únicos para una MVPD específica.
+La autenticación de Adobe Pass admite un esquema de metadatos basado en MRSS, lo que significa que los ID de recurso pueden ser tan específicos como sea necesario y pueden incluir identificadores que pueden ser únicos para un MVPD específico.
 
-**NUEVA integración de MVPD**: Es importante recordar que la MVPD elegida juega un papel integral en completar cualquier integración. El Adobe debe escribir el código de cada MVPD según sus especificaciones. Hasta que se completen estos pasos, no podrá seleccionar ese MVPD en el cuadro de diálogo ni completar la prueba del producto. El Adobe debe programar este trabajo con antelación para que se ajuste al siguiente sprint disponible. (Para obtener información sobre la programación actual, consulte el Calendario de versiones).
+**NUEVA integración de MVPD**: Es importante recordar que el MVPD elegido desempeña un papel fundamental al completar cualquier integración. El Adobe debe escribir el código de cada MVPD según sus especificaciones. Hasta que se completen estos pasos, no podrá seleccionar ese MVPD en el cuadro de diálogo ni completar la prueba del producto. El Adobe debe programar este trabajo con antelación para que se ajuste al siguiente sprint disponible. (Para obtener información sobre la programación actual, consulte el Calendario de versiones).
 
-**Integraciones de MVPD existentes**: Si la MVPD elegida ya está configurada con Adobe, los pasos de conectividad deberían ser mucho más sencillos (más rápidos) y, a menudo, la conectividad se puede lograr mediante cambios de configuración.
+**Integraciones de MVPD existentes**: Si el MVPD elegido ya está configurado con Adobe, los pasos de conectividad deberían ser mucho más sencillos (más rápidos) y, a menudo, la conectividad se puede lograr mediante cambios de configuración.
 
 >[!NOTE]
 >
->El MVPD TODAVÍA tendrá que habilitar al Programador, y firmar cualquier acuerdo comercial relevante.
+>MVPD TODAVÍA tendrá que habilitar el Programador y cerrar cualquier acuerdo comercial relevante.
 
-**QE con MVPD**: Todas las integraciones implicarán QE conjunto y, dado que el usuario final es en última instancia cliente de MVPD, muchos han establecido ciclos de prueba antes de activar el servicio. Dado que esto implica la programación de los recursos de MVPD, esta es una área potencial de demora.
+**QE con MVPD**: Todas las integraciones implicarán QE conjunto y, dado que el usuario final es en última instancia un cliente de MVPD, muchos han establecido ciclos de prueba antes de la activación. Dado que esto implica la programación de recursos de MVPD, esta es una posible área de retraso.
 
 <!--
 >[RELATEDINFORMATION]

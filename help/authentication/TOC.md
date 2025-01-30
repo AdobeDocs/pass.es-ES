@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: ffedb5db269644c8d9c81480d27dff43bd4eb5d6
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '1240'
+source-wordcount: '1231'
 ht-degree: 2%
 
 ---
@@ -46,12 +46,14 @@ ht-degree: 2%
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.7.0](notes-releases/authn-rn-ios-tvos-370.md)
 + KickStart {#kickstart}
    + [Documento técnico](kickstart/technical-paper.md)
-   + [Información general del programador](kickstart/programmer-overview.md)
-   + [Información general de MVPD](kickstart/mvpd-overview.md)
    + [Guía de KickStart del programador](kickstart/programmer-kickstart-guide.md)
    + [Guía de KickStart de MVPD](kickstart/mvpd-kickstart-guide.md)
+   + [Información general de MVPD](kickstart/mvpd-overview.md)
    + [Preguntas frecuentes sobre procedimientos de soporte](kickstart/support-procedures-faqs.md)
 + Guía De Integración Para Programadores {#integration-guide-programmers}
+   + [Guía de integración del programador](integration-guide-programmers/programmer-integration-guide-overview.md)
+   + [Requisitos mínimos del sistema](integration-guide-programmers/minimum-system-requirements.md)
+   + [Mecanismo de limitación](integration-guide-programmers/throttling-mechanism.md)
    + API de REST {#rest-apis}
       + DCR API REST {#rest-api-dcr}
          + [Información general sobre el registro dinámico de clientes](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
@@ -120,9 +122,9 @@ ht-degree: 2%
                + [Encabezado: AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + Características estándar {#standard-features}
       + Derechos {#entitlements}
+         + [Metadatos del usuario](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
          + [Decisiones](integration-guide-programmers/features-standard/entitlements/decisions.md)
          + [Tokens de medios](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
-         + [Metadatos del usuario](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + Informes de errores {#error-reporting}
          + [Códigos de error mejorados](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
       + Acceso de inicio de sesión único {#sso-access}
@@ -257,11 +259,6 @@ ht-degree: 2%
             + [(Heredado) Uso del proxy Charles](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
             + [(Heredado) Monitorización de Adobe Pass Adobe PayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
             + [(Heredado) Prueba de los flujos de autenticación y autorización mediante el sitio de prueba de la API de Adobe](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
-   + [Información general sobre la guía de integración del programador](integration-guide-programmers/programmer-integration-guide-overview.md)
-   + [Flujo de derechos del programador](integration-guide-programmers/entitlement-flow.md)
-   + [Casos de uso del programador](integration-guide-programmers/programmer-use-cases.md)
-   + [Mecanismo de limitación](integration-guide-programmers/throttling-mechanism.md)
-   + [Requisitos mínimos del sistema](integration-guide-programmers/minimum-system-requirements.md)
 + Guía de integración para MVPD {#integration-guide-mvpds}
    + [Funciones de integración](integration-guide-mvpds/mvpd-integr-features.md)
    + [Autenticación](integration-guide-mvpds/authn-usecase.md)

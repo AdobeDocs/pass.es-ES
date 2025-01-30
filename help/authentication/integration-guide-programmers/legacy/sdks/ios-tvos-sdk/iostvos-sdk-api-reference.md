@@ -2,9 +2,9 @@
 title: Referencia de la API de iOS/tvOS
 description: Referencia de la API de iOS/tvOS
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '6956'
+source-wordcount: '6942'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,6 @@ En esta página se describen los métodos y las funciones de llamada de retorno 
 
 Documentación asociada:
 
-* Para obtener una descripción del flujo de derechos básicos de autenticación de Adobe Pass, consulte [Flujo de derechos](/help/authentication/integration-guide-programmers/entitlement-flow.md).
 * Para obtener una guía paso a paso sobre cómo implementar Adobe Pass
 flujo de derechos de autenticación mediante esta API, consulte [Guía de integración de iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md).
 * Para obtener la última versión de iOS AccessEnabler SDK, consulte la [Biblioteca del habilitador de acceso nativo de iOS](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
