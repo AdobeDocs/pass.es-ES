@@ -2,7 +2,7 @@
 title: Flujos de acceso degradados
 description: 'API REST V2: Flujos de acceso degradados'
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '1605'
 ht-degree: 0%
@@ -19,9 +19,9 @@ ht-degree: 0%
 >
 > La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-La degradación proporciona la omisión temporal de extremos de autenticación y autorización de MVPD específicos. Normalmente, el programador inicia esta acción, pero independientemente de quién déclencheur un evento de degradación, la acción depende de los acuerdos previos realizados con las MVPD afectadas.
+La degradación proporciona la omisión temporal de extremos de autenticación y autorización específicos de MVPD. Normalmente, el programador inicia esta acción, pero independientemente de quién déclencheur un evento de degradación, la acción depende de los acuerdos previos realizados con las MVPD afectadas.
 
-Para obtener más información sobre la característica de degradación, consulte la documentación de [Degradación](../../../../features-premium/degraded-access/degradation-api-overview.md).
+Para obtener más información sobre la característica de degradación, consulte la documentación de [Degradación](../../../../features-premium/degraded-access/degradation-feature.md).
 
 Los flujos de acceso degradados le permiten consultar los siguientes escenarios:
 
@@ -36,7 +36,7 @@ Los flujos de acceso degradados le permiten consultar los siguientes escenarios:
 
 Antes de realizar el flujo de autenticación mientras se aplica la degradación, asegúrese de que se cumplan los siguientes requisitos previos:
 
-* La aplicación de streaming debe iniciar una sesión de autenticación cuando necesite iniciar sesión con la MVPD.
+* La aplicación de streaming debe iniciar una sesión de autenticación cuando necesite iniciar sesión con MVPD.
 
 >[!IMPORTANT]
 > 
@@ -242,9 +242,9 @@ Siga los pasos dados para implementar el flujo de preautorización mientras se a
 
 ### Requisitos previos {#prerequisites-retrieve-profile-while-degradation-is-applied}
 
-Antes de recuperar el perfil de una MVPD específica mientras se aplica la degradación, asegúrese de que se cumplen los siguientes requisitos previos:
+Antes de recuperar el perfil para un MVPD específico mientras se aplica la degradación, asegúrese de que se cumplen los siguientes requisitos previos:
 
-* La aplicación de streaming, que tiene un identificador `mvpd` seleccionado o almacenado en caché, desea recuperar el perfil de una MVPD específica.
+* La aplicación de streaming, que tiene un identificador `mvpd` seleccionado o almacenado en caché, desea recuperar el perfil de un MVPD específico.
 
 >[!IMPORTANT]
 >
@@ -263,7 +263,7 @@ Siga los pasos dados para implementar el flujo de recuperación de perfiles para
 
 *Recuperar perfil mientras se aplica la degradación*
 
-1. **Recuperar perfil para mvpd específico:** La aplicación de streaming recopila todos los datos necesarios para recuperar información de perfil para esa MVPD específica enviando una solicitud al extremo de perfiles.
+1. **Recuperar perfil para mvpd específico:** La aplicación de flujo continuo recopila todos los datos necesarios para recuperar la información de perfil para ese MVPD específico enviando una solicitud al extremo de perfiles.
 
    >[!IMPORTANT]
    >
