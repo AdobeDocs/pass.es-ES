@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
+source-git-commit: ffedb5db269644c8d9c81480d27dff43bd4eb5d6
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1240'
 ht-degree: 2%
 
 ---
@@ -120,8 +120,7 @@ ht-degree: 2%
                + [Encabezado: AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + Características estándar {#standard-features}
       + Derechos {#entitlements}
-         + [Autorización de verificación previa](integration-guide-programmers/features-standard/entitlements/preflight-authz.md)
-         + [Recurso protegido](integration-guide-programmers/features-standard/entitlements/protected-resources.md)
+         + [Decisiones](integration-guide-programmers/features-standard/entitlements/decisions.md)
          + [Tokens de medios](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
          + [Metadatos del usuario](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + Informes de errores {#error-reporting}
@@ -137,8 +136,7 @@ ht-degree: 2%
             + Inicio de sesión único de Roku {#roku-sso}
                + [Información general de Roku SSO](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
       + Acceso a autenticación basada en inicio {#hba-access}
-         + [Autenticación basada en el hogar para TV en todas partes](integration-guide-programmers/features-standard/hba-access/home-based-authn-tve.md)
-         + [Estado de HBA para MVPD](integration-guide-programmers/features-standard/hba-access/hba-status-mvpds.md)
+         + [Autenticación basada en el hogar (HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
       + Compatibilidad con privacidad {#privacy-support}
          + [Información general de soporte de privacidad](integration-guide-programmers/features-premium/privacy-support/privacy-supp-overview.md)
          + [Cómo realizar una solicitud de privacidad](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)

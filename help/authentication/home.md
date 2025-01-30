@@ -2,7 +2,7 @@
 title: Bienvenido a Adobe&reg; Pass Authentication.
 description: Bienvenido a Adobe&reg; Pass Authentication overview
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
+source-git-commit: ffedb5db269644c8d9c81480d27dff43bd4eb5d6
 workflow-type: tm+mt
 source-wordcount: '293'
 ht-degree: 0%
@@ -20,8 +20,8 @@ La autenticación de Adobe Pass es una solución de asignación de derechos para
 ## Ayuda popular y preguntas frecuentes {#help-faqs}
 
 | **Elementos destacados** |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <ul><li>[Inicio de sesión único para iOS](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)</li><li>[Autenticación basada en el hogar (HBA)](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authn-tve.md)</li><li>[Infografía HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guía del usuario del panel de Adobe Pass TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <ul><li>[Inicio de sesión único para iOS](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)</li><li>[Autenticación basada en el hogar (HBA)](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)</li><li>[Infografía HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guía del usuario del panel de Adobe Pass TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
 
 | **Para programadores** | **Para MVPD** |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
