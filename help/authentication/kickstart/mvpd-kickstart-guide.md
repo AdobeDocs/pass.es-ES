@@ -2,7 +2,7 @@
 title: Guía de KickStart de MVPD
 description: Guía de KickStart de MVPD
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: 936c1cda465dd3a9fc3f16381edb24a2b3e41779
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 0%
@@ -137,7 +137,7 @@ El equipo de autenticación de Adobe Pass está disponible para resolver cualqui
 
 El Adobe **proporcionará acceso a nuestra documentación pública a través de** Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home).[
 
-El equipo de autenticación de Adobe Pass proporciona documentación completa sobre las funciones y flujos de trabajo disponibles en la sección [Guía de integración para MVPD](/help/authentication/kickstart/mvpd-overview.md). Consulte la tabla de contenido de esta sección para ver vínculos a información detallada sobre cada tema.
+El equipo de autenticación de Adobe Pass proporciona documentación completa sobre las funciones y flujos de trabajo disponibles en la sección [Guía de integración para MVPD](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md). Consulte la tabla de contenido de esta sección para ver vínculos a información detallada sobre cada tema.
 
 ## Acceso a la herramienta de prueba {#access-testing-tool}
 

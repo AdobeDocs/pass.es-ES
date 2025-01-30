@@ -2,9 +2,9 @@
 title: Guía del usuario del panel de TVE Primetime
 description: Guía del usuario del panel de TVE Primetime
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
-source-wordcount: '5524'
+source-wordcount: '5517'
 ht-degree: 0%
 
 ---
@@ -287,7 +287,7 @@ Para crear una nueva integración, siga los pasos a continuación:
 
 Para actualizar una integración existente, haga clic en la entrada de tabla de esa integración específica desde la sección Integraciones o desde la sección Canales, que contiene una pestaña Integraciones.
 
-Al utilizar el modo Básico de Workspace, esta sección permite ver y editar la configuración actualizada con más frecuencia, como los TTL de token de autenticación y autorización (tiempo de vida), así como la configuración de iFrame. Tenga en cuenta que puede faltar la configuración de TTL para las integraciones con MVPD que admiten TTL de persistencia de token definido dinámicamente (consulte la entrada 1.19 de [Requisitos de integración de MVPD](/help/authentication/integration-guide-mvpds/mvpd-integr-features.md)).
+Al utilizar el modo Básico de Workspace, esta sección permite ver y editar la configuración actualizada con más frecuencia, como los TTL de token de autenticación y autorización (tiempo de vida), así como la configuración de iFrame. Tenga en cuenta que puede faltar la configuración de TTL para las integraciones con MVPD que admiten TTL de persistencia de token definido dinámicamente.
 
 
 
