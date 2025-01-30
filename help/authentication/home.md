@@ -2,9 +2,9 @@
 title: Bienvenido a Adobe&reg; Pass Authentication.
 description: Bienvenido a Adobe&reg; Pass Authentication overview
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '293'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ La autenticación de Adobe Pass es una solución de asignación de derechos para
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <ul><li>[Guía de Kickstart para programadores](/help/authentication/kickstart/programmer-kickstart-guide.md)</li><li>[Metadatos de usuario](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)</li></ul> | <ul><li>[Guía de KickStart de MVPD](/help/authentication/kickstart/mvpd-kickstart-guide.md)</li><li>[Autenticación](/help/authentication/integration-guide-mvpds/authn-usecase.md)</li><li>[Autorización](/help/authentication/integration-guide-mvpds/authz-usecase.md)</li><li>[Cerrar sesión](/help/authentication/integration-guide-mvpds/usecase-mvpd-logout.md)</li></ul> |
 | **Para clientes de aplicaciones nativas** | **Para Todos** |
-| <ul><li>[Información general técnica de iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Información general técnica de Android](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[Documento técnico](/help/authentication/kickstart/technical-paper.md)</li><li>[Procedimientos de escalación](/help/authentication/kickstart/escalation-procedures.md)</li></ul> |
+| <ul><li>[Información general técnica de iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Información general técnica de Android](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[Documento técnico](/help/authentication/kickstart/technical-paper.md)</li><li>[Preguntas frecuentes sobre procedimientos de soporte](/help/authentication/kickstart/support-procedures-faqs.md)</li></ul> |
 | **Para Smart Devices** |                                                                                                                                                                                                                                                                                                                                                                       |
 | <ul><li>[Información general técnica sin cliente](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)</li><li>[API sin cliente](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)</li></ul> |                                                                                                                                                                                                                                                                                                                                                                       |
 
@@ -37,7 +37,7 @@ La autenticación de Adobe Pass es una solución de asignación de derechos para
 >
 > [Enviar un correo electrónico a nuestro equipo de atención al cliente](mailto:tve-support@adobe.com) es también el primer paso para cualquier informe de problema o incidente.
 >
-> Si tiene un problema con [SEVERITY 1 LIVE](/help/authentication/kickstart/escalation-procedures.md), nos ha enviado un correo electrónico y han transcurrido 30 minutos sin obtener respuesta, consulte el documento [Procedimientos de escalación](/help/authentication/kickstart/escalation-procedures.md) para obtener los números de teléfono a los que llamar.
+> Si tiene un problema con [SEVERITY 1 LIVE](/help/authentication/kickstart/support-procedures-faqs.md), nos ha enviado un correo electrónico y han transcurrido 30 minutos sin obtener respuesta, consulte el documento [Procedimientos de escalación](/help/authentication/kickstart/support-procedures-faqs.md) para obtener los números de teléfono a los que llamar.
 
 ## Para encontrar lo que necesita {#how-to-search}
 
