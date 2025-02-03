@@ -2,9 +2,9 @@
 title: Uso del proxy Charles
 description: Uso del proxy Charles
 exl-id: bb38543f-f6bc-4b5a-91b8-41bc51ee4c56
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 175755aa7463257487b29c5f4da989cf34e91bfd
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '376'
 ht-degree: 0%
 
 ---
@@ -43,10 +43,9 @@ Habilitar proxy SSL `\[ *Proxy -\> Proxy Settings... -\> SSL* \]`
 
 Marque la casilla de verificación &quot;Habilitar proxy SSL&quot; y añada todas las ubicaciones HTTPS.
 
-
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/ProxySettings.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/SSLSettings.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/AddHttpsLocations.PNG)
-
-
+-->
 
 - Proxy SSL: <http://www.charlesproxy.com/documentation/proxying/ssl-proxying/>
 - Certificados SSL: <http://www.charlesproxy.com/documentation/using-charles/ssl-certificates/>
@@ -69,7 +68,9 @@ Si el resultado se vuelve demasiado confuso, puede optar por omitir o excluir ub
 
 La suplantación de DNS es muy útil cuando se intenta redirigir una solicitud a una IP diferente, especialmente cuando se trabaja con dispositivos móviles:
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/DNSSpoofing.PNG)
+-->
 
 <http://www.charlesproxy.com/documentation/tools/dns-spoofing/>
 
@@ -82,7 +83,9 @@ La suplantación de DNS es muy útil cuando se intenta redirigir una solicitud a
 
 Con el control remoto de mapas puede redirigir una solicitud &quot;entrante&quot; a un punto de conexión diferente. El caso de uso más común de esta característica es &quot;Asignar&quot; `AccessEnabler.swf` a `AccessEnablerDebug.swf:`
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemote.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemoteAdd.PNG)
+-->
 
 <http://www.charlesproxy.com/documentation/tools/map-remote/>
 
@@ -100,7 +103,9 @@ Con el control remoto de mapas puede redirigir una solicitud &quot;entrante&quot
 
 Vaya a <http://charlesproxy.com/charles.crt> desde su dispositivo iOS.  Esto iniciará el cuadro de diálogo de instalación del certificado:
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate1\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate2\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate3.PNG)
+-->
 
 </br>
 
@@ -117,15 +122,18 @@ En su dispositivo iOS, seleccione `\[ *Settings* -\> *Wi-FI* -\> (*YOUR\_WIFI\_N
 
 </br>
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy1.png)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy2.PNG)
-
+-->
 
 </br>
 Aquí debe especificar la IP y el puerto de la máquina donde está ejecutando Charles. <span style="line-height: 1.6em;">Si ahora abre Safari en su dispositivo iOS e intenta abrir una página web, debería obtener la siguiente ventana emergente en el equipo que ejecuta Charles:
 
 </br>
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy3.PNG)
+-->
 
 </br>
 Haga clic en "Permitir" para permitir que el dispositivo use Charles para representar todos sus
