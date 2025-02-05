@@ -2,7 +2,7 @@
 title: Información general sobre las API de REST V2
 description: Información general sobre las API de REST V2
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
 source-wordcount: '149'
 ht-degree: 1%
@@ -13,7 +13,9 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Serie de seminarios web en vivo](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 Para empezar, visite la documentación pública de las API que le interesan en la lista siguiente.
 

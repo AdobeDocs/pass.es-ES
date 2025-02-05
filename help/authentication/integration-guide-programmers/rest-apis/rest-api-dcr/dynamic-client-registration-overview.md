@@ -2,7 +2,7 @@
 title: Información general sobre el registro dinámico de clientes
 description: Información general sobre el registro dinámico de clientes
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Serie de seminarios web en vivo](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 El registro de cliente dinámico representa un mecanismo de autorización definido por [RFC 7591](https://datatracker.ietf.org/doc/html/rfc7591) y se basa en el marco de autorización OAuth 2.0 descrito en [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749).
 

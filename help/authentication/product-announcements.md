@@ -2,14 +2,39 @@
 title: Anuncios de productos
 description: Anuncios de productos
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
-source-wordcount: '670'
+source-wordcount: '859'
 ht-degree: 1%
 
 ---
 
 # Anuncios de productos {#product-announcements}
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Serie de seminarios web en vivo](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
+
+Como valioso socio de autenticación de Adobe Pass, nos gustaría invitarle a nuestro próximo seminario web en directo sobre la nueva API de REST. La nueva API se lanzó el año pasado para mejorar la experiencia del usuario final y simplificar la integración con los servicios de Adobe Pass. 
+
+Vamos a llevar a cabo una serie de dos seminarios web para proporcionar una visión general de la nueva API, los beneficios y los casos de uso adicionales que se pueden activar migrando a la nueva API.
+
+Regístrese para el seminario web que mejor se adapte a usted y a su equipo.
+
+* [Seminario web del 1 al 19 de febrero de 2025](https://events.teams.microsoft.com/event/83c6ec1e-2522-4918-910f-c529b4fb0574@fa7b1b5a-7b34-4387-94ae-d2c178decee1)
+* [Seminario web 2 - 5 de marzo de 2025](https://events.teams.microsoft.com/event/6f673689-e848-4c00-93d9-4f5d8f108977@fa7b1b5a-7b34-4387-94ae-d2c178decee1)
+
+Durante la sesión, aprenderá lo siguiente:
+
+* Información general y ventajas de la API de REST v2
+* Tutorial sobre flujos básicos
+* Cronología y pasos siguientes
+
+El seminario web le resultará útil si:
+
+* Un nuevo cliente que planea lanzar una nueva aplicación de TVE
+* Clientes existentes que necesitan migrar a las nuevas API
+* Socios de implementación que implementarían API para los clientes
+
+Puede encontrar documentación técnica sobre la nueva API [aquí](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md). Le recomendamos a usted y a su equipo que rellenen cualquier pregunta que desee discutir durante la sesión [aquí](https://forms.office.com/r/sJea78tUy3).
 
 ## Fin de vida útil (EOL) {#eol}
 
