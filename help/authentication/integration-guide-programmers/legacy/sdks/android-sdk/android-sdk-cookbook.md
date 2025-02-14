@@ -2,9 +2,9 @@
 title: Guía de Android SDK
 description: Guía de Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
 workflow-type: tm+mt
-source-wordcount: '1704'
+source-wordcount: '1703'
 ht-degree: 0%
 
 ---
@@ -135,7 +135,9 @@ Biblioteca de Android (AccessEnabler)
 
    | NOTA |     |
    | --- | --- |  
-   | ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) | No se pueden completar solicitudes de asignación de derechos hasta que se haya establecido completamente la identidad del solicitante. Esto significa que mientras setRequestor() sigue ejecutándose, todas las solicitudes de derechos subsiguientes (por ejemplo, `checkAuthentication()`) se bloquean.<br><br>Tiene dos opciones de implementación: una vez que la información de identificación del solicitante se envía al servidor back-end, la capa de aplicación de la interfaz de usuario puede elegir uno de los dos enfoques siguientes:<br><br>1.  Espere a que se active la llamada de retorno `setRequestorComplete()` (parte del delegado AccessEnabler).  Esta opción proporciona la mayor certeza de que `setRequestor()` se completó, por lo que se recomienda para la mayoría de las implementaciones.<br>2.  Continúe sin esperar a que se active la llamada de retorno `setRequestorComplete()` y comience a emitir solicitudes de asignación de derechos. Estas llamadas (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) están en cola por la biblioteca AccessEnabler, que realizará las llamadas de red reales después de `setRequestor(). `Esta opción puede interrumpirse ocasionalmente si, por ejemplo, la conexión de red es inestable. |
+   |  | No se pueden completar solicitudes de asignación de derechos hasta que se haya establecido completamente la identidad del solicitante. Esto significa que mientras setRequestor() sigue ejecutándose, todas las solicitudes de derechos subsiguientes (por ejemplo, `checkAuthentication()`) se bloquean.<br><br>Tiene dos opciones de implementación: una vez que la información de identificación del solicitante se envía al servidor back-end, la capa de aplicación de la interfaz de usuario puede elegir uno de los dos enfoques siguientes:<br><br>1.  Espere a que se active la llamada de retorno `setRequestorComplete()` (parte del delegado AccessEnabler).  Esta opción proporciona la mayor certeza de que `setRequestor()` se completó, por lo que se recomienda para la mayoría de las implementaciones.<br>2.  Continúe sin esperar a que se active la llamada de retorno `setRequestorComplete()` y comience a emitir solicitudes de asignación de derechos. Estas llamadas (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) están en cola por la biblioteca AccessEnabler, que realizará las llamadas de red reales después de `setRequestor(). `Esta opción puede interrumpirse ocasionalmente si, por ejemplo, la conexión de red es inestable. |
+
+   <!--Removed bad image link from first note cell above. ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) -->
 
 1. Llame a [checkAuthentication()](#$checkAuthN) para comprobar si hay una autenticación existente sin iniciar el flujo de autenticación completo.   Si esta llamada se realiza correctamente, puede continuar directamente al flujo de autorización.  Si no es así, continúe con el flujo de autenticación.
 
