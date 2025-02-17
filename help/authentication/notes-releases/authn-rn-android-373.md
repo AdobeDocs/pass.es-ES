@@ -2,14 +2,14 @@
 title: Notas de la versión de Adobe Pass Authentication Android 3.7.3
 description: Notas de la versión de Adobe Pass Authentication Android 3.7.3
 exl-id: f335357e-c209-428d-af2a-2181551447d4
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '146'
 ht-degree: 0%
 
 ---
 
-# Notas de la versión de Adobe Pass Authentication Android 3.7.3 {#android-sdk-373-release-notes}
+# Notas de la versión de Adobe Pass Authentication Android 3.7.3 {#android-sdk-373-rn}
 
 >[!NOTE]
 >
@@ -17,22 +17,19 @@ ht-degree: 0%
 
 En esta página se describen las nuevas funciones, los cambios y los problemas conocidos de esta versión:
 
-## Número de compilación {#build-no-android-sdk-373}
+## Número de compilación {#build-number-373}
 
 Autenticación de Adobe Pass: Android 3.7.3
 
-Fecha de versión: 19/09/2023
+Fecha de versión: **19/09/2023**
 
-
-
-## Información general de versión {#overview-android-sdk-373}
+## Información general de versión {#release-overview-373}
 
 * Cambios para admitir Android 14 y aplicaciones dirigidas al nivel de API 34
    * Agregar indicador requerido por [receptores de difusiones registradas en tiempo de ejecución de Android 14](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported).
-* Se ha corregido que ChromeCustomTabs no se abriera para el inicio de sesión de MVPD en la API del emulador 32+
-   * Nota: Una solución para este problema en el SDK &lt;3.7.3 es abrir la aplicación Chrome en el emulador y terminar de configurarla antes de intentar iniciar sesión en MVPD
+* Corregir que ChromeCustomTabs no se abra para el inicio de sesión de MVPD en la API del emulador 32+
+   * Nota: Una solución para este problema en SDK &lt;3.7.3 es abrir la aplicación de Chrome en el emulador y terminar de configurarla antes de intentar iniciar sesión en MVPD
 
-
-## Liberar paquete {#rel-pkg-android373}
+## Liberar paquete {#release-package-373}
 
 Puede descargar Android SDK v3.7.3 desde [aquí](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library).

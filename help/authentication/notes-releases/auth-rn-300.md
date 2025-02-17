@@ -2,14 +2,14 @@
 title: Notas de la versión de Adobe Pass Authentication 3.0
 description: Notas de la versión de Adobe Pass Authentication 3.0
 exl-id: 9284151a-8458-44a3-937b-35f379ca0e4e
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '199'
 ht-degree: 0%
 
 ---
 
-# Notas de la versión de Adobe Pass Authentication 3.0 {#pt-authn-300-rn}
+# Notas de la versión de Adobe Pass Authentication 3.0 {#authn-300-rn}
 
 >[!NOTE]
 >
@@ -22,14 +22,15 @@ En esta página se describen las nuevas funciones, los cambios y los problemas c
 * [Número de compilación](#build-number-300)
 * [Información general de versión](#release-overview-300)
 
-### Número de compilación {#build-number-2651}
+### Número de compilación {#build-number-300}
 
 Autenticación de Adobe Pass: adobe-pass-**3.0**
+
 Fecha de versión: **10/09/2024 - 12/09/2024**
 
-### Nuevas funciones {#new-features-300}
+### Información general de versión {#release-overview-300}
 
-#### API de REST v2 {#rest-apis}
+#### API de REST v2
 
 ##### Código
 
@@ -48,6 +49,6 @@ Fecha de versión: **10/09/2024 - 12/09/2024**
 
 * Para probar la nueva API de REST v2, consulte la nueva página Autenticación de Adobe Pass del sitio web de [Adobe Developer](https://developer.adobe.com/adobe-pass).
 
-### Corrección de errores {#bug-fixes-300}
+#### Corrección de errores
 
 * Se ha corregido un problema con el parámetro de URL de redireccionamiento que no se usaba cuando estaba presente en la solicitud de cierre de sesión.

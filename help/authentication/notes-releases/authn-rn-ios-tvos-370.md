@@ -2,14 +2,14 @@
 title: Autenticación Notas de la versión de iOS/tvOS 3.7.0
 description: Autenticación Notas de la versión de iOS/tvOS 3.7.0
 exl-id: 19c1179e-16b1-4608-954f-25b0980d7ad9
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '126'
 ht-degree: 0%
 
 ---
 
-# Autenticación Notas de la versión de iOS/tvOS 3.7.0 {#ios-tvos-sdk-370-release-notes}
+# Autenticación Notas de la versión de iOS/tvOS 3.7.0 {#ios-tvos-sdk-370-rn}
 
 >[!NOTE]
 >
@@ -17,20 +17,18 @@ ht-degree: 0%
 
 En esta página se describen las nuevas funciones, los cambios y los problemas conocidos de esta versión:
 
-## Número de compilación {#build-no-ios-tvos-sdk-370}
+## Número de compilación {#build-number-370}
 
 Autenticación de Adobe Pass: iOS/tvOS 3.7.0
 
-Fecha de versión: 03/09/2021
+Fecha de versión: **09/03/2021**
 
-
-
-## Información general de versión {#overview-ios-tvos-sdk-370}
+## Información general de versión {#release-overview-370}
 
 Agrega mejoras para el uso del marco AccessEnabler al permitir operaciones de almacenamiento de llavero cuando la aplicación está en segundo plano o cuando el dispositivo está bloqueado. Esto puede facilitar, por ejemplo, la implementación de AirPlay.
 
-## Liberar paquete {#rel=pkg-iostvos370}
+## Liberar paquete {#rrelease-package-370}
 
-Puede descargar el SDK v3.7.0 de iOS/tvOS desde aquí.
+Puede descargar iOS/tvOS SDK v3.7.0 desde aquí.
 
 Antes de actualizar a esta versión, compruebe esta nota técnica.
