@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
+source-git-commit: 4ad5ea619f64a78a72f69228c9ae3c83a7b66f24
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1246'
 ht-degree: 2%
 
 ---
@@ -17,6 +17,9 @@ ht-degree: 2%
 + [Adobe Pass Authentication](home.md)
 + [Anuncios de productos](product-announcements.md)
 + Versiones de productos {#product-releases}
+   + {#2025} de 2025
+      + [Notas de la versión de Adobe Pass Authentication 3.1.0](notes-releases/auth-rn-310.md)
+      + [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.1](notes-releases/authn-rn-javascript-471.md)
    + {#2024} de 2024
       + [Notas de la versión de Adobe Pass Authentication 3.0.3](notes-releases/auth-rn-303.md)
       + [Notas de la versión de Adobe Pass Authentication 3.0](notes-releases/auth-rn-300.md)
@@ -152,7 +155,7 @@ ht-degree: 2%
          + [Métricas del lado del servidor](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
       + Analytics {#analytics}
          + [Integración de datos del lado del servidor de Adobe Pass Authentication en Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
-         + [Uso del ID de Experience Cloud en la autenticación de Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
+         + [Uso del Experience Cloud ID en la autenticación de Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
    + Heredado {#legacy}
       + API de REST (heredada) 1 {#rest-api-v1}
          + [Información general sobre la API de REST V1 (heredada)](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
