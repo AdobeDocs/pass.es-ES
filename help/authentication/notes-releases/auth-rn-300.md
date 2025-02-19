@@ -2,18 +2,18 @@
 title: Notas de la versión de Adobe Pass Authentication 3.0
 description: Notas de la versión de Adobe Pass Authentication 3.0
 exl-id: 9284151a-8458-44a3-937b-35f379ca0e4e
-source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '199'
+source-wordcount: '195'
 ht-degree: 0%
 
 ---
 
 # Notas de la versión de Adobe Pass Authentication 3.0 {#authn-300-rn}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
 
 En esta página se describen las nuevas funciones, los cambios y los problemas conocidos de esta versión:
 
