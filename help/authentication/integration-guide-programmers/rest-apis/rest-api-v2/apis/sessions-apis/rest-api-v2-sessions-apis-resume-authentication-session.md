@@ -2,9 +2,9 @@
 title: Reanudar sesión de autenticación
 description: 'API de REST V2: reanudar sesión de autenticación'
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '841'
+source-wordcount: '876'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">método</td>
-      <td>POST</td>
+      <td>PUBLICAR</td>
       <td></td>
    </tr>
    <tr>
@@ -233,17 +233,14 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  El tipo de motivo utilizado que explica actionName.
+                  El tipo de motivo que explica actionName.
                   <br/><br/>
                   Los valores posibles son:
                   <ul>
-                    <li><b>ninguno</b></li>
-                    <li><b>autenticado</b></li>
-                    <li><b>temporal</b></li>
-                    <li><b>degradado</b></li>
-                    <li><b>authenticatedSSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>none</b><br/>Se requiere la aplicación cliente para continuar la autenticación.</li>
+                    <li><b>autenticada</b><br/>La aplicación cliente ya se ha autenticado mediante flujos de acceso básicos.</li>
+                    <li><b>temporal</b><br/>La aplicación cliente ya se ha autenticado mediante flujos de acceso temporales.</li>
+                    <li><b>degradado</b><br/>La aplicación cliente ya se ha autenticado mediante flujos de acceso degradados.</li>
                   </ul>
                <td><i>obligatorio</i></td>
             </tr>
@@ -353,6 +350,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
+    "reasonType": "none",
     "url": "/api/v2/authenticate/REF30/8ER640M",
     "code": "8ER640M",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
@@ -444,6 +442,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4. Reanudar la sesión de autenticación mediante TempPass básico o promocional (no obligatorio)
 

@@ -2,9 +2,9 @@
 title: Crear sesión de autenticación
 description: 'API de REST V2: crear sesión de autenticación'
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1047'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">método</td>
-      <td>POST</td>
+      <td>PUBLICAR</td>
       <td></td>
    </tr>
    <tr>
@@ -132,7 +132,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
       <td>
-        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
+        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a>.
         <br/><br/>
         Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan una identidad de plataforma, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Inicio de sesión único mediante flujos de identidad de plataforma</a>.
       </td>
@@ -268,17 +268,15 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  El tipo de motivo utilizado que explica actionName.
+                  El tipo de motivo que explica actionName.
                   <br/><br/>
                   Los valores posibles son:
                   <ul>
-                    <li><b>ninguno</b></li>
-                    <li><b>autenticado</b></li>
-                    <li><b>temporal</b></li>
-                    <li><b>degradado</b></li>
-                    <li><b>authenticatedSSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>none</b><br/>Se requiere la aplicación cliente para continuar la autenticación.</li>
+                    <li><b>autenticada</b><br/>La aplicación cliente ya se ha autenticado mediante flujos de acceso básicos.</li>
+                    <li><b>temporal</b><br/>La aplicación cliente ya se ha autenticado mediante flujos de acceso temporales.</li>
+                    <li><b>degradado</b><br/>La aplicación cliente ya se ha autenticado mediante flujos de acceso degradados.</li>
+                    <li><b>authenticatedSSO</b><br/>La aplicación cliente ya se ha autenticado mediante flujos de acceso de inicio de sesión único.</li>
                   </ul>
                <td><i>obligatorio</i></td>
             </tr>
@@ -483,6 +481,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4. Cree una sesión de autenticación con TempPass básico o promocional (no obligatorio)
 
