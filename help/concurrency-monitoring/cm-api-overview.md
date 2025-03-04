@@ -2,9 +2,9 @@
 title: Resumen de API
 description: Información general de API de Monitorización de concurrencia
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: b30d9217e70f48bf8b8d8b5eaaa98fea257f3fc5
+source-git-commit: 0cabb090e3c0282f9bcd097719d52374f2d991dd
 workflow-type: tm+mt
-source-wordcount: '2102'
+source-wordcount: '2155'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Este documento ayuda a los desarrolladores de aplicaciones a utilizar nuestra es
 
 Durante el proceso de desarrollo, la documentación pública de Swagger representa la guía de referencia para comprender y probar los flujos de API. Este es un buen punto de partida para tener un enfoque práctico y familiarizarse con la forma en que las aplicaciones del mundo real se comportarían en diferentes escenarios de interacción de usuarios.
 
-Envíe un ticket en [Zendesk](mailto:tve-support@adobe.com) para registrar su compañía y sus aplicaciones en la Monitorización de concurrencia. El Adobe asignará un ID de aplicación a cada entidad. En esta guía usaremos dos aplicaciones de referencia con los identificadores **demo-app** y **demo-app-2** que estarán bajo el Adobe de inquilino.
+Envíe un ticket en [Zendesk](mailto:tve-support@adobe.com) para registrar su compañía y sus aplicaciones en la Monitorización de concurrencia. Adobe asignará un ID de aplicación a cada entidad. En esta guía usaremos dos aplicaciones de referencia con los identificadores **demo-app** y **demo-app-2** que estarán bajo el inquilino Adobe.
 
 
 ## Casos de uso {#api-use-case}
@@ -107,7 +107,7 @@ Puede utilizar la opción &quot;Mantener el flujo activo&quot; disponible en la 
 
 #### Finalización de sesión {#session-termination}
 
-El caso empresarial de su empresa puede requerir que la Monitorización de concurrencia termine una sesión específica cuando, por ejemplo, un usuario deje de ver un vídeo. Esto se puede hacer realizando una llamada al DELETE en el recurso de sesiones.
+El caso empresarial de su empresa puede requerir que la Monitorización de concurrencia termine una sesión específica cuando, por ejemplo, un usuario deje de ver un vídeo. Esto se puede hacer realizando una llamada de DELETE en el recurso de sesiones.
 
 ![](assets/delete-session.png)
 
@@ -136,6 +136,10 @@ Si no hay sesiones en ejecución para un usuario específico al realizar la llam
 ![](assets/get-all-running-streams-empty.png)
 
 Tenga en cuenta también que en este caso el encabezado **Expires** no está presente.
+
+En caso de que se haya creado una sesión matando a otra, usando el encabezado **X-Terminate**, en los metadatos encontrará el campo **reemplazado**. Su valor es un indicador de la sesión finalizada para dejar espacio a la actual.
+
+![](assets/get-all-running-streams-superseded.png)
 
 #### Infracción de la directiva {#breaking-policy-app-first}
 
@@ -175,7 +179,7 @@ Para todas las llamadas a la API del ciclo vital de sesión, el cuerpo de respue
 **Consejo**
 **EvaluationResult** incluirá una matriz de objetos Advice en **associatedAdvice**. Los consejos están pensados para que la aplicación muestre un mensaje de error completo para el usuario y (potencialmente) le permita tomar medidas.
 
-Actualmente, hay dos tipos de consejos (especificados por su valor de atributo **type**): **rule-** y **remote-terminate**. El primero proporciona detalles sobre una regla que se ha interrumpido y las sesiones que están en conflicto con la actual (incluido el atributo de finalización que se puede utilizar para finalizar esa sesión de forma remota). El segundo solo indica que la sesión actual fue deliberadamente terminada por una remota, por lo que los usuarios sabrán quién los echó cuando se alcanzaron los límites.
+Actualmente, hay dos tipos de consejos (especificados por su valor de atributo **type**): **rule-** y **remote-terminate**. El primero proporciona detalles sobre una regla que se ha interrumpido y las sesiones que están en conflicto con la actual (incluido el atributo de finalización que se puede utilizar para finalizar esa sesión de forma remota). El segundo solo indica que la sesión actual fue deliberadamente terminada por una remota, por lo que los usuarios sabrán quién los echó cuando se alcanzaron los límites. En caso de que **reemplazado** se incluya en los metadatos, la sesión en cuestión se creó con el encabezado **X-Terminate**.
 
 ![](assets/advices.png)
 
