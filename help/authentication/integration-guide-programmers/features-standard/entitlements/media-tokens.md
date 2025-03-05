@@ -2,9 +2,9 @@
 title: Tokens de medios
 description: Tokens de medios
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '682'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ El token de medios es un token generado por la autenticación de Adobe Pass [API
 
 El token de medios es válido durante un periodo de tiempo limitado y corto (7 minutos predeterminados) especificado en el momento del problema, lo que indica el límite de tiempo antes de que la aplicación cliente deba verificarlo y utilizarlo. El token de medios está restringido a un solo uso y nunca debe almacenarse en caché.
 
-El token de medios consiste en una cadena firmada basada en la Infraestructura de claves públicas (PKI) enviada en texto no cifrado. Con la protección basada en PKI, el token se firma con una clave asimétrica emitida para su Adobe por una entidad de certificación (CA).
+El token de medios consiste en una cadena firmada basada en la Infraestructura de claves públicas (PKI) enviada en texto no cifrado. Con la protección basada en PKI, el token se firma con una clave asimétrica emitida a Adobe por una entidad de certificación (CA).
 
 El token de medios se pasa al programador, que puede validarlo mediante el verificador de tokens de medios antes de iniciar el flujo de vídeo para garantizar la seguridad de acceso para ese recurso.
 
@@ -198,10 +198,14 @@ El token de medios se puede recuperar mediante la siguiente API:
 
 Consulte las secciones **Respuesta** y **Ejemplos** de la API anterior para comprender la estructura de las decisiones de autorización y los tokens de medios.
 
+>[!IMPORTANT]
+>
+> La aplicación cliente no necesita consultar un extremo independiente para recuperar los [tokens multimedia](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md), ya que ya están incluidos en las decisiones de autorización que permiten el acceso de los usuarios.
+
 Para obtener más información acerca de cómo y cuándo integrar la API anterior, consulte el siguiente documento:
 
 * [Flujo de autorización básico realizado en la aplicación principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
 
->[!IMPORTANT]
+>[!MORELIKETHIS]
 >
-> La aplicación cliente debe pasar el valor `serializedToken` del `token` devuelto al [Verificador de token de medios](#media-token-verifier) para su validación.
+> [Preguntas frecuentes sobre la fase de autorización](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
