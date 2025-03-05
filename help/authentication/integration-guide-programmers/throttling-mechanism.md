@@ -2,7 +2,7 @@
 title: Mecanismo de limitación
 description: Obtenga información acerca del mecanismo de limitación utilizado en la autenticación de Adobe Pass. Explore una descripción general de este mecanismo en esta página.
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '1141'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Este mecanismo es importante por varias razones:
 
 ### Implementaciones de cliente
 
-La autenticación de paso proporciona directrices y SDK para interactuar con la API, pero no controla cómo la utiliza el cliente. Algunas implementaciones pueden tener una implementación rudimentaria y podrían inundar el servicio con solicitudes de API innecesarias, ya sea de forma accidental o no, lo que podría significar que otros usuarios experimenten ralentizaciones o problemas de capacidad.
+La autenticación de paso proporciona directrices y SDK para interactuar con la API, pero no controla cómo lo utiliza el cliente. Algunas implementaciones pueden tener una implementación rudimentaria y podrían inundar el servicio con solicitudes de API innecesarias, ya sea de forma accidental o no, lo que podría significar que otros usuarios experimenten ralentizaciones o problemas de capacidad.
 
 El propio servicio debe poder gestionar cualquier capacidad razonable. Pero no importa lo escalable o el rendimiento de un servicio, siempre hay límites. Como tal, el servicio debe tener límites configurados para el número de llamadas aceptadas dentro de un intervalo de tiempo específico.
 
@@ -42,7 +42,7 @@ Las implementaciones de servidor a servidor deben reenviar las direcciones IP de
 
 Puede encontrar más detalles sobre cómo pasar el encabezado X-Forwarded-For [aquí](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md).
 
-### Límites y extremos reales
+### Límites y extremos reales {#throttling-mechanism-limits}
 
 Actualmente, el límite predeterminado permite un máximo de 1 solicitud por segundo, con una ráfaga inicial de 10 solicitudes (asignación única en la primera interacción del cliente identificado, que debería permitir que la inicialización termine correctamente). Esto no debería afectar a ningún caso comercial normal en todos nuestros clientes.
 
@@ -77,27 +77,27 @@ Dado que los clientes que utilizan los SDK proporcionados de autenticación de A
 
 #### setRequestor
 
-Al alcanzar el límite de aceleración utilizando la función `setRequestor` del SDK, el SDK devolverá un código de error CFG429 mediante la llamada de retorno `errorHandler`.
+Al alcanzar el límite de aceleración utilizando la función `setRequestor` de SDK, SDK devolverá un código de error CFG429 mediante la llamada de retorno `errorHandler`.
 
 #### getAuthorization
 
-Al alcanzar el límite de aceleración utilizando la función `getAuthorization` del SDK, el SDK devolverá un código de error Z100 mediante la llamada de retorno `errorHandler`.
+Al alcanzar el límite de aceleración utilizando la función `getAuthorization` de SDK, SDK devolverá un código de error Z100 mediante la llamada de retorno `errorHandler`.
 
 #### checkPreauthorizedResources
 
-Al alcanzar el límite de aceleración utilizando la función `checkPreauthorizedResources` del SDK, el SDK devolverá un código de error P100 mediante la llamada de retorno `errorHandler`.
+Al alcanzar el límite de aceleración utilizando la función `checkPreauthorizedResources` de SDK, SDK devolverá un código de error P100 mediante la llamada de retorno `errorHandler`.
 
 #### getMetadata
 
-Al alcanzar el límite de aceleración utilizando la función `getMetadata` del SDK, el SDK devolverá una respuesta vacía mediante la llamada de retorno `setMetadataStatus`.
+Al alcanzar el límite de aceleración utilizando la función `getMetadata` de SDK, SDK devolverá una respuesta vacía mediante la llamada de retorno `setMetadataStatus`.
 
-Para cada detalle de implementación específico, consulte la documentación específica del SDK.
+Para cada detalle de implementación específico, consulte la documentación específica de SDK.
 
-- [Referencia de API de SDK para JavaScript](legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-- [Referencia de API de SDK para Android](legacy/sdks/android-sdk/android-sdk-api-reference.md)
+- [Referencia de la API de JavaScript SDK](legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
+- [Referencia de la API de Android SDK](legacy/sdks/android-sdk/android-sdk-api-reference.md)
 - [Referencia de la API de iOS/tvOS](legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
 
-### Cambios y respuestas de API
+### Cambios y respuestas de API {#throttling-mechanism-response}
 
 Cuando identificamos que se ha superado el límite, marcamos esta solicitud con un estado de respuesta específico (HTTP 429 Too Many Requests), indicando que ha consumido todos los tokens asignados al dispositivo del usuario (dirección IP) durante el intervalo de tiempo.
 

@@ -2,9 +2,9 @@
 title: 'Inicio de sesión único: identidad de plataforma: flujos'
 description: 'API de REST V2: inicio de sesión único, identidad de plataforma, flujos'
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1836'
+source-wordcount: '1846'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Asegúrese de visitar también las [Preguntas frecuentes sobre la API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 El método de identidad de plataforma permite que varias aplicaciones utilicen un identificador de plataforma único para lograr el inicio de sesión único (SSO) en el nivel de dispositivo o plataforma al utilizar los servicios de Adobe Pass.
 

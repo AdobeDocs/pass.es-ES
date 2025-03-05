@@ -2,9 +2,9 @@
 title: 'Cierre de sesión único: flujo'
 description: 'API de REST V2: cierre de sesión único: flujo'
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -19,16 +19,20 @@ ht-degree: 0%
 >
 > La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
+>[!MORELIKETHIS]
+>
+> Asegúrese de visitar también las [Preguntas frecuentes sobre la API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
+
 ## Iniciar el cierre de sesión único de un mvpd específico {#initiate-single-logout-for-specific-mvpd}
 
 ### Requisitos previos {#prerequisites-initiate-single-logout-for-specific-mvpd}
 
-Antes de iniciar el cierre de sesión único de una MVPD específica, asegúrese de que se cumplan los siguientes requisitos previos:
+Antes de iniciar el cierre de sesión único de un MVPD específico, asegúrese de que se cumplan los siguientes requisitos previos:
 
-* La segunda aplicación de streaming debe tener un perfil de inicio de sesión único válido que se haya creado correctamente para la MVPD mediante uno de los flujos de autenticación de inicio de sesión único:
+* La segunda aplicación de streaming debe tener un perfil de inicio de sesión único válido que se haya creado correctamente para MVPD mediante uno de los flujos de autenticación de inicio de sesión único:
    * [Realizar autenticación mediante el inicio de sesión único mediante la identidad de la plataforma](rest-api-v2-single-sign-on-platform-identity-flows.md)
    * [Realizar autenticación mediante el inicio de sesión único mediante el token de servicio](rest-api-v2-single-sign-on-service-token-flows.md)
-* La segunda aplicación de streaming debe iniciar el flujo de cierre de sesión único cuando necesite cerrar la sesión de la MVPD.
+* La segunda aplicación de streaming debe iniciar el flujo de cierre de sesión único cuando necesite cerrar la sesión de MVPD.
 
 >[!IMPORTANT]
 > 
@@ -62,7 +66,7 @@ Realice los pasos dados para implementar el flujo de cierre de sesión único pa
    >
    > <br/>
    > 
-   > Para obtener más información sobre el encabezado `Adobe-Subject-Token`, consulte la documentación de [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
+   > Para obtener más información sobre el encabezado `Adobe-Subject-Token`, consulte la [documentación de Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
    > 
    > <br/>
    > 
@@ -89,9 +93,9 @@ Realice los pasos dados para implementar el flujo de cierre de sesión único pa
    > 
    > Si la validación falla, se generará una respuesta de error, que proporcionará información adicional que se ajustará a la documentación de [Códigos de error mejorados](../../../../features-standard/error-reporting/enhanced-error-codes.md).
 
-1. **Indicar cierre de sesión completado:** Si la MVPD no admite el flujo de cierre de sesión, la aplicación de flujo continuo procesa la respuesta y puede utilizarla para mostrar opcionalmente un mensaje específico en la interfaz de usuario.
+1. **Indicar cierre de sesión completado:** Si MVPD no admite el flujo de cierre de sesión, la aplicación de flujo continuo procesa la respuesta y puede utilizarla para mostrar opcionalmente un mensaje específico en la interfaz de usuario.
 
-1. **Iniciar el cierre de sesión de MVPD:** Si MVPD no admite el flujo de cierre de sesión, la aplicación de flujo continuo procesa la respuesta y utiliza un agente de usuario para iniciar el flujo de cierre de sesión con MVPD. El flujo puede incluir varias redirecciones a sistemas de MVPD. Sin embargo, el resultado es que la MVPD realiza su limpieza interna y envía la confirmación de cierre de sesión final de nuevo al servidor de Adobe Pass.
+1. **Iniciar el cierre de sesión de MVPD:** Si MVPD no admite el flujo de cierre de sesión, la aplicación de flujo continuo procesa la respuesta y utiliza un agente de usuario para iniciar el flujo de cierre de sesión con MVPD. El flujo puede incluir varias redirecciones a sistemas MVPD. Sin embargo, el resultado es que MVPD realiza su limpieza interna y envía la confirmación de cierre de sesión final de nuevo al back-end de Adobe Pass.
 
 1. **Indicar cierre de sesión completado:** La aplicación de flujo continuo puede esperar a que el agente de usuario alcance el `redirectUrl` proporcionado y puede utilizarlo como señal para mostrar opcionalmente un mensaje específico en la interfaz de usuario.
 

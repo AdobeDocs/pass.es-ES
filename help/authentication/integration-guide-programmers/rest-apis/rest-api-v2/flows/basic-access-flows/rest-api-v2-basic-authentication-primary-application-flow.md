@@ -2,9 +2,9 @@
 title: Autenticación básica - Aplicación principal - Flujo
 description: 'API de REST V2: autenticación básica: aplicación principal: flujo'
 exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '894'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -19,20 +19,24 @@ ht-degree: 0%
 >
 > La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-El **flujo de autenticación** dentro del derecho de autenticación de Adobe Pass permite que la aplicación de transmisión verifique que un usuario tenga una cuenta de MVPD válida. Este proceso requiere que el usuario tenga una cuenta MVPD activa e introduzca credenciales de inicio de sesión válidas en la página de inicio de sesión de MVPD.
+>[!MORELIKETHIS]
+>
+> Asegúrese de visitar también las [Preguntas frecuentes sobre la API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
+
+El **flujo de autenticación** dentro del derecho de autenticación de Adobe Pass permite que la aplicación de transmisión verifique que un usuario tenga una cuenta de MVPD válida. Este proceso requiere que el usuario tenga una cuenta de MVPD activa e introduzca credenciales de inicio de sesión válidas en la página de inicio de sesión de MVPD.
 
 El flujo de autenticación es necesario en los siguientes casos:
 
 * Cuando el usuario abre una aplicación por primera vez.
 * Cuando la autenticación anterior del usuario ha caducado.
 * Cuando el usuario cierra la sesión de la cuenta de MVPD.
-* Cuando el usuario desea autenticarse con una MVPD diferente.
+* Cuando el usuario desea autenticarse con un MVPD diferente.
 
 En todos estos casos, la aplicación que llama a cualquiera de los extremos de Profiles recibe una respuesta vacía para uno o más perfiles, pero para diferentes MVPD.
 
-El **flujo de autenticación** requiere un agente de usuario (explorador) para completar una serie de llamadas desde la aplicación al servidor de Adobe Pass, luego a la página de inicio de sesión de MVPD y, finalmente, de nuevo a la aplicación. Este flujo puede incluir varias redirecciones a sistemas MVPD y la administración de cookies o sesiones almacenadas para cada dominio, lo que puede resultar difícil de lograr y proteger sin un agente de usuario.
+El **flujo de autenticación** requiere que un agente de usuario (explorador) complete una serie de llamadas desde la aplicación al servidor de Adobe Pass, luego a la página de inicio de sesión de MVPD y, finalmente, de nuevo a la aplicación. Este flujo puede incluir varias redirecciones a sistemas de MVPD y la administración de cookies o sesiones almacenadas para cada dominio, lo que puede resultar difícil de lograr y proteger sin un agente de usuario.
 
-En función de las capacidades de la aplicación principal (aplicación de streaming) para admitir la interacción del usuario para seleccionar una MVPD y autenticarse con la MVPD seleccionada en un agente de usuario, los escenarios de autenticación son los siguientes:
+En función de las funciones de la aplicación principal (aplicación de streaming) para admitir la interacción del usuario con el fin de seleccionar un MVPD y autenticarse con el MVPD seleccionado en un agente de usuario, los escenarios de autenticación son los siguientes:
 
 * [Realizar autenticación en la aplicación principal](./rest-api-v2-basic-authentication-primary-application-flow.md)
 * [Realizar autenticación en la aplicación secundaria con mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
@@ -44,9 +48,9 @@ En función de las capacidades de la aplicación principal (aplicación de strea
 
 Antes de realizar la autenticación mediante la interacción del usuario dentro de una aplicación principal, asegúrese de que se cumplan los siguientes requisitos previos:
 
-* La aplicación de streaming debe seleccionar una MVPD.
-* La aplicación de streaming debe iniciar una sesión de autenticación para iniciar sesión con la MVPD seleccionada.
-* La aplicación de streaming debe autenticarse con la MVPD seleccionada en un agente de usuario.
+* La aplicación de streaming debe seleccionar un MVPD.
+* La aplicación de streaming debe iniciar una sesión de autenticación para iniciar sesión con el MVPD seleccionado.
+* La aplicación de streaming debe autenticarse con el MVPD seleccionado en un agente de usuario.
 
 >[!IMPORTANT]
 >
@@ -54,8 +58,8 @@ Antes de realizar la autenticación mediante la interacción del usuario dentro 
 >
 > <br/>
 > 
-> * La aplicación de streaming admite la interacción del usuario para seleccionar una MVPD.
-> * La aplicación de streaming admite la interacción del usuario para autenticarse con la MVPD seleccionada en un agente de usuario.
+> * La aplicación de streaming admite la interacción del usuario para seleccionar un MVPD.
+> * La aplicación de streaming admite la interacción del usuario para autenticarse con el MVPD seleccionado en un agente de usuario.
 
 ### Flujo de trabajo {#workflow-perform-authentication-completed-on-primary-application}
 
@@ -100,7 +104,7 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
    * El atributo `actionName` está establecido en &quot;authorize&quot;.
    * El atributo `actionType` está establecido en &quot;direct&quot;.
 
-   Si el servidor de Adobe Pass identifica un perfil válido, la aplicación de streaming no necesita volver a autenticarse con la MVPD seleccionada, ya que ya hay un perfil que se puede utilizar para flujos de decisiones posteriores.
+   Si el backend de Adobe Pass identifica un perfil válido, la aplicación de streaming no necesita volver a autenticarse con el MVPD seleccionado, ya que ya hay un perfil que se puede utilizar para flujos de decisiones posteriores.
 
 1. **Abrir URL en el agente de usuario:** La respuesta del extremo de sesiones contiene los siguientes datos:
    * `url` que se puede usar para iniciar la autenticación interactiva en la página de inicio de sesión de MVPD.
@@ -109,7 +113,7 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
 
    Si el backend de Adobe Pass no identifica un perfil válido, la aplicación de streaming abre un agente de usuario para cargar el `url` proporcionado, realizando una solicitud al extremo Authenticate. Este flujo puede incluir varias redirecciones, lo que finalmente lleva al usuario a la página de inicio de sesión de MVPD y proporciona credenciales válidas.
 
-1. **Autenticación MVPD completa:** Si el flujo de autenticación es correcto, la interacción del agente de usuario guarda un perfil normal en el servidor de Adobe Pass y alcanza el valor de `redirectUrl` proporcionado.
+1. **Autenticación de MVPD completa:** Si el flujo de autenticación es correcto, la interacción del agente de usuario guarda un perfil normal en el servidor de Adobe Pass y alcanza el valor de `redirectUrl` proporcionado.
 
 1. **Recuperar perfil para código específico:** La aplicación de flujo continuo recopila todos los datos necesarios para recuperar información de perfil enviando una solicitud al extremo de perfiles.
 

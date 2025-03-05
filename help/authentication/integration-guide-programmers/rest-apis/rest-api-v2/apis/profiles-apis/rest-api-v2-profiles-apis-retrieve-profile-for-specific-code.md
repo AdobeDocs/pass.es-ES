@@ -2,9 +2,9 @@
 title: Recuperar perfil para código específico
 description: 'API de REST V2: recuperar el perfil de un código específico'
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '701'
+source-wordcount: '711'
 ht-degree: 1%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Asegúrese de visitar también las [Preguntas frecuentes sobre la API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 ## Solicitud {#request}
 
@@ -127,7 +131,7 @@ ht-degree: 1%
       <td>403</td>
       <td>Prohibido</td>
       <td>
-        El tiempo de vida del acceso temporal (TTL) ha caducado o se ha superado el número máximo de recursos, el cliente debe indicar al usuario que inicie un flujo de autenticación básico mediante una MVPD normal. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
+        El tiempo de vida del acceso temporal (TTL) ha caducado o se ha superado el número máximo de recursos, por lo que el cliente debe indicar al usuario que inicie un flujo de autenticación básico con un MVPD normal. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
       </td>
    </tr> 
    <tr>

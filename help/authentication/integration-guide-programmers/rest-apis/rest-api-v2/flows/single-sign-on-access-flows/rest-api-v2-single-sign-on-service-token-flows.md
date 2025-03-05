@@ -2,9 +2,9 @@
 title: Inicio de sesión único - Token de servicio - Flujos
 description: API de REST V2 - Inicio de sesión único - Token de servicio - Flujos
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1848'
+source-wordcount: '1858'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Asegúrese de visitar también las [Preguntas frecuentes sobre la API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 El método del token de servicio permite que varias aplicaciones utilicen un identificador de usuario único para lograr el inicio de sesión único (SSO) en varios dispositivos y plataformas al utilizar los servicios de Adobe Pass.
 
@@ -38,9 +42,9 @@ Antes de realizar el flujo de autenticación mediante el inicio de sesión únic
 
 * El servicio de identidad externa debe devolver información coherente como carga útil `JWS` en todas las aplicaciones a través de varios dispositivos y plataformas.
 * La primera aplicación de streaming debe recuperar el identificador de usuario único e incluir la carga útil `JWS` como parte del encabezado [AD-Service-Token](../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md) para todas las solicitudes que lo especifiquen.
-* La primera aplicación de streaming debe seleccionar una MVPD.
-* La primera aplicación de streaming debe iniciar una sesión de autenticación para iniciar sesión con la MVPD seleccionada.
-* La primera aplicación de streaming debe autenticarse con la MVPD seleccionada en un agente de usuario.
+* La primera aplicación de streaming debe seleccionar un MVPD.
+* La primera aplicación de streaming debe iniciar una sesión de autenticación para iniciar sesión con el MVPD seleccionado.
+* La primera aplicación de streaming debe autenticarse con el MVPD seleccionado en un agente de usuario.
 * La segunda aplicación de streaming debe recuperar el identificador de usuario único e incluir la carga útil `JWS` como parte del encabezado [AD-Service-Token](../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md) para todas las solicitudes que lo especifiquen.
 
 >[!IMPORTANT]
@@ -49,8 +53,8 @@ Antes de realizar el flujo de autenticación mediante el inicio de sesión únic
 > 
 > <br/>
 > 
-> * La primera aplicación de streaming admite la interacción del usuario para seleccionar una MVPD.
-> * La primera aplicación de streaming admite la interacción del usuario para autenticarse con la MVPD seleccionada en un agente de usuario.
+> * La primera aplicación de streaming admite la interacción del usuario para seleccionar un MVPD.
+> * La primera aplicación de streaming admite la interacción del usuario para autenticarse con el MVPD seleccionado en un agente de usuario.
 
 ### Flujo de trabajo {#workflow-steps-scenario-performing-authentication-flow-using-service-token-single-sign-on-method}
 
@@ -108,7 +112,7 @@ Realice los pasos dados para implementar el flujo de autenticación mediante el 
 
    Si el servidor de Adobe Pass no identifica un perfil válido, la primera aplicación de flujo continuo abre un agente de usuario para cargar el `url` proporcionado, realizando una solicitud al extremo Authenticate. Este flujo puede incluir varias redirecciones, lo que finalmente lleva al usuario a la página de inicio de sesión de MVPD y proporciona credenciales válidas.
 
-1. **Autenticación MVPD completa:** Si el flujo de autenticación es correcto, la interacción del agente de usuario guarda un perfil normal en el servidor de Adobe Pass y alcanza el valor de `redirectUrl` proporcionado.
+1. **Autenticación de MVPD completa:** Si el flujo de autenticación es correcto, la interacción del agente de usuario guarda un perfil normal en el servidor de Adobe Pass y alcanza el valor de `redirectUrl` proporcionado.
 
 1. **Recuperar perfil para código específico:** La primera aplicación de flujo continuo recopila todos los datos necesarios para recuperar información de perfil enviando una solicitud al extremo de perfiles.
 

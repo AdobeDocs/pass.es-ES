@@ -2,9 +2,9 @@
 title: Inicio de sesión único - Socio - Flujos
 description: API de REST V2 - Inicio de sesión único - Socio - Flujos
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1444'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Asegúrese de visitar también las [Preguntas frecuentes sobre la API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 El método Partner permite que varias aplicaciones utilicen una carga útil de estado de marco de socio para lograr el inicio de sesión único (SSO) en el nivel de dispositivo al utilizar los servicios de Adobe Pass.
 
@@ -37,7 +41,7 @@ Para obtener más información sobre el inicio de sesión único (SSO) para Appl
 
 Antes de recuperar la solicitud de autenticación del socio, asegúrese de que se cumplan los siguientes requisitos previos:
 
-* El marco de socio debe seleccionar una MVPD.
+* El marco de socios debe seleccionar un MVPD.
 * La aplicación de streaming debe obtener la información del estado de la estructura del socio desde la estructura del socio y pasarla al servidor de Adobe Pass.
 * La aplicación de streaming debe obtener la solicitud de autenticación del socio del servidor de Adobe Pass y pasarla al marco del socio.
 
@@ -47,8 +51,8 @@ Antes de recuperar la solicitud de autenticación del socio, asegúrese de que s
 > 
 > <br/>
 > 
-> * El marco de trabajo del socio permite la interacción del usuario para seleccionar una MVPD.
-> * El marco de socios admite la interacción del usuario para autenticarse con la MVPD seleccionada.
+> * El marco de trabajo de socios admite la interacción del usuario para seleccionar un MVPD.
+> * El marco de socios admite la interacción del usuario para autenticarse con el MVPD seleccionado.
 > * El marco de socios proporciona permisos de usuario e información del proveedor.
 
 ### Flujo de trabajo {#workflow-retrieve-partner-authentication-request}
@@ -119,7 +123,7 @@ Realice los pasos dados para recuperar la solicitud de autenticación de socio c
    * El atributo `authenticationRequest - request` incluye la solicitud SAML que se pasa al marco de trabajo del socio.
    * El atributo `authenticationRequest - attributesNames` incluye los atributos SAML que se pasan al marco de trabajo del socio.
 
-   Si el backend de Adobe Pass no identifica un perfil válido y la validación del inicio de sesión único del socio pasa, la aplicación de streaming recibe una respuesta con acciones y datos para pasar al marco del socio para iniciar el flujo de autenticación con la MVPD.
+   Si el backend de Adobe Pass no identifica un perfil válido y la validación del inicio de sesión único del socio pasa, la aplicación de streaming recibe una respuesta con acciones y datos para pasar al marco del socio para iniciar el flujo de autenticación con MVPD.
 
    Para obtener más información sobre el flujo de recuperación de perfiles mediante una respuesta de autenticación de socio, consulte la sección [Recuperar perfil mediante una respuesta de autenticación de socio](#retrieve-profile-using-partner-authentication-response).
 
@@ -138,7 +142,7 @@ Realice los pasos dados para recuperar la solicitud de autenticación de socio c
    * El atributo `actionName` está establecido en &quot;authorize&quot;.
    * El atributo `actionType` está establecido en &quot;direct&quot;.
 
-   Si el servidor de Adobe Pass identifica un perfil válido, la aplicación de streaming no necesita volver a autenticarse con la MVPD seleccionada, ya que ya hay un perfil que se puede utilizar para flujos de decisiones posteriores.
+   Si el backend de Adobe Pass identifica un perfil válido, la aplicación de streaming no necesita volver a autenticarse con el MVPD seleccionado, ya que ya hay un perfil que se puede utilizar para flujos de decisiones posteriores.
 
    >[!IMPORTANT]
    >
@@ -154,15 +158,15 @@ Realice los pasos dados para recuperar la solicitud de autenticación de socio c
 
 Antes de recuperar el perfil mediante una respuesta de autenticación de socio, asegúrese de que se cumplan los siguientes requisitos previos:
 
-* El marco del socio debe realizar la autenticación con la MVPD seleccionada.
+* El marco de socio debe realizar la autenticación con el MVPD seleccionado.
 * La aplicación de streaming debe obtener la respuesta de autenticación del socio junto con la información de estado de la estructura del socio desde la estructura del socio y pasarla al servidor de Adobe Pass.
 
 >[!IMPORTANT]
 >
 > Suposición
 >
-> * El marco de trabajo del socio permite la interacción del usuario para seleccionar una MVPD.
-> * El marco de socios admite la interacción del usuario para autenticarse con la MVPD seleccionada.
+> * El marco de trabajo de socios admite la interacción del usuario para seleccionar un MVPD.
+> * El marco de socios admite la interacción del usuario para autenticarse con el MVPD seleccionado.
 > * El marco de socios proporciona permisos de usuario e información del proveedor.
 
 ### Flujo de trabajo {#workflow-retrieve-profile-using-partner-authentication-response}
@@ -173,7 +177,7 @@ Realice los pasos dados para implementar el flujo de recuperación de perfiles m
 
 *Recuperar el perfil autenticado mediante la respuesta de autenticación del socio*
 
-1. **Autenticación MVPD completa con el marco del socio:** Si el flujo de autenticación es correcto, la interacción del marco del socio con MVPD produce una respuesta de autenticación del socio (respuesta SAML) que se devuelve junto con la información de estado del marco del socio.
+1. **Autenticación de MVPD completa con el marco del socio:** Si el flujo de autenticación es correcto, la interacción del marco del socio con MVPD produce una respuesta de autenticación del socio (respuesta SAML) que se devuelve junto con la información de estado del marco del socio.
 
 1. **Devolver respuesta de autenticación de socio:** La aplicación de transmisión valida los datos de respuesta para garantizar que se cumplan las condiciones básicas:
    * Se concede el estado de acceso al permiso de usuario.
