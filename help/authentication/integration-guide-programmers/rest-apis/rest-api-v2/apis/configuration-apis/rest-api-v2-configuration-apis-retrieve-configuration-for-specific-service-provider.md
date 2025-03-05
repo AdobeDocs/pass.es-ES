@@ -2,9 +2,9 @@
 title: Recuperar la configuración de un proveedor de servicios específico
 description: 'API de REST V2: recupere la configuración de un proveedor de servicios específico'
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '725'
 ht-degree: 2%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 2%
 >[!IMPORTANT]
 >
 > La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Asegúrese de visitar también las [Preguntas frecuentes sobre la API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#configuration-phase-faqs-general).
 
 ## Solicitud {#request}
 
@@ -210,9 +214,9 @@ ht-degree: 2%
                 <td>
                     El objeto JSON tiene los atributos siguientes:
                     <ul>
-                        <li><b>id</b></li>
-                        <li><b>name</b></li>
-                        <li><b>dominios</b></li>
+                        <li><b>id</b><br/>Identificador único interno asociado con el proveedor de servicios durante el proceso de incorporación.</li>
+                        <li><b>nombre</b><br/>El nombre comercial (marca) asociado con el proveedor de servicios durante el proceso de incorporación.</li>
+                        <li><b>dominios</b><br/>Lista de nombres de dominio que aparecen en la autenticación de Adobe Pass para representar al proveedor de servicios.</li>
                     </ul>
                 </td>
                 <td><i>obligatorio</i></td>
@@ -222,16 +226,16 @@ ht-degree: 2%
                 <td>
                     El objeto JSON tiene los atributos siguientes:
                     <ul>
-                        <li><b>id</b></li>
-                        <li><b>displayName</b></li>
-                        <li><b>logoUrl</b></li>
-                        <li><b>isTempPass</b></li>
-                        <li><b>isProxy</b></li>
-                        <li><b>boardingStatus</b></li>
-                        <li><b>platformMappingId</b></li>
-                        <li><b>enablePlatformServices</b></li>
-                        <li><b>displayInPlatformPicker</b></li>
-                        <li><b>forcePlatformPermissions</b></li>
+                        <li><b>id</b><br/>Identificador único interno asociado con el proveedor de identidad durante el proceso de incorporación.</li>
+                        <li><b>displayName</b><br/>Nombre comercial (marca) asociado con el proveedor de identidad durante el proceso de incorporación.</li>
+                        <li><b>logoUrl</b><br>Dirección URL desde la que se descargará el logotipo asociado con el proveedor de identidad.</li>
+                        <li><b>isTempPass</b><br/>Indicador que especifica si MVPD está diseñado para proporcionar la funcionalidad de la característica <a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a>.</li>
+                        <li><b>isProxy</b><br/>Indicador que especifica si MVPD es un MVPD proxy.</li>
+                        <li><b>boardingStatus</b><br/>Estado que especifica si la plataforma del dispositivo de streaming incorpora el proveedor de identidad para los flujos de inicio de sesión único.</li>
+                        <li><b>platformMappingId</b><br/>Identificador único interno asociado al proveedor de identidad por la plataforma del dispositivo de transmisión para los flujos de inicio de sesión único.</li>
+                        <li><b>enablePlatformServices</b><br/>Indicador que especifica si la configuración del proveedor de identidad está habilitada para la plataforma del dispositivo de transmisión para flujos de inicio de sesión único.</li>
+                        <li><b>displayInPlatformPicker</b><br/>Indicador que especifica si el proveedor de identidad se puede mostrar en el selector de plataforma del dispositivo de transmisión para flujos de inicio de sesión único.</li>
+                        <li><b>forcePlatformPermissions</b><br/>Indicador que especifica si el dispositivo de flujo continuo debe aplicar los permisos de usuario proporcionados por la plataforma para los flujos de inicio de sesión único.</li>
                     </ul>
                 </td>
                 <td><i>obligatorio</i></td>
