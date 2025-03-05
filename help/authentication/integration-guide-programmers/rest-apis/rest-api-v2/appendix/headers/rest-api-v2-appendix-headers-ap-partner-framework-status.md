@@ -2,7 +2,7 @@
 title: 'Encabezado: AP-Partner-Framework-Status'
 description: 'API de REST V2: encabezado - AP-Partner-Framework-Status'
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '388'
 ht-degree: 0%
@@ -21,7 +21,7 @@ El encabezado de la solicitud <b>AP-Partner-Framework-Status</b> contiene inform
 
 ## Sintaxis {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>AP-Partner-Framework-Status</b>: &lt;partner_framework_status_information&gt;</td>
    </tr>
@@ -41,7 +41,7 @@ El encabezado de la solicitud <b>AP-Partner-Framework-Status</b> contiene inform
 
 El valor `Base64-encoded` del elemento JSON que contiene los atributos siguientes:
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Atributo</th>
       <th style="background-color: #EFF2F7;"></th>
@@ -68,10 +68,10 @@ El valor `Base64-encoded` del elemento JSON que contiene los atributos siguiente
                   Esta es una enumeración con los siguientes valores posibles:
                   <br/>
                   <ul>
-                     <li>granted: el usuario permitió que la aplicación accediera a la información de suscripción.</li>
-                     <li>denegado: el usuario denegó la solicitud para acceder a la información de suscripción.</li>
-                     <li>pendiente: el usuario aún no ha elegido permitir que la aplicación acceda a la información de suscripción.</li>
-                     <li>notDetermined: la aplicación no tiene permiso para acceder a la información de suscripción.</li>
+                     <li><b>concedido</b><br/>El usuario permitió que la aplicación accediera a la información de suscripción.</li>
+                     <li><b>denegado</b><br/>El usuario denegó la aplicación para tener acceso a la información de suscripción.</li>
+                     <li><b>pendiente</b><br/>El usuario aún no ha elegido permitir que la aplicación acceda a la información de suscripción.</li>
+                     <li><b>notDetermined</b><br/>La aplicación no tiene permiso para obtener acceso a la información de suscripción.</li>
                   </ul>
                </td>
             </tr>
@@ -122,7 +122,7 @@ El valor `Base64-encoded` del elemento JSON que contiene los atributos siguiente
                <td>
                   Este es un atributo obligatorio.
                   <br/><br/>
-                  mappingId que identifica el MVPD utilizado durante el flujo de autenticación a nivel del marco de trabajo del socio.
+                  mappingId que identifica el MVPD utilizado durante el flujo de autenticación en el nivel de marco de trabajo del socio.
                </td>
             </tr>
             <tr>
@@ -130,7 +130,7 @@ El valor `Base64-encoded` del elemento JSON que contiene los atributos siguiente
                <td>
                   Este es un atributo obligatorio.
                   <br/><br/>
-                  Esta es la fecha de caducidad del perfil de usuario autenticado, en caso de que el usuario se haya registrado correctamente usando una MVPD compatible a nivel del marco de trabajo del socio.
+                  Esta es la fecha de caducidad del perfil de usuario autenticado, en caso de que el usuario haya iniciado sesión correctamente utilizando un MVPD compatible en el nivel de marco de trabajo del socio.
                </td>
             </tr>
             <tr>

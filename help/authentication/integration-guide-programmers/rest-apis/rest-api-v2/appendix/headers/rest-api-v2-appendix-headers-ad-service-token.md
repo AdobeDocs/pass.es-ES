@@ -2,7 +2,7 @@
 title: 'Encabezado: AD-Service-Token'
 description: 'API de REST V2: encabezado: AD-Service-Token'
 exl-id: 856f76fc-cde6-4b3f-81f7-deaa0df015dc
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 1%
@@ -25,7 +25,7 @@ Para obtener más información sobre los flujos habilitados para el inicio de se
 
 ## Sintaxis {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>Token de servicio de AD</b>: &lt;unique_user_identifier&gt;</td>
    </tr>
@@ -47,7 +47,7 @@ La firma web JSON (`JWS`) que es un token web JSON (`JWT`) firmado que contiene 
 
 `JWT` tiene los atributos siguientes:
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Atributo</th>
       <th style="background-color: #EFF2F7;">Descripción</th>
@@ -62,7 +62,7 @@ La firma web JSON (`JWS`) que es un token web JSON (`JWT`) firmado que contiene 
    </tr>
    <tr>
       <td>aud</td>
-      <td>La audiencia, que debería ser "Adobe".</td>
+      <td>La audiencia, que debe ser "Adobe".</td>
    </tr>
    <tr>
       <td>iat</td>

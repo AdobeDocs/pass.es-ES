@@ -2,7 +2,7 @@
 title: 'Encabezado: Adobe-Subject-Token'
 description: 'API de REST V2: encabezado: Adobe-Subject-Token'
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 1%
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 ## Información general {#overview}
 
-El encabezado de solicitud <b>Adobe-Subject-Token</b> contiene el identificador de plataforma único `JWS` o `JWE` obtenido de un servicio de identidad o biblioteca que se ejecuta fuera de los sistemas de autenticación de Adobe Pass.
+El encabezado de solicitud <b>Adobe-Subject-Token</b> contiene el identificador de plataforma único como `JWS` o `JWE` obtenido de un servicio de identidad o biblioteca que se ejecuta fuera de los sistemas de autenticación de Adobe Pass.
 
 Este encabezado está diseñado para utilizarse en flujos habilitados para el inicio de sesión único (SSO) que aprovechan el método de identidad de plataforma.
 
@@ -25,9 +25,9 @@ Para obtener más información sobre los flujos habilitados para el inicio de se
 
 ## Sintaxis {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <td style="background-color: #DEEBFF;" colspan="2"><b>Token de asunto de Adobe</b>: &lt;unique_platform_identifier&gt;</td>
+      <td style="background-color: #DEEBFF;" colspan="2"><b>Adobe-Subject-Token</b>: &lt;unique_platform_identifier&gt;</td>
    </tr>
    <tr>
       <td>Tipo de encabezado</td>

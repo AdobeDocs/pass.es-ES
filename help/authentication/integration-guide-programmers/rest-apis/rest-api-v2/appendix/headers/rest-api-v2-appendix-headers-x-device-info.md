@@ -2,9 +2,9 @@
 title: 'Encabezado: X-Device-Info'
 description: 'API de REST V2: encabezado: X-Device-Info'
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '1085'
+source-wordcount: '1122'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ El encabezado de la solicitud <b>X-Device-Info</b> contiene la información del 
 
 ## Sintaxis {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>X-Device-Info</b>: &lt;device_information&gt;</td>
    </tr>
@@ -41,7 +41,7 @@ El encabezado de la solicitud <b>X-Device-Info</b> contiene la información del 
 
 El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos marcados como requeridos por la siguiente tabla.
 
-<table>
+<table style="table-layout:auto">
     <tr>
         <th style="background-color: #EFF2F7; width: 15%;">Presencia</th>
         <th style="background-color: #EFF2F7; width: 15%;">Clave</th>
@@ -721,3 +721,7 @@ La información de la aplicación se puede construir de la siguiente manera:
 | Clave | Source | Valor (ejemplo) |
 |---------------|-----------|-----------------|
 | applicationId | codificado | REF30 |
+
+### Otros {#others}
+
+En el caso de las plataformas de dispositivo no incluidas en la documentación, la información del cliente (dispositivo, conexión y aplicación) debe estar vinculada a cualquier atributo de hardware y sistema operativo (SO) disponible, normalmente especificado en los manuales de hardware y sistema operativo del dispositivo.
