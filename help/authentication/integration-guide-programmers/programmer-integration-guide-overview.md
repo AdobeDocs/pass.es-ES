@@ -2,9 +2,9 @@
 title: Guía de integración del programador
 description: Guía de integración del programador
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '2071'
+source-wordcount: '2073'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 > El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
-Esta guía de integración está dirigida a los proveedores de contenido (programadores) que planean integrarse con la autenticación de Adobe ® Pass.
+Esta guía de integración está dirigida a los proveedores de contenido (programadores) que planean integrarse con la autenticación de Adobe® Pass.
 
 En el panorama digital actual, los espectadores pueden acceder a Internet en cualquier momento y en cualquier lugar, y solicitar acceso a su contenido protegido. Es posible que busquen ver un evento único o que busquen los derechos para transmitir una serie completa de televisión que esté transmitiendo.
 
@@ -210,7 +210,7 @@ Los siguientes pasos describen los pasos de alto nivel en caso de integración d
 **API**
 
 * [Recuperar solicitud de autenticación de socio](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [Recuperar perfil mediante la respuesta de autenticación del socio](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [Crear y recuperar perfiles mediante una respuesta de autenticación de socio](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
 
 **Flujos**
 

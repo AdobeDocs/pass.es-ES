@@ -2,9 +2,9 @@
 title: Guía de Apple SSO (API REST V2)
 description: Guía de Apple SSO (API REST V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '3443'
+source-wordcount: '3615'
 ht-degree: 0%
 
 ---
@@ -284,7 +284,7 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
    * [Realizar autenticación en la aplicación secundaria con mvpd preseleccionado](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [Realizar autenticación en la aplicación secundaria sin mvpd preseleccionado](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-1. **Continúe con la recuperación del perfil mediante el flujo de respuesta de autenticación del socio:** La respuesta del extremo del socio de sesiones contiene los siguientes datos:
+1. **Continúe con la creación y recuperación de un perfil mediante el flujo de respuesta de autenticación del socio:** La respuesta del extremo del socio de sesiones contiene los siguientes datos:
    * El atributo `actionName` está establecido en &quot;partner_profile&quot;.
    * El atributo `actionType` está establecido en &quot;direct&quot;.
    * El atributo `authenticationRequest - type` incluye el protocolo de seguridad utilizado por el marco de trabajo del socio para el inicio de sesión de MVPD (actualmente establecido como solo SAML).
@@ -316,11 +316,11 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
    * La fecha de caducidad del perfil del proveedor de usuarios (si está disponible) es válida.
    * La respuesta de autenticación del socio (respuesta SAML) está presente y es válida.
 
-1. **Recuperar el perfil mediante la respuesta de autenticación del socio:** La aplicación de flujo continuo recopila todos los datos necesarios para crear y recuperar un perfil llamando al extremo del socio de perfiles.
+1. **Cree y recupere un perfil mediante la respuesta de autenticación del socio:** La aplicación de flujo continuo recopila todos los datos necesarios para crear y recuperar un perfil llamando al extremo del socio de perfiles.
 
    >[!IMPORTANT]
    >
-   > Consulte la documentación de la API [Recuperar perfil mediante la respuesta de autenticación del socio](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) para obtener más información sobre lo siguiente:
+   > Consulte la documentación de la API [Crear y recuperar perfiles mediante la respuesta de autenticación de socio](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) para obtener más información sobre:
    >
    > * Todos los _parámetros necesarios_, como `serviceProvider`, `partner` y `SAMLResponse`
    > * Todos los _encabezados_ necesarios, como `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` y `AP-Partner-Framework-Status`
@@ -338,7 +338,7 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
 
    >[!IMPORTANT]
    >
-   > Consulte la documentación de la API [Recuperar perfil mediante la respuesta de autenticación del socio](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response) para obtener más información sobre la información proporcionada en una respuesta de perfil.
+   > Consulte la documentación de la API [Crear y recuperar perfiles mediante la respuesta de autenticación de socio](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response) para obtener más información sobre la información proporcionada en una respuesta de perfil.
    >
    > <br/>
    >
@@ -371,6 +371,10 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
 1. **Recuperar el estado del marco de trabajo del socio:** La aplicación de transmisión llama al [marco de trabajo de cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) desarrollado por Apple para obtener permisos de usuario e información del proveedor.
 
    >[!IMPORTANT]
+   > 
+   > La aplicación de streaming puede omitir este paso si el tipo de perfil de usuario seleccionado no es &quot;appleSSO&quot;.
+
+   >[!IMPORTANT]
    >
    > Consulte la documentación de [Marco de cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) para obtener detalles sobre:
    >
@@ -386,13 +390,17 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
    > La aplicación de flujo continuo debe asegurarse de que especifica un valor booleano igual a `false` para la propiedad [`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed) en el objeto `VSAccountMetadataRequest`, para indicar que el usuario no se puede interrumpir en esta fase.
 
    >[!TIP]
-   > 
-   > Sugerencia: La aplicación de streaming puede utilizar un valor almacenado en caché para la información de estado del marco de trabajo del socio, que se recomienda actualizar cuando la aplicación pasa del estado en segundo plano al estado en primer plano.
+   >
+   > Sugerencia: La aplicación de streaming puede utilizar en su lugar un valor almacenado en caché para la información de estado del marco de trabajo del socio, que se recomienda actualizar cuando la aplicación pase del estado en segundo plano al estado en primer plano. En ese caso, la aplicación de streaming debe asegurarse de que almacena en caché y utiliza solo valores válidos para el estado del marco de trabajo de socio tal como se describe en el paso Devolver información de estado del marco de trabajo de socio.
 
 1. **Devolver información de estado del marco de trabajo del socio:** La aplicación de flujo continuo valida los datos de respuesta para garantizar que se cumplan las condiciones básicas:
    * Se concede el estado de acceso al permiso de usuario.
    * El identificador de asignación del proveedor de usuarios está presente y es válido.
-   * La fecha de caducidad del perfil del proveedor de usuarios (si está disponible) es válida.
+   * La fecha de caducidad del perfil del proveedor de usuarios es válida.
+
+   >[!IMPORTANT]
+   >
+   > La aplicación de streaming puede omitir este paso si el tipo de perfil de usuario seleccionado no es &quot;appleSSO&quot;.
 
 1. **Recuperar decisiones de preautorización:** La aplicación de streaming recopila todos los datos necesarios para obtener decisiones de preautorización para una lista de recursos llamando al extremo Decisions Preauthorize.
 
@@ -406,7 +414,7 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
    >
    > <br/>
    >
-   > La aplicación de streaming debe asegurarse de que incluye un valor válido para el estado de la estructura del socio antes de realizar una solicitud más adelante, cuando el perfil elegido es un perfil de tipo &quot;appleSSO&quot;.
+   > La aplicación de streaming debe asegurarse de que incluye un valor válido para el estado de la estructura del socio antes de realizar una solicitud más adelante, cuando el perfil elegido es un perfil de tipo &quot;appleSSO&quot;. Sin embargo, este paso se puede omitir si el tipo de perfil de usuario seleccionado no es &quot;appleSSO&quot;.
    >
    > <br/>
    >
@@ -435,6 +443,10 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
 
    >[!IMPORTANT]
    >
+   > La aplicación de streaming puede omitir este paso si el tipo de perfil de usuario seleccionado no es &quot;appleSSO&quot;.
+
+   >[!IMPORTANT]
+   >
    > Consulte la documentación de [Marco de cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) para obtener detalles sobre:
    >
    > <br/>
@@ -450,12 +462,16 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
 
    >[!TIP]
    >
-   > Sugerencia: La aplicación de streaming puede utilizar un valor almacenado en caché para la información de estado del marco de trabajo del socio, que se recomienda actualizar cuando la aplicación pasa del estado en segundo plano al estado en primer plano.
+   > Sugerencia: La aplicación de streaming puede utilizar en su lugar un valor almacenado en caché para la información de estado del marco de trabajo del socio, que se recomienda actualizar cuando la aplicación pase del estado en segundo plano al estado en primer plano. En ese caso, la aplicación de streaming debe asegurarse de que almacena en caché y utiliza solo valores válidos para el estado del marco de trabajo de socio tal como se describe en el paso Devolver información de estado del marco de trabajo de socio.
 
 1. **Devolver información de estado del marco de trabajo del socio:** La aplicación de flujo continuo valida los datos de respuesta para garantizar que se cumplan las condiciones básicas:
    * Se concede el estado de acceso al permiso de usuario.
    * El identificador de asignación del proveedor de usuarios está presente y es válido.
-   * La fecha de caducidad del perfil del proveedor de usuarios (si está disponible) es válida.
+   * La fecha de caducidad del perfil del proveedor de usuarios es válida.
+
+   >[!IMPORTANT]
+   >
+   > La aplicación de streaming puede omitir este paso si el tipo de perfil de usuario seleccionado no es &quot;appleSSO&quot;.
 
 1. **Recuperar decisión de autorización:** La aplicación de streaming recopila todos los datos necesarios para obtener una decisión de autorización para un recurso específico llamando al extremo Decisions Authorize.
 
@@ -469,7 +485,7 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
    >
    > <br/>
    >
-   > La aplicación de streaming debe asegurarse de que incluye un valor válido para el estado de la estructura del socio antes de realizar una solicitud más adelante, cuando el perfil elegido es un perfil de tipo &quot;appleSSO&quot;.
+   > La aplicación de streaming debe asegurarse de que incluye un valor válido para el estado de la estructura del socio antes de realizar una solicitud más adelante, cuando el perfil elegido es un perfil de tipo &quot;appleSSO&quot;. Sin embargo, este paso se puede omitir si el tipo de perfil de usuario seleccionado no es &quot;appleSSO&quot;.
    >
    > <br/>
    >
@@ -515,6 +531,10 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
 
    >[!IMPORTANT]
    >
+   > La aplicación de flujo continuo debe pedir al usuario que complete el proceso de cierre de sesión en el nivel de socio, tal como especifican los atributos `actionName` y `actionType`, cuando el tipo de perfil de usuario eliminado sea &quot;appleSSO&quot;.
+
+   >[!IMPORTANT]
+   >
    > Consulte la [Iniciar cierre de sesión para obtener documentación específica de la API mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response) para obtener más información sobre la información proporcionada en una respuesta de cierre de sesión.
    >
    > <br/>
@@ -527,9 +547,5 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
    > <br/>
    >
    > Si la validación falla, se generará una respuesta de error, que proporcionará información adicional que se ajustará a la documentación de [Códigos de error mejorados](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
-
-   >[!IMPORTANT]
-   > 
-   > La aplicación de streaming debe asegurarse de que indica al usuario que debe seguir cerrando la sesión desde el nivel de socio.
 
 +++

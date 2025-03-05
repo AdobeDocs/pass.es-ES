@@ -2,9 +2,9 @@
 title: Información general sobre las API de REST V2
 description: Información general sobre las API de REST V2
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '149'
+source-wordcount: '151'
 ht-degree: 1%
 
 ---
@@ -48,7 +48,7 @@ Para empezar, visite la documentación pública de las API que le interesan en l
 ## Inicio de sesión único de socio {#rest-api-v2-apis-partner-single-sign-on}
 
 * [Recuperar solicitud de autenticación de socio](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [Recuperar perfil mediante la respuesta de autenticación del socio](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [Crear y recuperar perfiles mediante una respuesta de autenticación de socio](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
 
 ## ¿Quiere probar la API de REST V2?
 

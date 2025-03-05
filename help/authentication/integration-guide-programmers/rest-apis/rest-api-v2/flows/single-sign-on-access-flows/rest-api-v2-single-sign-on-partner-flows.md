@@ -2,9 +2,9 @@
 title: Inicio de sesión único - Socio - Flujos
 description: API de REST V2 - Inicio de sesión único - Socio - Flujos
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1468'
 ht-degree: 0%
 
 ---
@@ -125,7 +125,7 @@ Realice los pasos dados para recuperar la solicitud de autenticación de socio c
 
    Si el backend de Adobe Pass no identifica un perfil válido y la validación del inicio de sesión único del socio pasa, la aplicación de streaming recibe una respuesta con acciones y datos para pasar al marco del socio para iniciar el flujo de autenticación con MVPD.
 
-   Para obtener más información sobre el flujo de recuperación de perfiles mediante una respuesta de autenticación de socio, consulte la sección [Recuperar perfil mediante una respuesta de autenticación de socio](#retrieve-profile-using-partner-authentication-response).
+   Para obtener más información sobre el flujo de recuperación de perfiles mediante una respuesta de autenticación de socio, consulte la sección [Crear y recuperar perfiles mediante una respuesta de autenticación de socio](#create-and-retrieve-profile-using-partner-authentication-response).
 
 1. **Continúe con el flujo de autenticación básico:** La respuesta del extremo del asociado de sesiones contiene los siguientes datos:
    * El atributo `actionName` se ha establecido en &quot;autenticar&quot; o &quot;reanudar&quot;.
@@ -152,9 +152,9 @@ Realice los pasos dados para recuperar la solicitud de autenticación de socio c
    > 
    > Para obtener más información sobre el encabezado `AP-Partner-Framework-Status`, consulte la documentación de [AP-Partner-Framework-Status](../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md).
 
-## Recuperar perfil mediante la respuesta de autenticación del socio {#retrieve-profile-using-partner-authentication-response}
+## Crear y recuperar perfiles mediante una respuesta de autenticación de socio {#create-and-retrieve-profile-using-partner-authentication-response}
 
-### Requisitos previos {#prerequisites-retrieve-profile-using-partner-authentication-response}
+### Requisitos previos {#prerequisites-create-and-retrieve-profile-using-partner-authentication-response}
 
 Antes de recuperar el perfil mediante una respuesta de autenticación de socio, asegúrese de que se cumplan los siguientes requisitos previos:
 
@@ -169,13 +169,13 @@ Antes de recuperar el perfil mediante una respuesta de autenticación de socio, 
 > * El marco de socios admite la interacción del usuario para autenticarse con el MVPD seleccionado.
 > * El marco de socios proporciona permisos de usuario e información del proveedor.
 
-### Flujo de trabajo {#workflow-retrieve-profile-using-partner-authentication-response}
+### Flujo de trabajo {#workflow-create-and-retrieve-profile-using-partner-authentication-response}
 
 Realice los pasos dados para implementar el flujo de recuperación de perfiles mediante una respuesta de autenticación de socio como se muestra en el diagrama siguiente.
 
-![Recuperar perfil mediante la respuesta de autenticación del socio](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
+![Crear y recuperar perfiles mediante la respuesta de autenticación del socio](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
 
-*Recuperar el perfil autenticado mediante la respuesta de autenticación del socio*
+*Crear y recuperar un perfil autenticado mediante la respuesta de autenticación del socio*
 
 1. **Autenticación de MVPD completa con el marco del socio:** Si el flujo de autenticación es correcto, la interacción del marco del socio con MVPD produce una respuesta de autenticación del socio (respuesta SAML) que se devuelve junto con la información de estado del marco del socio.
 
@@ -184,11 +184,11 @@ Realice los pasos dados para implementar el flujo de recuperación de perfiles m
    * El identificador de asignación del proveedor de usuarios está presente y es válido.
    * La fecha de caducidad del perfil del proveedor de usuarios (si está disponible) es válida.
 
-1. **Recuperar el perfil mediante la respuesta de autenticación del socio:** La aplicación de flujo continuo recopila todos los datos necesarios para crear y recuperar un perfil llamando al extremo del socio de perfiles.
+1. **Cree y recupere un perfil mediante la respuesta de autenticación del socio:** La aplicación de flujo continuo recopila todos los datos necesarios para crear y recuperar un perfil llamando al extremo del socio de perfiles.
 
    >[!IMPORTANT]
    >
-   > Consulte la documentación de la API [Recuperar perfil mediante la respuesta de autenticación del socio](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) para obtener más información sobre lo siguiente:
+   > Consulte la documentación de la API [Crear y recuperar perfiles mediante la respuesta de autenticación de socio](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) para obtener más información sobre:
    >
    > * Todos los _parámetros necesarios_, como `serviceProvider`, `partner` y `SAMLResponse`
    > * Todos los _encabezados_ necesarios, como `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` y `AP-Partner-Framework-Status`
@@ -208,7 +208,7 @@ Realice los pasos dados para implementar el flujo de recuperación de perfiles m
 
    >[!IMPORTANT]
    >
-   > Consulte la documentación de la API [Recuperar perfil mediante la respuesta de autenticación del socio](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) para obtener más información sobre la información proporcionada en una respuesta de perfil.
+   > Consulte la documentación de la API [Crear y recuperar perfiles mediante la respuesta de autenticación de socio](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) para obtener más información sobre la información proporcionada en una respuesta de perfil.
    > 
    > <br/>
    > 
