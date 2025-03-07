@@ -2,7 +2,7 @@
 title: Crear y recuperar perfiles mediante una respuesta de autenticación de socio
 description: 'API de REST V2: crear y recuperar perfiles mediante la respuesta de autenticación del socio'
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 7fdfd28e2aba0d201f19dc25757bbe37cebd8ffe
 workflow-type: tm+mt
 source-wordcount: '734'
 ht-degree: 1%
@@ -272,8 +272,8 @@ ht-degree: 1%
                     <br/><br/>
                     Estos atributos pueden ser:
                     <ul>
-                        <li>Obligatorio, como "userId"</li>
-                        <li>No obligatorio, como "zip", "householdId", "maxRating", etc.</li>
+                        <li>Obligatorio, como "userID"</li>
+                        <li>No obligatorio, como "zip", "householdID", "maxRating", etc.</li>
                     </ul>
                     Los valores de los atributos pueden ser:
                     <ul>
@@ -358,11 +358,11 @@ Content-Type: application/json;charset=UTF-8
             "issuer": "Apple",
             "type": "appleSSO",
             "attributes": {
-                "userId": {
+                "userID": {
                     "value": "BASE64_value_userId",
                     "state": "plain"
                 },
-                "householdId": {
+                "householdID": {
                     "value": "BASE64_value_householdId",
                     "state": "plain"
                 },

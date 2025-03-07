@@ -2,7 +2,7 @@
 title: Recuperar perfil para código específico
 description: 'API de REST V2: recuperar el perfil de un código específico'
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 7fdfd28e2aba0d201f19dc25757bbe37cebd8ffe
 workflow-type: tm+mt
 source-wordcount: '711'
 ht-degree: 1%
@@ -240,8 +240,8 @@ ht-degree: 1%
                     <br/><br/>
                     Estos atributos pueden ser:
                     <ul>
-                        <li>Obligatorio, como "userId"</li>
-                        <li>No obligatorio, como "zip", "householdId", "maxRating", etc.</li>
+                        <li>Obligatorio, como "userID"</li>
+                        <li>No obligatorio, como "zip", "householdID", "maxRating", etc.</li>
                     </ul>
                     Los valores de los atributos pueden ser:
                     <ul>
@@ -318,21 +318,17 @@ Content-Type: application/json;charset=UTF-8
             "issuer": "Cablevision",
             "type": "regular",
             "attributes": {
-                "userId": {
+                "userID": {
                     "value": "BASE64_value_userId",
                     "state": "plain"
                 },
-                "householdId" : {
+                "householdID": {
                     "value": "BASE64_value_householdId",
                     "state": "plain"
                 },
-                "zip" : {
+                "zip": {
                     "value": "BASE64_value_zip",
                     "state": "enc"
-                },
-                "parental-controls" : {
-                    "value": BASE64_value_parental-controls,
-                    "state": "plain"
                 }
             }
         }
