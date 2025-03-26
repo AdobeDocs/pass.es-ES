@@ -2,9 +2,9 @@
 title: Guía de integración del programador
 description: Guía de integración del programador
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '2073'
+source-wordcount: '2119'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,9 @@ Para los programadores, la autenticación de Adobe Pass proporciona API como par
 
 * API de autenticación de Adobe Pass Premium:
    * [Restablecer API de pase temporal](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [Función TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
    * [API de degradación](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [Función de degradación](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
    * [API de supervisión del servicio de derechos](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### Casos de uso {#use-cases}
@@ -323,4 +325,6 @@ Para obtener más información sobre los derechos, consulte los siguientes docum
 
 * **[Tokens de medios](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md)**
 
-  Una vez que la autorización se ha realizado correctamente, la autenticación de Adobe Pass crea un token de medios (&quot;de corta duración&quot;) que se asocia a una solicitud de reproducción correcta.
+  Una vez que la autorización se ha realizado correctamente, la autenticación de Adobe Pass crea un token de medios (&quot;de corta duración&quot;) que se asocia a una solicitud de reproducción correcta y proporciona compatibilidad con las prácticas recomendadas del sector para mitigar el fraude (por ejemplo, copiar secuencias).
+
+Los valores de tiempo de vida (&quot;TTL&quot;) para perfiles y decisiones se establecen en función de los acuerdos entre programadores y proveedores de TV de pago, que acuerdan un valor que mejor sirva a todos los involucrados.
