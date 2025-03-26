@@ -2,9 +2,9 @@
 title: Recuperar perfil para mvpd específico
 description: 'API de REST V2: recuperar el perfil de mvpd específico'
 exl-id: ed1abc33-c279-4465-b5a0-b4e5b892076e
-source-git-commit: 7fdfd28e2aba0d201f19dc25757bbe37cebd8ffe
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '1016'
+source-wordcount: '1057'
 ht-degree: 1%
 
 ---
@@ -284,9 +284,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">atributos</td>
                <td>
-                    La lista de atributos de metadatos de usuario.
+                    JSON que contiene un mapa de pares de clave y valor.
                     <br/><br/>
-                    Estos atributos pueden ser:
+                    El elemento clave se define mediante atributos de metadatos de usuario y puede ser:
                     <ul>
                         <li>Obligatorio, como "userID"</li>
                         <li>No obligatorio, como "zip", "householdID", "maxRating", etc.</li>
@@ -297,6 +297,7 @@ ht-degree: 1%
                         <li>lista</li>
                         <li>asignar</li>
                     </ul>
+                    Los metadatos del usuario están disponibles una vez finalizado el flujo de autenticación, pero algunos atributos de metadatos pueden actualizarse durante el flujo de autorización, según el MVPD y el atributo de metadatos específico en cuestión.
                </td>
                <td><i>obligatorio</i></td>
             </tr>

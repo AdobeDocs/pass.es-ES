@@ -2,9 +2,9 @@
 title: Preguntas frecuentes sobre la API de REST V2
 description: Preguntas frecuentes sobre la API de REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 1795b4aba2940879f2dcb575048d553db4f0bf35
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '9072'
+source-wordcount: '9113'
 ht-degree: 0%
 
 ---
@@ -321,12 +321,14 @@ La aplicación cliente puede consultar uno de los siguientes extremos capaces de
 * [Extremo de perfiles para API de MVPD específica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
 * [Extremo de perfiles para API de código específica (autenticación)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
 
-La aplicación cliente no necesita consultar un extremo independiente para recuperar la información de metadatos del usuario, ya que ya está incluida en la información de perfil obtenida al comprobar si el usuario está autenticado.
+Los metadatos del usuario están disponibles una vez finalizado el flujo de autenticación, por lo que la aplicación cliente no necesita consultar un extremo independiente para recuperar la información de [metadatos del usuario](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md), ya que ya está incluida en la información del perfil.
 
 Para obtener más información, consulte los siguientes documentos:
 
 * [Flujo de perfiles básicos realizado dentro de la aplicación principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Flujo de perfiles básicos realizado en la aplicación secundaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+Algunos atributos de metadatos se pueden actualizar durante el flujo de autorización, según la MVPD y el atributo de metadatos específico. Como resultado, es posible que la aplicación cliente tenga que volver a consultar las API anteriores para recuperar los metadatos de usuario más recientes.
 
 #### 18. ¿Cómo debe administrar la aplicación cliente el acceso degradado? {#authentication-phase-faq18}
 

@@ -2,9 +2,9 @@
 title: Metadatos del usuario
 description: Metadatos del usuario
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '1793'
+source-wordcount: '1902'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,8 @@ ht-degree: 0%
 > El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
 Los metadatos del usuario hacen referencia a [atributos](#attributes) específicos del usuario (por ejemplo, códigos postales, clasificaciones parentales, ID de usuario, etc.) que mantienen las MVPD y que se proporcionan a los programadores mediante la autenticación de Adobe Pass [API de REST V2](#apis).
+
+Los metadatos del usuario están disponibles una vez finalizado el flujo de autenticación, pero algunos atributos de metadatos pueden actualizarse durante el flujo de autorización, según el MVPD y el atributo de metadatos específico en cuestión.
 
 Los metadatos de usuario se pueden utilizar para mejorar la personalización de los usuarios, pero también se pueden utilizar para los análisis. Por ejemplo, un programador puede utilizar el código postal de un usuario para proporcionar noticias localizadas o actualizaciones meteorológicas, o para aplicar el control parental.
 
@@ -50,7 +52,7 @@ Los atributos de metadatos de usuario disponibles para un programador dependen d
 | **Nombre formal** | n/a | `userID` | `upstreamUserID` | `householdID` | `primaryOID` | `typeID` | `is_hoh` | `hba_status` | `allowMirroring` | `zip` | `channelID` | `maxRating` | `language` | `onNet` | `inHome` |                                                                                                                                           |
 | **Requiere cifrado** | n/a | **No** | **No** | **No** | **No** | **No** | **No** | **No** | **No** | **Sí** | **No** | **No** | **No** | **No** | **No** |                                                                                                                                           |
 | **Sensible** | n/a | **No** | **No** | **No** | **No** | **No** | **No** | **No** | **No** | **Sí** | **No** | **No** | **No** | **No** | **No** |                                                                                                                                           |
-| IdP de Adobe | **Sí** | **Sí** | **Sí** | **Sí (solo AuthN)** | **Sí** | **Sí** | **Sí** | **No** | **No** | **Sí (solo AuthN)** | **Sí** | **Sí (solo AuthN)** | **No** | **No** | **No** | No se necesita un acuerdo legal. |
+| Adobe IdP | **Sí** | **Sí** | **Sí** | **Sí (solo AuthN)** | **Sí** | **Sí** | **Sí** | **No** | **No** | **Sí (solo AuthN)** | **Sí** | **Sí (solo AuthN)** | **No** | **No** | **No** | No se necesita un acuerdo legal. |
 | Synacor | **Sí** | **Sí** | **Sí** | **Sí (solo AuthN)** | **No** | **No** | **Sí** | **No** | **No** | **Sí (solo AuthN)** | **Sí** | **Sí (solo AuthN)** | **No** | **No** | **No** | Acuerdo legal que no cubre todas las MVPD proxy. Se trata de una compatibilidad genérica con Synacor y posiblemente no se acumule en todas sus MVPD. |
 | Plato | **No** | **Sí** | **Sí** | **Sí (solo AuthN)** | **No** | **No** | **No** | **No** | **No** | **Sí (solo AuthN)** | **Sí** | **Sí (solo AuthN)** | **No** | **No** | **No** | Comparte la misma lista que todas las MVPD de Synacor, además de `upstreamUserID`. |
 | Comcast | **No** | **Sí** | **Sí** | **Sí (solo AuthZ)** | **No** | **No** | **No** | **Sí** | **No** | **No** | **No** | **Sí (solo AuthZ)** | **No** | **No** | **No** |                                                                                                                                           |
@@ -168,7 +170,17 @@ Los atributos de metadatos del usuario se pueden recuperar mediante las siguient
 
 Consulte las secciones **Respuesta** y **Ejemplos** de las API anteriores para comprender la estructura de los atributos de metadatos del usuario.
 
+>[!IMPORTANT]
+>
+> Los metadatos del usuario están disponibles una vez finalizado el flujo de autenticación, por lo que la aplicación cliente no necesita consultar un extremo independiente para recuperar la información de [metadatos del usuario](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md), ya que ya está incluida en la información del perfil.
+
 Para obtener más información acerca de cómo y cuándo integrar las API anteriores, consulte los siguientes documentos:
 
 * [Flujo de perfiles básicos realizado dentro de la aplicación principal](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Flujo de perfiles básicos realizado en la aplicación secundaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+Algunos atributos de metadatos se pueden actualizar durante el flujo de autorización, según la MVPD y el atributo de metadatos específico. Como resultado, es posible que la aplicación cliente tenga que volver a consultar las API anteriores para recuperar los metadatos de usuario más recientes.
+
+>[!MORELIKETHIS]
+>
+> [Preguntas frecuentes sobre la fase de autenticación](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)
