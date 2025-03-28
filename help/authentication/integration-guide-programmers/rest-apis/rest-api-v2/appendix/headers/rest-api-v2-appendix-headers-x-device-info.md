@@ -2,9 +2,9 @@
 title: 'Encabezado: X-Device-Info'
 description: 'API de REST V2: encabezado: X-Device-Info'
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '1122'
+source-wordcount: '1133'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 ## Información general {#overview}
 
-El encabezado de la solicitud <b>X-Device-Info</b> contiene la información del cliente (dispositivo, conexión y aplicación) relacionada con el dispositivo de flujo continuo real.
+El encabezado de la solicitud <b>X-Device-Info</b> contiene la información del cliente (dispositivo, conexión y aplicación) relacionada con el dispositivo de flujo continuo real y se usa para determinar las reglas específicas de la plataforma que las MVPD pueden aplicar.
 
 ## Sintaxis {#syntax}
 

@@ -2,9 +2,9 @@
 title: Preguntas frecuentes sobre la API de REST V2
 description: Preguntas frecuentes sobre la API de REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '9113'
+source-wordcount: '9537'
 ht-degree: 0%
 
 ---
@@ -248,9 +248,18 @@ Para obtener más información, consulte los documentos [Inicio de sesión únic
 
 #### 10. ¿Qué debe hacer la aplicación cliente si el usuario tiene varios perfiles de MVPD? {#authentication-phase-faq10}
 
-Cuando el usuario tiene varios perfiles de MVPD, la aplicación cliente es la responsable de determinar el mejor método para gestionar este escenario.
+La decisión de admitir varios perfiles depende de los requisitos empresariales de la aplicación cliente.
+
+La mayoría de los usuarios solo tendrán un perfil. Sin embargo, en los casos en los que existen varios perfiles (como se detalla a continuación), la aplicación cliente es la responsable de determinar la mejor experiencia del usuario para la selección de perfiles.
 
 La aplicación cliente puede solicitar al usuario que seleccione el perfil de MVPD deseado o que realice la selección automáticamente, como elegir el primer perfil de usuario de la respuesta o el que tenga el periodo de validez más largo.
+
+La API de REST v2 admite varios perfiles para admitir:
+
+* Los usuarios que tengan que elegir entre un perfil de MVPD normal y uno obtenido mediante inicio de sesión único (SSO).
+* A los usuarios se les ofrece acceso temporal sin necesidad de cerrar la sesión de su MVPD normal.
+* Usuarios con suscripción a MVPD combinada con servicios directo al consumidor (DTC).
+* Usuarios con varias suscripciones a MVPD.
 
 #### 11. ¿Qué sucede cuando los perfiles de usuario caducan? {#authentication-phase-faq11}
 
@@ -332,9 +341,35 @@ Algunos atributos de metadatos se pueden actualizar durante el flujo de autoriza
 
 #### 18. ¿Cómo debe administrar la aplicación cliente el acceso degradado? {#authentication-phase-faq18}
 
-Dado que su organización pretende utilizar la característica [degradación](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md), la aplicación cliente debe gestionar los flujos de acceso degradados, que describen cómo se comportan los extremos de la API de REST v2 en estos escenarios.
+La [característica de degradación](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md) permite que la aplicación cliente mantenga una experiencia de transmisión perfecta para los usuarios, incluso cuando los servicios de autenticación o autorización de MVPD encuentren problemas.
+
+En resumen, esto puede garantizar el acceso ininterrumpido al contenido a pesar de las interrupciones temporales del servicio de MVPD.
+
+Dado que su organización tiene intención de utilizar la función de degradación Premium, la aplicación cliente debe gestionar los flujos de acceso degradados, que describen cómo se comportan los extremos de la API de REST v2 en estos casos.
 
 Para obtener más información, consulte la documentación de [Flujos de acceso degradados](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md).
+
+#### 19. ¿Cómo debe administrar la aplicación cliente el acceso temporal? {#authentication-phase-faq19}
+
+La característica [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) permite que la aplicación cliente proporcione acceso temporal al usuario.
+
+En resumen, esto puede atraer a los usuarios al proporcionar acceso limitado al contenido o a un número predefinido de títulos de VOD durante un período de tiempo especificado.
+
+Dado que su organización tiene intención de utilizar la función TempPass Premium, la aplicación cliente debe administrar los flujos de acceso temporales, que describen cómo se comportan los extremos de la API de REST v2 en estos casos.
+
+En versiones anteriores de la API, la aplicación cliente tenía que cerrar la sesión de un usuario autenticado con su MVPD normal para ofrecer acceso temporal.
+
+Con la API de REST v2, la aplicación cliente puede alternar sin problemas entre una MVPD normal y una MVPD TempPass al autorizar un flujo, lo que elimina la necesidad de cerrar la sesión del usuario.
+
+Para obtener más información, consulte la documentación de [Flujos de acceso temporales](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md).
+
+#### 20. ¿Cómo debe administrar la aplicación cliente el acceso de inicio de sesión único entre dispositivos? {#authentication-phase-faq20}
+
+La API de REST v2 puede habilitar el inicio de sesión único entre dispositivos si la aplicación cliente proporciona un identificador de usuario único y coherente entre dispositivos.
+
+La aplicación cliente debe generar este identificador, conocido como token de servicio, mediante la implementación o integración de un servicio de identidad externo de su elección.
+
+Para obtener más información, consulte la documentación de [Inicio de sesión único mediante flujos de token de servicio](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 +++
 
@@ -574,9 +609,15 @@ La documentación del encabezado [AP-Device-Identifier](/help/authentication/int
 >
 > En caso de que la aplicación cliente esté migrando de la API de REST V1 a la API de REST V2, la aplicación cliente puede seguir utilizando el mismo método para calcular el valor de información del dispositivo que antes.
 
-El encabezado de la solicitud [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) contiene la información del cliente (dispositivo, conexión y aplicación) relacionada con el dispositivo de flujo continuo real.
+El encabezado de la solicitud [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) contiene la información del cliente (dispositivo, conexión y aplicación) relacionada con el dispositivo de flujo continuo real y se usa para determinar las reglas específicas de la plataforma que las MVPD pueden aplicar.
 
 La documentación del encabezado [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) proporciona ejemplos para las plataformas principales sobre cómo calcular el valor, pero la aplicación cliente puede elegir utilizar un método diferente según su propia lógica y requisitos empresariales.
+
+Si falta el encabezado [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) o contiene valores incorrectos, la solicitud puede clasificarse como originada en una plataforma `unknown`.
+
+Esto puede hacer que la solicitud se trate como no segura y sujeta a reglas más restrictivas, como TTL de autenticación más cortos. Además, algunos campos, como el dispositivo de transmisión por secuencias `connectionIp` y `connectionPort`, son obligatorios para características como la [autenticación de base principal](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md) de Spectrum.
+
+Incluso cuando la solicitud se origina desde un servidor en nombre de un dispositivo, el valor del encabezado [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) debe reflejar la información real del dispositivo de flujo continuo.
 
 +++
 
