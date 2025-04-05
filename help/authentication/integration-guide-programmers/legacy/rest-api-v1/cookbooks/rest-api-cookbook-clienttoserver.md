@@ -2,9 +2,9 @@
 title: Guía de la API de REST (de cliente a servidor)
 description: Rest API cookbook de cliente a servidor.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ Adobe Pass utiliza DCR para proteger las comunicaciones de cliente entre una apl
 
 1. Obtenga un código de registro y una URL para que el usuario utilice para acceder a la aplicación de inicio de sesión en la segunda pantalla y preséntele al usuario lo siguiente:
 
-   a. Envíe una solicitud de POST al Servicio de código de registro de Adobe, pasando un ID de dispositivo con hash y una &quot;URL de registro&quot;.  Por ejemplo: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+   a. Envíe una petición POST al servicio Adobe Registration Code, pasando un ID de dispositivo con hash y una &quot;URL de registro&quot;.  Por ejemplo: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
 
    b. Presente el código de registro devuelto y la dirección URL al usuario.
 
@@ -140,7 +140,6 @@ Algunos dispositivos proporcionan compatibilidad dedicada para el inicio de sesi
 Algunos dispositivos proporcionan compatibilidad dedicada para el inicio de sesión único (SSO) de Platform:
 
 * [AMAZON SSO](../../sso-access/amazon-sso-cookbook-rest-api-v1.md)
-* [Roku SSO](../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
 
 ## TempPass y TempPass promocional para la API de REST {#temppass}
 
