@@ -2,9 +2,9 @@
 title: Recuperar perfil para mvpd específico
 description: 'API de REST V2: recuperar el perfil de mvpd específico'
 exl-id: ed1abc33-c279-4465-b5a0-b4e5b892076e
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '1057'
+source-wordcount: '1060'
 ht-degree: 1%
 
 ---
@@ -96,9 +96,9 @@ ht-degree: 1%
       <td>opcional</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>o<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a>.
+        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
         <br/><br/>
         Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan una identidad de plataforma, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Inicio de sesión único mediante flujos de identidad de plataforma</a>.
       </td>

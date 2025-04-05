@@ -2,9 +2,9 @@
 title: Iniciar el cierre de sesión de un mvpd específico
 description: 'API de REST V2: iniciar el cierre de sesión para un mvpd específico'
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1009'
 ht-degree: 1%
 
 ---
@@ -60,7 +60,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        Dirección URL de redireccionamiento final a la que se desplaza el agente de usuario cuando finaliza el flujo de cierre de sesión de la MVPD.
+        La URL de redireccionamiento final a la que se desplaza el agente de usuario cuando se completa el flujo de cierre de sesión de MVPD.
         <br/><br/>
         El valor debe tener codificación URL.
       </td>
@@ -106,9 +106,9 @@ ht-degree: 1%
       <td>opcional</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>o<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
+        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
         <br/><br/>
         Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan una identidad de plataforma, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Inicio de sesión único mediante flujos de identidad de plataforma</a>.
       </td>
@@ -238,10 +238,10 @@ ht-degree: 1%
                   <br/><br/>
                   Los valores posibles son:
                   <ul>
-                    <li><b>cierre de sesión</b><br/>El dispositivo de flujo continuo debe abrir la dirección URL proporcionada en un agente de usuario.<br/>Esta acción se aplica a los siguientes escenarios: cierre la sesión de MVPD con un punto final de cierre de sesión.</li>
+                    <li><b>cierre de sesión</b><br/>El dispositivo de flujo continuo debe abrir la dirección URL proporcionada en un agente de usuario.<br/>Esta acción se aplica a los siguientes escenarios: cierre la sesión de MVPD con un extremo de cierre de sesión.</li>
                     <li><b>partner_logout</b><br/>El dispositivo de transmisión debe informar al usuario que cierre la sesión desde el nivel de socio (sistema) también.<br/>Esta acción se aplica a los siguientes escenarios: cierre la sesión de MVPD cuando el tipo de perfil sea "appleSSO".</li>
-                    <li><b>completado</b><br/>El dispositivo de transmisión por secuencias no necesita realizar ninguna acción posterior.<br/>Esta acción se aplica a los siguientes escenarios: cierre la sesión de MVPD sin un punto final de cierre de sesión (función de cierre de sesión ficticio), cierre la sesión durante el acceso degradado o cierre la sesión durante el acceso temporal.</li>
-                    <li><b>no válido</b><br/>El dispositivo de transmisión por secuencias no necesita realizar ninguna acción posterior.<br/>Esta acción se aplica a los siguientes escenarios: cierre la sesión de MVPD cuando no se encuentre ningún perfil válido.</li>
+                    <li><b>completado</b><br/>El dispositivo de transmisión por secuencias no necesita realizar ninguna acción posterior.<br/>Esta acción se aplica a los siguientes casos: cierre la sesión de MVPD sin un extremo de cierre de sesión (característica de cierre de sesión ficticio), cierre la sesión durante el acceso degradado o cierre la sesión durante el acceso temporal.</li>
+                    <li><b>no válido</b><br/>El dispositivo de transmisión por secuencias no necesita realizar ninguna acción posterior.<br/>Esta acción se aplica a los siguientes casos: cierre la sesión de MVPD cuando no se encuentre ningún perfil válido.</li>
                   </ul>  
                <td><i>obligatorio</i></td>
             </tr>
@@ -394,7 +394,7 @@ Content-Type: application/json;charset=UTF-8
 >
 > <br/>
 >
-> * MVPD tiene un punto final de cierre de sesión.
+> * MVPD está teniendo un punto final de cierre de sesión.
 
 >[!BEGINTABS]
 
@@ -440,7 +440,7 @@ Content-Type: application/json;charset=UTF-8
 >
 > <br/>
 >
-> * MVPD tiene un punto final de cierre de sesión.
+> * MVPD está teniendo un punto final de cierre de sesión.
 
 >[!BEGINTABS]
 

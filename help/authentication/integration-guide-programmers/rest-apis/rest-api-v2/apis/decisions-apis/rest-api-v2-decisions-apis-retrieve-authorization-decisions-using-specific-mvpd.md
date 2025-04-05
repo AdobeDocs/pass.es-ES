@@ -2,9 +2,9 @@
 title: Recuperar decisiones de autorización utilizando mvpd específico
 description: 'API REST V2: Recupere decisiones de autorización utilizando mvpd específico'
 exl-id: e8889395-4434-4bec-a212-a8341bb9c310
-source-git-commit: 27aaa0d3351577e60970a4035b02d814f0a17e2f
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '927'
 ht-degree: 1%
 
 ---
@@ -84,7 +84,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
       <td>La generación de la carga del identificador de dispositivo se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>.</td>
-      <td><i>obligatorio</i></td>
+      <td><i>Obligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
@@ -102,18 +102,14 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         La dirección IP del dispositivo de flujo continuo.
-         <br/><br/>
-         Se recomienda utilizarlo siempre para implementaciones de servidor a servidor, especialmente cuando la llamada la realice el servicio del programador en lugar del dispositivo de flujo continuo.
-         <br/><br/>
-         Para implementaciones de cliente a servidor, la dirección IP del dispositivo de flujo continuo se envía implícitamente.
+         Dirección IP del dispositivos de flujo continuo.         <br/><br/>Se recomienda encarecidamente usarlo siempre para implementaciones de servidor a servidor, especialmente cuando la llamada la realiza el servicio de programación en lugar de la dispositivos de transmisión.         <br/><br/>Para las implementaciones de cliente a servidor, la dirección IP del dispositivos de flujo continuo se envía implícitamente.
       </td>
       <td>opcional</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe Systems-subject-token<br/>o<br/>x-roku-reserved-roku-connect-token</td>
       <td>
-        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a>.
+        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
         <br/><br/>
         Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan una identidad de plataforma, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Inicio de sesión único mediante flujos de identidad de plataforma</a>.
       </td>
@@ -129,11 +125,9 @@ ht-degree: 1%
       <td>opcional</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
+      <td style="background-color: #DEEBFF;">AP-Partner-Framework-Estado</td>
       <td>
-        La generación de la carga de inicio de sesión único para el método Partner se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">documentación del encabezado AP-Partner-Framework-Status</a>.
-        <br/><br/>
-        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que usan un socio, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Inicio de sesión único con flujos de socios</a>.</td>
+        La generación de la carga útil de inicio de sesión único para el método Partner se describe en la documentación del <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">encabezado AP-Partner-Framework-Estado</a> .        <br/><br/>Para obtener más detalles sobre inicio de sesión único flujos habilitados mediante un socio, consulte la documentación sobre el  <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">inicio de sesión único mediante flujos</a> de socio.</td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -144,14 +138,12 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Aceptar</td>
       <td>
-         El tipo de medio aceptado por la aplicación cliente.
-         <br/><br/>
-         Si se especifica, debe ser application/json.
+         El tipo medios aceptado por el cliente aplicación.         <br/><br/>Si se especifica, debe ser aplicación/json.
       </td>
       <td>opcional</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">User-Agent</td>
+      <td style="background-color: #DEEBFF;">Agente de usuario</td>
       <td>El agente de usuario de la aplicación cliente.</td>
       <td>opcional</td>
    </tr>
@@ -228,7 +220,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">decisiones</td>
       <td>
-         JSON que contiene una lista de elementos, cada uno con los siguientes atributos:
+         JSON contiene una lista de elementos, cada elemento con los siguientes atributos:
          <table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Atributo</th>
@@ -262,23 +254,21 @@ ht-degree: 1%
                   <br/><br/>
                   Los valores posibles son:
                   <ul>
-                    <li><b>mvpd</b><br/>La decisión es emitida por el extremo de autorización de MVPD.</li>
-                    <li><b>degradación</b><br/>La decisión se emite como resultado del acceso degradado.</li>
-                    <li>La decisión <b>temppass</b><br/>se ha emitido como resultado del acceso temporal.</li>
-                    <li><b>dummy</b><br/>La decisión se emite como resultado de la función de autorización de dummy.</li>
+                    <li><b>La decisión de mvpd</b><br/>es emitida por el punto final de autorización de MVPD.</li>
+                    <li><b>La</b><br/>decisión de degradación se emite como resultado de un acceso degradado.</li>
+                    <li><b>La decisión temppass</b><br/>se emite como resultado del acceso temporal.</li>
+                    <li><b>La decisión ficticia</b><br/>se emite como resultado de la función de autorización ficticia.</li>
                   </ul>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">token</td>
                <td>
-                  Información sobre el token de medios.
-                  <br/><br/>
-                  El objeto JSON tiene los atributos siguientes:
+                  Información sobre medios token.                  <br/><br/>objeto JSON con los siguientes atributos:
                   <ul>
-                    <li><b>notBefore</b><br/>Marca de tiempo antes de la cual el token de medios no es válido.</li>
+                    <li><b>notBefore</b><br/>La marca de tiempo antes de la cual no es válido el token de medios.</li>
                     <li><b>notAfter</b><br/>Marca de tiempo después de la cual el token de medios no es válido.</li>
-                    <li><b>serializedToken</b><br/>El token multimedia codificado en Base64.</li>
+                    <li><b>serializedToken</b><br/>Token de medios codificado en Base64.</li>
                   </ul>
                <td>opcional</td>
             </tr>

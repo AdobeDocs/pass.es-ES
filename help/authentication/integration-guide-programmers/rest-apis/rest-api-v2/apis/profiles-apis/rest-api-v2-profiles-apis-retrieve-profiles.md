@@ -2,9 +2,9 @@
 title: Recuperación de perfiles
 description: 'API de REST V2: recuperar perfiles'
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '868'
 ht-degree: 1%
 
 ---
@@ -62,9 +62,9 @@ ht-degree: 1%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
-      <td>La generación de la carga del identificador de dispositivo se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>.</td>
-      <td><i>obligatorio</i></td>
+      <td style="background-color: #DEEBFF;">Identificador de dispositivo AP</td>
+      <td>La generación de la carga útil del identificador de dispositivos se describe en la documentación del <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">encabezado AP-Device-Identifier</a> .</td>
+      <td><i>Obligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
@@ -74,26 +74,21 @@ ht-degree: 1%
          Se recomienda utilizarlo siempre que la plataforma de dispositivos de la aplicación permita la provisión explícita de valores válidos.
          <br/><br/>
          Cuando se proporciona, el backend de autenticación de Adobe Pass combina explícitamente los valores establecidos con los valores extraídos implícitamente (de forma predeterminada).
-         <br/><br/>
-         Cuando no se proporciona, el backend de autenticación de Adobe Pass utilizará valores extraídos implícitamente (de forma predeterminada).
+         <br/><br/>Cuando no se proporciona, el Adobe Pass Authentication back-end utilizará valores extraídos implícitamente (de forma predeterminada).
       </td>
-      <td><i>obligatorio</i></td>
+      <td><i>Obligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         La dirección IP del dispositivo de flujo continuo.
-         <br/><br/>
-         Se recomienda utilizarlo siempre para implementaciones de servidor a servidor, especialmente cuando la llamada la realice el servicio del programador en lugar del dispositivo de flujo continuo.
-         <br/><br/>
-         Para implementaciones de cliente a servidor, la dirección IP del dispositivo de flujo continuo se envía implícitamente.
+         Dirección IP del dispositivos de flujo continuo.         <br/><br/>Se recomienda encarecidamente usarlo siempre para implementaciones de servidor a servidor, especialmente cuando la llamada la realiza el servicio de programación en lugar de la dispositivos de transmisión.         <br/><br/>Para las implementaciones de cliente a servidor, la dirección IP del dispositivos de flujo continuo se envía implícitamente.
       </td>
       <td>opcional</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>o<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a>.
+        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
         <br/><br/>
         Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan una identidad de plataforma, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Inicio de sesión único mediante flujos de identidad de plataforma</a>.
       </td>
@@ -213,7 +208,7 @@ ht-degree: 1%
                <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">mvpd</td>
+               <td style="background-color: #DEEBFF;">MVPD</td>
                <td>El identificador único interno asociado con el proveedor de identidad durante el proceso de incorporación.</td>
                <td><i>obligatorio</i></td>
             </tr>
@@ -227,12 +222,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>La marca de tiempo antes de la cual el perfil no es válido.</td>
-               <td><i>obligatorio</i></td>
+               <td>La marca de fecha y hora ante la cual no es válida la perfil.</td>
+               <td><i>Obligatorio</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>La marca de tiempo después de la cual el perfil no es válido.</td>
+               <td>La marca de fecha y hora después de la cual la perfil no es válida.</td>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
@@ -246,10 +241,10 @@ ht-degree: 1%
                     <li><b>Apple</b><br/>El perfil se creó como resultado de: inicio de sesión único con Apple de socio.</li>
                   </ul>
                </td>
-               <td><i>obligatorio</i></td>
+               <td><i>Obligatorio</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">type</td>
+               <td style="background-color: #DEEBFF;">tipo</td>
                <td>
                   El tipo de perfil.
                   <br/><br/>
@@ -257,16 +252,15 @@ ht-degree: 1%
                   <ul>
                     <li><b>regular</b><br/>El perfil se creó como resultado de: autenticación básica.</li>
                     <li><b>appleSSO</b><br/>El perfil se creó como resultado de: inicio de sesión único con Apple de socio.</li>
-                    <li><b>platformSSO</b><br/>El perfil se creó como resultado de: inicio de sesión único mediante la identidad de la plataforma.</li>
-                    <li><b>serviceTokenSSO</b><br/>El perfil se creó como resultado de: inicio de sesión único mediante el token de servicio.</li>
+                    <li><b>platformSSO</b><br/>El perfil se creó como resultado de: inicio de sesión único utilizar la identidad de plataforma.</li>
+                    <li><b>serviceTokenSSO</b><br/>El perfil se creó como resultado de: inicio de sesión único utilizando el token de servicio.</li>
                   </ul>
-               <td><i>obligatorio</i></td>
+               <td><i>Obligatorio</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">atributos</td>
+               <td style="background-color: #DEEBFF;">Atributos</td>
                <td>
-                    JSON que contiene un mapa de pares de clave y valor.
-                    <br/><br/>
+                    JSON que contiene un mapa de clave, pares de valor.                    <br/><br/>
                     El elemento clave se define mediante atributos de metadatos de usuario y puede ser:
                     <ul>
                         <li>Obligatorio, como "userID"</li>

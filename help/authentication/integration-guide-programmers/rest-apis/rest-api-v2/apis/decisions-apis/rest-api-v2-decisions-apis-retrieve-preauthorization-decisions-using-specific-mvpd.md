@@ -2,9 +2,9 @@
 title: Recuperar decisiones de preautorización utilizando mvpd específico
 description: 'API REST V2: Recupere decisiones de preautorización utilizando mvpd específico'
 exl-id: 8647e4fb-00b6-45cd-b81b-d00618b2e08b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '792'
 ht-degree: 1%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+> El implementación de la API de REST V2 está delimitado por la documentación sobre el mecanismo](/help/authentication/integration-guide-programmers/throttling-mechanism.md) de [limitación.
 
-## Solicitud {#request}
+## Pedir {#request}
 
 <table style="table-layout:auto">
    <tr>
@@ -34,7 +34,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">método</td>
-      <td>POST</td>
+      <td>PUBLICAR</td>
       <td></td>
    </tr>
    <tr>
@@ -89,15 +89,9 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La generación de la carga de información del dispositivo se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">documentación del encabezado X-Device-Info</a>.
-         <br/><br/>
-         Se recomienda utilizarlo siempre que la plataforma de dispositivos de la aplicación permita la provisión explícita de valores válidos.
-         <br/><br/>
-         Cuando se proporciona, el backend de autenticación de Adobe Pass combina explícitamente los valores establecidos con los valores extraídos implícitamente (de forma predeterminada).
-         <br/><br/>
-         Cuando no se proporciona, el backend de autenticación de Adobe Pass utilizará valores extraídos implícitamente (de forma predeterminada).
+         La generación de la carga útil de información de dispositivos se describe en la documentación del <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">encabezado X-Device-Info</a> .         <br/><br/>Se recomienda encarecidamente utilizarlo siempre cuando la plataforma de dispositivos del aplicación permita la provisión explícita de valores válidos.         <br/><br/>Cuando se proporciona, el Adobe Pass Authentication back-end combinará valores establecidos explícitamente con valores extraídos implícitamente (de forma predeterminada).         <br/><br/>Cuando no se proporciona, el Adobe Pass Authentication back-end utilizará valores extraídos implícitamente (de forma predeterminada).
       </td>
-      <td><i>obligatorio</i></td>
+      <td><i>Obligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
@@ -111,9 +105,9 @@ ht-degree: 1%
       <td>opcional</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>o<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
+        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
         <br/><br/>
         Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan una identidad de plataforma, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Inicio de sesión único mediante flujos de identidad de plataforma</a>.
       </td>
@@ -131,16 +125,13 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        La generación de la carga de inicio de sesión único para el método Partner se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">documentación del encabezado AP-Partner-Framework-Status</a>.
-        <br/><br/>
-        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que usan un socio, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Inicio de sesión único con flujos de socios</a>.</td>
+        La generación de la carga útil de inicio de sesión único para el método Partner se describe en la documentación del <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">encabezado AP-Partner-Framework-Estado</a> .        <br/><br/>Para obtener más detalles sobre inicio de sesión único flujos habilitados mediante un socio, consulte la documentación sobre el  <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">inicio de sesión único mediante flujos</a> de socio.</td>
       <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Aceptar</td>
       <td>
-         El tipo de medio aceptado por la aplicación cliente.
-         <br/><br/>
+         El tipo medios aceptado por el cliente aplicación.         <br/><br/>
          Si se especifica, debe ser application/json.
       </td>
       <td>opcional</td>
@@ -164,7 +155,7 @@ ht-degree: 1%
       <td>200</td>
       <td>OK</td>
       <td>
-        El cuerpo de respuesta contiene una lista de decisiones con información adicional.
+        El cuerpo de la respuesta contiene una lista de decisiones con información adicional.
       </td>
    </tr>
       <tr>
@@ -233,12 +224,12 @@ ht-degree: 1%
             <tr>
                 <td style="background-color: #DEEBFF;">resource</td>
                 <td>El identificador de recurso para el que se devuelve la decisión de preautorización.</td>
-                <td><i>obligatorio</i></td>
+                <td><i>Obligatorio</i></td>
             </tr>
             <tr>
-                <td style="background-color: #DEEBFF;">serviceProvider</td>
-                <td>El identificador único interno asociado con el proveedor de servicios durante el proceso de incorporación.</td>
-                <td><i>obligatorio</i></td>
+                <td style="background-color: #DEEBFF;">Proveedor de servicios</td>
+                <td>El identificador único interno asociado al proveedor de servicios durante el proceso de incorporación.</td>
+                <td><i>Obligatorio</i></td>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">mvpd</td>
@@ -257,21 +248,21 @@ ht-degree: 1%
                   <br/><br/>
                   Los valores posibles son:
                   <ul>
-                    <li><b>mvpd</b><br/>La decisión la emite el extremo de preautorización de MVPD.</li>
+                    <li><b>mvpd</b><br/>La decisión es emitida por el extremo de preautorización de MVPD.</li>
                     <li><b>degradación</b><br/>La decisión se emite como resultado del acceso degradado.</li>
                     <li>La decisión <b>temppass</b><br/>se ha emitido como resultado del acceso temporal.</li>
-                    <li><b>Dummy</b><br/>La decisión se emite como resultado de la función de preautorización de Dummy.</li>
+                    <li><b>La decisión ficticia</b><br/>se emite como resultado de la función de autorización previa ficticia.</li>
                   </ul>
-               <td><i>obligatorio</i></td>
+               <td><i>Obligatorio</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">error</td>
-               <td>El error proporciona información adicional sobre la decisión "Denegar" que se adhiere a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
+               <td>El error proporciona información adicional sobre la decisión "Denegar" que se adhiere a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">los códigos</a> de Error mejorados.</td>
                <td>opcional</td>
             </tr>
          </table>
       </td>
-      <td><i>obligatorio</i></td>
+      <td><i>Obligatorio</i></td>
 </table>
 
 ### Error {#error}
