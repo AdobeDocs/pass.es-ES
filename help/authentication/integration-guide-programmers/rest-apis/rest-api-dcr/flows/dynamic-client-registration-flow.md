@@ -2,9 +2,9 @@
 title: Flujo de registro de cliente dinámico
 description: Flujo de registro de cliente dinámico
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '564'
 ht-degree: 0%
 
 ---
@@ -70,7 +70,7 @@ Siga los pasos dados para acceder a las API protegidas por Adobe Pass como se mu
 
    >[!TIP]
    >
-   > Sugerencia: Las credenciales del cliente deben almacenarse en caché y pueden utilizarse indefinidamente.
+   > Las credenciales del cliente deben almacenarse en caché y utilizarse indefinidamente.
 
 1. **Recuperar token de acceso:** La aplicación cliente recopila todos los datos necesarios para recuperar el token de acceso llamando al extremo del token de cliente.
 
@@ -100,7 +100,7 @@ Siga los pasos dados para acceder a las API protegidas por Adobe Pass como se mu
 
    >[!TIP]
    >
-   > Sugerencia: El token de acceso debe almacenarse en caché y utilizarse solo dentro de la duración especificada (por ejemplo, un tiempo de vida de 24 horas). Una vez caducado, la aplicación cliente debe solicitar un nuevo token de acceso.
+   > El token de acceso solo debe almacenarse en caché y utilizarse durante el tiempo especificado (por ejemplo, un período de vida de 24 horas). Una vez caducado, la aplicación cliente debe solicitar un nuevo token de acceso.
 
 1. **Continúe con el acceso a las API protegidas:** La aplicación cliente utiliza el token de acceso para acceder a otras API protegidas por Adobe Pass. La aplicación cliente debe incluir el token de acceso en el encabezado de solicitud `Authorization` mediante el esquema de autenticación `Bearer` (es decir, `Authorization: Bearer <access_token>`).
 

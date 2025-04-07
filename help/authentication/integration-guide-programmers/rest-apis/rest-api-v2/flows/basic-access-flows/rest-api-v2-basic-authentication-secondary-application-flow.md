@@ -2,9 +2,9 @@
 title: Autenticación básica - Aplicación secundaria - Flujo
 description: 'API de REST V2: autenticación básica: aplicación secundaria: flujo'
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '2010'
+source-wordcount: '2006'
 ht-degree: 0%
 
 ---
@@ -143,7 +143,7 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
 
    >[!TIP]
    >
-   > Sugerencia: la aplicación secundaria puede informar a los usuarios de que el `code` utilizado no es válido en caso de una respuesta de error que indique que falta una sesión de autenticación y aconsejarles que lo reintenten usando uno nuevo.
+   > La aplicación secundaria puede informar a los usuarios de que el `code` utilizado no es válido en caso de una respuesta de error que indique que falta una sesión de autenticación y aconsejarles que vuelvan a intentarlo con una nueva.
 
 1. **Abrir URL en el agente de usuario:** La aplicación secundaria abre un agente de usuario para cargar el elemento autocalculado `url`, realizando una solicitud al extremo Authenticate. Este flujo puede incluir varias redirecciones, lo que finalmente lleva al usuario a la página de inicio de sesión de MVPD y proporciona credenciales válidas.
 
@@ -168,7 +168,7 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
 
    >[!TIP]
    >
-   > Sugerencia: la aplicación de streaming puede implementar un mecanismo de sondeo usando `code` para comprobar si el perfil regular se generó y guardó correctamente.
+   > La aplicación de streaming debe implementar un mecanismo de sondeo usando `code` para comprobar si el perfil regular se generó y guardó correctamente.
 
 1. **Devuelve información sobre el perfil normal:** La respuesta del extremo de perfiles contiene información sobre el perfil normal asociado a los parámetros y encabezados recibidos.
 
@@ -277,7 +277,7 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
 
    >[!TIP]
    >
-   > Sugerencia: la aplicación secundaria puede informar a los usuarios de que el `code` utilizado no es válido en caso de una respuesta de error que indique que falta una sesión de autenticación y aconsejarles que lo reintenten usando uno nuevo.
+   > La aplicación secundaria puede informar a los usuarios de que el `code` utilizado no es válido en caso de una respuesta de error que indique que falta una sesión de autenticación y aconsejarles que vuelvan a intentarlo con una nueva.
 
 1. **Indique el perfil existente:** La respuesta del extremo de sesiones contiene los siguientes datos:
    * El atributo `actionName` está establecido en &quot;authorize&quot;.
@@ -306,7 +306,7 @@ Siga los pasos dados para implementar el flujo de autenticación básico realiza
 
    >[!TIP]
    >
-   > Sugerencia: la aplicación de streaming puede implementar un mecanismo de sondeo usando `code` para comprobar si el perfil regular se generó y guardó correctamente.
+   > La aplicación de streaming debe implementar un mecanismo de sondeo usando `code` para comprobar si el perfil regular se generó y guardó correctamente.
 
 1. **Devuelve información sobre el perfil normal:** La respuesta del extremo de perfiles contiene información sobre el perfil normal asociado a los parámetros y encabezados recibidos.
 

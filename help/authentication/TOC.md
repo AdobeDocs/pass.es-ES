@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '1257'
+source-wordcount: '1251'
 ht-degree: 2%
 
 ---
@@ -55,11 +55,11 @@ ht-degree: 2%
 + Guía De Integración Para Programadores {#integration-guide-programmers}
    + [Guía de integración del programador](integration-guide-programmers/programmer-integration-guide-overview.md)
    + [Requisitos mínimos del sistema](integration-guide-programmers/minimum-system-requirements.md)
-   + [Mecanismo de estrangulamiento](integration-guide-programmers/throttling-mechanism.md)
+   + [Mecanismo de limitación](integration-guide-programmers/throttling-mechanism.md)
    + API de REST {#rest-apis}
       + DCR API REST {#rest-api-dcr}
-         + [Información general sobre el registro de clientes dinámicos](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
-         + [Glosario de registro de clientes dinámicos](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
+         + [Información general sobre el registro dinámico de clientes](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+         + [Glosario de registro dinámico de clientes](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
          + [Preguntas frecuentes sobre el registro de cliente dinámico](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
          + API {#rest-api-dcr-apis}
             + [Recuperar credenciales de cliente](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
@@ -68,8 +68,8 @@ ht-degree: 2%
             + [Flujo de registro de cliente dinámico](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
       + API DE REST V2 {#rest-api-v2}
          + [Información general de la API REST 2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
-         + [Lista de comprobación de API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
          + [Glosario de la API de REST 2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
+         + [Lista de comprobación de API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
          + [Preguntas frecuentes sobre la API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)
          + API {#rest-api-v2-apis}
             + [Información general sobre las API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
@@ -160,16 +160,16 @@ ht-degree: 2%
          + [Uso del Experience Cloud ID en la autenticación de Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
    + Heredado {#legacy}
       + API de REST (heredada) 1 {#rest-api-v1}
-         + [(Elementos heredados) Información general sobre la API de REST V1](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
-         + [(Elementos heredados) Referencia de la API de REST V1](integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
-         + (Elementos heredados) Apis {#rest-api-v1-apis}
-            + [(Elementos heredados) Solicitud de Code de registro](integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
-            + [(Elementos heredados) Registro de registro de devolución](integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md)
-            + [(Elementos heredados) Registro Eliminar](integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md)
-            + [(Elementos heredados) Proporcionar lista MVPD](integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
-            + [(Elementos heredados) Iniciar Authentication](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)
-            + [(Elementos heredados) Compruebe Authentication token](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md)
-            + [(Elementos heredados) Recuperar token Authentication](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
+         + [Información general sobre la API de REST V1 (heredada)](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
+         + [Referencia de la API de REST V1 (heredada)](integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+         + API (heredadas) {#rest-api-v1-apis}
+            + [Solicitud de código de registro (heredado)](integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+            + [Registro de registro de devolución (heredado)](integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md)
+            + [(Heredado) Eliminar registro](integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md)
+            + [(Heredado) Proporcionar lista de MVPD](integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
+            + [(Heredado) Iniciar autenticación](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)
+            + [(Heredado) Comprobar token de autenticación](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md)
+            + [(Heredado) Recuperar token de autenticación](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
             + [(Heredado) Iniciar autorización](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authorization.md)
             + [(Heredado) Recuperar token de autorización](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authorization-token.md)
             + [(Heredado) Obtener un token de medios corto](integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md)
@@ -210,26 +210,26 @@ ht-degree: 2%
                + [Registro de aplicaciones de Android (heredadas)](integration-guide-programmers/legacy/sdks/android-sdk/android-application-registration.md)
                + [(Heredado) Android SDK con registro de cliente dinámico](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-with-dynamic-client-registration.md)
          + (Heredado) FireOS SDK {#fireos-sdk}
-            + [(Elementos heredados) Descripción general técnica de Amazon FireOS](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-technical-overview.md)
-            + [(Elementos heredados) Amazon Manual de Integración de FireOS](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-integration-cookbook.md)
-            + [(Elementos heredados) Amazon Referencia de la API de FireOS](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
-            + [(Elementos heredados) Amazon Registro de aplicaciones FireOS](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-application-registration.md)
-            + [(Elementos heredados) SDK de FireOS con registro de cliente dinámico](integration-guide-programmers/legacy/sdks/fireos-sdk/fireos-sdk-with-dynamic-client-registration.md)
+            + [Información general técnica de Amazon FireOS (heredado)](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-technical-overview.md)
+            + [Guía de integración de Amazon FireOS (heredada)](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-integration-cookbook.md)
+            + [Referencia de la API de Amazon FireOS (heredada)](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
+            + [(Heredado) Registro de aplicaciones de Amazon FireOS](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-application-registration.md)
+            + [(Heredado) FireOS SDK con registro de cliente dinámico](integration-guide-programmers/legacy/sdks/fireos-sdk/fireos-sdk-with-dynamic-client-registration.md)
             + [(Heredado) Amazon FireOS SSO: guía de inicio del programador](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-firetv-sso-programmer-kickoff-guide.md)
       + Información de cliente (heredada) {#client-information}
          + [(Heredado) Pasar información del cliente (dispositivo, conexión y aplicación)](integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)
-      + (Elementos heredados) Informes Error {#error-reporting}
-         + [(Elementos heredados) Error sistema de informes](integration-guide-programmers/legacy/error-reporting/error-reporting.md)
-      + (Elementos heredados) Acceso de inicio de sesión único {#sso-access}
-         + [(Elementos heredados) Soporte de inicio de sesión único](integration-guide-programmers/legacy/sso-access/sso-support.md)
-         + [(Elementos heredados) SSO mediante autenticación pasiva](integration-guide-programmers/legacy/sso-access/sso-passive-authn.md)
-         + [(Elementos heredados) Guía de SSO de Amazon (API de REST v1)](integration-guide-programmers/legacy/sso-access/amazon-sso-cookbook-rest-api-v1.md)
-         + [(Elementos heredados) Manual de inicio de sesión único de Apple (API de REST V1)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)
-         + [(Elementos heredados) Apple SSO Cookbook (iOS/tvOS SDK)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)
-      + (Elementos heredados) Tablero de control de TVE {#tve-dashboard}
-         + [(Elementos heredados) Tablero de control de TVE usuario guía](integration-guide-programmers/legacy/tve-dashboard/tve-dashboard-user-guide.md)
-      + (Elementos heredados) Notas técnicas {#tech-notes}
-         + (Elementos heredados) REST API V1 {#rest-api-v1}
+      + Informes de errores (heredados) {#error-reporting}
+         + [Informes de errores (heredados)](integration-guide-programmers/legacy/error-reporting/error-reporting.md)
+      + (Heredado) Acceso de inicio de sesión único {#sso-access}
+         + [(Heredado) Compatibilidad con inicio de sesión único](integration-guide-programmers/legacy/sso-access/sso-support.md)
+         + [(Heredado) SSO mediante autenticación pasiva](integration-guide-programmers/legacy/sso-access/sso-passive-authn.md)
+         + [Guía de Amazon SSO (heredada) (API de REST V1)](integration-guide-programmers/legacy/sso-access/amazon-sso-cookbook-rest-api-v1.md)
+         + [Guía de Apple SSO (heredada) (API de REST V1)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)
+         + [Guía de SSO de Apple (heredada) (iOS/tvOS SDK)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)
+      + Panel de TVE (heredado) {#tve-dashboard}
+         + [Guía del usuario del Tablero de TVE (heredado)](integration-guide-programmers/legacy/tve-dashboard/tve-dashboard-user-guide.md)
+      + Notas técnicas (heredadas) {#tech-notes}
+         + API de REST (heredada) 1 {#rest-api-v1}
             + [Implementación de API sin cliente (heredada): códigos de error/mensajes con motivo/causa probable](integration-guide-programmers/legacy/notes-technical/clientless-api-implementation-error-codes-messages-with-probable-reason-cause.md)
             + [(Heredado) Flujo de API sin cliente en ausencia de ID de dispositivo](integration-guide-programmers/legacy/notes-technical/clientless-api-flow-in-the-absence-of-device-id.md)
             + [(Heredado) Sin cliente: Evite utilizar &#39;&amp;&#39;reg_code en la solicitud /authentication](integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
@@ -251,7 +251,6 @@ ht-degree: 2%
                + [(Heredado) Compatibilidad con SFSafariViewController en iOS SDK 3.2+](integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)
                + [(Heredado) SSO en iOS al utilizar el Habilitador de acceso a autenticación de Adobe Pass](integration-guide-programmers/legacy/notes-technical/sso-on-ios-when-using-the-primetime-authentication-access-enabler.md)
                + [(Heredado) Error de autenticación de iOS: no se encuentra adobepass.ios.app](integration-guide-programmers/legacy/notes-technical/ios-authentication-error-adobepassiosapp-cannot-be-found.md)
-               + [(Heredado) Restablecer pase temporal en iOS](integration-guide-programmers/legacy/notes-technical/reset-temp-pass-on-ios.md)
                + [(Heredado) Depuración de AccessEnabler iOS/tvOS SDK mediante registros de aplicaciones de consola](integration-guide-programmers/legacy/notes-technical/debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
                + [Ruta de actualización de AccessEnabler iOS/tvOS 3.7.0 (heredado)](integration-guide-programmers/legacy/notes-technical/accessenabler-iostvos-370-upgrade-path.md)
          + Experiencia del usuario (heredada) {#user-experience}
@@ -270,17 +269,17 @@ ht-degree: 2%
    + [Autorización](integration-guide-mvpds/authz-usecase.md)
    + [Autorización de verificación previa](integration-guide-mvpds/mvpd-preflight-authz.md)
    + [Cierre de sesión de MVPD](integration-guide-mvpds/usecase-mvpd-logout.md)
-   + [Intercambio de contenido metadatos](integration-guide-mvpds/mvpd-content-metadata-exchange.md)
+   + [Intercambio de metadatos de contenido](integration-guide-mvpds/mvpd-content-metadata-exchange.md)
    + [Intercambio de metadatos de usuario](integration-guide-mvpds/mvpd-user-metadata-exchng.md)
    + [Servicio web Proxy MVPD](integration-guide-mvpds/proxy-mvpd-webserv.md)
-   + [Integración SAML de MVPD de proxy](integration-guide-mvpds/proxy-mvpd-saml-int.md)
+   + [Integración de Proxy MVPD SAML](integration-guide-mvpds/proxy-mvpd-saml-int.md)
    + [Ámbito del proveedor de servicios](integration-guide-mvpds/serv-provider-scoping.md)
    + [Direcciones IP permitidas de MVPD](integration-guide-mvpds/mvpd-listing-ip-addres.md)
 + Guía del usuario para el tablero de TVE {#user-guide-tve-dashboard}
-   + [Descripción general del panel de control de TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)
+   + [Resumen del panel de TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)
    + [Entornos](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)
-   + [Revisar y avanzar cambios](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)
-   + [Salpicadero](/help/authentication/user-guide-tve-dashboard/tve-dashboard-home.md)
+   + [Revisar y enviar cambios](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)
+   + [Tablero](/help/authentication/user-guide-tve-dashboard/tve-dashboard-home.md)
    + [Canales](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md)
    + [Programadores](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md)
    + [MVPD](/help/authentication/user-guide-tve-dashboard/tve-dashboard-mvpds.md)
@@ -289,5 +288,5 @@ ht-degree: 2%
    + [Registro de cambios](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
 + Notas técnicas {#tech-notes}
    + Entornos {#environments}
-      + [Comprensión de los entornos Adobe Systems](notes-technical/environments/understanding-the-adobe-environments.md)
-      + [Configuración del entorno y pruebas en Pre-Qual](notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md)
+      + [Explicación de los entornos de Adobe](notes-technical/environments/understanding-the-adobe-environments.md)
+      + [Configurar el entorno y realizar pruebas en la calidad previa](notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md)

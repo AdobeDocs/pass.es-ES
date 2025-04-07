@@ -2,9 +2,9 @@
 title: Guía de Apple SSO (API REST V2)
 description: Guía de Apple SSO (API REST V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '3615'
+source-wordcount: '3609'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
 
    >[!TIP]
    >
-   > Sugerencia: Las credenciales del cliente deben almacenarse en caché y pueden utilizarse indefinidamente.
+   > Las credenciales del cliente deben almacenarse en caché y utilizarse indefinidamente.
 
 1. **Recuperar token de acceso:** La aplicación de streaming recopila todos los datos necesarios para recuperar el token de acceso llamando al extremo del token de cliente.
 
@@ -109,7 +109,7 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
 
    >[!TIP]
    >
-   > Sugerencia: El token de acceso debe almacenarse en caché y utilizarse solo dentro de la duración especificada (por ejemplo, un tiempo de vida de 24 horas). Una vez caducado, la aplicación de streaming debe solicitar un nuevo token de acceso.
+   > El token de acceso solo debe almacenarse en caché y utilizarse durante el tiempo especificado (por ejemplo, un período de vida de 24 horas). Una vez caducado, la aplicación de streaming debe solicitar un nuevo token de acceso.
 
 +++
 
@@ -391,7 +391,7 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
 
    >[!TIP]
    >
-   > Sugerencia: La aplicación de streaming puede utilizar en su lugar un valor almacenado en caché para la información de estado del marco de trabajo del socio, que se recomienda actualizar cuando la aplicación pase del estado en segundo plano al estado en primer plano. En ese caso, la aplicación de streaming debe asegurarse de que almacena en caché y utiliza solo valores válidos para el estado del marco de trabajo de socio tal como se describe en el paso Devolver información de estado del marco de trabajo de socio.
+   > La aplicación de streaming puede utilizar en su lugar un valor almacenado en caché para la información de estado del marco de trabajo del socio, que se recomienda actualizar cuando la aplicación pase del estado en segundo plano al estado en primer plano. En ese caso, la aplicación de streaming debe asegurarse de que almacena en caché y utiliza solo valores válidos para el estado del marco de trabajo de socio tal como se describe en el paso Devolver información de estado del marco de trabajo de socio.
 
 1. **Devolver información de estado del marco de trabajo del socio:** La aplicación de flujo continuo valida los datos de respuesta para garantizar que se cumplan las condiciones básicas:
    * Se concede el estado de acceso al permiso de usuario.
@@ -462,7 +462,7 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
 
    >[!TIP]
    >
-   > Sugerencia: La aplicación de streaming puede utilizar en su lugar un valor almacenado en caché para la información de estado del marco de trabajo del socio, que se recomienda actualizar cuando la aplicación pase del estado en segundo plano al estado en primer plano. En ese caso, la aplicación de streaming debe asegurarse de que almacena en caché y utiliza solo valores válidos para el estado del marco de trabajo de socio tal como se describe en el paso Devolver información de estado del marco de trabajo de socio.
+   > La aplicación de streaming puede utilizar en su lugar un valor almacenado en caché para la información de estado del marco de trabajo del socio, que se recomienda actualizar cuando la aplicación pase del estado en segundo plano al estado en primer plano. En ese caso, la aplicación de streaming debe asegurarse de que almacena en caché y utiliza solo valores válidos para el estado del marco de trabajo de socio tal como se describe en el paso Devolver información de estado del marco de trabajo de socio.
 
 1. **Devolver información de estado del marco de trabajo del socio:** La aplicación de flujo continuo valida los datos de respuesta para garantizar que se cumplan las condiciones básicas:
    * Se concede el estado de acceso al permiso de usuario.

@@ -1,9 +1,10 @@
 ---
 title: Lista de comprobación de API de REST V2
 description: Lista de comprobación de API de REST V2
-source-git-commit: f0001d86f595040f4be74f357c95bd2919dadf15
+exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '2535'
+source-wordcount: '2545'
 ht-degree: 0%
 
 ---
@@ -40,7 +41,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Almacenamiento en caché de tokens de acceso</i></td>
-      <td>Almacene los tokens de acceso en un almacenamiento persistente y vuelva a utilizarlos hasta que caduquen; no solicite un nuevo token para cada llamada a la API de REST v2.</td>
+      <td>Almacene los tokens de acceso en un almacenamiento persistente y vuelva a utilizarlos hasta que caduquen.<br/><br/>No solicite un nuevo token para cada llamada a la API REST v2, actualice los tokens de acceso solo cuando caduquen.</td>
       <td>Se corre el riesgo de sobrecargar recursos del sistema, aumentar la latencia y activar potencialmente respuestas de error HTTP 429 "Demasiadas solicitudes".</td>
    </tr>
 </table>
@@ -85,7 +86,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Configuración del mecanismo de sondeo</i></td>
-      <td>Configure la frecuencia del mecanismo de sondeo en las siguientes condiciones:<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">Autenticación realizada en la aplicación principal (pantalla)</a></b><ul><li>La aplicación principal (streaming) debe sondear cada 3-5 segundos.</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">Autenticación realizada en una aplicación secundaria (pantalla)</a></b><ul><li>La aplicación principal (streaming) debe sondear cada 3-5 segundos.</li></ul></td>
+      <td>Configure la frecuencia del mecanismo de sondeo en las siguientes condiciones:<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">Autenticación realizada en la aplicación principal (pantalla)</a></b><ul><li>La aplicación principal (streaming) debe sondear cada 3-5 segundos o más.</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">Autenticación realizada en una aplicación secundaria (pantalla)</a></b><ul><li>La aplicación principal (streaming) debe sondear cada 3-5 segundos.</li></ul></td>
       <td>Se corre el riesgo de sobrecargar recursos del sistema, aumentar la latencia y activar potencialmente respuestas de error HTTP 429 "Demasiadas solicitudes".</td>
    </tr>
    <tr>
@@ -237,7 +238,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Validación de tokens de acceso</i></td>
-      <td>Compruebe de forma proactiva la validez del token de acceso y actualícelo cuando caduque.<br/><br/>Asegúrese de que cualquier mecanismo de reintento para controlar los errores "no autorizados" de HTTP 401 actualice primero el token de acceso antes de volver a intentar la solicitud original.</td>
+      <td>Compruebe de forma proactiva la validez del token de acceso para actualizarlo cuando caduque.<br/><br/>Asegúrese de que cualquier mecanismo de reintento para controlar los errores "no autorizados" de HTTP 401 actualice primero el token de acceso antes de volver a intentar la solicitud original.</td>
       <td>Riesgos que activan respuestas de error "no autorizadas" HTTP 401, sobrecarga de recursos del sistema y aumento de la latencia.</td>
    </tr>
 </table>
