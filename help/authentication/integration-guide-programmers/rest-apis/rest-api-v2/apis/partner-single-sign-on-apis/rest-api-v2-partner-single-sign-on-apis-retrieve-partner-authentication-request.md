@@ -1,19 +1,19 @@
 ---
-title: Recuperar socio solicitud de autenticación
-description: 'API de REST V2: Recuperar socio solicitud de autenticación'
+title: Recuperar solicitud de autenticación de socio
+description: 'API de REST V2: recuperar la solicitud de autenticación del socio'
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: e8836c76aec10607717c0a67434b2ba5a78a8954
 workflow-type: tm+mt
 source-wordcount: '1219'
 ht-degree: 1%
 
 ---
 
-# Recuperar socio solicitud de autenticación {#retrieve-partner-authentication-request}
+# Recuperar solicitud de autenticación de socio {#retrieve-partner-authentication-request}
 
 >[!IMPORTANT]
 >
-> Los contenido de este Página se proporcionan únicamente con fines informativos. El uso de esta API requiere una licencia vigente de Adobe Systems. No se permite ningún uso no autorizado.
+> El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
 >[!IMPORTANT]
 >
@@ -28,13 +28,13 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">camino</td>
-      <td>/api/v2/{serviceProvider}/sessions/sso/{partner}</td>
+      <td style="background-color: #DEEBFF;">ruta</td>
+      <td>/api/v2/{serviceProvider}/session/sso/{partner}</td>
       <td></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">método</td>
-      <td>EXPONER</td>
+      <td>PUBLICAR</td>
       <td></td>
    </tr>
    <tr>
@@ -43,22 +43,22 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Proveedor de servicios</td>
-      <td>El identificador único interno asociado al proveedor de servicios durante el proceso de incorporación.</td>
-      <td><i>Obligatorio</i></td>
+      <td style="background-color: #DEEBFF;">serviceProvider</td>
+      <td>El identificador único interno asociado con el proveedor de servicios durante el proceso de incorporación.</td>
+      <td><i>obligatorio</i></td>
    </tr>
     <tr>
       <td style="background-color: #DEEBFF;">socio</td>
-      <td>Nombre del socio (por ejemplo, Apple) que proporciona el marco de trabajo de inicio de sesión único integrado con Adobe Pass flujos Authentication.</td>
-      <td><i>Obligatorio</i></td>
+      <td>El nombre del socio (por ejemplo, Apple) que proporciona el marco de inicio de sesión único integrado con los flujos de autenticación de Adobe Pass.</td>
+      <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">Parámetros del cuerpo</th>
+      <th style="background-color: #EFF2F7;">Parámetros de cuerpo</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">nombre de dominio</td>
+      <td style="background-color: #DEEBFF;">domainName</td>
       <td>
         Dominio de origen de la aplicación que realiza el inicio de sesión de MVPD.
         <br/><br/>
@@ -119,15 +119,18 @@ ht-degree: 1%
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">AP-Partner-Framework-Estado</td>
+      <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        La generación de la carga útil de inicio de sesión único para el método Partner se describe en la documentación del <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">encabezado AP-Partner-Framework-Estado</a> .        <br/><br/>Para obtener más detalles sobre inicio de sesión único flujos habilitados mediante un socio, consulte la documentación sobre el  <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">inicio de sesión único mediante flujos</a> de socio.</td>
+        La generación de la carga de inicio de sesión único para el método Partner se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">documentación del encabezado AP-Partner-Framework-Status</a>.
+        <br/><br/>
+        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que usan un socio, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Inicio de sesión único con flujos de socios</a>.</td>
       <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Dirección IP del dispositivos de flujo continuo.         <br/><br/>
+         La dirección IP del dispositivo de flujo continuo.
+         <br/><br/>
          Se recomienda utilizarlo siempre para implementaciones de servidor a servidor, especialmente cuando la llamada la realice el servicio del programador en lugar del dispositivo de flujo continuo.
          <br/><br/>
          Para implementaciones de cliente a servidor, la dirección IP del dispositivo de flujo continuo se envía implícitamente.
@@ -160,42 +163,42 @@ ht-degree: 1%
    </tr>
    <tr>
       <td>200</td>
-      <td>De acuerdo</td>
+      <td>OK</td>
       <td>
-        El cuerpo de la respuesta contiene información sobre las siguientes acciones necesarias para realizar la autenticación.
+        El cuerpo de respuesta contiene información sobre las siguientes acciones necesarias para realizar la autenticación.
       </td>
    </tr>
    <tr>
       <td>400</td>
       <td>Solicitud incorrecta</td>
       <td>
-        La solicitud no es válida, el cliente debe corregirla e intentarlo de nuevo. El cuerpo de la respuesta puede contener información de error que se adhiere a la documentación de los <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">códigos</a> de Error mejorados.
+        La solicitud no es válida, el cliente debe corregirla e intentarlo de nuevo. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
       </td>
    </tr>
    <tr>
       <td>401</td>
-      <td>Desautorizado</td>
+      <td>No autorizado</td>
       <td>
-        El token de acceso es no válido, el cliente necesita obtener un nuevo token de acceso e intentarlo de nuevo. Para obtener más información, consulte la documentación de Descripción general</a> del <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">registro de clientes dinámicos.
+        El token de acceso no es válido, el cliente debe obtener un nuevo token de acceso e intentarlo de nuevo. Para obtener más información, consulte la <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Información general sobre el registro de clientes dinámicos</a>.
       </td>
    </tr>
    <tr>
       <td>405</td>
       <td>Método no permitido</td>
       <td>
-        El método HTTP es no válido, el cliente necesita usar un método HTTP permitido para el recurso solicitado e intentarlo de nuevo. Para obtener más detalles, consulte la <a href="#request">sección Solicitud</a> .
+        El método HTTP no es válido, el cliente debe utilizar un método HTTP permitido para el recurso solicitado e intentarlo de nuevo. Para obtener más información, consulte la sección <a href="#request">Solicitud</a>.
       </td>
    </tr>
    <tr>
       <td>500</td>
-      <td>Error interna del servidor</td>
+      <td>Error interno del servidor</td>
       <td>
-        El lado del servidor encontró un problema. El cuerpo de la respuesta puede contener información de error que se adhiere a la documentación de los <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">códigos</a> de Error mejorados.
+        El lado del servidor ha encontrado un problema. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
       </td>
    </tr>
 </table>
 
-### Éxito {#success}
+### Correcto {#success}
 
 <table style="table-layout:auto">
    <tr>
@@ -287,36 +290,42 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">código</td>
                <td>
-                    El código de autenticación que se puede utilizar en un aplicación secundario para reanudar la sesión de autenticación.                    <br/><br/>Este campo está presente cuando el flujo de inicio de sesión único de socio no puede continuar.
+                    El código de autenticación que se puede utilizar en una aplicación secundaria para reanudar la sesión de autenticación.
+                    <br/><br/>
+                    Este campo está presente cuando el flujo de inicio de sesión único del socio no puede continuar.
                </td>
                <td>opcional</td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">Solicitud de autenticación</td>
+               <td style="background-color: #DEEBFF;">authenticationRequest</td>
                <td>
-                    La autenticación socio solicitud utilizarse en el flujo de autenticación con el socio fuera de Adobe Pass sistema Authentication.                    <br/><br/>Este campo está presente cuando el flujo de inicio de sesión único de socio puede continuar.                    <br/><br/>objeto JSON con los siguientes atributos:
+                    La solicitud de autenticación del socio que se utilizará en el flujo de autenticación con el socio fuera del sistema de autenticación de Adobe Pass.
+                    <br/><br/>
+                    Este campo está presente cuando puede continuar el flujo de inicio de sesión único del socio.
+                    <br/><br/>
+                    El objeto JSON tiene los atributos siguientes:
                     <ul>
                         <li><b>type</b><br/>Indica el tipo de protocolo admitido por MVPD (solo SAML).</li>
                         <li><b>solicitud</b><br/>La solicitud SAML.</li>
-                        <li><b>atributos</b><br/>Atributos de solicitud de SAML.</li>
+                        <li><b>attributesNames</b><br/>Atributos de solicitud de SAML.</li>
                     </ul>
                </td>
                <td>opcional</td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">Id de sesión</td>
-               <td>El identificador opaco que se puede utilizar para seguimiento usuario actividad.</td>
-               <td><i>Obligatorio</i></td>
+               <td style="background-color: #DEEBFF;">sessionId</td>
+               <td>Identificador opaco que se puede utilizar para rastrear la actividad del usuario.</td>
+               <td><i>obligatorio</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">MVPD</td>
-               <td>El identificador único interno asociado al proveedor de identidad durante el proceso de incorporación.</td>
+               <td style="background-color: #DEEBFF;">mvpd</td>
+               <td>El identificador único interno asociado con el proveedor de identidad durante el proceso de incorporación.</td>
                <td>opcional</td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">Proveedor de servicios</td>
-               <td>El identificador único interno asociado al proveedor de servicios durante el proceso de incorporación.</td>
-               <td><i>Obligatorio</i></td>
+               <td style="background-color: #DEEBFF;">serviceProvider</td>
+               <td>El identificador único interno asociado con el proveedor de servicios durante el proceso de incorporación.</td>
+               <td><i>obligatorio</i></td>
             </tr>
          </table>
       </td>
@@ -348,17 +357,17 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>El cuerpo de respuesta puede proporcionar información de error adicional que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
-      <td><i>Obligatorio</i></td>
+      <td><i>obligatorio</i></td>
    </tr>
 </table>
 
 ## Muestras {#samples}
 
-### 1. Recuperar socio solicitud de autenticación
+### 1. Recuperar solicitud de autenticación de socio
 
 >[!BEGINTABS]
 
->[!TAB Pedir]
+>[!TAB Solicitud]
 
 ```HTTPS
 POST /api/v2/REF30/sessions/sso/Apple HTTP/1.1
@@ -401,11 +410,11 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Recuperar socio solicitud de autenticación, pero se aplica degradación
+### 2. Recuperar la solicitud de autenticación del socio, pero se aplica la degradación
 
 >[!BEGINTABS]
 
->[!TAB Pedir]
+>[!TAB Solicitud]
 
 ```HTTPS
 POST /api/v2/REF30/sessions/sso/Apple HTTP/1.1
@@ -443,11 +452,11 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Recupere socio solicitud de autenticación, pero recurra al flujo de autenticación básico debido a que falta o no válido valor de encabezado AP-Partner-Framework-Estado
+### 3. Recupere la solicitud de autenticación del socio, pero vuelve al flujo de autenticación básico debido a que falta el valor del encabezado AP-Partner-Framework-Status o no es válido
 
 >[!BEGINTABS]
 
->[!TAB Pedir]
+>[!TAB Solicitud]
 
 ```HTTPS
 POST /api/v2/REF30/sessions/sso/Apple HTTP/1.1
