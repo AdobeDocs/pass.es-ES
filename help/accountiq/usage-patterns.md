@@ -19,7 +19,7 @@ Al igual que las demás páginas de la aplicación, los análisis e informes se 
 
 El gráfico de barras del clúster muestra el número y los porcentajes de suscriptores para cada comportamiento social o patrón de uso.
 
-Servicios +++D2C: Patrones de uso distribution-Users en el segmento
++++Servicios D2C: Patrones de uso distribution-Users en el segmento
 
 El gráfico de barras del clúster siguiente compara la distribución del patrón de uso del segmento actual con un segmento que contenga todas las cuentas.
 
@@ -61,7 +61,7 @@ Por ejemplo, en la visualización anterior:
 
 ## Distribución del patrón de uso para categorías de vídeo {#usage-pattern-dis-video-categories}
 
-Servicios +++D2C: Distribución del patrón de uso para regiones
++++Servicios D2C: Distribución del patrón de uso para regiones
 
 La tabla **[!UICONTROL Usage pattern distribution]** proporciona una comparación de patrones de uso en [categorías de vídeo](product-concepts.md##video-category-def) del segmento actual.
 

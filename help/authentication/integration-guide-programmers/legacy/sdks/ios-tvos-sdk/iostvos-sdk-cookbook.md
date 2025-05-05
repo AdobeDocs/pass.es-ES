@@ -136,6 +136,7 @@ tiene autorización para ver.
 Responsable para organizar esto).
 
    * **Déclencheur:**
+
      [setRequestorComplete()](#$setReqComplete) llamada de retorno.
 
    >[!NOTE]

@@ -86,7 +86,7 @@ El parámetro mvpds es una matriz de proveedores disponibles para el usuario.
 
 - `selectedProvider(mvpd)`
 
-  **Déclencheur:** [`getSelectedProvider()`](#$getSelProv El parámetro `mvpd` proporciona información sobre el proveedor seleccionado por
+  **Déclencheur:** [`getSelectedProvider()`] (#$getSelProv El parámetro `mvpd` proporciona información sobre el proveedor seleccionado por
 el usuario.
 
 - `setMetadataStatus(metadata, key, arguments)`

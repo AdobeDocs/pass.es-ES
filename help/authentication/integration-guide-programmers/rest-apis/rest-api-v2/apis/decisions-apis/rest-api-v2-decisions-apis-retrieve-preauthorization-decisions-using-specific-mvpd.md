@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> El implementación de la API de REST V2 está delimitado por la documentación sobre el mecanismo](/help/authentication/integration-guide-programmers/throttling-mechanism.md) de [limitación.
+> El implementación de la API de REST V2 está delimitado por la documentación sobre el mecanismo[&#128279;](/help/authentication/integration-guide-programmers/throttling-mechanism.md) de limitación.
 
 ## Pedir {#request}
 

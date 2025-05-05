@@ -80,7 +80,7 @@ Proporciona una puntuación que refleja el impacto general del uso compartido. S
 
 Puede seleccionar los encabezados de columna para ordenar los datos en todas las versiones de Account IQ.
 
-Servicios de +++D2C: regiones en el segmento
++++Servicios de D2C: regiones en el segmento
 
 Al iniciar sesión como un servicio D2C, la tabla **Regiones en el segmento** proporciona una vista comparativa de las diferentes puntuaciones de uso compartido agregadas para las [categorías de vídeo](/help/accountiq/product-concepts.md#video-category-def) en el segmento actual.
 

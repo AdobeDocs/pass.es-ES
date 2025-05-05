@@ -178,7 +178,7 @@ Se desencadenaron **devoluciones de llamadas:** [setAuthenticationStatus()](#set
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**Descripción:** el aplicación utiliza este método para comprobar el estado de autorización del cliente actual y del recurso determinado. Comienza comprobando primero el estado de autenticación. Si no se autentica, se activa la llamada de retorno tokenRequestFailed() y se cierra el método. Si el usuario está autenticado, también almacena en déclencheur el flujo de autorización. Ver detalles del método [getAuthorization()](#getAuthZ.
+**Descripción:** el aplicación utiliza este método para comprobar el estado de autorización del cliente actual y del recurso determinado. Comienza comprobando primero el estado de autenticación. Si no se autentica, se activa la llamada de retorno tokenRequestFailed() y se cierra el método. Si el usuario está autenticado, también almacena en déclencheur el flujo de autorización. Ver detalles del método [getAuthorization()] (#getAuthZ.
 
 >[!TIP]
 >
@@ -415,7 +415,7 @@ Debe implementar estas llamadas de retorno para gestionar las respuestas a sus l
 
 **Descripción:** Implemente esta llamada de retorno si el usuario seleccionó un MVPD que requiera un iFrame en el que mostrar su interfaz de usuario de la página de inicio de sesión de autenticación.
 
-**Activado por:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Activado por:**&#x200B;[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Volver al principio](#top)
 

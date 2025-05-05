@@ -17,7 +17,7 @@ El tablero resume y agrega datos en una colección de gráficos e informes dise�
 >
 >La mayoría de los paneles de datos de los servicios D2C, los programadores y los paneles de MVPD son idénticos. Sin embargo, algunos paneles de datos pueden diferir para cada versión.
 
-Servicios +++D2C: Tablero
++++Servicios D2C: Tablero
 
 ![tablero de Account IQ para servicios D2C](assets/dashboard-d2c.png){align="left"}
 

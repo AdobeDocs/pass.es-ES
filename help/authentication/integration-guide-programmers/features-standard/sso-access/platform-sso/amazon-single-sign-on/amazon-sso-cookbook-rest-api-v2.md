@@ -29,7 +29,7 @@ Antes de continuar con el Amazon inicio de sesión único utilizar flujos de ide
 
 #### Integración Amazon SSO SDK {#integrate-amazon-sso-sdk}
 
-El aplicación de flujo continuo debe integrar el biblioteca SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) de [SSO de Amazon para el inicio de sesión único (SSO) en su versión.
+El aplicación de flujo continuo debe integrar el biblioteca SDK[&#128279;](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) de SSO de Amazon para el inicio de sesión único (SSO) en su versión.
 
 * Descargue y copie la biblioteca de SDK SSO de Amazon más reciente en una carpeta `/SSOEnabler` paralela al directorio de la aplicación.
 

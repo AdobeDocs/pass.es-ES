@@ -17,7 +17,7 @@ ht-degree: 0%
 
 El Adobe Pass Authentication REST API V2 es compatible con Platform inicio de sesión único (SSO) para los usuarios finales de las aplicaciones cliente que se ejecutan en RokuOS.
 
-Este documento actúa como una extensión de la información general](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) existente [de la API de REST V2 que proporciona un vista de alto nivel y el documento que describe cómo implementar [Inicio de sesión único mediante flujos de identidad de plataforma.](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
+Este documento actúa como una extensión de la información general[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) existente de la API de REST V2 que proporciona un vista de alto nivel y el documento que describe cómo implementar [Inicio de sesión único mediante flujos de identidad de plataforma.](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
 
 ## Roku inicio de sesión único usar flujos de identidad de plataforma {#cookbook}
 

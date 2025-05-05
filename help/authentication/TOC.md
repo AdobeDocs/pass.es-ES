@@ -17,10 +17,10 @@ ht-degree: 2%
 + [Adobe Pass Authentication](home.md)
 + [Anuncios de productos](product-announcements.md)
 + Versiones de productos {#product-releases}
-   + {#2025} de 2025
+   + de 2025{#2025}
       + [Notas de la versión de Adobe Pass Authentication 3.1.0](notes-releases/auth-rn-310.md)
       + [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.1](notes-releases/authn-rn-javascript-471.md)
-   + {#2024} de 2024
+   + de 2024{#2024}
       + [Notas de la versión de Adobe Pass Authentication 3.0.3](notes-releases/auth-rn-303.md)
       + [Notas de la versión de Adobe Pass Authentication 3.0](notes-releases/auth-rn-300.md)
       + [Notas de la versión de Adobe Pass Authentication 2.70](notes-releases/auth-rn-270.md)
@@ -28,7 +28,7 @@ ht-degree: 2%
       + [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.0](notes-releases/authn-rn-javascript-470.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.9.2](notes-releases/authn-rn-ios-tvos-392.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.4](notes-releases/authn-rn-ios-tvos-384.md)
-   + {#2023} de 2023
+   + de 2023{#2023}
       + [Notas de la versión de Adobe Pass Authentication 2.68](notes-releases/auth-rn-268.md)
       + [Notas de la versión de Adobe Pass Authentication 2.67](notes-releases/auth-rn-267.md)
       + [Notas de la versión de Adobe Pass Authentication 2.66](notes-releases/auth-rn-266.md)
@@ -39,12 +39,12 @@ ht-degree: 2%
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.2](notes-releases/authn-rn-ios-tvos-382.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.1](notes-releases/authn-rn-ios-tvos-381.md)
       + [Notas de la versión de Adobe Pass Authentication Android 3.7.3](notes-releases/authn-rn-android-373.md)
-   + {#2022} de 2022
+   + de 2022{#2022}
       + [Notas de la versión de Adobe Pass Authentication 2.64](notes-releases/auth-rn-264.md)
       + [Notas de la versión de Adobe Pass Authentication 2.63](notes-releases/auth-rn-263.md)
       + [Notas de la versión de autenticación de Adobe Pass 2.62.1](notes-releases/auth-rn-2621.md)
       + [Notas de la versión de Adobe Pass Authentication JavaScript 4.6.0](notes-releases/authn-rn-javascript-460.md)
-   + {#2021} de 2021
+   + de 2021{#2021}
       + [Notas de la versión de Adobe Pass Authentication JavaScript 4.4.0](notes-releases/authn-rn-javascript-440.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.7.0](notes-releases/authn-rn-ios-tvos-370.md)
 + KickStart {#kickstart}

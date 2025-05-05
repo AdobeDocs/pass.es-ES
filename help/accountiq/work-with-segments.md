@@ -37,7 +37,7 @@ Puede realizar las siguientes funciones con segmentos:
 
 El proceso de creación de un nuevo segmento es similar para los servicios D2C y TV en todas partes. Las categorías de vídeo serán diferentes para cada versión respectiva de Account IQ.
 
-Servicios +++D2C
++++Servicios D2C
 
 Para generar un segmento y analizar el comportamiento compartido del suscriptor, seleccione **[!UICONTROL Create new segment]** en la esquina superior derecha.
 

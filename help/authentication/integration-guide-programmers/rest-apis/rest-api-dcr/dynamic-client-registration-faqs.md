@@ -29,7 +29,7 @@ Comience con esta sección si está trabajando en una aplicación que necesita i
 
 ### Preguntas frecuentes sobre el acceso a la API REST V2 {#rest-api-v2-access-faqs}
 
-Preguntas frecuentes sobre el acceso a la API de +++REST V2
++++Preguntas frecuentes sobre el acceso a la API de REST V2
 
 #### 1. ¿Cuál es el propósito de la fase de registro? {#rest-api-v2-access-faq1}
 
@@ -133,7 +133,7 @@ Continúe con esta sección si está trabajando en una aplicación que necesita 
 
 ### Preguntas frecuentes sobre la migración a la API REST V2 {#rest-api-v2-migration-faqs}
 
-Preguntas frecuentes sobre la migración a la API de +++REST V2
++++Preguntas frecuentes sobre la migración a la API de REST V2
 
 #### 1. ¿Puede la aplicación cliente reutilizar las aplicaciones registradas existentes (declaraciones de software)? {#rest-api-v2-migration-faq1}
 
