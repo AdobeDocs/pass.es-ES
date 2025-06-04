@@ -4,10 +4,10 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 13b0bb640aa599109e8c2f68d1e16fbdc3840951
 workflow-type: tm+mt
-source-wordcount: '1251'
-ht-degree: 2%
+source-wordcount: '1258'
+ht-degree: 3%
 
 ---
 
@@ -17,10 +17,11 @@ ht-degree: 2%
 + [Adobe Pass Authentication](home.md)
 + [Anuncios de productos](product-announcements.md)
 + Versiones de productos {#product-releases}
-   + de 2025{#2025}
+   + 2025 {#2025}
+      + [Notas de la versión de Adobe Pass Authentication 3.2.0](notes-releases/auth-rn-320.md)
       + [Notas de la versión de Adobe Pass Authentication 3.1.0](notes-releases/auth-rn-310.md)
       + [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.1](notes-releases/authn-rn-javascript-471.md)
-   + de 2024{#2024}
+   + 2024 {#2024}
       + [Notas de la versión de Adobe Pass Authentication 3.0.3](notes-releases/auth-rn-303.md)
       + [Notas de la versión de Adobe Pass Authentication 3.0](notes-releases/auth-rn-300.md)
       + [Notas de la versión de Adobe Pass Authentication 2.70](notes-releases/auth-rn-270.md)
@@ -28,7 +29,7 @@ ht-degree: 2%
       + [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.0](notes-releases/authn-rn-javascript-470.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.9.2](notes-releases/authn-rn-ios-tvos-392.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.4](notes-releases/authn-rn-ios-tvos-384.md)
-   + de 2023{#2023}
+   + 2023 {#2023}
       + [Notas de la versión de Adobe Pass Authentication 2.68](notes-releases/auth-rn-268.md)
       + [Notas de la versión de Adobe Pass Authentication 2.67](notes-releases/auth-rn-267.md)
       + [Notas de la versión de Adobe Pass Authentication 2.66](notes-releases/auth-rn-266.md)
@@ -39,12 +40,12 @@ ht-degree: 2%
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.2](notes-releases/authn-rn-ios-tvos-382.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.1](notes-releases/authn-rn-ios-tvos-381.md)
       + [Notas de la versión de Adobe Pass Authentication Android 3.7.3](notes-releases/authn-rn-android-373.md)
-   + de 2022{#2022}
+   + 2022 {#2022}
       + [Notas de la versión de Adobe Pass Authentication 2.64](notes-releases/auth-rn-264.md)
       + [Notas de la versión de Adobe Pass Authentication 2.63](notes-releases/auth-rn-263.md)
       + [Notas de la versión de autenticación de Adobe Pass 2.62.1](notes-releases/auth-rn-2621.md)
       + [Notas de la versión de Adobe Pass Authentication JavaScript 4.6.0](notes-releases/authn-rn-javascript-460.md)
-   + de 2021{#2021}
+   + 2021 {#2021}
       + [Notas de la versión de Adobe Pass Authentication JavaScript 4.4.0](notes-releases/authn-rn-javascript-440.md)
       + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.7.0](notes-releases/authn-rn-ios-tvos-370.md)
 + KickStart {#kickstart}
@@ -57,7 +58,7 @@ ht-degree: 2%
    + [Requisitos mínimos del sistema](integration-guide-programmers/minimum-system-requirements.md)
    + [Mecanismo de limitación](integration-guide-programmers/throttling-mechanism.md)
    + API de REST {#rest-apis}
-      + DCR API REST {#rest-api-dcr}
+      + DCR de API de REST {#rest-api-dcr}
          + [Información general sobre el registro dinámico de clientes](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
          + [Glosario de registro dinámico de clientes](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
          + [Preguntas frecuentes sobre el registro de cliente dinámico](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
@@ -111,7 +112,7 @@ ht-degree: 2%
                + [Inicio de sesión único con flujos de identidad de plataforma](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
                + [Inicio de sesión único mediante flujos de token de servicio](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)
                + [Flujo de cierre de sesión único](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
-         + Libros de cocina {#rest-api-v2-cookbooks}
+         + Libros {#rest-api-v2-cookbooks}
             + [Guía de API de REST V2 (de cliente a servidor)](integration-guide-programmers/rest-apis/rest-api-v2/cookbooks/rest-api-v2-cookbook-client-server.md)
             + [Guía de API de REST V2 (servidor a servidor)](integration-guide-programmers/rest-apis/rest-api-v2/cookbooks/rest-api-v2-cookbook-server-server.md)
          + Apéndice {#rest-api-v2-appendix}
@@ -124,7 +125,7 @@ ht-degree: 2%
                + [Encabezado: X-Roku-Reserved-Roku-Connect-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)
                + [Encabezado: AP-Partner-Framework-Status](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
                + [Encabezado: AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
-   + Características estándar {#standard-features}
+   + Funciones estándar {#standard-features}
       + Derechos {#entitlements}
          + [Metadatos del usuario](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
          + [Decisiones](integration-guide-programmers/features-standard/entitlements/decisions.md)
@@ -146,7 +147,7 @@ ht-degree: 2%
       + Compatibilidad con privacidad {#privacy-support}
          + [Resumen de soporte de privacidad](integration-guide-programmers/features-premium/privacy-support/privacy-supp-overview.md)
          + [Cómo realizar una solicitud de privacidad](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)
-   + Características Premium {#features-premium}
+   + Funciones Premium {#features-premium}
       + Acceso temporal {#temporary-access}
          + [Función TempPass](integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
       + Acceso degradado {#degraded-access}
@@ -159,7 +160,7 @@ ht-degree: 2%
          + [Integración de datos del lado del servidor de Adobe Pass Authentication en Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
          + [Uso del Experience Cloud ID en la autenticación de Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
    + Heredado {#legacy}
-      + API de REST (heredada) 1 {#rest-api-v1}
+      + API de REST (heredada) V1 {#rest-api-v1}
          + [Información general sobre la API de REST V1 (heredada)](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
          + [Referencia de la API de REST V1 (heredada)](integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
          + API (heredadas) {#rest-api-v1-apis}
@@ -220,7 +221,7 @@ ht-degree: 2%
          + [(Heredado) Pasar información del cliente (dispositivo, conexión y aplicación)](integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)
       + Informes de errores (heredados) {#error-reporting}
          + [Informes de errores (heredados)](integration-guide-programmers/legacy/error-reporting/error-reporting.md)
-      + (Heredado) Acceso de inicio de sesión único {#sso-access}
+      + Acceso de inicio de sesión único (heredado) {#sso-access}
          + [(Heredado) Compatibilidad con inicio de sesión único](integration-guide-programmers/legacy/sso-access/sso-support.md)
          + [(Heredado) SSO mediante autenticación pasiva](integration-guide-programmers/legacy/sso-access/sso-passive-authn.md)
          + [Guía de Amazon SSO (heredada) (API de REST V1)](integration-guide-programmers/legacy/sso-access/amazon-sso-cookbook-rest-api-v1.md)
@@ -229,7 +230,7 @@ ht-degree: 2%
       + Panel de TVE (heredado) {#tve-dashboard}
          + [Guía del usuario del Tablero de TVE (heredado)](integration-guide-programmers/legacy/tve-dashboard/tve-dashboard-user-guide.md)
       + Notas técnicas (heredadas) {#tech-notes}
-         + API de REST (heredada) 1 {#rest-api-v1}
+         + API de REST (heredada) V1 {#rest-api-v1}
             + [Implementación de API sin cliente (heredada): códigos de error/mensajes con motivo/causa probable](integration-guide-programmers/legacy/notes-technical/clientless-api-implementation-error-codes-messages-with-probable-reason-cause.md)
             + [(Heredado) Flujo de API sin cliente en ausencia de ID de dispositivo](integration-guide-programmers/legacy/notes-technical/clientless-api-flow-in-the-absence-of-device-id.md)
             + [(Heredado) Sin cliente: Evite utilizar &#39;&amp;&#39;reg_code en la solicitud /authentication](integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
@@ -275,7 +276,7 @@ ht-degree: 2%
    + [Integración de Proxy MVPD SAML](integration-guide-mvpds/proxy-mvpd-saml-int.md)
    + [Ámbito del proveedor de servicios](integration-guide-mvpds/serv-provider-scoping.md)
    + [Direcciones IP permitidas de MVPD](integration-guide-mvpds/mvpd-listing-ip-addres.md)
-+ Guía del usuario para el tablero de TVE {#user-guide-tve-dashboard}
++ Guía Del Usuario Para Tablero De TVE {#user-guide-tve-dashboard}
    + [Resumen del panel de TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)
    + [Entornos](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)
    + [Revisar y enviar cambios](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)
