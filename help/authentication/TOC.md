@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: 13b0bb640aa599109e8c2f68d1e16fbdc3840951
+source-git-commit: 184bf39884f5ec36bd67ad1dcf78e643144ee267
 workflow-type: tm+mt
-source-wordcount: '1258'
+source-wordcount: '1250'
 ht-degree: 3%
 
 ---
@@ -14,280 +14,278 @@ ht-degree: 3%
 
 # Ayuda de autenticación de Adobe Pass {#authentication}
 
-+ [Adobe Pass Authentication](home.md)
-+ [Anuncios de productos](product-announcements.md)
-+ Versiones de productos {#product-releases}
-   + 2025 {#2025}
-      + [Notas de la versión de Adobe Pass Authentication 3.2.0](notes-releases/auth-rn-320.md)
-      + [Notas de la versión de Adobe Pass Authentication 3.1.0](notes-releases/auth-rn-310.md)
-      + [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.1](notes-releases/authn-rn-javascript-471.md)
-   + 2024 {#2024}
-      + [Notas de la versión de Adobe Pass Authentication 3.0.3](notes-releases/auth-rn-303.md)
-      + [Notas de la versión de Adobe Pass Authentication 3.0](notes-releases/auth-rn-300.md)
-      + [Notas de la versión de Adobe Pass Authentication 2.70](notes-releases/auth-rn-270.md)
-      + [Notas de la versión de Adobe Pass Authentication 2.69](notes-releases/auth-rn-269.md)
-      + [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.0](notes-releases/authn-rn-javascript-470.md)
-      + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.9.2](notes-releases/authn-rn-ios-tvos-392.md)
-      + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.4](notes-releases/authn-rn-ios-tvos-384.md)
-   + 2023 {#2023}
-      + [Notas de la versión de Adobe Pass Authentication 2.68](notes-releases/auth-rn-268.md)
-      + [Notas de la versión de Adobe Pass Authentication 2.67](notes-releases/auth-rn-267.md)
-      + [Notas de la versión de Adobe Pass Authentication 2.66](notes-releases/auth-rn-266.md)
-      + [Notas de la versión de autenticación de Adobe Pass 2.65.1](notes-releases/auth-rn-2651.md)
-      + [Notas de la versión de Adobe Pass Authentication 2.65](notes-releases/auth-rn-265.md)
-      + [Notas de la versión de autenticación de Adobe Pass 2.64.1](notes-releases/auth-rn-2641.md)
-      + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.3](notes-releases/authn-rn-ios-tvos-383.md)
-      + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.2](notes-releases/authn-rn-ios-tvos-382.md)
-      + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.1](notes-releases/authn-rn-ios-tvos-381.md)
-      + [Notas de la versión de Adobe Pass Authentication Android 3.7.3](notes-releases/authn-rn-android-373.md)
-   + 2022 {#2022}
-      + [Notas de la versión de Adobe Pass Authentication 2.64](notes-releases/auth-rn-264.md)
-      + [Notas de la versión de Adobe Pass Authentication 2.63](notes-releases/auth-rn-263.md)
-      + [Notas de la versión de autenticación de Adobe Pass 2.62.1](notes-releases/auth-rn-2621.md)
-      + [Notas de la versión de Adobe Pass Authentication JavaScript 4.6.0](notes-releases/authn-rn-javascript-460.md)
-   + 2021 {#2021}
-      + [Notas de la versión de Adobe Pass Authentication JavaScript 4.4.0](notes-releases/authn-rn-javascript-440.md)
-      + [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.7.0](notes-releases/authn-rn-ios-tvos-370.md)
-+ KickStart {#kickstart}
-   + [Documento técnico](kickstart/technical-paper.md)
-   + [Guía de KickStart del programador](kickstart/programmer-kickstart-guide.md)
-   + [Guía de KickStart de MVPD](kickstart/mvpd-kickstart-guide.md)
-   + [Preguntas frecuentes sobre procedimientos de soporte](kickstart/support-procedures-faqs.md)
-+ Guía De Integración Para Programadores {#integration-guide-programmers}
-   + [Guía de integración del programador](integration-guide-programmers/programmer-integration-guide-overview.md)
-   + [Requisitos mínimos del sistema](integration-guide-programmers/minimum-system-requirements.md)
-   + [Mecanismo de limitación](integration-guide-programmers/throttling-mechanism.md)
-   + API de REST {#rest-apis}
-      + DCR de API de REST {#rest-api-dcr}
-         + [Información general sobre el registro dinámico de clientes](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
-         + [Glosario de registro dinámico de clientes](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
-         + [Preguntas frecuentes sobre el registro de cliente dinámico](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
-         + API {#rest-api-dcr-apis}
-            + [Recuperar credenciales de cliente](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
-            + [Recuperar token de acceso](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
-         + Flujos {#rest-api-dcr-flows}
-            + [Flujo de registro de cliente dinámico](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
-      + API DE REST V2 {#rest-api-v2}
-         + [Información general de la API REST 2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
-         + [Glosario de la API de REST 2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
-         + [Lista de comprobación de API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
-         + [Preguntas frecuentes sobre la API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)
-         + API {#rest-api-v2-apis}
-            + [Información general sobre las API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
-            + Configuración {#rest-api-v2-configuration-apis}
-               + [Recuperar la configuración de un proveedor de servicios específico](integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
-            + Sesiones {#rest-api-v2-sessions-apis}
-               + [Crear sesión de autenticación](integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
-               + [Reanudar sesión de autenticación](integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
-               + [Recuperar sesión de autenticación](integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
-               + [Realizar autenticación en el agente de usuario](integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
-            + Perfiles {#rest-api-v2-profiles-apis}
-               + [Recuperación de perfiles](integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
-               + [Recuperar perfil para mvpd específico](integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
-               + [Recuperar perfil para código específico](integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
-            + Decisiones {#rest-api-v2-decisions-apis}
-               + [Recuperar decisiones de autorización utilizando mvpd específico](integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
-               + [Recuperar decisiones de preautorización utilizando mvpd específico](integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
-            + Cerrar sesión {#rest-api-v2-logout-apis}
-               + [Iniciar el cierre de sesión de un mvpd específico](integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
-            + Inicio de sesión único de socio {#rest-api-v2-partner-single-sign-on-apis}
-               + [Recuperar solicitud de autenticación de socio](integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-               + [Crear y recuperar perfiles mediante una respuesta de autenticación de socio](integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
-         + Flujos {#rest-api-v2-flows}
-            + [Información general sobre flujos de la API REST V2](integration-guide-programmers/rest-apis/rest-api-v2/flows/rest-api-v2-flows-overview.md)
-            + Flujos de acceso básicos {#rest-api-v2-basic-access-flows}
-               + [Flujo de perfiles básicos realizado dentro de la aplicación principal](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
-               + [Flujo de perfiles básicos realizado en la aplicación secundaria](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
-               + [Flujo de autenticación básico realizado en la aplicación principal](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
-               + [Flujo de autenticación básico realizado en la aplicación secundaria](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
-               + [Flujo de autorización básico realizado en la aplicación principal](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
-               + [Flujo de preautorización básico realizado en la aplicación principal](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
-               + [Flujo de cierre de sesión básico realizado en la aplicación principal](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)
-            + Flujos de acceso degradados {#rest-api-v2-degraded-access-flows}
-               + [Flujos de acceso degradados](integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)
-            + Flujos de acceso temporales {#rest-api-v2-temporary-access-flows}
-               + [Flujos de acceso temporales](integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)
-            + Flujos de acceso de inicio de sesión único {#rest-api-v2-single-sign-on-access-flows}
-               + [Inicio de sesión único con flujos de socios](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)
-               + [Inicio de sesión único con flujos de identidad de plataforma](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
-               + [Inicio de sesión único mediante flujos de token de servicio](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)
-               + [Flujo de cierre de sesión único](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
-         + Libros {#rest-api-v2-cookbooks}
-            + [Guía de API de REST V2 (de cliente a servidor)](integration-guide-programmers/rest-apis/rest-api-v2/cookbooks/rest-api-v2-cookbook-client-server.md)
-            + [Guía de API de REST V2 (servidor a servidor)](integration-guide-programmers/rest-apis/rest-api-v2/cookbooks/rest-api-v2-cookbook-server-server.md)
-         + Apéndice {#rest-api-v2-appendix}
-            + Encabezados {#rest-api-v2-appendix-headers}
-               + [Encabezado: autorización](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
-               + [Encabezado: AP-Device-Identifier](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
-               + [Encabezado: X-Device-Info](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
-               + [Encabezado: AD-Service-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
-               + [Encabezado: Adobe-Subject-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
-               + [Encabezado: X-Roku-Reserved-Roku-Connect-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)
-               + [Encabezado: AP-Partner-Framework-Status](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
-               + [Encabezado: AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
-   + Funciones estándar {#standard-features}
-      + Derechos {#entitlements}
-         + [Metadatos del usuario](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
-         + [Decisiones](integration-guide-programmers/features-standard/entitlements/decisions.md)
-         + [Tokens de medios](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
-      + Informes de errores {#error-reporting}
-         + [Códigos de error mejorados](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
-      + Acceso de inicio de sesión único {#sso-access}
-         + Inicio de sesión único de socio {#partner-sso}
-            + Inicio de sesión único de Apple {#apple-sso}
-               + [Información general sobre Apple SSO](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)
-               + [Guía de Apple SSO (API REST V2)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)
-         + Inicio de sesión único de Platform {#platform-sso}
-            + Inicio de sesión único de Amazon {#amazon-sso}
-               + [Guía de Amazon SSO (API REST V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-            + Inicio de sesión único de Roku {#roku-sso}
-               + [Guía de Roku SSO (API de REST V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
-      + Acceso a autenticación basada en inicio {#hba-access}
-         + [Autenticación basada en el hogar (HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
-      + Compatibilidad con privacidad {#privacy-support}
-         + [Resumen de soporte de privacidad](integration-guide-programmers/features-premium/privacy-support/privacy-supp-overview.md)
-         + [Cómo realizar una solicitud de privacidad](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)
-   + Funciones Premium {#features-premium}
-      + Acceso temporal {#temporary-access}
-         + [Función TempPass](integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-      + Acceso degradado {#degraded-access}
-         + [Función de degradación](integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-      + ESM {#esm}
-         + [Resumen de monitorización del servicio de derechos](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)
-         + [API de monitorización del servicio de derechos](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
-         + [Métricas del lado del servidor](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
-      + Analytics {#analytics}
-         + [Integración de datos del lado del servidor de Adobe Pass Authentication en Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
-         + [Uso del Experience Cloud ID en la autenticación de Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
-   + Heredado {#legacy}
-      + API de REST (heredada) V1 {#rest-api-v1}
-         + [Información general sobre la API de REST V1 (heredada)](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
-         + [Referencia de la API de REST V1 (heredada)](integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
-         + API (heredadas) {#rest-api-v1-apis}
-            + [Solicitud de código de registro (heredado)](integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
-            + [Registro de registro de devolución (heredado)](integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md)
-            + [(Heredado) Eliminar registro](integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md)
-            + [(Heredado) Proporcionar lista de MVPD](integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
-            + [(Heredado) Iniciar autenticación](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)
-            + [(Heredado) Comprobar token de autenticación](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md)
-            + [(Heredado) Recuperar token de autenticación](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
-            + [(Heredado) Iniciar autorización](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authorization.md)
-            + [(Heredado) Recuperar token de autorización](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authorization-token.md)
-            + [(Heredado) Obtener un token de medios corto](integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md)
-            + [(Heredado) Comprobar flujo de autenticación por aplicación web de segunda pantalla](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md)
-            + [(Heredado) Recuperar lista de recursos autorizados previamente](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md)
-            + [(Heredado) Recuperar lista de recursos autorizados previamente por la aplicación web de segunda pantalla](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md)
-            + [(Heredado) Iniciar cierre de sesión](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)
-            + [Metadatos de usuario (heredados)](integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)
-            + [(Heredado) Recuperar solicitud de perfil](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-profilerequest.md)
-            + [Intercambio de tokens (heredado)](integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md)
-            + [(Heredado) Vista previa gratuita para Pase temporal y Pase temporal promocional](integration-guide-programmers/legacy/rest-api-v1/apis/free-preview-for-temp-pass-and-promotional-temp-pass.md)
-         + Libros de cocina (heredados) {#rest-api-v1-cookbooks}
-            + [Guía de la API de REST V1 (heredada) (de cliente a servidor)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-clienttoserver.md)
-            + [Guía de la API de REST V1 (heredada) (de servidor a servidor)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)
-      + SDK (heredados) {#sdks}
-         + (Heredado) JavaScript SDK {#javascript-sdk}
-            + [Información general sobre JavaScript SDK (heredado)](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-overview.md)
-            + [Guía de JavaScript SDK (heredada)](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-cookbook.md)
-            + [Referencia de la API de JavaScript SDK (heredada)](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-            + [(Heredado) Autorización previa de la API de JavaScript SDK](integration-guide-programmers/legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
-            + Directrices (heredadas) {#javascript-sdk-guidelines}
-               + [(Heredado) Inicio y cierre de sesión sin actualización](integration-guide-programmers/legacy/sdks/javascript-sdk/refreshless-login-and-logout.md)
-         + (Heredado) iOS/tvOS SDK {#ios-tvos-sdk}
-            + [Información general sobre iOS/tvOS SDK (heredado)](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)
-            + [Guía de iOS/tvOS SDK (heredada)](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md)
-            + [Referencia de la API de SDK de iOS/tvOS (heredada)](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
-            + [(Heredado) Autorización previa de la API de SDK de iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
-            + Directrices (heredadas) {#ios-tvos-sdk-guidelines}
-               + [Registro de aplicaciones de iOS/tvOS (heredadas)](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
-               + [Guía de migración de iOS/tvOS v3.x (heredada)](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-v3x-migration-guide.md)
-               + [(Heredado) Comprobaciones de integridad del almacenamiento de iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-storage-integrity-checks.md)
-         + (Heredado) Android SDK {#android-sdk}
-            + [Información general sobre Android SDK (heredado)](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)
-            + [Guía de Android SDK (heredada)](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-cookbook.md)
-            + [Referencia de la API de Android SDK (heredada)](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md)
-            + [(Heredado) Autorización previa de la API de Android SDK](integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
-            + Directrices (heredadas) {#android-sdk-guidelines}
-               + [Registro de aplicaciones de Android (heredadas)](integration-guide-programmers/legacy/sdks/android-sdk/android-application-registration.md)
-               + [(Heredado) Android SDK con registro de cliente dinámico](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-with-dynamic-client-registration.md)
-         + (Heredado) FireOS SDK {#fireos-sdk}
-            + [Información general técnica de Amazon FireOS (heredado)](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-technical-overview.md)
-            + [Guía de integración de Amazon FireOS (heredada)](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-integration-cookbook.md)
-            + [Referencia de la API de Amazon FireOS (heredada)](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
-            + [(Heredado) Registro de aplicaciones de Amazon FireOS](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-application-registration.md)
-            + [(Heredado) FireOS SDK con registro de cliente dinámico](integration-guide-programmers/legacy/sdks/fireos-sdk/fireos-sdk-with-dynamic-client-registration.md)
-            + [(Heredado) Amazon FireOS SSO: guía de inicio del programador](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-firetv-sso-programmer-kickoff-guide.md)
-      + Información de cliente (heredada) {#client-information}
-         + [(Heredado) Pasar información del cliente (dispositivo, conexión y aplicación)](integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)
-      + Informes de errores (heredados) {#error-reporting}
-         + [Informes de errores (heredados)](integration-guide-programmers/legacy/error-reporting/error-reporting.md)
-      + Acceso de inicio de sesión único (heredado) {#sso-access}
-         + [(Heredado) Compatibilidad con inicio de sesión único](integration-guide-programmers/legacy/sso-access/sso-support.md)
-         + [(Heredado) SSO mediante autenticación pasiva](integration-guide-programmers/legacy/sso-access/sso-passive-authn.md)
-         + [Guía de Amazon SSO (heredada) (API de REST V1)](integration-guide-programmers/legacy/sso-access/amazon-sso-cookbook-rest-api-v1.md)
-         + [Guía de Apple SSO (heredada) (API de REST V1)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)
-         + [Guía de SSO de Apple (heredada) (iOS/tvOS SDK)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)
-      + Panel de TVE (heredado) {#tve-dashboard}
-         + [Guía del usuario del Tablero de TVE (heredado)](integration-guide-programmers/legacy/tve-dashboard/tve-dashboard-user-guide.md)
-      + Notas técnicas (heredadas) {#tech-notes}
-         + API de REST (heredada) V1 {#rest-api-v1}
-            + [Implementación de API sin cliente (heredada): códigos de error/mensajes con motivo/causa probable](integration-guide-programmers/legacy/notes-technical/clientless-api-implementation-error-codes-messages-with-probable-reason-cause.md)
-            + [(Heredado) Flujo de API sin cliente en ausencia de ID de dispositivo](integration-guide-programmers/legacy/notes-technical/clientless-api-flow-in-the-absence-of-device-id.md)
-            + [(Heredado) Sin cliente: Evite utilizar &#39;&amp;&#39;reg_code en la solicitud /authentication](integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
-            + [(Heredado) Habilitar los servicios de derechos de Adobe Pass para un programador en Xbox 360 y XboxOne sin cliente](integration-guide-programmers/legacy/notes-technical/enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
-            + [Métricas y tipo de dispositivo sin cliente (heredado)](integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)
-         + SDK (heredados) {#sdks}
-            + [Preguntas y respuestas sobre certificados (heredados)](integration-guide-programmers/legacy/notes-technical/certificates-qa.md)
-            + [Explicación de los ID de usuario (heredados)](integration-guide-programmers/legacy/notes-technical/understanding-user-ids.md)
-            + (Heredado) JavaScript SDK {#javascript-sdk}
-               + [Evaluación de la prevención del seguimiento (heredada): Apple Safari](integration-guide-programmers/legacy/notes-technical/tracking-prevention-assessment-apple-safari.md)
-               + [Evaluación de la prevención del seguimiento (heredada): Google Chrome](integration-guide-programmers/legacy/notes-technical/tracking-prevention-assessment-google-chrome.md)
-               + [Actualizaciones de cookies (heredadas): indicadores SameSite y Secure](integration-guide-programmers/legacy/notes-technical/cookies-updates-samesite-and-secure-flags.md)
-               + [Sugerencias de depuración (heredada)](integration-guide-programmers/legacy/notes-technical/appendix-b-debugging-tips.md)
-            + (Heredado) Android SDK {#android-sdk}
-               + [(Heredado) Habilitador de acceso Inicio de sesión único (SSO) de Android SDK en aplicaciones de Android 10](integration-guide-programmers/legacy/notes-technical/access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
-               + [(Heredado) Autenticación de Adobe Pass y el nuevo modelo de permisos de Android 6 &quot;Marshmallow&quot;](integration-guide-programmers/legacy/notes-technical/adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
-            + (Heredado) iOS/tvOS SDK {#ios-tvos-sdk}
-               + [Compatibilidad con WKWebView (heredado) en iOS SDK 3.1+](integration-guide-programmers/legacy/notes-technical/wkwebview-support-on-ios-sdk-31.md)
-               + [(Heredado) Compatibilidad con SFSafariViewController en iOS SDK 3.2+](integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)
-               + [(Heredado) SSO en iOS al utilizar el Habilitador de acceso a autenticación de Adobe Pass](integration-guide-programmers/legacy/notes-technical/sso-on-ios-when-using-the-primetime-authentication-access-enabler.md)
-               + [(Heredado) Error de autenticación de iOS: no se encuentra adobepass.ios.app](integration-guide-programmers/legacy/notes-technical/ios-authentication-error-adobepassiosapp-cannot-be-found.md)
-               + [(Heredado) Depuración de AccessEnabler iOS/tvOS SDK mediante registros de aplicaciones de consola](integration-guide-programmers/legacy/notes-technical/debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
-               + [Ruta de actualización de AccessEnabler iOS/tvOS 3.7.0 (heredado)](integration-guide-programmers/legacy/notes-technical/accessenabler-iostvos-370-upgrade-path.md)
-         + Experiencia del usuario (heredada) {#user-experience}
-            + [(Heredado) Migración de la página de inicio de sesión de MVPD de iFrame a elemento emergente](integration-guide-programmers/legacy/notes-technical/migr-mvpd-login-iframe-popup.md)
-            + [Función de comprobaciones (heredada): Cómo habilitar, solucionar problemas o determinar el problema](integration-guide-programmers/legacy/notes-technical/preflight-feature.md)
-            + [(Heredado) Permitir MVPD en el cuadro de diálogo de selección](integration-guide-programmers/legacy/notes-technical/allow-mvpd-selectn-dialog.md)
-            + [(Heredado) Evitar que las MVPD aparezcan en el cuadro de diálogo de selección](integration-guide-programmers/legacy/notes-technical/prevent-mvpd-selectn-dialog.md)
-         + Solución de problemas (heredada) {#troubleshooting}
-            + [(Heredado) Uso del proxy Charles](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
-            + [(Heredado) Monitorización de Adobe Pass Adobe PayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
-            + [(Heredado) Prueba de los flujos de autenticación y autorización mediante el sitio de prueba de la API de Adobe](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
-+ Guía de integración para MVPD {#integration-guide-mvpds}
-   + [Guía de integración de MVPD](integration-guide-mvpds/mvpd-integration-guide-overview.md)
-   + [Autenticación](integration-guide-mvpds/authn-usecase.md)
-   + [Autenticación mediante el protocolo OAuth 2.0](integration-guide-mvpds/authn-oauth2-protocol.md)
-   + [Autorización](integration-guide-mvpds/authz-usecase.md)
-   + [Autorización de verificación previa](integration-guide-mvpds/mvpd-preflight-authz.md)
-   + [Cierre de sesión de MVPD](integration-guide-mvpds/usecase-mvpd-logout.md)
-   + [Intercambio de metadatos de contenido](integration-guide-mvpds/mvpd-content-metadata-exchange.md)
-   + [Intercambio de metadatos de usuario](integration-guide-mvpds/mvpd-user-metadata-exchng.md)
-   + [Servicio web Proxy MVPD](integration-guide-mvpds/proxy-mvpd-webserv.md)
-   + [Integración de Proxy MVPD SAML](integration-guide-mvpds/proxy-mvpd-saml-int.md)
-   + [Ámbito del proveedor de servicios](integration-guide-mvpds/serv-provider-scoping.md)
-   + [Direcciones IP permitidas de MVPD](integration-guide-mvpds/mvpd-listing-ip-addres.md)
-+ Guía Del Usuario Para Tablero De TVE {#user-guide-tve-dashboard}
-   + [Resumen del panel de TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)
-   + [Entornos](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)
-   + [Revisar y enviar cambios](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)
-   + [Tablero](/help/authentication/user-guide-tve-dashboard/tve-dashboard-home.md)
-   + [Canales](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md)
-   + [Programadores](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md)
-   + [MVPD](/help/authentication/user-guide-tve-dashboard/tve-dashboard-mvpds.md)
-   + [Integraciones](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md)
-   + [Informes](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md)
-   + [Registro de cambios](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
-+ Notas técnicas {#tech-notes}
-   + Entornos {#environments}
-      + [Explicación de los entornos de Adobe](notes-technical/environments/understanding-the-adobe-environments.md)
-      + [Configurar el entorno y realizar pruebas en la calidad previa](notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md)
+- [Adobe Pass Authentication](home.md)
+- [Anuncios de productos](product-announcements.md)
+- Versiones de productos {#product-releases}
+   - 2025 {#2025}
+      - [Notas de la versión de Adobe Pass Authentication 3.2.0](notes-releases/auth-rn-320.md)
+      - [Notas de la versión de Adobe Pass Authentication 3.1.0](notes-releases/auth-rn-310.md)
+      - [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.1](notes-releases/authn-rn-javascript-471.md)
+   - 2024 {#2024}
+      - [Notas de la versión de Adobe Pass Authentication 3.0.3](notes-releases/auth-rn-303.md)
+      - [Notas de la versión de Adobe Pass Authentication 3.0](notes-releases/auth-rn-300.md)
+      - [Notas de la versión de Adobe Pass Authentication 2.70](notes-releases/auth-rn-270.md)
+      - [Notas de la versión de Adobe Pass Authentication 2.69](notes-releases/auth-rn-269.md)
+      - [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.0](notes-releases/authn-rn-javascript-470.md)
+      - [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.9.2](notes-releases/authn-rn-ios-tvos-392.md)
+      - [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.4](notes-releases/authn-rn-ios-tvos-384.md)
+   - 2023 {#2023}
+      - [Notas de la versión de Adobe Pass Authentication 2.68](notes-releases/auth-rn-268.md)
+      - [Notas de la versión de Adobe Pass Authentication 2.67](notes-releases/auth-rn-267.md)
+      - [Notas de la versión de Adobe Pass Authentication 2.66](notes-releases/auth-rn-266.md)
+      - [Notas de la versión de autenticación de Adobe Pass 2.65.1](notes-releases/auth-rn-2651.md)
+      - [Notas de la versión de Adobe Pass Authentication 2.65](notes-releases/auth-rn-265.md)
+      - [Notas de la versión de autenticación de Adobe Pass 2.64.1](notes-releases/auth-rn-2641.md)
+      - [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.3](notes-releases/authn-rn-ios-tvos-383.md)
+      - [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.2](notes-releases/authn-rn-ios-tvos-382.md)
+      - [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.8.1](notes-releases/authn-rn-ios-tvos-381.md)
+      - [Notas de la versión de Adobe Pass Authentication Android 3.7.3](notes-releases/authn-rn-android-373.md)
+   - 2022 {#2022}
+      - [Notas de la versión de Adobe Pass Authentication 2.64](notes-releases/auth-rn-264.md)
+      - [Notas de la versión de Adobe Pass Authentication 2.63](notes-releases/auth-rn-263.md)
+      - [Notas de la versión de autenticación de Adobe Pass 2.62.1](notes-releases/auth-rn-2621.md)
+      - [Notas de la versión de Adobe Pass Authentication JavaScript 4.6.0](notes-releases/authn-rn-javascript-460.md)
+   - 2021 {#2021}
+      - [Notas de la versión de Adobe Pass Authentication JavaScript 4.4.0](notes-releases/authn-rn-javascript-440.md)
+      - [Notas de la versión de Adobe Pass Authentication iOS/tvOS 3.7.0](notes-releases/authn-rn-ios-tvos-370.md)
+- KickStart {#kickstart}
+   - [Documento técnico](kickstart/technical-paper.md)
+   - [Guía de KickStart del programador](kickstart/programmer-kickstart-guide.md)
+   - [Guía de KickStart de MVPD](kickstart/mvpd-kickstart-guide.md)
+   - [Preguntas frecuentes sobre procedimientos de soporte](kickstart/support-procedures-faqs.md)
+- Guía De Integración Para Programadores {#integration-guide-programmers}
+   - [Guía de integración del programador](integration-guide-programmers/programmer-integration-guide-overview.md)
+   - [Requisitos mínimos del sistema](integration-guide-programmers/minimum-system-requirements.md)
+   - [Mecanismo de limitación](integration-guide-programmers/throttling-mechanism.md)
+   - API de REST {#rest-apis}
+      - DCR de API de REST {#rest-api-dcr}
+         - [Información general sobre el registro dinámico de clientes](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+         - [Glosario de registro dinámico de clientes](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
+         - [Preguntas frecuentes sobre el registro de cliente dinámico](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
+         - API {#rest-api-dcr-apis}
+            - [Recuperar credenciales de cliente](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
+            - [Recuperar token de acceso](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+         - Flujos {#rest-api-dcr-flows}
+            - [Flujo de registro de cliente dinámico](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
+      - API DE REST V2 {#rest-api-v2}
+         - [Información general de la API REST 2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
+         - [Glosario de la API de REST 2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
+         - [Lista de comprobación de API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
+         - [Preguntas frecuentes sobre la API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)
+         - API {#rest-api-v2-apis}
+            - [Información general sobre las API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+            - Configuración {#rest-api-v2-configuration-apis}
+               - [Recuperar la configuración de un proveedor de servicios específico](integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
+            - Sesiones {#rest-api-v2-sessions-apis}
+               - [Crear sesión de autenticación](integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
+               - [Reanudar sesión de autenticación](integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
+               - [Recuperar sesión de autenticación](integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
+               - [Realizar autenticación en el agente de usuario](integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
+            - Perfiles {#rest-api-v2-profiles-apis}
+               - [Recuperación de perfiles](integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
+               - [Recuperar perfil para mvpd específico](integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+               - [Recuperar perfil para código específico](integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
+            - Decisiones {#rest-api-v2-decisions-apis}
+               - [Recuperar decisiones de autorización utilizando mvpd específico](integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
+               - [Recuperar decisiones de preautorización utilizando mvpd específico](integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+            - Cerrar sesión {#rest-api-v2-logout-apis}
+               - [Iniciar el cierre de sesión de un mvpd específico](integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+            - Inicio de sesión único de socio {#rest-api-v2-partner-single-sign-on-apis}
+               - [Recuperar solicitud de autenticación de socio](integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
+               - [Crear y recuperar perfiles mediante una respuesta de autenticación de socio](integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+         - Flujos {#rest-api-v2-flows}
+            - [Información general sobre flujos de la API REST V2](integration-guide-programmers/rest-apis/rest-api-v2/flows/rest-api-v2-flows-overview.md)
+            - Flujos de acceso básicos {#rest-api-v2-basic-access-flows}
+               - [Flujo de perfiles básicos realizado dentro de la aplicación principal](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
+               - [Flujo de perfiles básicos realizado en la aplicación secundaria](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+               - [Flujo de autenticación básico realizado en la aplicación principal](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+               - [Flujo de autenticación básico realizado en la aplicación secundaria](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+               - [Flujo de autorización básico realizado en la aplicación principal](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
+               - [Flujo de preautorización básico realizado en la aplicación principal](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
+               - [Flujo de cierre de sesión básico realizado en la aplicación principal](integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)
+            - Flujos de acceso degradados {#rest-api-v2-degraded-access-flows}
+               - [Flujos de acceso degradados](integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)
+            - Flujos de acceso temporales {#rest-api-v2-temporary-access-flows}
+               - [Flujos de acceso temporales](integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)
+            - Flujos de acceso de inicio de sesión único {#rest-api-v2-single-sign-on-access-flows}
+               - [Inicio de sesión único con flujos de socios](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)
+               - [Inicio de sesión único con flujos de identidad de plataforma](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
+               - [Inicio de sesión único mediante flujos de token de servicio](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)
+               - [Flujo de cierre de sesión único](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
+         - Libros {#rest-api-v2-cookbooks}
+            - [Guía de API de REST V2 (de cliente a servidor)](integration-guide-programmers/rest-apis/rest-api-v2/cookbooks/rest-api-v2-cookbook-client-server.md)
+            - [Guía de API de REST V2 (servidor a servidor)](integration-guide-programmers/rest-apis/rest-api-v2/cookbooks/rest-api-v2-cookbook-server-server.md)
+         - Apéndice {#rest-api-v2-appendix}
+            - Encabezados {#rest-api-v2-appendix-headers}
+               - [Encabezado: autorización](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
+               - [Encabezado: AP-Device-Identifier](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
+               - [Encabezado: X-Device-Info](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
+               - [Encabezado: AD-Service-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
+               - [Encabezado: Adobe-Subject-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
+               - [Encabezado: X-Roku-Reserved-Roku-Connect-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)
+               - [Encabezado: AP-Partner-Framework-Status](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
+               - [Encabezado: AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
+   - Funciones estándar {#standard-features}
+      - Derechos {#entitlements}
+         - [Metadatos del usuario](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
+         - [Decisiones](integration-guide-programmers/features-standard/entitlements/decisions.md)
+         - [Tokens de medios](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
+      - Informes de errores {#error-reporting}
+         - [Códigos de error mejorados](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
+      - Acceso de inicio de sesión único {#sso-access}
+         - Inicio de sesión único de socio {#partner-sso}
+            - Inicio de sesión único de Apple {#apple-sso}
+               - [Información general sobre Apple SSO](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)
+               - [Guía de Apple SSO (API REST V2)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)
+         - Inicio de sesión único de Platform {#platform-sso}
+            - Inicio de sesión único de Amazon {#amazon-sso}
+               - [Guía de Amazon SSO (API REST V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+            - Inicio de sesión único de Roku {#roku-sso}
+               - [Guía de Roku SSO (API de REST V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
+      - Acceso a autenticación basada en inicio {#hba-access}
+         - [Autenticación basada en el hogar (HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
+      - Compatibilidad con privacidad {#privacy-support}
+         - [Resumen de soporte de privacidad](integration-guide-programmers/features-premium/privacy-support/privacy-supp-overview.md)
+         - [Cómo realizar una solicitud de privacidad](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)
+   - Funciones Premium {#features-premium}
+      - Acceso temporal {#temporary-access}
+         - [Función TempPass](integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+      - Acceso degradado {#degraded-access}
+         - [Función de degradación](integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+      - ESM {#esm}
+         - [Resumen de monitorización del servicio de derechos](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)
+         - [API de monitorización del servicio de derechos](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+         - [Métricas del lado del servidor](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
+      - Analytics {#analytics}
+         - [Integración de datos del lado del servidor de Adobe Pass Authentication en Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
+         - [Uso del Experience Cloud ID en la autenticación de Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
+   - Heredado {#legacy}
+      - API de REST (heredada) V1 {#rest-api-v1}
+         - [Información general sobre la API de REST V1 (heredada)](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
+         - [Referencia de la API de REST V1 (heredada)](integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+         - API (heredadas) {#rest-api-v1-apis}
+            - [Solicitud de código de registro (heredado)](integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+            - [Registro de registro de devolución (heredado)](integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md)
+            - [(Heredado) Eliminar registro](integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md)
+            - [(Heredado) Proporcionar lista de MVPD](integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
+            - [(Heredado) Iniciar autenticación](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)
+            - [(Heredado) Comprobar token de autenticación](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md)
+            - [(Heredado) Recuperar token de autenticación](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
+            - [(Heredado) Iniciar autorización](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authorization.md)
+            - [(Heredado) Recuperar token de autorización](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authorization-token.md)
+            - [(Heredado) Obtener un token de medios corto](integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md)
+            - [(Heredado) Comprobar flujo de autenticación por aplicación web de segunda pantalla](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md)
+            - [(Heredado) Recuperar lista de recursos autorizados previamente](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md)
+            - [(Heredado) Recuperar lista de recursos autorizados previamente por la aplicación web de segunda pantalla](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md)
+            - [(Heredado) Iniciar cierre de sesión](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)
+            - [Metadatos de usuario (heredados)](integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)
+            - [(Heredado) Recuperar solicitud de perfil](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-profilerequest.md)
+            - [Intercambio de tokens (heredado)](integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md)
+            - [(Heredado) Vista previa gratuita para Pase temporal y Pase temporal promocional](integration-guide-programmers/legacy/rest-api-v1/apis/free-preview-for-temp-pass-and-promotional-temp-pass.md)
+         - Libros de cocina (heredados) {#rest-api-v1-cookbooks}
+            - [Guía de la API de REST V1 (heredada) (de cliente a servidor)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-clienttoserver.md)
+            - [Guía de la API de REST V1 (heredada) (de servidor a servidor)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)
+      - SDK (heredados) {#sdks}
+         - (Heredado) JavaScript SDK {#javascript-sdk}
+            - [Información general sobre JavaScript SDK (heredado)](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-overview.md)
+            - [Guía de JavaScript SDK (heredada)](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-cookbook.md)
+            - [Referencia de la API de JavaScript SDK (heredada)](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
+            - [(Heredado) Autorización previa de la API de JavaScript SDK](integration-guide-programmers/legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
+            - Directrices (heredadas) {#javascript-sdk-guidelines}
+               - [(Heredado) Inicio y cierre de sesión sin actualización](integration-guide-programmers/legacy/sdks/javascript-sdk/refreshless-login-and-logout.md)
+         - (Heredado) iOS/tvOS SDK {#ios-tvos-sdk}
+            - [Información general sobre iOS/tvOS SDK (heredado)](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)
+            - [Guía de iOS/tvOS SDK (heredada)](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md)
+            - [Referencia de la API de SDK de iOS/tvOS (heredada)](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
+            - [(Heredado) Autorización previa de la API de SDK de iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
+            - Directrices (heredadas) {#ios-tvos-sdk-guidelines}
+               - [Registro de aplicaciones de iOS/tvOS (heredadas)](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
+               - [Guía de migración de iOS/tvOS v3.x (heredada)](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-v3x-migration-guide.md)
+               - [(Heredado) Comprobaciones de integridad del almacenamiento de iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-storage-integrity-checks.md)
+         - (Heredado) Android SDK {#android-sdk}
+            - [Información general sobre Android SDK (heredado)](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)
+            - [Guía de Android SDK (heredada)](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-cookbook.md)
+            - [Referencia de la API de Android SDK (heredada)](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md)
+            - [(Heredado) Autorización previa de la API de Android SDK](integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
+            - Directrices (heredadas) {#android-sdk-guidelines}
+               - [Registro de aplicaciones de Android (heredadas)](integration-guide-programmers/legacy/sdks/android-sdk/android-application-registration.md)
+               - [(Heredado) Android SDK con registro de cliente dinámico](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-with-dynamic-client-registration.md)
+         - (Heredado) FireOS SDK {#fireos-sdk}
+            - [Información general técnica de Amazon FireOS (heredado)](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-technical-overview.md)
+            - [Guía de integración de Amazon FireOS (heredada)](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-integration-cookbook.md)
+            - [Referencia de la API de Amazon FireOS (heredada)](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
+            - [(Heredado) Registro de aplicaciones de Amazon FireOS](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-application-registration.md)
+            - [(Heredado) FireOS SDK con registro de cliente dinámico](integration-guide-programmers/legacy/sdks/fireos-sdk/fireos-sdk-with-dynamic-client-registration.md)
+            - [(Heredado) Amazon FireOS SSO: guía de inicio del programador](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-firetv-sso-programmer-kickoff-guide.md)
+      - Información de cliente (heredada) {#client-information}
+         - [(Heredado) Pasar información del cliente (dispositivo, conexión y aplicación)](integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)
+      - Informes de errores (heredados) {#error-reporting}
+         - [Informes de errores (heredados)](integration-guide-programmers/legacy/error-reporting/error-reporting.md)
+      - Acceso de inicio de sesión único (heredado) {#sso-access}
+         - [(Heredado) Compatibilidad con inicio de sesión único](integration-guide-programmers/legacy/sso-access/sso-support.md)
+         - [(Heredado) SSO mediante autenticación pasiva](integration-guide-programmers/legacy/sso-access/sso-passive-authn.md)
+         - [Guía de Amazon SSO (heredada) (API de REST V1)](integration-guide-programmers/legacy/sso-access/amazon-sso-cookbook-rest-api-v1.md)
+         - [Guía de Apple SSO (heredada) (API de REST V1)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)
+         - [Guía de SSO de Apple (heredada) (iOS/tvOS SDK)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)
+      - Notas técnicas (heredadas) {#tech-notes}
+         - API de REST (heredada) V1 {#rest-api-v1}
+            - [Implementación de API sin cliente (heredada): códigos de error/mensajes con motivo/causa probable](integration-guide-programmers/legacy/notes-technical/clientless-api-implementation-error-codes-messages-with-probable-reason-cause.md)
+            - [(Heredado) Flujo de API sin cliente en ausencia de ID de dispositivo](integration-guide-programmers/legacy/notes-technical/clientless-api-flow-in-the-absence-of-device-id.md)
+            - [(Heredado) Sin cliente: Evite utilizar &#39;&amp;&#39;reg_code en la solicitud /authentication](integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
+            - [(Heredado) Habilitar los servicios de derechos de Adobe Pass para un programador en Xbox 360 y XboxOne sin cliente](integration-guide-programmers/legacy/notes-technical/enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
+            - [Métricas y tipo de dispositivo sin cliente (heredado)](integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)
+         - SDK (heredados) {#sdks}
+            - [Preguntas y respuestas sobre certificados (heredados)](integration-guide-programmers/legacy/notes-technical/certificates-qa.md)
+            - [Explicación de los ID de usuario (heredados)](integration-guide-programmers/legacy/notes-technical/understanding-user-ids.md)
+            - (Heredado) JavaScript SDK {#javascript-sdk}
+               - [Evaluación de la prevención del seguimiento (heredada): Apple Safari](integration-guide-programmers/legacy/notes-technical/tracking-prevention-assessment-apple-safari.md)
+               - [Evaluación de la prevención del seguimiento (heredada): Google Chrome](integration-guide-programmers/legacy/notes-technical/tracking-prevention-assessment-google-chrome.md)
+               - [Actualizaciones de cookies (heredadas): indicadores SameSite y Secure](integration-guide-programmers/legacy/notes-technical/cookies-updates-samesite-and-secure-flags.md)
+               - [Sugerencias de depuración (heredada)](integration-guide-programmers/legacy/notes-technical/appendix-b-debugging-tips.md)
+            - (Heredado) Android SDK {#android-sdk}
+               - [(Heredado) Habilitador de acceso Inicio de sesión único (SSO) de Android SDK en aplicaciones de Android 10](integration-guide-programmers/legacy/notes-technical/access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
+               - [(Heredado) Autenticación de Adobe Pass y el nuevo modelo de permisos de Android 6 &quot;Marshmallow&quot;](integration-guide-programmers/legacy/notes-technical/adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
+            - (Heredado) iOS/tvOS SDK {#ios-tvos-sdk}
+               - [Compatibilidad con WKWebView (heredado) en iOS SDK 3.1+](integration-guide-programmers/legacy/notes-technical/wkwebview-support-on-ios-sdk-31.md)
+               - [(Heredado) Compatibilidad con SFSafariViewController en iOS SDK 3.2+](integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)
+               - [(Heredado) SSO en iOS al utilizar el Habilitador de acceso a autenticación de Adobe Pass](integration-guide-programmers/legacy/notes-technical/sso-on-ios-when-using-the-primetime-authentication-access-enabler.md)
+               - [(Heredado) Error de autenticación de iOS: no se encuentra adobepass.ios.app](integration-guide-programmers/legacy/notes-technical/ios-authentication-error-adobepassiosapp-cannot-be-found.md)
+               - [(Heredado) Depuración de AccessEnabler iOS/tvOS SDK mediante registros de aplicaciones de consola](integration-guide-programmers/legacy/notes-technical/debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
+               - [Ruta de actualización de AccessEnabler iOS/tvOS 3.7.0 (heredado)](integration-guide-programmers/legacy/notes-technical/accessenabler-iostvos-370-upgrade-path.md)
+         - Experiencia del usuario (heredada) {#user-experience}
+            - [(Heredado) Migración de la página de inicio de sesión de MVPD de iFrame a elemento emergente](integration-guide-programmers/legacy/notes-technical/migr-mvpd-login-iframe-popup.md)
+            - [Función de comprobaciones (heredada): Cómo habilitar, solucionar problemas o determinar el problema](integration-guide-programmers/legacy/notes-technical/preflight-feature.md)
+            - [(Heredado) Permitir MVPD en el cuadro de diálogo de selección](integration-guide-programmers/legacy/notes-technical/allow-mvpd-selectn-dialog.md)
+            - [(Heredado) Evitar que las MVPD aparezcan en el cuadro de diálogo de selección](integration-guide-programmers/legacy/notes-technical/prevent-mvpd-selectn-dialog.md)
+         - Solución de problemas (heredada) {#troubleshooting}
+            - [(Heredado) Uso del proxy Charles](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
+            - [(Heredado) Monitorización de Adobe Pass Adobe PayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
+            - [(Heredado) Prueba de los flujos de autenticación y autorización mediante el sitio de prueba de la API de Adobe](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
+- Guía de integración para MVPD {#integration-guide-mvpds}
+   - [Guía de integración de MVPD](integration-guide-mvpds/mvpd-integration-guide-overview.md)
+   - [Autenticación](integration-guide-mvpds/authn-usecase.md)
+   - [Autenticación mediante el protocolo OAuth 2.0](integration-guide-mvpds/authn-oauth2-protocol.md)
+   - [Autorización](integration-guide-mvpds/authz-usecase.md)
+   - [Autorización de verificación previa](integration-guide-mvpds/mvpd-preflight-authz.md)
+   - [Cierre de sesión de MVPD](integration-guide-mvpds/usecase-mvpd-logout.md)
+   - [Intercambio de metadatos de contenido](integration-guide-mvpds/mvpd-content-metadata-exchange.md)
+   - [Intercambio de metadatos de usuario](integration-guide-mvpds/mvpd-user-metadata-exchng.md)
+   - [Servicio web Proxy MVPD](integration-guide-mvpds/proxy-mvpd-webserv.md)
+   - [Integración de Proxy MVPD SAML](integration-guide-mvpds/proxy-mvpd-saml-int.md)
+   - [Ámbito del proveedor de servicios](integration-guide-mvpds/serv-provider-scoping.md)
+   - [Direcciones IP permitidas de MVPD](integration-guide-mvpds/mvpd-listing-ip-addres.md)
+- Guía Del Usuario Para Tablero De TVE {#user-guide-tve-dashboard}
+   - [Resumen del panel de TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)
+   - [Entornos](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)
+   - [Revisar y enviar cambios](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)
+   - [Tablero](/help/authentication/user-guide-tve-dashboard/tve-dashboard-home.md)
+   - [Canales](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md)
+   - [Programadores](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md)
+   - [MVPD](/help/authentication/user-guide-tve-dashboard/tve-dashboard-mvpds.md)
+   - [Integraciones](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md)
+   - [Informes](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md)
+   - [Registro de cambios](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
+- Notas técnicas {#tech-notes}
+   - Entornos {#environments}
+      - [Explicación de los entornos de Adobe](notes-technical/environments/understanding-the-adobe-environments.md)
+      - [Configurar el entorno y realizar pruebas en la calidad previa](notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md)
