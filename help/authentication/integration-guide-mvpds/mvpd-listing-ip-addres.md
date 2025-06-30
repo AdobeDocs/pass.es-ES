@@ -12,10 +12,10 @@ ht-degree: 0%
 
 # Listado de direcciones IP de MVPD
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 >
 >El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de
->> Adobe. No se permite el uso no autorizado.
+>&#x200B;> Adobe. No se permite el uso no autorizado.
 
 Para una integración de autenticación de MVPD/Adobe Pass, se deben permitir determinadas IP en un cortafuegos de MVPD. Estas son las
 IP de salida:
