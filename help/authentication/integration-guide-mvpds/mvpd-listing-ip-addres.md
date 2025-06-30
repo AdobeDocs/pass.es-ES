@@ -2,23 +2,26 @@
 title: Listado de direcciones IP de MVPD
 description: Listado de direcciones IP de MVPD
 exl-id: be18084c-22f5-47b5-b088-d9032681113d
-source-git-commit: 1f04f0c60d404d8ae1056a8610e76c07d0c6505e
+source-git-commit: 0fd11dbcc9072fd14fb06e76f60c15d7729c3876
 workflow-type: tm+mt
-source-wordcount: '127'
+source-wordcount: '139'
 ht-degree: 0%
 
 ---
 
+
 # Listado de direcciones IP de MVPD
 
->[!NOTE]
+> [!NOTE]
 >
->El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
+>El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de
+>> Adobe. No se permite el uso no autorizado.
 
-Para una integración de autenticación de MVPD/Adobe Pass, se deben permitir determinadas IP en un cortafuegos de MVPD. Estas son las direcciones IP de salida:
+Para una integración de autenticación de MVPD/Adobe Pass, se deben permitir determinadas IP en un cortafuegos de MVPD. Estas son las
+IP de salida:
 
 | IP | Entorno | Región |
-| :-------------: | :---------: | :-----: |
+|:---------------:|:-----------:|:-------:|
 | 34.233.60.171 | Producción | us-east |
 | 34.233.163.243 | Producción | us-east |
 | 34.206.195.149 | Producción | us-east |
@@ -39,6 +42,12 @@ Para una integración de autenticación de MVPD/Adobe Pass, se deben permitir de
 | 34.193.92.8 | Ensayo | us-east |
 | 18.215.135.17 | Ensayo | us-east |
 | 193.105.140.131 | VPN | eu-east |
+| 130.248.80.10 | VPN | eu-east |
+| 130.248.81.10 | VPN | eu-east |
+| 130.248.80.11 | VPN | eu-east |
+| 130.248.81.11 | VPN | eu-east |
+| 130.248.80.12 | VPN | eu-east |
+| 130.248.81.12 | VPN | eu-east |
 | 192.150.10.0/24 | VPN | us-west |
 | 192.150.11.4 | VPN | us-west |
 | 192.150.19.4 | VPN | us-west |
