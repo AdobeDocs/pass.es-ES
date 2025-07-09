@@ -2,9 +2,9 @@
 title: Crear y recuperar perfiles mediante una respuesta de autenticación de socio
 description: 'API de REST V2: crear y recuperar perfiles mediante la respuesta de autenticación del socio'
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '775'
+source-wordcount: '779'
 ht-degree: 1%
 
 ---
@@ -233,12 +233,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>La marca de tiempo antes de la cual el perfil no es válido.</td>
+               <td>La marca de tiempo en milisegundos antes de la cual el perfil no es válido.</td>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>La marca de tiempo después de la cual el perfil no es válido.</td>
+               <td>La marca de tiempo en milisegundos tras la cual el perfil no es válido.</td>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
@@ -322,7 +322,7 @@ ht-degree: 1%
 
 ## Muestras {#samples}
 
-### 1. Crear y recuperar perfiles mediante la respuesta de autenticación del socio
+### &#x200B;1. Crear y recuperar perfiles mediante la respuesta de autenticación del socio
 
 >[!BEGINTABS]
 
@@ -379,7 +379,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Crear y recuperar perfiles mediante la respuesta de autenticación de socio, pero se aplica la degradación
+### &#x200B;2. Crear y recuperar perfiles mediante la respuesta de autenticación de socio, pero se aplica la degradación
 
 >[!BEGINTABS]
 

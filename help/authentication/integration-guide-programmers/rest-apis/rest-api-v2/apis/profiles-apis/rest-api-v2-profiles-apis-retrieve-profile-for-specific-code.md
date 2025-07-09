@@ -2,9 +2,9 @@
 title: Recuperar perfil para código específico
 description: 'API de REST V2: recuperar el perfil de un código específico'
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '752'
+source-wordcount: '756'
 ht-degree: 1%
 
 ---
@@ -200,12 +200,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>La marca de tiempo antes de la cual el perfil no es válido.</td>
+               <td>La marca de tiempo en milisegundos antes de la cual el perfil no es válido.</td>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>La marca de tiempo después de la cual el perfil no es válido.</td>
+               <td>La marca de tiempo en milisegundos tras la cual el perfil no es válido.</td>
                <td><i>obligatorio</i></td>
             </tr>
             <tr>
@@ -290,7 +290,7 @@ ht-degree: 1%
 
 ## Muestras {#samples}
 
-### 1. Recuperar el perfil de un código específico obtenido mediante autenticación básica
+### &#x200B;1. Recuperar el perfil de un código específico obtenido mediante autenticación básica
 
 >[!BEGINTABS]
 
@@ -339,7 +339,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Recuperar el perfil de un código específico mientras está seleccionado TempPass básico
+### &#x200B;2. Recuperar el perfil de un código específico mientras está seleccionado TempPass básico
 
 >[!BEGINTABS]
 
@@ -393,7 +393,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_duration_limit_exceeded",
     "message": "The temporary access duration limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=es",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "authentication"
 }
 ```
@@ -409,14 +409,14 @@ Content-Type: application/json;charset=UTF-8
     "status": 500,
     "code": "invalid_configuration_temporary_access",
     "message": "The temporary access configuration is invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=es",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "configuration"
 }
 ```
 
 >[!ENDTABS]
 
-### 3. Recupere el perfil de un código específico mientras está seleccionado TempPass promocional
+### &#x200B;3. Recupere el perfil de un código específico mientras está seleccionado TempPass promocional
 
 >[!BEGINTABS]
 
@@ -484,7 +484,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_duration_limit_exceeded",
     "message": "The temporary access duration limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=es",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "authentication"
 }
 ```
@@ -500,7 +500,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_resources_limit_exceeded",
     "message": "The temporary access resources limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=es",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "authentication"
 }
 ```
@@ -516,7 +516,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 500,
     "code": "invalid_configuration_temporary_access",
     "message": "The temporary access configuration is invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=es",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "configuration"
 }
 ```
@@ -532,14 +532,14 @@ Content-Type: application/json;charset=UTF-8
     "status": 400,
     "code": "invalid_header_identity_for_temporary_access",
     "message": "The identity for temporary access header value is missing or invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=es",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "none"
 }
 ```
 
 >[!ENDTABS]
 
-### 4. Recuperar el perfil de un código específico mientras se aplica la degradación
+### &#x200B;4. Recuperar el perfil de un código específico mientras se aplica la degradación
 
 >[!BEGINTABS]
 

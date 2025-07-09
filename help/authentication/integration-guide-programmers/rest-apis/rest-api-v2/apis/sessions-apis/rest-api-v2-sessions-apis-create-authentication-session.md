@@ -2,9 +2,9 @@
 title: Crear sesión de autenticación
 description: 'API de REST V2: crear sesión de autenticación'
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1064'
 ht-degree: 1%
 
 ---
@@ -38,7 +38,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">método</td>
-      <td>EXPONER</td>
+      <td>PUBLICAR</td>
       <td></td>
    </tr>
    <tr>
@@ -47,8 +47,8 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Proveedor de servicios</td>
-      <td>El identificador único interno asociado al proveedor de servicios durante el proceso de incorporación.</td>
+      <td style="background-color: #DEEBFF;">serviceProvider</td>
+      <td>El identificador único interno asociado con el proveedor de servicios durante el proceso de incorporación.</td>
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
@@ -192,7 +192,7 @@ ht-degree: 1%
       <td>401</td>
       <td>No autorizado</td>
       <td>
-        El token de acceso es no válido, el cliente necesita obtener un nuevo token de acceso e intentarlo de nuevo. Para obtener más información, consulte la documentación de Descripción general</a> del <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">registro de clientes dinámicos.
+        El token de acceso no es válido, el cliente debe obtener un nuevo token de acceso e intentarlo de nuevo. Para obtener más información, consulte la <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Información general sobre el registro de clientes dinámicos</a>.
       </td>
    </tr>
    <tr>
@@ -316,12 +316,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>La marca de tiempo antes de la cual no es válido el código de autenticación.</td>
+               <td>La marca de tiempo en milisegundos antes de la cual el código de autenticación no es válido.</td>
                <td>opcional</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>La marca de tiempo después de la cual el código de autenticación no es válido.</td>
+               <td>La marca de tiempo en milisegundos tras la cual el código de autenticación no es válido.</td>
                <td>opcional</td>
             </tr>
 </table>
@@ -361,11 +361,11 @@ ht-degree: 1%
 
 ## Muestras {#samples}
 
-### 1. Crear sesión de autenticación sin parámetros faltantes
+### &#x200B;1. Cree una sesión de autenticación sin parámetros
 
 >[!BEGINTABS]
 
->[!TAB Pedir]
+>[!TAB Solicitud]
 
 ```HTTPS
 POST /api/v2/REF30/sessions HTTP/1.1
@@ -405,7 +405,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Cree una sesión de autenticación sin parámetros
+### &#x200B;2. Cree una sesión de autenticación sin parámetros
 
 >[!BEGINTABS]
 
@@ -447,7 +447,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Cree una sesión de autenticación mientras ya exista un perfil válido
+### &#x200B;3. Cree una sesión de autenticación mientras ya exista un perfil válido
 
 >[!BEGINTABS]
 
@@ -488,7 +488,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Cree una sesión de autenticación con TempPass básico o promocional (no obligatorio)
+### &#x200B;4. Cree una sesión de autenticación con TempPass básico o promocional (no obligatorio)
 
 >[!BEGINTABS]
 
@@ -529,7 +529,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Crear una sesión de autenticación mientras se aplica la degradación
+### &#x200B;5. Crear una sesión de autenticación mientras se aplica la degradación
 
 >[!BEGINTABS]
 
