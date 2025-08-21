@@ -2,9 +2,9 @@
 title: Reanudar sesión de autenticación
 description: 'API de REST V2: reanudar sesión de autenticación'
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '906'
 ht-degree: 1%
 
 ---
@@ -118,6 +118,12 @@ ht-degree: 1%
          <br/><br/>
          Para implementaciones de cliente a servidor, la dirección IP del dispositivo de flujo continuo se envía implícitamente.
       </td>
+      <td>opcional</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La generación de la carga del identificador de visitante se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>opcional</td>
    </tr>
    <tr>

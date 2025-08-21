@@ -2,9 +2,9 @@
 title: Crear y recuperar perfiles mediante una respuesta de autenticación de socio
 description: 'API de REST V2: crear y recuperar perfiles mediante la respuesta de autenticación del socio'
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: be2b75d3dcde92c0b83700705892403291dcab2e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '795'
 ht-degree: 1%
 
 ---
@@ -120,6 +120,12 @@ ht-degree: 1%
          <br/><br/>
          Para implementaciones de cliente a servidor, la dirección IP del dispositivo de flujo continuo se envía implícitamente.
       </td>
+      <td>opcional</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La generación de la carga del identificador de visitante se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>opcional</td>
    </tr>
    <tr>

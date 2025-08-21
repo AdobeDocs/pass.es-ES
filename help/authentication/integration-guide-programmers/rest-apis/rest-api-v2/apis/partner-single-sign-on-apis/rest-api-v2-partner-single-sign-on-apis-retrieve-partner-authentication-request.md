@@ -2,9 +2,9 @@
 title: Recuperar solicitud de autenticación de socio
 description: 'API de REST V2: recuperar la solicitud de autenticación del socio'
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 9f872ad94e0aaa0546c8fcac9f88c50f47e10f6e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1252'
 ht-degree: 1%
 
 ---
@@ -135,6 +135,12 @@ ht-degree: 1%
          <br/><br/>
          Para implementaciones de cliente a servidor, la dirección IP del dispositivo de flujo continuo se envía implícitamente.
       </td>
+      <td>opcional</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La generación de la carga del identificador de visitante se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>opcional</td>
    </tr>
    <tr>
@@ -364,7 +370,7 @@ ht-degree: 1%
 
 ## Muestras {#samples}
 
-### 1. Recuperar solicitud de autenticación de socio
+### &#x200B;1. Recuperar solicitud de autenticación de socio
 
 >[!BEGINTABS]
 
@@ -411,7 +417,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Recuperar la solicitud de autenticación del socio, pero se aplica la degradación
+### &#x200B;2. Recuperar la solicitud de autenticación del socio, pero se aplica la degradación
 
 >[!BEGINTABS]
 
@@ -453,7 +459,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Recupere la solicitud de autenticación del socio, pero vuelve al flujo de autenticación básico debido a que falta el valor del encabezado AP-Partner-Framework-Status o no es válido
+### &#x200B;3. Recupere la solicitud de autenticación del socio, pero vuelve al flujo de autenticación básico debido a que falta el valor del encabezado AP-Partner-Framework-Status o no es válido
 
 >[!BEGINTABS]
 
@@ -498,7 +504,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Recupere la solicitud de autenticación del socio, pero vuelve al flujo de autenticación básico debido a la configuración del inicio de sesión único del socio en el servidor de Adobe Pass
+### &#x200B;4. Recupere la solicitud de autenticación del socio, pero vuelve al flujo de autenticación básico debido a la configuración del inicio de sesión único del socio en el servidor de Adobe Pass
 
 >[!BEGINTABS]
 
@@ -543,7 +549,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Recupere la solicitud de autenticación del socio, pero vuelve al flujo de autenticación básico debido a la falta de parámetros
+### &#x200B;5. Recupere la solicitud de autenticación del socio, pero vuelve al flujo de autenticación básico debido a la falta de parámetros
 
 >[!BEGINTABS]
 

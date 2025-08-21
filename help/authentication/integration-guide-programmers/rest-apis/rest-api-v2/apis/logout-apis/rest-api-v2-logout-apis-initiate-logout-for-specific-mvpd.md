@@ -2,9 +2,9 @@
 title: Iniciar el cierre de sesión de un mvpd específico
 description: 'API de REST V2: iniciar el cierre de sesión para un mvpd específico'
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1009'
+source-wordcount: '1025'
 ht-degree: 1%
 
 ---
@@ -121,6 +121,12 @@ ht-degree: 1%
         <br/><br/>
         Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan un token de servicio, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Inicio de sesión único mediante flujos de token de servicio</a>.
       </td>
+      <td>opcional</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La generación de la carga del identificador de visitante se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>opcional</td>
    </tr>
    <tr>
@@ -313,7 +319,7 @@ ht-degree: 1%
 
 ## Muestras {#samples}
 
-### 1. Iniciar el cierre de sesión para un mvpd específico que tenga un punto final de cierre de sesión
+### &#x200B;1. Iniciar el cierre de sesión para un mvpd específico que tenga un punto final de cierre de sesión
 
 >[!BEGINTABS]
 
@@ -350,7 +356,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Iniciar el cierre de sesión de un mvpd específico sin el punto final de cierre
+### &#x200B;2. Iniciar el cierre de sesión de un mvpd específico sin el punto final de cierre
 
 >[!BEGINTABS]
 
@@ -386,7 +392,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Iniciar el cierre de sesión único para mvpd específico, incluidos los perfiles obtenidos mediante el inicio de sesión único mediante el método de token de servicio
+### &#x200B;3. Iniciar el cierre de sesión único para mvpd específico, incluidos los perfiles obtenidos mediante el inicio de sesión único mediante el método de token de servicio
 
 >[!IMPORTANT]
 >
@@ -432,7 +438,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Iniciar el cierre de sesión único para mvpd específico, incluidos los perfiles obtenidos mediante el inicio de sesión único mediante el método de identidad de Platform
+### &#x200B;4. Iniciar el cierre de sesión único para mvpd específico, incluidos los perfiles obtenidos mediante el inicio de sesión único mediante el método de identidad de Platform
 
 >[!IMPORTANT]
 >
@@ -478,7 +484,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Iniciar el cierre de sesión de un mvpd específico, incluidos los perfiles obtenidos mediante el inicio de sesión único con Partner (Apple)
+### &#x200B;5. Iniciar el cierre de sesión de un mvpd específico, incluidos los perfiles obtenidos mediante el inicio de sesión único con Partner (Apple)
 
 >[!BEGINTABS]
 
@@ -514,7 +520,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 6. Iniciar el cierre de sesión de un mvpd específico mientras se aplica la degradación
+### &#x200B;6. Iniciar el cierre de sesión de un mvpd específico mientras se aplica la degradación
 
 >[!BEGINTABS]
 
@@ -550,7 +556,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 7. Iniciar el cierre de sesión para TempPass básico o promocional (no obligatorio)
+### &#x200B;7. Iniciar el cierre de sesión para TempPass básico o promocional (no obligatorio)
 
 >[!BEGINTABS]
 
