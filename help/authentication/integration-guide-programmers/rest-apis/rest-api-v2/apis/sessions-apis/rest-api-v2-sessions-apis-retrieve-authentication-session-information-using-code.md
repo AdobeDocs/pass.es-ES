@@ -2,9 +2,9 @@
 title: Recuperar sesión de autenticación mediante código
 description: 'API REST V2: Recuperar sesión de autenticación mediante código'
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
 workflow-type: tm+mt
-source-wordcount: '441'
+source-wordcount: '488'
 ht-degree: 2%
 
 ---
@@ -199,7 +199,17 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>El cuerpo de respuesta puede proporcionar información de error adicional que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
+      <td>
+            El cuerpo de respuesta puede proporcionar información de error adicional que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
+            <br/><br/>
+            La aplicación cliente debe implementar un mecanismo de gestión de errores capaz de procesar correctamente los códigos de error devueltos con más frecuencia por esta API:
+            <ul>
+                <li>invalid_authentication_session</li>
+                <li>invalid_parameter_code</li>
+                <li>etc.</li>
+            </ul>
+            La lista anterior no es exhaustiva. La aplicación cliente debe poder administrar todos los códigos de error mejorados definidos en la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentación pública</a>.
+      </td>
       <td><i>obligatorio</i></td>
    </tr>
 </table>

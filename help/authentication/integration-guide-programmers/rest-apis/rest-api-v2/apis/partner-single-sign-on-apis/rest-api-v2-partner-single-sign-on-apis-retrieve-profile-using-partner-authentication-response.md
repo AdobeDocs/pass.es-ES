@@ -2,9 +2,9 @@
 title: Crear y recuperar perfiles mediante una respuesta de autenticación de socio
 description: 'API de REST V2: crear y recuperar perfiles mediante la respuesta de autenticación del socio'
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
 workflow-type: tm+mt
-source-wordcount: '795'
+source-wordcount: '847'
 ht-degree: 1%
 
 ---
@@ -321,7 +321,22 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>El cuerpo de respuesta puede proporcionar información de error adicional que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
+      <td>
+            El cuerpo de respuesta puede proporcionar información de error adicional que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
+            <br/><br/>
+            La aplicación cliente debe implementar un mecanismo de gestión de errores capaz de procesar correctamente los códigos de error devueltos con más frecuencia por esta API:
+            <ul>
+                <li>invalid_header_pfs_permission_access_not_present</li>
+                <li>invalid_header_pfs_permission_access_not_defined</li>
+                <li>invalid_header_pfs_permission_access_not_granted</li>
+                <li>invalid_header_pfs_provider_id_not_defined</li>
+                <li>invalid_header_pfs_provider_id_mismatch</li>
+                <li>invalid_header_pfs_provider_info_expire</li>
+                <li>invalid_parameter_saml_response</li>
+                <li>etc.</li>
+            </ul>
+            La lista anterior no es exhaustiva. La aplicación cliente debe poder administrar todos los códigos de error mejorados definidos en la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentación pública</a>.
+      </td>
       <td><i>obligatorio</i></td>
    </tr>
 </table>
