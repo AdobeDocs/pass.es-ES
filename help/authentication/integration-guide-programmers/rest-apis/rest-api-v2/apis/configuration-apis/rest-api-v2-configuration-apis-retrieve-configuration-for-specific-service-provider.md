@@ -2,7 +2,7 @@
 title: Recuperar la configuración de un proveedor de servicios específico
 description: 'API de REST V2: recupere la configuración de un proveedor de servicios específico'
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
+source-git-commit: 8952283ccce38f70f4f504f07714c583fcb7e272
 workflow-type: tm+mt
 source-wordcount: '725'
 ht-degree: 2%
@@ -74,7 +74,7 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
       <td>La generación de la carga del identificador de dispositivo se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>.</td>
-      <td><i>obligatorio</i></td>
+      <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
@@ -87,7 +87,7 @@ ht-degree: 2%
          <br/><br/>
          Cuando no se proporciona, el backend de autenticación de Adobe Pass utilizará valores extraídos implícitamente (de forma predeterminada).
       </td>
-      <td><i>obligatorio</i></td>
+      <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
@@ -282,7 +282,7 @@ ht-degree: 2%
 
 ## Muestras {#samples}
 
-### 1. Recupere la configuración de un proveedor de servicios específico.
+### &#x200B;1. Recupere la configuración de un proveedor de servicios específico.
 
 >[!BEGINTABS]
 
