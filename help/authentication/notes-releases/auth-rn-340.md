@@ -2,7 +2,7 @@
 title: Notas de la versión de autenticación de Adobe Pass 3.4.0
 description: Notas de la versión de autenticación de Adobe Pass 3.4.0
 exl-id: 7a9b8c6d-4e5f-4a3b-8c7d-9e0f1a2b3c4d
-source-git-commit: 3a275f64f7f8cffa3bdc0d546c8e2db517840069
+source-git-commit: 58da8137988f0146716b56ac7a960c683b204d53
 workflow-type: tm+mt
 source-wordcount: '185'
 ht-degree: 0%
@@ -25,7 +25,7 @@ En esta página se describen las nuevas funciones, los cambios y los problemas c
 ### Número de compilación {#build-number-340}
 
 Autenticación de Adobe Pass: adobe-pass-**3.4.0**
-Fecha de versión: **09/09/2025 - 11/09/2025**
+Fecha de versión: **16/09/2025 - 18/09/2025**
 
 ### Información general de versión {#release-overview-340}
 
