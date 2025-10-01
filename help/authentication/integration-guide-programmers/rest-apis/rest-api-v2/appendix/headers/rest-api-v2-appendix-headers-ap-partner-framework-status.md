@@ -2,9 +2,9 @@
 title: 'Encabezado: AP-Partner-Framework-Status'
 description: 'API de REST V2: encabezado - AP-Partner-Framework-Status'
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '404'
 ht-degree: 0%
 
 ---
@@ -131,6 +131,8 @@ El valor `Base64-encoded` del elemento JSON que contiene los atributos siguiente
                   Este es un atributo obligatorio.
                   <br/><br/>
                   Esta es la fecha de caducidad del perfil de usuario autenticado, en caso de que el usuario haya iniciado sesión correctamente utilizando un MVPD compatible en el nivel de marco de trabajo del socio.
+                  <br/><br/>
+                  Debe ser una marca de tiempo en milisegundos desde Unix epoch (p. ej., "1735689600000"), expresada como cadena.
                </td>
             </tr>
             <tr>
