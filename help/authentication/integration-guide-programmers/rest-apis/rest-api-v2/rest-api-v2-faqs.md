@@ -2,9 +2,9 @@
 title: Preguntas frecuentes sobre la API de REST V2
 description: Preguntas frecuentes sobre la API de REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
+source-git-commit: 0b8ef6c6b326d1a9de52b24823886c708c2aad33
 workflow-type: tm+mt
-source-wordcount: '9566'
+source-wordcount: '9682'
 ht-degree: 0%
 
 ---
@@ -67,7 +67,21 @@ La aplicación cliente debe almacenar el identificador MVPD seleccionado del usu
 
 Para obtener más información, consulte la documentación de [Recuperar configuración](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md).
 
-#### &#x200B;4. ¿Debe la aplicación cliente almacenar en caché la información de respuesta de configuración en un almacenamiento persistente? {#configuration-phase-faq4}
+#### &#x200B;4. ¿Es la configuración específica de un proveedor de servicios, plataforma o usuario? {#configuration-phase-faq4}
+
+La configuración es específica de [proveedor de servicios](rest-api-v2-glossary.md#service-provider).
+
+La configuración es específica de un tipo de plataforma.
+
+La configuración no es específica de un usuario.
+
+En el caso de las aplicaciones cliente que utilizan una arquitectura servidor a servidor, se recomienda almacenar en caché la respuesta de configuración (por ejemplo, con un TTL de 2 minutos) para cada tipo de plataforma en el almacenamiento de memoria del lado del servidor. Esto reduce las solicitudes innecesarias de cada usuario y mejora la experiencia general del usuario.
+
+#### &#x200B;5. ¿Debe la aplicación cliente almacenar en caché la información de respuesta de configuración en un almacenamiento persistente? {#configuration-phase-faq5}
+
+>[!IMPORTANT]
+> 
+> En el caso de las aplicaciones cliente que utilizan una arquitectura servidor a servidor, se recomienda almacenar en caché la respuesta de configuración (por ejemplo, con un TTL de 2 minutos) para cada tipo de plataforma en el almacenamiento de memoria del lado del servidor. Esto reduce las solicitudes innecesarias de cada usuario y mejora la experiencia general del usuario.
 
 La aplicación cliente solo debe recuperar la configuración cuando el usuario necesite seleccionar su MVPD para autenticarse o volver a autenticarse.
 
@@ -77,19 +91,19 @@ La aplicación cliente debe almacenar en caché la información de respuesta de 
 * Se ofrece acceso temporal al usuario a través de la característica [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) básica o promocional.
 * La autenticación del usuario ha caducado, pero la aplicación cliente ha almacenado en caché el MVPD seleccionado anteriormente como una opción motivada por la experiencia del usuario, y solo le pide que confirme que sigue siendo un suscriptor de ese MVPD.
 
-#### &#x200B;5. ¿Puede la aplicación cliente gestionar su propia lista de MVPD? {#configuration-phase-faq5}
+#### &#x200B;6. ¿Puede la aplicación cliente gestionar su propia lista de MVPD? {#configuration-phase-faq6}
 
 La aplicación cliente puede administrar su propia lista de MVPD, pero necesitaría mantener los identificadores de MVPD sincronizados con la autenticación de Adobe Pass. Por lo tanto, se recomienda utilizar la configuración proporcionada por la autenticación de Adobe Pass para garantizar que la lista esté actualizada y sea precisa.
 
 La aplicación cliente recibirá un [error](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) de la API de REST de autenticación de Adobe Pass V2 si el identificador de MVPD proporcionado no es válido o si no tiene una integración activa con el [proveedor de servicios](rest-api-v2-glossary.md#service-provider) especificado.
 
-#### &#x200B;6. ¿Puede la aplicación cliente filtrar la lista de MVPD? {#configuration-phase-faq6}
+#### &#x200B;7. ¿Puede la aplicación cliente filtrar la lista de MVPD? {#configuration-phase-faq7}
 
 La aplicación cliente puede filtrar la lista de MVPD proporcionadas en la respuesta de configuración implementando un mecanismo personalizado basado en su propia lógica empresarial y en requisitos como la ubicación del usuario o el historial del usuario de selecciones anteriores.
 
 La aplicación cliente puede filtrar la lista de [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) MVPD o las MVPD que tienen su integración aún en desarrollo o prueba.
 
-#### &#x200B;7. ¿Qué sucede si la integración con un MVPD está deshabilitada y marcada como inactiva? {#configuration-phase-faq7}
+#### &#x200B;8. ¿Qué sucede si la integración con un MVPD está deshabilitada y marcada como inactiva? {#configuration-phase-faq8}
 
 Cuando la integración con un MVPD está deshabilitada y marcada como inactiva, MVPD se elimina de la lista de MVPD proporcionadas en respuestas de configuración adicionales y hay dos consecuencias importantes que considerar:
 
@@ -98,14 +112,14 @@ Cuando la integración con un MVPD está deshabilitada y marcada como inactiva, 
 
 La aplicación cliente recibiría un [error](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) de la API de REST de autenticación de Adobe Pass V2 si el usuario seleccionado MVPD ya no tiene una integración activa con el [proveedor de servicios](rest-api-v2-glossary.md#service-provider) especificado.
 
-#### &#x200B;8. ¿Qué sucede si la integración con una MVPD se vuelve a habilitar y se marca como activa? {#configuration-phase-faq8}
+#### &#x200B;9. ¿Qué sucede si la integración con una MVPD se vuelve a habilitar y se marca como activa? {#configuration-phase-faq9}
 
 Cuando la integración con un MVPD se vuelve a habilitar y se marca como activa, MVPD se vuelve a incluir en la lista de MVPD proporcionadas en respuestas de configuración adicionales y hay dos consecuencias importantes que se deben tener en cuenta:
 
 * Los usuarios no autenticados de ese MVPD podrán completar de nuevo la fase de autenticación mediante ese MVPD.
 * Los usuarios autenticados de ese MVPD podrán completar de nuevo las fases de preautorización, autorización o cierre de sesión con ese MVPD.
 
-#### &#x200B;9. ¿Cómo se habilita o deshabilita la integración con un MVPD? {#configuration-phase-faq9}
+#### &#x200B;10. ¿Cómo se habilita o deshabilita la integración con un MVPD? {#configuration-phase-faq10}
 
 Esta operación puede completarla uno de los administradores de su organización o un representante de autenticación de Adobe Pass que actúe en su nombre a través del [Panel de control de TVE](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) de Adobe Pass.
 
@@ -571,7 +585,7 @@ La aplicación cliente puede obtener una decisión de autorización para un núm
 
 ### Preguntas frecuentes sobre la fase de cierre {#logout-phase-faqs-general}
 
-+++Preguntas frecuentes sobre la fase de cierre de sesión
++++Preguntas frecuentes sobre la fase de cierre
 
 #### &#x200B;1. ¿Cuál es el propósito de la fase de cierre de sesión? {#logout-phase-faq1}
 
@@ -687,7 +701,7 @@ Continúe con esta sección si está trabajando en una aplicación que necesita 
 
 ### Preguntas frecuentes generales sobre migración {#general-migration-faqs}
 
-+++Preguntas frecuentes sobre la migración general
++++Preguntas frecuentes generales sobre migración
 
 #### &#x200B;1. ¿Debo implementar una nueva aplicación cliente migrada a la API de REST V2 para todos los usuarios a la vez? {#migration-faq1}
 
@@ -822,7 +836,7 @@ En la migración de la API de REST V1 a la API de REST V2 hay cambios de alto ni
 
 #### Preguntas frecuentes sobre la fase de cierre {#logout-phase-faqs-migration-rest-api-v1-to-rest-api-v2}
 
-+++Preguntas frecuentes sobre la fase de cierre de sesión
++++Preguntas frecuentes sobre la fase de cierre
 
 ##### &#x200B;1. ¿Cuáles son las migraciones de API de alto nivel necesarias para la fase de cierre de sesión? {#logout-phase-v1-to-v2-faq1}
 
@@ -1030,7 +1044,7 @@ En la migración de los SDK a la API de REST V2 hay cambios de alto nivel que ha
 
 #### Preguntas frecuentes sobre la fase de cierre {#logout-phase-faqs-migration-sdk-to-rest-api-v2}
 
-+++Preguntas frecuentes sobre la fase de cierre de sesión
++++Preguntas frecuentes sobre la fase de cierre
 
 ##### &#x200B;1. ¿Cuáles son las migraciones de API de alto nivel necesarias para la fase de cierre de sesión? {#logout-phase-sdk-to-v2-faq1}
 
