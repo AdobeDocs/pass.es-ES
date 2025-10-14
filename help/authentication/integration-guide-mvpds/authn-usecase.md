@@ -29,7 +29,7 @@ Los pasos siguientes presentan la secuencia de eventos, usando la autenticación
 
 Como se presenta en los pasos anteriores, durante el flujo de AuthN una MVPD debe aceptar una solicitud de AuthN basada en SAML y enviar una respuesta de AuthN de SAML.
 
-La [especificación de la interfaz de autenticación y autorización de acceso al contenido en línea (OLCA)](https://www.cablelabs.com/specifications/search?query=&amp;category=&amp;subcat=&amp;doctype=&amp;content=false&amp;archives=false){target=_blanck} presenta una solicitud y una respuesta AuthN estándar. Aunque la autenticación de Adobe Pass no requiere que las MVPD basen su mensajería de asignación de derechos en este estándar, mirar la especificación puede proporcionar perspectiva sobre los atributos clave necesarios para una transacción AuthN.
+La [especificación de la interfaz de autenticación y autorización de acceso al contenido en línea (OLCA)](https://www.cablelabs.com/specifications/search?query=&category=&subcat=&doctype=&content=false&archives=false){target=_blanck} presenta una solicitud y una respuesta AuthN estándar. Aunque la autenticación de Adobe Pass no requiere que las MVPD basen su mensajería de asignación de derechos en este estándar, mirar la especificación puede proporcionar perspectiva sobre los atributos clave necesarios para una transacción AuthN.
 
 >[!NOTE]
 >
