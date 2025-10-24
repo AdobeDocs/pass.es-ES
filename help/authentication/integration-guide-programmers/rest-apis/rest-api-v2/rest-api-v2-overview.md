@@ -2,9 +2,9 @@
 title: Información general de la API REST 2
 description: Información general de la API REST 2
 exl-id: a5595193-82c4-4033-bd98-596b4908b401
-source-git-commit: a02ba4ca1b6579781e40ecd0d12dbfdd23ea7398
+source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '530'
 ht-degree: 0%
 
 ---
@@ -25,27 +25,27 @@ ht-degree: 0%
 
 ## Introducción a la API de REST V2 {#rest-api-v2-introduction}
 
-Adobe Pass Authentication se complace en anunciar el iniciar de REST API V2, diseñado para mejorar la experiencia del usuario y simplificar la integración con los servicios Pass.
+Adobe Pass Authentication se complace en anunciar el lanzamiento de la API de REST V2, diseñada para mejorar la experiencia del usuario y simplificar la integración con los servicios Pass.
 
-Estamos entusiasmados con las posibilidades de nuestra nueva API REST, que representa un gran paso adelante para nuestra plataforma y abre la puerta a nuevas características y flujos de aplicación.
+Estamos entusiasmados con las posibilidades de nuestra nueva API de REST, que representa un gran paso adelante para nuestra plataforma y abre la puerta a nuevas funciones y flujos de aplicaciones.
 
-## ¿Qué es Nuevo? {#rest-api-v2-whats-new}
+## ¿Qué hay de nuevo? {#rest-api-v2-whats-new}
 
-implementación únicas en todas las plataformas
+Implementación única en todas las plataformas
 
-Las aplicaciones de los clientes ahora pueden usar el mismo implementación en todas las plataformas, lo que facilita la iniciar nuevas funciones o el mantenimiento de aplicaciones en vivo.
+Las aplicaciones de los clientes ahora pueden utilizar la misma implementación en todas las plataformas, lo que facilita el lanzamiento de nuevas funciones o el mantenimiento de aplicaciones activas.
 
-### SSO dispositivos cruzada {#rest-api-v2-cross-device-sso}
+### SSO entre dispositivos {#rest-api-v2-cross-device-sso}
 
-La API de REST V2 permite pasar de forma segura una sesión de autenticación entre diferentes dispositivos. Simplemente pasando la sesión entre dispositivos, los usuarios pueden autenticarse en su dispositivo móvil y transmitir video en un dispositivos conectado al TV sin necesidad de volver a autenticarse.
+La API REST V2 permite pasar de forma segura una sesión de autenticación entre distintos dispositivos. Con solo pasar la sesión entre dispositivos, los usuarios pueden autenticarse en su dispositivo móvil y transmitir vídeo en un dispositivo conectado a la TV sin volver a autenticarse.
 
-### Múltiples sesiones de autenticación activas {#rest-api-v2-multiple-active-authentication-sessions}
+### Varias sesiones de autenticación activas {#rest-api-v2-multiple-active-authentication-sessions}
 
-Ahora es posible realizar diferentes sesiones activas de MVPD, y los clientes pueden optar por cambiar entre TempPass y la integración regular de MVPD cuando sea necesario.
+Ahora es posible realizar diferentes sesiones activas de MVPD y los clientes pueden elegir cambiar entre TempPass y la integración normal de MVPD cuando sea necesario.
 
 ### Mecanismo de seguridad mejorado {#rest-api-v2-enhanced-security-mechanism}
 
-El registro dinámico de clientes es el mecanismo de seguridad utilizado en todos los flujos y funcionalidades. Permite un control más seguro y granular de las aplicaciones de los clientes y puede registrar aplicaciones en todas las plataformas.
+Registro dinámico de clientes es el mecanismo de seguridad utilizado en todos los flujos y funcionalidades. Permite un control más seguro y granular de las aplicaciones de los clientes y puede registrar aplicaciones en todas las plataformas.
 
 ### Rendimiento mejorado para tiempos de respuesta más rápidos {#rest-api-v2-improved-performance}
 
@@ -53,7 +53,7 @@ Los mecanismos mejorados de almacenamiento en caché permiten reducir el tráfic
 
 ### Códigos de error mejorados en todos los flujos {#rest-api-v2-enhanced-error-codes}
 
-Avanzadas códigos de error ahora están disponibles en todos los flujos de Pass en el mismo formato, con detalles adicionales que guían las aplicaciones para mejorar el experiencia del usuario general.
+Los códigos de error avanzados ahora están disponibles en todos los flujos de pasos en el mismo formato, con detalles adicionales que guían las aplicaciones para mejorar la experiencia general del usuario.
 
 ### Control mejorado en todas las sesiones de autenticación {#rest-api-v2-improved-control}
 
@@ -67,19 +67,20 @@ Todas las respuestas y la información de error ahora están normalizadas.
 
 Todos los clientes que actualmente utilizan nuestras API a través de SDK o llamadas REST pueden seguir haciéndolo, ya que planeamos seguir proporcionando asistencia hasta finales de 2025.
 
-Sin embargo, todos los desarrollos futuros se basarán en la API de REST V2. Recomendamos encarecidamente iniciar el proceso de migración para beneficiarse de las últimas funcionalidades Adobe Pass.
+Sin embargo, todos los desarrollos futuros se basarán en la API de REST V2. Recomendamos encarecidamente iniciar el proceso de migración para beneficiarse de las funcionalidades de Adobe Pass más recientes.
 
-## ¿Quieres saber más? {#rest-api-v2-want-to-learn-more}
+## ¿Desea obtener más información? {#rest-api-v2-want-to-learn-more}
 
-Para empezar, visita nuestra documentación pública:
+Para empezar, visite nuestra documentación pública:
 
 - [Seminario web](#rest-api-v2-webinar)
 - [Glosario](rest-api-v2-glossary.md)
-- [Lista de verificación](rest-api-v2-checklist.md)
-- [Preguntas más frecuentes](rest-api-v2-faqs.md)
-- [Apis](apis/rest-api-v2-apis-overview.md)
+- [Lista de comprobación](rest-api-v2-checklist.md)
+- [Reglas de IA](rest-api-v2-ai-rules.md)
+- [Preguntas frecuentes](rest-api-v2-faqs.md)
+- [API](apis/rest-api-v2-apis-overview.md)
 - [Flujos](flows/rest-api-v2-flows-overview.md)
-- Cocina
+- Libros
 - Apéndice
 - [Requisitos mínimos del sistema](/help/authentication/integration-guide-programmers/minimum-system-requirements.md)
 
@@ -91,6 +92,6 @@ Vea el seminario web sobre la nueva API de REST V2, donde proporcionamos una vis
 
 >[!VIDEO](https://video.tv.adobe.com/v/3457461/?quality=12&learn=on)
 
-## ¿Desea probar la API de REST V2? {#rest-api-v2-want-to-try}
+## ¿Quiere probar la API de REST V2? {#rest-api-v2-want-to-try}
 
-Ahora puede explorar la API de REST V2 a través de nuestro Página dedicado al producto desde Adobe Systems sitio web para [desarrolladores](https://developer.adobe.com/adobe-pass/) .
+Ahora puede explorar la API REST V2 a través de nuestra página dedicada al producto desde el sitio web [Adobe Developer](https://developer.adobe.com/adobe-pass/).

@@ -2,9 +2,9 @@
 title: Lista de comprobación de API de REST V2
 description: Lista de comprobación de API de REST V2
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2545'
+source-wordcount: '2563'
 ht-degree: 0%
 
 ---
@@ -19,9 +19,13 @@ Este documento agrega en un solo lugar los requisitos obligatorios y las prácti
 
 El seguimiento de este documento debe considerarse parte de los criterios de aceptación al implementar la API de REST V2 y debe utilizarse como lista de comprobación para garantizar que se hayan realizado todos los pasos necesarios para obtener una integración exitosa.
 
+>[!TIP]
+>
+> Para el desarrollo asistido por IA, consulte nuestras [Reglas de IA](rest-api-v2-ai-rules.md), que transforman estos requisitos en reglas estructuradas para los asistentes de codificación de IA.
+
 ## Requisitos obligatorios {#mandatory-requirements}
 
-### 1. Fase de registro {#mandatory-requirements-registration-phase}
+### &#x200B;1. Fase de registro {#mandatory-requirements-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -46,7 +50,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 2. Fase de configuración {#mandatory-requirements-configuration-phase}
+### &#x200B;2. Fase de configuración {#mandatory-requirements-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -66,7 +70,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 3. Fase de autenticación {#mandatory-requirements-authentication-phase}
+### &#x200B;3. Fase de autenticación {#mandatory-requirements-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -96,7 +100,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 4. (Opcional) Fase de preautorización {#mandatory-requirements-preauthorization-phase}
+### &#x200B;4. (Opcional) Fase de preautorización {#mandatory-requirements-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -121,7 +125,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 5. Fase de autorización {#mandatory-requirements-authorization-phase}
+### &#x200B;5. Fase de autorización {#mandatory-requirements-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -141,7 +145,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 6. Fase de cierre {#mandatory-requirements-logout-phase}
+### &#x200B;6. Fase de cierre {#mandatory-requirements-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -156,7 +160,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 7. Parámetros y encabezados {#mandatory-requirements-parameters-headers}
+### &#x200B;7. Parámetros y encabezados {#mandatory-requirements-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -191,7 +195,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 8. Gestión de errores {#mandatory-requirements-error-handling}
+### &#x200B;8. Gestión de errores {#mandatory-requirements-error-handling}
 
 <table style="table-layout:auto">
    <tr>
@@ -211,7 +215,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 9. Pruebas {#mandatory-requirements-testing}
+### &#x200B;9. Pruebas {#mandatory-requirements-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -228,7 +232,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
 
 ## Prácticas recomendadas {#recommended-practices}
 
-### 1. Fase de registro {#recommended-practices-registration-phase}
+### &#x200B;1. Fase de registro {#recommended-practices-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -243,7 +247,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 2. Fase de configuración {#recommended-practices-configuration-phase}
+### &#x200B;2. Fase de configuración {#recommended-practices-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -258,7 +262,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 3. Fase de autenticación {#recommended-practices-authentication-phase}
+### &#x200B;3. Fase de autenticación {#recommended-practices-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -283,7 +287,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 4. (Opcional) Fase de preautorización {#recommended-practices-preauthorization-phase}
+### &#x200B;4. (Opcional) Fase de preautorización {#recommended-practices-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -298,7 +302,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 5. Fase de autorización {#recommended-practices-authorization-phase}
+### &#x200B;5. Fase de autorización {#recommended-practices-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -318,7 +322,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 6. Fase de cierre {#recommended-practices-logout-phase}
+### &#x200B;6. Fase de cierre {#recommended-practices-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -333,7 +337,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 7. Parámetros y encabezados {#recommended-practices-parameters-headers}
+### &#x200B;7. Parámetros y encabezados {#recommended-practices-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -348,7 +352,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### 8. Pruebas {#recommended-practices-testing}
+### &#x200B;8. Pruebas {#recommended-practices-testing}
 
 <table style="table-layout:auto">
    <tr>

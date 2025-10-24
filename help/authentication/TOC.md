@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: 2276066d453701dc5e034da29cb971b090688afe
+source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '1274'
+source-wordcount: '1279'
 ht-degree: 3%
 
 ---
@@ -74,6 +74,7 @@ ht-degree: 3%
          - [Información general de la API REST 2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
          - [Glosario de la API de REST 2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
          - [Lista de comprobación de API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
+         - [Reglas de IA de la API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-ai-rules.md)
          - [Preguntas frecuentes sobre la API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)
          - API {#rest-api-v2-apis}
             - [Información general sobre las API de REST V2](integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
