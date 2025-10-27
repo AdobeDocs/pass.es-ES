@@ -2,7 +2,7 @@
 title: Crear sesión de autenticación
 description: 'API de REST V2: crear sesión de autenticación'
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
 workflow-type: tm+mt
 source-wordcount: '1080'
 ht-degree: 1%
@@ -303,7 +303,7 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">código</td>
                <td>El código de autenticación que se puede utilizar en una aplicación secundaria para reanudar la sesión de autenticación.</td>
-               <td><i>obligatorio</i></td>
+               <td>opcional</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">sessionId</td>

@@ -2,9 +2,9 @@
 title: Recuperar solicitud de autenticación de socio
 description: 'API de REST V2: recuperar la solicitud de autenticación del socio'
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
 workflow-type: tm+mt
-source-wordcount: '1252'
+source-wordcount: '1280'
 ht-degree: 1%
 
 ---
@@ -292,7 +292,7 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">url</td>
                <td>Dirección URL a la que debe navegar la aplicación cliente.</td>
-               <td><i>obligatorio</i></td>
+               <td>opcional</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">código</td>
@@ -333,6 +333,16 @@ ht-degree: 1%
                <td style="background-color: #DEEBFF;">serviceProvider</td>
                <td>El identificador único interno asociado con el proveedor de servicios durante el proceso de incorporación.</td>
                <td><i>obligatorio</i></td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notBefore</td>
+               <td>La marca de tiempo en milisegundos antes de la cual el código de autenticación no es válido.</td>
+               <td>opcional</td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notAfter</td>
+               <td>La marca de tiempo en milisegundos tras la cual el código de autenticación no es válido.</td>
+               <td>opcional</td>
             </tr>
          </table>
       </td>
