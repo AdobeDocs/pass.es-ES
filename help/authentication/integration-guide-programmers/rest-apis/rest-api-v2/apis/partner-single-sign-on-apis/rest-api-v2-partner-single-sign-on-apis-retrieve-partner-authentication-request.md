@@ -2,9 +2,9 @@
 title: Recuperar solicitud de autenticación de socio
 description: 'API de REST V2: recuperar la solicitud de autenticación del socio'
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1280'
+source-wordcount: '1283'
 ht-degree: 1%
 
 ---
@@ -148,7 +148,7 @@ ht-degree: 1%
       <td>
          El tipo de medio aceptado por la aplicación cliente.
          <br/><br/>
-         Si se especifica, debe ser application/json.
+         Si se especifica, debe ser application/json;charset=utf-8.
       </td>
       <td>opcional</td>
    </tr>

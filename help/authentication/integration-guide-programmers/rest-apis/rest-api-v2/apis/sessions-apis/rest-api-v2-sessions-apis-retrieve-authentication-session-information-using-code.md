@@ -2,9 +2,9 @@
 title: Recuperar sesión de autenticación mediante código
 description: 'API REST V2: Recuperar sesión de autenticación mediante código'
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: 92d2befd154b21abf743075c78ad617cff79b7e9
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '532'
 ht-degree: 2%
 
 ---
@@ -88,7 +88,7 @@ ht-degree: 2%
       <td>
          El tipo de medio aceptado por la aplicación cliente.
          <br/><br/>
-         Si se especifica, debe ser application/json.
+         Si se especifica, debe ser application/json;charset=utf-8.
       </td>
       <td>opcional</td>
    </tr>

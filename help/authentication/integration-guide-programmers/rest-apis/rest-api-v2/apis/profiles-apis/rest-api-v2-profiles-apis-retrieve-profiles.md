@@ -2,9 +2,9 @@
 title: Recuperación de perfiles
 description: 'API de REST V2: recuperar perfiles'
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '891'
 ht-degree: 1%
 
 ---
@@ -127,7 +127,7 @@ ht-degree: 1%
       <td>
          El tipo de medio aceptado por la aplicación cliente.
          <br/><br/>
-         Si se especifica, debe ser application/json.
+         Si se especifica, debe ser application/json;charset=utf-8.
       </td>
       <td>opcional</td>
    </tr>

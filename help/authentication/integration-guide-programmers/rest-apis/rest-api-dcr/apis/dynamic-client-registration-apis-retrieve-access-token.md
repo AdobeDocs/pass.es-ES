@@ -2,9 +2,9 @@
 title: Recuperar token de acceso
 description: 'API de registro de cliente dinámico: recuperar el token de acceso'
 exl-id: 23287acf-5d56-46f0-b65e-79bf7d667708
-source-git-commit: f0969a692380af3d20df37c49c37f7d1e85c7cfd
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '477'
 ht-degree: 1%
 
 ---
@@ -101,7 +101,7 @@ ht-degree: 1%
       <td>
          El tipo de medio aceptado por la aplicación cliente.
          <br/><br/>
-         Si se especifica, debe ser application/json.
+         Si se especifica, debe ser application/json;charset=utf-8.
       </td>
       <td>opcional</td>
    </tr>

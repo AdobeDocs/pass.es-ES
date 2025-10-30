@@ -2,9 +2,9 @@
 title: Recuperar credenciales de cliente
 description: 'API de registro de cliente dinámico: Recuperar credenciales de cliente'
 exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '437'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">método</td>
-      <td>POST</td>
+      <td>PUBLICAR</td>
       <td></td>
    </tr>
    <tr>
@@ -66,7 +66,7 @@ ht-degree: 1%
       <td>
          El tipo de medio aceptado para los recursos que se envían.
          <br/><br/>
-         Debe ser application/json.
+         Debe ser application/json;charset=utf-8.
       </td>
       <td><i>obligatorio</i></td>
    </tr>
@@ -88,7 +88,7 @@ ht-degree: 1%
       <td>
          El tipo de medio aceptado por la aplicación cliente.
          <br/><br/>
-         Si se especifica, debe ser application/json.
+         Si se especifica, debe ser application/json;charset=utf-8.
       </td>
       <td>opcional</td>
    </tr>
