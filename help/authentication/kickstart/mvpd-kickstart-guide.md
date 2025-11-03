@@ -2,7 +2,7 @@
 title: Guía de KickStart de MVPD
 description: Guía de KickStart de MVPD
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 0%
@@ -15,11 +15,11 @@ ht-degree: 0%
 >
 > El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
-Esta guía de KickStart está dirigida a los distribuidores de programación de vídeo multicanal (MVPD) que planean integrarse con la autenticación Adobe ® Pass.
+Esta guía de KickStart está dirigida a los distribuidores de programación de vídeo multicanal (MVPD) que planean integrarse con la autenticación Adobe® Pass.
 
 Este documento describe los pasos iniciales clave para garantizar un inicio fluido y eficiente del proceso de integración. Su objetivo es aclarar expectativas y proporcionar orientación sobre cómo colaboraremos con los socios para lograr integraciones exitosas.
 
-Adobe proporciona una serie de recursos para ayudarle a integrar con la autenticación de Adobe Pass. Consulte las menciones **&quot;Proporcionará&quot;** y **&quot;El Adobe proporcionará&quot;** de cada sección a continuación.
+Adobe proporciona una serie de recursos para ayudarle a integrar con la autenticación de Adobe Pass. Consulte las menciones **&quot;Proporcionará&quot;** y **&quot;Adobe proporcionará&quot;** de cada sección a continuación.
 
 >[!CAUTION]
 >
@@ -33,9 +33,9 @@ Adobe proporciona una serie de recursos para ayudarle a integrar con la autentic
 
 El proceso de configuración incluye, entre otros, los siguientes pasos:
 
-![Proceso de integración de autenticación de Adobe ® Pass](../assets/mvpd-int-lifecycle.png)
+![Proceso de integración de autenticación de Adobe® Pass](/help/authentication/assets/mvpd-int-lifecycle.png)
 
-*Proceso de integración de autenticación de Adobe ® Pass*
+*Proceso de integración de autenticación de Adobe® Pass*
 
 ### Kickoff {#kickoff}
 
@@ -51,7 +51,7 @@ El proceso de configuración incluye, entre otros, los siguientes pasos:
 
 * **Tiempo de vida (TTL)**
 
-  El TTL es un valor que suele establecer MVPD como parte de los procesos de autenticación o autorización. Sin embargo, el Adobe puede anular esos valores TTL y proporcionar valores diferentes según lo que acuerden el Programador y MVPD.
+  El TTL es un valor que suele establecer MVPD como parte de los procesos de autenticación o autorización. Sin embargo, Adobe puede anular esos valores TTL y proporcionar valores diferentes según lo que acuerden el Programador y MVPD.
 
 * **Conjuntos de credenciales**
 
@@ -59,7 +59,7 @@ El proceso de configuración incluye, entre otros, los siguientes pasos:
 
 ### Intercambio de metadatos (SAML) {#metadata-exchange-saml}
 
-**El Adobe proporcionará** durante la fase de intercambio de metadatos:
+**Adobe proporcionará** durante la fase de intercambio de metadatos:
 
 * **Metadatos del entorno de ensayo**
 
@@ -81,37 +81,37 @@ El proceso de configuración incluye, entre otros, los siguientes pasos:
 
 ### Conectividad {#connectivity}
 
-**Proporcionará** una forma de lista de permitidos de direcciones IP desde el Adobe, ya que la autenticación de Adobe Pass requiere que los servidores de seguridad permitan el tráfico a través de los puertos 80 y 443 para habilitar el acceso a los recursos restringidos durante los procesos de autenticación y autorización.
+**Proporcionará** una forma de lista de permitidos de direcciones IP desde Adobe, ya que la autenticación de Adobe Pass requiere que los servidores de seguridad permitan el tráfico a través de los puertos 80 y 443 para habilitar el acceso a los recursos restringidos durante los procesos de autenticación y autorización.
 
 **Proporcionará** una implementación en el perfil de ensayo para probar la conectividad.
 
 ### Desarrollo {#development}
 
-El Adobe **proporcionará tiempo de ingeniería de** para trabajar en estrecha colaboración con MVPD a fin de garantizar que la integración técnica se establezca correctamente. Este proceso implica el desarrollo de código personalizado adaptado a los requisitos específicos de MVPD.
+**Adobe proporcionará tiempo de ingeniería de** para trabajar en estrecha colaboración con MVPD a fin de garantizar que la integración técnica se establezca correctamente. Este proceso implica el desarrollo de código personalizado adaptado a los requisitos específicos de MVPD.
 
 ### Implementación en ensayo {#deployment-staging}
 
-El Adobe **proporcionará** una compilación con las actualizaciones de código necesarias que se implementarán primero en el entorno de ensayo PRE-QUAL. Durante esta fase, también se implementarán los cambios de configuración necesarios para integrar MVPD con el proveedor de servicios `TestDistributors` con fines de prueba.
+**Adobe proporcionará** una compilación con las actualizaciones de código necesarias que se implementarán primero en el entorno de ensayo PRE-QUAL. Durante esta fase, también se implementarán los cambios de configuración necesarios para integrar MVPD con el proveedor de servicios `TestDistributors` con fines de prueba.
 
-**Usted y el Adobe proporcionarán** tiempo de control de calidad (QA) para garantizar que la integración se pruebe correctamente en el entorno de ensayo PRE-QUAL. Después de esta fase, MVPD se trasladará al entorno de ensayo RELEASE para realizar más pruebas con un programador real.
+**Usted y Adobe proporcionarán** tiempo de control de calidad (QA) para garantizar que la integración se pruebe correctamente en el entorno de ensayo PRE-QUAL. Después de esta fase, MVPD se trasladará al entorno de ensayo RELEASE para realizar más pruebas con un programador real.
 
 ### Implementación en producción {#deployment-production}
 
 **Proporcionará** una implementación en el perfil de producción para probar la conectividad.
 
-El Adobe **proporcionará** una compilación con las actualizaciones de código necesarias que se implementarán en el entorno de producción PRE-QUAL.
+**Adobe proporcionará** una compilación con las actualizaciones de código necesarias que se implementarán en el entorno de producción PRE-QUAL.
 
-**Usted y el Adobe proporcionarán** tiempo de control de calidad (QA) para garantizar que la integración se pruebe correctamente usando el perfil de producción. Si todo está bien en este momento, Adobe puede trasladar la integración al entorno de producción de RELEASE (&quot;live&quot;), que está disponible para todos los usuarios.
+**Usted y Adobe proporcionarán** tiempo de control de calidad (QA) para garantizar que la integración se pruebe correctamente usando el perfil de producción. Si todo funciona correctamente en este momento, Adobe puede trasladar la integración al entorno de producción de RELEASE (&quot;live&quot;), que está disponible para todos los usuarios.
 
 >[!IMPORTANT]
 >
-> Una vez que la integración esté activa en el entorno de producción de RELEASE, es fundamental mantener una experiencia del cliente óptima. Para abordar los escenarios de caída del servidor de forma eficaz, las MVPD deben proporcionar al Adobe documentación detallada sobre los procedimientos de escalación para gestionar dichos problemas.
+> Una vez que la integración esté activa en el entorno de producción de RELEASE, es fundamental mantener una experiencia del cliente óptima. Para abordar los escenarios de caída del servidor de forma eficaz, las MVPD deben proporcionar documentación detallada sobre los procedimientos de escalación a Adobe para gestionar estos problemas.
 >
-> A cambio, el Adobe garantiza que las MVPD reciban la última versión del proceso de escalación de autenticación de Adobe Pass para optimizar la resolución de problemas.
+> A cambio, Adobe garantiza que las MVPD reciban la última versión del proceso de escalación de autenticación de Adobe Pass para optimizar la resolución de problemas.
 
 ## Acceso a entornos {#access-environments}
 
-El Adobe **proporcionará acceso de** a entornos para diferentes etapas del proceso de desarrollo:
+**Adobe proporcionará acceso a entornos para diferentes etapas del proceso de desarrollo:**
 
 * **Calificación previa (PRE-QUAL)**
 
@@ -125,20 +125,20 @@ Para obtener más información sobre cómo usar estos entornos, consulte la [Exp
 
 >[!IMPORTANT]
 > 
-> Los cambios de configuración en estos entornos deben solicitarse explícitamente a través del representante del Adobe, siguiendo el proceso de solicitud de cambio establecido.
+> Los cambios de configuración a estos entornos deben solicitarse explícitamente a través de su representante de Adobe, siguiendo el proceso de solicitud de cambio establecido.
 
 ## Acceso a asistencia al cliente {#access-customer-support}
 
-El Adobe **proporcionará acceso a** a nuestro sistema de atención al cliente a través de [Zendesk](https://tve.zendesk.com/home). Para acceder a Zendesk, debe registrarse y crear una cuenta en https://tve.zendesk.com/home.
+**Adobe proporcionará acceso a nuestro sistema de atención al cliente a través de** Zendesk[. ](https://tve.zendesk.com/home) Para acceder a Zendesk, debe registrarse y crear una cuenta en https://tve.zendesk.com/home.
 
 El equipo de autenticación de Adobe Pass está disponible para resolver cualquier pregunta o problema técnico que pueda surgir durante el proceso de integración. Póngase en contacto con nosotros en [tve-support@adobe.com](mailto:tve-support@adobe.com).
 
 ## Acceso a la documentación {#access-documentation}
 
-El Adobe **proporcionará acceso a nuestra documentación pública a través de** Adobe Experience League[&#128279;](https://experienceleague.adobe.com/es/docs/pass/authentication/home).
+**Adobe proporcionará acceso a nuestra documentación pública a través de** Adobe Experience League[.](https://experienceleague.adobe.com/en/docs/pass/authentication/home)
 
 El equipo de autenticación de Adobe Pass proporciona documentación completa sobre las funciones y flujos de trabajo disponibles en la sección [Guía de integración para MVPD](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md). Consulte la tabla de contenido de esta sección para ver vínculos a información detallada sobre cada tema.
 
 ## Acceso a la herramienta de prueba {#access-testing-tool}
 
-El Adobe **proporcionará acceso** a nuestra herramienta de exploración de API a través del sitio web [Adobe Developer](https://developer.adobe.com/adobe-pass/).
+**Adobe proporcionará acceso a** nuestra herramienta de exploración de API a través del sitio web [Adobe Developer](https://developer.adobe.com/adobe-pass/).

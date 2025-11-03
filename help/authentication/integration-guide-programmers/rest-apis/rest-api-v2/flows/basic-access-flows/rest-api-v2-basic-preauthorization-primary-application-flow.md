@@ -2,7 +2,7 @@
 title: Preautorización básica - Aplicación principal - Flujo
 description: 'API de REST V2: preautorización básica: aplicación principal: flujo'
 exl-id: f557f6c3-d5b2-4ec8-be51-91a90fbd31c0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-El **flujo de preautorización** dentro del derecho de autenticación de Adobe Pass permite que la aplicación de streaming determine si una MVPD puede permitir o denegar el acceso del usuario a una lista de recursos. Esta verificación garantiza que la aplicación pueda presentar información precisa al usuario sobre el contenido que podría poder ver.
+El **flujo de preautorización** dentro del derecho de autenticación de Adobe Pass permite que la aplicación de streaming determine si un MVPD puede permitir o denegar el acceso del usuario a una lista de recursos. Esta verificación garantiza que la aplicación pueda presentar información precisa al usuario sobre el contenido que podría poder ver.
 
 ## Recuperar decisiones de preautorización utilizando mvpd específico {#retrieve-preauthorization-decisions-using-specific-mvpd}
 
@@ -27,7 +27,7 @@ El **flujo de preautorización** dentro del derecho de autenticación de Adobe P
 
 Antes de recuperar las decisiones de preautorización utilizando una MVPD específica, asegúrese de que se cumplen los siguientes requisitos previos:
 
-* La aplicación de streaming debe tener un perfil regular válido que se haya creado correctamente para la MVPD mediante uno de los flujos de autenticación básicos:
+* La aplicación de streaming debe tener un perfil regular válido que se haya creado correctamente para MVPD mediante uno de los flujos de autenticación básicos:
    * [Realizar autenticación en la aplicación principal](rest-api-v2-basic-authentication-primary-application-flow.md)
    * [Realizar autenticación en la aplicación secundaria con mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [Realizar autenticación en la aplicación secundaria sin mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
@@ -37,7 +37,7 @@ Antes de recuperar las decisiones de preautorización utilizando una MVPD espec�
 
 Siga los pasos dados para implementar el flujo básico de preautorización utilizando una MVPD específica realizada dentro de una aplicación principal como se muestra en el diagrama siguiente.
 
-![Recuperar decisiones de preautorización utilizando mvpd específico](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-preauthorization-decisions-within-primary-application-using-specific-mvpd.png)
+![Recuperar decisiones de preautorización utilizando mvpd específico](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-preauthorization-decisions-within-primary-application-using-specific-mvpd.png)
 
 *Recuperar decisiones de preautorización utilizando mvpd específico*
 

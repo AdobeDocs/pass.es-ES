@@ -2,7 +2,7 @@
 title: Guía de integración del programador
 description: Guía de integración del programador
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
@@ -26,15 +26,15 @@ Antes de conceder acceso al contenido protegido, debe determinar si el visualiza
 
 ## Autenticación de Adobe Pass para TV en todas partes {#adobe-pass-authentication-for-tv-everywhere}
 
-Para los programadores, la determinación de la asignación de derechos no siempre es sencilla. Las MVPD custodian los datos de identificación de sus clientes y sus privilegios de acceso. Para complicar aún más las cosas, los programadores y los espectadores pueden suscribirse a una amplia variedad de MVPD, cada una de las cuales funciona con sistemas únicos. Estas complejidades hacen que la verificación de los derechos sea técnicamente difícil y consuma muchos recursos.
+Para los programadores, la determinación de la asignación de derechos no siempre es sencilla. Las MVPD custodian los datos de identificación y los privilegios de acceso de sus clientes. Para complicar aún más las cosas, los programadores y los espectadores pueden suscribirse a una amplia variedad de MVPD, cada una de las cuales funciona con sistemas únicos. Estas complejidades hacen que la verificación de los derechos sea técnicamente difícil y consuma muchos recursos.
 
-![Derecho De Usuario Determinado Directamente Por El Programador](../assets/user-ent-by-progr.png){align="center"}
+![Derecho De Usuario Determinado Directamente Por El Programador](/help/authentication/assets/user-ent-by-progr.png){align="center"}
 
 *Derecho De Usuario Determinado Directamente Por El Programador*
 
 La autenticación de Adobe Pass facilita de forma segura las transacciones de derechos entre programadores y MVPD, lo que facilita, simplifica y asegura la provisión de contenido protegido a los visualizadores aptos.
 
-![Derecho de usuario mediado por la autenticación de Adobe Pass](../assets/user-ent-mediatedby-authn.png){align="center"}
+![Derecho de usuario mediado por la autenticación de Adobe Pass](/help/authentication/assets/user-ent-mediatedby-authn.png){align="center"}
 
 *Derecho de usuario mediado por la autenticación de Adobe Pass*
 
@@ -47,11 +47,11 @@ Para los programadores, la autenticación de Adobe Pass proporciona API como par
    * [API DE REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * API de autenticación de Adobe Pass Premium:
-   * [Restablecer API de pase temporal](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [Función TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-   * [API de degradación](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Función de degradación](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-   * [API de supervisión del servicio de derechos](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+   * [Restablecer API de pase temporal](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [Función TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)
+   * [API de degradación](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
+      * [Función de degradación](/help/premium-workflow/degraded-access/degradation-feature.md)
+   * [API de supervisión del servicio de derechos](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
 
 ### Casos de uso {#use-cases}
 
@@ -72,7 +72,7 @@ En esta sección se describen más adelante los casos de uso de integración de 
 | **Fase** | **Prioridad** | **Caso de uso** | **Documentos** |
 |----------------------|--------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Autenticación** | **Alta** | Autenticación | Para obtener más información, consulte los documentos agregados en la sección [Fase de autenticación](#authentication-phase). |
-|                      | **Alta** | Autenticación basada en el hogar (HBA) | Para obtener más información, consulte [Autenticación basada en el hogar](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md). |
+|                      | **Alta** | Autenticación basada en el hogar (HBA) | Para obtener más información, consulte [Autenticación basada en el hogar](/help/premium-workflow/hba-access/home-based-authentication.md). |
 |                      | **Alta** | Inicio de sesión único (SSO) | Para obtener más información, consulte los documentos agregados en la sección [Inicio de sesión único (SSO)](#sso). |
 |                      | **Alta** | Seleccionar MVPD | Para obtener más información, consulte los documentos agregados en la sección [Fase de configuración](#configuration-phase). |
 |                      | **Medium** | Página de inicio de sesión de MVPD | Permite a las MVPD proporcionar a las páginas de inicio de sesión una personalización de marca específica para el programador o el proveedor de servicios, incluida la compatibilidad con las preferencias de idioma predeterminadas. |

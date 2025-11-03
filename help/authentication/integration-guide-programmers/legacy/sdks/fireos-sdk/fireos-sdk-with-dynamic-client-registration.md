@@ -2,7 +2,7 @@
 title: Amazon FireOS SDK con registro de cliente dinámico
 description: Amazon FireOS SDK con registro de cliente dinámico
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 FireOS AccessEnabler SDK para FireTV se modificó para habilitar la autenticación sin usar cookies de sesión. Como cada vez más exploradores restringen el acceso a las cookies, se necesitaba otro método para permitir la autenticación.
 
-**FireOS SDK 3.0.4** reemplaza el mecanismo de registro de la aplicación actual basado en la autenticación de ID de solicitante y cookie de sesión firmada con [Información general del registro de cliente dinámico](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+**FireOS SDK 3.0.4** reemplaza el mecanismo de registro de la aplicación actual basado en la autenticación de ID de solicitante y cookie de sesión firmada con [Información general del registro de cliente dinámico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ## Cambios de API {#API}
@@ -54,11 +54,11 @@ FireOS AccessEnabler SDK para FireTV se modificó para habilitar la autenticaci�
 
 ### setRequestor
 
-**Descripción:** establece la identidad del canal. A cada canal se le asigna un ID único al registrarse con el Adobe en el sistema de autenticación de Adobe Pass. Cuando se trata de SSO y tokens remotos, el estado de autenticación puede cambiar cuando la aplicación está en segundo plano. Se puede volver a llamar a setRequestor cuando la aplicación se pone en primer plano para sincronizar con el estado del sistema (recupere un token remoto si está habilitado el SSO o elimine el token local si se ha cerrado la sesión mientras tanto).
+**Descripción:** establece la identidad del canal. A cada canal se le asigna un ID único al registrarse en Adobe para el sistema de autenticación de Adobe Pass. Cuando se trata de SSO y tokens remotos, el estado de autenticación puede cambiar cuando la aplicación está en segundo plano. Se puede volver a llamar a setRequestor cuando la aplicación se pone en primer plano para sincronizar con el estado del sistema (recupere un token remoto si está habilitado el SSO o elimine el token local si se ha cerrado la sesión mientras tanto).
 
 La respuesta del servidor contiene una lista de MVPD junto con información de configuración adjunta a la identidad del canal. El código Access Enabler utiliza internamente la respuesta del servidor. Solo el estado de la operación (es decir, SUCCESS/FAIL) se presenta a la aplicación a través de la llamada de retorno setRequestorComplete().
 
-Si no se usa el parámetro *urls*, la llamada de red resultante se dirigirá a la dirección URL del proveedor de servicios predeterminado: el entorno de producción de versiones de Adobe.
+Si no se usa el parámetro *urls*, la llamada de red resultante se dirigirá a la dirección URL del proveedor de servicios predeterminado: el entorno Adobe Release Production.
 
 Si se proporciona un valor para el parámetro *urls*, la llamada de red resultante se dirigirá a todas las direcciones URL proporcionadas en el parámetro *urls*. Todas las solicitudes de configuración se activan simultáneamente en subprocesos independientes. El primer respondedor tiene prioridad al compilar la lista de MVPD. Para cada MVPD de la lista, el Habilitador de acceso recuerda la URL del proveedor de servicios asociado. Todas las solicitudes de derechos subsiguientes se dirigen a la URL asociada al proveedor de servicios emparejado con el MVPD de destino durante la fase de configuración.
 
@@ -76,8 +76,8 @@ Si se proporciona un valor para el parámetro *urls*, la llamada de red resultan
 
 **Parámetros:**
 
-- *requestorID*: El ID único asociado con el canal. Pase el ID único asignado por el Adobe a su sitio cuando se registre por primera vez en el servicio de autenticación de Adobe Pass.
-- *urls*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista MVPD está compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
+- *requestorID*: El ID único asociado con el canal. Pase el ID único asignado por Adobe a su sitio cuando se registre por primera vez en el servicio de autenticación de Adobe Pass.
+- *urls*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista MVPD está compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
 
 Obsoleto:
 
@@ -152,7 +152,7 @@ Obsoleto:
    - inicio de sesión cancelado : restablecer selección de MVPD
    - El esquema URL se establece como &quot;adobepass://android.app&quot; para capturar cuándo se completa la autenticación
 
-- e. get/checkAuthorization : SDK incluirá **access\_token &#x200B;** en el encabezado como Autorización: Portador **access\_token**
+- e. get/checkAuthorization : SDK incluirá **access\_token **en el encabezado como Autorización: Portador **access\_token**
 
 - si la autorización se realiza correctamente, se realizará una llamada para obtener el token de medios
 

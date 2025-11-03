@@ -2,7 +2,7 @@
 title: Depuración del SDK de AccessEnabler iOS/tvOS mediante los registros de aplicación de la consola
 description: Depuración del SDK de AccessEnabler iOS/tvOS mediante los registros de aplicación de la consola
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '576'
 ht-degree: 0%
@@ -50,19 +50,19 @@ Según los problemas que se investigan, es posible que desee incluir o excluir l
 
 En primer lugar, para poder ver cualquiera de los mensajes de registro emitidos por el marco de AccessEnabler, **debe** seleccionar &quot;Incluir mensajes de información&quot; e &quot;Incluir mensajes de depuración&quot; en la sección Acción de la aplicación de la consola, tal como se muestra en la siguiente imagen.
 
-![](../../../assets/include-info-debug-msg.png)
+![](/help/authentication/assets/include-info-debug-msg.png)
 
 
 Para poder depurar la funcionalidad del SDK de AccessEnabler iOS/tvOS y **ver** los registros del módulo AccessEnabler, puede:
 
 * Busque en la aplicación de consola usando la opción **Subsystem** que es igual al valor com.adobe.pass.AccessEnabler como se muestra en la siguiente imagen.
 
-![](../../../assets/subsys-console-app.png)
+![](/help/authentication/assets/subsys-console-app.png)
 
 * Busque en la aplicación de consola usando la opción **Any** que contiene la variable
   Valor de [AccessEnabler], como se muestra en la imagen siguiente.
 
-![](../../../assets/any-optn-console-app.png)
+![](/help/authentication/assets/any-optn-console-app.png)
 
 Además de los dos criterios anteriores, también puede usar la opción **Category** junto con **Subsystem** o **Any (prefix)** para buscar explícitamente mensajes de nivel **debug** o **error** emitidos por el SDK AccessEnabler iOS/tvOS.
 

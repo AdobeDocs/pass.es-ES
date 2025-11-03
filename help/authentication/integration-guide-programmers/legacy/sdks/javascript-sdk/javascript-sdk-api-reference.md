@@ -2,7 +2,7 @@
 title: Referencia de la API de JavaScript SDK
 description: Referencia de la API de JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Asegúrese de mantenerse informado sobre los últimos Adobe Pass Authentication anuncios de productos y los plazos de desmantelamiento agregados en el [Página de anuncios de](/help/authentication/product-announcements.md) productos.
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
 
 ## Referencia de API {#api-reference}
 
@@ -40,18 +40,18 @@ Estas funciones inician solicitudes de interacción con un MVPD. Todas las llama
 
 **Parámetros:**
 
-- *inRequestorID*: el identificador único que el Adobe asignó al sitio de origen durante el registro.
+- *inRequestorID*: el identificador único que Adobe asignó al sitio de origen durante el registro.
 
 - *extremos*: este parámetro es opcional. Puede tener uno de los siguientes valores:
 
-   - Matriz que permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar distintas instancias para la depuración). En caso de que se proporcionen varias direcciones URL, la lista de MVPD estará compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD. De forma predeterminada (si no se especifica ningún valor), se utiliza el proveedor de servicios de Adobe (<http://sp.auth.adobe.com/>).
+   - Matriz que permite especificar extremos para los servicios de autenticación y autorización proporcionados por Adobe (se pueden utilizar distintas instancias para la depuración). En caso de que se proporcionen varias direcciones URL, la lista de MVPD estará compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD. De forma predeterminada (si no se especifica ningún valor), se utiliza el proveedor de servicios de Adobe (<http://sp.auth.adobe.com/>).
 
   Ejemplo:
    - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *options*: un objeto JSON que contiene el valor ID de aplicación, el valor ID de visitante, la configuración sin actualización (cierre de sesión en segundo plano) y la configuración de MVPD (iFrame). Todos los valores son opcionales.
    1. Si se especifica, se informará del ID de visitante de Experience Cloud en todas las llamadas de red realizadas por la biblioteca. El valor se puede utilizar posteriormente en informes de análisis avanzados.
-   2. Si se especifica el identificador único de la aplicación -`applicationId` - el valor se agregará a todas las llamadas subsiguientes realizadas por la aplicación como parte del encabezado HTTP X-Device-Info. Este valor se puede obtener posteriormente de [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) informes con la consulta adecuada.
+   2. Si se especifica el identificador único de la aplicación -`applicationId` - el valor se agregará a todas las llamadas subsiguientes realizadas por la aplicación como parte del encabezado HTTP X-Device-Info. Este valor se puede obtener posteriormente de [ESM](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md) informes con la consulta adecuada.
 
   **Nota:** Todas las claves JSON distinguen entre mayúsculas y minúsculas.
 
@@ -64,7 +64,7 @@ Estas funciones inician solicitudes de interacción con un MVPD. Todas las llama
   })
 ```
 
-- El programador puede anular la configuración de MVPD establecida en la autenticación de Adobe Pass especificando si se requiere o no un iFrame para el inicio de sesión (clave *iFrameRequired*) y las dimensiones del iFrame (claves *iFrameWidth* y *iFrameHeight*). El objeto JSON tiene las siguientes plantilla:
+- El programador puede anular la configuración de MVPD establecida en la autenticación de Adobe Pass especificando si se requiere o no un iFrame para el inicio de sesión (clave *iFrameRequired*) y las dimensiones del iFrame (claves *iFrameWidth* y *iFrameHeight*). El objeto JSON tiene la siguiente plantilla:
 
 ```JSON
     {  
@@ -88,14 +88,14 @@ Estas funciones inician solicitudes de interacción con un MVPD. Todas las llama
 ```
 
 
-Todas las claves de nivel superior de la plantilla anterior son opcionales y tienen valores predeterminados (*backgroundLogin*, *backgroundLogut* son falsas de forma predeterminada y mvpdConfig es nula, lo que significa que no se anula ninguna configuración MVPD).
+Todas las claves de nivel superior de la plantilla anterior son opcionales y tienen valores predeterminados (*backgroundLogin*, *backgroundLogut* son false de forma predeterminada y mvpdConfig es null, lo que significa que no se invalida ninguna configuración de MVPD).
 
 
-- **Nota**: Si especifica no válido valores/tipos para los parámetros anteriores, se producirá un comportamiento indefinido.
+- **Nota**: si se especifican valores o tipos no válidos para los parámetros anteriores, se producirá un comportamiento no definido.
 
 
 
-A continuación se muestra un ejemplo de configuración para el siguiente escenario: activación de inicio de sesión y cierre de sesión sin actualización, cambio de MVPD1 a inicio de sesión completo de Página-redirección (no iFrame) y MVPD2 a iFrame inicio de sesión con width=500 y height=300:
+Este es un ejemplo de configuración para el siguiente escenario: activación del inicio de sesión y cierre de sesión sin actualización, cambio de MVPD1 al inicio de sesión de redirección de páginas completo (que no sea iFrame) y inicio de sesión de MVPD2 a iFrame con anchura=500 y altura=300:
 
 ```JSON
     {  
@@ -178,7 +178,7 @@ Se desencadenaron **devoluciones de llamadas:** [setAuthenticationStatus()](#set
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**Descripción:** el aplicación utiliza este método para comprobar el estado de autorización del cliente actual y del recurso determinado. Comienza comprobando primero el estado de autenticación. Si no se autentica, se activa la llamada de retorno tokenRequestFailed() y se cierra el método. Si el usuario está autenticado, también almacena en déclencheur el flujo de autorización. Ver detalles del método [getAuthorization()] (#getAuthZ.
+**Descripción:** La aplicación utiliza este método para comprobar el estado de autorización del cliente actual y del recurso dado. Se inicia comprobando primero el estado de autenticación. Si no se autentica, se activa la llamada de retorno tokenRequestFailed() y se cierra el método. Si el usuario está autenticado, también almacena en déclencheur el flujo de autorización. Ver detalles del método [getAuthorization()]&#x200B;(#getAuthZ.
 
 >[!TIP]
 >
@@ -236,12 +236,12 @@ Existen dos tipos de metadatos:
 
 **Parámetros:**
 
-- *clave*: un id que especifica el metadatos solicitado:
-   - Si la clave es `"TTL_AUTHN",` , entonces se realiza la consulta para obtener el tiempo de caducidad del token de autenticación.
+- *key*: ID que especifica los metadatos solicitados:
+   - Si la clave es `"TTL_AUTHN",`, se realiza la consulta para obtener el tiempo de caducidad del token de autenticación.
 
-   - Si key is `"TTL_AUTHZ"` and params es una matriz que contiene el identificador del recurso como una cadena, entonces se realiza la consulta para obtener el tiempo de expiración del token de autorización asociado al recurso especificado.
+   - Si la clave es `"TTL_AUTHZ"` y params es una matriz que contiene el ID de recurso como una cadena, se realiza la consulta para obtener la hora de caducidad del token de autorización asociado al recurso especificado.
 
-   - Si la clave es `"DEVICEID"`, se realiza la consulta para obtener el ID del dispositivo actual. Tenga en cuenta que esta función está desactivada de forma predeterminada y los programadores deben ponerse en contacto con el Adobe para obtener información sobre la habilitación y las tarifas.
+   - Si la clave es `"DEVICEID"`, se realiza la consulta para obtener el ID del dispositivo actual. Tenga en cuenta que esta función está desactivada de forma predeterminada y los programadores deben ponerse en contacto con Adobe para obtener información sobre la habilitación y las tarifas.
 
    - Si la clave procede de la siguiente lista de tipos de metadatos de usuario, se envía a la función de devolución de llamada [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata) un objeto JSON que contiene los metadatos de usuario correspondientes:
 
@@ -309,7 +309,7 @@ Por ejemplo:
 **Descripción:** Llame a esta función cuando el usuario haya seleccionado un MVPD en la interfaz de usuario de selección de proveedores para enviar la selección de proveedores al Habilitador de acceso o llame a esta función con un parámetro nulo en caso de que el usuario descarte la interfaz de usuario de selección de proveedores sin seleccionar un proveedor.
 
 **Llamadas de retorno
-desencadenó:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+desencadenó:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -321,9 +321,9 @@ desencadenó:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisau
 
 **Descripción:** Recupera los resultados de la selección del cliente en el cuadro de diálogo de selección de proveedor. Esto se puede utilizar en cualquier momento después de la comprobación de autenticación inicial.
 
-Esta función es asíncrona y devuelve su resultado a la `selectedProvider()` función de llamada de retorno.
+Esta función es asincrónica y devuelve su resultado a la función de devolución de llamada `selectedProvider()`.
 
-- **MVPD** El MVPD seleccionado actualmente, o nulo si no se seleccionó ningún MVPD.
+- **MVPD** MVPD seleccionado actualmente, o nulo si no se ha seleccionado ningún MVPD.
 - **AE_State**: el resultado de la autenticación para el cliente actual es &quot;Nuevo usuario&quot;, &quot;Usuario no autenticado&quot; o &quot;Usuario autenticado&quot;
 
 **Llamadas de retorno activadas:** [selectedProvider()](#getselectedprovider-getselectedprovider)
@@ -415,7 +415,7 @@ Debe implementar estas llamadas de retorno para gestionar las respuestas a sus l
 
 **Descripción:** Implemente esta llamada de retorno si el usuario seleccionó un MVPD que requiera un iFrame en el que mostrar su interfaz de usuario de la página de inicio de sesión de autenticación.
 
-**Activado por:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Activado por:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Volver al principio](#top)
 
@@ -448,14 +448,14 @@ Debe implementar estas llamadas de retorno para gestionar las respuestas a sus l
 
 >[!CAUTION]
 >
->El tipo de dispositivo y el sistema operativo se derivan del uso de una biblioteca Java pública (<http://java.net/projects/user-agent-utils>) y de la cadena del agente de usuario. Tenga en cuenta que esta información se proporciona solo como una forma grosera de desglosar las métricas operativas en categorías de dispositivos, pero que ese Adobe no puede responsabilizarse de los resultados incorrectos. Utilice la nueva funcionalidad en consecuencia.
+>El tipo de dispositivo y el sistema operativo se derivan del uso de una biblioteca Java pública (<http://java.net/projects/user-agent-utils>) y de la cadena del agente de usuario. Tenga en cuenta que esta información se proporciona únicamente como una forma grosera de desglosar las métricas operativas en categorías de dispositivos, pero que Adobe no puede responsabilizarse de los resultados incorrectos. Utilice la nueva funcionalidad en consecuencia.
 
 **Descripción:** Implemente esta devolución de llamada para recibir datos de seguimiento cuando se produzcan eventos específicos. Puede utilizar esto, por ejemplo, para realizar un seguimiento de cuántos usuarios han iniciado sesión con las mismas credenciales. El seguimiento no se puede configurar actualmente. Con la autenticación de Adobe Pass 1.6, `sendTrackingData()` también genera informes sobre el dispositivo, el cliente del habilitador de acceso y el tipo de sistema operativo. La llamada de retorno `sendTrackingData()` sigue siendo compatible con versiones anteriores.
 
 - Valores posibles para el tipo de dispositivo:
    - ordenador
    - tableta
-   - móvil
+   - mobile
    - consola de juegos
    - desconocido
 
@@ -487,7 +487,7 @@ Los datos son específicos para cada tipo de evento:
 |  | 2: GUID |
 |  | 3: El token ya está en la caché (verdadero/falso) |
 |  | 4: Tipo de dispositivo |
-|  | 5. Tipo de cliente del Habilitador de acceso |
+|  | &#x200B;5. Tipo de cliente del Habilitador de acceso |
 |  | 6: SO |
 | authorizationDetection | 0: Si la solicitud de token se realizó correctamente (verdadero/falso) |
 |  | 1: MVPD ID |
@@ -538,27 +538,27 @@ Los datos son específicos para cada tipo de evento:
 **Activado por:** [checkAuthorization()](#checkauthorizationinresourceid-checkauthorizationinresourceid), [getAuthorization()](#getauthorizationinresourceid-redirecturl-getauthorizationinresourceidredirecturl)
 </br>
 
-[Atrás al principio](#top)
+[Volver al principio](#top)
 
 </br>
 
 
 ## preauthorizedResources(authorizedResources) {#preauthorizedResources(authorizedResources)}
 
-**Descripción:** devolución de llamada desencadenada por Access Enabler que entrega los recursos autorizados lista devuelve después de una llamada a `checkPreauthorizedResources()`.
+**Descripción:** La llamada de retorno desencadenada por el Habilitador de acceso que entrega la lista de recursos autorizados devuelta después de una llamada a `checkPreauthorizedResources()`.
 
 **Parámetros:**
 
-- *authorizedResources*: El lista de recursos autorizados.
+- *authorizedResources*: La lista de recursos autorizados.
 
 **Activado por:** [checkPreauthorizedResources()](#checkPreauthRes)
 </br>
 
-[Atrás al principio](#top)
+[Volver al principio](#top)
 
 </br>
 
-## setMetadataStatus(key, encryption, data) {#setMetadataStatus(key,encrypted,data)}
+## setMetadataStatus(clave, cifrado, datos) {#setMetadataStatus(key,encrypted,data)}
 
 **Descripción:** La llamada de retorno desencadenada por el Habilitador de acceso que entrega los metadatos solicitados mediante una llamada de `getMetadata()`.
 

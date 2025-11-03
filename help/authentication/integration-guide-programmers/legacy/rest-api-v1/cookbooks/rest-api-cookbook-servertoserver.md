@@ -2,7 +2,7 @@
 title: Guía de la API de REST (servidor a servidor)
 description: Rest API cookbook server to server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1856'
 ht-degree: 0%
@@ -48,7 +48,7 @@ En una solución de servidor a servidor en funcionamiento están implicados los 
 ### Registro dinámico de clientes (DCR)
 
 
-Adobe Pass utiliza DCR para proteger las comunicaciones de cliente entre una aplicación o un servidor de programación y los servicios de Adobe Pass. El flujo de DCR es independiente y se describe en la [documentación de información general sobre el registro dinámico de clientes](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Adobe Pass utiliza DCR para proteger las comunicaciones de cliente entre una aplicación o un servidor de programación y los servicios de Adobe Pass. El flujo de DCR es independiente y se describe en la [documentación de información general sobre el registro dinámico de clientes](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Autenticación (authN)
@@ -73,7 +73,7 @@ a su MVPD para determinar si el usuario tiene una cuenta válida.
 
 El diagrama siguiente ilustra el flujo de autenticación:
 
-![](../../../../assets/authn-flow.png)
+![](/help//authentication/assets/authn-flow.png)
 
 ### Autorización (authZ)
 
@@ -86,7 +86,7 @@ El flujo de autorización se utiliza para determinar si un usuario tiene derecho
 
 El diagrama siguiente ilustra el flujo de autorización:
 
-![](../../../../assets/authz-flow.png)
+![](/help//authentication/assets/authz-flow.png)
 
 ### Cerrar sesión
 
@@ -98,7 +98,7 @@ asociadas a la aplicación.
 
 El diagrama siguiente ilustra el flujo de cierre de sesión:
 
-![](../../../../assets/logout-flow.png)
+![](/help//authentication/assets/logout-flow.png)
 
 ### \[Opcional\] Autorización previa (también conocida como Pre-flight)
 
@@ -106,7 +106,7 @@ La preautorización se puede utilizar para determinar rápidamente, a partir de 
 
 1. Una vez autenticado el usuario, el Dispositivo de streaming puede llamar al Servicio de programador para solicitar el contenido al que el usuario tiene derecho a transmitir.
 
-1. El servicio de programación debe llamar a la API de Adobe Pass **preauthorize** con una lista de ID de recursos, que son una cadena simple que normalmente representa un canal al que un usuario podría tener derecho de flujo. *Nota: actualmente, la llamada a* ***preauthorize*** *está configurada para limitar la lista a cinco (5) ID de recursos. Cuando se necesitan más de cinco recursos, se pueden realizar varias&#x200B;*** llamadas &#x200B;**&#x200B;**&#x200B; preautorizadas *, o bien se puede configurar la llamada para aceptar más de cinco recursos con un acuerdo de las MVPD. Los implementadores deben tener en cuenta el costo de una llamada de* &#x200B;***preauthorize*** *a los recursos de MVPD, así como el tiempo de respuesta al programador y estructurar su uso de la llamada con prudencia.*
+1. El servicio de programación debe llamar a la API de Adobe Pass **preauthorize** con una lista de ID de recursos, que son una cadena simple que normalmente representa un canal al que un usuario podría tener derecho de flujo. *Nota: actualmente, la llamada a* ***preauthorize*** *está configurada para limitar la lista a cinco (5) ID de recursos. Cuando se necesitan más de cinco recursos, se pueden realizar varias* llamadas ****** preautorizadas *, o bien se puede configurar la llamada para aceptar más de cinco recursos con un acuerdo de las MVPD. Los implementadores deben tener en cuenta el costo de una llamada de* ***preauthorize*** *a los recursos de MVPD, así como el tiempo de respuesta al programador y estructurar su uso de la llamada con prudencia.*
 
 1. La llamada **preauthorize** responderá al servicio de programador con un objeto JSON que contiene un valor TRUE o FALSE para cada ID de recurso en la solicitud que indica si el usuario tiene derecho al canal asociado o no. *Nota: Si un MVPD no proporciona una respuesta para un Id. de recurso determinado (por ejemplo, debido a errores de red o tiempos de espera), el valor predeterminado será FALSO.*
 
@@ -114,7 +114,7 @@ La preautorización se puede utilizar para determinar rápidamente, a partir de 
 
 El diagrama siguiente ilustra el flujo de preautorización:
 
-![](../../../../assets/preauthz-flow.png)
+![](/help//authentication/assets/preauthz-flow.png)
 
 
 ### \[Opcional\] Metadatos
@@ -130,7 +130,7 @@ El diagrama siguiente ilustra el flujo de preautorización:
 
 
 
-![](../../../../assets/user-metadata-api-preauthz.png)
+![](/help//authentication/assets/user-metadata-api-preauthz.png)
 
 
 
@@ -152,14 +152,14 @@ El servicio Adobe Pass se ejecuta en varios centros de datos distribuidos geogr�
 infraestructura.
 
 
-El servicio Programador debe limitar la memoria caché DNS a un máximo de 30 segundos en caso de que el Adobe necesite redireccionar el tráfico. Esto puede ocurrir si un centro de datos deja de estar disponible.
+El servicio Programador debe limitar la caché DNS a un máximo de 30 segundos en caso de que Adobe necesite redireccionar el tráfico. Esto puede ocurrir si un centro de datos deja de estar disponible.
 
 
 El programador debe proporcionar el rango de IP pública del entorno de producción. Estas se incluirán en una lista de direcciones IP permitidas en la infraestructura de Adobe Pass para su acceso y se administrarán mediante las políticas de uso de API equitativas de Adobe.
 
 ### Ensayo
 
-El entorno de ensayo puede ser mínimo, pero debe incluir todos los componentes del sistema y la lógica empresarial. Debe funcionar de manera similar a la producción y permitir versiones de prueba fuera de la producción. Lo ideal es que el entorno de ensayo se pueda conectar a los entornos de prueba de Adobe Pass para que el programador lo use y, cuando sea necesario, mediante el Adobe, para que podamos ayudarle en las pruebas y la resolución de problemas.
+El entorno de ensayo puede ser mínimo, pero debe incluir todos los componentes del sistema y la lógica empresarial. Debe funcionar de manera similar a la producción y permitir versiones de prueba fuera de la producción. Lo ideal es que el entorno de ensayo se pueda conectar a los entornos de prueba de Adobe Pass para que el programador lo use, y Adobe cuando sea necesario, para que podamos ayudarle en las pruebas y la resolución de problemas.
 
 ### Requisitos funcionales
 
@@ -192,4 +192,4 @@ El servicio Programador debe enviar los datos y el formato requeridos por las MV
 
 El servicio Programador debe respetar los TTL authN y authZ al almacenar en caché e invalidar las sesiones authN o authZ cuando se le notifique.
 
-El programador debe mantener los certificados compartidos con el Adobe.
+El programador debe mantener los certificados compartidos con Adobe.

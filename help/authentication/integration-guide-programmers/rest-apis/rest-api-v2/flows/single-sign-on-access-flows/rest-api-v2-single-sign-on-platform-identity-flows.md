@@ -2,7 +2,7 @@
 title: 'Inicio de sesión único: identidad de plataforma: flujos'
 description: 'API de REST V2: inicio de sesión único, identidad de plataforma, flujos'
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 2afe9ea2a814817757f1ab28484a84466da68d62
 workflow-type: tm+mt
 source-wordcount: '1855'
 ht-degree: 0%
@@ -33,8 +33,8 @@ Para obtener más información sobre el encabezado `Adobe-Subject-Token` / `X-Ro
 
 >[!MORELIKETHIS]
 > 
-> * [Guía de Amazon SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-> * [Guía de Roku SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
+> * [Guía de Amazon SSO](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+> * [Guía de Roku SSO](/help/premium-workflow/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
 
 ## Realizar autenticación mediante el inicio de sesión único mediante la identidad de la plataforma {#perform-authentication-through-single-sign-on-using-platform-identity}
 
@@ -62,7 +62,7 @@ Antes de realizar el flujo de autenticación mediante el inicio de sesión únic
 
 Realice los pasos dados para implementar el flujo de autenticación mediante el inicio de sesión único utilizando una identidad de plataforma como se muestra en el diagrama siguiente.
 
-![Realizar autenticación mediante el inicio de sesión único mediante la identidad de la plataforma](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-platform-identity-flow.png)
+![Realizar autenticación mediante el inicio de sesión único mediante la identidad de la plataforma](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-platform-identity-flow.png)
 
 *Realizar autenticación mediante el inicio de sesión único mediante la identidad de la plataforma*
 
@@ -232,7 +232,7 @@ Antes de realizar el flujo de autorización mediante el inicio de sesión único
 
 Realice los pasos dados para implementar el flujo de autorización a través del inicio de sesión único utilizando una identidad de plataforma como se muestra en el diagrama siguiente.
 
-![Recuperar decisiones de autorización mediante el inicio de sesión único mediante la identidad de la plataforma](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-platform-identity-flow.png)
+![Recuperar decisiones de autorización mediante el inicio de sesión único mediante la identidad de la plataforma](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-platform-identity-flow.png)
 
 *Recuperar decisiones de autorización mediante el inicio de sesión único mediante la identidad de la plataforma*
 

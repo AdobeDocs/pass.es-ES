@@ -2,7 +2,7 @@
 title: Guía de iOS/tvOS
 description: Guía de iOS/tvOS
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '2424'
 ht-degree: 0%
@@ -46,9 +46,9 @@ La actividad de red de AccessEnabler tiene lugar en su propio subproceso, por lo
 * La capa de aplicación de la interfaz de usuario envía mensajes al dominio AccessEnabler a través de las llamadas de API expuestas por la biblioteca AccessEnabler.
 * AccessEnabler responde a la capa de interfaz de usuario mediante los métodos de devolución de llamada incluidos en el protocolo AccessEnabler que la capa de interfaz de usuario registra con la biblioteca AccessEnabler.
 
-## Configuración del servicio de ID de Experience Cloud (ID de visitante) {#visitorIDSetup}
+## Configuración del servicio Experience Cloud ID (ID de visitante) {#visitorIDSetup}
 
-La configuración del valor [ID de Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=es) es importante desde el punto de vista de [!DNL Analytics]. Una vez establecido el valor `visitorID`, SDK envía esta información junto con cada llamada de red y el servidor de autenticación [!DNL Adobe Pass] recopila esta información. Puede correlacionar los análisis del servicio de autenticación de Adobe Pass con cualquier otro informe de análisis que pueda tener de otras aplicaciones o sitios web. Encontrará información sobre cómo configurar visitorID [aquí](#setOptions).
+La configuración del valor [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html) es importante desde el punto de vista de [!DNL Analytics]. Una vez establecido el valor `visitorID`, SDK envía esta información junto con cada llamada de red y el servidor de autenticación [!DNL Adobe Pass] recopila esta información. Puede correlacionar los análisis del servicio de autenticación de Adobe Pass con cualquier otro informe de análisis que pueda tener de otras aplicaciones o sitios web. Encontrará información sobre cómo configurar visitorID [aquí](#setOptions).
 
 ## Flujos de derecho {#entitlement}
 
@@ -120,7 +120,7 @@ tiene autorización para ver.
       * Se activa mediante una acción del usuario (seleccionando &quot;Cancelar&quot; u &quot;Otros proveedores de TV&quot; en el cuadro de diálogo de SSO de Apple).
       * El parámetro viewController es el cuadro de diálogo de SSO de Apple y debe descartarse del controlador de vista principal.
 
-![](../../../../assets/iOS-flows.png)
+![](/help//authentication/assets/iOS-flows.png)
 
 ### B. Flujo de inicio {#startup_flow}
 
@@ -136,7 +136,6 @@ tiene autorización para ver.
 Responsable para organizar esto).
 
    * **Déclencheur:**
-
      [setRequestorComplete()](#$setReqComplete) llamada de retorno.
 
    >[!NOTE]

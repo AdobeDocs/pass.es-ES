@@ -2,7 +2,7 @@
 title: Inicio de sesión único - Socio - Flujos
 description: API de REST V2 - Inicio de sesión único - Socio - Flujos
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Para obtener más información sobre el encabezado `AP-Partner-Framework-Status`
 
 La API de REST de autenticación de Adobe Pass V2 es compatible con el inicio de sesión único (SSO) de socio para usuarios finales de aplicaciones cliente que se ejecutan en iOS, iPadOS o tvOS.
 
-Para obtener más información sobre el inicio de sesión único (SSO) para Apple Platform, consulte la [Guía de Apple SSO (API de REST V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
+Para obtener más información sobre el inicio de sesión único (SSO) para Apple Platform, consulte la [Guía de Apple SSO (API de REST V2)](/help/premium-workflow/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
 
 ## Recuperar solicitud de autenticación de socio {#retrieve-partner-authentication-request}
 
@@ -59,7 +59,7 @@ Antes de recuperar la solicitud de autenticación del socio, asegúrese de que s
 
 Realice los pasos dados para recuperar la solicitud de autenticación de socio como se muestra en el diagrama siguiente.
 
-![Recuperar solicitud de autenticación de socio](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-partner-authentication-request-flow.png)
+![Recuperar solicitud de autenticación de socio](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-partner-authentication-request-flow.png)
 
 *Recuperar solicitud de autenticación de socio*
 
@@ -173,7 +173,7 @@ Antes de recuperar el perfil mediante una respuesta de autenticación de socio, 
 
 Realice los pasos dados para implementar el flujo de recuperación de perfiles mediante una respuesta de autenticación de socio como se muestra en el diagrama siguiente.
 
-![Crear y recuperar perfiles mediante la respuesta de autenticación del socio](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
+![Crear y recuperar perfiles mediante la respuesta de autenticación del socio](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
 
 *Crear y recuperar un perfil autenticado mediante la respuesta de autenticación del socio*
 

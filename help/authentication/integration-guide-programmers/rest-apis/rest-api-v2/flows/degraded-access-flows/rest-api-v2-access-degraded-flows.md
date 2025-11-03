@@ -2,7 +2,7 @@
 title: Flujos de acceso degradados
 description: 'API REST V2: Flujos de acceso degradados'
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1615'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 La degradación proporciona la omisión temporal de extremos de autenticación y autorización específicos de MVPD. Normalmente, el programador inicia esta acción, pero independientemente de quién déclencheur un evento de degradación, la acción depende de los acuerdos previos realizados con las MVPD afectadas.
 
-Para obtener más información sobre la característica de degradación, consulte la documentación de [Degradación](../../../../features-premium/degraded-access/degradation-feature.md).
+Para obtener más información sobre la característica de degradación, consulte la documentación de [Degradación](/help/premium-workflow/degraded-access/degradation-feature.md).
 
 Los flujos de acceso degradados le permiten consultar los siguientes escenarios:
 
@@ -55,7 +55,7 @@ Antes de realizar el flujo de autenticación mientras se aplica la degradación,
 
 Siga los pasos dados para implementar el flujo de autenticación mientras se aplica la degradación como se muestra en el diagrama siguiente.
 
-![Realizar autenticación mientras se aplica la degradación](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-perform-authentication-while-degradation-is-applied-flow.png)
+![Realizar autenticación mientras se aplica la degradación](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-perform-authentication-while-degradation-is-applied-flow.png)
 
 *Realizar autenticación mientras se aplica la degradación*
 
@@ -123,7 +123,7 @@ Antes de recuperar las decisiones de autorización mientras se aplica la degrada
 
 Siga los pasos dados para implementar el flujo de autorización mientras se aplica la degradación como se muestra en el diagrama siguiente.
 
-![Recuperar decisiones de autorización mientras se aplica la degradación](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-authorization-decisions-while-degradation-is-applied-flow.png)
+![Recuperar decisiones de autorización mientras se aplica la degradación](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-authorization-decisions-while-degradation-is-applied-flow.png)
 
 *Recuperar decisiones de autorización mientras se aplica la degradación*
 
@@ -189,7 +189,7 @@ Antes de recuperar las decisiones de preautorización mientras se aplica la degr
 
 Siga los pasos dados para implementar el flujo de preautorización mientras se aplica la degradación como se muestra en el diagrama siguiente.
 
-![Recuperar decisiones de preautorización mientras se aplica la degradación](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-preauthorization-decisions-while-degradation-is-applied-flow.png)
+![Recuperar decisiones de preautorización mientras se aplica la degradación](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-preauthorization-decisions-while-degradation-is-applied-flow.png)
 
 *Recuperar decisiones de preautorización mientras se aplica la degradación*
 
@@ -263,7 +263,7 @@ Antes de recuperar el perfil para un MVPD específico mientras se aplica la degr
 
 Siga los pasos dados para implementar el flujo de recuperación de perfiles para una MVPD específica mientras se aplica la degradación como se muestra en el diagrama siguiente.
 
-![Recuperar perfil mientras se aplica la degradación](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
+![Recuperar perfil mientras se aplica la degradación](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
 
 *Recuperar perfil mientras se aplica la degradación*
 

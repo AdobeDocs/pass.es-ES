@@ -2,7 +2,7 @@
 title: Entornos del panel de TVE
 description: Comprender el uso y el funcionamiento de los distintos entornos en el Tablero de TVE.
 exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
@@ -34,17 +34,17 @@ Los entornos del Tablero de TVE sirven para varios casos de uso a lo largo del c
 ### Ensayo de preigualación
 
 * Valide las nuevas funciones no publicadas del servidor de autenticación de Adobe Pass mediante los extremos de ensayo de MVPD.
-* Utilizado principalmente por el equipo de producto de autenticación de Adobe Pass para añadir y validar nuevas integraciones de MVPD.
+* Lo utiliza principalmente el equipo de productos de autenticación de Adobe Pass para añadir y validar nuevas integraciones de MVPD.
 
 ### Producción de preigualación
 
 * Valide las nuevas funciones o configuraciones no publicadas del servidor de autenticación de Adobe Pass mediante los extremos de producción de MVPD.
-* Validar nuevas versiones de aplicaciones para cada canal utilizando los extremos de producción de MVPD.
+* Valide las nuevas versiones de la aplicación para cada canal mediante los extremos de producción de MVPD.
 * Valide cada cambio de configuración antes de colocarlo en producción.
 
 ### Ensayo de lanzamiento
 
-* Valide las nuevas versiones de las aplicaciones para cada canal mediante los extremos de ensayo de MVPD.
+* Valide las nuevas versiones de la aplicación para cada canal mediante los extremos de ensayo de MVPD.
 * Realizar pruebas de rendimiento o capacidad dentro de este entorno.
 
 ### Producción de versiones
@@ -60,7 +60,7 @@ Siga los pasos para cambiar entre los entornos del tablero de TVE de autenticaci
 
 1. Seleccione el entorno de ensayo o producción necesario en el menú desplegable **Entorno** que se encuentra en la parte superior del panel izquierdo.
 
-   ![Menú desplegable de entornos del panel de TVE](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
+   ![Menú desplegable de entornos del panel de TVE](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
 
    *Menú desplegable del entorno del Panel de TVE de autenticación de Adobe Pass*
 

@@ -2,7 +2,7 @@
 title: Inicio de sesión único - Token de servicio - Flujos
 description: API de REST V2 - Inicio de sesión único - Token de servicio - Flujos
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1857'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Antes de realizar el flujo de autenticación mediante el inicio de sesión únic
 
 Realice los pasos dados para implementar el flujo de autenticación mediante el inicio de sesión único utilizando un token de servicio como se muestra en el diagrama siguiente.
 
-![Realizar autenticación mediante el inicio de sesión único mediante el token de servicio](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
+![Realizar autenticación mediante el inicio de sesión único mediante el token de servicio](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
 
 *Realizar autenticación mediante el inicio de sesión único mediante el token de servicio*
 
@@ -230,7 +230,7 @@ Antes de realizar el flujo de autorización mediante el inicio de sesión único
 
 Realice los pasos dados para implementar el flujo de autorización a través del inicio de sesión único mediante un token de servicio, como se muestra en el diagrama siguiente.
 
-![Recuperar decisiones de autorización mediante el inicio de sesión único mediante el token de servicio](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
+![Recuperar decisiones de autorización mediante el inicio de sesión único mediante el token de servicio](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
 
 *Recuperar decisiones de autorización mediante el inicio de sesión único mediante el token de servicio*
 

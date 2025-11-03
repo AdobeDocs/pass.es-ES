@@ -2,7 +2,7 @@
 title: Autenticación básica - Aplicación secundaria - Flujo
 description: 'API de REST V2: autenticación básica: aplicación secundaria: flujo'
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '2006'
 ht-degree: 0%
@@ -65,7 +65,7 @@ Antes de iniciar el flujo de autenticación dentro de una aplicación principal 
 
 Siga los pasos dados para implementar el flujo de autenticación básico realizado dentro de una aplicación secundaria con una MVPD preseleccionada como se muestra en el diagrama siguiente.
 
-![Realizar autenticación en la aplicación secundaria con mvpd preseleccionado](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
+![Realizar autenticación en la aplicación secundaria con mvpd preseleccionado](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
 
 *Realizar autenticación en la aplicación secundaria con mvpd preseleccionado*
 
@@ -209,7 +209,7 @@ Antes de iniciar el flujo de autenticación dentro de una aplicación principal 
 
 Siga los pasos dados para implementar el flujo de autenticación básico realizado dentro de una aplicación secundaria sin un MVPD preseleccionado, como se muestra en el diagrama siguiente.
 
-![Realizar autenticación en la aplicación secundaria sin mvpd preseleccionado](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
+![Realizar autenticación en la aplicación secundaria sin mvpd preseleccionado](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
 
 *Realizar autenticación en la aplicación secundaria sin mvpd preseleccionado*
 

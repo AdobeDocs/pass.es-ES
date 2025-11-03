@@ -2,7 +2,7 @@
 title: Android SDK con registro dinámico de clientes
 description: Android SDK con registro dinámico de clientes
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1301'
 ht-degree: 0%
@@ -37,12 +37,12 @@ Para Android, el uso de fichas personalizadas de Chrome restringe el acceso a la
 
 ## Registro dinámico de clientes {#DCR}
 
-Android SDK v3.0+ utilizará el procedimiento de registro de cliente dinámico como se define en [Información general sobre el registro de cliente dinámico](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Android SDK v3.0+ utilizará el procedimiento de registro de cliente dinámico como se define en [Información general sobre el registro de cliente dinámico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ## Demostración de funciones {#Demo}
 
-Vea [este seminario web](https://my.adobeconnect.com/pzkp8ujrigg1/) que proporciona más contexto sobre la funcionalidad y contiene una demostración sobre cómo administrar las instrucciones de software mediante el tablero de TVE y cómo probar las generadas mediante una aplicación de demostración proporcionada por Adobe como parte de Android SDK.
+Vea [este seminario web](https://my.adobeconnect.com/pzkp8ujrigg1/) que proporciona más contexto sobre la funcionalidad y contiene una demostración sobre cómo administrar las instrucciones de software mediante el panel de TVE y cómo probar las generadas mediante una aplicación de demostración proporcionada por Adobe como parte de Android SDK.
 
 ## Cambios de API {#API}
 
@@ -71,7 +71,7 @@ Nota : el parámetro redirectUrl o redirect\_uri en strings.xml debe ser el valo
 
 ### setRequestor
 
-**Descripción:** establece la identidad del canal. A cada canal se le asigna un ID único al registrarse con el Adobe en el sistema de autenticación de Adobe Pass. Cuando se trata de SSO y tokens remotos, el estado de autenticación puede cambiar cuando la aplicación está en segundo plano. Se puede volver a llamar a setRequestor cuando la aplicación se pone en primer plano para sincronizar con el estado del sistema (recupere un token remoto si está habilitado el SSO o elimine el token local si se ha cerrado la sesión mientras tanto).
+**Descripción:** establece la identidad del canal. A cada canal se le asigna un ID único al registrarse en Adobe para el sistema de autenticación de Adobe Pass. Cuando se trata de SSO y tokens remotos, el estado de autenticación puede cambiar cuando la aplicación está en segundo plano. Se puede volver a llamar a setRequestor cuando la aplicación se pone en primer plano para sincronizar con el estado del sistema (recupere un token remoto si está habilitado el SSO o elimine el token local si se ha cerrado la sesión mientras tanto).
 
 La respuesta del servidor contiene una lista de MVPD junto con información de configuración adjunta a la identidad del canal. El código Access Enabler utiliza internamente la respuesta del servidor. Solo el estado de la operación (es decir, SUCCESS/FAIL) se presenta a la aplicación a través de la llamada de retorno setRequestorComplete().
 
@@ -93,8 +93,8 @@ Si se proporciona un valor para el parámetro *urls*, la llamada de red resultan
 
 **Parámetros:**
 
-- *requestorID*: El ID único asociado con el canal. Pase el ID único asignado por el Adobe a su sitio cuando se registró por primera vez en el servicio de autenticación de Adobe Pass.
-- *urls*: Parámetro opcional; de forma predeterminada, el proveedor de servicios de Adobe se usa [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista MVPD está compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
+- *requestorID*: El ID único asociado con el canal. Pase el ID único asignado por Adobe a su sitio la primera vez que se registró con el servicio de autenticación de Adobe Pass.
+- *urls*: Parámetro opcional; de forma predeterminada, el proveedor de servicios de Adobe se usa [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista MVPD está compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
 
 Obsoleto:
 
@@ -136,7 +136,7 @@ Llamar a AccessEnabler.getInstance(appContext,softwareStatement,
 redirectUrl)
 
 
-### 2. Configurar la aplicación
+### &#x200B;2. Configurar la aplicación
 
 a. setRequestor(solicitante\_id)
 

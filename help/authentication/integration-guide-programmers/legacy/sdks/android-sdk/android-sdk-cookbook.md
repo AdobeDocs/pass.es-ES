@@ -2,7 +2,7 @@
 title: Guía de Android SDK
 description: Guía de Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1703'
 ht-degree: 0%
@@ -113,7 +113,7 @@ La actividad de red de AccessEnabler tiene lugar en un subproceso diferente, por
      El parámetro `authorizedResources` presenta los recursos que el usuario tiene autorización para ver.
 
 
-![](../../../../assets/android-entitlement-flows.png)
+![](/help//authentication/assets/android-entitlement-flows.png)
 
 
 ### B. Flujo de inicio {#startup_flow}

@@ -2,9 +2,9 @@
 title: Ventajas de utilizar el parámetro deviceType sin cliente en las métricas de autenticación de Adobe Pass
 description: Ventajas de utilizar el parámetro deviceType sin cliente en las métricas de autenticación de Adobe Pass
 exl-id: a5004887-d5fa-468e-971b-10806519175b
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
-source-wordcount: '374'
+source-wordcount: '368'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## Contexto
 
-Aunque es opcional, el parámetro `deviceType` de la API sin cliente, cuando está presente, se utiliza en las métricas de autenticación de Adobe Pass que se exponen a través de [Supervisión del servicio de derechos](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md).
+Aunque es opcional, el parámetro `deviceType` de la API sin cliente, cuando está presente, se utiliza en las métricas de autenticación de Adobe Pass que se exponen a través de [Supervisión del servicio de derechos](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md).
 
 Teniendo en cuenta que la conexión entre el parámetro `deviceType` y sus **beneficios** en las métricas de autenticación de Adobe Pass no se indicó inicialmente, el ámbito de esta nota técnica es agregar más información sobre ellos.
 
@@ -35,10 +35,10 @@ El parámetro `deviceType` estaba presente en la API sin cliente desde la primer
 
 >[!IMPORTANT]
 >
->Si el parámetro `deviceType` está configurado correctamente, tiene el siguiente **beneficio** en la supervisión del servicio de derechos: ofrece métricas que se [desglosan por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) al usar sin clientes, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, para Roku, AppleTV, Xbox, etc.
+>Si el parámetro `deviceType` está configurado correctamente, tiene el siguiente **beneficio** en la supervisión del servicio de derechos: ofrece métricas que se [desglosan por tipo de dispositivo](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type) al usar sin clientes, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, para Roku, AppleTV, Xbox, etc.
 
 
-Para obtener más información sobre la API de supervisión del servicio de derechos, consulte el [árbol detallado,](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md#drill-down_tree) que ilustra las [dimensiones](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#esm_dimensions) (recursos) disponibles en ESM 2.0.
+Para obtener más información sobre la API de supervisión del servicio de derechos, consulte el [árbol detallado,](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#esm_dimensions) (recursos) disponible en ESM 2.0.
 
 >[!NOTE]
 >
@@ -52,7 +52,7 @@ Para obtener más información sobre la API de supervisión del servicio de dere
 Para beneficiarse completamente de las métricas de autenticación de Adobe Pass, hay dos tipos de [API sin cliente](#web_srvs_summary) que se están usando actualmente y que necesitan tener `deviceType` establecido correctamente:
 
 1. API que tienen `regcode` como parámetro obligatorio y usarán el parámetro `deviceType` establecido al crear `regcode`, con la siguiente llamada de API:
-   - [\&lt;REGGIE\_FQDN\>/reggie/v1/{requestorId}/regcode](#reg_serv)
+   - [\&lt;REGGIE\_FQDN\>/reggie/v1/](#reg_serv)
 
 1. API que tienen `deviceType` como parámetro opcional:
    - [\&lt;SP\_FQDN\>/api/v1/checkauthn](#check_authn_token)

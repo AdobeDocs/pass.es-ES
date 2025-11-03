@@ -2,7 +2,7 @@
 title: Autenticación básica - Aplicación principal - Flujo
 description: 'API de REST V2: autenticación básica: aplicación principal: flujo'
 exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '903'
 ht-degree: 0%
@@ -65,7 +65,7 @@ Antes de realizar la autenticación mediante la interacción del usuario dentro 
 
 Siga los pasos dados para implementar el flujo de autenticación básico realizado dentro de una aplicación principal, como se muestra en el diagrama siguiente.
 
-![Realizar autenticación en la aplicación principal](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-primary-application.png)
+![Realizar autenticación en la aplicación principal](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-primary-application.png)
 
 *Realizar autenticación en la aplicación principal*
 

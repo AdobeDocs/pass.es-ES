@@ -2,7 +2,7 @@
 title: Autorización básica - Aplicación principal - Flujo
 description: REST API V2 - Autorización básica - Aplicación principal - Flujo
 exl-id: 46bc9326-966e-44fc-8546-2f58be01b7bc
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > La implementación de la API REST V2 está limitada por la documentación de [Mecanismo de limitación](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-El **flujo de autorización** dentro del derecho de autenticación de Adobe Pass permite que la aplicación de streaming determine si una MVPD permite o deniega la solicitud del usuario para transmitir contenido. Si la decisión es `Permit`, la respuesta incluye un token multimedia. El servidor de Adobe Pass firma el token de medios y permite a la aplicación de streaming utilizar la biblioteca de verificador de tokens de medios para comprobar su autenticidad antes de que se libere el flujo.
+El **flujo de autorización** dentro del derecho de autenticación de Adobe Pass permite que la aplicación de streaming determine si un MVPD permite o deniega la solicitud del usuario para transmitir contenido. Si la decisión es `Permit`, la respuesta incluye un token multimedia. El servidor de Adobe Pass firma el token de medios y permite a la aplicación de streaming utilizar la biblioteca de verificador de tokens de medios para comprobar su autenticidad antes de que se libere el flujo.
 
 La verificación con la biblioteca de verificador de tokens de medios debe realizarse en el servicio back-end de la aplicación de streaming vinculado en la cadena de permisos para liberar un flujo desde la CDN.
 
@@ -27,9 +27,9 @@ La verificación con la biblioteca de verificador de tokens de medios debe reali
 
 ### Requisitos previos {#prerequisites-retrieve-authorization-decisions-using-specific-mvpd}
 
-Antes de recuperar las decisiones de autorización utilizando una MVPD específica, asegúrese de que se cumplen los siguientes requisitos previos:
+Antes de recuperar decisiones de autorización utilizando un MVPD específico, asegúrese de que se cumplen los siguientes requisitos previos:
 
-* La aplicación de streaming debe tener un perfil regular válido que se haya creado correctamente para la MVPD mediante uno de los flujos de autenticación básicos:
+* La aplicación de streaming debe tener un perfil regular válido que se haya creado correctamente para MVPD mediante uno de los flujos de autenticación básicos:
    * [Realizar autenticación en la aplicación principal](rest-api-v2-basic-authentication-primary-application-flow.md)
    * [Realizar autenticación en la aplicación secundaria con mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [Realizar autenticación en la aplicación secundaria sin mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
@@ -37,9 +37,9 @@ Antes de recuperar las decisiones de autorización utilizando una MVPD específi
 
 ### Flujo de trabajo {#workflow-retrieve-authorization-decisions-using-specific-mvpd}
 
-Siga los pasos dados para implementar el flujo de autorización básico utilizando una MVPD específica realizada dentro de una aplicación principal como se muestra en el siguiente diagrama.
+Siga los pasos dados para implementar el flujo de autorización básico utilizando una MVPD específica realizada dentro de una aplicación principal como se muestra en el diagrama siguiente.
 
-![Recuperar decisiones de autorización utilizando mvpd específico](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-authorization-decisions-within-primary-application-using-specific-mvpd.png)
+![Recuperar decisiones de autorización utilizando mvpd específico](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-authorization-decisions-within-primary-application-using-specific-mvpd.png)
 
 *Recuperar decisiones de autorización utilizando mvpd específico*
 

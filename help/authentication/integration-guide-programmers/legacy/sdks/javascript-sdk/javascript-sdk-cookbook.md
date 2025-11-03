@@ -2,7 +2,7 @@
 title: Guía de JavaScript SDK
 description: Guía de JavaScript SDK
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '957'
 ht-degree: 0%
@@ -36,7 +36,7 @@ vínculo a un conjunto de ejemplos de código JavaScript.
 
 </br>
 
-![](../../../../assets/javascript-flows.png)
+![](/help//authentication/assets/javascript-flows.png)
 
 
 ## Requisitos previos {#prereq}
@@ -86,7 +86,7 @@ El parámetro mvpds es una matriz de proveedores disponibles para el usuario.
 
 - `selectedProvider(mvpd)`
 
-  **Déclencheur:** [`getSelectedProvider()`] (#$getSelProv El parámetro `mvpd` proporciona información sobre el proveedor seleccionado por
+  **Déclencheur:** [`getSelectedProvider()`]&#x200B;(#$getSelProv El parámetro `mvpd` proporciona información sobre el proveedor seleccionado por
 el usuario.
 
 - `setMetadataStatus(metadata, key, arguments)`
@@ -95,7 +95,7 @@ el usuario.
   El parámetro `metadata` proporciona los datos específicos solicitados; el parámetro clave es la clave utilizada en la `getMetadata()`solicitud; y el parámetro `arguments` es el mismo diccionario que se pasó a `getMetadata()`.
 
 
-## 2. Flujo de inicio
+## &#x200B;2. Flujo de inicio
 
 **I. Cargue el JavaScript AccessEnabler:**
 
@@ -136,7 +136,7 @@ identidad del programador; pase en `requestorID` del programador y
 
 </br>
 
-## 3. Flujo de autenticación</span>
+## &#x200B;3. Flujo de autenticación</span>
 
 
 **Dependencia:** Una llamada correcta a `setRequestor()` (esta dependencia también se aplica a todas las llamadas subsiguientes).
@@ -151,7 +151,7 @@ Llame a `getAuthentication()` para obtener el estado de autenticación O para al
 
 Se llega a la finalización del flujo de autenticación cuando AccessEnabler llama a `setAuthenticationStatus()`con `isAuthenticated == 1`.
 
-## 4. Flujo de autorización {#authz}
+## &#x200B;4. Flujo de autorización {#authz}
 
 **Dependencias:**
 
@@ -175,7 +175,7 @@ AccessEnabler (biblioteca)
 - Si se supera la validación: mostrar/reproducir el medio solicitado para el usuario.
 - Si falla: El token de AuthZ no era válido, la solicitud de medios debe rechazarse y se debe mostrar un mensaje de error al usuario.
 
-## 5. Ver flujo de medios {#logout}
+## &#x200B;5. Ver flujo de medios {#logout}
 
 - El usuario selecciona los medios que desea ver.
    - ¿Están protegidos los medios?
@@ -186,7 +186,7 @@ AccessEnabler (biblioteca)
 
 ## Configuración del ID de visitante {#visitorID}
 
-La configuración de un valor [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=es) es muy importante desde el punto de vista del análisis. Una vez establecido un valor EC visitorID, SDK enviará esta información junto con cada llamada de red y el servicio de autenticación de Adobe Pass recopilará esta información. De este modo, podrá correlacionar los datos de análisis del servicio de autenticación de Adobe Pass con cualquier otro informe de análisis que pueda tener de otras aplicaciones o sitios web. Encontrará información sobre cómo configurar el ID de visitante de EC [aquí](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=es).
+La configuración de un valor [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html) es muy importante desde el punto de vista del análisis. Una vez establecido un valor EC visitorID, SDK enviará esta información junto con cada llamada de red y el servicio de autenticación de Adobe Pass recopilará esta información. De este modo, podrá correlacionar los datos de análisis del servicio de autenticación de Adobe Pass con cualquier otro informe de análisis que pueda tener de otras aplicaciones o sitios web. Encontrará información sobre cómo configurar el ID de visitante de EC [aquí](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

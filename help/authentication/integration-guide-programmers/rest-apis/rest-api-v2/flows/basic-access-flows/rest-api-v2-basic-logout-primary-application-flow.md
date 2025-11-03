@@ -2,7 +2,7 @@
 title: Cierre de sesión básico - Aplicación principal - Flujo
 description: 'API de REST V2: cierre de sesión básico, aplicación principal, flujo'
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -22,7 +22,7 @@ ht-degree: 0%
 El **flujo de cierre de sesión** dentro del derecho de autenticación de Adobe Pass permite que la aplicación de flujo continuo realice dos pasos principales:
 
 * Elimine los perfiles normales guardados en el backend de Adobe Pass.
-* Utilice un agente de usuario (explorador) para navegar hasta el punto final de cierre de sesión de MVPD, lo que activa una limpieza en el servidor de MVPD.
+* Utilice un agente de usuario (explorador) para desplazarse al extremo de cierre de sesión de MVPD, lo que activa una limpieza en el backend de MVPD.
 
 El flujo de cierre de sesión básico le permite consultar los siguientes escenarios:
 
@@ -33,13 +33,13 @@ El flujo de cierre de sesión básico le permite consultar los siguientes escena
 
 ### Requisitos previos {#prerequisites-initiate-logout-for-specific-mvpd-with-logout-endpoint}
 
-Antes de iniciar el cierre de sesión de una MVPD específica con un punto final de cierre de sesión, asegúrese de que se cumplan los siguientes requisitos previos:
+Antes de iniciar el cierre de sesión de un MVPD específico con un extremo de cierre de sesión, asegúrese de que se cumplan los siguientes requisitos previos:
 
-* La aplicación de streaming debe tener un perfil regular válido que se haya creado correctamente para la MVPD mediante uno de los flujos de autenticación básicos:
+* La aplicación de streaming debe tener un perfil regular válido que se haya creado correctamente para MVPD mediante uno de los flujos de autenticación básicos:
    * [Realizar autenticación en la aplicación principal](rest-api-v2-basic-authentication-primary-application-flow.md)
    * [Realizar autenticación en la aplicación secundaria con mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [Realizar autenticación en la aplicación secundaria sin mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
-* La aplicación de streaming debe iniciar el flujo de cierre de sesión cuando necesite cerrar la sesión de la MVPD.
+* La aplicación de streaming debe iniciar el flujo de cierre de sesión cuando necesite cerrar la sesión de MVPD.
 
 >[!IMPORTANT]
 >
@@ -47,13 +47,13 @@ Antes de iniciar el cierre de sesión de una MVPD específica con un punto final
 >
 > <br/>
 > 
-> * La MVPD admite el flujo de cierre de sesión y tiene un punto final de cierre de sesión.
+> * MVPD admite el flujo de cierre de sesión y tiene un punto final de cierre de sesión.
 
 ### Flujo de trabajo {#workflow-initiate-logout-for-specific-mvpd-with-logout-endpoint}
 
 Siga los pasos dados para implementar el flujo de cierre de sesión básico para una MVPD específica con un punto final de cierre de sesión realizado dentro de una aplicación principal, como se muestra en el diagrama siguiente.
 
-![Iniciar el cierre de sesión de un mvpd específico con el extremo de cierre de sesión](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
+![Iniciar el cierre de sesión de un mvpd específico con el extremo de cierre de sesión](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
 
 *Iniciar el cierre de sesión de un mvpd específico con el extremo de cierre de sesión*
 
@@ -72,7 +72,7 @@ Siga los pasos dados para implementar el flujo de cierre de sesión básico para
 1. **Eliminar perfil regular:** El servidor de Adobe Pass elimina el perfil regular identificado del servidor de Adobe Pass.
 
 1. **Indique la siguiente acción:** La respuesta del extremo de cierre de sesión de Adobe Pass contiene los datos necesarios para guiar a la aplicación de flujo continuo con respecto a la siguiente acción:
-   * El atributo `url` está presente porque la MVPD admite el flujo de cierre de sesión.
+   * El atributo `url` está presente porque MVPD admite el flujo de cierre de sesión.
    * El atributo `actionName` se ha establecido en &quot;cerrar sesión&quot;.
    * El atributo `actionType` está establecido en &quot;interactivo&quot;.
 
@@ -91,7 +91,7 @@ Siga los pasos dados para implementar el flujo de cierre de sesión básico para
    > 
    > Si la validación falla, se generará una respuesta de error, que proporcionará información adicional que se ajustará a la documentación de [Códigos de error mejorados](../../../../features-standard/error-reporting/enhanced-error-codes.md).
 
-1. **Iniciar el cierre de sesión de MVPD:** La aplicación de streaming lee `url` y usa un agente de usuario para iniciar el flujo de cierre de sesión con MVPD. El flujo puede incluir varias redirecciones a sistemas de MVPD. Sin embargo, el resultado es que la MVPD realiza su limpieza interna y envía la confirmación de cierre de sesión final de nuevo al servidor de Adobe Pass.
+1. **Iniciar el cierre de sesión de MVPD:** La aplicación de streaming lee `url` y usa un agente de usuario para iniciar el flujo de cierre de sesión con MVPD. El flujo puede incluir varias redirecciones a sistemas MVPD. Sin embargo, el resultado es que MVPD realiza su limpieza interna y envía la confirmación de cierre de sesión final de nuevo al back-end de Adobe Pass.
 
 1. **Indicar cierre de sesión completado:** La aplicación de flujo continuo puede esperar a que el agente de usuario alcance el `redirectUrl` proporcionado y puede utilizarlo como señal para mostrar opcionalmente un mensaje específico en la interfaz de usuario.
 
@@ -99,13 +99,13 @@ Siga los pasos dados para implementar el flujo de cierre de sesión básico para
 
 ### Requisitos previos {#prerequisites-initiate-logout-for-specific-mvpd-without-logout-endpoint}
 
-Antes de iniciar el cierre de sesión de una MVPD específica sin un punto final de cierre de sesión, asegúrese de que se cumplan los siguientes requisitos previos:
+Antes de iniciar el cierre de sesión de un MVPD específico sin un extremo de cierre de sesión, asegúrese de que se cumplan los siguientes requisitos previos:
 
-* La aplicación de streaming debe tener un perfil regular válido que se haya creado correctamente para la MVPD mediante uno de los flujos de autenticación básicos:
+* La aplicación de streaming debe tener un perfil regular válido que se haya creado correctamente para MVPD mediante uno de los flujos de autenticación básicos:
    * [Realizar autenticación en la aplicación principal](rest-api-v2-basic-authentication-primary-application-flow.md)
    * [Realizar autenticación en la aplicación secundaria con mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [Realizar autenticación en la aplicación secundaria sin mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
-* La aplicación de streaming debe iniciar el flujo de cierre de sesión cuando necesite cerrar la sesión de la MVPD.
+* La aplicación de streaming debe iniciar el flujo de cierre de sesión cuando necesite cerrar la sesión de MVPD.
 
 >[!IMPORTANT]
 >
@@ -113,13 +113,13 @@ Antes de iniciar el cierre de sesión de una MVPD específica sin un punto final
 >
 > <br/>
 > 
-> * La MVPD no admite el flujo de cierre de sesión y no tiene un punto final de cierre de sesión.
+> * MVPD no admite el flujo de cierre de sesión y no tiene un punto final de cierre de sesión.
 
 ### Flujo de trabajo {#workflow-initiate-logout-for-specific-mvpd-without-logout-endpoint}
 
 Siga los pasos dados para implementar el flujo de cierre de sesión básico para una MVPD específica sin un punto final de cierre de sesión realizado dentro de una aplicación principal, como se muestra en el diagrama siguiente.
 
-![Iniciar el cierre de sesión de un mvpd específico sin el extremo de cierre de sesión](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
+![Iniciar el cierre de sesión de un mvpd específico sin el extremo de cierre de sesión](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
 
 *Iniciar el cierre de sesión de un mvpd específico sin el extremo de cierre de sesión*
 

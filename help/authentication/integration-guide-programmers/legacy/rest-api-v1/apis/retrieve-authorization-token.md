@@ -2,7 +2,7 @@
 title: Recuperar token de autorización
 description: Recuperar token de autorización
 exl-id: 0b010958-efa8-4dd9-b11b-5d10f51f5680
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '373'
 ht-degree: 0%
@@ -44,7 +44,7 @@ Recupera el token de autorización (AuthZ).
 
 | Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authz</br></br>Por ejemplo:</br></br>&lt;SP_FQDN>/api/v1/tokens/authz | Servicio de programador </br></br>o</br></br>de aplicación de streaming | 1. solicitante (obligatorio)</br>2.  deviceId (obligatorio)</br>3.  recurso (obligatorio)</br>4.  device_info/X-Device-Info (obligatorio)</br>5.  _deviceType_</br> 6.  _deviceUser_ (obsoleto)</br>7.  _appId_ (obsoleto) | GET | 1. Correcto</br>2.  Token de autenticación </br>    no encontrado o caducado:   </br>    Motivo de explicación XML </br>    no se encontró el token de autenticación </br>3.  Token de autorización </br>    no encontrado: </br>    Explicación XML</br>4.  Token de autorización </br>    caducado: </br>    Explicación de XML | 200: éxito </br>412: sin AuthN</br></br>404: sin AuthZ</br></br>410: AuthZ caducado |
+| &lt;SP_FQDN>/api/v1/tokens/authz</br></br>Por ejemplo:</br></br>&lt;SP_FQDN>/api/v1/tokens/authz | Servicio de programador </br></br>o</br></br>de aplicación de streaming | &#x200B;1. solicitante (obligatorio)</br>2.  deviceId (obligatorio)</br>3.  recurso (obligatorio)</br>4.  device_info/X-Device-Info (obligatorio)</br>5.  _deviceType_</br> 6.  _deviceUser_ (obsoleto)</br>7.  _appId_ (obsoleto) | GET | &#x200B;1. Correcto</br>2.  Token de autenticación </br>    no encontrado o caducado:   </br>    Motivo de explicación XML </br>    no se encontró el token de autenticación </br>3.  Token de autorización </br>    no encontrado: </br>    Explicación XML</br>4.  Token de autorización </br>    caducado: </br>    Explicación de XML | 200: éxito </br>412: sin AuthN</br></br>404: sin AuthZ</br></br>410: AuthZ caducado |
 
 {style="table-layout:auto"}
 
@@ -56,7 +56,7 @@ Recupera el token de autorización (AuthZ).
 | deviceId | El ID de dispositivo bytes. |
 | resource | Cadena que contiene un resourceId (o fragmento MRSS), identifica el contenido solicitado por un usuario y es reconocida por los extremos de autorización de MVPD. |
 | device_info/</br></br>X-Device-Info | Información del dispositivo de streaming.</br></br>**Nota**: Esto PUEDE pasarse a device_info como parámetro de URL, pero debido al tamaño potencial de este parámetro y a las limitaciones en la longitud de una URL de GET, DEBE pasarse como X-Device-Info en el encabezado http. </br></br>Ver los detalles completos en [Pasar información de conexión y dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | El tipo de dispositivo (por ejemplo, Roku, PC).</br></br>Si este parámetro está configurado correctamente, ESM ofrece métricas que están [desglosadas por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) al usar Clientless, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, Roku, AppleTV y Xbox.</br></br>Vea, [Ventajas de usar el parámetro de tipo de dispositivo sin cliente en las métricas de pase &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Nota**: device_info reemplazará este parámetro. |
+| _deviceType_ | El tipo de dispositivo (por ejemplo, Roku, PC).</br></br>Si este parámetro está configurado correctamente, ESM ofrece métricas que están [desglosadas por tipo de dispositivo](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type) al usar Clientless, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, Roku, AppleTV y Xbox.</br></br>Vea, [Ventajas de usar el parámetro de tipo de dispositivo sin cliente en las métricas de pase ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Nota**: device_info reemplazará este parámetro. |
 | _deviceUser_ | El identificador de usuario del dispositivo. |
 | _appId_ | El nombre o ID de la aplicación. </br></br>**Nota**: device_info reemplaza este parámetro. |
 

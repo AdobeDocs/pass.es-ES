@@ -2,7 +2,7 @@
 title: Guía de integración de Amazon FireOS
 description: Guía de integración de Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1447'
 ht-degree: 0%
@@ -107,7 +107,7 @@ El parámetro `event` indica qué evento de asignación de derechos se produjo; 
       - El parámetro `authorizedResources` presenta los recursos que el usuario tiene autorización para ver.
 
 
-![](../../../../assets/android-entitlement-flows.png)
+![](/help//authentication/assets/android-entitlement-flows.png)
 
 
 ### B. Flujo de inicio {#startup_flow}

@@ -2,7 +2,7 @@
 title: Registro de aplicaciones Android
 description: Registro de aplicaciones Android
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
@@ -23,13 +23,13 @@ ht-degree: 0%
 
 A partir de la versión 3.0 de Android AccessEnabler SDK, estamos cambiando el mecanismo de autenticación con los servidores de Adobe. En lugar de utilizar una clave pública y un sistema secreto para firmar el ID de solicitante, presentamos el concepto de una cadena de declaración de software que se puede utilizar para obtener un token de acceso que luego se utiliza para todas las llamadas que SDK realiza a nuestros servidores. Además de una Declaración de software, también deberá crear un vínculo profundo para su aplicación.
 
-Para obtener más información, vea [Información general sobre el registro dinámico de clientes](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Para obtener más información, vea [Información general sobre el registro dinámico de clientes](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## ¿Qué es una declaración de software? {#what}
 
 Una declaración de software es un token JWT que contiene información sobre su aplicación. Cada aplicación debe tener una declaración de software única que nuestros servidores utilicen para identificar la aplicación en el sistema de Adobe.
 
-Se debe pasar la instrucción de software al inicializar el SDK `AccessEnabler`. Se utiliza para registrar la aplicación con el Adobe. Tras el registro, SDK recibe un ID de cliente y un secreto de cliente, que se utilizan para obtener un token de acceso. Cualquier llamada que SDK realice a los servidores de Adobe requiere un token de acceso válido. SDK es responsable de registrar la aplicación, obtener y actualizar el token de acceso.
+Se debe pasar la instrucción de software al inicializar el SDK `AccessEnabler`. Se utiliza para registrar la aplicación en Adobe. Tras el registro, SDK recibe un ID de cliente y un secreto de cliente, que se utilizan para obtener un token de acceso. Cualquier llamada que SDK realice a los servidores de Adobe requiere un token de acceso válido. SDK es responsable de registrar la aplicación, obtener y actualizar el token de acceso.
 
 >[!NOTE]
 >
@@ -61,7 +61,7 @@ A continuación se indican formas de obtener una Declaración de software.
 
    Se descarga un archivo de texto. Utilice su contenido como Declaración de software.
 
-Para obtener más información, consulte [Dynamic Client Registration Management](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
+Para obtener más información, consulte [Dynamic Client Registration Management](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Si no tiene acceso al Tablero de TVE de Adobe
 

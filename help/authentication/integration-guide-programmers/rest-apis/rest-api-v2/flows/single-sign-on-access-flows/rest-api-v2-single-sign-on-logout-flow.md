@@ -2,7 +2,7 @@
 title: 'Cierre de sesión único: flujo'
 description: 'API de REST V2: cierre de sesión único: flujo'
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 0%
@@ -46,7 +46,7 @@ Antes de iniciar el cierre de sesión único de un MVPD específico, asegúrese 
 
 Realice los pasos dados para implementar el flujo de cierre de sesión único para una MVPD específica, como se muestra en el diagrama siguiente.
 
-![Iniciar el cierre de sesión único de un mvpd específico](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
+![Iniciar el cierre de sesión único de un mvpd específico](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
 
 *Iniciar el cierre de sesión único de un mvpd específico*
 

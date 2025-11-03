@@ -2,7 +2,7 @@
 title: Guía de Apple SSO (API de REST V1)
 description: Guía de Apple SSO (API de REST V1)
 exl-id: 072a011f-e1bb-4d3e-bcb5-697f2d1739cc
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '1496'
 ht-degree: 0%
@@ -46,16 +46,16 @@ Para beneficiarse de la experiencia del usuario de SSO de Apple, la aplicación 
 * [¿Hay un token de autenticación de Adobe válido?](#step1)
 * [¿El usuario ha iniciado sesión mediante SSO de socio?](#step2)
 * [Recuperar configuración de Adobe](#step3)
-* [Iniciar flujo de trabajo de SSO de socio con configuración de Adobe](#step4)
+* [Inicio del flujo de trabajo de SSO asociado con la configuración de Adobe](#step4)
 * [¿El usuario ha iniciado sesión correctamente?](#step5)
-* [Obtener una solicitud de perfil del Adobe para el MVPD seleccionado](#step6)
+* [Obtener una solicitud de perfil de Adobe para el MVPD seleccionado](#step6)
 * [Reenviar la solicitud de Adobe al SSO del socio para obtener el perfil](#step7)
 * [Intercambio del perfil SSO del socio por un token de autenticación de Adobe](#step8)
-* [¿Se ha generado correctamente el token de Adobe?](#step9)
+* [¿El token de Adobe se genera correctamente?](#step9)
 * [Iniciar flujo de trabajo de autenticación regular](#step10)
 * [Continuar con flujos de autorización](#step11)
 
-![](../../../assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
+![](/help/authentication/assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
 
 #### Paso: &quot;¿Hay un token de autenticación de Adobe válido?&quot; {#step1}
 
@@ -131,7 +131,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 ...  
 ```
 
-#### Paso: &quot;Recuperar configuración de Adobe&quot; {#step3}
+#### Paso: &quot;Buscar la configuración de Adobe&quot; {#step3}
 
 >[!TIP]
 >
@@ -141,7 +141,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >
 > **<u>Sugerencia profesional:</u>** Tenga en cuenta las propiedades de MVPD: *`enablePlatformServices`*, *`boardingStatus`*, *`displayInPlatformPicker`*, *`platformMappingId`*, *`requiredMetadataFields`* y preste especial atención a los comentarios presentados en fragmentos de código de otros pasos.
 
-#### Paso &quot;Iniciar flujo de trabajo de SSO de socio con configuración de Adobe&quot; {#step4}
+#### Paso &quot;Inicio del flujo de trabajo de SSO de Partner con la configuración de Adobe&quot; {#step4}
 
 >[!TIP]
 >
@@ -255,9 +255,9 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Sugerencia profesional:</u>** Tenga en cuenta el fragmento de código del paso [&quot;Iniciar flujo de trabajo de SSO de socio con configuración de Adobe&quot;](#step4). El inicio de sesión del usuario se realiza correctamente en el caso de que *`vsaMetadata!.accountProviderIdentifier`* contenga un valor válido y la fecha actual no haya pasado el valor *`vsaMetadata!.authenticationExpirationDate`*.
+> **<u>Sugerencia profesional:</u>** Tenga en cuenta el fragmento de código del paso [&quot;Iniciar flujo de trabajo de SSO de socio con la configuración de Adobe&quot;](#step4). El inicio de sesión del usuario se realiza correctamente en el caso de que *`vsaMetadata!.accountProviderIdentifier`* contenga un valor válido y la fecha actual no haya pasado el valor *`vsaMetadata!.authenticationExpirationDate`*.
 
-#### Paso &quot;Obtener una solicitud de perfil del Adobe para la MVPD seleccionada&quot; {#step6}
+#### Paso &quot;Obtener una solicitud de perfil de Adobe para el MVPD seleccionado&quot; {#step6}
 
 >[!TIP]
 >
