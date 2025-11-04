@@ -226,7 +226,7 @@ Hay dos opciones para que los clientes envíen solicitudes de privacidad a Adobe
 
 ### Mediante la IU de Privacy Service {#privacy-service-ui}
 
-Hay disponible un [tutorial completo](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=es#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) sobre cómo acceder y utilizar la interfaz de usuario de Privacy Service en línea a través de los servicios de Adobe I/O. Además, los clientes pueden utilizar este vínculo para acceder a la biblioteca de vídeos y artículos sobre normas de privacidad. Haga clic en el menú Adobe Experience Cloud y RGPD. Se abrirán varios vídeos: &quot;Cómo... la IU del RGPD&quot; explica cómo utilizarla.
+Hay disponible un [tutorial completo](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) sobre cómo acceder y utilizar la interfaz de usuario de Privacy Service en línea a través de los servicios de Adobe I/O. Además, los clientes pueden utilizar este vínculo para acceder a la biblioteca de vídeos y artículos sobre normas de privacidad. Haga clic en el menú Adobe Experience Cloud y RGPD. Se abrirán varios vídeos: &quot;Cómo... la IU del RGPD&quot; explica cómo utilizarla.
 
 En la interfaz de usuario de, los clientes deben cargar su propio IMSOrgID y un JSON que contenga solicitudes de RGPD para cada producto.
 
@@ -239,7 +239,7 @@ La **documentación de la API de Privacy Service** explica en detalle cómo un c
 **Visualizar llamadas API con Postman (software gratuito de terceros):**
 
 * [Colección de Postman de la API de Privacy Service en GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [Guía de vídeo para crear el entorno de Postman](https://video.tv.adobe.com/v/31627?captions=spa)
+* [Guía de vídeo para crear el entorno de Postman](https://video.tv.adobe.com/v/28832)
 * [Pasos para importar entornos y colecciones en Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
@@ -259,7 +259,7 @@ La **documentación de la API de Privacy Service** explica en detalle cómo un c
 
 >[!RELATEDINFORMATION]
 >
->* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=es#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
+>* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
 >* Privacy Service API documentation
 
 -->

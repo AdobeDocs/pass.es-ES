@@ -21,7 +21,7 @@ Experience Cloud ID (ECID) es un ID único que Adobe Experience Cloud genera par
 
 Si ya dispone de un sistema que proporciona un ID de visitante, debe utilizar el mismo ID para el ámbito de este documento.
 
-Una forma de obtener el ECID es utilizar el servicio de Experience Cloud ID. Puede utilizar el tipo de implementación que prefiera, ya sea en base a TDM, biblioteca JS, lado del servidor, integración directa o bibliotecas nativas para plataformas móviles. Para obtener una vista completa de los servicios, bibliotecas, guías de implementación y de SDK disponibles, consulte: <https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html?lang=es>
+Una forma de obtener el ECID es utilizar el servicio de Experience Cloud ID. Puede utilizar el tipo de implementación que prefiera, ya sea en base a TDM, biblioteca JS, lado del servidor, integración directa o bibliotecas nativas para plataformas móviles. Para obtener una vista completa de los servicios, bibliotecas, guías de implementación y de SDK disponibles, consulte: <https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html>
 
 ## ¿Cuál es la ventaja de utilizar el Experience Cloud ID en la autenticación de Adobe Pass? {#benefit-ex-cloud-id}
 
