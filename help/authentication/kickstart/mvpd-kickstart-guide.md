@@ -135,7 +135,7 @@ El equipo de autenticación de Adobe Pass está disponible para resolver cualqui
 
 ## Acceso a la documentación {#access-documentation}
 
-**Adobe proporcionará acceso a nuestra documentación pública a través de** Adobe Experience League[.](https://experienceleague.adobe.com/en/docs/pass/authentication/home)
+**Adobe proporcionará acceso a nuestra documentación pública a través de** Adobe Experience League[.](https://experienceleague.adobe.com/es/docs/pass/authentication/home)
 
 El equipo de autenticación de Adobe Pass proporciona documentación completa sobre las funciones y flujos de trabajo disponibles en la sección [Guía de integración para MVPD](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md). Consulte la tabla de contenido de esta sección para ver vínculos a información detallada sobre cada tema.
 

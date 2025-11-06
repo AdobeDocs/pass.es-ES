@@ -55,7 +55,7 @@ En el siguiente ejemplo de código se muestra cómo detectar y mostrar el provee
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer"> 
+        <a href="http://www.adobe.com/go/getflashplayer_es"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 
