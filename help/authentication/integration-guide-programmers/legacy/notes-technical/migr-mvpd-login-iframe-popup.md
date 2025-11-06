@@ -4,7 +4,7 @@ description: Cómo migrar la página de inicio de sesión de MVPD de iFrame a em
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '708'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Teniendo en cuenta que ya existe una implementación de iFrame, la primera parte
 
 ## Selector de MVPD con página de inicio de sesión en un iFrame {#mvpd-pickr-iframe}
 
-Los ejemplos de código anteriores mostraban una página de HTML que contiene la etiqueta &lt;div> en la que se va a crear el iFrame junto con el botón cerrar iFrame:
+Los ejemplos de código anteriores mostraban una página de HTML que contiene la etiqueta &lt;div> en la que se creará el iFrame junto con el botón cerrar iFrame:
 
 ```HTML
 <body> 
@@ -109,7 +109,7 @@ function setSelectedProvider(providerID) {
 
 ## Selector de MVPD con página de inicio de sesión en una ventana emergente {#mvpd-pickr-popup}
 
-Como ya no usaremos **iFrame**, el código del HTML no contendrá el iFrame ni el botón para cerrar el iFrame. El div que anteriormente contenía el iFrame - **mvpddiv** - se conservará y utilizará para lo siguiente:
+Como ya no usaremos **iFrame**, el código HTML no contendrá el iFrame ni el botón para cerrar el iFrame. El div que anteriormente contenía el iFrame - **mvpddiv** - se conservará y utilizará para lo siguiente:
 
 * para notificar al usuario de que la página de inicio de sesión de MVPD ya está abierta si se pierde el enfoque emergente
 * para proporcionar un vínculo que le permita volver a centrarse en la ventana emergente
@@ -183,7 +183,7 @@ function displayProviderDialog(providers) {
 }
 ```
 
-Una vez que el usuario ha seleccionado una MVPD del selector, es necesario crear la ventana emergente. Algunos exploradores pueden bloquear la ventana emergente si se crea con about:blank o con una página que se encuentra en otro dominio; por lo tanto, se recomienda abrirla con el nombre de host desde el que se carga AccessEnabler.
+Una vez que el usuario ha seleccionado una MVPD del selector, es necesario crear la ventana emergente. Algunos exploradores pueden bloquear la ventana emergente si se crea con aproximadamente :blank o con una página que se encuentra en otro dominio; por lo tanto, se recomienda abrirla con el nombre de host desde el que se carga AccessEnabler.
 
 En la implementación de iFrame, el restablecimiento del flujo de autenticación se realizaba mediante el botón btnCloseIframe y la función de JavaScript closeIframeAction(), pero ahora la decoración del iFrame ya no es posible. Por lo tanto, se logra el mismo comportamiento observando cuándo se cierra la ventana emergente (ya sea por el usuario o al finalizar el flujo de autenticación). Se ha agregado un fragmento de código que también ayuda en caso de que el usuario pierda el enfoque de la ventana emergente:
 

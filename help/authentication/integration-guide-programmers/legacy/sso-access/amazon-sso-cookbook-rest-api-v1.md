@@ -139,7 +139,7 @@ Asegúrese de que la aplicación de flujo continuo administra lo siguiente:
    * La aplicación de flujo continuo puede encontrar un `ClassNotFoundException` en tiempo de ejecución en la siguiente clase `com.amazon.ottssotokenlib.SSOEnabler`.
 
 * La ausencia de la carga útil del token SSO (identidad de plataforma) que deben devolver las API anteriores.
-   * La aplicación de streaming puede ponerse en contacto con el Amazon y con los representantes del Adobe para investigar.
+   * La aplicación de streaming puede ponerse en contacto con los representantes de Amazon y Adobe para investigar.
 
 ### Flujo de trabajo {#workflow}
 

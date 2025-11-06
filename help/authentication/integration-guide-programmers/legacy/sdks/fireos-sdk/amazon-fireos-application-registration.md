@@ -2,7 +2,7 @@
 title: Registro de aplicaciones de Amazon FireOS
 description: Registro de aplicaciones de Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 A partir de la versión 3.0 de FireOS AccessEnabler SDK, estamos cambiando el mecanismo de autenticación con los servidores de Adobe. En lugar de utilizar una clave pública y un sistema secreto para firmar el ID de solicitante, presentamos el concepto de una cadena de declaración de software que se puede utilizar para obtener un token de acceso que luego se utiliza para todas las llamadas que SDK realiza a nuestros servidores. Además de una Declaración de software, también deberá crear un vínculo profundo para su aplicación.
 
-Para obtener más información, vea [Información general sobre el registro dinámico de clientes](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Para obtener más información, vea [Información general sobre el registro dinámico de clientes](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## ¿Qué es una declaración de software? {#what}
 
@@ -59,7 +59,7 @@ Una declaración de software es un token JWT que contiene información sobre su 
 
    Se descarga un archivo de texto. Utilice su contenido como Declaración de software.
 
-Para obtener más información, vea [Administración del registro de cliente dinámico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
+Para obtener más información, vea [Administración del registro de cliente dinámico](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Si no tiene acceso al Tablero de TVE de Adobe:
 

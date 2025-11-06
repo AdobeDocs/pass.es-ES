@@ -2,7 +2,7 @@
 title: MVPD del panel de TVE
 description: Obtenga información sobre las MVPD y sus configuraciones en el panel de TVE.
 exl-id: 802c1570-9a5b-4bec-8fb2-6c7738b28bc9
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '133'
 ht-degree: 0%
@@ -23,7 +23,7 @@ La ficha **MVPD** del panel izquierdo muestra una lista de MVPD con los siguient
 
 * **MVPD ID**: se usó un identificador único de MVPD para configurar una nueva integración en el sistema.
 
-![Lista de MVPD integradas](/help/authentication/assets/tve-dashboard/new-tve-dashboard/mvpds/mvpds-list-view.png)
+![Lista de MVPD integradas](../assets/tve-dashboard/new-tve-dashboard/mvpds/mvpds-list-view.png)
 
 *Lista de MVPD integradas*
 

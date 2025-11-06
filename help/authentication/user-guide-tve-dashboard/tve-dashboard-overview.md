@@ -48,7 +48,7 @@ La autenticación de Adobe Pass incluye las siguientes secciones en el tablero d
 
 ## Recursos {#resources-tve-dashboard}
 
-El Adobe sugiere utilizar los siguientes recursos para comprender a fondo los flujos y las funciones, lo que le ayuda a familiarizarse con la terminología empleada en esta guía:
+Adobe sugiere utilizar los siguientes recursos para comprender a fondo los flujos y las funciones, lo que le ayuda a familiarizarse con la terminología empleada en esta guía:
 
 * [Documento técnico de TVE](/help/authentication/kickstart/technical-paper.md)
 * [Guía de KickStart del programador](/help/authentication/kickstart/programmer-kickstart-guide.md)

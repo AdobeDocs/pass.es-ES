@@ -36,9 +36,9 @@ Los implementadores pueden encontrar algunas limitaciones, que se describen a co
    >
    >* El SSO a nivel de sistema (Apple) no se verá afectado.
    >
-   >* El SSO normal (de Adobe) seguirá funcionando si ambas aplicaciones son desarrolladas por el mismo proveedor y usan versiones de AccessEnabler inferiores a la 3.7.0.
+   >* El SSO normal (Adobe) seguirá funcionando si ambas aplicaciones son desarrolladas por el mismo proveedor y usan versiones de AccessEnabler inferiores a la 3.7.0.
    >
-   >* El SSO normal (de Adobe) funcionará si ambas aplicaciones son desarrolladas por el mismo proveedor y usan la versión 3.7.0 de AccessEnabler.
+   >* El SSO normal (Adobe) funcionará si ambas aplicaciones son desarrolladas por el mismo proveedor y utilizan la versión 3.7.0 de AccessEnabler.
 
 
 1. En caso de que se desplace una aplicación con AccessEnabler versión 3.7.0 a una versión inferior de AccessEnabler, no se migrarán los nuevos tokens generados. Por lo tanto, los usuarios finales pueden experimentar la pérdida de sesiones de autenticación/autorización, sin esperarlo.

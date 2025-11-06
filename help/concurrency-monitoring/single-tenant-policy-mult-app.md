@@ -15,7 +15,7 @@ ht-degree: 0%
 
 ## Casos de uso
 
-El programador P tiene una aplicación de iPhone, una aplicación de iPad y un sitio web. Se debe integrar con la Monitorización de concurrencia de Adobe (CM) para restringir el número de flujos simultáneos entre estas aplicaciones. El programador creará directivas que restringirán el uso simultáneo. Veamos dos ejemplos:
+El programador P tiene una aplicación de iPhone, una aplicación de iPad y un sitio web. Se debe integrar con Adobe Concurency Monitoring (CM) para restringir el número de flujos simultáneos entre estas aplicaciones. El programador creará directivas que restringirán el uso simultáneo. Veamos dos ejemplos:
 
 La primera directiva contiene una regla que no permite más de 2 flujos simultáneos. Se permitirá la reproducción de la última emisión.
 La segunda directiva contiene dos reglas. No permite más de 3 transmisiones simultáneas desde no más de 2 dispositivos y se permitirá reproducir el último flujo.

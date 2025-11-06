@@ -91,7 +91,7 @@ Consulte <https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-TV-Native-
 
 ### setRequestor {#setRequestor}
 
-**Descripción:** establece la identidad del programador. A cada programador se le asigna un ID único al registrarse con el Adobe en el sistema de autenticación de Adobe Pass. Esta configuración solo debe realizarse una vez durante el ciclo de vida de la aplicación.
+**Descripción:** establece la identidad del programador. A cada programador se le asigna un ID único al registrarse en Adobe para el sistema de autenticación de Adobe Pass. Esta configuración solo debe realizarse una vez durante el ciclo de vida de la aplicación.
 
 La respuesta del servidor contiene una lista de MVPD junto con información de configuración adjunta a la identidad del programador. El código Access Enabler utiliza internamente la respuesta del servidor. Solo el estado de la operación (es decir, SUCCESS/FAIL) se presenta a la aplicación a través de la llamada de retorno setRequestorComplete().
 
@@ -116,8 +116,8 @@ Si se proporciona un valor para el parámetro *urls*, la llamada de red resultan
 
 **Parámetros:**
 
-- *requestorID*: ID único asociado con el programador. Pase el ID único asignado por el Adobe a su sitio cuando se registró por primera vez en el servicio de autenticación de Adobe Pass.
-- *urls*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista MVPD está compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
+- *requestorID*: ID único asociado con el programador. Pase el ID único asignado por Adobe a su sitio la primera vez que se registró con el servicio de autenticación de Adobe Pass.
+- *urls*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista MVPD está compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
 
 **Llamadas de retorno activadas:** `setRequestorComplete()`
 
@@ -175,7 +175,7 @@ Los valores se pasan al servidor independientemente del flujo actual (autenticac
 
 - *options*: un mapa\&lt;String, String\> que contiene las opciones globales de SDK. Actualmente están disponibles las siguientes opciones:
    - **applicationProfile**: se puede usar para realizar configuraciones de servidor basadas en este valor.
-   - **ap\_vi** - Servicio de ID de Experience Cloud. Este valor puede utilizarse posteriormente en informes de análisis avanzados.
+   - **ap\_vi** - Servicio de Experience Cloud ID. Este valor puede utilizarse posteriormente en informes de análisis avanzados.
    - **device\_info** - Información del dispositivo como se describe en **Pasar la información del dispositivo en la guía**
 
 </br>
@@ -224,7 +224,7 @@ Por último, el estado de autenticación se comunica a la aplicación a través 
 **Parámetros:**
 
 - *forceAuthn*: Un indicador que especifica si el flujo de autenticación debe iniciarse, independientemente de si el usuario ya se ha autenticado o no.
-- *datos*: Mapa que contiene pares de clave-valor que se enviarán al servicio de pase de TV de pago. El Adobe de puede utilizar estos datos para habilitar futuras funciones sin cambiar SDK.
+- *datos*: Mapa que contiene pares de clave-valor que se enviarán al servicio de pase de TV de pago. Adobe puede utilizar estos datos para habilitar futuras funciones sin cambiar SDK.
 
 **Llamadas de retorno activadas:** `setAuthenticationStatus(), displayProviderDialog(), sendTrackingData()`
 
@@ -260,7 +260,7 @@ Una vez que el usuario ha seleccionado el MVPD deseado, la aplicación de nivel 
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Disponibilidad:**&#x200B;v 1.0+
+**Disponibilidad:**v 1.0+
 
 **Parámetros:** Ninguno
 
@@ -355,7 +355,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Disponibilidad:**&#x200B;v 1.0+
+**Disponibilidad:**v 1.0+
 
 **Parámetros:** El parámetro `resources` es una matriz de recursos que el usuario ya tiene autorización para ver.
 
@@ -382,7 +382,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 **Parámetros:**
 
 - *resourceId*: El identificador del recurso para el que el usuario solicita autorización.
-- *datos*: Mapa que contiene pares de clave-valor que se enviarán al servicio de pase de TV de pago. El Adobe de puede utilizar estos datos para habilitar futuras funciones sin cambiar SDK.
+- *datos*: Mapa que contiene pares de clave-valor que se enviarán al servicio de pase de TV de pago. Adobe puede utilizar estos datos para habilitar futuras funciones sin cambiar SDK.
 
 **Llamadas de retorno activadas:** `tokenRequestFailed(), setToken(), sendTrackingData(), setAuthenticationStatus()`
 
@@ -407,7 +407,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 **Parámetros:**
 
 - *resourceId*: El identificador del recurso para el que el usuario solicita autorización.
-- *datos*: Mapa que contiene pares de clave-valor que se enviarán al servicio de pase de TV de pago. El Adobe de puede utilizar estos datos para habilitar futuras funciones sin cambiar SDK.
+- *datos*: Mapa que contiene pares de clave-valor que se enviarán al servicio de pase de TV de pago. Adobe puede utilizar estos datos para habilitar futuras funciones sin cambiar SDK.
 
 **Llamadas de retorno activadas:** `tokenRequestFailed(), setToken(), sendTrackingData()`
 
@@ -427,7 +427,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Disponibilidad:**&#x200B;v 1.0+
+**Disponibilidad:**v 1.0+
 
 **Parámetros:**
 
@@ -529,7 +529,7 @@ Hay dos tipos de metadatos disponibles para los programadores:
 - *metadataKey*: Una estructura de datos que encapsula una clave y una variable args, con el significado siguiente:
    - Si la clave es `METADATA_KEY_TTL_AUTHN`, se realiza la consulta para obtener el tiempo de caducidad del token de autenticación.
    - Si la clave es `METADATA_KEY_TTL_AUTHZ` y args contiene un objeto SerializableNameValuePair con el nombre = `METADATA_ARG_RESOURCE_ID` y el valor = `[resource_id]`, se realiza la consulta para obtener la hora de caducidad del token de autorización asociado al recurso especificado.
-   - Si la clave es `METADATA_KEY_DEVICE_ID`, se realiza la consulta para obtener el ID del dispositivo actual. Tenga en cuenta que esta función está desactivada de forma predeterminada y los programadores deben ponerse en contacto con el Adobe para obtener información sobre la habilitación y las tarifas.
+   - Si la clave es `METADATA_KEY_DEVICE_ID`, se realiza la consulta para obtener el ID del dispositivo actual. Tenga en cuenta que esta función está desactivada de forma predeterminada y los programadores deben ponerse en contacto con Adobe para obtener información sobre la habilitación y las tarifas.
    - Si la clave es `METADATA_KEY_USER_META` y args contiene un objeto SerializableNameValuePair con el nombre = `METADATA_KEY_USER_META` y el valor = `[metadata_name]`, se realiza la consulta de los metadatos del usuario. La lista actual de tipos de metadatos de usuario disponibles:
       - `zip` - Código postal
       - `householdID` - Identificador del hogar. Si un MVPD no admite subcuentas, será idéntico a `userID`.
@@ -625,7 +625,7 @@ El activador de acceso déclencheur una llamada de retorno adicional que no est�
 
 >[!WARNING]
 >
-> El tipo de dispositivo y el sistema operativo se derivan del uso de una biblioteca Java pública (http://java.net/projects/user-agent-utils) y de la cadena del agente de usuario. Tenga en cuenta que esta información se proporciona solo como una forma grosera de desglosar las métricas operativas en categorías de dispositivos, pero que ese Adobe no puede responsabilizarse de los resultados incorrectos. Utilice la nueva funcionalidad en consecuencia.
+> El tipo de dispositivo y el sistema operativo se derivan del uso de una biblioteca Java pública (http://java.net/projects/user-agent-utils) y de la cadena del agente de usuario. Tenga en cuenta que esta información se proporciona únicamente como una forma grosera de desglosar las métricas operativas en categorías de dispositivos, pero que Adobe no puede responsabilizarse de los resultados incorrectos. Utilice la nueva funcionalidad en consecuencia.
 
 - Valores posibles para el tipo de dispositivo:
    - `computer`

@@ -2,7 +2,7 @@
 title: Notas de la versión de autenticación de Adobe Pass 2.70
 description: Notas de la versión de autenticación de Adobe Pass 2.70
 exl-id: 81713f8e-bc51-4057-9b00-6a2d6c83cd02
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
 source-wordcount: '136'
 ht-degree: 0%
@@ -35,7 +35,7 @@ Fecha de versión: **23/04/2024 - 25/04/2024**
 * Vulnerabilidades de seguridad parcheadas.
 * Mejoras en el servicio de API de degradación.
    * Utilice DCR como mecanismo de seguridad para la API de degradación.
-   * Puede encontrar más detalles aquí: [Función de degradación](/help/premium-workflow/degraded-access/degradation-feature.md)
+   * Puede encontrar más detalles aquí: [Función de degradación](../integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
 
 #### API de REST
 

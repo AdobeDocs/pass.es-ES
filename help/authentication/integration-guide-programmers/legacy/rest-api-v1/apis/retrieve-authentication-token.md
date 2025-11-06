@@ -43,7 +43,7 @@ Recupera el token de autenticación (AuthN).
 
 | Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authn</br></br>Por ejemplo:</br></br>&lt;SP_FQDN>/api/v1/tokens/authn | Servicio de programador </br></br>o</br></br>de aplicación de streaming | 1. solicitante (obligatorio)</br>2.  deviceId (obligatorio)</br>3.  device_info/X-Device-Info (obligatorio)</br>4.  _deviceType_ (obsoleto)</br>5.  _deviceUser_ (obsoleto)</br>6.  _appId_ (obsoleto) | GET | XML o JSON que contienen información de autenticación o detalles de error si no se han realizado correctamente. | 200 - Éxito.  </br>404 - No se encontró el token </br>410 - Token caducado |
+| &lt;SP_FQDN>/api/v1/tokens/authn</br></br>Por ejemplo:</br></br>&lt;SP_FQDN>/api/v1/tokens/authn | Servicio de programador </br></br>o</br></br>de aplicación de streaming | &#x200B;1. solicitante (obligatorio)</br>2.  deviceId (obligatorio)</br>3.  device_info/X-Device-Info (obligatorio)</br>4.  _deviceType_ (obsoleto)</br>5.  _deviceUser_ (obsoleto)</br>6.  _appId_ (obsoleto) | GET | XML o JSON que contienen información de autenticación o detalles de error si no se han realizado correctamente. | 200 - Éxito.  </br>404 - No se encontró el token </br>410 - Token caducado |
 
 {style="table-layout:auto"}
 

@@ -2,7 +2,7 @@
 title: Iniciar autorización
 description: Iniciar autorización
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '446'
 ht-degree: 0%
@@ -56,10 +56,10 @@ Obtiene una respuesta de autorización.
 | deviceId | El ID de dispositivo bytes. |
 | resource | Cadena que contiene un resourceId (o fragmento MRSS), identifica el contenido solicitado por un usuario y es reconocida por los extremos de autorización de MVPD. |
 | device_info/</br></br>X-Device-Info | Información del dispositivo de streaming.</br></br>**Nota**: Esto PUEDE pasarse a device_info como parámetro de URL, pero debido al tamaño potencial de este parámetro y a las limitaciones en la longitud de una URL de GET, DEBE pasarse como X-Device-Info en el encabezado http. </br></br>Ver los detalles completos en [Pasar información de conexión y dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | El tipo de dispositivo (por ejemplo, Roku, PC).</br></br>Si este parámetro está configurado correctamente, ESM ofrece métricas que están [desglosadas por tipo de dispositivo](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type) al utilizar sin cliente, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, para Roku, AppleTV, Xbox, etc.</br></br>Vea [Ventajas del parámetro de tipo de dispositivo sin cliente en las métricas de pase &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Nota**: device_info reemplazará este parámetro. |
+| _deviceType_ | El tipo de dispositivo (por ejemplo, Roku, PC).</br></br>Si este parámetro está configurado correctamente, ESM ofrece métricas que están [desglosadas por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) al utilizar sin cliente, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, para Roku, AppleTV, Xbox, etc.</br></br>Vea [Ventajas del parámetro de tipo de dispositivo sin cliente en las métricas de pase ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Nota**: device_info reemplazará este parámetro. |
 | _deviceUser_ | El identificador de usuario del dispositivo. |
 | _appId_ | El nombre o ID de la aplicación. </br></br>**Nota**: device_info reemplaza este parámetro. |
-| parámetros adicionales | La llamada también puede contener parámetros opcionales que habilitan otras funcionalidades como:</br></br>* generic_data - habilita el uso de [Promotional TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)</br></br>Ejemplo: `generic_data=("email":"email@domain.com")` |
+| parámetros adicionales | La llamada también puede contener parámetros opcionales que habilitan otras funcionalidades como:</br></br>* generic_data - habilita el uso de [Promotional TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)</br></br>Ejemplo: `generic_data=("email":"email@domain.com")` |
 
 {style="table-layout:auto"}
 

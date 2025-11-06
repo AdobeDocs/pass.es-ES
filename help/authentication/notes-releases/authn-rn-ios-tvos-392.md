@@ -27,7 +27,7 @@ Fecha de versión: **26/03/2024**
 
 * Actualiza el manifiesto de privacidad de SDK en cumplimiento con los requisitos de privacidad de iOS 17.
 * Corrige un problema que, en algunas situaciones, provocaba que los usuarios permanecieran en una pantalla en blanco durante el flujo de autenticación.
-* Agrega el registro de dispositivos y el registro de servidores para obtener información detallada sobre el estado de Keychain.
+* Agrega el registro de dispositivos y el registro de servidores para obtener información de insight sobre el estado del llavero.
 
 ## Liberar paquete {#release-package-392}
 

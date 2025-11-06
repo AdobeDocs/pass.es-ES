@@ -26,9 +26,9 @@ ht-degree: 0%
 
    1. ID del solicitante: p. ej. netgeo, CNN, etc.
 
-1. El Adobe creará certificados X509 y configurará la clave privada y la contraseña al final.
+1. Adobe creará certificados X509 y configurará la clave privada y la contraseña al final.
 
-1. El Adobe proporcionará el certificado público (de certificado X509) al programador en el ticket o por correo electrónico.
+1. Adobe proporcionará el certificado público (de certificado X509) al programador en el ticket o por correo electrónico.
 
 1. El programador tendría que instalar ese certificado público en el portal del PNG para la aplicación registrada en Microsoft.
 

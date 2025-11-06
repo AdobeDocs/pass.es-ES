@@ -43,7 +43,7 @@ Una vez completados estos pasos, la autenticación de Adobe Pass utilizará el U
 
 ## Solución permanente
 
-El Adobe cambiará esto en una versión futura, al hacer que `deviceId` sea una carga útil opcional al crear el código de registro y al usar UUID como clave de token en lugar de `deviceId`, cuando `deviceId` no está presente.
+Adobe cambiará esto en una versión futura, convirtiendo a `deviceId` en una carga útil opcional al crear el código de registro y usando UUID como clave de token en lugar de `deviceId`, cuando `deviceId` no esté presente.
 
 <!--
 ## Related Information

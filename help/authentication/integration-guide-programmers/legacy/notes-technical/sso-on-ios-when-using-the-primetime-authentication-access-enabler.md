@@ -27,7 +27,7 @@ El inicio de sesión único (SSO) entre aplicaciones con autenticación de Adobe
 
 Este documento aborda el **SSO en iOS**, al usar el habilitador de acceso **Autenticación de Adobe Pass**.
 
-**Habilitador de acceso** **1.10** es la última versión de SDK nativo de Adobe Pass Authentication iOS. El Adobe recomienda encarecidamente pasar a esta versión en lugar de quedarse con una versión anterior. Si usa una versión anterior de Access Enabler, puede descargar la versión más reciente [aquí](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
+**Habilitador de acceso** **1.10** es la última versión de SDK nativo de Adobe Pass Authentication iOS. Adobe recomienda encarecidamente pasar a esta versión en lugar de quedarse con una versión anterior. Si usa una versión anterior de Access Enabler, puede descargar la versión más reciente [aquí](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
 
 El SSO en iOS viene determinado por las siguientes condiciones:
 

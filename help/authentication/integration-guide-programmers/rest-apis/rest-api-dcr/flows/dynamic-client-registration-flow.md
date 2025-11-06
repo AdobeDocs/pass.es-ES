@@ -2,7 +2,7 @@
 title: Flujo de registro de cliente dinámico
 description: Flujo de registro de cliente dinámico
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '564'
 ht-degree: 0%
@@ -25,8 +25,8 @@ ht-degree: 0%
 
 Antes de acceder a las API protegidas de Adobe Pass, asegúrese de que se cumplan los siguientes requisitos previos:
 
-* Un representante del cliente debe crear una aplicación registrada como se describe en la sección [Administrar aplicaciones registradas](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#manage-registered-applications).
-* Un representante del cliente debe descargar e incrustar una instrucción de software como se describe en la sección [Administrar instrucciones de software](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#manage-software-statements).
+* Un representante del cliente debe crear una aplicación registrada como se describe en la sección [Administrar aplicaciones registradas](../dynamic-client-registration-overview.md#manage-registered-applications).
+* Un representante del cliente debe descargar e incrustar una instrucción de software como se describe en la sección [Administrar instrucciones de software](../dynamic-client-registration-overview.md#manage-software-statements).
 
 >[!IMPORTANT]
 >
@@ -38,7 +38,7 @@ Antes de acceder a las API protegidas de Adobe Pass, asegúrese de que se cumpla
 
 Siga los pasos dados para acceder a las API protegidas por Adobe Pass como se muestra en el diagrama siguiente.
 
-![Acceso a API protegidas por Adobe Pass](/help//authentication/assets/dcr-api/dcr-api-access-adobe-pass-protected-apis.png)
+![Acceso a API protegidas por Adobe Pass](../../../../assets/dcr-api/dcr-api-access-adobe-pass-protected-apis.png)
 
 *Acceso a API protegidas por Adobe Pass*
 
@@ -76,7 +76,7 @@ Siga los pasos dados para acceder a las API protegidas por Adobe Pass como se mu
 
    >[!IMPORTANT]
    >
-   > Consulte la documentación de la API [Recuperar token de acceso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request) para obtener detalles sobre:
+   > Consulte la documentación de la API [Recuperar token de acceso](../apis/dynamic-client-registration-apis-retrieve-access-token.md#request) para obtener detalles sobre:
    >
    > * Todos los _parámetros necesarios_, como `client_id`, `client_secret` y `grant_type`
    > * Todos los _encabezados_ necesarios, como `Content-Type`, `X-Device-Info`
@@ -86,7 +86,7 @@ Siga los pasos dados para acceder a las API protegidas por Adobe Pass como se mu
 
    >[!IMPORTANT]
    >
-   > Consulte la documentación de la API [Recuperar token de acceso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#success) para obtener detalles sobre la información proporcionada en una respuesta de token de acceso.
+   > Consulte la documentación de la API [Recuperar token de acceso](../apis/dynamic-client-registration-apis-retrieve-access-token.md#success) para obtener detalles sobre la información proporcionada en una respuesta de token de acceso.
    >
    > <br/>
    >
@@ -96,7 +96,7 @@ Siga los pasos dados para acceder a las API protegidas por Adobe Pass como se mu
    >
    > <br/>
    >
-   > Si la validación falla, se generará una respuesta de error, que proporcionará información adicional que se adhiere a la documentación de la API [Recuperar token de acceso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
+   > Si la validación falla, se generará una respuesta de error, que proporcionará información adicional que se adhiere a la documentación de la API [Recuperar token de acceso](../apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
 
    >[!TIP]
    >

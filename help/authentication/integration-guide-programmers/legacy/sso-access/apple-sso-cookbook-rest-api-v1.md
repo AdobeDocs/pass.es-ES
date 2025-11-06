@@ -2,7 +2,7 @@
 title: Guía de Apple SSO (API de REST V1)
 description: Guía de Apple SSO (API de REST V1)
 exl-id: 072a011f-e1bb-4d3e-bcb5-697f2d1739cc
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '1496'
 ht-degree: 0%
@@ -55,7 +55,7 @@ Para beneficiarse de la experiencia del usuario de SSO de Apple, la aplicación 
 * [Iniciar flujo de trabajo de autenticación regular](#step10)
 * [Continuar con flujos de autorización](#step11)
 
-![](/help/authentication/assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
+![](../../../assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
 
 #### Paso: &quot;¿Hay un token de autenticación de Adobe válido?&quot; {#step1}
 

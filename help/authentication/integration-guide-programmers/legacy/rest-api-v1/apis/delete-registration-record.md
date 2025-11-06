@@ -4,7 +4,7 @@ description: Eliminar registro de registro
 exl-id: 42707070-2e1f-4847-93fd-30025aef56c1
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '176'
+source-wordcount: '174'
 ht-degree: 1%
 
 ---
@@ -44,7 +44,7 @@ Elimina el registro de código reg y libera el código reg para su reutilizació
 
 | Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Por ejemplo:</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | Servicio de programador </br></br>o</br></br>de aplicación de streaming | 1. Id. de solicitante </br>    (Componente de ruta de acceso)</br>2.  Código de registro </br>    (Componente Ruta) | DELETE | Ninguno | 204 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Por ejemplo:</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | Servicio de programador </br></br>o</br></br>de aplicación de streaming | &#x200B;1. Id. de solicitante </br>    (Componente de ruta de acceso)</br>2.  Código de registro </br>    (Componente Ruta) | DELETE | Ninguno | 204 |
 
 {style="table-layout:auto"}
 

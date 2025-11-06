@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## Información general {#usage-rep-overview}
 
-El servicio **Informes de uso de supervisión de concurrencia** está disponible a través de una API de REST que proporciona una perspectiva del uso simultáneo según lo informado por las aplicaciones del cliente.
+El servicio **Informes de uso de supervisión de concurrencia** está disponible a través de una API de REST que proporciona insight en el uso simultáneo según lo informado por las aplicaciones del cliente.
 
 ## Requisitos previos {#usage-rep-prerequisites}
 
@@ -53,7 +53,7 @@ Para tener acceso al producto de informes de uso de supervisión de concurrencia
 
 ### Los usuarios de los informes de uso pueden filtrar las métricas enumeradas anteriormente según las siguientes dimensiones: {#dimensions-2-filter-metrics}
 
-| Nombre del Dimension | Descripción |
+| Nombre de Dimension | Descripción |
 |:---------------|:------------------------------------------------------------------------------------------------------------------|
 | año | El año expresado con 4 dígitos |
 | mes | El mes del año (1-12) |
@@ -63,7 +63,7 @@ Para tener acceso al producto de informes de uso de supervisión de concurrencia
 | aplicación | El nombre de la aplicación registrada en la Monitorización de concurrencia que se utiliza para administrar sesiones |
 | application-id | El ID de aplicación registrado en la Monitorización de concurrencia utilizado para administrar sesiones |
 | canal | Los metadatos de canal enviados durante la inicialización de la sesión (marcados como Desconocido si no se envían metadatos). |
-| mvpd | La MVPD proporcionada en la administración de sesiones |
+| mvpd | El MVPD proporcionado en la administración de sesiones |
 | plataforma | Los metadatos de plataforma proporcionados al inicializar la sesión o predefinidos para una aplicación en el nivel de configuración |
 
 ## Métricas y desgloses de informes de simultaneidad {#concurrency-reports-metrics-breakdown}
@@ -74,20 +74,20 @@ El objetivo principal de este informe es ayudarle a comprender el impacto de est
 
 ### Los usuarios de informes de uso pueden monitorizar las siguientes métricas: {#metrics-usage-rep-users}
 
-| Nombre del Dimension | Descripción |
+| Nombre de Dimension | Descripción |
 |:---|:---|
 | usuarios | número de usuarios que han alcanzado cada nivel de concurrencia/actividad |
 
 ### Los usuarios de los informes de uso pueden filtrar las métricas enumeradas anteriormente según las siguientes dimensiones: {#dimensions-to-filter-metrics}
 
-| Nombre del Dimension | Descripción |
+| Nombre de Dimension | Descripción |
 |:---|:---|
 | año | El año expresado con 4 dígitos |
 | mes | El mes del año (1-12) |
 | día | El día del mes (1-31) |
 | nivel de concurrencia | Representa cualquier actividad de flujo **distinta que se aprobó en la fase de inicialización de la sesión** para que un usuario pueda observar cuántos flujos simultáneos **abrió** un usuario y comprender el impacto de aplicar un determinado límite de concurrencia |
 | nivel de actividad | Representa cualquier actividad de flujo **distinta (independientemente de su estado: iniciada, activa, detenida, rechazada)** para un usuario con el fin de poder observar cuántas secuencias simultáneas intentó abrir un usuario y comprender el impacto de aplicar un determinado límite de concurrencia |
-| mvpd | La MVPD proporcionada en la administración de sesiones |
+| mvpd | El MVPD proporcionado en la administración de sesiones |
 
 ### Ejemplos de informes
 

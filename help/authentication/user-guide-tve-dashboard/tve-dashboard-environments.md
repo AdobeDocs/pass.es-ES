@@ -2,7 +2,7 @@
 title: Entornos del panel de TVE
 description: Comprender el uso y el funcionamiento de los distintos entornos en el Tablero de TVE.
 exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Siga los pasos para cambiar entre los entornos del tablero de TVE de autenticaci
 
 1. Seleccione el entorno de ensayo o producción necesario en el menú desplegable **Entorno** que se encuentra en la parte superior del panel izquierdo.
 
-   ![Menú desplegable de entornos del panel de TVE](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
+   ![Menú desplegable de entornos del panel de TVE](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
 
    *Menú desplegable del entorno del Panel de TVE de autenticación de Adobe Pass*
 

@@ -17,15 +17,15 @@ ht-degree: 0%
 
 ## Información general {#mvpd-authz-overview}
 
-La autorización (AuthZ) se realiza mediante comunicaciones de canal de retorno (servidor a servidor) entre un servidor back-end alojado en el Adobe y el punto final de AuthZ de MVPD.
+La autorización (AuthZ) se realiza mediante comunicaciones de canal back-channel (servidor a servidor) entre un servidor back-end alojado en Adobe y el extremo AuthZ de MVPD.
 
 Para las solicitudes de AuthZ, el punto final de autorización debe poder procesar al menos los siguientes parámetros:
 
 * **Uid**. El ID de usuario recibido desde el paso de autenticación.
 
-* **Id. de recurso**. Cadena que identifica un recurso de contenido determinado. El programador especifica este ID de recurso y la MVPD debe reforzar las reglas comerciales de estos recursos (por ejemplo, comprobando que el usuario esté suscrito a un canal determinado).
+* **Id. de recurso**. Cadena que identifica un recurso de contenido determinado. Este ID de recurso lo especifica el programador y MVPD debe reforzar las reglas empresariales de estos recursos (por ejemplo, comprobando que el usuario esté suscrito a un canal determinado).
 
-Además de determinar si el usuario está autorizado, la respuesta debe incluir el tiempo de vida (TTL) de esta autorización, es decir, cuando caduca la autorización. Si no se establece el TTL, la solicitud de AuthZ fallará.  Por este motivo, **el TTL es una configuración obligatoria en el lado de la autenticación de Adobe Pass**, para cubrir el caso en que una MVPD no incluya el TTL en su solicitud.
+Además de determinar si el usuario está autorizado, la respuesta debe incluir el tiempo de vida (TTL) de esta autorización, es decir, cuando caduca la autorización. Si no se establece el TTL, la solicitud de AuthZ fallará.  Por este motivo, **el TTL es una configuración obligatoria en el lado de la autenticación de Adobe Pass**, para cubrir el caso en que un MVPD no incluya el TTL en su solicitud.
 
 ## La solicitud de autorización {#authz-req}
 
@@ -40,7 +40,7 @@ Una solicitud de AuthZ debe incluir un asunto en cuyo nombre se realiza la solic
 
 
 
-En este punto, el SP debe preparar una consulta de decisión de autorización XACML y enviarla (a través del POST HTTP) al punto de decisión de directiva (PDP) (previamente acordado) para el IdP. A continuación se muestra un ejemplo de una solicitud XACML simple (consulte las especificaciones principales de XACML):
+En este punto, el SP debe preparar una consulta de decisión de autorización XACML y enviarla (a través de HTTP POST) al punto de decisión de directiva (PDP) (previamente acordado) para el IdP. A continuación se muestra un ejemplo de una solicitud XACML simple (consulte las especificaciones principales de XACML):
 
 ```XML
 POST https://authz.site.com/XACML_endpoint
@@ -80,11 +80,11 @@ http://docs.oasis-open.org/xacml/access_control-xacml-2.0-context-schema-os.xsd"
 ```
 
 
-Después de recibir la solicitud de AuthZ, el PDP de la MVPD evalúa la solicitud y determina si se debe permitir al sujeto realizar la acción solicitada en el recurso. A continuación, la MVPD devuelve una respuesta con una decisión, un código de estado y un mensaje, tal como se describe en la respuesta de autorización que aparece a continuación.
+Después de recibir la solicitud de AuthZ, el PDP de MVPD evalúa la solicitud y determina si se debe permitir al sujeto realizar la acción solicitada en el recurso. A continuación, MVPD devuelve una respuesta con una decisión, un código de estado y un mensaje, tal como se describe en La respuesta de autorización a continuación.
 
 ## La respuesta de autorización {#authz-response}
 
-La respuesta a la solicitud de AuthZ se produce después de que MVPD evalúe la solicitud y aplique las reglas de negocio solicitadas para determinar si el sujeto puede realizar la acción solicitada en el recurso La respuesta devuelta a la autenticación de Adobe Pass se vuelve a expresar siguiendo la especificación principal de XACML con una decisión, un código de estado, un mensaje y obligaciones que el SP tiene como punto de aplicación de políticas (PEP). El siguiente es un ejemplo de Respuesta:
+La respuesta a la solicitud de AuthZ se produce después de que MVPD evalúe la solicitud y aplique las reglas empresariales solicitadas para determinar si el sujeto puede realizar la acción solicitada en el recurso La respuesta devuelta a la autenticación de Adobe Pass se vuelve a expresar siguiendo la especificación principal de XACML con una decisión, un código de estado, un mensaje y obligaciones que el SP tiene como punto de aplicación de políticas (PEP). El siguiente es un ejemplo de Respuesta:
 
 ```XML
 <Response xmlns="urn:oasis:names:tc:xacml:2.0:context:schema:os">

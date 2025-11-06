@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Esta página está pensada para servir como referencia para diferentes casos de uso e implementaciones de directivas. Le recomendamos que consulte también la parte [Glosario](/help/concurrency-monitoring/cm-glossary.md) de la documentación para ver las definiciones de términos.
 
-Un **inquilino** posee **aplicaciones** para las que desea aplicar **directivas**. **Las aplicaciones cliente** deben configurarse con el **identificador de aplicación** (proporcionado por el Adobe).
+Un **inquilino** posee **aplicaciones** para las que desea aplicar **directivas**. **Las aplicaciones cliente** deben configurarse con el **identificador de aplicación** (proporcionado por Adobe).
 
 A continuación, el inquilino asocia cada aplicación con una o más directivas, creadas por él o creadas y compartidas por otros. Las políticas se pueden vincular entre varios inquilinos.
 
@@ -33,7 +33,7 @@ Para cada una de las políticas aplicables, necesitamos recopilar toda la **acti
 
 El tutorial siguiente tiene como objetivo validar el modelo en algunos casos de uso. Lo haremos gradualmente, empezando con una configuración básica y agregando complejidad de varias maneras.
 
-### 1. Un usuario. Una aplicación. Una póliza. Un flujo {#onetenant-oneapp-onepolicy-onestream}
+### &#x200B;1. Un usuario. Una aplicación. Una póliza. Un flujo {#onetenant-oneapp-onepolicy-onestream}
 
 Empezaremos con un solo inquilino, con una sola aplicación y una sola directiva asociada. Supongamos que la política establece que puede haber como máximo un flujo activo para cualquier usuario (se permite reproducir el flujo más reciente).
 
@@ -42,7 +42,7 @@ Una vez iniciado un flujo, la actividad solo consistirá en ese flujo y se le pe
 ![Un inquilino. Una aplicación. Una póliza. Un flujo](assets/onetenant-app-policy-stream.png)
 
 
-### 2. Un usuario. Una aplicación. Una póliza. Dos arroyos. {#onetenant-oneapp-onepolicy-twostreams}
+### &#x200B;2. Un usuario. Una aplicación. Una póliza. Dos arroyos. {#onetenant-oneapp-onepolicy-twostreams}
 
 Una vez que se inicia un segundo flujo (por el mismo sujeto que usa la misma aplicación), la actividad utilizada para la validación consistirá en **s1** y **s2**.
 
@@ -54,7 +54,7 @@ Se ha superado el límite porque la directiva establece que solo se permite repr
 >
 >Los diagramas representan la vista del sistema en la actividad del usuario. Para los intentos de inicialización de una secuencia, la decisión de acceso se incluirá en la respuesta. Para los flujos activos, la decisión se devolverá en la respuesta de latido.
 
-### 3. Dos inquilinos. Dos aplicaciones. Una póliza. Dos arroyos. {#twotenant-twoapp-onepolicy-twostreams}
+### &#x200B;3. Dos inquilinos. Dos aplicaciones. Una póliza. Dos arroyos. {#twotenant-twoapp-onepolicy-twostreams}
 
 Supongamos ahora que un nuevo inquilino desea aplicar la misma directiva en sus aplicaciones:
 
@@ -62,7 +62,7 @@ Supongamos ahora que un nuevo inquilino desea aplicar la misma directiva en sus 
 
 Debido a que los dos inquilinos están vinculados por la misma directiva, la situación descrita en el caso de uso 2 es aplicable aquí y **s3** puede reproducirse ya que es el flujo más reciente.
 
-### 4. Dos inquilinos. Tres aplicaciones. Dos políticas. Dos arroyos. {#twotenants-threeapps-twopolicies-twostreams}
+### &#x200B;4. Dos inquilinos. Tres aplicaciones. Dos políticas. Dos arroyos. {#twotenants-threeapps-twopolicies-twostreams}
 
 Ahora supongamos que el segundo inquilino implementa una nueva aplicación y desea definir una nueva directiva que se compartirá entre **app2** y **app3**.
 
@@ -72,7 +72,7 @@ En este momento, los flujos activos **s3** y **s4** están permitidos. Para **s3
 
 La directiva **P2** se ha aplicado a ambos flujos y incluirá **s3** y **s4** como actividad relevante. Como esta actividad se encuentra dentro de los límites de dos flujos, se permiten ambos flujos.
 
-### 5. Dos inquilinos. Tres aplicaciones. Dos políticas. Tres arroyos. {#twotenants-threeapps-twopolicies-threestreams}
+### &#x200B;5. Dos inquilinos. Tres aplicaciones. Dos políticas. Tres arroyos. {#twotenants-threeapps-twopolicies-threestreams}
 
 Ahora, suponiendo que se realice un nuevo intento de inicialización de flujo usando **app2**:
 

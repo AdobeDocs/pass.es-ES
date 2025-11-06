@@ -49,7 +49,7 @@ Devuelve el registro del código de registro que contiene el UUID del código de
 
 | Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Por ejemplo:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK?format=xml | Servicio de programador </br></br>o</br></br>de aplicación de streaming | 1. solicitante </br>    (Componente de ruta de acceso)</br>2.  código de registro </br>    (Componente Ruta) | GET | XML o JSON que contienen un código de registro e información. Consulte esquema y ejemplo a continuación. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Por ejemplo:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK?format=xml | Servicio de programador </br></br>o</br></br>de aplicación de streaming | &#x200B;1. solicitante </br>    (Componente de ruta de acceso)</br>2.  código de registro </br>    (Componente Ruta) | GET | XML o JSON que contienen un código de registro e información. Consulte esquema y ejemplo a continuación. | 200 |
 
 {style="table-layout:auto"}
 

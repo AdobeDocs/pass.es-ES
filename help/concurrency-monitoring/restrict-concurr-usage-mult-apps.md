@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## Descripción del caso de uso
 
-MVPD M tiene una aplicación de iPhone, una aplicación de iPad y un sitio web. Necesita integrarse con el Control de Concurrencia de Adobe (CM) a petición del Programador P. El programador P ha definido en CM un conjunto de directivas con reglas que restringirán el uso simultáneo. CM tomará decisiones sobre los flujos que pueden reproducirse en función de las políticas y reglas definidas. Esto significa que incluso si se permitiera que un flujo se iniciara y reprodujera, durante la reproducción, CM puede decidir detenerlo.
+MVPD M tiene una aplicación de iPhone, una aplicación de iPad y un sitio web. Necesita integrarse con Adobe Concurrency Monitoring (CM) a petición del Programador P. El programador P ha definido en CM un conjunto de directivas con reglas que restringirán el uso simultáneo. CM tomará decisiones sobre los flujos que pueden reproducirse en función de las políticas y reglas definidas. Esto significa que incluso si se permitiera que un flujo se iniciara y reprodujera, durante la reproducción, CM puede decidir detenerlo.
 
 
 
@@ -42,8 +42,8 @@ Después de crear el ticket, se libera la siguiente información para su uso:
 | applicationId | ID de aplicación de iPhone | iphone54-75b4-431b-adb2-eb6b9e546013 | - |
 | applicationId | ID de aplicación de iPad | ipad5d54-75b4-431b-adb2-eb6b9e546013 | - |
 | applicationId | ID de aplicación web | sitio web4-75b4-431b-adb2-eb6b9e546013 | - |
-| intervalo para latidos | Intervalo en segundos para enviar llamadas de Heartbeat a la Monitorización de concurrencia de Adobe | 60 | 60 |
-| intervalo para conformidad de secuencia | Intervalo en segundos para comprobar el cumplimiento del flujo con la monitorización de concurrencia de Adobe | 180 | 180 |
+| intervalo para latidos | Intervalo en segundos para enviar llamadas de latido a la monitorización de concurrencia de Adobe | 60 | 60 |
+| intervalo para conformidad de secuencia | Intervalo en segundos para comprobar el cumplimiento del flujo en la monitorización de concurrencia de Adobe | 180 | 180 |
 
 
 ## Directrices de implementación

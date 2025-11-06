@@ -2,7 +2,7 @@
 title: Seguimiento de evaluación de prevención Apple Safari
 description: Seguimiento de evaluación de prevención Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -33,7 +33,7 @@ para las siguientes versiones de AccessEnabler JavaScript SDK: v2 (versiones 2.x
 
 Para mitigar estas limitaciones, puede indicar al usuario que cambie la configuración de privacidad del explorador Safari 10 y que use la opción &quot;**Permitir siempre**&quot; para la entrada &quot;**Cookies y datos del sitio web**&quot; en la pestaña Privacidad del explorador en Preferencias, como se muestra en la siguiente imagen.
 
-![](/help/authentication/assets/always-allow-safari10.png)
+![](../../../assets/always-allow-safari10.png)
 
 
 ## Safari 11 {#safari11}
@@ -64,12 +64,12 @@ Cuando el sitio web del implementador recibe una llamada de retorno con error [N
 
 * En el caso de Mac OS X High Sierra y posterior: desmarque la opción &quot;**Impedir el seguimiento entre sitios**&quot; para la entrada &quot;**Seguimiento de sitios web**&quot; en la pestaña Privacidad del explorador en Preferencias, como se muestra en la siguiente imagen.
 
-  ![](/help/authentication/assets/uncheck-prvnt-cr-st-tr-safari11.png)
+  ![](../../../assets/uncheck-prvnt-cr-st-tr-safari11.png)
 
 
 * En el caso de Mac OS X Sierra y anteriores: Comprobando la opción &quot;**Permitir siempre**&quot; para la entrada &quot;**Cookies y datos del sitio web**&quot; en la pestaña Privacidad del explorador desde Preferencias, como se muestra en la siguiente imagen.
 
-  ![](/help/authentication/assets/always-allow-safari11.png)
+  ![](../../../assets/always-allow-safari11.png)
 
 ## Safari 12 {#safari12}
 
@@ -126,14 +126,14 @@ Casos de uso afectados por este problema:
 
 En el momento de redactar este artículo, no se conoce ninguna mitigación disponible o posible. Apple introdujo una &quot;API de acceso al almacenamiento&quot; en Safari 12 (`https://webkit.org/blog/8124/introducing-storage-access-api`), pero la implementación actual no se aplica a localStorage, sino únicamente a las cookies. Además, la API requiere la interacción del usuario para poder utilizarse y, una vez que la utilice, también se le pide al usuario un cuadro de diálogo de permisos similar al de abajo.
 
-![](/help/authentication/assets/permission-dialog-apple.png)
+![](../../../assets/permission-dialog-apple.png)
 
 
 En este punto, estos requisitos/indicadores de Safari no se alinean con nuestros requisitos de UX y no tenemos un comportamiento coherente como en otros navegadores, donde SSO &quot;solo funciona&quot; una vez que guardamos un token en un dominio común localStorage.
 
 **Pase temporal**
 
-Para mitigar los problemas de individualización y tener una interacción de usuario, le recomendamos que use **[Promotional Temp Pass](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)** de manera interactiva y que proporcione al menos una información adicional sobre el usuario (por ejemplo, su dirección de correo electrónico).
+Para mitigar los problemas de individualización y tener una interacción de usuario, le recomendamos que use **[Promotional Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)** de manera interactiva y que proporcione al menos una información adicional sobre el usuario (por ejemplo, su dirección de correo electrónico).
 
 ## Safari 13 {#safari13}
 
@@ -164,8 +164,8 @@ Cuando el sitio web del implementador recibe una llamada de retorno con error [N
 
 * En el caso de Mac OS X High Sierra y posterior: desmarque la opción &quot;**Impedir el seguimiento entre sitios**&quot; para la entrada &quot;**Seguimiento de sitios web**&quot; en la pestaña Privacidad del explorador en Preferencias, como se muestra en la siguiente imagen.
 
-  ![](/help/authentication/assets/prvnt-cross-site-tr-safari13.png)
+  ![](../../../assets/prvnt-cross-site-tr-safari13.png)
 
 * En el caso de Mac OS X Sierra y anteriores: Comprobando t</span>la opción &quot;**Permitir siempre**&quot; para la entrada &quot;**Cookies y datos del sitio web**&quot; en la pestaña Privacidad del explorador en Preferencias, como se muestra en la siguiente imagen.
 
-  ![](/help/authentication/assets/always-allow-safari13.png)
+  ![](../../../assets/always-allow-safari13.png)

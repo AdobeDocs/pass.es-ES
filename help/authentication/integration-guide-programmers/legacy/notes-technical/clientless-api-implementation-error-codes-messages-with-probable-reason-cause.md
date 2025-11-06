@@ -1,6 +1,6 @@
 ---
-title: 'Implementación de API sin cliente: códigos Error / mensajes con motivo probable / causa'
-description: 'Implementación de API sin cliente: códigos Error / mensajes con motivo probable / causa'
+title: 'Implementación de API sin cliente: códigos de error/mensajes con motivo/causa probable'
+description: 'Implementación de API sin cliente: códigos de error/mensajes con motivo/causa probable'
 exl-id: 616e35fc-9b72-422b-9a05-e6248bd52490
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
@@ -9,49 +9,49 @@ ht-degree: 0%
 
 ---
 
-# (Elementos heredados) Implementación de API sin cliente: códigos Error / mensajes con motivo probable / causa {#clientless-api-implementation--error-codes-messages-with-probable-reason-cause}
+# Implementación de API sin cliente (heredada): códigos de error/mensajes con motivo/causa probable {#clientless-api-implementation--error-codes-messages-with-probable-reason-cause}
 
 >[!NOTE]
 >
->Los contenido de este Página se proporcionan únicamente con fines informativos. El uso de esta API requiere una licencia vigente de Adobe Systems. No se permite el uso no autorizado.
+>El contenido de esta página se proporciona únicamente con fines informativos. El uso de esta API requiere una licencia actual de Adobe. No se permite el uso no autorizado.
 
 >[!IMPORTANT]
 >
-> Asegúrese de mantenerse informado sobre los últimos Adobe Pass Authentication anuncios de productos y los plazos de desmantelamiento agregados en el [Página de anuncios de](/help/authentication/product-announcements.md) productos.
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](/help/authentication/product-announcements.md).
 
 </br>
 
 
-## Error: No autorizado
+## Error: no autorizado
 
 ### Causas:
 
 1. Falta el encabezado de autorización en el POST
-1. Problema con el encabezado de autorización: compruebe si solicitud tiempo es en milisegundos.
+1. Problema con el encabezado de autorización: compruebe si el tiempo de solicitud está en milisegundos.
 
 ## Error: SC 400 durante la autenticación
 
 ### Causas:
 
-1. El servidor no encontró el código registro, que fue creado para un solicitante y un entorno específicos.
-1. Podría estar teniendo problemas de script entre dominios
-1. Se debe agregar la suplantación de identidad adecuada al archivo /etc/hosts
+1. El servidor no encontró el código de registro, que se creó para un solicitante y un entorno específicos.
+1. Podría estar teniendo problemas con scripts entre dominios
+1. Se debe añadir una suplantación adecuada al archivo /etc/hosts
 
 ## Error: 400 Solicitud incorrecta
 
 ### Causas:
 
-1. URL con formato incorrecto para POST/GET
-1. SAMLAssertionParserException: la afirmación SAML cifrada no se pudo descifrar al final de Adobe Systems
+1. URL mal formada para POST/GET
+1. SAMLAssertionParserException: la afirmación de SAML cifrada no se pudo descifrar al final de Adobe
 
-## Error: 403 Prohibido
+## Error: 403 prohibido
 
 ### Causas:
 
-1. Demasiadas solicitudes rápidas: una característica de la administración de API para evitar ataques DoS.
-2. Si utiliza prequal entorno agregue suplantación de identidad, de lo contrario, asegúrese de que la suplantación de identidad se haya eliminado del archivo /etc/hosts.
+1. Demasiadas solicitudes rápidas: una función de la administración de API para evitar ataques DoS.
+2. Si utiliza un entorno de calidad previa, agregue la suplantación; de lo contrario, asegúrese de que la suplantación se haya eliminado del archivo /etc/hosts
 
-## Error: No se puede iniciar sesión en MVPD Página
+## Error: No se puede iniciar sesión en la página de MVPD
 
 ### Causas:
 

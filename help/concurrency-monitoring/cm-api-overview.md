@@ -60,7 +60,7 @@ Una aplicación realiza la llamada de inicialización de sesión después de adq
 
 No es necesario proporcionar ningún código de terminación en la primera llamada, ya que no tenemos ningún otro flujo activo. Y no hay atributo de metadatos, porque no se devolvió ninguno desde la llamada de recuperación de metadatos.
 
-Los parámetros **subject** y **idp** son obligatorios. Se especificarán como variables de ruta de URI. Puede obtener los parámetros **subject** y **idp** realizando una llamada a los campos de metadatos **mvpd** y **upstreamUserID** desde la autenticación de Adobe Pass. Vea también la [descripción general de las API de metadatos](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=es#). Para este ejemplo, proporcionaremos el valor &quot;12345&quot; como asunto y &quot;adobe&quot; como idp.
+Los parámetros **subject** y **idp** son obligatorios. Se especificarán como variables de ruta de URI. Puede obtener los parámetros **subject** y **idp** realizando una llamada a los campos de metadatos **mvpd** y **upstreamUserID** desde la autenticación de Adobe Pass. Vea también la [descripción general de las API de metadatos](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#). Para este ejemplo, proporcionaremos el valor &quot;12345&quot; como asunto y &quot;adobe&quot; como idp.
 
 
 ![](assets/session-init-params-frstapp.png)

@@ -2,7 +2,7 @@
 title: 'Encabezado: X-Roku-Reserved-Roku-Connect-Token'
 description: 'API de REST V2: encabezado: X-Roku-Reserved-Roku-Connect-Token'
 exl-id: 21016d5b-4d10-4018-a82c-f2797b2d9fb9
-source-git-commit: 2afe9ea2a814817757f1ab28484a84466da68d62
+source-git-commit: 560cdcdabb3d507121912938d687a47020e85293
 workflow-type: tm+mt
 source-wordcount: '149'
 ht-degree: 0%
@@ -47,4 +47,4 @@ La firma web JSON (`JWS`) o el cifrado web JSON (`JWE`) que es un token web JSON
 
 Esta opción está disponible para las siguientes plataformas:
 
-* [Guía de Roku SSO (API de REST V2)](/help/premium-workflow/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
+* [Guía de Roku SSO (API de REST V2)](../../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)

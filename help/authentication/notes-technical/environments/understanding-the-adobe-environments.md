@@ -19,7 +19,7 @@ La documentación oficial que describe los entornos de Adobe está disponible [C
 
 Los entornos de Adobe, resumidos en pocas palabras:
 
-El Adobe tiene dos entornos: **Calificación previa** y **Versión**.
+Adobe tiene dos entornos: **Calificación previa** y **Versión**.
 
 * En el entorno de precalificación, estamos preparando la nueva compilación para su lanzamiento.
 

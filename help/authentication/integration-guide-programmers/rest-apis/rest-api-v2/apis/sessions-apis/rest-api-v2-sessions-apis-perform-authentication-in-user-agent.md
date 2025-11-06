@@ -142,7 +142,7 @@ La respuesta correcta es una serie de una o varias redirecciones hasta llegar a 
 
 ## Muestras {#samples}
 
-### 1. Realizar autenticación en el agente de usuario
+### &#x200B;1. Realizar autenticación en el agente de usuario
 
 >[!BEGINTABS]
 

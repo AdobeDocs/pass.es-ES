@@ -4,7 +4,7 @@ description: Comprobar flujo de autenticación por aplicación web en segunda pa
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Esta API debe ser consumida por la aplicación web de inicio de sesión en la se
 
 | Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{código de registro} | Iniciar sesión en aplicación web | 1. código de registro </br>    (Componente de ruta de acceso)</br>2.  solicitante </br>    (Obligatorio) | GET | XML o JSON con detalles de error si no se ha realizado correctamente. | 200 - Éxito   </br>403 - Prohibido |
+| SP_FQDN/api/v1/checkauthn/{registration code} | Iniciar sesión en aplicación web | &#x200B;1. código de registro </br>    (Componente de ruta de acceso)</br>2.  solicitante </br>    (Obligatorio) | GET | XML o JSON con detalles de error si no se ha realizado correctamente. | 200 - Éxito   </br>403 - Prohibido |
 
 </br>
 

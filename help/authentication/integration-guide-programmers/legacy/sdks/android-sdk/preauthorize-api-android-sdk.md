@@ -231,7 +231,7 @@ características)**
 
 </br>
 
->**Decisión de clase** {#decision}
+>**decisión de clase** {#decision}
 
 ```
     ///

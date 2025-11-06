@@ -4,7 +4,7 @@ description: Recuperar solicitud de perfil SSO de Platform
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '212'
+source-wordcount: '210'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Este recurso produce solicitudes de perfil para un ID de solicitante y una tupla
 
 | Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Servicio de programador </br></br>o</br></br>de aplicación de streaming | 1. solicitante (parámetro de ruta)</br>2. mvpd (parámetro de ruta)</br>3. deviceType (obligatorio) | GET | El Content-Type de respuesta será application/octet-stream, ya que la carga útil real es opaca para la aplicación cliente.</br></br>La aplicación debe reenviar la respuesta al motor de SSO de Platform</br></br>para obtener un SSO de perfil. | 200 - Éxito   </br>400 - Solicitud incorrecta |
+| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Servicio de programador </br></br>o</br></br>de aplicación de streaming | &#x200B;1. solicitante (parámetro de ruta)</br>2. mvpd (parámetro de ruta)</br>3. deviceType (obligatorio) | GET | El Content-Type de respuesta será application/octet-stream, ya que la carga útil real es opaca para la aplicación cliente.</br></br>La aplicación debe reenviar la respuesta al motor de SSO de Platform</br></br>para obtener un SSO de perfil. | 200 - Éxito   </br>400 - Solicitud incorrecta |
 
 
 | Parámetro de entrada | Descripción |

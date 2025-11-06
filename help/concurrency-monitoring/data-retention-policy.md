@@ -5,7 +5,7 @@ exl-id: aa7d2d5e-9a8b-404b-874c-9e5923417784
 source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
 source-wordcount: '298'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -18,11 +18,11 @@ ht-degree: 0%
 
 ## Introducción {#introduction}
 
-El Adobe, en su calidad de encargado del tratamiento de datos, debe tomar las medidas adecuadas para ayudar a sus clientes a cumplir con solicitudes de acceso, eliminación y otras solicitudes de particulares. La aplicación de directivas de eliminación adecuadas, seguras y oportunas es una parte importante del cumplimiento de esta obligación.
+Adobe, como responsable del tratamiento de sus datos, debe tomar las medidas adecuadas para ayudar a sus clientes a cumplir con solicitudes de acceso, eliminación y otras solicitudes de particulares. La aplicación de directivas de eliminación adecuadas, seguras y oportunas es una parte importante del cumplimiento de esta obligación.
 
 ## Definiciones {#definitions}
 
-Una directiva de retención de datos determina cuánto tiempo almacena el Adobe los datos del cliente. La directiva de retención de datos predeterminada para la supervisión de concurrencia es de **25 meses**.
+Una directiva de retención de datos determina cuánto tiempo almacena Adobe los datos del cliente. La directiva de retención de datos predeterminada para la supervisión de concurrencia es de **25 meses**.
 
 | Período de retención de datos | El período de retención de datos es el período de retención de datos predeterminado (25 meses). |
 |---|---|
@@ -42,10 +42,10 @@ A menos que el cliente compre extensiones de retención de datos, la monitorizac
 
 ### Clientes finalizados {#terminated-customers}
 
-Un cliente terminado es un cliente que ha finalizado la relación con el Adobe y ya no utiliza la supervisión de concurrencia.
+Un cliente finalizado es un cliente que ha finalizado la relación con Adobe y ya no utiliza el control de concurrencia.
 
 * Los *datos del flujo de navegación* recopilados por el monitoreo de concurrencia deben eliminarse en un plazo de **6 meses** a partir de la fecha de finalización del contrato del cliente.
 
 ## Eliminación de datos {#data-deletion}
 
-El Adobe se reserva el derecho de borrar los datos de las fechas posteriores al período de retención de datos sin opción de recuperarlos. Los datos de los clientes actuales deben eliminarse mensualmente de forma gradual.
+Adobe se reserva el derecho de eliminar datos de fechas que no entren en el período de retención de datos sin opción de recuperarlos. Los datos de los clientes actuales deben eliminarse mensualmente de forma gradual.

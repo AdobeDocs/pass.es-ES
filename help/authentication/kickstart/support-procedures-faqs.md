@@ -35,7 +35,7 @@ Ejemplos de incidentes de GRAVEDAD 1
 
 ### ¿Qué es un incidente de nivel no GRAVE 1?
 
-El Adobe apoyará las investigaciones de estos problemas, pero no se consideran incidentes de nivel SEVERITY 1:
+Adobe apoyará las investigaciones de estos problemas, pero no se consideran incidentes de nivel 1 GRAVEDAD:
 
 * Uno o unos pocos suscriptores no pueden autenticarse y permanecer en la página de inicio de sesión de MVPD.
 
@@ -45,11 +45,11 @@ El Adobe apoyará las investigaciones de estos problemas, pero no se consideran 
 
 ### ¿Cómo se gestionan los incidentes de nivel SEVERITY 1?
 
-Una incidencia de nivel GRAVEDAD 1 puede iniciarla un Adobe o un socio de autenticación de Adobe Pass. A continuación se describen los pasos de cada uno de ellos.
+Una incidencia de nivel GRAVEDAD 1 puede iniciarla Adobe o un socio de autenticación de Adobe Pass. A continuación se describen los pasos de cada uno de ellos.
 
 **Flujo iniciado por el socio**
 
-1. El socio identifica un incidente de nivel de gravedad 1 que requiere la atención inmediata del Adobe.
+1. El socio identifica un incidente de nivel de gravedad 1 que requiere la atención inmediata de Adobe.
 
 1. El socio envía un correo electrónico a **tve-support@adobe.com** que incluye **URGENTE - INCIDENTE** en la línea de asunto y agrega la siguiente información:
    * Título
@@ -61,31 +61,31 @@ Una incidencia de nivel GRAVEDAD 1 puede iniciarla un Adobe o un socio de autent
    * Registros de dispositivo o seguimiento HTTP que muestran el problema
    * (opcional) Cualquier captura de pantalla o vídeo disponible que demuestre el problema
 
-1. Si el Adobe no responde al ticket dentro de un período, el socio puede llamar al siguiente número: **1-657-312-4623**.
+1. Si Adobe no responde al ticket dentro de un período, el socio puede llamar al siguiente número: **1-657-312-4623**.
 
 >[!IMPORTANT]
 >
 > Si no incluyes &quot;URGENTE-INCIDENTE&quot; en el título del ticket, no será recogido por nuestro sistema de notificación.
 
-**Flujo iniciado por el Adobe**
+**Flujo iniciado por Adobe**
 
 Para un problema de autenticación de Adobe Pass:
 
-1. El Adobe identifica un problema interno y abre un ticket en nuestro sistema de seguimiento.
+1. Adobe identifica un problema interno y abre un ticket en nuestro sistema de seguimiento.
 
-1. El Adobe notifica al administrador de programas y al contacto técnico del socio, especificando el número de ticket y el impacto estimado del problema.
+1. Adobe notifica al administrador de programas y al contacto técnico del socio, especificando el número de ticket y el impacto estimado del problema.
 
-1. El Adobe trabaja para resolver el incidente y mantiene informados a todos los socios afectados.
+1. Adobe trabaja para resolver el incidente y mantiene informados a todos los socios afectados.
 
 Para un problema con un socio (Programador/MVPD):
 
-1. El Adobe identifica un problema relacionado con la integración con un MVPD o en uno de los sitios del programador.
+1. Adobe identifica un problema relacionado con la integración con un MVPD o en uno de los sitios del programador.
 
-1. El Adobe notifica al socio afectado siguiendo los procedimientos de asistencia establecidos con ese socio y abre un ticket con la organización de asistencia del socio.
+1. Adobe notifica al socio afectado siguiendo los procedimientos de asistencia establecidos con dicho socio y abre un ticket con la organización de asistencia del socio.
 
-1. Si, durante el análisis de impacto, el Adobe identifica que el problema entra dentro de una de las decisiones preacordadas sobre escenarios de incidentes, actuará en consecuencia sin esperar la contribución del socio.
+1. Si, durante el análisis de impacto, Adobe identifica que el problema entra dentro de una de las decisiones preacordadas sobre escenarios de incidentes, actuará en consecuencia sin esperar la contribución del socio.
 
-1. El Adobe esperará las actualizaciones del socio y una notificación cuando se haya restaurado el servicio.
+1. Adobe esperará actualizaciones del socio y una notificación cuando se haya restaurado el servicio.
 
 ### ¿Qué son las decisiones preacordadas sobre escenarios de incidentes?
 
@@ -93,6 +93,6 @@ Algunas situaciones con acciones predeterminadas que se realizan si se produce e
 
 |    | Escenario | Descripción | Acciones |
 |----|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| S1 | El Adobe identifica un problema con la integración de MVPD durante las operaciones de producción normales. | Durante las operaciones de producción normales, el Adobe identifica un problema con una de las MVPD que hace que sea imposible realizar los flujos de autenticación/autorización (por ejemplo, certificados caducados, respuestas SAML caducadas, puertos cerrados, parámetros modificados, etc.) | El Adobe de notificará a los MVPD y programadores afectados.  El Adobe </br></br> desactivará este MVPD para todos los programadores afectados. El Adobe </br></br> abrirá un ticket con MVPD siguiendo el procedimiento de soporte acordado con MVPD |
-| S2 | El Adobe activa un nuevo MVPD para un programador y el programador permite el MVPD antes de la fecha de inicio. | El Adobe está activando un nuevo MVPD para el sitio de un programador y el sitio ya está mostrando el nuevo MVPD en el selector, aunque no fuera necesario. | El Adobe notificará al programador que el nuevo MVPD aparece en el selector antes de la fecha programada. El programador de </br></br> tomará medidas para quitarlo del selector si es necesario. |
-| S3 | El Adobe activa un nuevo MVPD para un programador incluso si el MVPD no está listo para su producción | Adobe está activando un nuevo MVPD para un programador, pero MVPD aún no ha implementado la compatibilidad con la integración, por lo que no se pueden realizar los flujos de autenticación/autorización | Adobe realizará la implementación solo si el programador </br></br> se lo solicita. El programador será responsable de garantizar la autorización de MVPD una vez que se hayan realizado todas las pruebas. |
+| S1 | Adobe identifica un problema con la integración de MVPD durante las operaciones de producción normales. | Durante las operaciones de producción normales, Adobe identifica un problema con una de las MVPD que hace que sea imposible realizar los flujos de autenticación/autorización (por ejemplo, certificados caducados, respuestas SAML caducadas, puertos cerrados, parámetros modificados, etc.) | Adobe notificará a los programadores y MVPD afectados.  </br></br> Adobe desactivará esta MVPD para todos los programadores afectados. </br></br> Adobe abrirá un ticket con MVPD siguiendo el procedimiento de soporte acordado con MVPD |
+| S2 | Adobe activa un nuevo MVPD para un programador y el programador permite el MVPD antes de la fecha de inicio. | Adobe está activando un nuevo MVPD para el sitio de un programador y el sitio ya está mostrando el nuevo MVPD en el selector, aunque no se suponía que lo hiciera. | Adobe notificará al programador que el nuevo MVPD aparece en el selector antes de la fecha programada. El programador de </br></br> tomará medidas para quitarlo del selector si es necesario. |
+| S3 | Adobe activa un nuevo MVPD para un programador incluso si el MVPD no está listo para su producción | Adobe está activando un nuevo MVPD para un programador, pero MVPD aún no ha implementado la compatibilidad con la integración, por lo que no se pueden realizar los flujos de autenticación/autorización | Adobe realizará la implementación solo si el programador </br></br> se lo solicita. El programador será responsable de garantizar la autorización de MVPD una vez que se hayan realizado todas las pruebas. |

@@ -2,7 +2,7 @@
 title: Guía de KickStart del programador
 description: Guía de KickStart del programador
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 37858fa83aecbdf443a4a6058c78e4f9246eee42
 workflow-type: tm+mt
 source-wordcount: '758'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Adobe proporciona una serie de recursos para ayudarle a integrar la autenticaci�
 
 El proceso de configuración incluye, entre otros, los siguientes pasos:
 
-![Proceso de integración de autenticación de Adobe® Pass](/help/authentication/assets/progr-flow-int-lifecycle.png)
+![Proceso de integración de autenticación de Adobe® Pass](../assets/progr-flow-int-lifecycle.png)
 
 *Proceso de integración de autenticación de Adobe® Pass*
 
@@ -69,13 +69,13 @@ El proceso de configuración incluye, entre otros, los siguientes pasos:
 
 ## Acceso a asistencia al cliente {#access-customer-support}
 
-**Adobe proporcionará acceso a nuestro sistema de atención al cliente a través de** Zendesk[. &#x200B;](https://tve.zendesk.com/home) Para acceder a Zendesk, debe registrarse y crear una cuenta en https://tve.zendesk.com/home. No hay límite en el número de usuarios que puede registrar. Una vez registrado, puede ver y compartir comentarios en cualquier ticket enviado.
+**Adobe proporcionará acceso a nuestro sistema de atención al cliente a través de** Zendesk[. ](https://tve.zendesk.com/home) Para acceder a Zendesk, debe registrarse y crear una cuenta en https://tve.zendesk.com/home. No hay límite en el número de usuarios que puede registrar. Una vez registrado, puede ver y compartir comentarios en cualquier ticket enviado.
 
 El equipo de autenticación de Adobe Pass está disponible para ayudarle con cualquier pregunta o problema técnico que pueda encontrar durante el proceso de integración. Póngase en contacto con nosotros en [tve-support@adobe.com](mailto:tve-support@adobe.com).
 
 ## Acceso a la documentación {#access-documentation}
 
-**Adobe proporcionará acceso a nuestra documentación pública a través de** Adobe Experience League[.](https://experienceleague.adobe.com/es/docs/pass/authentication/home)
+**Adobe proporcionará acceso a nuestra documentación pública a través de** Adobe Experience League[.](https://experienceleague.adobe.com/en/docs/pass/authentication/home)
 
 El equipo de autenticación de Adobe Pass proporciona documentación completa sobre las funciones y API disponibles en la sección [Guía de integración para programadores](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Consulte la tabla de contenido de esta sección para ver vínculos a información detallada sobre cada tema.
 

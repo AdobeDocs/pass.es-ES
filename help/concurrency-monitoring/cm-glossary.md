@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## ID de cuenta {#accid-defn}
 
-* Cuenta MVPD de un suscriptor, que generalmente corresponde a la cuenta de facturación real. La MVPD debe identificar esta cuenta en su propio sistema.
+* Cuenta de MVPD de un suscriptor, que generalmente corresponde a la cuenta de facturación real. MVPD debe poder identificar esta cuenta en su propio sistema.
 
 ## Acción {#action-defn}
 
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 * Desarrollado por el inquilino para el acceso al contenido de vídeo
 * Toma y aplica decisiones sobre el acceso al contenido basándose en la información proporcionada por el Servicio de supervisión de concurrencia (esto es válido en el caso de [Punto de información de directiva](/help/concurrency-monitoring/policy-info-pt-versionone.md))
-* Tendrá un **ID de aplicación** único proporcionado por el Adobe.
+* Tendrá un **ID de aplicación** único proporcionado por Adobe.
 
 ## Servicio de supervisión de concurrencia {#cm-service-defn}
 
@@ -73,7 +73,7 @@ ht-degree: 0%
 
 * Actúa como proveedor de servicios y contenido.
 * Se basa en la aplicación cliente implementada que se integra con el servicio de supervisión de concurrencia para aplicar las políticas de seguridad definidas en función de los datos de servicio mencionados anteriormente.
-* Necesita admitir la MVPD para recopilar la actividad del suscriptor y aplicar las reglas de limitación en sus propiedades.
+* Necesita admitir MVPD para recopilar la actividad del suscriptor y aplicar las reglas de limitación en sus propiedades.
 * También puede estar interesado en limitar el acceso simultáneo a su contenido en todos los portales de destino, como regla independiente.
 
   *Q: ¿Por qué el programador y no el solicitante tienen un ID similar al del resto de la autenticación de Adobe Pass?*
@@ -94,13 +94,13 @@ ht-degree: 0%
 
 ## Asunto {#subj-defn}
 
-* El consumidor del contenido (vídeo) a través de Internet. Estamos evitando deliberadamente el término _&#x200B;**usuario**&#x200B;_, ya que la Monitorización de concurrencia generalmente trata con los ID de cuenta de MVPD (que involucran a varios usuarios reales que comparten el mismo contrato, por ejemplo, miembros de la familia de un hogar).
+* El consumidor del contenido (vídeo) a través de Internet. Estamos evitando deliberadamente el término _**usuario**_, ya que la Monitorización de concurrencia generalmente trata con los ID de cuenta de MVPD (que involucran a varios usuarios reales que comparten el mismo contrato, por ejemplo, miembros de la familia de un hogar).
 
 * Para cada flujo, el asunto se puede mejorar con atributos relacionados con la persona real que utiliza el servicio, su dispositivo conectado a la red, etc.
 
 ## Suscriptor {#subscriber-defn}
 
-* El cliente pagador de una MVPD o una persona que comparte las credenciales de un cliente pagador
+* El cliente pagador de un MVPD o una persona que comparte las credenciales de un cliente pagador
 * El Servicio de supervisión de concurrencia puede impedir que vea contenido mediante la aplicación cliente que utiliza el servicio mencionado anteriormente.
 * En el mejor de los casos, nunca se da cuenta de la existencia del Servicio de Monitoreo de Concurrencia
 

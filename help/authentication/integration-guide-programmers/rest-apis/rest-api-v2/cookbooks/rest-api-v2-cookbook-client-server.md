@@ -2,7 +2,7 @@
 title: Guía de API de REST V2 (de cliente a servidor)
 description: Guía de API de REST V2 (de cliente a servidor)
 exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '1833'
 ht-degree: 0%
@@ -107,7 +107,7 @@ La fase de autenticación actúa como un paso previo para la fase de preautoriza
 * **Escenario 2:** No existen perfiles, la aplicación de streaming puede continuar con el siguiente paso para [Autenticar al usuario](#step-3-authenticate-the-user).
 
 
-* **Escenario 3:** No existen perfiles, la aplicación de streaming puede continuar para proporcionar al usuario acceso temporal a través de la característica [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md).
+* **Escenario 3:** No existen perfiles, la aplicación de streaming puede continuar para proporcionar al usuario acceso temporal a través de la característica [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
 
    * Este escenario está fuera del ámbito de este documento. Consulte la documentación de [Flujos de acceso temporales](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) para obtener más información.
 

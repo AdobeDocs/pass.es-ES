@@ -4,7 +4,7 @@ description: Proporcionar lista de MVPD
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '254'
 ht-degree: 2%
 
 ---
@@ -43,7 +43,7 @@ Devuelve la lista de MVPD configuradas para el solicitante.
 
 | Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Por ejemplo:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass Authentication | 1. Solicitante</br>    (Componente de ruta de acceso)</br>_2.  deviceType (obsoleto)_ | GET | XML o JSON que contienen la lista de MVPD. | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Por ejemplo:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Adobe Pass Authentication | &#x200B;1. Solicitante</br>    (Componente de ruta de acceso)</br>_2.  deviceType (obsoleto)_ | GET | XML o JSON que contienen la lista de MVPD. | 200 |
 
 {style="table-layout:auto"}
 

@@ -29,9 +29,9 @@ Comience con esta sección si está trabajando en una aplicación que necesita i
 
 ### Preguntas frecuentes sobre el acceso a la API REST V2 {#rest-api-v2-access-faqs}
 
-+++Preguntas frecuentes sobre el acceso a la API de REST V2
++++Preguntas frecuentes sobre el acceso a la API REST V2
 
-#### 1. ¿Cuál es el propósito de la fase de registro? {#rest-api-v2-access-faq1}
+#### &#x200B;1. ¿Cuál es el propósito de la fase de registro? {#rest-api-v2-access-faq1}
 
 El propósito de la fase de registro es registrar la aplicación cliente con la autenticación de Adobe Pass a través del proceso de [Registro dinámico de clientes (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#dcr).
 
@@ -39,11 +39,11 @@ El proceso de registro dinámico de clientes (DCR) requiere que la aplicación c
 
 Para obtener más información, consulte la [Información general sobre el registro de clientes dinámicos](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
-#### 2. ¿Es obligatoria la fase de registro? {#rest-api-v2-access-faq2}
+#### &#x200B;2. ¿Es obligatoria la fase de registro? {#rest-api-v2-access-faq2}
 
 La fase de registro es obligatoria, pero la aplicación cliente puede omitir esta fase si tiene un par en caché de credenciales de cliente y un token de acceso que siguen siendo válidos.
 
-#### 3. ¿Qué es una declaración de software y durante cuánto tiempo es válida? {#rest-api-v2-access-faq3}
+#### &#x200B;3. ¿Qué es una declaración de software y durante cuánto tiempo es válida? {#rest-api-v2-access-faq3}
 
 La instrucción de software es un término definido en la documentación de [Glosario](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#software-statement).
 
@@ -55,19 +55,19 @@ La aplicación cliente debe almacenar la instrucción de software y utilizarla c
 
 Para obtener más información, consulte la [Información general sobre el registro de clientes dinámicos](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
-#### 4. ¿Cómo generar y descargar una declaración de software? {#rest-api-v2-access-faq4}
+#### &#x200B;4. ¿Cómo generar y descargar una declaración de software? {#rest-api-v2-access-faq4}
 
 Esta operación puede completarla uno de los administradores de su organización o un representante de autenticación de Adobe Pass que actúe en su nombre a través del [Panel de control de TVE](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) de Adobe Pass.
 
 Para obtener más información, consulte la [Guía del usuario de canales del panel de TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#registered-applications) o la [Guía del usuario para programadores del panel de TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#registered-applications).
 
-#### 5. ¿Qué sucede si se revoca una declaración de software? {#rest-api-v2-access-faq5}
+#### &#x200B;5. ¿Qué sucede si se revoca una declaración de software? {#rest-api-v2-access-faq5}
 
 Cuando se revoca la declaración del software, hay una consecuencia importante que considerar:
 
 * Las aplicaciones cliente que usen la instrucción de software revocada ya no podrán pasar por los flujos de [derechos](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#entitlement), lo que significa que se bloqueará a los usuarios la reproducción de contenido.
 
-#### 6. ¿Qué son las credenciales del cliente y durante cuánto tiempo son válidas? {#rest-api-v2-access-faq6}
+#### &#x200B;6. ¿Qué son las credenciales del cliente y durante cuánto tiempo son válidas? {#rest-api-v2-access-faq6}
 
 Las credenciales del cliente son un término definido en la documentación de [Glosario](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#client-credentials).
 
@@ -79,15 +79,15 @@ La aplicación cliente debe almacenar las credenciales del cliente y utilizarlas
 
 Para obtener más información, consulte la documentación de [Recuperar credenciales de cliente](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
 
-#### 7. ¿Cómo administrar las credenciales del cliente? {#rest-api-v2-access-faq7}
+#### &#x200B;7. ¿Cómo administrar las credenciales del cliente? {#rest-api-v2-access-faq7}
 
 Recomendamos que la aplicación cliente administre un par único de credenciales de cliente para cada instancia de aplicación de usuario en caso de integraciones cliente a servidor y servidor a servidor con autenticación de Adobe Pass.
 
-#### 8. ¿Debe la aplicación cliente almacenar en caché las credenciales del cliente en un almacenamiento persistente? {#rest-api-v2-access-faq8}
+#### &#x200B;8. ¿Debe la aplicación cliente almacenar en caché las credenciales del cliente en un almacenamiento persistente? {#rest-api-v2-access-faq8}
 
 La aplicación cliente debe almacenar las credenciales del cliente y utilizarlas indefinidamente cuando necesite recuperar un token de acceso.
 
-#### 9. ¿Qué sucede si se pierden las credenciales del cliente en caché? {#rest-api-v2-access-faq9}
+#### &#x200B;9. ¿Qué sucede si se pierden las credenciales del cliente en caché? {#rest-api-v2-access-faq9}
 
 Cuando se pierden las credenciales del cliente en caché, hay tres consecuencias importantes que hay que tener en cuenta:
 
@@ -95,7 +95,7 @@ Cuando se pierden las credenciales del cliente en caché, hay tres consecuencias
 * La aplicación cliente debe obtener un nuevo token de acceso utilizando el nuevo par de credenciales de cliente.
 * La aplicación cliente deberá solicitar al usuario que vuelva a autenticarse, ya que la aplicación cliente perderá el acceso a los perfiles autenticados obtenidos anteriormente.
 
-#### 10. ¿Qué es un token de acceso y durante cuánto tiempo es válido? {#rest-api-v2-access-faq10}
+#### &#x200B;10. ¿Qué es un token de acceso y durante cuánto tiempo es válido? {#rest-api-v2-access-faq10}
 
 El token de acceso es un término definido en la documentación de [Glosario](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#access-token).
 
@@ -109,11 +109,11 @@ La aplicación cliente debe obtener un nuevo token de acceso antes de que caduqu
 
 Para obtener más información, consulte la documentación de [Recuperar token de acceso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
-#### 11. ¿Debe la aplicación cliente almacenar en caché el token de acceso en un almacenamiento persistente? {#rest-api-v2-access-faq11}
+#### &#x200B;11. ¿Debe la aplicación cliente almacenar en caché el token de acceso en un almacenamiento persistente? {#rest-api-v2-access-faq11}
 
 La aplicación cliente debe almacenar y utilizar el token de acceso hasta que caduque y, a continuación, descartarlo y obtener uno nuevo.
 
-#### 12. ¿Cómo puede la aplicación cliente actualizar un token de acceso? {#rest-api-v2-access-faq12}
+#### &#x200B;12. ¿Cómo puede la aplicación cliente actualizar un token de acceso? {#rest-api-v2-access-faq12}
 
 La aplicación cliente debe actualizar un token de acceso de la misma manera que recuperar un nuevo token de acceso, pero utilizando credenciales de cliente en caché.
 
@@ -133,9 +133,9 @@ Continúe con esta sección si está trabajando en una aplicación que necesita 
 
 ### Preguntas frecuentes sobre la migración a la API REST V2 {#rest-api-v2-migration-faqs}
 
-+++Preguntas frecuentes sobre la migración a la API de REST V2
++++Preguntas frecuentes sobre la migración a la API REST V2
 
-#### 1. ¿Puede la aplicación cliente reutilizar las aplicaciones registradas existentes (declaraciones de software)? {#rest-api-v2-migration-faq1}
+#### &#x200B;1. ¿Puede la aplicación cliente reutilizar las aplicaciones registradas existentes (declaraciones de software)? {#rest-api-v2-migration-faq1}
 
 La aplicación cliente no puede reutilizar las aplicaciones registradas existentes (declaraciones de software), por lo que debe generar y descargar una nueva aplicación registrada (declaraciones de software) dedicada a consumir la API de REST V2.
 
@@ -147,7 +147,7 @@ Por el momento, se le pedirá a un representante de autenticación de Adobe Pass
 
 Para distinguir las aplicaciones registradas (declaraciones de software) utilizadas en las aplicaciones cliente que consumen REST API V2, es necesario agregar un sufijo específico al nombre de la aplicación registrada, como &quot;RESTV2&quot;.
 
-#### 2. ¿Puede la aplicación cliente reutilizar los esquemas personalizados existentes? {#rest-api-v2-migration-faq2}
+#### &#x200B;2. ¿Puede la aplicación cliente reutilizar los esquemas personalizados existentes? {#rest-api-v2-migration-faq2}
 
 La aplicación cliente puede reutilizar los esquemas personalizados existentes generados a través del [Tablero de TVE](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) de Adobe Pass.
 

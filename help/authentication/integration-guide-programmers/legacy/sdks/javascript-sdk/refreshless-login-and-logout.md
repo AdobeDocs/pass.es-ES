@@ -77,7 +77,7 @@ La API de cierre de sesión de AccessEnabler borra el estado local de la bibliot
 
 >[!NOTE]
 >
->Los flujos de inicio y cierre de sesión mejorados sin actualización requieren que el explorador admita tecnologías modernas de HTML5, incluida la mensajería web.
+>Los flujos de inicio y cierre de sesión mejorados sin actualización requieren que el explorador admita las tecnologías modernas de HTML5, incluida la mensajería web.
 
 Los flujos de autenticación (inicio de sesión) y cierre de sesión mencionados anteriormente proporcionan una experiencia de usuario similar al volver a cargar la página principal después de completar cada flujo.  La función actual pretende mejorar la experiencia del usuario al proporcionar un inicio y un cierre de sesión sin actualización (en segundo plano). El programador puede habilitar/deshabilitar el inicio y cierre de sesión en segundo plano pasando dos indicadores booleanos (`backgroundLogin` y `backgroundLogout`) al parámetro `configInfo` de la API `setRequestor`. De forma predeterminada, el inicio y cierre de sesión en segundo plano están desactivados (esto proporciona compatibilidad con la implementación anterior).
 
@@ -118,7 +118,7 @@ Estos son los flujos para cancelar la autenticación:
 
 1. **Ficha del explorador -** Dado que la pestaña es básicamente una nueva ventana, la captura de su evento de cierre tiene las mismas limitaciones que se describen en el escenario 3 desde los flujos de autenticación antiguos. Además, el método del temporizador no es posible aquí, ya que no hay forma de distinguir entre una pestaña que el usuario cerró manualmente y una pestaña que se cerró automáticamente al final del flujo de inicio de sesión. La solución aquí es que AccessEnabler permanezca &quot;silencioso&quot; (no se activan las llamadas de retorno) cuando el usuario cancela el flujo. Además, el programador no está obligado a realizar ninguna acción específica. El usuario podrá iniciar otro flujo de autenticación sin recibir el error &quot;Error de varias solicitudes de autenticación&quot; (este error se ha deshabilitado en AccessEnabler para el inicio de sesión en segundo plano).
 
-1. **iFrame -** El programador puede seguir el enfoque descrito en el escenario 2 desde los flujos de autenticación antiguos (crear la interfaz de usuario de contenedor a partir del iFrame y el botón Cerrar asociado con el déclencheur `setSelectedProvider(null)`. Aunque este método ya no es un requisito estricto (se permiten varios flujos de autenticación para el inicio de sesión en segundo plano, como se explica en el escenario 1 anterior), el Adobe sigue recomendándolo.
+1. **iFrame -** El programador puede seguir el enfoque descrito en el escenario 2 desde los flujos de autenticación antiguos (crear la interfaz de usuario de contenedor a partir del iFrame y el botón Cerrar asociado con el déclencheur `setSelectedProvider(null)`. Aunque este método ya no es un requisito estricto (se permiten varios flujos de autenticación para el inicio de sesión en segundo plano, como se explica en el escenario 1 anterior), Adobe todavía lo recomienda.
 
 1. **Elemento emergente -** Esto es idéntico al flujo de la pestaña del explorador anterior.
 

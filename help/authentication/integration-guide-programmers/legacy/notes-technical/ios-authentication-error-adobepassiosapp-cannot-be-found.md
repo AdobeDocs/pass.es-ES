@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# (Heredado) Error de autenticación de iOS - adobepass.ios.app No se encuentra {#ios-authentication-error-adobepass.ios.app-cannot-be-found}
+# (Heredado) Error de autenticación de iOS: no se encuentra adobepass.ios.app {#ios-authentication-error-adobepass.ios.app-cannot-be-found}
 
 >[!NOTE]
 >

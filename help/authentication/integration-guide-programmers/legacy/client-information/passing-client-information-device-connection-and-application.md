@@ -4,7 +4,7 @@ description: Pasar información del cliente (dispositivo, conexión y aplicació
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1665'
 ht-degree: 1%
 
 ---
@@ -65,7 +65,7 @@ La información del cliente es un objeto JSON creado con claves presentadas en l
 |            | displayHeight | No | Altura de la pantalla física del dispositivo. |                                                                                                                                                                                                                                                                                                                                                           |
 |            | displayPpi | No | La densidad de píxeles de la pantalla física del dispositivo. | p.ej. 294 |
 |            | diagonalScreenSize | No | Dimensión diagonal de la pantalla física del dispositivo en pulgadas. | p. ej. 5.5, 10.1 |
-|            | connectionIp | No | IP del dispositivo que se utiliza para enviar solicitudes HTTP. | p. ej., 8.8.4.4 |
+|            | connectionIp | No | IP del dispositivo que se utiliza para enviar solicitudes HTTP. | p. ej. 8.8.4.4 |
 |            | connectionPort | No | Puerto del dispositivo utilizado para enviar solicitudes HTTP. | p. ej. 53124 |
 |            | connectionType | No | Tipo de conexión de red. | por ejemplo, WiFi, LAN, 3G, 4G, 5G |
 |            | connectionSecure | # Sí | Estado de seguridad de la conexión de red. | # Los valores están restringidos:                                                   true: en el caso de una red segura                   false: en el caso de un punto interactivo público |
@@ -116,7 +116,7 @@ El SDK de AccessEnabler iOS/tvOS admite **anular toda la información del client
 
 El SDK de Android/FireOS `AccessEnabler` genera de forma predeterminada un objeto JSON de información de cliente, que se pasará a los servicios de autenticación de Adobe Pass, a menos que se anule.
 
-El SDK de `AccessEnabler` Android/FireOS admite **anular toda la información del cliente JSON de** a través del parámetro `device_info` de [setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)/[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption).
+El SDK de `AccessEnabler` Android/FireOS admite **anular toda la información del cliente JSON de** a través del parámetro [ de ](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
 
 >[!NOTE]
 >
@@ -244,7 +244,7 @@ private JSONObject computeClientInformation() {
 >[!NOTE]
 >
 >**Recursos:**
->* clase pública [build](https://developer.android.com/reference/android/os/Build.html){target=_blank} en la documentación para desarrolladores de Java.
+>* clase pública [build](https://developer.android.com/reference/android/os/Build.html){target=_blank} en la documentación de desarrolladores de Java.
 
 ### FireTV {#fire-tv}
 

@@ -1,15 +1,15 @@
 ---
-title: Integración de SAML de MVPD proxy
-description: Integración de SAML de MVPD proxy
+title: Integración de proxy MVPD SAML
+description: Integración de proxy MVPD SAML
 exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '700'
 ht-degree: 0%
 
 ---
 
-# Integración de SAML de MVPD proxy
+# Integración de proxy MVPD SAML
 
 >[!NOTE]
 >
@@ -17,59 +17,59 @@ ht-degree: 0%
 
 ## Información general {#overview-proxy-mvpd-saml-int}
 
-Este documento describe el flujo de autenticación SAML para integraciones de proxy.  Estos flujos dependen de que los datos de configuración proxy estén presentes en la configuración del servidor de autenticación de Adobe Pass. La MVPD proxy envía sus datos de configuración proxy al servidor de autenticación de Adobe Pass a través del servicio web proxy de autenticación de Adobe Pass.
+Este documento describe el flujo de autenticación SAML para integraciones de proxy.  Estos flujos dependen de que los datos de configuración proxy estén presentes en la configuración del servidor de autenticación de Adobe Pass. Proxy MVPD envía sus datos de configuración proxy al servidor de autenticación de Adobe Pass a través del servicio web proxy de autenticación de Adobe Pass.
 
 ## Datos de configuración de proxy {#proxy-config-data}
 
-Cada proxy MVPD proporciona datos de configuración proxy para sus MVPD proxy al servicio web del proxy de autenticación de Adobe Pass.  Los detalles de que se tratan en la documentación del servicio web proxy.   Para que funcione el flujo SAML AuthN, los datos de configuración de proxy deben incluir las siguientes propiedades:
+Cada proxy de MVPD proporciona datos de configuración proxy para sus MVPD proxy al servicio web del proxy de autenticación de Adobe Pass.  Los detalles de que se tratan en la documentación del servicio web proxy.   Para que funcione el flujo SAML AuthN, los datos de configuración de proxy deben incluir las siguientes propiedades:
 
 | Propiedad | Descripción |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ID de MVPD | Cadena que representa el MVPD proxy internamente a la autenticación de Adobe Pass.  El Adobe debe confirmarlo como único en el contexto de la autenticación de Adobe Pass. |
-| URL de logotipo predeterminado de MVPD | URL de un logotipo que se puede mostrar en una experiencia de Selector de MVPD para el usuario.  Debe utilizar un fondo transparente. |
+| MVPD ID | Cadena que representa el MVPD proxy internamente a la autenticación de Adobe Pass.  Adobe debe confirmarlo como único en el contexto de la autenticación de Adobe Pass. |
+| URL del logotipo predeterminado de MVPD | URL de un logotipo que se pueda mostrar en una experiencia de selector de MVPD para el usuario.  Debe utilizar un fondo transparente. |
 | Nombre para mostrar de MVPD | Cadena que se utilizará como texto del nombre para mostrar que podría mostrarse con el logotipo, posiblemente como texto alternativo. |
 
 
 
 ## Flujos de integración de SAML {#saml-int-flows}
 
-Cuando un suscriptor de MVPD visita el sitio o la aplicación de un programador, la autenticación de Adobe Pass responde a una llamada de API desde el sitio o la aplicación con una lista de MVPD activadas para ese programador.  La integración puede ser directa o proxy; no hay distinción entre ellos y el Programador. Esto permite a los programadores presentar la lista de MVPD activas de la manera que consideren adecuada. El suscriptor elige su MVPD y la autenticación de Adobe Pass redirige al suscriptor al proveedor de identidad específico de la MVPD.
+Cuando un suscriptor de MVPD visita el sitio o la aplicación de un programador, la autenticación de Adobe Pass responde a una llamada de API desde el sitio o la aplicación con una lista de MVPD activadas para ese programador.  La integración puede ser directa o proxy; no hay distinción entre ellos y el Programador. Esto permite a los programadores presentar la lista de MVPD activas de la manera que consideren adecuada. El suscriptor elige su MVPD y la autenticación de Adobe Pass redirige al suscriptor al proveedor de identidad específico de MVPD.
 
-En el caso de un proxy MVPD integrado, la integración se realiza entre la autenticación de Adobe Pass y el proxy MVPD. La autenticación de Adobe Pass envía la solicitud de autenticación del usuario al proxy MVPD, y este se encarga de la redirección. Para que el proxy MVPD sepa dónde redirigir la solicitud de autenticación del usuario, la autenticación de Adobe Pass envía un identificador MVPD en la solicitud de autenticación SAML.  Este identificador es el ID de MVPD especificado por el proveedor de proxy mediante el servicio web de proxy como se ha especificado anteriormente.
+En el caso de un proxy de MVPD integrado, la integración se realiza entre la autenticación de Adobe Pass y el proxy de MVPD. La autenticación de Adobe Pass envía la solicitud de autenticación del usuario al proxy de MVPD, y el proxy de MVPD se encarga de la redirección. Para que el proxy de MVPD sepa dónde redirigir la solicitud de autenticación de usuario, la autenticación de Adobe Pass envía un identificador de MVPD en la solicitud de autenticación de SAML.  Este identificador es el ID de MVPD especificado por el proveedor de proxy mediante el servicio web de proxy como se ha especificado anteriormente.
 
 ### Autenticación {#authn-saml-int}
 
-Para que la autenticación de Adobe Pass se integre con una MVPD proxy se necesitará lo siguiente:
+Para que la autenticación de Adobe Pass se integre con un MVPD proxy se necesitará lo siguiente:
 
-* Una MVPD proxy proporcionó una lista de MVPD proxy, insertadas en el servicio web proxy de Adobe
+* Una MVPD proxy proporcionó una lista de MVPD proxy insertadas en el servicio web proxy de Adobe
 
 * Metadatos SAML para el proxy MVPD principal
 
-* (Recomendado): la MVPD proxy gestiona la redirección adicional a la URL de la página de inicio de sesión de la MVPD proxy
+* (Recomendado): el MVPD proxy gestiona la redirección adicional a la URL de la página de inicio de sesión del MVPD proxy
 
-* El proxy MVPD debe abrir los puertos 443 y 80 para las siguientes IP:
-   * 192 150 4.5
-   * 192 150 10 200
+* El proxy de MVPD debe abrir los puertos 443 y 80 para las siguientes IP:
+   * 192.150.4.5
+   * 192.150.10.200
    * 192.150.11.4
    * 4.53.93.130
-   * 193 105 140 131
-   * 193 105 140 132
+   * 193.105.140.131
+   * 193.105.140.132
    * 76.74.170.204
-   * 63 140 39 4
-   * 66 235 132 38
-   * 66 235 139 38
-   * 66 235 139 168
+   * 63.140.39.4
+   * 66.235.132.38
+   * 66.235.139.38
+   * 66.235.139.168
 
 
 #### Solicitud y respuesta de SAML de autenticación {#authn-saml-req-resp}
 
-En la solicitud de AUTHn de SAML, las integraciones de proxy incluyen la siguiente propiedad adicional que debe gestionar el proxy MVPD.  Esta propiedad es necesaria para procesar correctamente el solicitante en nombre de la MVPD de proxy y para procesar la experiencia de inicio de sesión correcta. (Esta propiedad se resalta en la solicitud de ejemplo que aparece a continuación).
+En la solicitud de AUTHn de SAML, las integraciones de proxy incluyen la siguiente propiedad adicional que debe gestionar el proxy de MVPD.  Esta propiedad es necesaria para procesar correctamente el solicitante en nombre de MVPD de proxy y para procesar la experiencia de inicio de sesión correcta. (Esta propiedad se resalta en la solicitud de ejemplo que aparece a continuación).
 
-**Propiedad de ámbito**: incluye un elemento IDPEntry que incluye el nombre MVPD_ID y MVPD específico.  Representa el MVPD que el usuario seleccionó realmente del selector del programador y coincide con el MVPD_ID especificado en el servicio web proxy.
+**Propiedad de ámbito**: incluye un elemento IDPEntry que incluye el MVPD_ID y el nombre de MVPD específicos.  Representa el MVPD que el usuario seleccionó realmente del selector del programador y coincide con el MVPD_ID especificado en el servicio web proxy.
 
 Hay una propiedad de ámbito adicional para RequestorID que se puede utilizar para personalizar el inicio de sesión a la marca concreta del programador (si es necesario). O bien, se puede utilizar simplemente para análisis sobre el origen de la solicitud.
 
-En la respuesta de SAML AuthN, la MVPD proxy debe especificar la MVPD proxy como la entidad IdP en las siguientes propiedades:
+En la respuesta SAML AuthN, la MVPD proxy debe especificar la MVPD proxy como la entidad IdP en las siguientes propiedades:
 
 * Emisor de SAML
 * Calificador de nombres
@@ -164,7 +164,7 @@ En la respuesta de SAML AuthN, la MVPD proxy debe especificar la MVPD proxy como
 
 ### Autorización {#authz-proxy-mvpd-saml-int}
 
-Para la parte de autorización, el MVPD tendría que aceptar para autorización el recurso especificado por el Programador.  En la mayoría de los casos, se trata de un identificador de cadena para la red de canal, como TBS o TNT.
+Para la parte de autorización, MVPD tendría que aceptar para autorización el recurso especificado por el programador.  En la mayoría de los casos, se trata de un identificador de cadena para la red de canal, como TBS o TNT.
 
 #### Solicitud y respuesta de SAML de autorización {#authz-saml-req-resp}
 

@@ -34,7 +34,7 @@ Es fiable para el navegador, pero en Firefox: &quot;Herramientas&quot; -\> &quot
 
 ## Borrando caché de LSO {#clearing-lsos-cache}
 
-Obtener acceso a la [ayuda de Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+Acceder a la [ayuda de Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
 
 Seleccione ```entitlement.\*``` (según lo que se haya probado) y haga clic en &quot;Eliminar sitio web&quot;.
 

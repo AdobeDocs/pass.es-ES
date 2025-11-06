@@ -27,14 +27,14 @@ En el lado del programador, la autenticación de Adobe Pass admite recursos de d
    * título de elemento
    * identificador de recurso
    * tipo y valor de clasificación
-1. Los valores extraídos de los MRSS se utilizan para generar la solicitud de autorización que se pasa al MVPD.
+1. Los valores extraídos de MRSS se utilizan para crear la solicitud de autorización que se pasa a MVPD.
 
 La autenticación de Adobe Pass admite dos métodos para traducir los MRSS a los formatos admitidos por las MVPD:
 
-* **XACML**.  El primer enfoque se ajusta al estándar OLCA.  Utiliza XACML, en el que los valores MRSS se extraen para generar un recurso XACMLR con atributos que se asignan a los elementos MRSS.  Esto se pasa a la MVPD.
+* **XACML**.  El primer enfoque se ajusta al estándar OLCA.  Utiliza XACML, en el que los valores MRSS se extraen para generar un recurso XACMLR con atributos que se asignan a los elementos MRSS.  A continuación, esto se pasa a MVPD.
 * **REST**.  El segundo enfoque se basa en REST.  El MRSS está codificado en Base64 y se pasa como parámetro de URL en la llamada REST.
 
-En ambos métodos, la MVPD procesa la solicitud de autorización incluyendo los valores extraídos dentro de su propio flujo lógico y devolviendo una respuesta de autorización.
+En ambos métodos, MVPD procesa la solicitud de autorización incluyendo los valores extraídos dentro de su propio flujo lógico y devolviendo una respuesta de autorización.
 
 ## Detalles de integración {#integration-details}
 

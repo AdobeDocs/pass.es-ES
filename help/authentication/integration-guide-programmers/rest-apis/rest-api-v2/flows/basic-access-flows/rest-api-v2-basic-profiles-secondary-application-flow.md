@@ -2,7 +2,7 @@
 title: Perfiles básicos - Aplicación secundaria - Flujo
 description: API REST V2 - Perfiles básicos - Aplicación secundaria - Flujo
 exl-id: 1fcefcfa-7534-4b85-b3b5-df513685d66b
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '418'
 ht-degree: 0%
@@ -41,7 +41,7 @@ Antes de recuperar el perfil de un código de autenticación específico, asegú
 
 Siga los pasos dados para implementar el flujo básico de recuperación de perfiles para un código de autenticación específico realizado dentro de una aplicación secundaria, como se muestra en el diagrama siguiente.
 
-![Recuperar perfil para código específico](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-secondary-application-for-specific-code.png)
+![Recuperar perfil para código específico](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-secondary-application-for-specific-code.png)
 
 *Recuperar perfil para código específico*
 

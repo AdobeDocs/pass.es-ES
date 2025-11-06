@@ -117,7 +117,7 @@ La autenticación de Adobe Pass recibe la lista de recursos de la aplicación de
 
 Algunas MVPD tienen puntos finales de autorización que admiten la autorización de varios recursos en una solicitud, pero no entran dentro del escenario descrito en AuthZ multicanal. Estas MVPD específicas requieren un trabajo personalizado.
 
-El Adobe también puede admitir la autorización de varios canales sin realizar cambios en la implementación existente.  Este enfoque debe revisarse entre el Adobe y el equipo técnico de MVPD para garantizar que funciona según lo esperado.
+Adobe también admite la autorización de varios canales sin realizar cambios en la implementación existente.  Este enfoque debe revisarse entre Adobe y el equipo técnico de MVPD para garantizar que funciona según lo esperado.
 
 ## MVPD compatibles con la autorización de comprobaciones {#mvpds-supp-preflight-authz}
 

@@ -22,7 +22,7 @@ El uso de supervisión de concurrencia (CMU) se implementa como un proyecto WOLA
 
 >[!NOTE]
 >
->La API de CMU no está disponible de forma general. Póngase en contacto con el representante del Adobe para preguntas sobre disponibilidad.
+>La API de CMU no está disponible de forma general. Póngase en contacto con su representante de Adobe para obtener más información sobre disponibilidad.
 
 La API de CMU proporciona una vista jerárquica de los cubos OLAP subyacentes. Cada recurso ([dimensión](/help/concurrency-monitoring/cm-usage-reports.md#dimensions-2-filter-metrics) en la jerarquía de dimensiones, asignado como segmento de ruta de URL) genera informes con [métricas](/help/concurrency-monitoring/cm-usage-reports.md#monitor-metrics) (agregadas) para la selección actual. Cada recurso señala a su recurso principal (para el resumen) y a sus subrecursos (para el desglose). El corte y el trozo se logran mediante parámetros de cadena de consulta que anclan dimensiones a valores o rangos específicos.
 
@@ -36,7 +36,7 @@ Las rutas URL disponibles se pueden detectar mediante los vínculos contenidos e
 
 Los siguientes árboles desplegables ilustran las dimensiones (recursos) disponibles en CMU 2.0:
 
-**Dimension disponibles para los inquilinos de CM**
+**Dimensiones disponibles para los inquilinos de CM**
 
 ![](assets/new_breakdown.png)
 
@@ -99,7 +99,7 @@ Parámetros de cadena de consulta reservada de API de CMU:
 | start | Sí | Hora de inicio del informe como ISO8601; el servidor rellenará la parte restante si solo se proporciona un prefijo: por ejemplo, start=2012 resultará en start=2012-01-01:00:00:00 | Notificado por el servidor en el autovínculo; el servidor intenta proporcionar valores predeterminados razonables en función de la granularidad de tiempo seleccionada | inicio=15-07-2012 |
 
 
-El único método HTTP disponible actualmente es GET. En versiones futuras se puede proporcionar soporte para métodos de OPTIONS/HEAD.
+El único método HTTP disponible actualmente es GET. Es posible que en futuras versiones se admitan los métodos OPTIONS/HEAD.
 
 
 
@@ -112,7 +112,7 @@ El único método HTTP disponible actualmente es GET. En versiones futuras se pu
 | 401 | No autorizado | Causado por una solicitud que no contiene los encabezados OAuth adecuados para autenticar al usuario |
 | 403 | Prohibido | Indica que la solicitud no está permitida en el contexto de seguridad actual; esto ocurre cuando el usuario se autentica pero no tiene permiso para acceder a la información solicitada |
 | 404 | No encontrado | Se produce en caso de que se proporcione una ruta de URL no válida con la solicitud. Esto no debería suceder nunca si el cliente sigue los vínculos de &quot;desglose&quot;/&quot;resumen&quot; proporcionados con 200 respuestas |
-| 405 | Método no permitido | Indica que se ha utilizado un método no compatible en la solicitud. Aunque actualmente solo se admite el método de GET, las versiones futuras pueden permitir HEAD o OPTIONS |
+| 405 | Método no permitido | Indica que se ha utilizado un método no compatible en la solicitud. Aunque actualmente solo se admite el método GET, las versiones futuras pueden permitir HEAD o OPTIONS |
 | 406 | No aceptable | Indica que el cliente ha solicitado un tipo de medio no compatible |
 | 500 | Error interno del servidor | &quot;Esto nunca debería suceder&quot; |
 | 503 | Servicio no disponible | Indica un error dentro de la aplicación o sus dependencias |

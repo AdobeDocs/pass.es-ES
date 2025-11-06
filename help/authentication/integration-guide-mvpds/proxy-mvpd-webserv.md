@@ -2,7 +2,7 @@
 title: Servicio web de MVPD proxy
 description: Servicio web de MVPD proxy
 exl-id: f75cbc4d-4132-4ce8-a81c-1561a69d1d3a
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '1027'
 ht-degree: 0%
@@ -21,9 +21,9 @@ ht-degree: 0%
 > Antes de usar el servicio web Proxy MVPD, asegúrese de que se cumplan los siguientes requisitos previos:
 >
 > * Obtenga las credenciales del cliente como se describe en la [Documentación de la API Retrieve client credentials](../integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
-> * Obtenga el token de acceso como se describe en la [Documentación de la API Recuperar token de acceso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+> * Obtenga el token de acceso como se describe en la [Documentación de la API Recuperar token de acceso](../integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 >
-> Consulte la documentación de [Información general sobre el registro dinámico de clientes](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) para obtener más información sobre cómo crear una aplicación registrada y descargar la instrucción de software.
+> Consulte la documentación de [Información general sobre el registro dinámico de clientes](../integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md) para obtener más información sobre cómo crear una aplicación registrada y descargar la instrucción de software.
 
 ## Información general {#overview-proxy-mvpd-webserv}
 
@@ -36,8 +36,8 @@ Para implementar la función ProxyMVPD, la autenticación de Adobe Pass proporci
 
 ## Servicios de Proxy MVPD {#proxy-mvpd-services}
 
-&#x200B;- [Recuperar MVPD proxy](#retriev-proxied-mvpds)
-&#x200B;- [Enviar MVPD proxy](#submit-proxied-mvpds)
+- [Recuperar MVPD proxy](#retriev-proxied-mvpds)
+- [Enviar MVPD proxy](#submit-proxied-mvpds)
 
 ### Recuperar MVPD proxy {#retriev-proxied-mvpds}
 
@@ -216,22 +216,22 @@ Adobe ha definido el siguiente formato aceptado para publicar/recuperar MVPD pro
 
 **Notas sobre los elementos:**
 
-&#x200B;- `id` (obligatorio): el ID de MVPD de proxy debe ser una cadena relevante para el nombre de MVPD, con cualquiera de los siguientes caracteres (ya que se expondrá a los programadores con fines de seguimiento):
-&#x200B;- Cualquier carácter alfanumérico, guion bajo (&quot;_&quot;) y guion (&quot;-&quot;).
-&#x200B;- El idID debe ajustarse a la siguiente expresión regular:
+-   `id` (obligatorio): el ID de MVPD de proxy debe ser una cadena relevante para el nombre de MVPD, con cualquiera de los siguientes caracteres (ya que se expondrá a los programadores con fines de seguimiento):
+-   Cualquier carácter alfanumérico, guion bajo (&quot;_&quot;) y guion (&quot;-&quot;).
+-   El idID debe ajustarse a la siguiente expresión regular:
 `(a-zA-Z0-9((-)|_)*)`
 
     Por lo tanto, debe tener al menos un carácter, comenzar con una letra y continuar con cualquier letra, dígito, guión o guion bajo.
 
-&#x200B;- `iframeSize` (opcional): el elemento iframeSize es opcional y define el tamaño del iFrame si la página de autenticación de MVPD debe estar en un iFrame. De lo contrario, si el elemento iframeSize no está presente, la autenticación se producirá en una página de redirección de explorador completa.
-&#x200B;- `requestorIds` (opcional): Adobe proporcionará los valores de requestorIds. Un requisito es que una MVPD proxy debe integrarse con al menos un requestorId. Si la etiqueta &quot;requestorIds&quot; no está presente en el elemento MVPD proxy, ese MVPD proxy se integrará con todos los solicitantes disponibles integrados en el MVPD proxy.
-&#x200B;- `ProviderID` (opcional): cuando el atributo ProviderID está presente en el elemento de ID, el valor de ProviderID se enviará en la solicitud de autenticación de SAML a la MVPD proxy como ID de Proxied MVPD/SubMVPD (en lugar del valor de ID). En este caso, el valor de id solo se utilizará en el selector de MVPD presentado en la página Programador y, de forma interna, mediante Autenticación de Adobe Pass. La longitud del atributo ProviderID debe estar entre 1 y 128 caracteres.
+-   `iframeSize` (opcional): el elemento iframeSize es opcional y define el tamaño del iFrame si la página de autenticación de MVPD debe estar en un iFrame. De lo contrario, si el elemento iframeSize no está presente, la autenticación se producirá en una página de redirección de explorador completa.
+-   `requestorIds` (opcional): Adobe proporcionará los valores de requestorIds. Un requisito es que una MVPD proxy debe integrarse con al menos un requestorId. Si la etiqueta &quot;requestorIds&quot; no está presente en el elemento MVPD proxy, ese MVPD proxy se integrará con todos los solicitantes disponibles integrados en el MVPD proxy.
+-   `ProviderID` (opcional): cuando el atributo ProviderID está presente en el elemento de ID, el valor de ProviderID se enviará en la solicitud de autenticación de SAML a la MVPD proxy como ID de Proxied MVPD/SubMVPD (en lugar del valor de ID). En este caso, el valor de id solo se utilizará en el selector de MVPD presentado en la página Programador y, de forma interna, mediante Autenticación de Adobe Pass. La longitud del atributo ProviderID debe estar entre 1 y 128 caracteres.
 
 ## Seguridad {#security}
 
 Para que una solicitud se considere válida, debe respetar las siguientes reglas:
 
-: el encabezado de la solicitud debe contener el token de acceso de seguridad Oauth2 obtenido tal como se describe en la documentación de la API [Recuperar token de acceso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+: el encabezado de la solicitud debe contener el token de acceso de seguridad Oauth2 obtenido tal como se describe en la documentación de la API [Recuperar token de acceso](../integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 : la solicitud debe provenir de una dirección IP específica que se haya permitido.
 : la solicitud debe enviarse a través del protocolo SSL.
 
@@ -243,10 +243,10 @@ Ejemplo de curl:
 
 ## Puntos finales de servicio web de MVPD proxy para los entornos de autenticación de Adobe Pass {#proxy-mvpd-wevserv-endpoints}
 
-&#x200B;- **URL de producción:** https://mgmt.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
-&#x200B;- **URL de ensayo:** https://mgmt.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
-&#x200B;- **URL de preproducción de calidad:** https://mgmt-prequal.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
-&#x200B;- **URL de ensayo previo a la calidad:** https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **URL de producción:** https://mgmt.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **URL de ensayo:** https://mgmt.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **URL de preproducción de calidad:** https://mgmt-prequal.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **URL de ensayo previo a la calidad:** https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
 
 <!--
 >[!RELATEDINFORMATION]

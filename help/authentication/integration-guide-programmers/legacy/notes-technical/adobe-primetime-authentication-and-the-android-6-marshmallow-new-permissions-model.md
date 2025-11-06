@@ -2,7 +2,7 @@
 title: Autenticación de Adobe Pass y el nuevo modelo de permisos de Android 6 "Marshmallow"
 description: Autenticación de Adobe Pass y el nuevo modelo de permisos de Android 6 "Marshmallow"
 exl-id: 3c96769e-b25b-48ab-bb74-40f13d4e5a84
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%
@@ -77,7 +77,7 @@ if (ContextCompat.checkSelfPermission(thisActivity,
 >Actualmente se está desarrollando una función que introduce la resiliencia del almacenamiento para la autenticación de Adobe Pass SDK 1.9. El nuevo SDK está destinado para **lanzamiento en la última semana de octubre**. La aplicación volverá a escribir en el almacenamiento de espacio aislado de la aplicación siempre que no se pueda utilizar el almacenamiento general. Esto cubre el caso en el que, para aplicaciones desarrolladas en el nivel de API 23, los usuarios NO aceptan permisos de lectura/escritura en el almacenamiento global. Los tokens se almacenan individualmente por aplicación, lo que significa que el inicio de sesión único entre aplicaciones que utilizan la autenticación de Adobe Pass se deshabilitará.
 
 
-![](/help/authentication/assets/android-permissions-request.png)
+![](../../../assets/android-permissions-request.png)
 
 *Imagen: cuadro de diálogo de solicitud de permiso para aplicaciones escritas en el nivel de API de segmentación 23*
 

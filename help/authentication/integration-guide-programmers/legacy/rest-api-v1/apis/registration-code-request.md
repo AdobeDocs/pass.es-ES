@@ -4,7 +4,7 @@ description: Página de registro
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '509'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ Devuelve el código de registro generado aleatoriamente y el URI de la página d
 
 | Extremo | Llamado <br> por | Entrada   <br>Parámetro | Método HTTP <br> | Respuesta | Respuesta HTTP <br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Por ejemplo:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Servicio de programador <br>o<br>de aplicación de streaming | 1. solicitante <br>    (Componente de ruta de acceso)<br>2.  deviceId (con hash)   <br>    (Obligatorio)<br>3.  device_info/X-Device-Info (obligatorio)<br>4.  mvpd (opcional)<br>5.  ttl (opcional)<br> | POST | XML o JSON que contienen un código de registro y detalles de información o error si no se consigue. Consulte los ejemplos siguientes. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Por ejemplo:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Servicio de programador <br>o<br>de aplicación de streaming | &#x200B;1. solicitante <br>    (Componente de ruta de acceso)<br>2.  deviceId (con hash)   <br>    (Obligatorio)<br>3.  device_info/X-Device-Info (obligatorio)<br>4.  mvpd (opcional)<br>5.  ttl (opcional)<br> | PUBLICAR | XML o JSON que contienen un código de registro y detalles de información o error si no se consigue. Consulte los ejemplos siguientes. | 201 |
 
 {style="table-layout:auto"}
 
@@ -81,7 +81,7 @@ Devuelve el código de registro generado aleatoriamente y el URI de la página d
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-><br>
+<br>
 
 ### Respuesta JSON
 
@@ -123,11 +123,11 @@ Devuelve el código de registro generado aleatoriamente y el URI de la página d
 | caduca | Marca de tiempo cuando caduca el código de registro (en milisegundos desde el 1 de enero de 1970 GMT) |
 | deviceId | ID de dispositivo único base64 |
 | información:deviceId | Tipo de dispositivo Base64 |
-| info:deviceInfo | La información normalizada de dispositivos de Base64 se basa en la información recibida de User-Agent, X-Device-Info o device_info |
+| información:deviceInfo | La información normalizada de dispositivos de Base64 se basa en la información recibida de User-Agent, X-Device-Info o device_info |
 | información:userAgent | Agente de usuario enviado por la aplicación |
-| info:originalUserAgent | Agente de usuario enviado por la aplicación |
-| info:authorizationType | OAUTH2 para llamadas que utilizan DCR |
-| info:sourceApplicationInformation | Información de aplicación según se ha configurado en DCR |
+| información:originalUserAgent | Agente de usuario enviado por la aplicación |
+| información:authorizationType | OAUTH2 para llamadas que utilizan DCR |
+| información:sourceApplicationInformation | Información de aplicación según se ha configurado en DCR |
 
 {style="table-layout:auto"}
 

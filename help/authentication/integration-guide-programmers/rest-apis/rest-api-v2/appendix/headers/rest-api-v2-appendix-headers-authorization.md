@@ -2,7 +2,7 @@
 title: 'Encabezado: autorización'
 description: API de REST V2 - Encabezado - Autorización
 exl-id: 86917d7e-ffd9-4d34-8f9c-5a50083f85e6
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 1%
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 El encabezado de la solicitud <b>Authorization</b> contiene el token de acceso `Bearer` requerido por la aplicación cliente para acceder a las API protegidas por Adobe Pass.
 
-Para obtener más información sobre el mecanismo para acceder a las API protegidas por Adobe Pass, consulte la [Información general sobre el registro de clientes dinámicos](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Para obtener más información sobre el mecanismo para acceder a las API protegidas por Adobe Pass, consulte la [Información general sobre el registro de clientes dinámicos](../../../rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Sintaxis {#syntax}
 
@@ -42,7 +42,7 @@ Para obtener más información sobre el mecanismo para acceder a las API protegi
 
 <b>&lt;token_de_acceso></b>
 
-El valor del token de acceso es un valor opaco que tiene un tiempo de vida limitado (por ejemplo, 24 horas) que debe obtenerse de Adobe Pass tal como se describe en la [Recuperación del token de acceso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) de la documentación de la API.
+El valor del token de acceso es un valor opaco que tiene un tiempo de vida limitado (por ejemplo, 24 horas) que debe obtenerse de Adobe Pass tal como se describe en la [Recuperación del token de acceso](../../../rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) de la documentación de la API.
 
 ## Ejemplos {#examples}
 

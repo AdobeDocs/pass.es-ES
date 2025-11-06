@@ -31,11 +31,11 @@ Con esta función, las MVPD y los programadores pueden implementar casos de uso 
 
 Puntos clave de metadatos de usuario:
 
-* La MVPD pasa los metadatos del usuario a la aplicación del programador durante los flujos de autenticación y autorización
+* MVPD pasa los metadatos de usuario a la aplicación del programador durante los flujos de autenticación y autorización
 * La autenticación de Adobe Pass guarda los valores de los metadatos en los tokens AuthN y AuthZ
 * La autenticación de Adobe Pass puede normalizar los valores de las MVPD que proporcionan metadatos de usuario en diferentes formatos
 * Algunos parámetros se pueden cifrar con la clave del programador
-* Los valores específicos están disponibles por Adobe, a través de un cambio de configuración
+* Adobe pone a disposición valores específicos mediante un cambio de configuración
 
 >[!NOTE]
 >
@@ -47,15 +47,15 @@ Puntos clave de metadatos de usuario:
 
 Este ejemplo muestra el intercambio de lo siguiente:
 
-* [Intercambio de metadatos de programador a MVPD](#progr-mvpd-metadata-exch)
+* [Programador para MVPD Metadata Exchange](#progr-mvpd-metadata-exch)
 
 * [Flujo de intercambio de metadatos de MVPD a programador](#mvpd-progr-exchange-flow)
 
-### Intercambio de metadatos de programador a MVPD {#progr-mvpd-metadata-exch}
+### Programador para MVPD Metadata Exchange {#progr-mvpd-metadata-exch}
 
 Actualmente, la API de programador, la autenticación de Adobe Pass y los autorizadores de MVPD solo admiten la autorización a nivel de canal. El canal se especifica como una cadena de texto sin formato en la llamada de API getAuthorization() del programador. Esta cadena se propaga hasta el backend de autorización de MVPD:
 
-Desde la aplicación o el sitio del programador, el usuario elige una MVPD compatible con XACML (en este ejemplo, &quot;TNT&quot;). Para obtener información sobre XACML, consulte [Lenguaje de marcado de control de acceso extensible](https://en.wikipedia.org/wiki/XACML){target=_blank}.
+Desde la aplicación o el sitio del programador, el usuario elige un MVPD compatible con XACML (en este ejemplo, &quot;TNT&quot;). Para obtener información sobre XACML, consulte [Lenguaje de marcado de control de acceso extensible](https://en.wikipedia.org/wiki/XACML){target=_blank}.
 La aplicación del programador forma una solicitud de AuthZ que incluye el recurso y sus metadatos.  Este ejemplo incluye una clasificación MPAA de &quot;pg&quot; en el atributo media del elemento channel:
 
 ```XML
@@ -68,17 +68,17 @@ var resource = '<rss version="2.0" xmlns:media="http://video.search.yahoo.com/mr
 getAuthorization(resource);
 ```
 
-La autenticación de Adobe Pass admite realmente una autorización más granular, hasta el nivel de recurso, cuando la admiten tanto la MVPD como el programador. El recurso y sus metadatos son opacos para el Adobe; la intención es establecer un formato estándar para especificar el ID de recurso y los metadatos de una manera normalizada, para enviar ID de recurso a diferentes MVPD.
+La autenticación de Adobe Pass admite realmente una autorización más granular, hasta el nivel de recurso, cuando la admiten tanto MVPD como el programador. El recurso y sus metadatos son opacos para Adobe; la intención es establecer un formato estándar para especificar el ID de recurso y los metadatos de una manera normalizada, para enviar ID de recurso a diferentes MVPD.
 
 >[!NOTE]
 >
->Si el usuario elige una MVPD compatible solo con el canal, la autenticación de Adobe Pass extrae SOLAMENTE el título del canal (&quot;TNT&quot; en el ejemplo anterior) y pasa solo el título a la MVPD.
+>Si el usuario elige un MVPD compatible solo con el canal, la autenticación de Adobe Pass extrae SOLO el título del canal (&quot;TNT&quot; en el ejemplo anterior) y pasa solo el título al MVPD.
 
 ### Flujo de intercambio de metadatos de MVPD a programador {#mvpd-progr-exchange-flow}
 
 La autenticación de Adobe Pass realiza las siguientes suposiciones:
 
-* La MVPD envía la clasificación máxima como parte de la respuesta de SAML
+* El MVPD envía la clasificación máxima como parte de la respuesta de SAML
 * Esta información se guarda como parte del token de autenticación
 * La autenticación de Adobe Pass proporciona una API para permitir a los programadores recuperar esta información
 * Los programadores implementan esta función en su sitio o aplicación (por ejemplo, para ocultar vídeos que superen la clasificación máxima del usuario)
@@ -111,7 +111,7 @@ La autenticación de Adobe Pass realiza las siguientes suposiciones:
 
 La autenticación de Adobe Pass también puede admitir la conversión transparente de la cadena de canal heredada al recurso RSS correspondiente para MVPD que requieren RSS. En la otra dirección, la autenticación de Adobe Pass admite la conversión de RSS+MRSS a título de canal sin formato, para MVPD solo de canal.
 
-La autenticación de **Adobe Pass garantiza la compatibilidad total con versiones anteriores de las integraciones existentes.** Es decir, para los programadores que utilizan autenticación de nivel de canal, la autenticación de Adobe Pass se encarga de empaquetar el ID de canal en el formato necesario antes de enviarlo a una MVPD que comprenda ese formato. Lo contrario también se aplica: si un programador especifica todos sus recursos en un nuevo formato, la autenticación de Adobe Pass traduce el nuevo formato a una cadena de canal simple si autoriza con una MVPD que solo realiza autorización de nivel de canal.
+La autenticación de **Adobe Pass garantiza la compatibilidad total con versiones anteriores de las integraciones existentes.** Es decir, para los programadores que utilizan la autenticación de nivel de canal, la autenticación de Adobe Pass se encarga de empaquetar el ID de canal en el formato necesario antes de enviarlo a un MVPD que comprenda ese formato. Lo contrario también se aplica: si un programador especifica todos sus recursos en un nuevo formato, la autenticación de Adobe Pass traduce el nuevo formato a una cadena de canal simple si autoriza con un MVPD que solo realiza autorización de nivel de canal.
 
 ## Casos de uso de metadatos de usuario {#user-metadata-use-cases}
 
@@ -125,8 +125,8 @@ Los casos de uso cambian y se expanden constantemente a medida que más MVPD hac
 
 ### ID de usuario de MVPD {#mvpd-user-id}
 
-* Según lo dispuesto por la MVPD
-* No es la información de inicio de sesión real del usuario, ya que está cifrado en hash por la MVPD
+* Según lo proporcionado por MVPD
+* No es la información real de inicio de sesión del usuario, ya que está cifrada con hash por MVPD
 * Se puede utilizar para indicar problemas con o para usuarios específicos
 * Cifrado
 * Compatibilidad con MVPD: Todas las MVPD
@@ -135,21 +135,21 @@ Los casos de uso cambian y se expanden constantemente a medida que más MVPD hac
 
 * Permite una buena información de las métricas
 * Cifrado
-* Compatibilidad con MVPD: Algunas MVPD
+* Compatibilidad con MVPD: algunas MVPD
 
 ### Código postal {#zip-code}
 
 * El código postal de facturación del usuario
 * Se utiliza principalmente para aplicar reglas de período de congelación de eventos deportivos
 * Se puede proporcionar con la respuesta AuthZ para actualizaciones rápidas
-* Compatibilidad con MVPD: Algunas MVPD
+* Compatibilidad con MVPD: algunas MVPD
 
 ### Clasificación máxima (Control parental) {#max-rating-parental-control}
 
 * AuthN inicialmente, más actualización de AuthZ
 * Filtrado de contenido fuera de la IU
 * Clasificaciones de MPAA o VChip
-* Compatibilidad con MVPD: Algunas MVPD
+* Compatibilidad con MVPD: algunas MVPD
 
 ### Alineación de canales {#channel-line-up}
 

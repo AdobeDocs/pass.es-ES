@@ -33,7 +33,7 @@ Hasta que Amazon proporcione un simulador fireTV que incorpore nuestra bibliotec
 
 ## Ventajas {#bene}
 
-* Inicio de sesión único entre todas las aplicaciones de TV por Adobe en todas partes en Amazon fireTV platform con todas las MVPD integradas.
+* Inicio de sesión único entre todas las aplicaciones de Adobe powered TV Everywhere en la plataforma Amazon fireTV con todas las MVPD integradas.
 * Posibilidad de beneficiarse de HBA (con MVPD compatibles).
 * Capacidad de usar la última versión de FireTV SDK sin necesidad de actualizar las aplicaciones cada vez que se lanza una nueva versión de SDK.
 * Todas las aplicaciones de TVE se benefician del uso de la biblioteca del sistema compartido al eliminar la necesidad de tener una copia local de la biblioteca AccessEnabler. Esto también garantiza que todas las aplicaciones utilicen la misma versión de SDK.
@@ -60,7 +60,7 @@ En comparación con Android SDK existente, en fireTV SDK el proceso de autentica
 1. ¿Cómo funcionará el **SSO**?
 
    * SSO funcionará en todas las aplicaciones de Programador con autenticación de Adobe Pass que estén usando el nuevo SDK fireTV en el mismo dispositivo Amazon fireTV
-   * No se admitirá SSO entre aplicaciones de programador implementadas en la API de REST sin cliente y aplicaciones implementadas en fireTV SDK **&#x200B;**
+   * No se admitirá SSO entre aplicaciones de programador implementadas en la API de REST sin cliente y aplicaciones implementadas en fireTV SDK ****
 
 1. ¿Cuál es la cobertura de MVPD de FireTV SSO?
 
@@ -83,6 +83,6 @@ En comparación con Android SDK existente, en fireTV SDK el proceso de autentica
 
    * Los flujos TempPass son de una sola pantalla y se comportan como en cualquier otro dispositivo nativo.
 
-1. ¿Funcionarán otras funciones de Adobe como antes?
+1. ¿Funcionará otra funcionalidad de Adobe como antes?
 
    * Toda la funcionalidad de autenticación de Adobe Pass funcionará en fireTV como en dispositivos Android.

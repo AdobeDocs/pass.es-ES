@@ -4,7 +4,7 @@ description: Acceso Habilitar el inicio de sesión único (SSO) de Android SDK e
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '401'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Como resultado de estos cambios, el inicio de sesión único (SSO) ofrecido por 
 
 ## Comportamiento
 
-Según la aplicación **[!UICONTROL target SDK level]** o el uso del atributo de manifiesto **android:requestLegacyExternalStorage**, el inicio de sesión único (SSO) ofrecido por el Access Enabler Android versión 3.2.1 SDK (más reciente) y las versiones anteriores se comportarán de la siguiente manera:
+Según el atributo de manifiesto **[!UICONTROL target SDK level]** de su aplicación o el uso de **android:requestLegacyExternalStorage**, el inicio de sesión único (SSO) ofrecido por el Access Enabler Android versión 3.2.1 SDK (más reciente) y las versiones anteriores se comportarán de la siguiente manera:
 
 - Su aplicación se dirige a **Android 9 (nivel de API 28)** o inferior **-\>** El inicio de sesión único (SSO) **funcionará**
 - La aplicación se dirige a **Android 10** **(nivel de API 29)** y **establece** el valor de **requestLegacyExternalStorage en true** en el archivo de manifiesto de la aplicación **-\>** El inicio de sesión único (SSO) **funcionará**

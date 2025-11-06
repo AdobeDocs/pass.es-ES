@@ -9,13 +9,13 @@ ht-degree: 0%
 
 ---
 
-# Cómo: Distinguir entre VOD y contenido en directo en la supervisión de concurrencia {#dist-vod-live}
+# Cómo distinguir entre VOD y contenido en directo en la monitorización de concurrencia {#dist-vod-live}
 
 **Q:** ¿Puede el servicio de monitoreo de concurrencia distinguir entre el tipo de contenido que se está reproduciendo (contenido en vivo vs. Vídeo bajo demanda)?
 
 
 
-**A:** La supervisión de concurrencia no puede distinguir directamente entre contenido en directo y vídeo bajo demanda (VOD). El reproductor de vídeo debe saber el tipo de contenido que está reproduciendo y enviar esta información durante la [llamada de inicialización de la sesión](/help/concurrency-monitoring/cm-api-overview.md#session-initial) (necesaria para la supervisión de la concurrencia). El flujo de trabajo normal tiene este aspecto:
+**A:** La supervisión de simultaneidad no puede distinguir directamente entre contenido en directo y Vídeo bajo demanda (VOD). El reproductor de vídeo debe saber el tipo de contenido que está reproduciendo y enviar esta información durante la [llamada de inicialización de la sesión](/help/concurrency-monitoring/cm-api-overview.md#session-initial) (necesaria para la supervisión de la concurrencia). El flujo de trabajo normal tiene este aspecto:
 
 1. Los clientes de Monitorización de simultaneidad definen un conjunto de metadatos en el que les gustaría que se implementaran las reglas (por ejemplo, content-type=live|vod, device-type=mobile|console|desktop).
 1. El equipo de Monitorización de concurrencia implementa la política deseada. Ejemplo:

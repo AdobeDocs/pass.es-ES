@@ -21,9 +21,9 @@ ht-degree: 0%
 
 ## Introducción
 
-El Adobe recomienda migrar a la última versión de JS v4.x de la biblioteca AccessEnabler.
+Adobe recomienda migrar a la última versión de JS v4.x de la biblioteca AccessEnabler.
 
-La integración de JavaScript de autenticación de Adobe Pass ofrece a los programadores una solución de TV en todas partes en el familiar entorno de desarrollo de aplicaciones web JS. Los componentes principales de la integración son su aplicación de &quot;alto nivel&quot; (interacción del usuario, presentación de vídeo) y la biblioteca AccessEnabler de &quot;bajo nivel&quot; proporcionada por el Adobe que proporciona su entrada a los flujos de derechos y gestiona la comunicación con los servidores de autenticación de Adobe Pass.
+La integración de JavaScript de autenticación de Adobe Pass ofrece a los programadores una solución de TV en todas partes en el familiar entorno de desarrollo de aplicaciones web JS. Los componentes principales de la integración son su aplicación de &quot;alto nivel&quot; (interacción del usuario, presentación de vídeo) y la biblioteca AccessEnabler de &quot;bajo nivel&quot; proporcionada por Adobe, que proporciona su entrada a los flujos de derechos y gestiona la comunicación con los servidores de autenticación de Adobe Pass.
 
 En las secciones siguientes se proporcionan descripciones y ejemplos específicos de la integración de JavaScript AccessEnabler.
 
@@ -55,7 +55,7 @@ En el siguiente ejemplo de código se muestra cómo detectar y mostrar el provee
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer_es"> 
+        <a href="http://www.adobe.com/go/getflashplayer"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 

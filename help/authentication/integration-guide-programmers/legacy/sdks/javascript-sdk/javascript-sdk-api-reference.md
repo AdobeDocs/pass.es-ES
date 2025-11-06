@@ -2,7 +2,7 @@
 title: Referencia de la API de JavaScript SDK
 description: Referencia de la API de JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Estas funciones inician solicitudes de interacción con un MVPD. Todas las llama
 
 - *options*: un objeto JSON que contiene el valor ID de aplicación, el valor ID de visitante, la configuración sin actualización (cierre de sesión en segundo plano) y la configuración de MVPD (iFrame). Todos los valores son opcionales.
    1. Si se especifica, se informará del ID de visitante de Experience Cloud en todas las llamadas de red realizadas por la biblioteca. El valor se puede utilizar posteriormente en informes de análisis avanzados.
-   2. Si se especifica el identificador único de la aplicación -`applicationId` - el valor se agregará a todas las llamadas subsiguientes realizadas por la aplicación como parte del encabezado HTTP X-Device-Info. Este valor se puede obtener posteriormente de [ESM](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md) informes con la consulta adecuada.
+   2. Si se especifica el identificador único de la aplicación -`applicationId` - el valor se agregará a todas las llamadas subsiguientes realizadas por la aplicación como parte del encabezado HTTP X-Device-Info. Este valor se puede obtener posteriormente de [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) informes con la consulta adecuada.
 
   **Nota:** Todas las claves JSON distinguen entre mayúsculas y minúsculas.
 
@@ -309,7 +309,7 @@ Por ejemplo:
 **Descripción:** Llame a esta función cuando el usuario haya seleccionado un MVPD en la interfaz de usuario de selección de proveedores para enviar la selección de proveedores al Habilitador de acceso o llame a esta función con un parámetro nulo en caso de que el usuario descarte la interfaz de usuario de selección de proveedores sin seleccionar un proveedor.
 
 **Llamadas de retorno
-desencadenó:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+desencadenó:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Debe implementar estas llamadas de retorno para gestionar las respuestas a sus l
 
 **Descripción:** Implemente esta llamada de retorno si el usuario seleccionó un MVPD que requiera un iFrame en el que mostrar su interfaz de usuario de la página de inicio de sesión de autenticación.
 
-**Activado por:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Activado por:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Volver al principio](#top)
 

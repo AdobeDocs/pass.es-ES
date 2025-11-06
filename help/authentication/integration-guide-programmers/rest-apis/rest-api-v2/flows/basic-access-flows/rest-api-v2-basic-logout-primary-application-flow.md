@@ -2,7 +2,7 @@
 title: Cierre de sesión básico - Aplicación principal - Flujo
 description: 'API de REST V2: cierre de sesión básico, aplicación principal, flujo'
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -53,7 +53,7 @@ Antes de iniciar el cierre de sesión de un MVPD específico con un extremo de c
 
 Siga los pasos dados para implementar el flujo de cierre de sesión básico para una MVPD específica con un punto final de cierre de sesión realizado dentro de una aplicación principal, como se muestra en el diagrama siguiente.
 
-![Iniciar el cierre de sesión de un mvpd específico con el extremo de cierre de sesión](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
+![Iniciar el cierre de sesión de un mvpd específico con el extremo de cierre de sesión](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
 
 *Iniciar el cierre de sesión de un mvpd específico con el extremo de cierre de sesión*
 
@@ -119,7 +119,7 @@ Antes de iniciar el cierre de sesión de un MVPD específico sin un extremo de c
 
 Siga los pasos dados para implementar el flujo de cierre de sesión básico para una MVPD específica sin un punto final de cierre de sesión realizado dentro de una aplicación principal, como se muestra en el diagrama siguiente.
 
-![Iniciar el cierre de sesión de un mvpd específico sin el extremo de cierre de sesión](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
+![Iniciar el cierre de sesión de un mvpd específico sin el extremo de cierre de sesión](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
 
 *Iniciar el cierre de sesión de un mvpd específico sin el extremo de cierre de sesión*
 

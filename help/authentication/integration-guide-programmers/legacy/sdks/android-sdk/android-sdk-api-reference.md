@@ -82,7 +82,7 @@ Consulte [https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-Acc
 
 ### setRequestor {#setRequestor}
 
-**Descripción:** establece la identidad del programador. A cada programador se le asigna un ID único al registrarse con el Adobe en el sistema de autenticación de Adobe Pass. Cuando se trata de SSO y tokens remotos, el estado de autenticación puede cambiar cuando la aplicación está en segundo plano. Se puede volver a llamar a setRequestor cuando la aplicación se pone en primer plano para sincronizar con el estado del sistema (recupere un token remoto si está habilitado el SSO o elimine el token local si se ha cerrado la sesión mientras tanto).
+**Descripción:** establece la identidad del programador. A cada programador se le asigna un ID único al registrarse en Adobe para el sistema de autenticación de Adobe Pass. Cuando se trata de SSO y tokens remotos, el estado de autenticación puede cambiar cuando la aplicación está en segundo plano. Se puede volver a llamar a setRequestor cuando la aplicación se pone en primer plano para sincronizar con el estado del sistema (recupere un token remoto si está habilitado el SSO o elimine el token local si se ha cerrado la sesión mientras tanto).
 
 La respuesta del servidor contiene una lista de MVPD junto con información de configuración adjunta a la identidad del programador. El código Access Enabler utiliza internamente la respuesta del servidor. Solo el estado de la operación (es decir, SUCCESS/FAIL) se presenta a la aplicación a través de la llamada de retorno setRequestorComplete().
 
@@ -105,11 +105,11 @@ Si se proporciona un valor para el parámetro *urls*, la llamada de red resultan
 
 **Parámetros:**
 
-- *requestorID*: ID único asociado con el programador. Pase el ID único asignado por el Adobe a su sitio cuando se registró por primera vez en el servicio de autenticación de Adobe Pass.
+- *requestorID*: ID único asociado con el programador. Pase el ID único asignado por Adobe a su sitio la primera vez que se registró con el servicio de autenticación de Adobe Pass.
 
 - *signedRequestorID*: Una copia del identificador del solicitante firmado digitalmente con su clave privada. <!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
-- *urls*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por el Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista MVPD está compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
+- *urls*: Parámetro opcional; de forma predeterminada, se utiliza el proveedor de servicios de Adobe (http://sp.auth.adobe.com/). Esta matriz permite especificar extremos para los servicios de autenticación y autorización proporcionados por Adobe (se pueden utilizar diferentes instancias para la depuración). Puede utilizar esto para especificar varias instancias del proveedor de servicios de autenticación de Adobe Pass. Al hacerlo, la lista MVPD está compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD.
 
 **Llamadas de retorno activadas:** `setRequestorComplete()`
 
@@ -161,7 +161,7 @@ Los valores se pasan al servidor independientemente del flujo actual (autenticac
 
 - *options*: un mapa&lt;String, String> que contiene las opciones globales de SDK. Actualmente están disponibles las siguientes opciones:
    - **applicationProfile**: se puede usar para realizar configuraciones de servidor basadas en este valor.
-   - **ap_vi** - El ID del Experience Cloud (visitorID). Este valor puede utilizarse posteriormente en informes de análisis avanzados.
+   - **ap_vi** - El Experience Cloud ID (visitorID). Este valor puede utilizarse posteriormente en informes de análisis avanzados.
    - **ap_ai** - El Advertising ID
    - **device_info** - Información del cliente como se describe aquí: [Pasar la conexión y aplicación del dispositivo con información del cliente](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
 
@@ -217,7 +217,7 @@ Por último, el estado de autenticación se comunica a la aplicación a través 
 **Parámetros:**
 
 - *forceAuthn*: Un indicador que especifica si el flujo de autenticación debe iniciarse, independientemente de si el usuario ya se ha autenticado o no.
-- *datos*: Mapa que contiene pares de clave-valor que se enviarán al servicio de pase de TV de pago. El Adobe de puede utilizar estos datos para habilitar futuras funciones sin cambiar SDK.
+- *datos*: Mapa que contiene pares de clave-valor que se enviarán al servicio de pase de TV de pago. Adobe puede utilizar estos datos para habilitar futuras funciones sin cambiar SDK.
 
 **Llamadas de retorno activadas:** `setAuthenticationStatus(), displayProviderDialog(), navigateToUrl(), sendTrackingData()`
 
@@ -428,7 +428,7 @@ El parámetro `cache` especifica si se puede utilizar o no la respuesta de preau
 **Parámetros:**
 
 - *resourceId*: El identificador del recurso para el que el usuario solicita autorización.
-- *datos*: Mapa que contiene pares de clave-valor que se enviarán al servicio de pase de TV de pago. El Adobe de puede utilizar estos datos para habilitar futuras funciones sin cambiar SDK.
+- *datos*: Mapa que contiene pares de clave-valor que se enviarán al servicio de pase de TV de pago. Adobe puede utilizar estos datos para habilitar futuras funciones sin cambiar SDK.
 
 **Llamadas de retorno activadas:** `tokenRequestFailed(), setToken(),sendTrackingData(), setAuthenticationStatus()`
 
@@ -454,7 +454,7 @@ El parámetro `cache` especifica si se puede utilizar o no la respuesta de preau
 **Parámetros:**
 
 - *resourceId*: El identificador del recurso para el que el usuario solicita autorización.
-- *datos*: Mapa que contiene pares de clave-valor que se enviarán al servicio de pase de TV de pago. El Adobe de puede utilizar estos datos para habilitar futuras funciones sin cambiar SDK.
+- *datos*: Mapa que contiene pares de clave-valor que se enviarán al servicio de pase de TV de pago. Adobe puede utilizar estos datos para habilitar futuras funciones sin cambiar SDK.
 
 **Llamadas de retorno activadas:** `tokenRequestFailed(), setToken(), sendTrackingData()`
 
@@ -596,7 +596,7 @@ Hay dos tipos de metadatos disponibles para los programadores:
       - `userID`: el identificador de usuario. Si un MVPD admite subcuentas y el usuario no es la cuenta principal, `userID` será diferente de `householdID`.
 
       - `channelID`: lista de canales que el usuario puede ver
-   - Si la clave es `METADATA_KEY_DEVICE_ID`, se realiza la consulta para obtener el ID del dispositivo actual. Tenga en cuenta que esta función está desactivada de forma predeterminada y los programadores deben ponerse en contacto con el Adobe para obtener información sobre la habilitación y las tarifas.
+   - Si la clave es `METADATA_KEY_DEVICE_ID`, se realiza la consulta para obtener el ID del dispositivo actual. Tenga en cuenta que esta función está desactivada de forma predeterminada y los programadores deben ponerse en contacto con Adobe para obtener información sobre la habilitación y las tarifas.
    - Si la clave es `METADATA_KEY_TTL_AUTHZ` y args contiene un objeto SerializableNameValuePair con el nombre = `METADATA_ARG_RESOURCE_ID` y el valor = `[resource_id]`, se realiza la consulta para obtener la hora de caducidad del token de autorización asociado al recurso especificado.
    - Si la clave es `METADATA_KEY_TTL_AUTHN`, se realiza la consulta para obtener el tiempo de caducidad del token de autenticación.
 
@@ -706,7 +706,7 @@ El activador de acceso déclencheur una llamada de retorno adicional que no est�
 
 >[!WARNING]
 >
-> El tipo de dispositivo y el sistema operativo se derivan del uso de una biblioteca Java pública ([http://java.net/projects/user-agent-utils](http://java.net/projects/user-agent-utils)) y de la cadena del agente de usuario. Tenga en cuenta que esta información se proporciona solo como una forma grosera de desglosar las métricas operativas en categorías de dispositivos, pero que ese Adobe no puede responsabilizarse de los resultados incorrectos. Utilice la nueva funcionalidad en consecuencia.
+> El tipo de dispositivo y el sistema operativo se derivan del uso de una biblioteca Java pública ([http://java.net/projects/user-agent-utils](http://java.net/projects/user-agent-utils)) y de la cadena del agente de usuario. Tenga en cuenta que esta información se proporciona únicamente como una forma grosera de desglosar las métricas operativas en categorías de dispositivos, pero que Adobe no puede responsabilizarse de los resultados incorrectos. Utilice la nueva funcionalidad en consecuencia.
 
 
 - Valores posibles para el tipo de dispositivo:

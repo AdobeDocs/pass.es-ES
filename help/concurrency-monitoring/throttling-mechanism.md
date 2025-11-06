@@ -4,7 +4,7 @@ description: Mecanismo de limitación
 exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
 source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '614'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 ## Introducción {#introduction}
 
-El Adobe, en su función de encargado del tratamiento de datos, debe tomar las medidas adecuadas para garantizar que los usuarios de nuestros clientes utilicen los recursos de forma equitativa y que el servicio no se vea inundado de solicitudes de API innecesarias. Para ello hemos puesto en marcha un mecanismo de limitación.
+Adobe, como responsable del tratamiento de sus datos, debe tomar las medidas adecuadas para garantizar que los usuarios de nuestros clientes utilicen los recursos de forma equitativa y que el servicio no se vea inundado de solicitudes de API innecesarias. Para ello hemos puesto en marcha un mecanismo de limitación.
 Una aplicación de Monitorización de concurrencia puede ser utilizada por varios usuarios y un usuario puede tener varias sesiones. Por lo tanto, el servicio tendrá límites configurados para el número de llamadas aceptadas por usuario/sesión dentro de un intervalo de tiempo específico.
 Cuando se alcanza el límite, las solicitudes se marcan con un estado de respuesta específico (HTTP 429 Too Many Requests). Cualquier llamada posterior realizada después de recibir una respuesta de &quot;429 demasiadas solicitudes&quot; debe realizarse con un período de enfriamiento de al menos un minuto para garantizar que obtenga una respuesta comercial válida.
 
@@ -39,8 +39,8 @@ Ambos límites (limitación de nivel de sesión y de nivel de usuario) se pueden
 
 | Hora | Solicitar envío a CM | Número de solicitudes | Respuesta recibida de CM | Explicación |
 |-----------|-----------------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| 10 segundos | POST /session/idp1/subject1/session1 | 50 | Todas las llamadas reciben &quot;202 Accepted&quot; | 50 llamadas consumidas desde el límite |
-| Segundos 50 | POST /session/idp1/subject1/session1 | 151 | 150 llamadas reciben &quot;202 aceptadas&quot; y 1 llamada recibe &quot;429 demasiadas solicitudes&quot; | 200 llamadas consumidas desde el límite y 1 llamada recibirá 429 respuestas |
+| 10 segundos | POST/session/idp1/subject1/session1 | 50 | Todas las llamadas reciben &quot;202 Accepted&quot; | 50 llamadas consumidas desde el límite |
+| Segundos 50 | POST/session/idp1/subject1/session1 | 151 | 150 llamadas reciben &quot;202 aceptadas&quot; y 1 llamada recibe &quot;429 demasiadas solicitudes&quot; | 200 llamadas consumidas desde el límite y 1 llamada recibirá 429 respuestas |
 | Segundo 61 | DELETE /session/idp1/subject1/session1 | 1 | 1 llamada recibe &quot;429 Too many requests&quot; (Demasiadas solicitudes) | Todavía no hay llamadas dentro del límite disponible |
 | Second 70 | DELETE /session/idp1/subject1/session1 | 1 | 1 llamada recibe &quot;202 Accepted&quot; | Se ha establecido el límite de 200 llamadas disponibles porque han pasado 60 segundos desde las 10 segundas |
 
@@ -48,10 +48,10 @@ Ambos límites (limitación de nivel de sesión y de nivel de usuario) se pueden
 
 | Hora | Solicitar envío a CM | Número de solicitudes | Respuesta recibida de CM | Explicación |
 |-----------|------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| 10 segundos | POST /session/idp1/subject1 | 50 | 50 llamadas reciben &quot;202 aceptadas&quot; | 50 llamadas consumidas desde el límite |
-| Segundos 50 | POST /session/idp1/subject1 | 151 | 150 llamadas reciben &quot;202 aceptadas&quot; y 1 llamada recibe &quot;429 demasiadas solicitudes&quot; | 200 llamadas consumidas desde el límite y 1 llamada recibirá 429 respuestas |
-| Segundo 61 | POST /session/idp1/subject1 | 1 | 1 llamada recibe &quot;429 Too many requests&quot; (Demasiadas solicitudes) | Todavía no hay llamadas dentro del límite disponible |
-| Second 70 | POST /session/idp1/subject1 | 1 | 1 llamada recibe &quot;202 Accepted&quot; | Se ha establecido el límite de 200 llamadas disponibles porque han pasado 60 segundos desde las 10 segundas |
+| 10 segundos | POST/session/idp1/subject1 | 50 | 50 llamadas reciben &quot;202 aceptadas&quot; | 50 llamadas consumidas desde el límite |
+| Segundos 50 | POST/session/idp1/subject1 | 151 | 150 llamadas reciben &quot;202 aceptadas&quot; y 1 llamada recibe &quot;429 demasiadas solicitudes&quot; | 200 llamadas consumidas desde el límite y 1 llamada recibirá 429 respuestas |
+| Segundo 61 | POST/session/idp1/subject1 | 1 | 1 llamada recibe &quot;429 Too many requests&quot; (Demasiadas solicitudes) | Todavía no hay llamadas dentro del límite disponible |
+| Second 70 | POST/session/idp1/subject1 | 1 | 1 llamada recibe &quot;202 Accepted&quot; | Se ha establecido el límite de 200 llamadas disponibles porque han pasado 60 segundos desde las 10 segundas |
 
 **Ejemplo de respuesta 429:**
 
@@ -73,4 +73,4 @@ x-content-type-options: nosniff
 ## Recomendaciones de integración de clientes {#customer-integration-recommendations}
 
 Con una implementación correcta, los clientes no recibirán la respuesta &quot;429 demasiadas solicitudes&quot;.
-Aún así, el Adobe recomienda que cada cliente gestione correctamente la respuesta &quot;429 demasiadas solicitudes&quot; utilizando los detalles técnicos presentados anteriormente. Al gestionar la respuesta, se debe utilizar el encabezado &quot;Caduca&quot; para determinar cuándo enviar la siguiente solicitud válida.
+Aun así, Adobe recomienda que cada cliente gestione adecuadamente la respuesta &quot;429 demasiadas solicitudes&quot; utilizando los detalles técnicos presentados anteriormente. Al gestionar la respuesta, se debe utilizar el encabezado &quot;Caduca&quot; para determinar cuándo enviar la siguiente solicitud válida.

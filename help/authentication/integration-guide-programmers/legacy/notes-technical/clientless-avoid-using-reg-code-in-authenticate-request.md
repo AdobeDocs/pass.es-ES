@@ -37,7 +37,7 @@ Si la solicitud `/authenticate` está compuesta de la siguiente manera...
 ```
 
 
-... lo interpretará el navegador IE como se muestra a continuación y se enviará al Adobe en este formato:
+... será interpretado por el navegador IE como se muestra a continuación y se enviará a Adobe en este formato:
 
 
 ```
@@ -45,7 +45,7 @@ Si la solicitud `/authenticate` está compuesta de la siguiente manera...
 ```
 
 
-El solicitante\_id se interpretará como univision®\_code=EKAFMFI, ya que no hay &#39;&amp;&#39;, y el Adobe no encontrará un parámetro `regCode` al que asociar el token.  Existe la posibilidad de que no se cree el token de AuthN, en cuyo caso las llamadas a `/checkauthn` no encontrarán ningún token.
+El solicitante\_id se interpretará como univision®\_code=EKAFMFI, ya que no hay &#39;&amp;&#39;, y Adobe no encontrará un parámetro `regCode` al que asociar el token.  Existe la posibilidad de que no se cree el token de AuthN, en cuyo caso las llamadas a `/checkauthn` no encontrarán ningún token.
 
 
 
@@ -63,4 +63,4 @@ Una de las siguientes opciones debe resolver este problema:
 
 1. Normalizar `&reg_code` como si usara `&amp;reg_code`.
 
-1. El Adobe podría introducir una nueva función para enviar un código de error de nuevo a la segunda pantalla en respuesta a una llamada de autenticación, si fallaba la creación del token de AuthN.
+1. Adobe podría introducir una nueva función para enviar un código de error de nuevo a la segunda pantalla en respuesta a una llamada de autenticación, si fallaba la creación del token de AuthN.

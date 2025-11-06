@@ -2,7 +2,7 @@
 title: Metadatos del usuario
 description: Metadatos del usuario
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '518'
 ht-degree: 0%
@@ -52,7 +52,7 @@ Recupere metadatos compartidos por MVPD sobre el usuario autenticado.
 | solicitante | Identificador de solicitante del programador para el que es válida esta operación. |
 | deviceId | El ID de dispositivo bytes. |
 | device_info/<p>X-Device-Info | Información del dispositivo de transmisión.</br></br> **Nota:** Esto PUEDE pasarse a device_info como parámetro de URL, pero debido al tamaño potencial de este parámetro y a las limitaciones en la longitud de una URL de GET, DEBE pasarse como X-Device-Info en el encabezado http. </br></br> Ver los detalles completos en [Pasar información de conexión y dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | El tipo de dispositivo (por ejemplo, Roku, PC).</br></br> Si este parámetro está configurado correctamente, ESM ofrece métricas que están [desglosadas por tipo de dispositivo](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics) al utilizar sin cliente, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, para Roku, AppleTV, Xbox, etc.</br></br> Ver [Ventajas de usar el parámetro de tipo de dispositivo sin cliente en Pasar métricas](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **Nota:** `device_info` reemplaza este parámetro. |
+| _deviceType_ | El tipo de dispositivo (por ejemplo, Roku, PC).</br></br> Si este parámetro está configurado correctamente, ESM ofrece métricas que están [desglosadas por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics) al utilizar sin cliente, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, para Roku, AppleTV, Xbox, etc.</br></br> Ver [Ventajas de usar el parámetro de tipo de dispositivo sin cliente en Pasar métricas](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **Nota:** `device_info` reemplaza este parámetro. |
 | _deviceUser_ | Identificador de usuario del dispositivo.</br></br> **Nota:** Si se usa, `deviceUser` debería tener los mismos valores que en la solicitud [Crear código de registro](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 | _appId_ | El nombre o ID de la aplicación. </br></br> **Nota:** `device_info` reemplaza este parámetro. Si se usa, `appId` debería tener los mismos valores que en la solicitud [Crear código de registro](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 

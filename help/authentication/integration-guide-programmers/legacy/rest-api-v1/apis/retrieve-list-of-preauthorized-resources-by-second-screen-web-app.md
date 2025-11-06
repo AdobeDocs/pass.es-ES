@@ -4,7 +4,7 @@ description: Recuperar lista de recursos preautorizados por aplicación web de s
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
 source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ Existen dos conjuntos de API: un conjunto para la aplicación de streaming o el 
 
 | Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorize/{código de registro} | Módulo AuthN | 1. código de registro </br>    (Componente de ruta de acceso)</br>2.  solicitante (obligatorio)</br>3.  recurso (obligatorio) | GET | XML o JSON que contienen decisiones individuales de preautorización o detalles de error. Consulte los ejemplos siguientes. | 200 - Correcto</br></br>400 - Solicitud incorrecta</br></br>401 - No autorizado</br></br>405 - Método no permitido </br></br>412 - Error de condición previa</br></br>500 - Error interno del servidor |
+| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | Módulo AuthN | &#x200B;1. código de registro </br>    (Componente de ruta de acceso)</br>2.  solicitante (obligatorio)</br>3.  recurso (obligatorio) | GET | XML o JSON que contienen decisiones individuales de preautorización o detalles de error. Consulte los ejemplos siguientes. | 200 - Correcto</br></br>400 - Solicitud incorrecta</br></br>401 - No autorizado</br></br>405 - Método no permitido </br></br>412 - Error de condición previa</br></br>500 - Error interno del servidor |
 
 
 

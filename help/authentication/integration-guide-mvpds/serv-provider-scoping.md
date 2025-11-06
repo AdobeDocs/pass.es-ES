@@ -17,9 +17,9 @@ ht-degree: 0%
 
 ## Información general {#overview}
 
-La implementación predeterminada de una integración de autenticación de Adobe Pass con una MVPD se basa en la **especificación OLCA**. La sección Requisitos de autenticación de la especificación OLCA (6.5, Identificador del sujeto), indica que es posible indicar el ámbito del proveedor de servicios (SP) para el identificador del sujeto. (El identificador del sujeto es el ID de usuario ofuscado que la MVPD devuelve al SP).  En una integración de autenticación de Adobe Pass, es necesario que las MVPD habiliten el ámbito de las solicitudes de autenticación del SP.
+La implementación predeterminada de una integración de autenticación de Adobe Pass con un MVPD se basa en la **especificación OLCA**. La sección Requisitos de autenticación de la especificación OLCA (6.5, Identificador del sujeto), indica que es posible indicar el ámbito del proveedor de servicios (SP) para el identificador del sujeto. (El identificador del asunto es el ID de usuario ocultado que MVPD devuelve al SP).  En una integración de autenticación de Adobe Pass, es necesario que las MVPD habiliten el ámbito de las solicitudes de autenticación del SP.
 
-Con la autenticación de Adobe Pass asumiendo la función de SP para el programador, es necesario implementar una personalización que permita el ámbito de SP de la solicitud de autenticación.  Esto debe hacerse para que la MVPD pueda identificar la marca de red que se pasa en la afirmación de SAML al proveedor de identidad (IdP) de la MVPD.  El ámbito se puede implementar de una de las dos maneras descritas en la siguiente sección.
+Con la autenticación de Adobe Pass asumiendo la función de SP para el programador, es necesario implementar una personalización que permita el ámbito de SP de la solicitud de autenticación.  Esto debe hacerse para que MVPD pueda identificar la marca de red pasada en la afirmación de SAML al proveedor de identidad (IdP) de MVPD.  El ámbito se puede implementar de una de las dos maneras descritas en la siguiente sección.
 
 ## Ámbito del proveedor de servicios {#service-provider-scoping}
 

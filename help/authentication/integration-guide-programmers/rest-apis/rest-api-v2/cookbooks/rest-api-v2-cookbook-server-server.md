@@ -2,7 +2,7 @@
 title: Guía de API de REST V2 (servidor a servidor)
 description: Guía de API de REST V2 (servidor a servidor)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2497'
 ht-degree: 0%
@@ -183,7 +183,7 @@ Preguntas frecuentes
 * **Escenario 2:** No existen perfiles, el Servicio de programador puede continuar con el siguiente paso para [Autenticar al usuario](#step-3-authenticate-the-user).
 
 
-* **Escenario 3:** No existen perfiles, el Servicio de programador puede proceder a proporcionar al usuario acceso temporal a través de la característica [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md).
+* **Escenario 3:** No existen perfiles, el Servicio de programador puede proceder a proporcionar al usuario acceso temporal a través de la característica [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
 
    * Este escenario está fuera del ámbito de este documento. Consulte la documentación de [Flujos de acceso temporales](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md) para obtener más información.
 

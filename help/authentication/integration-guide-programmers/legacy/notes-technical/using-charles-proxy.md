@@ -52,7 +52,7 @@ Marque la casilla de verificación &quot;Habilitar proxy SSL&quot; y añada toda
 - Proxy SSL de dispositivos móviles: consulte lo siguiente.
 
 
-## Omitir/Excluir hosts {#ignore-/-exclude-hosts}
+## Ignorar/excluir hosts {#ignore-/-exclude-hosts}
 
 Si el resultado se vuelve demasiado confuso, puede optar por omitir o excluir ubicaciones. Puede ignorar o excluir ubicaciones mediante cualquiera de estas acciones:
 
@@ -95,9 +95,9 @@ Con el control remoto de mapas puede redirigir una solicitud &quot;entrante&quot
 
 <http://www.charlesproxy.com/documentation/proxying/reverse-proxy/>
 
-## Móvil {#mobile}
+## Dispositivo móvil {#mobile}
 
-### Usar Charles en un dispositivo iOS (iPhone / iPad) {#use-charles-on-an-ios-device-(iphone-/-ipad)}
+### Usar Charles en un dispositivo iOS (iPhone/iPad) {#use-charles-on-an-ios-device-(iphone-/-ipad)}
 
 #### Conexión SSL desde iPhone {#ssl-connection-from-iphone}
 

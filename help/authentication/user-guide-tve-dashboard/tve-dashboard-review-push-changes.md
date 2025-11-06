@@ -2,7 +2,7 @@
 title: Revisar y enviar cambios
 description: Aprenda a revisar y pulsar los cambios en el panel de TVE.
 exl-id: 2f29712e-7b3f-472a-a36f-32780bec1508
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Siga estos pasos para revisar y enviar los cambios.
 
 1. Busque la notificación de cambios push y de revisión en la parte inferior de la pantalla.
 
-   ![Revisar y enviar notificaciones de cambios](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-banner-view.png)
+   ![Revisar y enviar notificaciones de cambios](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-banner-view.png)
 
    *Cuadro de notificación de cambios de revisión y inserción*
 
@@ -29,7 +29,7 @@ Siga estos pasos para revisar y enviar los cambios.
 
 1. Escriba una breve descripción del cambio en **Descripción de la configuración** para realizar un seguimiento efectivo y comprender el propósito de cada cambio.
 
-   ![Agregar una descripción de configuración](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-configuration-details-panel-view.png)
+   ![Agregar una descripción de configuración](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-configuration-details-panel-view.png)
 
    *Agregar una descripción de configuración*
 
@@ -39,7 +39,7 @@ Siga estos pasos para revisar y enviar los cambios.
 
 1. Seleccione **Ver** para revisar los valores nuevos y anteriores asociados con un cambio de configuración.
 
-   ![Ver cambios de configuración](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
+   ![Ver cambios de configuración](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
 
    *Ver cambios de configuración*
 
@@ -49,7 +49,7 @@ Siga estos pasos para revisar y enviar los cambios.
    >
    >El botón **Insertar cambios** solo se activa después de agregar **Descripción de la configuración**.
 
-   ![Cambios push](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-push-changes-button.png)
+   ![Cambios push](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-push-changes-button.png)
 
    *Cambios push*
 

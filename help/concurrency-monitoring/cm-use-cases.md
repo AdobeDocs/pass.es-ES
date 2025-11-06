@@ -13,7 +13,7 @@ ht-degree: 0%
 
 El caso de uso principal del servicio de recuento de transmisiones es contar el número de transmisiones de vídeo simultáneas que ve un usuario y tomar una decisión sobre su uso simultáneo para el mismo ID de cuenta.
 
-Para monitorizar el uso por parte del suscriptor, es necesario un servicio centralizado que pueda acumular la actividad del usuario independientemente de si ocurre en el sitio web o la aplicación del programador, en el portal de contenido de MVPD o en una propiedad sindicada.
+Para monitorizar el uso por parte del suscriptor, es necesario un servicio centralizado que pueda acumular la actividad del usuario independientemente de si se produce en el sitio web del programador o en la aplicación, en el portal de contenido de MVPD o en una propiedad sindicada.
 
 Los principales casos de uso admitidos por este servicio centralizado deben ser:
 
