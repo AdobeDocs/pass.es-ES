@@ -2,7 +2,7 @@
 title: Acerca de la autenticación de Adobe Pass
 description: Acerca de la autenticación de Adobe Pass
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1832'
 ht-degree: 0%

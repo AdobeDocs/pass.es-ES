@@ -2,7 +2,7 @@
 title: Guía de JavaScript SDK
 description: Guía de JavaScript SDK
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '957'
 ht-degree: 0%
@@ -186,7 +186,7 @@ AccessEnabler (biblioteca)
 
 ## Configuración del ID de visitante {#visitorID}
 
-La configuración de un valor [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=es) es muy importante desde el punto de vista del análisis. Una vez establecido un valor EC visitorID, SDK enviará esta información junto con cada llamada de red y el servicio de autenticación de Adobe Pass recopilará esta información. De este modo, podrá correlacionar los datos de análisis del servicio de autenticación de Adobe Pass con cualquier otro informe de análisis que pueda tener de otras aplicaciones o sitios web. Encontrará información sobre cómo configurar el ID de visitante de EC [aquí](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=es).
+La configuración de un valor [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html) es muy importante desde el punto de vista del análisis. Una vez establecido un valor EC visitorID, SDK enviará esta información junto con cada llamada de red y el servicio de autenticación de Adobe Pass recopilará esta información. De este modo, podrá correlacionar los datos de análisis del servicio de autenticación de Adobe Pass con cualquier otro informe de análisis que pueda tener de otras aplicaciones o sitios web. Encontrará información sobre cómo configurar el ID de visitante de EC [aquí](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

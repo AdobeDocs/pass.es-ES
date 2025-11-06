@@ -2,7 +2,7 @@
 title: Recuperar lista de recursos autorizados previamente
 description: Recuperar lista de recursos autorizados previamente
 exl-id: 3821378c-bab5-4dc9-abd7-328df4b60cc3
-source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '390'
 ht-degree: 0%
@@ -55,7 +55,7 @@ Existen dos conjuntos de API: un conjunto para la aplicación de streaming o el 
 | deviceId | El ID de dispositivo bytes. |
 | resource | Cadena que contiene una lista delimitada por comas de resourceIds que identifica el contenido al que un usuario podría tener acceso y que los extremos de autorización de MVPD reconocen. |
 | device_info/</br></br>X-Device-Info | Información del dispositivo de streaming.</br></br>**Nota**: Esto PUEDE pasarse a device_info como parámetro de URL, pero debido al tamaño potencial de este parámetro y a las limitaciones en la longitud de una URL de GET, DEBE pasarse como X-Device-Info en el encabezado http. </br></br>Ver los detalles completos en [Pasar información de conexión y dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | El tipo de dispositivo (por ejemplo, Roku, PC).</br></br>Si este parámetro está configurado correctamente, ESM ofrece métricas que están [desglosadas por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) al usar Clientless, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, Roku, AppleTV y Xbox.</br></br>Vea, [beneficios de usar el parámetro de tipo de dispositivo sin cliente en las métricas de pase &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Nota**: `device_info` reemplazará este parámetro. |
+| _deviceType_ | El tipo de dispositivo (por ejemplo, Roku, PC).</br></br>Si este parámetro está configurado correctamente, ESM ofrece métricas que están [desglosadas por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) al usar Clientless, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, Roku, AppleTV y Xbox.</br></br>Vea, [beneficios de usar el parámetro de tipo de dispositivo sin cliente en las métricas de pase ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Nota**: `device_info` reemplazará este parámetro. |
 | _deviceUser_ | El identificador de usuario del dispositivo. |
 | _appId_ | El nombre o ID de la aplicación. </br></br>**Nota**: device_info reemplaza este parámetro. |
 

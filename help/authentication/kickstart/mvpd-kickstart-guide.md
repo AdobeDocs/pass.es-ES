@@ -2,7 +2,7 @@
 title: Guía de KickStart de MVPD
 description: Guía de KickStart de MVPD
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 0%
@@ -129,13 +129,13 @@ Para obtener más información sobre cómo usar estos entornos, consulte la [Exp
 
 ## Acceso a asistencia al cliente {#access-customer-support}
 
-**Adobe proporcionará acceso a nuestro sistema de atención al cliente a través de** Zendesk[. &#x200B;](https://tve.zendesk.com/home) Para acceder a Zendesk, debe registrarse y crear una cuenta en https://tve.zendesk.com/home.
+**Adobe proporcionará acceso a nuestro sistema de atención al cliente a través de** Zendesk[. ](https://tve.zendesk.com/home) Para acceder a Zendesk, debe registrarse y crear una cuenta en https://tve.zendesk.com/home.
 
 El equipo de autenticación de Adobe Pass está disponible para resolver cualquier pregunta o problema técnico que pueda surgir durante el proceso de integración. Póngase en contacto con nosotros en [tve-support@adobe.com](mailto:tve-support@adobe.com).
 
 ## Acceso a la documentación {#access-documentation}
 
-**Adobe proporcionará acceso a nuestra documentación pública a través de** Adobe Experience League[.](https://experienceleague.adobe.com/es/docs/pass/authentication/home)
+**Adobe proporcionará acceso a nuestra documentación pública a través de** Adobe Experience League[.](https://experienceleague.adobe.com/en/docs/pass/authentication/home)
 
 El equipo de autenticación de Adobe Pass proporciona documentación completa sobre las funciones y flujos de trabajo disponibles en la sección [Guía de integración para MVPD](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md). Consulte la tabla de contenido de esta sección para ver vínculos a información detallada sobre cada tema.
 

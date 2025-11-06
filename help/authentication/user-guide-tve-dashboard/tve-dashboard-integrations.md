@@ -2,7 +2,7 @@
 title: Integraciones de tableros de TVE
 description: Conozca las integraciones entre sus canales y MVPD y cómo administrar las integraciones.
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2093'
 ht-degree: 0%
@@ -305,7 +305,7 @@ Para crear una nueva integración con un nuevo MVPD en la configuración actual,
    >
    >No cambie los extremos predeterminados en ningún flujo a menos que MVPD lo indique específicamente.
 
-   ![Seleccionar extremos &#x200B;](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
+   ![Seleccionar extremos ](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
 
    *Seleccionar extremos*
 

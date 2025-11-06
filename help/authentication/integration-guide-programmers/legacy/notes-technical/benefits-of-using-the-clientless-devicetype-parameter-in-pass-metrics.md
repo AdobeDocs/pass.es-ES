@@ -2,7 +2,7 @@
 title: Ventajas de utilizar el parámetro deviceType sin cliente en las métricas de autenticación de Adobe Pass
 description: Ventajas de utilizar el parámetro deviceType sin cliente en las métricas de autenticación de Adobe Pass
 exl-id: a5004887-d5fa-468e-971b-10806519175b
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '372'
 ht-degree: 0%

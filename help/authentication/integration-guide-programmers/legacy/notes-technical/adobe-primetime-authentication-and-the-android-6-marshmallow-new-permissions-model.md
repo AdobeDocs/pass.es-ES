@@ -2,7 +2,7 @@
 title: Autenticación de Adobe Pass y el nuevo modelo de permisos de Android 6 "Marshmallow"
 description: Autenticación de Adobe Pass y el nuevo modelo de permisos de Android 6 "Marshmallow"
 exl-id: 3c96769e-b25b-48ab-bb74-40f13d4e5a84
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%

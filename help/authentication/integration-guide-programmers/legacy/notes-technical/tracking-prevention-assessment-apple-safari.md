@@ -2,7 +2,7 @@
 title: Seguimiento de evaluación de prevención Apple Safari
 description: Seguimiento de evaluación de prevención Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
