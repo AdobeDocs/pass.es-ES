@@ -19,7 +19,7 @@ En el dinámico mundo de los deportes en directo y los grandes eventos, es esenc
 
 La autenticación de Adobe Pass resuelve estos desafíos con su **característica de degradación**, una solución que permite omitir temporalmente determinados extremos de autorización y autenticación de MVPD. Esta función es especialmente valiosa durante los eventos de tráfico máximo, en los que los tiempos de respuesta pueden degradarse debido a una carga pesada en los sistemas MVPD.
 
-La característica de degradación **1} puede ser una protección vital para los programadores, ya que garantiza la continuidad del servicio.** Aunque su audiencia principal incluye deportes en vivo y canales de noticias, su utilidad se extiende a cualquier Programador que busque mitigar el riesgo de interrupciones causadas por puntos finales de MVPD.
+La característica de degradación **1&rbrace; puede ser una protección vital para los programadores, ya que garantiza la continuidad del servicio.** Aunque su audiencia principal incluye deportes en vivo y canales de noticias, su utilidad se extiende a cualquier Programador que busque mitigar el riesgo de interrupciones causadas por puntos finales de MVPD.
 
 >[!IMPORTANT]
 >

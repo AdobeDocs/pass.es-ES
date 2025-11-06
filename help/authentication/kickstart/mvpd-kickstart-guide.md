@@ -129,7 +129,7 @@ Para obtener más información sobre cómo usar estos entornos, consulte la [Exp
 
 ## Acceso a asistencia al cliente {#access-customer-support}
 
-**Adobe proporcionará acceso a nuestro sistema de atención al cliente a través de** Zendesk[. ](https://tve.zendesk.com/home) Para acceder a Zendesk, debe registrarse y crear una cuenta en https://tve.zendesk.com/home.
+**Adobe proporcionará acceso a nuestro sistema de atención al cliente a través de** Zendesk[. &#x200B;](https://tve.zendesk.com/home) Para acceder a Zendesk, debe registrarse y crear una cuenta en https://tve.zendesk.com/home.
 
 El equipo de autenticación de Adobe Pass está disponible para resolver cualquier pregunta o problema técnico que pueda surgir durante el proceso de integración. Póngase en contacto con nosotros en [tve-support@adobe.com](mailto:tve-support@adobe.com).
 

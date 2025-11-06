@@ -69,7 +69,7 @@ El proceso de configuración incluye, entre otros, los siguientes pasos:
 
 ## Acceso a asistencia al cliente {#access-customer-support}
 
-**Adobe proporcionará acceso a nuestro sistema de atención al cliente a través de** Zendesk[. ](https://tve.zendesk.com/home) Para acceder a Zendesk, debe registrarse y crear una cuenta en https://tve.zendesk.com/home. No hay límite en el número de usuarios que puede registrar. Una vez registrado, puede ver y compartir comentarios en cualquier ticket enviado.
+**Adobe proporcionará acceso a nuestro sistema de atención al cliente a través de** Zendesk[. &#x200B;](https://tve.zendesk.com/home) Para acceder a Zendesk, debe registrarse y crear una cuenta en https://tve.zendesk.com/home. No hay límite en el número de usuarios que puede registrar. Una vez registrado, puede ver y compartir comentarios en cualquier ticket enviado.
 
 El equipo de autenticación de Adobe Pass está disponible para ayudarle con cualquier pregunta o problema técnico que pueda encontrar durante el proceso de integración. Póngase en contacto con nosotros en [tve-support@adobe.com](mailto:tve-support@adobe.com).
 

@@ -116,7 +116,7 @@ El SDK de AccessEnabler iOS/tvOS admite **anular toda la información del client
 
 El SDK de Android/FireOS `AccessEnabler` genera de forma predeterminada un objeto JSON de información de cliente, que se pasará a los servicios de autenticación de Adobe Pass, a menos que se anule.
 
-El SDK de `AccessEnabler` Android/FireOS admite **anular toda la información del cliente JSON de** a través del parámetro [ de ](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
+El SDK de `AccessEnabler` Android/FireOS admite **anular toda la información del cliente JSON de** a través del parámetro [&#x200B; de &#x200B;](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
 
 >[!NOTE]
 >

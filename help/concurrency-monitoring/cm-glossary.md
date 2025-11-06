@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Asunto {#subj-defn}
 
-* El consumidor del contenido (vídeo) a través de Internet. Estamos evitando deliberadamente el término _**usuario**_, ya que la Monitorización de concurrencia generalmente trata con los ID de cuenta de MVPD (que involucran a varios usuarios reales que comparten el mismo contrato, por ejemplo, miembros de la familia de un hogar).
+* El consumidor del contenido (vídeo) a través de Internet. Estamos evitando deliberadamente el término _&#x200B;**usuario**&#x200B;_, ya que la Monitorización de concurrencia generalmente trata con los ID de cuenta de MVPD (que involucran a varios usuarios reales que comparten el mismo contrato, por ejemplo, miembros de la familia de un hogar).
 
 * Para cada flujo, el asunto se puede mejorar con atributos relacionados con la persona real que utiliza el servicio, su dispositivo conectado a la red, etc.
 

@@ -60,7 +60,7 @@ En comparación con Android SDK existente, en fireTV SDK el proceso de autentica
 1. ¿Cómo funcionará el **SSO**?
 
    * SSO funcionará en todas las aplicaciones de Programador con autenticación de Adobe Pass que estén usando el nuevo SDK fireTV en el mismo dispositivo Amazon fireTV
-   * No se admitirá SSO entre aplicaciones de programador implementadas en la API de REST sin cliente y aplicaciones implementadas en fireTV SDK ****
+   * No se admitirá SSO entre aplicaciones de programador implementadas en la API de REST sin cliente y aplicaciones implementadas en fireTV SDK **&#x200B;**
 
 1. ¿Cuál es la cobertura de MVPD de FireTV SSO?
 
