@@ -53,11 +53,11 @@ Para beneficiarse de la experiencia de usuario de inicio de sesión único (SSO)
 
    * La API de REST de autenticación de Adobe Pass V1 heredada es compatible con el inicio de sesión único (SSO) de socio.
 
-     Consulte la documentación de [ (heredado) Apple SSO Cookbook (REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md).
+     Consulte la documentación de [&#x200B; (heredado) Apple SSO Cookbook (REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md).
 
    * El Adobe Pass Authentication AccessEnabler iOS/tvOS SDK heredado es compatible con el inicio de sesión único (SSO) de socio.
 
-     Consulte la documentación de [ (heredado) Apple SSO (iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md).
+     Consulte la documentación de [&#x200B; (heredado) Apple SSO (iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md).
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 

@@ -305,7 +305,7 @@ Para crear una nueva integración con un nuevo MVPD en la configuración actual,
    >
    >No cambie los extremos predeterminados en ningún flujo a menos que MVPD lo indique específicamente.
 
-   ![Seleccionar extremos ](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
+   ![Seleccionar extremos &#x200B;](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
 
    *Seleccionar extremos*
 

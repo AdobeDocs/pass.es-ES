@@ -152,7 +152,7 @@ Obsoleto:
    - inicio de sesión cancelado : restablecer selección de MVPD
    - El esquema URL se establece como &quot;adobepass://android.app&quot; para capturar cuándo se completa la autenticación
 
-- e. get/checkAuthorization : SDK incluirá **access\_token **en el encabezado como Autorización: Portador **access\_token**
+- e. get/checkAuthorization : SDK incluirá **access\_token &#x200B;** en el encabezado como Autorización: Portador **access\_token**
 
 - si la autorización se realiza correctamente, se realizará una llamada para obtener el token de medios
 
