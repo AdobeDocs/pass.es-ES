@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 151c64276377be5ef21bca4c0d3eaa04ac3da495
 workflow-type: tm+mt
-source-wordcount: '1279'
+source-wordcount: '1285'
 ht-degree: 3%
 
 ---
@@ -161,6 +161,8 @@ ht-degree: 3%
          - [Resumen de monitorización del servicio de derechos](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)
          - [API de monitorización del servicio de derechos](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
          - [Métricas del lado del servidor](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
+      - Servicio SSO {#sso-service}
+         - [Servicio de inicio de sesión único Adobe](integration-guide-programmers/features-premium/sso-service/sso-service.md)
       - Analytics {#analytics}
          - [Integración de datos del lado del servidor de Adobe Pass Authentication en Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
          - [Uso del Experience Cloud ID en la autenticación de Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
