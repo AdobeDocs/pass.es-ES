@@ -25,7 +25,7 @@ El panel de ESM proporciona una vista unificada de los datos de derechos y event
 - Comparar el rendimiento de MVPD
 - Comprenda el uso del cliente por aplicación
 
-Encontrará más detalles sobre los datos y eventos de ESM en [Información general sobre la supervisión del servicio de derechos](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
+Encontrará más detalles sobre los datos y eventos de ESM en [Información general sobre la supervisión del servicio de derechos](https://experienceleague.adobe.com/es/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
 
 ## Informes {#reports}
 
