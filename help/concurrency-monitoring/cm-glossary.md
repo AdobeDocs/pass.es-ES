@@ -2,7 +2,7 @@
 title: Glosario
 description: Glosario de términos de supervisión de concurrencia
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 0%
@@ -28,7 +28,7 @@ ht-degree: 0%
 ## Aplicación {#application-defn}
 
 * Desarrollado por el inquilino para el acceso al contenido de vídeo
-* Toma y aplica decisiones sobre el acceso al contenido basándose en la información proporcionada por el Servicio de supervisión de concurrencia (esto es válido en el caso de [Punto de información de directiva](/help/concurrency-monitoring/policy-info-pt-versionone.md))
+* Toma y aplica decisiones sobre el acceso al contenido basándose en la información proporcionada por el Servicio de supervisión de concurrencia (esto es válido en el caso de [Punto de información de directiva](/help/concurrency-monitoring/technical/policy-info-pt-versionone.md))
 * Tendrá un **ID de aplicación** único proporcionado por Adobe.
 
 ## Servicio de supervisión de concurrencia {#cm-service-defn}
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Asunto {#subj-defn}
 
-* El consumidor del contenido (vídeo) a través de Internet. Estamos evitando deliberadamente el término _&#x200B;**usuario**&#x200B;_, ya que la Monitorización de concurrencia generalmente trata con los ID de cuenta de MVPD (que involucran a varios usuarios reales que comparten el mismo contrato, por ejemplo, miembros de la familia de un hogar).
+* El consumidor del contenido (vídeo) a través de Internet. Estamos evitando deliberadamente el término _**usuario**_, ya que la Monitorización de concurrencia generalmente trata con los ID de cuenta de MVPD (que involucran a varios usuarios reales que comparten el mismo contrato, por ejemplo, miembros de la familia de un hogar).
 
 * Para cada flujo, el asunto se puede mejorar con atributos relacionados con la persona real que utiliza el servicio, su dispositivo conectado a la red, etc.
 
