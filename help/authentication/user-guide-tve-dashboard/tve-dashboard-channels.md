@@ -2,9 +2,9 @@
 title: Canales
 description: Obtenga información sobre los canales y sus distintas configuraciones dentro del tablero de TVE.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b4276ee12d57bc061d26afc0a192b799fe1681ae
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '1637'
 ht-degree: 0%
 
 ---
@@ -268,7 +268,8 @@ Siga estos pasos para descargar una declaración de software.
 
 ### Esquemas personalizados {#custom-schemes}
 
-Esta pestaña muestra una lista de esquemas personalizados. Para obtener más información relacionada con el uso de esquemas personalizados, consulte [Registro de aplicaciones de iOS/tvOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md).
+Esta pestaña muestra una lista de esquemas personalizados.
+Los esquemas personalizados se pueden utilizar para los dispositivos Android y iOS.
 
 Puede realizar los siguientes cambios en las combinaciones personalizadas:
 
@@ -286,7 +287,38 @@ Siga estos pasos para generar un nuevo esquema personalizado.
 
 Se ha creado un nuevo cambio de configuración y está listo para la actualización del servidor. Para usar el nuevo esquema personalizado que aparece en la sección **Esquemas personalizados**, continúe con el flujo [revisar y enviar cambios](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
-#### Esquemas personalizados heredados {#inherited-custom-schemes}
+#### Si no tiene acceso al Tablero de TVE de Adobe:
+
+Enviar un ticket a <tve-support@adobe.com>. Incluya el ID de canal y alguien de nuestro equipo de asistencia creará un esquema personalizado para usted.
+
+#### ANDROID {#Android}
+
+1. Esquema personalizado: el esquema personalizado creado en el Tablero de TVE se puede utilizar para aplicaciones de dispositivos Android.
+
+1. Agregue el siguiente código en el archivo de recursos de su aplicación `strings.xml`:
+
+```XML
+       <string name="software_statement">softwarestatement value</string>
+       <string name="redirect_uri">adbe.TTIFAaWuR-CmxXv1Di8PlQ://</string>
+```
+
+#### iOS {#iOS}
+
+El esquema personalizado se puede usar en el archivo `info.plist` de la aplicación. Busque el siguiente ejemplo en el que debe añadir la URL generada en el Tablero de TVE:
+
+```plist
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>adbe.u-XFXJeTSDuJiIQs0HVRAg</string> // replace this with your custom scheme
+            </array>
+        </dict>
+    </array>
+```
+
+### Esquemas personalizados heredados {#inherited-custom-schemes}
 
 Las empresas de medios definen estos esquemas personalizados en su propio nivel. Todos los canales asociados con la misma empresa de medios pueden utilizar estos esquemas personalizados.
 
