@@ -2,9 +2,9 @@
 title: 'Encabezado: AP-Partner-Framework-Status'
 description: 'API de REST V2: encabezado - AP-Partner-Framework-Status'
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
+source-git-commit: 22529618db679f7dbfb493906e1aeb4a0443a40c
 workflow-type: tm+mt
-source-wordcount: '404'
+source-wordcount: '415'
 ht-degree: 0%
 
 ---
@@ -70,8 +70,8 @@ El valor `Base64-encoded` del elemento JSON que contiene los atributos siguiente
                   <ul>
                      <li><b>concedido</b><br/>El usuario permitió que la aplicación accediera a la información de suscripción.</li>
                      <li><b>denegado</b><br/>El usuario denegó la aplicación para tener acceso a la información de suscripción.</li>
-                     <li><b>pendiente</b><br/>El usuario aún no ha elegido permitir que la aplicación acceda a la información de suscripción.</li>
-                     <li><b>notDetermined</b><br/>La aplicación no tiene permiso para obtener acceso a la información de suscripción.</li>
+                     <li><b>restringido</b><br/>La aplicación no tiene permiso para obtener acceso a la información de suscripción.</li>
+                     <li><b>notDetermined</b><br/>El usuario no ha elegido si permite que la aplicación acceda a la información de suscripción.</li>
                   </ul>
                </td>
             </tr>
