@@ -2,9 +2,9 @@
 title: Guía de Apple SSO (API REST V2)
 description: Guía de Apple SSO (API REST V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 63ffde4a32f003d7232d2c79ed6878ca59748f74
+source-git-commit: 0be4216ba816ddace095e557f9f61a8a42e1a1ff
 workflow-type: tm+mt
-source-wordcount: '3857'
+source-wordcount: '3908'
 ht-degree: 0%
 
 ---
@@ -196,10 +196,22 @@ Realice los pasos dados para implementar el inicio de sesión único de Apple me
 1. **Recuperar perfiles:** La aplicación de transmisión recopila todos los datos necesarios para recuperar toda la información de perfiles enviando una solicitud al extremo de perfiles.
 
    >[!IMPORTANT]
+   > 
+   > El extremo de la API de REST v2 que **debe** usar en este paso es:
    >
-   > Consulte la documentación de la API [Recuperar perfiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request) para obtener más información sobre lo siguiente:
+   > * API [Recuperar perfiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request)
+   > 
+   > o
+   > 
+   > * [Recuperar perfiles para la API mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md#Request) específica
    >
-   > * Todos los _parámetros necesarios_, como `serviceProvider`
+   > Asegúrese de que **no** utiliza la API [Crear y recuperar perfil mediante la respuesta de autenticación de socio](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) en este paso.
+
+   >[!IMPORTANT]
+   >
+   > Consulte la API [Recuperar perfiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request) o la documentación de la API [Recuperar perfiles para mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md#Request) específicos para obtener más información sobre lo siguiente:
+   >
+   > * Todos los _parámetros necesarios_, como `serviceProvider` (o `mvpd`)
    > * Todos los _encabezados_ necesarios, como `Authorization`, `AP-Device-Identifier` y `AP-Partner-Framework-Status`
    > * Todos los _parámetros y encabezados_ opcionales
    >
