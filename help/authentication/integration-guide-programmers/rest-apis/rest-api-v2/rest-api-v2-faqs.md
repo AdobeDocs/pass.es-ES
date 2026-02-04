@@ -2,7 +2,7 @@
 title: Preguntas frecuentes sobre la API de REST V2
 description: Preguntas frecuentes sobre la API de REST V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 44fa75eb7b19ff44a41809d44c171baff6853b52
+source-git-commit: eaadf0aa7ddc58250e23715b7068d3497a30d258
 workflow-type: tm+mt
 source-wordcount: '11089'
 ht-degree: 1%
@@ -254,7 +254,7 @@ Los extremos básicos de perfiles están diseñados para proporcionar a la aplic
 Cada extremo se adapta a un caso de uso específico, como se indica a continuación:
 
 | API | Descripción | Caso de uso |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--- |--- |--- |
 | [API de extremo de perfiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | Recupere todos los perfiles de usuario. | **El usuario abre la aplicación cliente por primera vez**<br/><br/> En esta situación, la aplicación cliente no tiene el identificador de MVPD seleccionado del usuario en la caché en el almacenamiento persistente.<br/><br/>Como resultado, enviará una única solicitud para recuperar todos los perfiles de usuario disponibles. |
 | [Extremo de perfiles para la API específica de MVPD](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | Recupere el perfil de usuario asociado a un MVPD específico. | **El usuario vuelve a la aplicación cliente después de autenticarse en una visita anterior**<br/><br/> En este caso, la aplicación cliente debe tener el identificador de MVPD seleccionado anteriormente del usuario en la caché en el almacenamiento persistente.<br/><br/>Como resultado, enviará una única solicitud para recuperar el perfil del usuario para ese MVPD específico. |
 | [Extremo de perfiles para la API de código específica (autenticación)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | Recupere el perfil de usuario asociado a un código de autenticación específico. | **El usuario inicia el proceso de autenticación**<br/><br/> En este escenario, la aplicación cliente debe determinar si el usuario ha completado correctamente la autenticación y recuperar su información de perfil.<br/><br/>Como resultado, iniciará un mecanismo de sondeo para recuperar el perfil del usuario asociado al código de autenticación. |
@@ -264,7 +264,7 @@ Para obtener más información, consulte el [flujo de perfiles básicos realizad
 El extremo SSO de perfiles tiene un propósito diferente y proporciona a la aplicación cliente la capacidad de crear un perfil de usuario utilizando la respuesta de autenticación del socio y recuperarlo en una sola operación única.
 
 | API | Descripción | Caso de uso |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --- | --- | --- |
 | [Perfiles de API de extremo SSO](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) | Cree y recupere un perfil de usuario mediante la respuesta de autenticación de socio. | **El usuario permite que la aplicación use el inicio de sesión único del socio para autenticarse**<br/><br/> En este caso, la aplicación cliente debe crear un perfil de usuario después de recibir la respuesta de autenticación del socio y recuperarlo en una única operación única. |
 
 Para cualquier consulta posterior, se deben usar los extremos básicos de perfiles para determinar el estado de autenticación del usuario, acceder a la información de metadatos del usuario, encontrar el método utilizado para autenticarse o la entidad utilizada para proporcionar identidad.
@@ -551,7 +551,7 @@ La decisión de autorización incluye varios atributos de marca de tiempo que pr
 Estas marcas de tiempo describen el periodo de validez de la decisión de autorización general:
 
 | Atributo | Descripción | Notas |
-|-------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-------------|-------------|---------|
 | `notBefore` | Tiempo en milisegundos en el que se emitió la decisión de autorización. | Esto marca el inicio de la ventana de validez de la autorización. |
 | `notAfter` | El tiempo en milisegundos cuando caduca la decisión de autorización. | El [tiempo de vida de la autorización (TTL)](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management) determina cuánto tiempo la autorización sigue siendo válida antes de requerir una nueva autorización. Este TTL se negocia con representantes de MVPD. |
 
