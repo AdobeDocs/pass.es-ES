@@ -18,7 +18,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements).
+> Asegúrese de mantenerse informado sobre los últimos anuncios de productos de autenticación de Adobe Pass y las escalas de tiempo de retirada de servicio agregadas en la página [Anuncios de productos](https://experienceleague.adobe.com/es/docs/pass/authentication/product-announcements).
 
 En esta página se describen las nuevas funciones, los cambios y los problemas conocidos de esta versión:
 
