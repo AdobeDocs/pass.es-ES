@@ -259,7 +259,7 @@ Una vez que el usuario ha seleccionado el MVPD deseado, la aplicación de nivel 
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Disponibilidad:**v 1.0+
+**Disponibilidad:**&#x200B;v 1.0+
 
 **Parámetros:** Ninguno
 
@@ -354,7 +354,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Disponibilidad:**v 1.0+
+**Disponibilidad:**&#x200B;v 1.0+
 
 **Parámetros:** El parámetro `resources` es una matriz de recursos que el usuario ya tiene autorización para ver.
 
@@ -426,7 +426,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Disponibilidad:**v 1.0+
+**Disponibilidad:**&#x200B;v 1.0+
 
 **Parámetros:**
 
