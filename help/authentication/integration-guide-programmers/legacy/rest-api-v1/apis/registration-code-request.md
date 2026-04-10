@@ -2,9 +2,9 @@
 title: Página de registro
 description: Página de registro
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '528'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ Devuelve el código de registro generado aleatoriamente y el URI de la página d
 
 | Extremo | Llamado <br> por | Entrada   <br>Parámetro | Método HTTP <br> | Respuesta | Respuesta HTTP <br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Por ejemplo:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Servicio de programador <br>o<br>de aplicación de streaming | &#x200B;1. solicitante <br>    (Componente de ruta de acceso)<br>2.  deviceId (con hash)   <br>    (Obligatorio)<br>3.  device_info/X-Device-Info (obligatorio)<br>4.  mvpd (opcional)<br>5.  ttl (opcional)<br> | PUBLICAR | XML o JSON que contienen un código de registro y detalles de información o error si no se consigue. Consulte los ejemplos siguientes. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Por ejemplo:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Servicio de programador <br>o<br>de aplicación de streaming | &#x200B;1.  solicitante <br>    (Componente de ruta de acceso)<br>2.  deviceId (con hash)   <br>    (Obligatorio)<br>3.  device_info/X-Device-Info (obligatorio)<br>4.  mvpd (opcional)<br>5.  ttl (opcional)<br> | PUBLICAR | XML o JSON que contienen un código de registro y detalles de información o error si no se consigue. Consulte los ejemplos siguientes. | 201 |
 
 {style="table-layout:auto"}
 
@@ -53,9 +53,9 @@ Devuelve el código de registro generado aleatoriamente y el URI de la página d
 | Aceptar | Encabezado <br> Valor: application/json | indicar qué tipo de contenido debe comprender el cliente |
 | solicitante | Parámetro de consulta | Identificador de solicitante del programador para el que es válida esta operación. |
 | deviceId | Parámetro de consulta | El ID de dispositivo bytes. |
-| device_info/<br>X-Device-Info | device_info: Cuerpo <br> X-Device-Info: Header | Información del dispositivo de streaming.<br>**Nota**: Esto PUEDE pasarse a device_info como parámetro de URL, pero debido al tamaño potencial de este parámetro y a las limitaciones en la longitud de una URL de GET, DEBE pasarse como X-Device-Info en el encabezado http. <br>Ver los detalles completos en [Pasar información de conexión y dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| device_info/<br>X-Device-Info | device_info: Cuerpo <br> X-Device-Info: Header | Información del dispositivo de transmisión.<br>**Nota**: Esto PUEDE pasarse a device_info como parámetro de URL, pero debido al tamaño potencial de este parámetro y a las limitaciones en la longitud de una URL de GET, DEBE pasarse como X-Device-Info en el encabezado http. <br>Ver los detalles completos en [Pasar información de conexión y dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | mvpd | Parámetro de consulta | ID de MVPD para el que es válida esta operación. |
-| ttl | Parámetro de consulta | El tiempo que debe permanecer este código de registro en segundos.<br>**Nota**: el valor máximo permitido para ttl es de 36000 segundos (10 horas). Los valores más altos dan como resultado una respuesta HTTP 400 (solicitud incorrecta). Si `ttl` se deja vacío, la autenticación de Adobe Pass establece un valor predeterminado de 30 minutos. |
+| ttl | Parámetro de consulta | El tiempo que debe permanecer este código de registro en segundos.<br>**Nota**: El valor máximo permitido para ttl es de 36000 segundos (10 horas). Los valores más altos dan como resultado una respuesta HTTP 400 (solicitud incorrecta). Si `ttl` se deja vacío, la autenticación de Adobe Pass establece un valor predeterminado de 30 minutos. |
 | _deviceType_ | Parámetro de consulta | En desuso, no debe utilizarse. |
 | _deviceUser_ | Parámetro de consulta | En desuso, no debe utilizarse. |
 | _appId_ | Parámetro de consulta | En desuso, no debe utilizarse. |
@@ -65,8 +65,7 @@ Devuelve el código de registro generado aleatoriamente y el URI de la página d
 >[!CAUTION]
 >
 >**Dirección IP del dispositivo de transmisión**
-><br>
->En implementaciones de cliente a servidor, la dirección IP del dispositivo de streaming se envía implícitamente con esta llamada.  En implementaciones de servidor a servidor, donde la llamada **regcode** se realiza como servicio de programador y no como dispositivo de transmisión, se requiere el siguiente encabezado para pasar la dirección IP del dispositivo de transmisión:
+><br>>En implementaciones de cliente a servidor, la dirección IP del dispositivo de streaming se envía implícitamente con esta llamada.  En implementaciones de servidor a servidor, donde la llamada **regcode** se realiza como servicio de programador y no como dispositivo de transmisión, se requiere el siguiente encabezado para pasar la dirección IP del dispositivo de transmisión:
 >
 >
 >```
@@ -74,14 +73,13 @@ Devuelve el código de registro generado aleatoriamente y el URI de la página d
 >```
 >
 >donde `<streaming\_device\_ip>` es la dirección IP pública del dispositivo de streaming.
-><br><br>
->Ejemplo :<br>
+><br><br>>Ejemplo :<br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-><br>
+<br>
 
 ### Respuesta JSON
 

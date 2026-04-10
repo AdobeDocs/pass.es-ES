@@ -2,9 +2,9 @@
 title: Referencia de la API de JavaScript SDK
 description: Referencia de la API de JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2883'
+source-wordcount: '2902'
 ht-degree: 0%
 
 ---
@@ -309,7 +309,7 @@ Por ejemplo:
 **Descripción:** Llame a esta función cuando el usuario haya seleccionado un MVPD en la interfaz de usuario de selección de proveedores para enviar la selección de proveedores al Habilitador de acceso o llame a esta función con un parámetro nulo en caso de que el usuario descarte la interfaz de usuario de selección de proveedores sin seleccionar un proveedor.
 
 **Llamadas de retorno
-desencadenó:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+desencadenó:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Debe implementar estas llamadas de retorno para gestionar las respuestas a sus l
 
 **Descripción:** Implemente esta llamada de retorno si el usuario seleccionó un MVPD que requiera un iFrame en el que mostrar su interfaz de usuario de la página de inicio de sesión de autenticación.
 
-**Activado por:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Activado por:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Volver al principio](#top)
 
@@ -531,7 +531,7 @@ Los datos son específicos para cada tipo de evento:
 
 - *inRequestedResourceID*: cadena que proporciona el identificador de recurso que se utilizó en la solicitud de autorización.
 - *inRequestErrorCode*: cadena que muestra el código de error de autenticación de Adobe Pass, indicando el motivo del error; los valores posibles son &quot;Error de usuario no autenticado&quot; y &quot;Error de usuario no autorizado&quot;; para obtener más detalles, vea &quot;Códigos de error de devolución de llamada&quot; a continuación.
-- *inRequestDetailedErrorMessage*: una cadena descriptiva adicional adecuada para mostrar. Si esta cadena descriptiva no está disponible por algún motivo, la autenticación de Adobe Pass enviará una cadena vacía **(&quot;&quot;)**.  MVPD puede utilizarlo para pasar mensajes de error personalizados o mensajes relacionados con ventas. Por ejemplo, si se deniega a un suscriptor la autorización para un recurso, MVPD podría responder con un `*inRequestDetailedErrorMessage*` como: **&quot;Actualmente no tiene acceso a este canal en su paquete. Si desea actualizar el paquete, haga clic \*aquí\*.&quot;** Autenticación de Adobe Pass pasa el mensaje a través de esta devolución de llamada al sitio del programador. A continuación, el programador tiene la opción de mostrarlo u omitirlo. La autenticación de Adobe Pass también puede utilizar `*inRequestDetailedErrorMessage*` para notificar al programador la condición que podría haber provocado un error. Por ejemplo, **&quot;Se produjo un error de red al comunicarse con el servicio de autorización del proveedor&quot;.**
+- *inRequestDetailedErrorMessage*: una cadena descriptiva adicional adecuada para mostrar. Si esta cadena descriptiva no está disponible por algún motivo, la autenticación de Adobe Pass enviará una cadena vacía **(&quot;&quot;)**.  MVPD puede utilizarlo para pasar mensajes de error personalizados o mensajes relacionados con ventas. Por ejemplo, si se deniega a un suscriptor la autorización para un recurso, MVPD podría responder con un `*inRequestDetailedErrorMessage*` como: **&quot;Actualmente no tiene acceso a este canal en su paquete. Si desea actualizar el paquete, haga clic \*aquí\*.&quot;** Autenticación de Adobe Pass pasa el mensaje a través de esta llamada de retorno al sitio del programador. A continuación, el programador tiene la opción de mostrarlo u omitirlo. La autenticación de Adobe Pass también puede utilizar `*inRequestDetailedErrorMessage*` para notificar al programador la condición que podría haber provocado un error. Por ejemplo, **&quot;Se produjo un error de red al comunicarse con el servicio de autorización del proveedor&quot;.**
 
 
 
@@ -568,7 +568,7 @@ Los datos son específicos para cada tipo de evento:
 
 - *key (String)*: Clave de los metadatos para los que se realizó la solicitud.
 - *cifrado (booleano)*: Un indicador que indica si el &quot;valor&quot; está cifrado o no. Si es &quot;true&quot;, &quot;value&quot; será en realidad una representación cifrada con web JSON del valor real.
-- *data (objeto JSON)*: un objeto JSON con la representación de los metadatos. Para las solicitudes simples (&#39;`TTL_AUTHN`&#39;, &#39;`TTL_AUTHZ`&#39;, &#39;`DEVICEID`&#39;), el resultado es una cadena (que representa el TTL de autenticación, el TTL de autorización o el ID de dispositivo). En el caso de una solicitud de metadatos de usuario, el resultado puede ser un objeto primitivo o JSON que represente la carga útil de metadatos. La estructura real de los objetos de metadatos de usuario de JSON es similar a la siguiente:
+- *data (objeto JSON)*: un objeto JSON con la representación de los metadatos.Para solicitudes simples (&#39;`TTL_AUTHN`&#39;, &#39;`TTL_AUTHZ`&#39;, &#39;`DEVICEID`&#39;), el resultado es una cadena (que representa el TTL de autenticación, el TTL de autorización o el ID de dispositivo). En el caso de una solicitud de metadatos de usuario, el resultado puede ser un objeto primitivo o JSON que represente la carga útil de metadatos. La estructura real de los objetos de metadatos de usuario de JSON es similar a la siguiente:
 
 ```JSON
     {
@@ -627,20 +627,20 @@ Por ejemplo:
 ### Códigos de error de devolución {#callback-error-codes}
 
 | Errores genéricos | |
-|:--- | :--- | 
+|:--- | :--- |
 | Error interno | Se ha producido un error del sistema al intentar procesar la solicitud. |
 | Error de proveedor no seleccionado | Se produce cuando el cliente cancela en el cuadro de diálogo de selección de proveedores |
 | Error de proveedor no disponible | Se produce cuando no hay proveedores disponibles. |
 
 | Errores de autenticación | |
-|:--- | :--- | 
+|:--- | :--- |
 | Error de autenticación genérica | Se devuelve cuando el motivo no se conoce o no puede publicarse. |
 | Error de autenticación interna | Se ha producido un error del sistema al intentar autenticarse. |
 | Error de usuario no autenticado | El usuario no está autenticado. |
 | Error de varias solicitudes de autenticación | Se recibieron solicitudes de autenticación adicionales antes de que se completara la primera. |
 
 | Errores de autorización | |
-|:--- | :--- | 
+|:--- | :--- |
 | Error de autorización genérica | Se devuelve cuando el motivo no se conoce o no puede publicarse. |
 | Error de autorización interna | Se ha producido un error del sistema al intentar autorizar. |
 | Error de usuario no autorizado | El cliente no tiene autorización para ver el contenido solicitado. |

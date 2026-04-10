@@ -2,9 +2,9 @@
 title: Referencia de la API del cliente nativo de Amazon FireOS
 description: Referencia de la API del cliente nativo de Amazon FireOS
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '3451'
+source-wordcount: '3498'
 ht-degree: 0%
 
 ---
@@ -68,8 +68,7 @@ Consulte <https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-TV-Native-
 
 | Llamada de API: constructor |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br> |
-| ```public static AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) throws AccessEnablerException``` |
+| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code> AccessEnabler estático público getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) inicia AccessEnablerException </code> |
 
 **Disponibilidad:** v3.0+
 
@@ -159,7 +158,7 @@ fase fallida
 
 ### setOptions {#fire_setOption}
 
-**Descripción:** configura opciones globales de SDK. Acepta **Map\&lt;String, String\>** como argumento. Los valores del mapa se pasan al servidor junto con cada llamada de red que realice SDK.
+**Descripción:** configura opciones globales de SDK. Acepta un **Map\&lt;String, String\>** como argumento. Los valores del mapa se pasan al servidor junto con cada llamada de red que realice SDK.
 
 Los valores se pasan al servidor independientemente del flujo actual (autenticación/autorización). Si desea cambiar los valores, puede llamar a este método en cualquier momento.
 
@@ -260,7 +259,7 @@ Una vez que el usuario ha seleccionado el MVPD deseado, la aplicación de nivel 
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Disponibilidad:**&#x200B;v 1.0+
+**Disponibilidad:**v 1.0+
 
 **Parámetros:** Ninguno
 
@@ -341,7 +340,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 
 **Disponibilidad:** v1.0+
 
-**&lt;Parámetros:** El parámetro `resources` es una matriz de recursos cuya autorización debe comprobarse. Cada elemento de la lista debe ser una cadena que represente el ID de recurso. El id. de recurso está sujeto a las mismas limitaciones que el id. de recurso de la llamada `getAuthorization()`; es decir, debe ser un valor acordado entre el programador y MVPD o un fragmento de RSS multimedia.
+**&lt;Parameters:** El parámetro `resources` es una matriz de recursos para los que se debe comprobar la autorización. Cada elemento de la lista debe ser una cadena que represente el ID de recurso. El id. de recurso está sujeto a las mismas limitaciones que el id. de recurso de la llamada `getAuthorization()`; es decir, debe ser un valor acordado entre el programador y MVPD o un fragmento de RSS multimedia.
 
 **Devolución de llamada desencadenada:** `preauthorizedResources()`
 
@@ -355,7 +354,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Disponibilidad:**&#x200B;v 1.0+
+**Disponibilidad:**v 1.0+
 
 **Parámetros:** El parámetro `resources` es una matriz de recursos que el usuario ya tiene autorización para ver.
 
@@ -427,7 +426,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Disponibilidad:**&#x200B;v 1.0+
+**Disponibilidad:**v 1.0+
 
 **Parámetros:**
 

@@ -2,9 +2,9 @@
 title: Información general sobre supervisión del servicio de derechos
 description: Información general sobre supervisión del servicio de derechos
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '1303'
+source-wordcount: '1349'
 ht-degree: 0%
 
 ---
@@ -44,8 +44,8 @@ La API de ESM no está disponible de forma general.  Póngase en contacto con su
 | Authz-rejected | Número de intentos de autorización considerados maliciosos por el proveedor de servicios de Adobe y rechazados como resultado de una prevención de ataques DoS |
 | authz-latency | Número total de milisegundos empleados en el extremo de MVPD |
 | media-tokens | Número de tokens de medios cortos generados (que se asimilan al número de solicitudes de reproducción) |
-| unique-accounts | Número de usuarios únicos que realizaron acciones de asignación de derechos (AuthN/AuthZ) en el intervalo de tiempo seleccionado. (Esta métrica solo se mostrará si se solicitan valores diarios). </br> Esto se calcula para cada centro de datos individual. Cuando no se solicita la dimensión &quot;dc&quot;, esta métrica no se muestra. |
-| unique-session | Número de sesiones únicas que realizaron llamadas de flujo de autenticación al servicio de autenticación de Adobe Pass dentro del intervalo de tiempo seleccionado. (Esta métrica solo se mostrará si se solicitan valores diarios). </br> Esto se calcula para cada centro de datos individual. Cuando no se solicita la dimensión &quot;dc&quot;, esta métrica no se muestra. |
+| unique-accounts | Número de usuarios únicos que realizaron acciones de asignación de derechos (AuthN/AuthZ) en el intervalo de tiempo seleccionado. (Esta métrica solo se mostrará si se solicitan valores diarios) </br> Esto se calcula para cada centro de datos individual. Cuando no se solicita la dimensión &quot;dc&quot;, esta métrica no se muestra. |
+| unique-session | Número de sesiones únicas que realizaron llamadas de flujo de autenticación al servicio de autenticación de Adobe Pass dentro del intervalo de tiempo seleccionado. (Esta métrica solo se mostrará si se solicitan valores diarios) </br> Esto se calcula para cada centro de datos individual. Cuando no se solicita la dimensión &quot;dc&quot;, esta métrica no se muestra. |
 | count | Un contador simple utilizado en los informes orientados a eventos |
 
 </br>
@@ -71,7 +71,7 @@ La API de ESM no está disponible de forma general.  Póngase en contacto con su
 | bisiesto | El proveedor de autenticación externa cuando el flujo de autenticación se realiza a través de un sistema externo. </br> Los valores pueden ser: </br> - N/D - la autenticación fue proporcionada por la autenticación de Adobe Pass </br> - Apple - el sistema externo que proporcionó la autenticación es Apple |
 | os-family | Sistema operativo en ejecución en el dispositivo |
 | browser-family | Agente de usuario utilizado para acceder a la autenticación de Adobe Pass |
-| cdt | La plataforma del dispositivo (alternativa), utilizada actualmente para Clientes sin conexión. </br> Los valores pueden ser: </br> - N/D - el evento no se originó desde una SDK sin cliente </br> - Desconocido - Dado que el parámetro deviceType de una API sin cliente es opcional, hay llamadas que no contienen ningún valor. </br>: cualquier otro valor enviado a través de la API sin cliente, como xbox, appletv, roku, etc. </br> |
+| cdt | La plataforma del dispositivo (alternativa), utilizada actualmente para Clientes sin conexión. </br>  Los valores pueden ser: </br> - N/D - el evento no se originó desde una SDK sin cliente </br> - Desconocido - Dado que el parámetro deviceType de una API sin cliente es opcional, hay llamadas que no contienen ningún valor. </br>: cualquier otro valor enviado a través de la API sin cliente, como xbox, appletv, roku, etc. </br> |
 | platform-version | La versión de SDK sin cliente |
 | os-type | Sistema operativo en ejecución en el dispositivo, alternativo (no utilizado actualmente) |
 | browser-version | Versión del agente de usuario |
@@ -114,7 +114,7 @@ La API de ESM no está disponible de forma general.  Póngase en contacto con su
 | mvpd | ID de mvpd utilizado para realizar la solicitud de asignación de derechos |
 | requestor-id | ID del solicitante utilizado para realizar la solicitud de asignación de derechos |
 | bisiesto | El proveedor de autenticación externa cuando el flujo de autenticación se realiza a través de un sistema externo. </br> Los valores pueden ser: </br> - N/D - la autenticación fue proporcionada por la autenticación de Adobe Pass </br> - Apple - el sistema externo que proporcionó la autenticación es Apple |
-| cdt | La plataforma del dispositivo (alternativa), utilizada actualmente para Clientes sin conexión. </br> Los valores pueden ser: </br> - N/D - el evento no se originó desde una SDK sin cliente </br> - Desconocido - Dado que el parámetro deviceType de una API sin cliente es opcional, hay llamadas que no contienen ningún valor. </br>: cualquier otro valor enviado a través de la API sin cliente, como xbox, appletv, roku, etc. </br> |
+| cdt | La plataforma del dispositivo (alternativa), utilizada actualmente para Clientes sin conexión. </br>  Los valores pueden ser: </br> - N/D - el evento no se originó desde una SDK sin cliente </br> - Desconocido - Dado que el parámetro deviceType de una API sin cliente es opcional, hay llamadas que no contienen ningún valor. </br>: cualquier otro valor enviado a través de la API sin cliente, como xbox, appletv, roku, etc. </br> |
 | sdk-type | El SDK de cliente utilizado (Flash, HTML5, Android nativo, iOS, Clientless, etc.) |
 | plataforma | El dispositivo identificó la plataforma. Valores posibles: </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - etc |
 | nsdk | El SDK de cliente utilizado (android, fireTV, js, iOS, tvOS, que no es sdk) |

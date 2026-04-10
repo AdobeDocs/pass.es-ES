@@ -2,9 +2,9 @@
 title: Cómo migrar la página de inicio de sesión de MVPD de iFrame a emergente
 description: Cómo migrar la página de inicio de sesión de MVPD de iFrame a emergente
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '712'
 ht-degree: 0%
 
 ---
@@ -22,10 +22,12 @@ ht-degree: 0%
 ## Emergente frente a iFrame {#popup-vs-iframe}
 
 Algunos usuarios han encontrado problemas de cookies de terceros con la implementación de iFrame de una página de inicio de sesión de MVPD.
-<!--These issues are described in the tech notes linked below:
+<!--
+These issues are described in the tech notes linked below:
 
 * [Adobe Pass Authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
-* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
+* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)
+-->
 
 El equipo de autenticación de Adobe Pass **recomienda implementar la página emergente/nueva ventana de inicio de sesión** en lugar de la versión de iFrame en Firefox y Safari.  Sin embargo, si va a implementar una página de inicio de sesión para Internet Explorer, puede encontrar problemas con la implementación emergente. Los problemas de IE se deben al hecho de que, después de que el usuario se autentique con su MVPD en la ventana emergente, la autenticación de Adobe Pass fuerza un redireccionamiento de página principal, que Internet Explorer ve como un bloqueador de ventanas emergentes. El equipo de autenticación de Adobe Pass **recomienda implementar el inicio de sesión de iFrame para Internet Explorer**.
 

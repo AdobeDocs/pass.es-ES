@@ -2,9 +2,9 @@
 title: API de supervisión del servicio de derechos
 description: API de supervisión del servicio de derechos
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2027'
+source-wordcount: '2098'
 ht-degree: 0%
 
 ---
@@ -94,9 +94,9 @@ Están disponibles las siguientes opciones de filtrado:
 
 * Los filtros **IN** se pueden especificar agregando el mismo parámetro de nombre de dimensión varias veces con valores diferentes: dimension=value1\&amp;dimension=value2
 
-* **No es igual a** filtros deben usar &#39;\!&#39; símbolo después del nombre de dimensión que genera &#39;\!=&#39; &quot;operator&quot;: dimension\!=valor
+* **No es igual a** filtros deben usar el símbolo &#39;\!&#39; después del nombre de dimensión que resulta en &#39;\!=&#39; &quot;operator&quot;: dimension\!=value
 
-* **NO EN** filtros requieren &#39;\!operador =&#39; que se va a utilizar varias veces, una vez para cada valor del conjunto: dimensión\!=valor1\&amp;dimensión\!=valor2&amp;...
+* Los filtros **NOT IN** requieren que el operador &#39;\!=&#39; se use varias veces, una vez para cada valor del conjunto: dimension\!=value1\&amp;dimension\!=value2&amp;...
 
 También existe un uso especial para los nombres de dimensión en la cadena de consulta: Si el nombre de dimensión se utiliza como parámetro de cadena de consulta sin valor, se indica a la API que devuelva una proyección que incluya esa dimensión en el informe.
 
@@ -106,8 +106,8 @@ También existe un uso especial para los nombres de dimensión en la cadena de c
 |---|---|
 | /dimension1/dimension2/dimension3?dimension1=value1 | SELECT * desde la proyección WHERE dimensión1 = &#39;valor1&#39; </br> GROUP BY dimensión1, dimensión2, dimensión3 |
 | /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * desde la proyección WHERE dimensión1 IN (&#39;valor1&#39;, &#39;valor2&#39;) </br> GROUP BY dimensión1, dimensión2, dimensión3 |
-| /dimension1/dimension2/dimension3?dimension1!=valor1 | SELECT * desde proyección WHERE dimensión1 &lt;> &#39;valor1&#39; | </br> AGRUPAR POR dimensión1, dimensión2, dimensión3 |
-| /dimension1/dimension2/dimension3?dimension1!=valor1&amp;dimensión2!=valor2 | SELECT * desde proyección WHERE dimensión1 NOT IN (&#39;valor1&#39;, &#39;valor2&#39;) | </br> AGRUPAR POR dimensión1, dimensión2, dimensión3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * desde la proyección WHERE dimensión1 &lt;> &#39;valor1&#39; \| </br> GROUP BY dimensión1, dimensión2, dimensión3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1&amp;dimension2!=value2 | SELECT * desde la proyección WHERE dimensión1 NOT IN (&#39;valor1&#39;, &#39;valor2&#39;) \| </br> GROUP BY dimensión1, dimensión2, dimensión3 |
 | Suponiendo que no hay una ruta de acceso directa: /dimension1/dimension3 </br> pero hay una ruta de acceso: /dimension1/dimension2/dimension3 </br> </br> /dimension1?dimension3 | SELECT * desde la proyección GROUP BY dimensión1, dimensión3 |
 
 >[!NOTE]

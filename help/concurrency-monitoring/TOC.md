@@ -4,17 +4,17 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Monitorización de la concurrencia de Adobe Pass
 user-guide-description: Aprenda a definir y aplicar límites en el uso simultáneo en varias aplicaciones.
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '276'
-ht-degree: 5%
+source-wordcount: '252'
+ht-degree: 6%
 
 ---
 
 
 # Ayuda de supervisión de concurrencia de Adobe Pass {#cm}
 
-- [Introducción de CM](cm-home.md) {#cm-intro}
+- [Introducción a CM](cm-home.md)
 - Primeros pasos {#getting-started}
    - [Introducción a la monitorización de concurrencia](getting-started/getting-started-overview.md)
    - [Conceptos clave](getting-started/key-concepts.md)
@@ -34,7 +34,7 @@ ht-degree: 5%
    - [Modelos de implementación](technical/implementation-models.md)
    - [Directiva de inquilino único Varias aplicaciones](technical/single-tenant-policy-mult-app.md)
    - [Restringir el uso simultáneo de varias aplicaciones](technical/restrict-concurr-usage-mult-apps.md)
-- [Informes de uso de CM](reports/cm-usage-reports.md) {#cm-usage-reports}
+- [Informes de uso de CM](reports/cm-usage-reports.md)
 - Notas técnicas {#tech-notes}
    - [Atributos de metadatos estándar](technical/standard-metadata-attributes.md)
    - [Metadatos personalizados](technical/custom-metadata.md)
@@ -72,4 +72,4 @@ ht-degree: 5%
    - [Monitorización de la concurrencia: Notas de la versión 2.5.0](releases/rn-cm-250.md)
    - [Monitorización de la concurrencia: Notas de la versión 2.3.2](releases/rn-cm-232.md)
    - [Monitorización de la concurrencia: Notas de la versión 2.2.2](releases/rn-cm-222.md)
-- [Procedimientos de soporte](support/cm-escalation-procedures.md) {#support-procedures}
+- [Procedimientos de apoyo](support/cm-escalation-procedures.md)
