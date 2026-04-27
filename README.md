@@ -1,8 +1,8 @@
 ---
 source-git-commit: e1fcfc03f1084e9159a73ad4e18b864d796bff3c
 workflow-type: tm+mt
-source-wordcount: '483'
-ht-degree: 5%
+source-wordcount: '521'
+ht-degree: 0%
 
 ---
 # Artículo de Contribute
@@ -11,7 +11,7 @@ Agradecemos las contribuciones de nuestra comunidad, así como de los empleados 
 
 ## Código de conducta de Adobe Open Source
 
-Este proyecto ha adoptado el [Código de conducta de código abierto de Adobe](code-of-conduct.md) o el [Código de conducta de la Fundación .NET](https://dotnetfoundation.org/code-of-conduct). Para obtener más información, consulte el artículo [Colaboración](contributing.md).
+Este proyecto ha adoptado el [Código de conducta de Adobe Open Source](code-of-conduct.md) o el Código de conducta de [.NET Foundation](https://dotnetfoundation.org/code-of-conduct). Para obtener más información, consulte el artículo [Contribución](contributing.md).
 
 ## Cómo contribuir al contenido de Adobe
 
@@ -29,7 +29,7 @@ Si va a contribuir con una actualización menor:
 1. En la sección &quot;¿Fue útil este contenido?&quot; titular que aparece en la parte inferior de la ventana del explorador, haga clic en **Opciones de comentarios detalladas**.
 1. Haga clic en **Sugerir una edición** y envíe una solicitud de extracción (PR) con sus cambios en la interfaz de usuario de GitHub.
 
-   Para obtener más información, consulte la [guía para colaboradores de Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=es).
+   Para obtener más información, consulte la [guía para colaboradores de Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
 
 Las correcciones o aclaraciones menores que envíe para la documentación y los ejemplos de código en este repositorio están sujetos a las condiciones de uso de Adobe.
 
@@ -43,7 +43,7 @@ Si forma parte de la comunidad de Adobe y desea crear un nuevo tema o enviar cam
 
 Los colaboradores de la comunidad pueden utilizar la interfaz de usuario de GitHub para la edición básica o bifurcar el repositorio para realizar contribuciones importantes.
 
-Consulte la [Guía para colaboradores de Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=es) para obtener más información.
+Consulte la [Guía para colaboradores de Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) para obtener más información.
 
 ## Colaboradores internos
 
@@ -53,7 +53,7 @@ Si es redactor técnico, administrador de programa o desarrollador del equipo de
 
 Todos los artículos de este repositorio utilizan Markdown de GitHub. Si no está familiarizado con Markdown, consulte:
 
-* [Conceptos básicos de Markdown](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)
+* [Fundamentos de marcado](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)
 * [Hoja de trucos de markdown imprimible](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
 
 ## Etiquetas
