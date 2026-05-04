@@ -1,5 +1,5 @@
 ---
-source-git-commit: e1fcfc03f1084e9159a73ad4e18b864d796bff3c
+source-git-commit: 8d0633f64edecfacc3569d91931a204fac2d5e44
 workflow-type: tm+mt
 source-wordcount: '521'
 ht-degree: 0%
@@ -8,6 +8,7 @@ ht-degree: 0%
 # Artículo de Contribute
 
 Agradecemos las contribuciones de nuestra comunidad, así como de los empleados de Adobe ajenos a los equipos de documentación.
+
 
 ## Código de conducta de Adobe Open Source
 
@@ -29,7 +30,7 @@ Si va a contribuir con una actualización menor:
 1. En la sección &quot;¿Fue útil este contenido?&quot; titular que aparece en la parte inferior de la ventana del explorador, haga clic en **Opciones de comentarios detalladas**.
 1. Haga clic en **Sugerir una edición** y envíe una solicitud de extracción (PR) con sus cambios en la interfaz de usuario de GitHub.
 
-   Para obtener más información, consulte la [guía para colaboradores de Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=es).
+   Para obtener más información, consulte la [guía para colaboradores de Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
 
 Las correcciones o aclaraciones menores que envíe para la documentación y los ejemplos de código en este repositorio están sujetos a las condiciones de uso de Adobe.
 
@@ -43,7 +44,7 @@ Si forma parte de la comunidad de Adobe y desea crear un nuevo tema o enviar cam
 
 Los colaboradores de la comunidad pueden utilizar la interfaz de usuario de GitHub para la edición básica o bifurcar el repositorio para realizar contribuciones importantes.
 
-Consulte la [Guía para colaboradores de Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=es) para obtener más información.
+Consulte la [Guía para colaboradores de Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) para obtener más información.
 
 ## Colaboradores internos
 
