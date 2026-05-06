@@ -5,9 +5,9 @@ audience: end-user
 user-guide-title: Monitorización de la concurrencia de Adobe Pass
 user-guide-description: Aprenda a definir y aplicar límites en el uso simultáneo en varias aplicaciones.
 nudge: true
-source-git-commit: e02007a3ec5bd581f84c887ac50249009a2121fd
+source-git-commit: 80ffef1e8e0cfb3752c01e155854f7d87dfa134c
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '257'
 ht-degree: 6%
 
 ---
@@ -45,6 +45,7 @@ ht-degree: 6%
    - [Cómo distinguir entre VOD y contenido en directo en la monitorización de concurrencia](technical/vod-live-dist.md)
    - [Política de retención de datos](technical/data-retention-policy.md)
 - Versiones {#cm-release-notes}
+   - [Monitorización de concurrencia: notas de la versión 4.0.1](releases/rn-cm-services-401.md)
    - [Monitorización de concurrencia: notas de la versión 3.6.2](releases/rn-cm-services-362.md)
    - [Monitorización de concurrencia: notas de la versión 3.6.1](releases/rn-cm-services-361.md)
    - [Monitorización de concurrencia: notas de la versión 3.6.0](releases/rn-cm-services-360.md)
