@@ -1,13 +1,13 @@
 ---
 title: Conceptos clave
 description: Conozca los conceptos fundamentales de la Monitorización de concurrencia, incluidas las sesiones, las políticas, los metadatos y mucho más
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 9721055a-70e6-4ba1-a1e0-04406eec25e6
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
-
 
 # Conceptos clave {#key-concepts}
 
@@ -269,4 +269,3 @@ Tenant: "Streaming Company"
 | **FIFO** | Resolución de conflictos de primera entrada y primera salida |
 | **inquilino** | Aplicaciones propietarias de organización |
 | **Aplicación** | Programa de software que utiliza CM |
-
