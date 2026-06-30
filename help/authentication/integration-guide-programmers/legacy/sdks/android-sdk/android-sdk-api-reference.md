@@ -2,9 +2,9 @@
 title: Referencia de la API de Android SDK
 description: Referencia de la API de Android SDK
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '4560'
+source-wordcount: '4628'
 ht-degree: 0%
 
 ---
@@ -92,13 +92,13 @@ Si se proporciona un valor para el parámetro *urls*, la llamada de red resultan
 
 | Llamada de API: configuración del solicitante |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 **Disponibilidad:** v3.0+
 
 | Llamada de API: configuración del solicitante |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilidad:** v3.0+
 
@@ -161,7 +161,7 @@ Los valores se pasan al servidor independientemente del flujo actual (autenticac
 
 - *options*: un mapa&lt;String, String> que contiene las opciones globales de SDK. Actualmente están disponibles las siguientes opciones:
    - **applicationProfile**: se puede usar para realizar configuraciones de servidor basadas en este valor.
-   - **ap_vi** - El Experience Cloud ID (visitorID). Este valor puede utilizarse posteriormente en informes de análisis avanzados.
+   - **ap_vi** - Experience Cloud ID (visitorID). Este valor puede utilizarse posteriormente en informes de análisis avanzados.
    - **ap_ai** - El Advertising ID
    - **device_info** - Información del cliente como se describe aquí: [Pasar la conexión y aplicación del dispositivo con información del cliente](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
 
@@ -232,9 +232,7 @@ Una vez que el usuario ha seleccionado el MVPD deseado, la aplicación de nivel 
 
 >[!NOTE]
 >
-> Cancelación del flujo de autenticación
-> </br></br>
-> Tenga en cuenta que este es un punto en el que el usuario tiene la capacidad de pulsar el botón &quot;Atrás&quot;, lo que equivale a anular el flujo de autenticación. En este caso, la aplicación debe llamar al método `setSelectedProvider()` y pasar *null* como parámetro para que el Habilitador de acceso pueda restablecer su equipo de estado de autenticación.
+> Cancelación del flujo de autenticaciónTenga en cuenta que este es un punto en el que el usuario tiene la capacidad de pulsar el botón &quot;Atrás&quot;, lo que equivale a anular el flujo de autenticación. En este caso, la aplicación debe llamar al método `setSelectedProvider()` y pasar *null* como parámetro para que el Habilitador de acceso pueda restablecer su equipo de estado de autenticación.
 
 | Llamada de retorno: muestra la IU de selección de MVPD |
 | --- |
@@ -493,7 +491,7 @@ El parámetro `cache` especifica si se puede utilizar o no la respuesta de preau
 
 | Callback: error del flujo de autorización |
 | --- |
-| public void tokenRequestFailed(String resourceId, <br>        Cadena errorCode, Cadena errorDescription) |
+| public void tokenRequestFailed(String resourceId, <br> String errorCode, String errorDescription) |
 
 **Disponibilidad:** v1.0+
 
@@ -624,7 +622,7 @@ Hay dos tipos de metadatos disponibles para los programadores:
 
 | Callback: resultado de la solicitud de recuperación de metadatos |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **Disponibilidad:** v1.0+
 
@@ -688,7 +686,7 @@ Este valor es nulo cuando se realizó la solicitud de metadatos simples (TTL de 
 
 | Llamada de API: obtener la versión de AccessEnabler |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 
 [Volver a la API de Android...](#api)
@@ -727,7 +725,7 @@ El activador de acceso déclencheur una llamada de retorno adicional que no est�
 
 | Callback: seguimiento de eventos |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **Disponibilidad:** v1.0+
 
@@ -739,7 +737,7 @@ El activador de acceso déclencheur una llamada de retorno adicional que no est�
    - **mvpdSelection:** cuando el usuario selecciona un MVPD en el formulario de selección de MVPD (el tipo de evento es `EVENT_MVPD_SELECTION`)
 - *datos*: datos adicionales asociados al evento del que se informó. Estos datos se presentan en forma de lista de valores.
 
-A continuación se proporcionan instrucciones para interpretar los valores de *data*
+A continuación se proporcionan instrucciones para interpretar los valores de los datos **
 matriz:
 
 - Para el tipo de evento *`EVENT_AUTHN_DETECTION`:*

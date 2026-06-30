@@ -2,10 +2,10 @@
 title: Android SDK con registro dinámico de clientes
 description: Android SDK con registro dinámico de clientes
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1301'
-ht-degree: 0%
+source-wordcount: '1321'
+ht-degree: 1%
 
 ---
 
@@ -53,7 +53,7 @@ Vea [este seminario web](https://my.adobeconnect.com/pzkp8ujrigg1/) que proporci
 
 | Llamada de API: constructor |
 | --- |
-| public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        inicia AccessEnablerException |
+| public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> inicia AccessEnablerException |
 
 
 **Disponibilidad:** v3.0+
@@ -64,8 +64,7 @@ Vea [este seminario web](https://my.adobeconnect.com/pzkp8ujrigg1/) que proporci
 - softwareStatement: valor obtenido del Tablero de TVE o *null* si &quot;software\_statement&quot; está establecido en strings.xml
 - redirectUrl : url única, uno de los dominios en orden inverso que se agregó explícitamente en el Tablero de TVE o *null* si &quot;redirect\_uri&quot; está establecido en strings.xml
 
-Nota: si softwareStatement o redirectUrl no son válidos, la aplicación no se inicializará AccessEnabler o no se registrará para la autenticación y autorización de Adobe Pass
-</br>
+Nota: si softwareStatement o redirectUrl no son válidos, la aplicación no se inicializará AccessEnabler o no se registrará para la autenticación y autorización de Adobe Pass</br>
 Nota : el parámetro redirectUrl o redirect\_uri en strings.xml debe ser el valor del dominio agregado en el Tablero de TVE para la aplicación en orden inverso ( por ejemplo: para el dominio &quot;adobe.com&quot; agregado en el Tablero de TVE, redirectUrl debe ser &quot;com.adobe&quot;.
 
 
@@ -81,13 +80,13 @@ Si se proporciona un valor para el parámetro *urls*, la llamada de red resultan
 
 | Llamada de API: configuración del solicitante |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 **Disponibilidad:** v3.0+
 
 | Llamada de API: configuración del solicitante |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilidad:** v3.0+
 
@@ -114,14 +113,14 @@ Obsoleto:
 
 **Parámetros:** Ninguno
 
-**Llamadas de retorno activadas:** `setAuthenticationStatus()`
-</br></br>
+**Llamadas de retorno activadas:** 
+
 
 ## Flujo de implementación del programador {#Progr}
 
 ### **1. Registrar aplicación**
 
-a. Obtenga software\_statement y redirect\_uri de Adobe Pass ( Tablero de TVE )
+a. Obtenga software\_statement y redirect\_uri de Adobe Pass ( TVE Dashboard )
 
 b. Existen dos opciones para pasar estos valores a Adobe Pass SDK:
 
@@ -136,7 +135,7 @@ Llamar a AccessEnabler.getInstance(appContext,softwareStatement,
 redirectUrl)
 
 
-### &#x200B;2. Configurar la aplicación
+### &#x200B;2. Configurar aplicación
 
 a. setRequestor(solicitante\_id)
 
@@ -179,7 +178,7 @@ e. get/checkAuthorization : SDK incluirá **access_token** en el encabezado como
 - si la autorización es correcta, se realizará una llamada para obtener la
 token de medios
 
-f. cierre de sesión:
+f. cierre de sesión :
 
 - SDK eliminará el token válido para el solicitante actual (las autenticaciones obtenidas por otras aplicaciones y no a través de SSO seguirán siendo válidas)
 - SDK abrirá las fichas personalizadas de Chrome para llegar al extremo de cierre de sesión de mvpd_id. Una vez finalizado, se cerrarán las fichas personalizadas de Chrome

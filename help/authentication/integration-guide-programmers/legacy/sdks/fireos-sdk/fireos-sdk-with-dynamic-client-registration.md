@@ -2,10 +2,10 @@
 title: Amazon FireOS SDK con registro de cliente dinámico
 description: Amazon FireOS SDK con registro de cliente dinámico
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1169'
-ht-degree: 0%
+source-wordcount: '1185'
+ht-degree: 1%
 
 ---
 
@@ -37,7 +37,7 @@ FireOS AccessEnabler SDK para FireTV se modificó para habilitar la autenticaci�
 
 | Llamada de API: constructor |
 | --- |
-| public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        inicia AccessEnablerException |
+| public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> inicia AccessEnablerException |
 
 **Disponibilidad:** v3.0+
 
@@ -70,7 +70,7 @@ Si se proporciona un valor para el parámetro *urls*, la llamada de red resultan
 
 | Llamada de API: configuración del solicitante |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilidad:** v3.0+
 
@@ -119,7 +119,7 @@ Obsoleto:
 
 ### **2. Configurar aplicación**
 
-- a. setRequestor(solicitante\_id)
+- a.  setRequestor(solicitante\_id)
 
   SDK realizará las siguientes operaciones:
 
@@ -152,11 +152,11 @@ Obsoleto:
    - inicio de sesión cancelado : restablecer selección de MVPD
    - El esquema URL se establece como &quot;adobepass://android.app&quot; para capturar cuándo se completa la autenticación
 
-- e. get/checkAuthorization : SDK incluirá **access\_token &#x200B;** en el encabezado como Autorización: Portador **access\_token**
+- e. get/checkAuthorization : SDK incluirá **access\_token** en el encabezado como Autorización: Portador **access\_token**
 
 - si la autorización se realiza correctamente, se realizará una llamada para obtener el token de medios
 
-- f. cierre de sesión:
+- f. cierre de sesión :
 
    - SDK eliminará el token válido para el solicitante actual (las autenticaciones obtenidas por otras aplicaciones y no a través de SSO seguirán siendo válidas)
    - SDK abrirá las fichas personalizadas de Chrome para llegar al extremo de cierre de sesión de mvpd\_id. Una vez finalizado, se cerrarán las fichas personalizadas de Chrome
