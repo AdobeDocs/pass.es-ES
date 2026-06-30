@@ -2,9 +2,9 @@
 title: Referencia de la API del cliente nativo de Amazon FireOS
 description: Referencia de la API del cliente nativo de Amazon FireOS
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '3498'
+source-wordcount: '3519'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ Consulte <https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-TV-Native-
 
 | Llamada de API: constructor |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code> AccessEnabler estático público getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) inicia AccessEnablerException </code> |
+| <code>public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> lanza AccessEnablerException<br><br> public static AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) lanza AccessEnablerException </code> |
 
 **Disponibilidad:** v3.0+
 
@@ -100,7 +100,7 @@ Si se proporciona un valor para el parámetro *urls*, la llamada de red resultan
 
 | Llamada de API: configuración del solicitante |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 
 **Disponibilidad:** v3.0+
@@ -108,7 +108,7 @@ Si se proporciona un valor para el parámetro *urls*, la llamada de red resultan
 
 | Llamada de API: configuración del solicitante |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilidad:** v3.0+
 
@@ -139,7 +139,7 @@ Si se proporciona un valor para el parámetro *urls*, la llamada de red resultan
 
 | Llamada de retorno: configuración del solicitante completa |
 | --- |
-| ```public void setRequestorComplete(int status)``` |
+| `public void setRequestorComplete(int status)` |
 
 **Disponibilidad:** v1.0+
 
@@ -158,7 +158,7 @@ fase fallida
 
 ### setOptions {#fire_setOption}
 
-**Descripción:** configura opciones globales de SDK. Acepta un **Map\&lt;String, String\>** como argumento. Los valores del mapa se pasan al servidor junto con cada llamada de red que realice SDK.
+**Descripción:** configura opciones globales de SDK. Acepta **Map\&lt;String, String\>** como argumento. Los valores del mapa se pasan al servidor junto con cada llamada de red que realice SDK.
 
 Los valores se pasan al servidor independientemente del flujo actual (autenticación/autorización). Si desea cambiar los valores, puede llamar a este método en cualquier momento.
 
@@ -166,7 +166,7 @@ Los valores se pasan al servidor independientemente del flujo actual (autenticac
 
 | Llamada de API: setOptions |
 | --- |
-| ```public void setOptions(HashMap<String,String> options)``` |
+| `public void setOptions(HashMap<String,String> options)` |
 
 **Disponibilidad:** v3.0+
 
@@ -187,7 +187,7 @@ Si una MVPD admite la función &quot;Autenticación por solicitante&quot;, se pu
 
 | Llamada de API: comprobar el estado de autenticación |
 | --- |
-| ```public void checkAuthentication()``` |
+| `public void checkAuthentication()` |
 
 **Disponibilidad:** v1.0+
 
@@ -210,13 +210,13 @@ Por último, el estado de autenticación se comunica a la aplicación a través 
 
 | Llamada de API: inicia el flujo de autenticación |
 | --- |
-| ```public void getAuthentication()``` |
+| `public void getAuthentication()` |
 
 **Disponibilidad:** v1.0+
 
 | Llamada de API: inicia el flujo de autenticación |
 | --- |
-| ```public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)``` |
+| `public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)` |
 
 **Disponibilidad:** v1.0+
 
@@ -238,7 +238,7 @@ Una vez que el usuario ha seleccionado el MVPD deseado, la aplicación de nivel 
 
 | **Llamada de retorno: mostrar la IU de selección de MVPD** |
 | --- |
-| ```public void displayProviderDialog(ArrayList<Mvpd> mvpds)``` |
+| `public void displayProviderDialog(ArrayList<Mvpd> mvpds)` |
 
 **Disponibilidad:** v1.0+
 
@@ -256,15 +256,15 @@ Una vez que el usuario ha seleccionado el MVPD deseado, la aplicación de nivel 
 
 | **Llamada de API: establece el proveedor seleccionado actualmente** |
 | --- |
-| ```public void setSelectedProvider(String mvpdId)``` |
+| `public void setSelectedProvider(String mvpdId)` |
 
 
 **Disponibilidad:**&#x200B;v 1.0+
 
 **Parámetros:** Ninguno
 
-**Llamadas de retorno activadas:** `setAuthenticationStatus(), sendTrackingData()`
-</br>
+**Llamadas de retorno activadas:** 
+
 
 ### navigationToUrl {#navigagteToUrl}
 
@@ -272,7 +272,7 @@ Una vez que el usuario ha seleccionado el MVPD deseado, la aplicación de nivel 
 
 | **Llamada de retorno: mostrar la página de inicio de sesión de MVPD** |
 | --- |
-| ```public void navigateToUrl(String url)``` |
+| `public void navigateToUrl(String url)` |
 
 **Disponibilidad:** v1.0+
 
@@ -290,7 +290,7 @@ Una vez que el usuario ha seleccionado el MVPD deseado, la aplicación de nivel 
 
 | **llamada API: recuperar el token de autenticación** |
 | --- |
-| ```public void getAuthenticationToken(String cookies)``` |
+| `public void getAuthenticationToken(String cookies)` |
 
 **Disponibilidad:** v1.0+
 
@@ -310,7 +310,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 
 | **Llamada de retorno: informar del estado del flujo de autenticación** |
 | --- |
-| ```public void setAuthenticationStatus(int status, String errorCode)``` |
+| `public void setAuthenticationStatus(int status, String errorCode)` |
 
 **Disponibilidad:** v1.0+
 
@@ -336,7 +336,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 
 | **Llamada de API: establece el proveedor seleccionado actualmente** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **Disponibilidad:** v1.0+
 
@@ -352,7 +352,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 
 | **Llamada de API: establece el proveedor seleccionado actualmente** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **Disponibilidad:**&#x200B;v 1.0+
 
@@ -368,13 +368,13 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 
 | **Llamada de API: compruebe el estado de autorización** |
 | --- |
-| ```public void checkAuthorization(String resourceId)``` |
+| `public void checkAuthorization(String resourceId)` |
 
 **Disponibilidad:** v1.0+
 
 | **Llamada de API: compruebe el estado de autorización** |
 | --- |
-| ```public void checkAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void checkAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **Disponibilidad:** v1.0+
 
@@ -393,13 +393,13 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 
 | **Llamada de API: inicia el flujo de autorización** |
 | --- |
-| ```public void getAuthorization(String resourceId)``` |
+| `public void getAuthorization(String resourceId)` |
 
 **Disponibilidad:** v1.0+
 
 | **Llamada de API: inicia el flujo de autorización** |
 | --- |
-| ```public void getAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void getAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **Disponibilidad:** v1.0+
 
@@ -424,7 +424,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 
 | **Llamada de retorno: flujo de autorización completado correctamente** |
 | --- |
-| ```public void setToken(String token, String resourceId)``` |
+| `public void setToken(String token, String resourceId)` |
 
 **Disponibilidad:**&#x200B;v 1.0+
 
@@ -443,7 +443,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 
 | **Llamada de retorno: error en el flujo de autorización** |
 | --- |
-| ```public void tokenRequestFailed(String resourceId, <br>        String errorCode, String errorDescription)``` |
+| <code>public void tokenRequestFailed(String resourceId, <br> String errorCode, String errorDescription)</code> |
 
 **Disponibilidad:** v1.0+
 
@@ -464,7 +464,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 
 | **Llamada de API: inicia el flujo de cierre de sesión** |
 | --- |
-| ```public void logout()``` |
+| `public void logout()` |
 
 **Disponibilidad:** v1.0+
 
@@ -480,7 +480,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 
 | **Llamada de API: determina la MVPD seleccionada actualmente** |
 | --- |
-| ```public void getSelectedProvider()``` |
+| `public void getSelectedProvider()` |
 
 **Disponibilidad:** v1.0+
 
@@ -496,7 +496,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 
 | **Llamada de retorno: información sobre el MVPD seleccionado actualmente** |
 | --- |
-| ```public void selectedProvider(Mvpd mvpd)``` |
+| `public void selectedProvider(Mvpd mvpd)` |
 
 **Disponibilidad:** v1.0+
 
@@ -514,7 +514,7 @@ Esta llamada de retorno también indica cuándo se ha completado el flujo de cie
 
 | **Llamada de API: consulta al AccessEnabler para obtener metadatos** |
 | --- |
-| ```public void getMetadata(MetadataKey metadataKey)``` |
+| `public void getMetadata(MetadataKey metadataKey)` |
 
 **Disponibilidad:** v1.0+
 
@@ -550,7 +550,7 @@ Los metadatos de usuario reales disponibles para un programador dependen de lo q
 
 | **Llamada de retorno: resultado de la solicitud de recuperación de metadatos** |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **Disponibilidad:** v1.0+
 
@@ -612,7 +612,7 @@ Este valor es nulo cuando se realizó la solicitud de metadatos simples (TTL de 
 
 | **Llamada de API: obtener la versión de AccessEnabler** |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 ## Seguimiento de eventos {#tracking}
 
@@ -643,7 +643,7 @@ El activador de acceso déclencheur una llamada de retorno adicional que no est�
 
 | Callback: seguimiento de eventos |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **Disponibilidad:** v1.0+
 
