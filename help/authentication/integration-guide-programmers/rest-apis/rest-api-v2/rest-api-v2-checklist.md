@@ -4,7 +4,7 @@ description: Lista de comprobación de API de REST V2
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
 source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2563'
+source-wordcount: '2578'
 ht-degree: 0%
 
 ---
@@ -111,7 +111,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    <tr>
       <td style="background-color: #DEEBFF;"><i>Recuperación de decisiones de preautorización</i></td>
       <td>Utilice decisiones de autorización previa para el filtrado de contenido, nunca para las decisiones de reproducción.</td>
-      <td>Corre el riesgo de incumplir los acuerdos contractuales entre el programador, las MVPD y Adobe.<br/><br/>Riesgos que se saltan nuestros sistemas de monitoreo y alerta.</td>
+      <td>Se arriesga a violar los acuerdos contractuales entre el programador, las MVPD y Adobe.<br/><br/>Se corre el riesgo de saltarse nuestros sistemas de monitoreo y alerta.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Reintento de recuperación de decisiones de preautorización</i></td>
@@ -136,7 +136,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    <tr>
       <td style="background-color: #DEEBFF;"><i>Recuperación de decisiones de autorización</i></td>
       <td>Obtener decisiones de autorización antes de la reproducción, independientemente de si existe una decisión de preautorización.<br/><br/>Permita que los flujos continúen sin interrupciones aunque el token de medios caduque durante la reproducción y solicite una nueva decisión de autorización que contenga un token de medios (nuevo) cuando el usuario realice su siguiente solicitud de reproducción, independientemente de si es para el mismo recurso o para uno diferente.<br/><br/>Las transmisiones en vivo que se ejecuten por períodos prolongados de tiempo pueden optar por solicitar una nueva decisión de autorización después de las operaciones de vídeo como pausar contenido, iniciar pausas comerciales o modificar configuraciones de nivel de recursos cuando el MRSS experimenta cambios.</td>
-      <td>Corre el riesgo de incumplir los acuerdos contractuales entre el programador, las MVPD y Adobe.<br/><br/>Riesgos que se saltan nuestros sistemas de monitoreo y alerta.</td>
+      <td>Se arriesga a violar los acuerdos contractuales entre el programador, las MVPD y Adobe.<br/><br/>Se corre el riesgo de saltarse nuestros sistemas de monitoreo y alerta.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Reintento de recuperación de decisiones de autorización</i></td>
@@ -145,7 +145,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### &#x200B;6. Fase de cierre {#mandatory-requirements-logout-phase}
+### &#x200B;6. Fase de cierre de sesión {#mandatory-requirements-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -181,7 +181,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    <tr>
       <td style="background-color: #DEEBFF;"><i>Enviar encabezado X-Device-Info</i></td>
       <td>Envíe el encabezado <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> para cada solicitud de API de REST v2.<br/><br/>Incluso cuando la solicitud se origina desde un servidor en nombre de un dispositivo, el valor del encabezado X-Device-Info debe reflejar la información real del dispositivo de flujo continuo.</td>
-      <td>Los riesgos se clasifican como procedentes de una plataforma desconocida y se tratan como inseguros, y se someten a reglas más restrictivas, como TTL de autenticación más cortos.<br/><br/>Además, algunos campos, como el dispositivo de transmisión connectionIp y connectionPort, son obligatorios para características como la autenticación de base de inicio de Spectrum.</td>
+      <td>Se corre el riesgo de clasificarse como originario de una plataforma desconocida y de tratarse como inseguro, y de estar sujeto a reglas más restrictivas, como TTL de autenticación más cortos.<br/><br/>Además, algunos campos, como el dispositivo de transmisión connectionIp y connectionPort, son obligatorios para características como la autenticación de base de inicio de Spectrum.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Identificador de dispositivo estable</i></td>
@@ -195,7 +195,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### &#x200B;8. Gestión de errores {#mandatory-requirements-error-handling}
+### &#x200B;8. Control de errores {#mandatory-requirements-error-handling}
 
 <table style="table-layout:auto">
    <tr>
@@ -322,7 +322,7 @@ El seguimiento de este documento debe considerarse parte de los criterios de ace
    </tr>
 </table>
 
-### &#x200B;6. Fase de cierre {#recommended-practices-logout-phase}
+### &#x200B;6. Fase de cierre de sesión {#recommended-practices-logout-phase}
 
 <table style="table-layout:auto">
    <tr>

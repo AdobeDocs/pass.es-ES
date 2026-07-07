@@ -4,8 +4,8 @@ description: 'API de REST V2: iniciar el cierre de sesión para un mvpd específ
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1028'
-ht-degree: 1%
+source-wordcount: '1130'
+ht-degree: 2%
 
 ---
 
@@ -60,10 +60,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        La URL de redireccionamiento final a la que se desplaza el agente de usuario cuando se completa el flujo de cierre de sesión de MVPD.
-        <br/><br/>
-        El valor debe tener codificación URL.
-      </td>
+        La URL de redireccionamiento final a la que se desplaza el agente de usuario cuando se completa el flujo de cierre de sesión de MVPD.<br/><br/>
+        El valor debe tener codificación URL.</td>
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
@@ -84,43 +82,32 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La generación de la carga de información del dispositivo se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">documentación del encabezado X-Device-Info</a>.
-         <br/><br/>
-         Se recomienda utilizarlo siempre que la plataforma de dispositivos de la aplicación permita la provisión explícita de valores válidos.
-         <br/><br/>
-         Cuando se proporciona, el backend de autenticación de Adobe Pass combina explícitamente los valores establecidos con los valores extraídos implícitamente (de forma predeterminada).
-         <br/><br/>
-         Cuando no se proporciona, el backend de autenticación de Adobe Pass utilizará valores extraídos implícitamente (de forma predeterminada).
-      </td>
+         La generación de la carga de información del dispositivo se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">documentación del encabezado X-Device-Info</a>.<br/><br/>
+         Se recomienda utilizarlo siempre que la plataforma de dispositivos de la aplicación permita la provisión explícita de valores válidos.<br/><br/>
+         Cuando se proporciona, el backend de autenticación de Adobe Pass combina explícitamente los valores establecidos con los valores extraídos implícitamente (de forma predeterminada).<br/><br/>
+         Cuando no se proporciona, el backend de autenticación de Adobe Pass utilizará valores extraídos implícitamente (de forma predeterminada).</td>
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         La dirección IP del dispositivo de flujo continuo.
-         <br/><br/>
-         Se recomienda utilizarlo siempre para implementaciones de servidor a servidor, especialmente cuando la llamada la realice el servicio del programador en lugar del dispositivo de flujo continuo.
-         <br/><br/>
-         Para implementaciones de cliente a servidor, la dirección IP del dispositivo de flujo continuo se envía implícitamente.
-      </td>
+         La dirección IP del dispositivo de flujo continuo.<br/><br/>
+         Se recomienda utilizarlo siempre para implementaciones de servidor a servidor, especialmente cuando la llamada la realice el servicio del programador en lugar del dispositivo de flujo continuo.<br/><br/>
+         Para implementaciones de cliente a servidor, la dirección IP del dispositivo de flujo continuo se envía implícitamente.</td>
       <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>o<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
-        <br/><br/>
-        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan una identidad de plataforma, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Inicio de sesión único mediante flujos de identidad de plataforma</a>.
-      </td>
+        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.<br/><br/>
+        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan una identidad de plataforma, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Inicio de sesión único mediante flujos de identidad de plataforma</a>.</td>
       <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        La generación de la carga de inicio de sesión único para el método del token de servicio se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
-        <br/><br/>
-        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan un token de servicio, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Inicio de sesión único mediante flujos de token de servicio</a>.
-      </td>
+        La generación de la carga de inicio de sesión único para el método del token de servicio se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.<br/><br/>
+        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan un token de servicio, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Inicio de sesión único mediante flujos de token de servicio</a>.</td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -132,10 +119,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Aceptar</td>
       <td>
-         El tipo de medio aceptado por la aplicación cliente.
-         <br/><br/>
-         Si se especifica, debe ser application/json;charset=utf-8.
-      </td>
+         El tipo de medio aceptado por la aplicación cliente.<br/><br/>
+         Si se especifica, debe ser application/json;charset=utf-8.</td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -164,29 +149,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Solicitud incorrecta</td>
       <td>
-        La solicitud no es válida, el cliente debe corregirla e intentarlo de nuevo. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
-      </td>
+        La solicitud no es válida, el cliente debe corregirla e intentarlo de nuevo. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>No autorizado</td>
       <td>
-        El token de acceso no es válido, el cliente debe obtener un nuevo token de acceso e intentarlo de nuevo. Para obtener más información, consulte la <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Información general sobre el registro de clientes dinámicos</a>.
-      </td>
+        El token de acceso no es válido, el cliente debe obtener un nuevo token de acceso e intentarlo de nuevo. Para obtener más información, consulte la <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Información general sobre el registro de clientes dinámicos</a>.</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Método no permitido</td>
       <td>
-        El método HTTP no es válido, el cliente debe utilizar un método HTTP permitido para el recurso solicitado e intentarlo de nuevo. Para obtener más información, consulte la sección <a href="#request">Solicitud</a>.
-      </td>
+        El método HTTP no es válido, el cliente debe utilizar un método HTTP permitido para el recurso solicitado e intentarlo de nuevo. Para obtener más información, consulte la sección <a href="#request">Solicitud</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Error interno del servidor</td>
       <td>
-        El lado del servidor ha encontrado un problema. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
-      </td>
+        El lado del servidor ha encontrado un problema. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
    </tr>
 </table>
 
@@ -216,10 +197,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">cierres de sesión</td>
       <td>
-         JSON que contiene un mapa de pares de clave y valor.
-         <br/><br/>
-         El elemento clave se define con el siguiente valor:
-         <table style="table-layout:auto">
+         JSON que contiene un mapa de pares de clave y valor.<br/><br/>
+         El elemento clave se define con el siguiente valor:<table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Valor</th>
                <th style="background-color: #EFF2F7"></th>
@@ -240,10 +219,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  Acción que el dispositivo de flujo continuo debe realizar para completar el flujo de cierre de sesión.
-                  <br/><br/>
-                  Los valores posibles son:
-                  <ul>
+                  Acción que el dispositivo de flujo continuo debe realizar para completar el flujo de cierre de sesión.<br/><br/>
+                  Los valores posibles son:<ul>
                     <li><b>cierre de sesión</b><br/>El dispositivo de flujo continuo debe abrir la dirección URL proporcionada en un agente de usuario.<br/>Esta acción se aplica a los siguientes escenarios: cierre la sesión de MVPD con un extremo de cierre de sesión.</li>
                     <li><b>partner_logout</b><br/>El dispositivo de transmisión debe informar al usuario que cierre la sesión desde el nivel de socio (sistema) también.<br/>Esta acción se aplica a los siguientes escenarios: cierre la sesión de MVPD cuando el tipo de perfil sea "appleSSO".</li>
                     <li><b>completado</b><br/>El dispositivo de transmisión por secuencias no necesita realizar ninguna acción posterior.<br/>Esta acción se aplica a los siguientes casos: cierre la sesión de MVPD sin un extremo de cierre de sesión (característica de cierre de sesión ficticio), cierre la sesión durante el acceso degradado o cierre la sesión durante el acceso temporal.</li>
@@ -254,10 +231,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  El tipo de interacción que debe realizar el dispositivo de flujo continuo para continuar el flujo con la acción especificada por el atributo actionName.
-                  <br/><br/>
-                  Los valores posibles son:
-                  <ul>
+                  El tipo de interacción que debe realizar el dispositivo de flujo continuo para continuar el flujo con la acción especificada por el atributo actionName.<br/><br/>
+                  Los valores posibles son:<ul>
                     <li><b>interactive</b><br/>Este tipo se aplica a los siguientes valores del atributo actionName: <b>logout</b>.</li>
                     <li><b>partner_interactive</b><br/>Este tipo se aplica a los siguientes valores del atributo actionName: <b>partner_logout</b>.</li>
                     <li><b>none</b><br/>Este tipo se aplica a los siguientes valores del atributo actionName: <b>complete</b>, <b>invalid</b>.</li>
@@ -272,10 +247,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">url</td>
                <td>
-                  Dirección URL utilizada para realizar el flujo de cierre de sesión con el extremo de MVPD.
-                  <br/><br/>
-                  Esto no está presente para los siguientes valores del atributo actionName:
-                  <ul>
+                  Dirección URL utilizada para realizar el flujo de cierre de sesión con el extremo de MVPD.<br/><br/>
+                  Esto no está presente para los siguientes valores del atributo actionName:<ul>
                     <li><b>complete</b></li>
                     <li><b>inválido</b></li>
                   </ul>
@@ -319,7 +292,7 @@ ht-degree: 1%
 
 ## Muestras {#samples}
 
-### &#x200B;1. Iniciar el cierre de sesión para un mvpd específico que tenga un punto final de cierre de sesión
+### &#x200B;1. Iniciar el cierre de sesión para un mvpd específico que tenga un extremo de cierre de sesión
 
 >[!BEGINTABS]
 
@@ -356,7 +329,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;2. Iniciar el cierre de sesión de un mvpd específico sin el punto final de cierre
+### &#x200B;2. Iniciar el cierre de sesión de un mvpd específico sin extremo de cierre de sesión
 
 >[!BEGINTABS]
 
@@ -392,7 +365,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;3. Iniciar el cierre de sesión único para mvpd específico, incluidos los perfiles obtenidos mediante el inicio de sesión único mediante el método de token de servicio
+### &#x200B;3. Iniciar el cierre de sesión único de un mvpd específico, incluidos los perfiles obtenidos mediante el inicio de sesión único mediante el método de token de servicio
 
 >[!IMPORTANT]
 >
@@ -438,7 +411,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;4. Iniciar el cierre de sesión único para mvpd específico, incluidos los perfiles obtenidos mediante el inicio de sesión único mediante el método de identidad de Platform
+### &#x200B;4. Iniciar el cierre de sesión único de un mvpd específico, incluidos los perfiles obtenidos mediante el inicio de sesión único mediante el método de Platform Identity
 
 >[!IMPORTANT]
 >

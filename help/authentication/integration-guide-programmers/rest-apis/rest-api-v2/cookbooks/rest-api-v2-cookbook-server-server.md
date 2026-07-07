@@ -4,7 +4,7 @@ description: Guía de API de REST V2 (servidor a servidor)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2497'
+source-wordcount: '2524'
 ht-degree: 0%
 
 ---
@@ -234,7 +234,7 @@ Preguntas frecuentes
 
    * El servicio Programador debe almacenar en caché partes de la información de perfil del usuario en un almacenamiento persistente para evitar solicitudes innecesarias y mejorar la experiencia del usuario.
 
-## C. Fase de preautorización (opcional) {#preauthorization-phase}
+## C. (Opcional) Fase de preautorización {#preauthorization-phase}
 
 El propósito de la fase de preautorización es proporcionar a la aplicación de transmisión la capacidad de presentar un subconjunto de recursos de su catálogo al que el usuario tendría derecho de acceso.
 
