@@ -2,7 +2,7 @@
 title: Android SDK con registro dinámico de clientes
 description: Android SDK con registro dinámico de clientes
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 1%
@@ -193,3 +193,4 @@ f. cierre de sesión :
 | invalid_request | 400 | La solicitud tiene un formato incorrecto. SDK debe dejar de realizar llamadas al servidor. |
 | invalid_client | 403 | El ID de cliente ya no tiene permiso para realizar solicitudes. El SDK DEBE volver a realizar el registro de cliente. |
 | access_denied | 401 | El access\_token no es válido. El SDK DEBE solicitar un nuevo access_token. |
+
