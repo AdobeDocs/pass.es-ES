@@ -26,7 +26,7 @@ Las aplicaciones deben utilizar el método de API de preautorización para obten
 
 
 
-En caso de que se produzca un error inesperado (por ejemplo, un problema de red, un punto de conexión de autorización de MVPD no disponible, etc.) cuando los servicios de autenticación de Adobe Pass procesen una solicitud de API preautorizada, se incluirá una o varias informaciones de error separadas para los recursos afectados como parte del resultado de la respuesta de API preautorizada.
+En caso de error inesperado (por ejemplo, problema de red, punto final de autorización de MVPD no disponible, etc.) que se produce cuando los servicios de autenticación de Adobe Pass procesan una solicitud de API de preautorización, se incluirá una o varias informaciones de error separadas para los recursos afectados como parte del resultado de la respuesta de API de preautorización.
 
 
 ## `public void preauthorize(PreauthorizeRequest request, AccessEnablerCallback<PreauthorizeResponse> callback);`

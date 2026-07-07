@@ -4,7 +4,7 @@ description: Glosario de registro dinámico de clientes (DCR)
 exl-id: 4ce67fa5-b0e5-4967-b83d-c682426d9329
 source-git-commit: ae02f53afc58b7d31f57bcc1e4dd1328f12abc3e
 workflow-type: tm+mt
-source-wordcount: '299'
+source-wordcount: '307'
 ht-degree: 0%
 
 ---

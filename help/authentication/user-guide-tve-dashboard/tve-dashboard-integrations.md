@@ -4,7 +4,7 @@ description: Conozca las integraciones entre sus canales y MVPD y cómo administ
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2093'
+source-wordcount: '2105'
 ht-degree: 0%
 
 ---
@@ -175,7 +175,7 @@ Siga estos pasos para habilitar o deshabilitar la autenticación basada en el ho
 
    *Habilitar la autenticación basada en el inicio para una plataforma específica*
 
-   **A.** Intento de propiedad HBA **B.** Propiedad HBA AuthN TTL
+   **A.** Intento de propiedad HBA **B.** Propiedad TTL HBA AuthN
 
 1. Seleccione **Sí** para habilitar y **No** para deshabilitar en el menú desplegable **Intentar HBA**.
 
@@ -199,8 +199,7 @@ A continuación, se muestran algunos ejemplos de diferentes flujos que se pueden
 
 **Cambiar el número de recursos preautorizados**
 
-La mayoría de las MVPD admiten una llamada authZ de comprobación preliminar que usa hasta 5 ID de recurso de forma predeterminada.
-Sin embargo, en los casos en que las MVPD acepten aumentar este límite, puede navegar hasta **Agregar más propiedades** y seleccionar **Recursos máximos de comprobación preliminar** en el menú de opciones.
+La mayoría de las MVPD admiten una llamada authZ de comprobación preliminar que usa hasta 5 ID de recurso de forma predeterminada.Sin embargo, en los casos en que las MVPD acepten aumentar este límite, puede navegar hasta **Agregar más propiedades** y seleccionar **Recursos máximos de comprobación preliminar** en el menú de opciones.
 
 **Recursos máximos de comprobación preliminar** agregará un nuevo atributo donde se puede especificar el límite acordado con MVPD.
 
@@ -305,7 +304,7 @@ Para crear una nueva integración con un nuevo MVPD en la configuración actual,
    >
    >No cambie los extremos predeterminados en ningún flujo a menos que MVPD lo indique específicamente.
 
-   ![Seleccionar extremos &#x200B;](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
+   ![Seleccionar extremos ](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
 
    *Seleccionar extremos*
 

@@ -4,7 +4,7 @@ description: 'API de registro de cliente dinámico: Recuperar credenciales de cl
 exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '472'
 ht-degree: 1%
 
 ---
@@ -45,10 +45,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">software_statement</td>
       <td>
-            La declaración de software asociada con la aplicación registrada creada y descargada desde <a href="https://experience.adobe.com/#/pass/authentication">Adobe Pass TVE Dashboard</a>.
-            <br/><br/>
-            La administración de aplicaciones registradas se describe en la <a href="../dynamic-client-registration-overview.md">descripción general del registro de cliente dinámico</a>.
-      </td>
+            La declaración de software asociada con la aplicación registrada creada y descargada desde <a href="https://experience.adobe.com/#/pass/authentication">Adobe Pass TVE Dashboard</a>.<br/><br/>
+            La administración de aplicaciones registradas se describe en la <a href="../dynamic-client-registration-overview.md">descripción general del registro de cliente dinámico</a>.</td>
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
@@ -64,32 +62,24 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         El tipo de medio aceptado para los recursos que se envían.
-         <br/><br/>
-         Debe ser application/json;charset=utf-8.
-      </td>
+         El tipo de medio aceptado para los recursos que se envían.<br/><br/>
+         Debe ser application/json;charset=utf-8.</td>
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La generación de la carga de información del dispositivo se describe en la <a href="../../rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">documentación de X-Device-Info</a>.
-         <br/><br/>
-         Se recomienda utilizarlo siempre que la plataforma de dispositivos de la aplicación permita la provisión explícita de valores válidos.
-         <br/><br/>
-         Cuando se proporciona, el backend de autenticación de Adobe Pass combina explícitamente los valores establecidos con los valores extraídos implícitamente (de forma predeterminada).
-         <br/><br/>
-         Cuando no se proporciona, el backend de autenticación de Adobe Pass utilizará valores extraídos implícitamente (de forma predeterminada).
-      </td>
+         La generación de la carga de información del dispositivo se describe en la <a href="../../rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">documentación de X-Device-Info</a>.<br/><br/>
+         Se recomienda utilizarlo siempre que la plataforma de dispositivos de la aplicación permita la provisión explícita de valores válidos.<br/><br/>
+         Cuando se proporciona, el backend de autenticación de Adobe Pass combina explícitamente los valores establecidos con los valores extraídos implícitamente (de forma predeterminada).<br/><br/>
+         Cuando no se proporciona, el backend de autenticación de Adobe Pass utilizará valores extraídos implícitamente (de forma predeterminada).</td>
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Aceptar</td>
       <td>
-         El tipo de medio aceptado por la aplicación cliente.
-         <br/><br/>
-         Si se especifica, debe ser application/json;charset=utf-8.
-      </td>
+         El tipo de medio aceptado por la aplicación cliente.<br/><br/>
+         Si se especifica, debe ser application/json;charset=utf-8.</td>
       <td>opcional</td>
    </tr>
    <tr>

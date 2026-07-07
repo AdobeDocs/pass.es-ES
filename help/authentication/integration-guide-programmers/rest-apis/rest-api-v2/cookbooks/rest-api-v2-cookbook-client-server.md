@@ -4,7 +4,7 @@ description: Guía de API de REST V2 (de cliente a servidor)
 exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1833'
+source-wordcount: '1842'
 ht-degree: 0%
 
 ---
@@ -156,7 +156,7 @@ La fase de autenticación actúa como un paso previo para la fase de preautoriza
 
    * La aplicación de streaming debe almacenar en caché partes de la información de perfil del usuario en un almacenamiento persistente para evitar solicitudes innecesarias y mejorar la experiencia del usuario.
 
-## C. Fase de preautorización (opcional) {#preauthorization-phase}
+## C. (Opcional) Fase de preautorización {#preauthorization-phase}
 
 El propósito de la fase de preautorización es proporcionar a la aplicación de transmisión la capacidad de presentar un subconjunto de recursos de su catálogo al que el usuario tendría derecho de acceso.
 

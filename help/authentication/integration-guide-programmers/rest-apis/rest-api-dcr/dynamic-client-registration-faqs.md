@@ -4,8 +4,8 @@ description: Preguntas frecuentes sobre el registro dinámico de clientes (DCR)
 exl-id: 12268163-632e-4884-b35d-a29cc8ef45bf
 source-git-commit: 747c3d9b6de537be5e7e0a0244b2b301603d9b18
 workflow-type: tm+mt
-source-wordcount: '1135'
-ht-degree: 0%
+source-wordcount: '1147'
+ht-degree: 1%
 
 ---
 
@@ -61,7 +61,7 @@ Esta operación puede completarla uno de los administradores de su organización
 
 Para obtener más información, consulte la [Guía del usuario de canales del panel de TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#registered-applications) o la [Guía del usuario para programadores del panel de TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#registered-applications).
 
-#### &#x200B;5. ¿Qué sucede si se revoca una declaración de software? {#rest-api-v2-access-faq5}
+#### &#x200B;5. ¿Qué sucede si se revoca una instrucción de software? {#rest-api-v2-access-faq5}
 
 Cuando se revoca la declaración del software, hay una consecuencia importante que considerar:
 
@@ -83,7 +83,7 @@ Para obtener más información, consulte la documentación de [Recuperar credenc
 
 Recomendamos que la aplicación cliente administre un par único de credenciales de cliente para cada instancia de aplicación de usuario en caso de integraciones cliente a servidor y servidor a servidor con autenticación de Adobe Pass.
 
-#### &#x200B;8. ¿Debe la aplicación cliente almacenar en caché las credenciales del cliente en un almacenamiento persistente? {#rest-api-v2-access-faq8}
+#### &#x200B;8. ¿La aplicación cliente debe almacenar en caché las credenciales del cliente en un almacenamiento persistente? {#rest-api-v2-access-faq8}
 
 La aplicación cliente debe almacenar las credenciales del cliente y utilizarlas indefinidamente cuando necesite recuperar un token de acceso.
 
