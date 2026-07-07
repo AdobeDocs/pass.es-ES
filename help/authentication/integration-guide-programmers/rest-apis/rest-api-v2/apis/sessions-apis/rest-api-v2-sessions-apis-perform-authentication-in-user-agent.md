@@ -4,8 +4,8 @@ description: 'API de REST V2: realizar autenticación en el agente de usuario'
 exl-id: d615dde0-71a8-4b6c-a12e-1e3b5e20728c
 source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '240'
-ht-degree: 4%
+source-wordcount: '242'
+ht-degree: 5%
 
 ---
 
@@ -94,8 +94,7 @@ ht-degree: 4%
       <td>405</td>
       <td>Método no permitido</td>
       <td>
-        El método HTTP no es válido, el cliente debe utilizar un método HTTP permitido para el recurso solicitado e intentarlo de nuevo. Para obtener más información, consulte la sección <a href="#request">Solicitud</a>.
-      </td>
+        El método HTTP no es válido, el cliente debe utilizar un método HTTP permitido para el recurso solicitado e intentarlo de nuevo. Para obtener más información, consulte la sección <a href="#request">Solicitud</a>.</td>
    </tr>
    <tr>
       <td>500</td>

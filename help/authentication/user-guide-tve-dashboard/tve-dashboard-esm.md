@@ -1,13 +1,13 @@
 ---
 title: Tablero de ESM
 description: Aprenda a utilizar el panel de ESM para monitorizar los datos de derechos y eventos de los socios de MVPD.
-source-git-commit: 53ebbd82fc160f68fccdddb18cf98e249ad6ecce
+exl-id: ac5f289a-c26d-4156-bc56-7968c49c100f
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '472'
+source-wordcount: '487'
 ht-degree: 1%
 
 ---
-
 
 # Tablero de ESM {#esm-dashboard}
 
@@ -25,7 +25,7 @@ El panel de ESM proporciona una vista unificada de los datos de derechos y event
 - Comparar el rendimiento de MVPD
 - Comprenda el uso del cliente por aplicación
 
-Encontrará más detalles sobre los datos y eventos de ESM en [Información general sobre la supervisión del servicio de derechos](https://experienceleague.adobe.com/es/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
+Encontrará más detalles sobre los datos y eventos de ESM en [Información general sobre la supervisión del servicio de derechos](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
 
 ## Informes {#reports}
 

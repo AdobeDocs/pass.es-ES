@@ -4,8 +4,8 @@ description: 'API de REST V2: encabezado: X-Device-Info'
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
 source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '1133'
-ht-degree: 2%
+source-wordcount: '1234'
+ht-degree: 3%
 
 ---
 
@@ -53,7 +53,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>primaryHardwareType</td>
         <td>El tipo de hardware principal del dispositivo.</td>
-        <td>&check;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -110,7 +110,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td><i>obligatorio</i></td>
         <td>osName</td>
         <td>El nombre del sistema operativo (SO) del dispositivo.</td>
-        <td>&check;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -132,7 +132,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>osFamily</td>
         <td>El nombre del grupo del sistema operativo (SO) del dispositivo.</td>
-        <td>&check;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -155,7 +155,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>osVendor</td>
         <td>El proveedor del sistema operativo (SO) del dispositivo.</td>
-        <td>&check;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -185,7 +185,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>browserName</td>
         <td>El nombre del explorador.</td>
-        <td>&check;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -205,7 +205,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>browserVendor</td>
         <td>La empresa u organización que crea el explorador.</td>
-        <td>&check;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -228,7 +228,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td>browserVersion</td>
         <td>La versión del explorador del dispositivo.</td>
         <td></td>
-        <td>p. ej. 60.0.3112</td>
+        <td>e.g. 60.0.3112</td>
     </tr>
     <tr>
         <td></td>
@@ -256,28 +256,28 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td>displayPpi</td>
         <td>La densidad de píxeles de la pantalla física del dispositivo.</td>
         <td></td>
-        <td>p.ej. 294</td>
+        <td>e.g. 294</td>
     </tr>
     <tr>
         <td></td>
         <td>diagonalScreenSize</td>
         <td>Dimensión diagonal de la pantalla física del dispositivo en pulgadas.</td>
         <td></td>
-        <td>p. ej. 5.5, 10.1</td>
+        <td>e.g. 5.5, 10.1</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionIp</td>
         <td>IP del dispositivo utilizada para enviar solicitudes HTTP.</td>
         <td></td>
-        <td>p. ej., 8.8.4.4</td>
+        <td>e.g. 8.8.4.4</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionPort</td>
         <td>Puerto del dispositivo utilizado para enviar solicitudes HTTP.</td>
         <td></td>
-        <td>p. ej. 53124</td>
+        <td>e.g. 53124</td>
     </tr>
     <tr>
         <td><i>obligatorio</i></td>
@@ -290,7 +290,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>connectionSecure</td>
         <td>Estado de seguridad de la conexión de red.</td>
-        <td>&check;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -434,7 +434,7 @@ La información del dispositivo se puede construir de la siguiente manera:
 | displayWidth | UIScreen.mainScreen | 320 |
 | displayHeight | UIScreen.mainScreen | 568 |
 | osName | UIDevice.systemName | iOS |
-| osVersion | UIDevice.systemVersion | 10,2 |
+| osVersion | UIDevice.systemVersion | 10.2 |
 
 La información de conexión se puede construir de la siguiente manera:
 
@@ -642,7 +642,7 @@ La información del dispositivo se puede construir de la siguiente manera:
 | displayWidth | UIScreen.mainScreen | 1920 |
 | displayHeight | UIScreen.mainScreen | 1080 |
 | osName | UIDevice.systemName | tvOS |
-| osVersion | UIDevice.systemVersion | 10,2 |
+| osVersion | UIDevice.systemVersion | 10.2 |
 
 La información de conexión se puede construir de la siguiente manera:
 

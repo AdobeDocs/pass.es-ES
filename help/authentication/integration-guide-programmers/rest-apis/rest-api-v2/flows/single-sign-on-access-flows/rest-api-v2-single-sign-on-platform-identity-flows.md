@@ -4,7 +4,7 @@ description: 'API de REST V2: inicio de sesión único, identidad de plataforma,
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1855'
+source-wordcount: '1944'
 ht-degree: 0%
 
 ---
