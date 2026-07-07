@@ -4,7 +4,7 @@ description: JavaScript preautorizar
 exl-id: b7493ca6-1862-4cea-a11e-a634c935c86e
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1527'
 ht-degree: 0%
 
 ---

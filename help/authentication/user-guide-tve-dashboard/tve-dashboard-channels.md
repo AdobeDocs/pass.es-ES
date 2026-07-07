@@ -4,7 +4,7 @@ description: Obtenga información sobre los canales y sus distintas configuracio
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
 source-git-commit: b4276ee12d57bc061d26afc0a192b799fe1681ae
 workflow-type: tm+mt
-source-wordcount: '1637'
+source-wordcount: '1641'
 ht-degree: 0%
 
 ---
@@ -108,8 +108,7 @@ Esta ficha muestra una lista de [certificados disponibles](#available-certificat
 
 #### Certificados disponibles {#available-certificates}
 
-Estos certificados sirven como claves privadas o públicas y se utilizan para el cifrado de metadatos de usuarios.
-Puede realizar los siguientes cambios en la sección certificados disponibles:
+Estos certificados sirven como claves privadas o públicas y se utilizan para el cifrado de metadatos de usuarios.Puede realizar los siguientes cambios en la sección certificados disponibles:
 
 * [Añadir nuevo certificado](#add-new-certificate)
 * [Eliminar certificado](#delete-certificate)
@@ -268,8 +267,7 @@ Siga estos pasos para descargar una declaración de software.
 
 ### Esquemas personalizados {#custom-schemes}
 
-Esta pestaña muestra una lista de esquemas personalizados.
-Los esquemas personalizados se pueden utilizar para los dispositivos Android y iOS.
+Esta pestaña muestra una lista de esquemas personalizados.Los esquemas personalizados se pueden utilizar para los dispositivos Android y iOS.
 
 Puede realizar los siguientes cambios en las combinaciones personalizadas:
 

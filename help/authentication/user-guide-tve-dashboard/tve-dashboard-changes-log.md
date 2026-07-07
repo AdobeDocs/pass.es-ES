@@ -4,7 +4,7 @@ description: Saber cómo un administrador puede monitorizar los cambios de confi
 exl-id: 9b53a61b-679f-491e-90f3-5d827e21b32c
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '270'
+source-wordcount: '271'
 ht-degree: 0%
 
 ---

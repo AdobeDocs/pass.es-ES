@@ -4,7 +4,7 @@ description: Información general sobre Apple SSO
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1260'
+source-wordcount: '1311'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ Para beneficiarse de la experiencia de usuario de inicio de sesión único (SSO)
 
 | Habilitar inicio de sesión único de Adobe | Apple **MVPD incorporadas (admitidas)** | **Selector** MVPD de Apple | Apple **No Incorporado (No Compatible)** MVPD |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| Sí (habilitado) | Los flujos de autenticación y cierre de sesión implicarán soluciones de autenticación de Apple y Adobe Pass, mientras que el resto de flujos (autorización, preautorización, metadatos, etc.) se gestionarán únicamente mediante la autenticación de Adobe Pass. | Los flujos de autenticación y cierre de sesión volverán a los flujos normales a los que solo sirve la autenticación de Adobe Pass. | Los flujos de autenticación y cierre de sesión volverán a los flujos normales a los que solo sirve la autenticación de Adobe Pass. |
+| Sí (habilitado) | Los flujos de autenticación y cierre de sesión implicarán soluciones de autenticación de Apple y Adobe Pass, mientras que el resto de flujos (autorización, preautorización, metadatos, etc.) será atendido únicamente por Autenticación de Adobe Pass. | Los flujos de autenticación y cierre de sesión volverán a los flujos normales a los que solo sirve la autenticación de Adobe Pass. | Los flujos de autenticación y cierre de sesión volverán a los flujos normales a los que solo sirve la autenticación de Adobe Pass. |
 | No (deshabilitado) | Los flujos de autenticación y cierre de sesión volverán a los flujos normales a los que solo sirve la autenticación de Adobe Pass. | Los flujos de autenticación y cierre de sesión volverán a los flujos normales a los que solo sirve la autenticación de Adobe Pass. | Los flujos de autenticación y cierre de sesión volverán a los flujos normales a los que solo sirve la autenticación de Adobe Pass. |
 
 * Integre los flujos de usuario de inicio de sesión único (SSO) mediante una de las siguientes soluciones que ofrece la autenticación de Adobe Pass para los usuarios finales de aplicaciones cliente que se ejecutan en iOS, iPadOS o tvOS.

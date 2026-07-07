@@ -2,7 +2,7 @@
 title: Resumen de API
 description: Resumen de API
 exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '2102'
 ht-degree: 0%
@@ -263,3 +263,4 @@ Accept-Encoding: gzip, deflate
 ## Información relacionada {#related-information}
 
 * [Información general de CMU](/help/concurrency-monitoring/reports/cm-usage-reports.md)
+

@@ -2,7 +2,7 @@
 title: Referencia de la API del cliente nativo de Amazon FireOS
 description: Referencia de la API del cliente nativo de Amazon FireOS
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '3519'
 ht-degree: 0%
@@ -684,3 +684,4 @@ A continuación se proporcionan instrucciones para interpretar los valores de la
    - **3** - Tipo de sistema operativo
 
 **Activado por:** `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`
+
