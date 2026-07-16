@@ -4,7 +4,7 @@ description: Inicio y cierre de sesión sin actualización
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1784'
+source-wordcount: '1817'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Para las aplicaciones web, debe tener en cuenta diferentes escenarios posibles p
 - Algunas MVPD requieren que abra un iFrame en el sitio para mostrar la página de inicio de sesión de MVPD
 - Algunos exploradores no gestionan bien el escenario de iFrame, por lo que una mejor alternativa para estos exploradores es utilizar una ventana emergente en lugar del iFrame
 
-Antes de la autenticación de Adobe Pass 2.7, todos estos escenarios para autenticar a un usuario implicaban una actualización de la página completa de la página del programador. En las versiones 2.7 y posteriores, el equipo de autenticación de Adobe Pass mejoró estos flujos para que el usuario no tenga que experimentar una actualización de la página en la aplicación durante el inicio de sesión y el cierre de sesión.
+Antes de la autenticación de Adobe Pass 2.7, todos estos escenarios para autenticar a un usuario implicaban una actualización de la página completa de la página del programador.Para la versión 2.7 y versiones posteriores, el equipo de autenticación de Adobe Pass mejoró estos flujos para que el usuario no tenga que experimentar una actualización de la página en la aplicación durante el inicio y el cierre de sesión.
 
 
 ## Descripción detallada {#detailed_description}
@@ -48,7 +48,7 @@ Empecemos con un resumen de los flujos de autenticación y cierre de sesión ori
 
 Los clientes web de autenticación de Adobe Pass tienen dos formas de autenticarse, según los requisitos de las MVPD:
 
-1. **Redireccionamiento de página completa -** Después de que el usuario seleccione un proveedor    (configurado con redireccionamiento de página completa) desde el selector de MVPD en la    Se invoca el sitio web del programador `setSelectedProvider(<mvpd>)` en AccessEnabler y se redirige al usuario a la página de inicio de sesión de MVPD. Una vez que el usuario proporciona credenciales válidas, se le redirige de nuevo al sitio web del programador. AccessEnabler se inicializa y el token de autenticación se recupera de la autenticación de Adobe Pass durante `setRequestor`.
+1. **Redireccionamiento de página completa -** Después de que el usuario seleccione un proveedor (configurado con redireccionamiento de página completa) del selector de MVPD en el sitio web del programador, se invoca a `setSelectedProvider(<mvpd>)` en el AccessEnabler y se redirige al usuario a la página de inicio de sesión de MVPD. Una vez que el usuario proporciona credenciales válidas, se le redirige de nuevo al sitio web del programador. AccessEnabler se inicializa y el token de autenticación se recupera de la autenticación de Adobe Pass durante `setRequestor`.
 1. **iFrame / Ventana emergente -** Después de que el usuario seleccione un proveedor (configurado con iFrame), `setSelectedProvider(<mvpd>)` se invoca en AccessEnabler. Esta acción almacenará en déclencheur la llamada de retorno `createIFrame(width, height)`, notificando al programador que debe crear un iFrame (o elemento emergente, según el explorador o las preferencias) con el nombre `"mvpdframe"` y las dimensiones proporcionadas. Una vez creado el iFrame/ventana emergente, AccessEnabler carga la página de inicio de sesión de MVPD en el iFrame/ventana emergente. El usuario proporciona credenciales válidas y el iFrame/elemento emergente se redirige a Autenticación de Adobe Pass, que devuelve un fragmento de JS que cierra el iFrame/elemento emergente y vuelve a cargar la página principal (sitio web del programador). De manera similar al flujo 1, el token de autenticación se recupera durante `setRequestor`.
 
 La llamada de retorno `displayProviderDialog` (desencadenada por `getAuthentication`/`getAuthorization`) devuelve una lista de MVPD y su configuración apropiada. La propiedad `iFrameRequired` de un MVPD permite al programador saber si debe activar el flujo 1 o el flujo 2. Tenga en cuenta que el programador debe realizar una acción adicional (crear un iFrame/popup) solo para el flujo 2.
