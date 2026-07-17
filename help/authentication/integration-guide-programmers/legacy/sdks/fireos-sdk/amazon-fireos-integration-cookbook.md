@@ -4,7 +4,7 @@ description: Guía de integración de Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1447'
+source-wordcount: '1430'
 ht-degree: 0%
 
 ---
@@ -30,9 +30,9 @@ La solución de asignación de derechos de autenticación de Adobe Pass para Ama
 
 - Dominio de interfaz de usuario: es la capa de aplicación de nivel superior que implementa la interfaz de usuario y utiliza los servicios proporcionados por la biblioteca `AccessEnabler` para proporcionar acceso al contenido restringido.
 - Dominio `AccessEnabler`: aquí es donde se implementan los flujos de trabajo de derechos en forma de:
-   - Llamadas de red realizadas a los servidores back-end de Adobe
-   - Reglas de lógica empresarial relacionadas con los flujos de trabajo de autenticación y autorización
-   - Administración de varios recursos y procesamiento del estado del flujo de trabajo (como la caché de símbolos)
+  - Llamadas de red realizadas a los servidores back-end de Adobe
+  - Reglas de lógica empresarial relacionadas con los flujos de trabajo de autenticación y autorización
+  - Administración de varios recursos y procesamiento del estado del flujo de trabajo (como la caché de símbolos)
 
 El objetivo del dominio `AccessEnabler` es ocultar todas las complejidades de los flujos de trabajo de asignación de derechos y proporcionar a la aplicación de nivel superior (a través de la biblioteca `AccessEnabler`) un conjunto de primitivas de asignación de derechos simples. Este proceso permite implementar los flujos de trabajo de derechos:
 
@@ -60,51 +60,51 @@ La actividad de red de `AccessEnabler` tiene lugar en un subproceso diferente, p
 1. Cree sus funciones de devolución de llamada:
    - [`setRequestorComplete()`](#$setRequestorComplete)
 
-      - Activado por `setRequestor()`, devuelve éxito o error.     El éxito indica que se puede continuar con las llamadas de asignación de derechos.
+     - Activado por `setRequestor()`, devuelve éxito o error.     El éxito indica que se puede continuar con las llamadas de asignación de derechos.
 
    - [displayProviderDialog(mvpds)](#$displayProviderDialog)
 
-      - Activado por `getAuthentication()` solo si el usuario no ha seleccionado ningún proveedor (MVPD) y aún no se ha autenticado. El parámetro `mvpds` es una matriz de proveedores disponibles para el usuario.
+     - Activado por `getAuthentication()` solo si el usuario no ha seleccionado ningún proveedor (MVPD) y aún no se ha autenticado. El parámetro `mvpds` es una matriz de proveedores disponibles para el usuario.
 
-   - [&quot;setAuthenticationStatus(status, reason)&quot;](#$setAuthNStatus)
+   - [`setAuthenticationStatus(status, reason)`](#$setAuthNStatus)
 
-      - Activado por `checkAuthentication()` cada vez. Activado por `getAuthentication()` solo si el usuario ya se ha autenticado y ha seleccionado un proveedor.
+     - Activado por `checkAuthentication()` cada vez. Activado por `getAuthentication()` solo si el usuario ya se ha autenticado y ha seleccionado un proveedor.
 
-      - El estado devuelto está autenticado o no autenticado, el motivo describe un error de autenticación o una acción de cierre de sesión.
+     - El estado devuelto está autenticado o no autenticado, el motivo describe un error de autenticación o una acción de cierre de sesión.
 
    - [navigationToUrl(url)](#$navigateToUrl)
 
-      - Se ignora en AmazonFireOS SDK y se usa el método en plataformas Android donde se activa `getAuthentication()` después de que el usuario seleccione una MVPD.  El parámetro `url` proporciona la ubicación de la página de inicio de sesión de MVPD.
+     - Se ignora en AmazonFireOS SDK y se usa el método en plataformas Android donde se activa `getAuthentication()` después de que el usuario seleccione una MVPD.  El parámetro `url` proporciona la ubicación de la página de inicio de sesión de MVPD.
 
-   - [sendTrackingData(event, data)](#$sendTrackingData)
+   - [`sendTrackingData(event, data)`](#$sendTrackingData)
 
-      - Activado por `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`.
-El parámetro `event` indica qué evento de asignación de derechos se produjo; el parámetro `data` es una lista de valores relacionados con el evento.
+     - Activado por `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`.
+       El parámetro `event` indica qué evento de asignación de derechos se produjo; el parámetro `data` es una lista de valores relacionados con el evento.
 
-   - [setToken(token, recurso)](#$setToken)
+   - [`setToken(token, resource)`](#$setToken)
 
-      - Activado por `checkAuthorization()` y `getAuthorization()` tras una autorización correcta para ver un recurso.
-      - El parámetro `token` es el token de medios de corta duración; el parámetro `resource` es el contenido que el usuario tiene autorización para ver.
+     - Activado por `checkAuthorization()` y `getAuthorization()` tras una autorización correcta para ver un recurso.
+     - El parámetro `token` es el token de medios de corta duración; el parámetro `resource` es el contenido que el usuario tiene autorización para ver.
 
-   - [&quot;tokenRequestFailed(resource, code, description)&quot;](#$tokenRequestFailed)
+   - [`tokenRequestFailed(resource, code, description)`](#$tokenRequestFailed)
 
-      - Activado por `checkAuthorization()` y `getAuthorization()` tras una autorización incorrecta.
-      - El parámetro `resource` es el contenido que el usuario intentaba ver; el parámetro `code` es el código de error que indica qué tipo de error se produjo; el parámetro `description` describe el error asociado con el código de error.
+     - Activado por `checkAuthorization()` y `getAuthorization()` tras una autorización incorrecta.
+     - El parámetro `resource` es el contenido que el usuario intentaba ver; el parámetro `code` es el código de error que indica qué tipo de error se produjo; el parámetro `description` describe el error asociado con el código de error.
 
-   - [selectedProvider(mvpd)](#$selectedProvider)
+   - [`selectedProvider(mvpd)`](#$selectedProvider)
 
-      - Activado por `getSelectedProvider()`.
-      - El parámetro `mvpd` proporciona información sobre el proveedor seleccionado por el usuario.
+     - Activado por `getSelectedProvider()`.
+     - El parámetro `mvpd` proporciona información sobre el proveedor seleccionado por el usuario.
 
-   - [&quot;setMetadataStatus(metadata, key, arguments)&quot;](#$setMetadataStatus)
+   - [`setMetadataStatus(metadata, key, arguments)`](#$setMetadataStatus)
 
-      - Activado por `getMetadata().`
-      - El parámetro `metadata` proporciona los datos específicos solicitados; el parámetro `key` es la clave utilizada en la solicitud `getMetadata()`; y el parámetro `arguments` es el mismo diccionario que se pasó a `getMetadata()`.
+     - Activado por `getMetadata().`
+     - El parámetro `metadata` proporciona los datos específicos solicitados; el parámetro `key` es la clave utilizada en la solicitud `getMetadata()`; y el parámetro `arguments` es el mismo diccionario que se pasó a `getMetadata()`.
 
-   - [preauthorizedResources(resources)](#$preauthResources)
+   - [`preauthorizedResources(resources)`](#$preauthResources)
 
-      - Activado por `checkPreauthorizedResources()`.
-      - El parámetro `authorizedResources` presenta los recursos que el usuario tiene autorización para ver.
+     - Activado por `checkPreauthorizedResources()`.
+     - El parámetro `authorizedResources` presenta los recursos que el usuario tiene autorización para ver.
 
 
 ![](../../../../assets/android-entitlement-flows.png)
@@ -176,9 +176,9 @@ El parámetro `event` indica qué evento de asignación de derechos se produjo; 
 
    - Si la llamada `getAuthorization()` se realiza correctamente: el usuario tiene tokens AuthN y AuthZ válidos (el usuario está autenticado y autorizado para ver los medios solicitados).
    - Si `getAuthorization()` produce un error: examine la excepción generada para determinar su tipo (AuthN, AuthZ o algo más):
-      - Si se ha producido un error de autenticación (AuthN), reinicie el flujo de autenticación.
-      - Si se trata de un error de autorización (AuthZ), el usuario no tiene autorización para ver los medios solicitados y se le debe mostrar algún tipo de mensaje de error.
-      - Si se ha producido algún otro tipo de error (error de conexión, error de red, etc.), muestre un mensaje de error apropiado al usuario.
+     - Si se ha producido un error de autenticación (AuthN), reinicie el flujo de autenticación.
+     - Si se trata de un error de autorización (AuthZ), el usuario no tiene autorización para ver los medios solicitados y se le debe mostrar algún tipo de mensaje de error.
+     - Si hubo algún otro tipo de error (error de conexión, error de red, etc.) a continuación, mostrar un mensaje de error apropiado al usuario.
 
 1. Valide el token de medios corto.
 
