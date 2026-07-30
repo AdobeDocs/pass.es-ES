@@ -4,7 +4,7 @@ description: Cómo realizar una solicitud de privacidad
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '596'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Al enviar una solicitud de privacidad de acceso o eliminación, la aplicación d
 
 * **mvpdID** - Identificador único de MVPD.
 * **userID**: identifica de forma exclusiva al usuario de la aplicación de un programador, pero se origina desde MVPD. Consulte Explicación de los ID de usuario en la Información general del programador.
-* **IMSOrgID**: el ID de organización del servicio Adobe Experience Cloud Identity Management que identifica de forma exclusiva al cliente en Adobe Experience Cloud.
+* **IMSOrgID**: el ID de organización del servicio de Identity Management de Adobe Experience Cloud que identifica de forma exclusiva al cliente en Adobe Experience Cloud
 
 
 Compruebe el ejemplo siguiente:
@@ -253,7 +253,7 @@ La **documentación de la API de Privacy Service** explica en detalle cómo un c
 **Encabezados requeridos:**
 
 * Todas las llamadas requieren los encabezados `Authorization`, `x-gw-ims-org-id` y `x-api-key`. Para obtener más información sobre cómo obtener estos valores, consulte el **tutorial de autenticación**.
-* Todas las solicitudes con una carga útil en el cuerpo de la solicitud (como llamadas POST, PUT y PATCH) deben incluir el encabezado `Content-Type` con un valor de `application/json`.
+* Todas las solicitudes con una carga útil en el cuerpo de la solicitud (como las llamadas POST, PUT y PATCH) deben incluir el encabezado `Content-Type` con un valor de `application/json`.
 
 <!--
 
