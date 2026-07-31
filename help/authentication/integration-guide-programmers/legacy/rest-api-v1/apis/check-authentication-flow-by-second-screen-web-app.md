@@ -2,10 +2,10 @@
 title: Comprobar flujo de autenticación por aplicación web en segunda pantalla
 description: Comprobar flujo de autenticación por aplicación web en segunda pantalla
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
 workflow-type: tm+mt
-source-wordcount: '232'
-ht-degree: 0%
+source-wordcount: '240'
+ht-degree: 1%
 
 ---
 
@@ -42,9 +42,9 @@ ht-degree: 0%
 Esta API debe ser consumida por la aplicación web de inicio de sesión en la segunda pantalla para confirmar que la autenticación de Adobe Pass ha confirmado que el inicio de sesión se ha realizado correctamente desde MVPD. Se recomienda llamar a esta API antes de mostrar un mensaje de éxito al usuario final que le indique que continúe con los flujos de trabajo en la consola del dispositivo.
 
 
-| Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
+| Extremo | Llamado </br> por | Parámetros de entrada </br> | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{registration code} | Iniciar sesión en aplicación web | &#x200B;1. código de registro </br>    (Componente de ruta de acceso)</br>2.  solicitante </br>    (Obligatorio) | GET | XML o JSON con detalles de error si no se ha realizado correctamente. | 200 - Éxito   </br>403 - Prohibido |
+| SP_FQDN/api/v1/checkauthn/{registration code} | Iniciar sesión en aplicación web | &#x200B;1.  código de registro </br> (componente de ruta de acceso)</br>2.  solicitante </br> (obligatorio) | GET | XML o JSON con detalles de error si no se ha realizado correctamente. | 200 - Correcto </br>403 - Prohibido |
 
 </br>
 
@@ -63,4 +63,4 @@ Esta API debe ser consumida por la aplicación web de inicio de sesión en la se
     }
 ```
 
-### [Volver a la referencia de API de REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+**[Volver a la referencia de API de REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)**
