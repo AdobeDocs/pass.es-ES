@@ -2,10 +2,10 @@
 title: Vista previa gratuita para Pase temporal y Pase temporal promocional
 description: Vista previa gratuita para Pase temporal y Pase temporal promocional
 exl-id: c584bf0c-15c4-4a4d-b6a2-8d15ee786fe3
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
 workflow-type: tm+mt
-source-wordcount: '432'
-ht-degree: 0%
+source-wordcount: '441'
+ht-degree: 2%
 
 ---
 
@@ -42,9 +42,9 @@ ht-degree: 0%
 Permite la creación de un token de autenticación para Pase temporal y Pase temporal promocional sin necesidad de una segunda pantalla.
 
 
-| Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
+| Extremo | Llamado </br> por | Parámetros de entrada </br> | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 |-------------------------------------------|-------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|
-| &lt;SP_FQDN>/api/v1/authenticate/freepreview | Servicio de programador </br></br>o</br></br>de aplicación de streaming | &#x200B;1. requestor_id (obligatorio)</br>    </br>2.  deviceId (obligatorio)</br>    </br>3.  mso_id (obligatorio)</br>    </br>4.  nombre_dominio (obligatorio)</br>    </br>5.  device_info/X-Device-Info (obligatorio)</br>6.  deviceType</br>    </br>7.  deviceUser (Obsoleto)</br>    </br>8.  appId (obsoleto)</br>    </br>9.  generic_data (opcional) | PUBLICAR | La respuesta correcta será un 204 Sin contenido, que indica que el token se creó correctamente y está listo para usarse en los flujos de autenticación. | 204 - Sin contenido   </br>400 - Solicitud incorrecta |
+| &lt;SP_FQDN>/api/v1/authenticate/freepreview | Servicio de programador </br></br>o</br></br>de aplicación de streaming | &#x200B;1.  requestor_id (obligatorio)</br>    </br>2.  deviceId (obligatorio)</br>    </br>3.  mso_id (obligatorio)</br>    </br>4.  nombre_dominio (obligatorio)</br>    </br>5.  device_info/X-Device-Info (obligatorio)</br>6.  deviceType</br>    </br>7.  deviceUser (Obsoleto)</br>    </br>8.  appId (obsoleto)</br>    </br>9.  generic_data (opcional) | PUBLICAR | La respuesta correcta será un 204 Sin contenido, que indica que el token se creó correctamente y está listo para usarse en los flujos de autenticación. | 204 - Sin contenido </br>400 - Solicitud incorrecta |
 
 <div>
 
@@ -55,11 +55,11 @@ Permite la creación de un token de autenticación para Pase temporal y Pase tem
 | deviceId | El ID de dispositivo bytes. |
 | mso_id | ID de MVPD para el que es válida esta operación. |
 | domain_name | Nombre de dominio para el que se otorgará un token. Esto se compara con los dominios del proveedor de servicios cuando se concede un token de autorización. |
-| device_info/</br></br>X-Device-Info | Información del dispositivo de streaming.</br></br>**Nota**: Esto PUEDE pasarse a device_info como parámetro de URL, pero debido al tamaño potencial de este parámetro y a las limitaciones en la longitud de una URL de GET, DEBE pasarse como X-Device-Info en el encabezado http. </br></br>Ver los detalles completos en [Pasar información de conexión y dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | El tipo de dispositivo (por ejemplo, Roku, PC).</br></br>Si este parámetro está configurado correctamente, ESM ofrece métricas que están [desglosadas por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) al utilizar sin cliente, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, para Roku, AppleTV, Xbox, etc.</br></br>Vea [Ventajas de usar parámetros de tipo de dispositivo sin cliente &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Nota**: device_info reemplazará este parámetro. |
-| _deviceUser_ | El identificador de usuario del dispositivo.</br></br>**Nota**: si se usa, deviceUser debería tener los mismos valores que en la solicitud [Crear código de registro](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
+| device_info/</br></br>X-Device-Info | Información del dispositivo de transmisión.</br></br>**Nota**: Esto PUEDE pasarse a device_info como parámetro de URL, pero debido al tamaño potencial de este parámetro y a las limitaciones en la longitud de una URL de GET, DEBE pasarse como X-Device-Info en el encabezado http. </br></br>Ver los detalles completos en [Pasar información de conexión y dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | El tipo de dispositivo (por ejemplo, Roku, PC).</br></br>Si este parámetro está configurado correctamente, ESM ofrece métricas que están [desglosadas por tipo de dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) al usar sin cliente, de modo que se puedan realizar diferentes tipos de análisis, por ejemplo, Roku, AppleTV, Xbox, etc.</br></br>Vea [Ventajas de usar parámetros de tipo de dispositivo sin cliente &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Nota**: device_info reemplazará este parámetro. |
+| _deviceUser_ | El identificador de usuario del dispositivo.</br></br>**Nota**: Si se usa, deviceUser debería tener los mismos valores que en la solicitud de [Crear código de registro](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 | _appId_ | El nombre o ID de la aplicación. </br></br>**Nota**: device_info reemplaza este parámetro. Si se usa, `appId` debería tener los mismos valores que en la solicitud [Crear código de registro](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 | generic_data | Se utiliza para limitar el ámbito del token para el pase temporal promocional. |
 
 
-### [Volver a la referencia de API de REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+**[Volver a la referencia de API de REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)**
