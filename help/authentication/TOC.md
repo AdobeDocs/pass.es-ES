@@ -5,7 +5,7 @@ feature: Authentication
 user-guide-title: Adobe Pass Authentication
 user-guide-description: Adobe Pass Authentication es una solución de asignación de derechos para TV Everywhere que proporciona un marco modular para determinar si quien solicita acceso a un recurso tiene derechos para acceder.
 nudge: true
-source-git-commit: ce9e8de3d69699d03cf68c86be1bb811967501dc
+source-git-commit: 7d3f430ccfa158c3da32512e6c6d3b6f189ee63c
 workflow-type: tm+mt
 source-wordcount: '1342'
 ht-degree: 3%
@@ -19,7 +19,7 @@ ht-degree: 3%
 - [Anuncios de productos](product-announcements.md)
 - Versiones de productos {#product-releases}
   - 2026 {#2026}
-    - {hide-from-toc}[Notas de la versión de Adobe Pass Authentication 3.8.0](notes-releases/auth-rn-380.md)
+    - [Notas de la versión de Adobe Pass Authentication 3.8.0](notes-releases/auth-rn-380.md)
     - [Notas de la versión de Adobe Pass Authentication 3.7.0](notes-releases/auth-rn-370.md)
     - [Notas de la versión de Adobe Pass Authentication 3.6.0](notes-releases/auth-rn-360.md)
   - 2025 {#2025}
