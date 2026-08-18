@@ -4,7 +4,7 @@ description: Mecanismo de limitación
 exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '616'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ Cuando se alcanza el límite, las solicitudes se marcan con un estado de respues
 ## Resumen del mecanismo {#mechanism-overview}
 
 El mecanismo determina el número máximo de llamadas aceptadas para cada extremo de Monitorización de concurrencia dentro de un intervalo de tiempo específico.
-Una vez alcanzado este número máximo de llamadas, nuestro servicio responderá con &#39;429 Demasiadas solicitudes&#39;. El encabezado &quot;Caduca&quot; de la respuesta 429 incluye la marca de tiempo cuando la siguiente llamada se consideraría válida o cuando caduca el acelerador. En este momento, la restricción caduca después de una   minuto desde la primera respuesta 429.
+Una vez alcanzado este número máximo de llamadas, nuestro servicio responderá con &#39;429 Demasiadas solicitudes&#39;. El encabezado &quot;Caduca&quot; de la respuesta 429 incluye la marca de tiempo cuando la siguiente llamada se consideraría válida o cuando caduca el acelerador. En este momento, la restricción caduca después de un minuto desde la primera respuesta 429.
 
 Los extremos configurados con restricción son los siguientes:
 1. Crear una nueva sesión: POST /session/{idp}/{subject}
