@@ -4,7 +4,7 @@ description: 'Actualizaciones de cookies: indicadores SameSite y Secure'
 exl-id: cc1f60fd-fa64-48cb-a185-dba562a54c33
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '956'
+source-wordcount: '973'
 ht-degree: 0%
 
 ---
@@ -58,13 +58,13 @@ Mientras explora esta sección, tenga en cuenta que todas las cookies del servic
 1. Es importante tener en cuenta que las cookies que tienen el atributo *Secure* deben enviarse a través de *HTTPS*; de lo contrario, la cookie no llegará al servicio de autenticación de Adobe Pass.
 
    - AccessEnabler JavaScript SDK:
-      - Es obligatorio que la comunicación con *sp.auth.adobe.com* use *HTTPS* para las versiones *2.35* y *3.5.0*, antes de presentar el registro de cliente dinámico.
+     - Es obligatorio que la comunicación con *sp.auth.adobe.com* use *HTTPS* para las versiones *2.35* y *3.5.0*, antes de presentar el registro de cliente dinámico.
    - AccessEnabler iOS/tvOS SDK:
-      - Es obligatorio que la comunicación con *sp.auth.adobe.com* use *HTTPS* para las versiones anteriores a *3.0.0*, antes de introducir el registro de cliente dinámico.
+     - Es obligatorio que la comunicación con *sp.auth.adobe.com* use *HTTPS* para las versiones anteriores a *3.0.0*, antes de introducir el registro de cliente dinámico.
    - AccessEnabler Android SDK:
-      - Es obligatorio que la comunicación con *sp.auth.adobe.com* use *HTTPS* para las versiones anteriores a *3.0.0*, antes de introducir el registro de cliente dinámico.
+     - Es obligatorio que la comunicación con *sp.auth.adobe.com* use *HTTPS* para las versiones anteriores a *3.0.0*, antes de introducir el registro de cliente dinámico.
    - SDK de AccessEnabler FireOS:
-      - Es obligatorio que la comunicación con *sp.auth.adobe.com* use *HTTPS* para la versión *2.0.4*.
+     - Es obligatorio que la comunicación con *sp.auth.adobe.com* use *HTTPS* para la versión *2.0.4*.
 
 </br>
 
