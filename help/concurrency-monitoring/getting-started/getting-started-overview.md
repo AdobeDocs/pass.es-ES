@@ -1,14 +1,12 @@
 ---
 title: Introducción a la monitorización de concurrencia
 description: Conozca los conceptos básicos de la Monitorización de concurrencia y cómo empezar a utilizar su integración
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: d2b8c7c4-b02d-4bea-9310-162064fd7216
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '372'
 ht-degree: 0%
-
 ---
-
-
 # Introducción a la monitorización de concurrencia {#getting-started-overview}
 
 Bienvenido a la Monitorización de concurrencia. Esta guía le ayudará a comprender los aspectos básicos y poner en marcha su integración rápidamente.
