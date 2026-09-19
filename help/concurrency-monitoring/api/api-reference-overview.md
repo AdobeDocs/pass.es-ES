@@ -1,14 +1,12 @@
 ---
 title: Información general de referencia de API
 description: Referencia completa para la API de supervisión de concurrencia, incluidos los puntos de conexión, la autenticación y los formatos de respuesta
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 6a1c6507-03d5-4003-8b88-502eb4019346
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '444'
 ht-degree: 2%
-
 ---
-
-
 # Información general de referencia de API {#api-reference-overview}
 
 La API de supervisión de concurrencia proporciona una interfaz RESTful para administrar sesiones de flujo continuo y aplicar políticas de uso simultáneo. Esta referencia proporciona documentación completa para todos los extremos, métodos de autenticación, formatos de solicitud/respuesta y administración de errores.

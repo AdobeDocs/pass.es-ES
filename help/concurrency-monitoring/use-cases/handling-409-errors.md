@@ -1,14 +1,12 @@
 ---
 title: Gestión de Errores de Conflicto 409
 description: Aprenda a gestionar errores de conflicto 409 cuando se alcancen los límites de uso simultáneos
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 23a73e48-8ae0-4e0e-85db-dfc09d1386a7
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
 source-wordcount: '283'
-ht-degree: 0%
-
+ht-degree: 1%
 ---
-
-
 # Gestión de Errores de Conflicto 409 {#handling-409-errors}
 
 Cuando un usuario intenta iniciar un nuevo flujo y alcanza un límite de uso simultáneo, la Monitorización de concurrencia devuelve una respuesta de **409 Conflict**. Comprender cómo gestionar este error es crucial para proporcionar una buena experiencia de usuario.
@@ -116,7 +114,7 @@ Se produce un conflicto 409 cuando:
 - **Proporcionar alternativas**: ofrezca formas de resolver el conflicto
 - **Guardar estado de usuario** - No pierda su selección de contenido
 
-### &#x200B;3. Consideraciones sobre la experiencia del usuario
+### &#x200B;3. Consideraciones sobre experiencia del usuario
 
 - **Resolución rápida**: facilite la resolución de conflictos
 - **Borrar opciones**: los usuarios deben entender sus opciones
@@ -127,5 +125,3 @@ Se produce un conflicto 409 cuando:
 - **Analizar la respuesta con cuidado**: extraiga toda la información relevante
 - **Controlar casos extremos**. ¿Qué sucede si no se devuelven conflictos?
 - **Conflictos de registro**: haga un seguimiento de las infracciones de directivas para su análisis
-
-
