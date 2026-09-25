@@ -4,11 +4,9 @@ description: Prueba de los flujos de autenticación y autorización mediante el 
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
 source-git-commit: 65475d6da7a1b25cb2d8ebd6229a7cb360c7ab4a
 workflow-type: tm+mt
-source-wordcount: '368'
+source-wordcount: '376'
 ht-degree: 0%
-
 ---
-
 # (Heredado) Prueba de los flujos de autenticación y autorización mediante el sitio de prueba de la API de Adobe {#How-to-test-auth-flows}
 
 >[!NOTE]
