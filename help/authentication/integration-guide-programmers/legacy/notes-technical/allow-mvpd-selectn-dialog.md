@@ -6,9 +6,7 @@ source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
 source-wordcount: '151'
 ht-degree: 0%
-
 ---
-
 # (Heredado) Permitir MVPD en el cuadro de diálogo de selección {#allow-mvpds-selection-dialog}
 
 >[!NOTE]
