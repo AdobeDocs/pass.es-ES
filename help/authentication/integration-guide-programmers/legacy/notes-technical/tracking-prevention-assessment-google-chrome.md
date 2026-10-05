@@ -4,11 +4,9 @@ description: Seguimiento de evaluación de prevención Google Chrome
 exl-id: f3d552da-2fd7-4ac8-9f82-876625af5d47
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '673'
+source-wordcount: '812'
 ht-degree: 0%
-
 ---
-
 # Evaluación de la prevención del seguimiento (heredada): Google Chrome {#tracking-prevention-assessment-google-chrome}
 
 >[!NOTE]
@@ -30,11 +28,11 @@ La evaluación se realiza para aplicaciones de TV en todas partes (TVE) que se e
 Vea a continuación una lista de los recursos agregados desde el sitio web para desarrolladores de Google y también desde su blog oficial que recomendamos a nuestros clientes que consulten:
 
 * [El siguiente paso para eliminar gradualmente las cookies de terceros en Chrome](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
-* [Documentación para desarrolladores para espacio aislado de privacidad](https://developers.google.com/privacy-sandbox)
-* [Prepararse para restricciones de cookies de terceros](https://developers.google.com/privacy-sandbox/3pcd)
-* [Prepararse para la eliminación gradual de cookies de terceros](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
-* [Preparándose para el fin de las cookies de terceros](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
-* [Las cookies de terceros están restringidas de forma predeterminada para el 1% de los usuarios de Chrome](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
+* [Documentación para desarrolladores para zona protegida de privacidad](https://developers.google.com/privacy-sandbox)
+* [Prepararse para las restricciones de cookies de terceros](https://developers.google.com/privacy-sandbox/3pcd)
+* [Preparación para la eliminación gradual de las cookies de terceros](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
+* [Preparación para el fin de las cookies de terceros](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
+* [Las cookies de terceros están restringidas de forma predeterminada para el 1 % de los usuarios de Chrome](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
 
 ## Cronología
 
