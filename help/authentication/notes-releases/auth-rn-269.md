@@ -2,13 +2,14 @@
 title: Notas de la versión de autenticación de Adobe Pass 2.69
 description: Notas de la versión de autenticación de Adobe Pass 2.69
 exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '212'
 ht-degree: 0%
-
 ---
-
 # Notas de la versión de autenticación de Adobe Pass 2.69 {#authn-269-rn}
 
 >[!IMPORTANT]
@@ -34,22 +35,22 @@ Fecha de versión: **27/02/2024 - 29/02/2024**
 
 * Vulnerabilidades de seguridad parcheadas.
 * Mejoras para restablecer la capa de seguridad de Temp Pass con el registro dinámico de clientes (DCR).
-   * Puede encontrar más detalles aquí: [Función TempPass](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * Puede encontrar más detalles aquí: [Función TempPass](../integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
 * Mejoras en la creación de informes de Platform Identification.
 
 #### API de REST
 
 * Desarrollo en curso de nuevas API de REST.
-   * Una próxima versión dedicada introducirá nuevos puntos de conexión y flujos, que se anunciarán en una notificación independiente.
-   * Está en curso la actualización de la documentación para el uso de estas nuevas API.
+  * Una próxima versión dedicada introducirá nuevos puntos de conexión y flujos, que se anunciarán en una notificación independiente.
+  * Está en curso la actualización de la documentación para el uso de estas nuevas API.
 
 #### Tablero de TVE
 
 * Desarrollo en curso en el nuevo Tablero de TVE.
-   * Una próxima versión dedicada presentará el nuevo Tablero de TVE, que se anunciará en una notificación separada.
-   * Se está actualizando la documentación para el uso de este nuevo tablero de TVE.
+  * Una próxima versión dedicada presentará el nuevo Tablero de TVE, que se anunciará en una notificación separada.
+  * Se está actualizando la documentación para el uso de este nuevo tablero de TVE.
 
 #### JavaScript SDK 4.7.0
 
 * Se ha eliminado la versión obsoleta 2.0.1 del Access Enabler JavaScript SDK debido a vulnerabilidades de seguridad.
-   * Siga el enlace para obtener más detalles: [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.0](authn-rn-javascript-470.md)
+  * Siga el enlace para obtener más detalles: [Notas de la versión de Adobe Pass Authentication JavaScript 4.7.0](authn-rn-javascript-470.md)

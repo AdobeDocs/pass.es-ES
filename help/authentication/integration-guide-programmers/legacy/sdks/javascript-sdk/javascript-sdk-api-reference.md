@@ -2,13 +2,14 @@
 title: Referencia de la API de JavaScript SDK
 description: Referencia de la API de JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2902'
+source-wordcount: '2904'
 ht-degree: 0%
-
 ---
-
 # Referencia de la API de JavaScript SDK (heredada) {#javascript-sdk-api-reference}
 
 >[!NOTE]
@@ -44,14 +45,14 @@ Estas funciones inician solicitudes de interacción con un MVPD. Todas las llama
 
 - *extremos*: este parámetro es opcional. Puede tener uno de los siguientes valores:
 
-   - Matriz que permite especificar extremos para los servicios de autenticación y autorización proporcionados por Adobe (se pueden utilizar distintas instancias para la depuración). En caso de que se proporcionen varias direcciones URL, la lista de MVPD estará compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD. De forma predeterminada (si no se especifica ningún valor), se utiliza el proveedor de servicios de Adobe (<http://sp.auth.adobe.com/>).
+  - Matriz que permite especificar extremos para los servicios de autenticación y autorización proporcionados por Adobe (se pueden utilizar distintas instancias para la depuración). En caso de que se proporcionen varias direcciones URL, la lista de MVPD estará compuesta por los extremos de todos los proveedores de servicios. Cada MVPD está asociado con el proveedor de servicios más rápido; es decir, el proveedor que respondió primero y que admite ese MVPD. De forma predeterminada (si no se especifica ningún valor), se utiliza el proveedor de servicios de Adobe (<http://sp.auth.adobe.com/>).
 
   Ejemplo:
-   - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
+  - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *options*: un objeto JSON que contiene el valor ID de aplicación, el valor ID de visitante, la configuración sin actualización (cierre de sesión en segundo plano) y la configuración de MVPD (iFrame). Todos los valores son opcionales.
-   1. Si se especifica, se informará del ID de visitante de Experience Cloud en todas las llamadas de red realizadas por la biblioteca. El valor se puede utilizar posteriormente en informes de análisis avanzados.
-   2. Si se especifica el identificador único de la aplicación -`applicationId` - el valor se agregará a todas las llamadas subsiguientes realizadas por la aplicación como parte del encabezado HTTP X-Device-Info. Este valor se puede obtener posteriormente de [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) informes con la consulta adecuada.
+  1. Si se especifica, el ID de visitante de Experience Cloud se registraría en todas las llamadas de red realizadas por la biblioteca. El valor se puede utilizar posteriormente en informes de análisis avanzados.
+  2. Si se especifica el identificador único de la aplicación -`applicationId` - el valor se agregará a todas las llamadas subsiguientes realizadas por la aplicación como parte del encabezado HTTP X-Device-Info. Este valor se puede obtener posteriormente de [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) informes con la consulta adecuada.
 
   **Nota:** Todas las claves JSON distinguen entre mayúsculas y minúsculas.
 
@@ -237,39 +238,39 @@ Existen dos tipos de metadatos:
 **Parámetros:**
 
 - *key*: ID que especifica los metadatos solicitados:
-   - Si la clave es `"TTL_AUTHN",`, se realiza la consulta para obtener el tiempo de caducidad del token de autenticación.
+  - Si la clave es `"TTL_AUTHN",`, se realiza la consulta para obtener el tiempo de caducidad del token de autenticación.
 
-   - Si la clave es `"TTL_AUTHZ"` y params es una matriz que contiene el ID de recurso como una cadena, se realiza la consulta para obtener la hora de caducidad del token de autorización asociado al recurso especificado.
+  - Si la clave es `"TTL_AUTHZ"` y params es una matriz que contiene el ID de recurso como una cadena, se realiza la consulta para obtener la hora de caducidad del token de autorización asociado al recurso especificado.
 
-   - Si la clave es `"DEVICEID"`, se realiza la consulta para obtener el ID del dispositivo actual. Tenga en cuenta que esta función está desactivada de forma predeterminada y los programadores deben ponerse en contacto con Adobe para obtener información sobre la habilitación y las tarifas.
+  - Si la clave es `"DEVICEID"`, se realiza la consulta para obtener el ID del dispositivo actual. Tenga en cuenta que esta función está desactivada de forma predeterminada y los programadores deben ponerse en contacto con Adobe para obtener información sobre la habilitación y las tarifas.
 
-   - Si la clave procede de la siguiente lista de tipos de metadatos de usuario, se envía a la función de devolución de llamada [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata) un objeto JSON que contiene los metadatos de usuario correspondientes:
+  - Si la clave procede de la siguiente lista de tipos de metadatos de usuario, se envía a la función de devolución de llamada [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata) un objeto JSON que contiene los metadatos de usuario correspondientes:
 
-   - `"zip"` - Código postal
+  - `"zip"` - Código postal
 
-   - `"encryptedZip"` - Código postal cifrado
+  - `"encryptedZip"` - Código postal cifrado
 
-   - `"householdID"` - Identificador del hogar. En caso de que una MVPD no admita subcuentas, será idéntico a userID.
+  - `"householdID"` - Identificador del hogar. En caso de que una MVPD no admita subcuentas, será idéntico a userID.
 
-   - `"maxRating"` - Clasificación parental máxima para el usuario
+  - `"maxRating"` - Clasificación parental máxima para el usuario
 
-   - `"userID"`: el identificador de usuario. En el caso de que un MVPD admita subcuentas y el usuario no sea la cuenta principal, userID será diferente a householdID.
+  - `"userID"`: el identificador de usuario. En el caso de que un MVPD admita subcuentas y el usuario no sea la cuenta principal, userID será diferente a householdID.
 
-   - `"channelID"`: lista de canales que el usuario puede ver
+  - `"channelID"`: lista de canales que el usuario puede ver
 
-   - `"is_hoh"` - Indicador que identifica si un usuario es cabeza de familia
+  - `"is_hoh"` - Indicador que identifica si un usuario es cabeza de familia
 
-   - `"encryptedZip"` - Código postal cifrado
+  - `"encryptedZip"` - Código postal cifrado
 
-   - `"typeID"`: indicador que identifica si la cuenta de usuario es la cuenta principal/secundaria
+  - `"typeID"`: indicador que identifica si la cuenta de usuario es la cuenta principal/secundaria
 
-   - `"primaryOID"` - Identificador del hogar
+  - `"primaryOID"` - Identificador del hogar
 
-   - `"postalCode"` - Similar al código postal
+  - `"postalCode"` - Similar al código postal
 
-   - `"acctID"` - ID de cuenta
+  - `"acctID"` - ID de cuenta
 
-   - `"acctParentID"` - Identificador principal de la cuenta
+  - `"acctParentID"` - Identificador principal de la cuenta
 
   **Nota**: los metadatos de usuario reales disponibles para un programador dependen de lo que un MVPD ponga a disposición.  Consulte [Metadatos de usuario](#UserMetadata) para ver la lista actual de metadatos de usuario disponibles.
 
@@ -309,7 +310,7 @@ Por ejemplo:
 **Descripción:** Llame a esta función cuando el usuario haya seleccionado un MVPD en la interfaz de usuario de selección de proveedores para enviar la selección de proveedores al Habilitador de acceso o llame a esta función con un parámetro nulo en caso de que el usuario descarte la interfaz de usuario de selección de proveedores sin seleccionar un proveedor.
 
 **Llamadas de retorno
-desencadenó:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+desencadenó:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +416,7 @@ Debe implementar estas llamadas de retorno para gestionar las respuestas a sus l
 
 **Descripción:** Implemente esta llamada de retorno si el usuario seleccionó un MVPD que requiera un iFrame en el que mostrar su interfaz de usuario de la página de inicio de sesión de autenticación.
 
-**Activado por:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Activado por:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Volver al principio](#top)
 
@@ -453,16 +454,16 @@ Debe implementar estas llamadas de retorno para gestionar las respuestas a sus l
 **Descripción:** Implemente esta devolución de llamada para recibir datos de seguimiento cuando se produzcan eventos específicos. Puede utilizar esto, por ejemplo, para realizar un seguimiento de cuántos usuarios han iniciado sesión con las mismas credenciales. El seguimiento no se puede configurar actualmente. Con la autenticación de Adobe Pass 1.6, `sendTrackingData()` también genera informes sobre el dispositivo, el cliente del habilitador de acceso y el tipo de sistema operativo. La llamada de retorno `sendTrackingData()` sigue siendo compatible con versiones anteriores.
 
 - Valores posibles para el tipo de dispositivo:
-   - ordenador
-   - tableta
-   - mobile
-   - consola de juegos
-   - desconocido
+  - ordenador
+  - tableta
+  - mobile
+  - consola de juegos
+  - desconocido
 
 - Valores posibles para el tipo de cliente del Habilitador de acceso:
-   - html5
-   - ios
-   - androide
+  - html5
+  - ios
+  - androide
 
 
 Pasa el tipo de evento y una matriz de información asociada. Los tipos de eventos son:

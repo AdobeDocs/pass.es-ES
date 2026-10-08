@@ -2,13 +2,14 @@
 title: Cierre de sesión básico - Aplicación principal - Flujo
 description: 'API de REST V2: cierre de sesión básico, aplicación principal, flujo'
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
-
 ---
-
 # Flujo de cierre de sesión básico realizado en la aplicación principal {#basic-logout-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
@@ -36,9 +37,9 @@ El flujo de cierre de sesión básico le permite consultar los siguientes escena
 Antes de iniciar el cierre de sesión de un MVPD específico con un extremo de cierre de sesión, asegúrese de que se cumplan los siguientes requisitos previos:
 
 * La aplicación de streaming debe tener un perfil regular válido que se haya creado correctamente para MVPD mediante uno de los flujos de autenticación básicos:
-   * [Realizar autenticación en la aplicación principal](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Realizar autenticación en la aplicación secundaria con mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Realizar autenticación en la aplicación secundaria sin mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Realizar autenticación en la aplicación principal](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Realizar autenticación en la aplicación secundaria con mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Realizar autenticación en la aplicación secundaria sin mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * La aplicación de streaming debe iniciar el flujo de cierre de sesión cuando necesite cerrar la sesión de MVPD.
 
 >[!IMPORTANT]
@@ -102,9 +103,9 @@ Siga los pasos dados para implementar el flujo de cierre de sesión básico para
 Antes de iniciar el cierre de sesión de un MVPD específico sin un extremo de cierre de sesión, asegúrese de que se cumplan los siguientes requisitos previos:
 
 * La aplicación de streaming debe tener un perfil regular válido que se haya creado correctamente para MVPD mediante uno de los flujos de autenticación básicos:
-   * [Realizar autenticación en la aplicación principal](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Realizar autenticación en la aplicación secundaria con mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Realizar autenticación en la aplicación secundaria sin mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Realizar autenticación en la aplicación principal](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Realizar autenticación en la aplicación secundaria con mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Realizar autenticación en la aplicación secundaria sin mvpd preseleccionado](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * La aplicación de streaming debe iniciar el flujo de cierre de sesión cuando necesite cerrar la sesión de MVPD.
 
 >[!IMPORTANT]

@@ -2,13 +2,14 @@
 title: Pasar información del cliente (dispositivo, conexión y aplicación)
 description: Pasar información del cliente (dispositivo, conexión y aplicación)
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1725'
 ht-degree: 2%
-
 ---
-
 # (Heredado) Pasar información del cliente (dispositivo, conexión y aplicación) {#pass-client-info}
 
 >[!NOTE]
@@ -97,7 +98,8 @@ El SDK de AccessEnabler de JavaScript admite **anular solo** la clave &quot;appl
 
 >[!CAUTION]
 >
->El valor del parámetro `applicationId` debe ser un valor de cadena de texto sin formato.Si la aplicación Programador decide pasar el applicationId, el resto de las claves de información del cliente se seguirán calculando mediante el SDK de JavaScript de AccessEnabler.
+>El valor del parámetro `applicationId` debe ser un valor de cadena de texto sin formato.
+>Si la aplicación Programador decide pasar el applicationId, el resto de las claves de información del cliente se seguirán calculando mediante el SDK de JavaScript de AccessEnabler.
 
 #### iOS/tvOS SDK {#ios-tvos-sdk}
 

@@ -2,13 +2,14 @@
 title: Devolver registro de registro
 description: Devolver registro de registro
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '285'
 ht-degree: 2%
-
 ---
-
 # Registro de registro de devolución (heredado) {#return-registration-record}
 
 >[!NOTE]
@@ -47,9 +48,9 @@ Devuelve el registro del código de registro que contiene el UUID del código de
 
 
 
-| Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
+| Extremo | Llamado </br> por | Parámetros de entrada </br> | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Por ejemplo:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK?format=xml | Servicio de programador </br></br>o</br></br>de aplicación de streaming | &#x200B;1. solicitante </br>    (Componente de ruta de acceso)</br>2.  código de registro </br>    (Componente Ruta) | GET | XML o JSON que contienen un código de registro e información. Consulte esquema y ejemplo a continuación. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Por ejemplo:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK?format=xml | Servicio de programador </br></br>o</br></br>de aplicación de streaming | &#x200B;1.  solicitante </br> (componente de ruta de acceso)</br>2.  código de registro </br> (componente Ruta de acceso) | GET | XML o JSON que contienen un código de registro e información. Consulte esquema y ejemplo a continuación. | 200 |
 
 {style="table-layout:auto"}
 

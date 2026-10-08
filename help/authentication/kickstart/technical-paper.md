@@ -2,13 +2,14 @@
 title: Acerca de la autenticación de Adobe Pass
 description: Acerca de la autenticación de Adobe Pass
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1863'
 ht-degree: 0%
-
 ---
-
 # Acerca de la autenticación Adobe® Pass {#about-adobe-pass-authentication}
 
 >[!IMPORTANT]
@@ -165,15 +166,15 @@ La autenticación de Adobe Pass actúa como un proxy y facilita el flujo de asig
 Para los programadores, la autenticación de Adobe Pass proporciona API como parte de un nivel **Standard** o **Premium**:
 
 * API de autenticación estándar de Adobe Pass:
-   * [DCR de API de REST](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
-   * [API DE REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [DCR de API de REST](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+  * [API DE REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * API de autenticación de Adobe Pass Premium:
-   * [Restablecer API de pase temporal](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [Función TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-   * [API de degradación](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Función de degradación](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-   * [API de supervisión del servicio de derechos](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+  * [Restablecer API de pase temporal](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+    * [Función TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * [API de degradación](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+    * [Función de degradación](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+  * [API de supervisión del servicio de derechos](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 Para obtener más información sobre el flujo de derechos, consulte la documentación de [Programmer Integration Guide](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
 
@@ -208,18 +209,18 @@ Los programadores son responsables de diseñar e implementar la interfaz de usua
 Como mínimo, los programadores deben:
 
 * **Implementar una interfaz de selección de proveedores**
-   * Permitir que los nuevos usuarios identifiquen a su proveedor de TV de pago e inicien sesión por primera vez.
-   * Algunos proveedores de TV de pago redirigen a los usuarios a una página de inicio de sesión externa, mientras que otros requieren el inicio de sesión dentro de un iframe. Los programadores deben implementar una función de llamada de retorno para generar el iframe cuando sea necesario.
+  * Permitir que los nuevos usuarios identifiquen a su proveedor de TV de pago e inicien sesión por primera vez.
+  * Algunos proveedores de TV de pago redirigen a los usuarios a una página de inicio de sesión externa, mientras que otros requieren el inicio de sesión dentro de un iframe. Los programadores deben implementar una función de llamada de retorno para generar el iframe cuando sea necesario.
 
 * **Administrar una lista de proveedores de TV de pago admitidos**
-   * Asegúrese de que los usuarios solo puedan acceder al contenido a través de proveedores aprobados.
+  * Asegúrese de que los usuarios solo puedan acceder al contenido a través de proveedores aprobados.
 
 * **Indicar estado de autenticación**
-   * Mostrar cuándo se autentica un usuario dentro de la aplicación o del sitio web.
+  * Mostrar cuándo se autentica un usuario dentro de la aplicación o del sitio web.
 
 * **Identificar recursos protegidos**
-   * Indique claramente qué contenido requiere autorización antes de visualizarlo.
-   * Actualice la IU para reflejar la autorización correcta una vez concedido el acceso.
+  * Indique claramente qué contenido requiere autorización antes de visualizarlo.
+  * Actualice la IU para reflejar la autorización correcta una vez concedido el acceso.
 
 ## FAQ {#faqs}
 

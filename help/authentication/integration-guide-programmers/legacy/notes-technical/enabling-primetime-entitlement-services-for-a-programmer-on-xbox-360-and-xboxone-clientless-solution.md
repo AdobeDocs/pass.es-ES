@@ -2,13 +2,14 @@
 title: Habilitar los servicios de autorización de Adobe Pass para un programador en Xbox 360 y XboxOne sin cliente
 description: Habilitar los servicios de autorización de Adobe Pass para un programador en Xbox 360 y XboxOne sin cliente
 exl-id: ff7254de-9ea4-4c27-a186-d1c2eea12222
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '484'
 ht-degree: 0%
-
 ---
-
 # (Heredado) Habilitar los servicios de derechos de Adobe Pass para un programador en Xbox 360 y XboxOne sin cliente {#enabling-primetime-entitlement-services-for-a-programer-on-xbox-360-and-xboxone-clientless}
 
 >[!NOTE]
@@ -49,4 +50,4 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Debido a la gran longitud del token XSTS, la consola de XBox tiene una limitación técnica: no puede enviar el token como parámetro de GET HTTP a las API de autenticación de TV de pago de Adobe Pass. Para solucionarlo, la autenticación de Adobe Pass Pay-TV permite enviar el token XSTS como parte del encabezado HTTP &quot;Autorización&quot; al llamar a las API. El token XSTS debe cifrarse con la clave pública del certificado X.509 emitido al programador desde la autenticación de Adobe Pass Pay-TV. La autenticación de Adobe Pass TV de pago almacena la clave privada asociada y la utiliza para descifrar el token XSTS y extraer el deviceId de él.
+>Debido a la gran longitud del token XSTS, la consola de XBox tiene una limitación técnica: no puede enviar el token como parámetro HTTP GET a las API de autenticación de Adobe Pass Pay-TV. Para solucionarlo, la autenticación de Adobe Pass Pay-TV permite enviar el token XSTS como parte del encabezado HTTP &quot;Autorización&quot; al llamar a las API. El token XSTS debe cifrarse con la clave pública del certificado X.509 emitido al programador desde la autenticación de Adobe Pass Pay-TV. La autenticación de Adobe Pass TV de pago almacena la clave privada asociada y la utiliza para descifrar el token XSTS y extraer el deviceId de él.

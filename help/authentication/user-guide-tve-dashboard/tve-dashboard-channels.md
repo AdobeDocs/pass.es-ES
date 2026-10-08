@@ -2,13 +2,14 @@
 title: Canales
 description: Obtenga información sobre los canales y sus distintas configuraciones dentro del tablero de TVE.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: b4276ee12d57bc061d26afc0a192b799fe1681ae
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1641'
 ht-degree: 0%
-
 ---
-
 # Canales {#channels}
 
 >[!NOTE]
@@ -108,7 +109,8 @@ Esta ficha muestra una lista de [certificados disponibles](#available-certificat
 
 #### Certificados disponibles {#available-certificates}
 
-Estos certificados sirven como claves privadas o públicas y se utilizan para el cifrado de metadatos de usuarios.Puede realizar los siguientes cambios en la sección certificados disponibles:
+Estos certificados sirven como claves privadas o públicas y se utilizan para el cifrado de metadatos de usuarios.
+Puede realizar los siguientes cambios en la sección certificados disponibles:
 
 * [Añadir nuevo certificado](#add-new-certificate)
 * [Eliminar certificado](#delete-certificate)
@@ -267,7 +269,8 @@ Siga estos pasos para descargar una declaración de software.
 
 ### Esquemas personalizados {#custom-schemes}
 
-Esta pestaña muestra una lista de esquemas personalizados.Los esquemas personalizados se pueden utilizar para los dispositivos Android y iOS.
+Esta pestaña muestra una lista de esquemas personalizados.
+Los esquemas personalizados se pueden utilizar para los dispositivos Android y iOS.
 
 Puede realizar los siguientes cambios en las combinaciones personalizadas:
 

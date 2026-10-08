@@ -2,13 +2,14 @@
 title: Amazon FireOS SDK con registro de cliente dinámico
 description: Amazon FireOS SDK con registro de cliente dinámico
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1185'
 ht-degree: 1%
-
 ---
-
 
 # (Heredado) Amazon FireOS SDK con registro de cliente dinámico {#amazon-fireos-sdk-with-dynamic-client-registration}
 
@@ -123,8 +124,8 @@ Obsoleto:
 
   SDK realizará las siguientes operaciones:
 
-   - solicitud de registro: con **software\_statement**, SDK obtendrá **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Esta información se almacena en el almacenamiento interno de la aplicación.
-   - obtenga un **access\_token** usando client\_id, client\_secret y grant\_type=&quot;client\_credentials&quot; . Este access\_token se usará en cada llamada realizada por SDK a los servidores de Adobe Pass.
+  - solicitud de registro: con **software\_statement**, SDK obtendrá **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Esta información se almacena en el almacenamiento interno de la aplicación.
+  - obtenga un **access\_token** usando client\_id, client\_secret y grant\_type=&quot;client\_credentials&quot; . Este access\_token se usará en cada llamada realizada por SDK a los servidores de Adobe Pass.
 
 | Respuestas de error de token: |  |  |
 |--- | --- | --- |
@@ -136,21 +137,21 @@ Obsoleto:
 
 - b. checkAuthentication()
 
-   - *true* : ir a Autorización
-   - *false* : vaya a Seleccionar MVPD
+  - *true* : ir a Autorización
+  - *false* : vaya a Seleccionar MVPD
 
 - c. getAuthentication : SDK incluirá **access_token** en los parámetros de llamada
 
-   - mvpd recordó : vaya a setSelectedProvider(mvpd\_id)
-   - mvpd no seleccionado: displayProviderDialog
-   - mvpd seleccionado: ir a setSelectedProvider(mvpd\_id)
+  - mvpd recordó : vaya a setSelectedProvider(mvpd\_id)
+  - mvpd no seleccionado: displayProviderDialog
+  - mvpd seleccionado: ir a setSelectedProvider(mvpd\_id)
 
 - d. setSelectedProvider
 
-   - La URL de autenticación mvpd\_id se carga en ChromeCustomTabs
-   - inicio de sesión correcto : delegate.setAuthenticationStatus ( SUCCESS )
-   - inicio de sesión cancelado : restablecer selección de MVPD
-   - El esquema URL se establece como &quot;adobepass://android.app&quot; para capturar cuándo se completa la autenticación
+  - La URL de autenticación mvpd\_id se carga en ChromeCustomTabs
+  - inicio de sesión correcto : delegate.setAuthenticationStatus ( SUCCESS )
+  - inicio de sesión cancelado : restablecer selección de MVPD
+  - El esquema URL se establece como &quot;adobepass://android.app&quot; para capturar cuándo se completa la autenticación
 
 - e. get/checkAuthorization : SDK incluirá **access\_token** en el encabezado como Autorización: Portador **access\_token**
 
@@ -158,10 +159,10 @@ Obsoleto:
 
 - f. cierre de sesión :
 
-   - SDK eliminará el token válido para el solicitante actual (las autenticaciones obtenidas por otras aplicaciones y no a través de SSO seguirán siendo válidas)
-   - SDK abrirá las fichas personalizadas de Chrome para llegar al extremo de cierre de sesión de mvpd\_id. Una vez finalizado, se cerrarán las fichas personalizadas de Chrome
-   - El esquema de URL se establece como &quot;adobepass://logout&quot; para capturar el momento en que se completa el cierre de sesión
-   - el cierre de sesión almacenará en déclencheur sendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) y una llamada de retorno : setAuthenticationStatus(0,&quot;Logout&quot;)
+  - SDK eliminará el token válido para el solicitante actual (las autenticaciones obtenidas por otras aplicaciones y no a través de SSO seguirán siendo válidas)
+  - SDK abrirá las fichas personalizadas de Chrome para llegar al extremo de cierre de sesión de mvpd\_id. Una vez finalizado, se cerrarán las fichas personalizadas de Chrome
+  - El esquema de URL se establece como &quot;adobepass://logout&quot; para capturar el momento en que se completa el cierre de sesión
+  - el cierre de sesión almacenará en déclencheur sendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) y una llamada de retorno : setAuthenticationStatus(0,&quot;Logout&quot;)
 
 
 

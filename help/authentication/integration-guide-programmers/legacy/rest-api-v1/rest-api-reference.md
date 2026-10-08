@@ -2,13 +2,14 @@
 title: Referencia de API de REST
 description: Referencia de API de REST
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '661'
-ht-degree: 2%
-
+source-wordcount: '669'
+ht-degree: 5%
 ---
-
 # Referencia de la API de REST (heredada) {#rest-api-reference}
 
 >[!NOTE]
@@ -63,7 +64,7 @@ En la tabla siguiente se enumeran los servicios web disponibles para el enfoque 
 | 3. | [&lt;SP_FQDN>/api/v1/config/ </br>{requestorId}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) | Devuelve la lista de MVPD configuradas para el solicitante | 5 | Servicio </br>autenticación de Adobe </br>Adobe Pass </br>de | Iniciar sesión en la aplicación </br>Web </br> |
 | 4. | [&lt;SP_FQDN>/api/v1/authentication](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | Inicia el proceso AuthN al informar al evento de selección de MVPD. Crea un registro en la base de datos de autenticación, que se concilia cuando se recibe una respuesta correcta de MVPD (Paso 13) | 7 | Servicio </br>autenticación de Adobe </br>Adobe Pass </br>de | Iniciar sesión en la aplicación </br>Web </br> |
 | 5. | Consumidor de afirmación de SAML | Flujo de trabajo SAML existente entre Adobe Pass Authentication y MVPD | 13 | Servicio </br>de autenticación </br>de Adobe Pass | Adobe Pass Authentication |
-| 6. | [&lt;SP_FQDN>/api/v1/checkauthn/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md) | La aplicación web de inicio de sesión puede comprobar si el flujo de inicio de sesión intentado se ha realizado correctamente |                                                                                             | Autenticación de Adobe Pass </br>   </br>Servicio | Iniciar sesión   </br>Web   </br>Aplicación |
+| 6. | [&lt;SP_FQDN>/api/v1/checkauthn/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md) | La aplicación web de inicio de sesión puede comprobar si el flujo de inicio de sesión intentado se ha realizado correctamente |                                                                                             | Servicio </br>de autenticación </br>de Adobe Pass | Iniciar sesión en la aplicación </br>Web </br> |
 | 7. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | Obtiene metadatos relacionados con el token de AuthN | 15 | Servicio </br>de autenticación </br>de Adobe Pass | Smart Device |
 | 8. | [&lt;REGGIE_FQDN>/reggie/v1/ </br>  {requestorId}/regcode/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md) | Elimina el registro de código reg y libera el código reg para su reutilización | 16 | Servicio De Código Reg </br>De Adobe | Adobe Pass Authentication |
 | 9. | [&lt;SP_FQDN>/api/v1/authorize](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authorization.md) | Obtiene una respuesta de autorización. | 17 | Servicio </br>de autenticación </br>de Adobe Pass | Smart Device |
@@ -74,7 +75,7 @@ En la tabla siguiente se enumeran los servicios web disponibles para el enfoque 
 | 14. | [&lt;SP_FQDN>/api/v1/mediatoken](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md) | Obtiene el token de medios corto |                                                                                             | Servicio </br>de autenticación </br>de Adobe Pass | Smart Device |
 | 15. | [&lt;SP_FQDN>/api/v1/preauthorize](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md) | Recupera la lista de recursos preautorizados |                                                                                             | Servicio </br>de autenticación </br>de Adobe Pass | Smart Device |
 | 16. | [&lt;SP_FQDN>/api/v1/preauthorize/{code}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | Recupera la lista de recursos preautorizados |                                                                                             | Servicio </br>de autenticación </br>de Adobe Pass | Iniciar sesión en aplicación web |
-| 17. | [&lt;SP_FQDN>/api/v1/logout](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md) | Quitar los tokens AuthN y AuthZ del almacenamiento |                                                                                             | Autenticación de Adobe Pass </br>   </br>Servicio | Smart Device |
+| 17. | [&lt;SP_FQDN>/api/v1/logout](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md) | Quitar los tokens AuthN y AuthZ del almacenamiento |                                                                                             | Servicio </br>de autenticación </br>de Adobe Pass | Smart Device |
 | 18. | [&lt;SP_FQDN>/api/v1/tokens/usermetadata](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) | Obtiene metadatos de usuario una vez completado el flujo de autenticación | N/D | N/D | Smart Device |
 | 19. | [&lt;SP_FQDN>/api/v1/authenticate/freepreview](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/free-preview-for-temp-pass-and-promotional-temp-pass.md) | Crear un token de autenticación para Pase temporal o Pase temporal promocional | N/D | Servicio </br>de autenticación </br>de Adobe Pass | Smart Device |
 

@@ -2,13 +2,14 @@
 title: 'Encabezado: AP-Device-Identifier'
 description: 'API de REST V2: encabezado: AP-Device-Identifier'
 exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '561'
 ht-degree: 0%
-
 ---
-
 # Encabezado: AP-Device-Identifier {#header-ap-device-identifier}
 
 >[!NOTE]
@@ -51,8 +52,10 @@ Solo hay un tipo compatible como se muestra a continuación.
    <tr>
       <td>huella digital</td>
       <td>
-            El identificador de dispositivo consiste en un identificador estable y único creado y administrado por la aplicación cliente para cada dispositivo.<br/>
-            La aplicación cliente debe almacenar en caché el identificador del dispositivo en el almacenamiento persistente, ya que perderlo o modificarlo invalidará la autenticación. La aplicación cliente debe evitar los cambios de valor causados por las acciones del usuario, como la desinstalación, reinstalación o actualizaciones de la aplicación.</td>
+            El identificador de dispositivo consiste en un identificador estable y único creado y administrado por la aplicación cliente para cada dispositivo.
+            <br/>
+            La aplicación cliente debe almacenar en caché el identificador del dispositivo en el almacenamiento persistente, ya que perderlo o modificarlo invalidará la autenticación. La aplicación cliente debe evitar los cambios de valor causados por las acciones del usuario, como la desinstalación, reinstalación o actualizaciones de la aplicación.
+      </td>
    </tr>
 </table>
 

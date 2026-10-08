@@ -2,13 +2,14 @@
 title: Crear sesión de autenticación
 description: 'API de REST V2: crear sesión de autenticación'
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1190'
 ht-degree: 1%
-
 ---
-
 # Crear sesión de autenticación {#create-authentication-session}
 
 >[!IMPORTANT]
@@ -59,23 +60,30 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
       <td>
-        El identificador único interno asociado con el proveedor de identidad durante el proceso de incorporación.<br/><br/>
-        Si la plataforma del dispositivo de streaming tiene limitaciones para proporcionar un valor, la aplicación tendrá que reanudar la sesión de autenticación y proporcionar un valor válido.</td>
+        El identificador único interno asociado con el proveedor de identidad durante el proceso de incorporación.
+        <br/><br/>
+        Si la plataforma del dispositivo de streaming tiene limitaciones para proporcionar un valor, la aplicación tendrá que reanudar la sesión de autenticación y proporcionar un valor válido.
+      </td>
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
       <td>
-        Dominio de origen de la aplicación que realiza el inicio de sesión de MVPD.<br/><br/>
-        Si la plataforma del dispositivo de streaming tiene limitaciones para proporcionar un valor, la aplicación tendrá que reanudar la sesión de autenticación y proporcionar un valor válido.</td>
+        Dominio de origen de la aplicación que realiza el inicio de sesión de MVPD.
+        <br/><br/>
+        Si la plataforma del dispositivo de streaming tiene limitaciones para proporcionar un valor, la aplicación tendrá que reanudar la sesión de autenticación y proporcionar un valor válido.
+      </td>
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        La URL de redireccionamiento final a la que se desplaza el agente de usuario cuando se completa el flujo de autenticación para MVPD.<br/><br/>
-        El valor debe tener codificación URL.<br/><br/>
-        Si la plataforma del dispositivo de streaming tiene limitaciones para proporcionar un valor, la aplicación tendrá que reanudar la sesión de autenticación y proporcionar un valor válido.</td>
+        La URL de redireccionamiento final a la que se desplaza el agente de usuario cuando se completa el flujo de autenticación para MVPD.
+        <br/><br/>
+        El valor debe tener codificación URL.
+        <br/><br/>
+        Si la plataforma del dispositivo de streaming tiene limitaciones para proporcionar un valor, la aplicación tendrá que reanudar la sesión de autenticación y proporcionar un valor válido.
+        </td>
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
@@ -91,8 +99,10 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         El tipo de medio aceptado para los recursos que se envían.<br/><br/>
-         Debe ser application/x-www-form-urlencoded.</td>
+         El tipo de medio aceptado para los recursos que se envían.
+         <br/><br/>
+         Debe ser application/x-www-form-urlencoded.
+      </td>
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
@@ -103,32 +113,43 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La generación de la carga de información del dispositivo se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">documentación del encabezado X-Device-Info</a>.<br/><br/>
-         Se recomienda utilizarlo siempre que la plataforma de dispositivos de la aplicación permita la provisión explícita de valores válidos.<br/><br/>
-         Cuando se proporciona, el backend de autenticación de Adobe Pass combina explícitamente los valores establecidos con los valores extraídos implícitamente (de forma predeterminada).<br/><br/>
-         Cuando no se proporciona, el backend de autenticación de Adobe Pass utilizará valores extraídos implícitamente (de forma predeterminada).</td>
+         La generación de la carga de información del dispositivo se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">documentación del encabezado X-Device-Info</a>.
+         <br/><br/>
+         Se recomienda utilizarlo siempre que la plataforma de dispositivos de la aplicación permita la provisión explícita de valores válidos.
+         <br/><br/>
+         Cuando se proporciona, el backend de autenticación de Adobe Pass combina explícitamente los valores establecidos con los valores extraídos implícitamente (de forma predeterminada).
+         <br/><br/>
+         Cuando no se proporciona, el backend de autenticación de Adobe Pass utilizará valores extraídos implícitamente (de forma predeterminada).
+      </td>
       <td><i>obligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         La dirección IP del dispositivo de flujo continuo.<br/><br/>
-         Se recomienda utilizarlo siempre para implementaciones de servidor a servidor, especialmente cuando la llamada la realice el servicio del programador en lugar del dispositivo de flujo continuo.<br/><br/>
-         Para implementaciones de cliente a servidor, la dirección IP del dispositivo de flujo continuo se envía implícitamente.</td>
+         La dirección IP del dispositivo de flujo continuo.
+         <br/><br/>
+         Se recomienda utilizarlo siempre para implementaciones de servidor a servidor, especialmente cuando la llamada la realice el servicio del programador en lugar del dispositivo de flujo continuo.
+         <br/><br/>
+         Para implementaciones de cliente a servidor, la dirección IP del dispositivo de flujo continuo se envía implícitamente.
+      </td>
       <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>o<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.<br/><br/>
-        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan una identidad de plataforma, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Inicio de sesión único mediante flujos de identidad de plataforma</a>.</td>
+        La generación de la carga de inicio de sesión único para el método de identidad de Platform se describe en la <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">documentación del encabezado Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
+        <br/><br/>
+        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan una identidad de plataforma, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Inicio de sesión único mediante flujos de identidad de plataforma</a>.
+      </td>
       <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        La generación de la carga de inicio de sesión único para el método del token de servicio se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.<br/><br/>
-        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan un token de servicio, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Inicio de sesión único mediante flujos de token de servicio</a>.<td>opcional</td>
+        La generación de la carga de inicio de sesión único para el método del token de servicio se describe en la documentación del encabezado <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
+        <br/><br/>
+        Para obtener más información sobre los flujos habilitados para el inicio de sesión único que utilizan un token de servicio, consulte la documentación de <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Inicio de sesión único mediante flujos de token de servicio</a>.
+      <td>opcional</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
@@ -139,8 +160,10 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Aceptar</td>
       <td>
-         El tipo de medio aceptado por la aplicación cliente.<br/><br/>
-         Si se especifica, debe ser application/json;charset=utf-8.</td>
+         El tipo de medio aceptado por la aplicación cliente.
+         <br/><br/>
+         Si se especifica, debe ser application/json;charset=utf-8.
+      </td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -169,25 +192,29 @@ ht-degree: 1%
       <td>400</td>
       <td>Solicitud incorrecta</td>
       <td>
-        La solicitud no es válida, el cliente debe corregirla e intentarlo de nuevo. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
+        La solicitud no es válida, el cliente debe corregirla e intentarlo de nuevo. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>No autorizado</td>
       <td>
-        El token de acceso no es válido, el cliente debe obtener un nuevo token de acceso e intentarlo de nuevo. Para obtener más información, consulte la <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Información general sobre el registro de clientes dinámicos</a>.</td>
+        El token de acceso no es válido, el cliente debe obtener un nuevo token de acceso e intentarlo de nuevo. Para obtener más información, consulte la <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Información general sobre el registro de clientes dinámicos</a>.
+      </td>
    </tr>
    <tr>
       <td>405</td>
       <td>Método no permitido</td>
       <td>
-        El método HTTP no es válido, el cliente debe utilizar un método HTTP permitido para el recurso solicitado e intentarlo de nuevo. Para obtener más información, consulte la sección <a href="#request">Solicitud</a>.</td>
+        El método HTTP no es válido, el cliente debe utilizar un método HTTP permitido para el recurso solicitado e intentarlo de nuevo. Para obtener más información, consulte la sección <a href="#request">Solicitud</a>.
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>Error interno del servidor</td>
       <td>
-        El lado del servidor ha encontrado un problema. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
+        El lado del servidor ha encontrado un problema. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
+      </td>
    </tr>
 </table>
 
@@ -227,8 +254,10 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  Acción que el dispositivo de flujo continuo debe realizar para completar el flujo de autenticación.<br/><br/>
-                  Los valores posibles son:<ul>
+                  Acción que el dispositivo de flujo continuo debe realizar para completar el flujo de autenticación.
+                  <br/><br/>
+                  Los valores posibles son:
+                  <ul>
                     <li><b>autenticar</b><br/>El dispositivo de transmisión por secuencias u otro dispositivo debe abrir la dirección URL proporcionada en un agente de usuario.</li>
                     <li><b>reanudar</b><br/>El dispositivo de transmisión por secuencias u otro dispositivo debe proporcionar los parámetros que faltan y reanudar la sesión de autenticación mediante el código.</li>
                     <li><b>authorize</b><br/>El dispositivo de transmisión puede continuar directamente con los flujos de decisiones.</li>
@@ -238,8 +267,10 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  El tipo de interacción que debe realizar el dispositivo de flujo continuo para continuar el flujo con la acción especificada por el atributo actionName.<br/><br/>
-                  Los valores posibles son:<ul>
+                  El tipo de interacción que debe realizar el dispositivo de flujo continuo para continuar el flujo con la acción especificada por el atributo actionName.
+                  <br/><br/>
+                  Los valores posibles son:
+                  <ul>
                     <li><b>interactivo</b><br/>El flujo continúa con una navegación a la dirección URL proporcionada mediante un agente de usuario.</li>
                     <li><b>direct</b><br/>El flujo continúa con una llamada directa a la dirección URL proporcionada mediante un cliente HTTP disponible para la implementación del cliente.</li>
                   </ul>
@@ -248,8 +279,10 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  El tipo de motivo que explica actionName.<br/><br/>
-                  Los valores posibles son:<ul>
+                  El tipo de motivo que explica actionName.
+                  <br/><br/>
+                  Los valores posibles son:
+                  <ul>
                     <li><b>none</b><br/>Se requiere la aplicación cliente para continuar la autenticación.</li>
                     <li><b>autenticada</b><br/>La aplicación cliente ya se ha autenticado mediante flujos de acceso básicos.</li>
                     <li><b>temporal</b><br/>La aplicación cliente ya se ha autenticado mediante flujos de acceso temporales.</li>

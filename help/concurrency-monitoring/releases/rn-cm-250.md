@@ -2,13 +2,14 @@
 title: Notas de la versión de Adobe Pass Concurrency Monitoring 2.5.0
 description: Notas de la versión de Adobe Pass Concurrency Monitoring 2.5.0
 exl-id: da392b18-a2aa-4f51-a75f-2c5b65b2b073
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '288'
 ht-degree: 0%
-
 ---
-
 # Notas de la versión de Adobe Pass Concurrency Monitoring 2.5.0 {#cm-250}
 
 En esta página se describen las nuevas funciones, los cambios y los problemas conocidos de esta versión:
@@ -35,9 +36,9 @@ La versión 2 unifica las llamadas de consulta y de latido y simplifica en gran 
 
 * Siempre que tenga sentido, la respuesta incluye:
 
-   * asesoramiento asociado: explicación o explicaciones detalladas del error que se solicitarán al usuario.
+  * asesoramiento asociado: explicación o explicaciones detalladas del error que se solicitarán al usuario.
 
-   * obligaciones: acciones obligatorias que debe realizar la aplicación (por ejemplo, actualizar metadatos, cerrar sesión desde Adobe Pass).
+  * obligaciones: acciones obligatorias que debe realizar la aplicación (por ejemplo, actualizar metadatos, cerrar sesión desde Adobe Pass).
 
 ### Metadatos {#metadata}
 

@@ -2,13 +2,14 @@
 title: 'Encabezado: X-Device-Info'
 description: 'API de REST V2: encabezado: X-Device-Info'
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1234'
 ht-degree: 3%
-
 ---
-
 # Encabezado: X-Device-Info {#header-x-device-info}
 
 >[!NOTE]
@@ -53,7 +54,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>primaryHardwareType</td>
         <td>El tipo de hardware principal del dispositivo.</td>
-        <td>&comprobar;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -110,7 +111,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td><i>obligatorio</i></td>
         <td>osName</td>
         <td>El nombre del sistema operativo (SO) del dispositivo.</td>
-        <td>&comprobar;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -132,7 +133,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>osFamily</td>
         <td>El nombre del grupo del sistema operativo (SO) del dispositivo.</td>
-        <td>&comprobar;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -155,7 +156,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>osVendor</td>
         <td>El proveedor del sistema operativo (SO) del dispositivo.</td>
-        <td>&comprobar;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -185,7 +186,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>browserName</td>
         <td>El nombre del explorador.</td>
-        <td>&comprobar;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -205,7 +206,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>browserVendor</td>
         <td>La empresa u organización que crea el explorador.</td>
-        <td>&comprobar;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -290,7 +291,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>connectionSecure</td>
         <td>Estado de seguridad de la conexión de red.</td>
-        <td>&comprobar;</td>
+        <td>&amp;comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>

@@ -2,13 +2,14 @@
 title: Explicación de las métricas del lado del servidor
 description: Explicación de las métricas del lado del servidor
 exl-id: 516884e9-6b0b-451a-b84a-6514f571aa44
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2232'
+source-wordcount: '2262'
 ht-degree: 0%
-
 ---
-
 # Explicación de las métricas del lado del servidor {#understanding-server-side-metrics}
 
 >[!NOTE]
@@ -26,18 +27,18 @@ Desde el punto de vista del lado del servidor de autenticación de Adobe Pass se
 
 * **Eventos generados en el flujo de autenticación**(un inicio de sesión real con MVPD)
 
-   * Notificación de intento de autenticación: esto se genera cuando se envía al usuario al sitio de inicio de sesión de MVPD.
-   * Notificación de autenticación pendiente: si el usuario logra iniciar sesión con su MVPD, esto se genera cuando el usuario está        se ha redirigido a Autenticación de Adobe Pass.
-   * Notificación de autenticación concedida: esto se genera cuando el usuario vuelve al sitio del programador y ha recuperado correctamente el token de autenticación de la autenticación de Adobe Pass.
+  * Notificación de intento de autenticación: esto se genera cuando se envía al usuario al sitio de inicio de sesión de MVPD.
+  * Notificación de autenticación pendiente: si el usuario logra iniciar sesión con su MVPD, esto se genera cuando el usuario se redirige de nuevo a la autenticación de Adobe Pass.
+  * Notificación de autenticación concedida: esto se genera cuando el usuario vuelve al sitio del programador y ha recuperado correctamente el token de autenticación de la autenticación de Adobe Pass.
 * **Flujo de autorización** (solo una comprobación de autorización con un
 MVPD)\
   *Requisito previo:* Un token AuthN válido
-   * Notificación de intento de AuthZ
-   * Notificación de AuthZ concedida
+  * Notificación de intento de AuthZ
+  * Notificación de AuthZ concedida
 * **Solicitud de reproducción correcta**\
   *Requisito previo:* tokens AuthN y AuthZ válidos
-   * Notificación de una comprobación con autenticación de Adobe Pass
-   * Una solicitud de reproducción requiere tanto una autenticación concedida como una autorización concedida
+  * Notificación de una comprobación con autenticación de Adobe Pass
+  * Una solicitud de reproducción requiere tanto una autenticación concedida como una autorización concedida
 
 
 La cantidad de usuarios únicos se explica en detalle en la sección [Usuarios únicos](#unique-users) a continuación. Como descripción general, dado que las respuestas de autenticación y autorización concedidas suelen almacenarse en caché, suelen aplicarse las siguientes fórmulas:
@@ -238,10 +239,10 @@ Eventos activados:
 
 * Intento de AuthN (todavía no hay un usuario único)
 * AuthN concedido
-   * en este punto, identificamos de forma exclusiva al usuario en función de lo que devuelva el MVPD, por lo que el recuento de usuarios únicos diarios aumenta en 1
-   * el token de AuthN se almacena en caché durante 30 días
+  * en este punto, identificamos de forma exclusiva al usuario en función de lo que devuelva el MVPD, por lo que el recuento de usuarios únicos diarios aumenta en 1
+  * el token de AuthN se almacena en caché durante 30 días
 * Intento de AuthZ / evento concedido
-   * Token de AuthZ almacenado en caché durante 1 día
+  * Token de AuthZ almacenado en caché durante 1 día
 * Evento de solicitud de reproducción correcto
 
 #### Día 1 (Más Tarde) {#day1-later-on}
@@ -260,7 +261,7 @@ El usuario XYZ ve otro vídeo.
 Eventos activados:
 
 * Intento de AuthZ / evento concedido
-   * Desde hace 1 día, el almacenamiento en caché desde el día 1 caducó
+  * Desde hace 1 día, el almacenamiento en caché desde el día 1 caducó
 * Evento de solicitud de reproducción correcta (el resto se almacenan en caché)
 * Los usuarios únicos diarios aumentaron en 1 . Los valores exclusivos mensuales siguen siendo 1
 

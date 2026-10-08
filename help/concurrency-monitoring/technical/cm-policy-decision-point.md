@@ -2,13 +2,14 @@
 title: Punto de decisión de política
 description: Punto de decisión de política
 exl-id: 94bc638c-bef8-45ea-b20a-9b7038adecdd
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '731'
 ht-degree: 0%
-
 ---
-
 # Punto de decisión de política {#policy-desc-pt}
 
 ## Modelo de dominio {#domain-model}
@@ -33,7 +34,7 @@ Para cada una de las políticas aplicables, necesitamos recopilar toda la **acti
 
 El tutorial siguiente tiene como objetivo validar el modelo en algunos casos de uso. Lo haremos gradualmente, empezando con una configuración básica y agregando complejidad de varias maneras.
 
-### &#x200B;1. Un usuario. Una aplicación. Una póliza. Un flujo {#onetenant-oneapp-onepolicy-onestream}
+### &#x200B;1. Un inquilino. Una aplicación. Una póliza. Un flujo {#onetenant-oneapp-onepolicy-onestream}
 
 Empezaremos con un solo inquilino, con una sola aplicación y una sola directiva asociada. Supongamos que la política establece que puede haber como máximo un flujo activo para cualquier usuario (se permite reproducir el flujo más reciente).
 
@@ -42,7 +43,7 @@ Una vez iniciado un flujo, la actividad solo consistirá en ese flujo y se le pe
 ![Un inquilino. Una aplicación. Una póliza. Un flujo](../assets/onetenant-app-policy-stream.png)
 
 
-### &#x200B;2. Un usuario. Una aplicación. Una póliza. Dos arroyos. {#onetenant-oneapp-onepolicy-twostreams}
+### &#x200B;2. Un inquilino. Una aplicación. Una póliza. Dos arroyos. {#onetenant-oneapp-onepolicy-twostreams}
 
 Una vez que se inicia un segundo flujo (por el mismo sujeto que usa la misma aplicación), la actividad utilizada para la validación consistirá en **s1** y **s2**.
 

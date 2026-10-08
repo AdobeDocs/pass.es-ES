@@ -2,13 +2,14 @@
 title: Registro de aplicaciones de iOS/tvOS
 description: Registro de aplicaciones de iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '634'
 ht-degree: 0%
-
 ---
-
 
 # Registro de aplicaciones de iOS/tvOS (heredadas) {#iostvos-application-registration}
 

@@ -2,13 +2,14 @@
 title: Introducción a la monitorización de concurrencia
 description: Introducción a la monitorización de concurrencia
 exl-id: 725cc64b-6b03-46e3-a038-41e9b1341c6b
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '225'
 ht-degree: 0%
-
 ---
-
 # Introducción a la monitorización de concurrencia {#intro}
 
 La Monitorización de concurrencia es un servicio que permite a los proveedores de contenido y de identidad (MVPD y programadores) definir y hacer cumplir límites en el streaming de vídeo simultáneo en varias aplicaciones, dispositivos y plataformas. Tanto si es un programador que busca controlar cuántos flujos puede ver un suscriptor simultáneamente, como si es un MVPD que desea aplicar políticas de uso a todos sus socios de contenido, la Monitorización de concurrencia proporciona las herramientas que necesita.

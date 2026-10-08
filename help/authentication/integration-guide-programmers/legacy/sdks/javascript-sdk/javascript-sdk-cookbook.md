@@ -2,13 +2,14 @@
 title: Guía de JavaScript SDK
 description: Guía de JavaScript SDK
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '957'
+source-wordcount: '972'
 ht-degree: 0%
-
 ---
-
 # Guía de JavaScript SDK (heredada) {#javascript-sdk-cookbook}
 
 >[!NOTE]
@@ -56,13 +57,13 @@ Cree sus funciones de devolución de llamada:
 - `displayProviderDialog(mvpds)`
 
   **Déclencheur:** `getAuthentication(),` solo si el usuario no ha seleccionado ningún proveedor (un MVPD) y aún no se ha autenticado
-El parámetro mvpds es una matriz de proveedores disponibles para el usuario.
+  El parámetro mvpds es una matriz de proveedores disponibles para el usuario.
 
 - `setAuthenticationStatus(status, errorcode)`
 
   **Déclencheur:**
-   - `checkAuthentication()` cada vez.
-   - `getAuthentication()` solo si el usuario ya se ha autenticado y ha seleccionado un proveedor.
+  - `checkAuthentication()` cada vez.
+  - `getAuthentication()` solo si el usuario ya se ha autenticado y ha seleccionado un proveedor.
 
   El estado devuelto es éxito o error; el código de error describe el tipo de error.
 
@@ -87,7 +88,7 @@ El parámetro mvpds es una matriz de proveedores disponibles para el usuario.
 - `selectedProvider(mvpd)`
 
   **Déclencheur:** [`getSelectedProvider()`]&#x200B;(#$getSelProv El parámetro `mvpd` proporciona información sobre el proveedor seleccionado por
-el usuario.
+  el usuario.
 
 - `setMetadataStatus(metadata, key, arguments)`
 
@@ -97,7 +98,7 @@ el usuario.
 
 ## &#x200B;2. Flujo de inicio
 
-**I. Cargue el JavaScript AccessEnabler:**
+**I.  Cargar JavaScript AccessEnabler:**
 
 **Para el perfil de ensayo**
 
@@ -121,14 +122,14 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 la autenticación llama a su función de devolución de llamada `entitlementLoaded()`. Este es el punto de entrada a la comunicación de la aplicación con AccessEnabler.
 
 
-**II.** Llame a `setRequestor()`para establecer el
-identidad del programador; pase en `requestorID` del programador y
+**II.** Llamar a `setRequestor()` para establecer el
+identidad del programador; pase el `requestorID` del programador y
 (Opcional) una matriz de puntos finales de autenticación de Adobe Pass.
 
 **Déclencheur:** Ninguno, pero permite llamar a `displayProviderDialog()` cuando sea necesario.
 
 
-**III.** Llame a `checkAuthentication()` para comprobar si hay una autenticación existente sin iniciar el [flujo de autenticación completo].  Si esta llamada se realiza correctamente, puede continuar directamente a `authorization flow`.  Si no es así, continúe con `authentication flow`.
+**III.** Llame a `checkAuthentication()` para comprobar si hay una autenticación existente sin iniciar el [flujo de autenticación] completo.  Si esta llamada se realiza correctamente, puede continuar directamente a `authorization flow`.  Si no es así, continúe con `authentication flow`.
 
 **Dependencia:** Una llamada correcta a `setRequestor()` (esta dependencia también se aplica a todas las llamadas subsiguientes).
 
@@ -164,7 +165,7 @@ Llame a `getAuthorization()` y pase el ResourceID para los medios solicitados. U
 - Si la llamada falla: Examine la excepción producida para determinar su tipo (AuthN, AuthZ o algo más):
 - Si la llamada fue un error de AuthN, reinicie el flujo de AuthN.
 - Si la llamada fue un error de AuthZ, el usuario no tiene autorización para ver el contenido solicitado y se debe mostrar algún tipo de mensaje de error al usuario.
-- Si se ha producido algún otro error (error de conexión, error de red, etc.), muestre un mensaje de error apropiado al usuario.
+- Si hubo algún otro error (error de conexión, error de red, etc.) a continuación, mostrar un mensaje de error apropiado al usuario.
 
 Utilice el verificador de tokens de medios para validar el shortMediaToken devuelto por una llamada correcta de `getAuthorization()`.
 
@@ -178,15 +179,15 @@ AccessEnabler (biblioteca)
 ## &#x200B;5. Ver flujo de medios {#logout}
 
 - El usuario selecciona los medios que desea ver.
-   - ¿Están protegidos los medios?
-      - La aplicación comprueba si los medios están protegidos:
-         - Si el medio está protegido, la aplicación inicia el flujo de autorización (AuthZ) anterior.
-         - Si los medios no están protegidos, continúe con el flujo de Ver medios.
-         - Medios de reproducción
+  - ¿Están protegidos los medios?
+    - La aplicación comprueba si los medios están protegidos:
+      - Si el medio está protegido, la aplicación inicia el flujo de autorización (AuthZ) anterior.
+      - Si los medios no están protegidos, continúe con el flujo de Ver medios.
+      - Medios de reproducción
 
 ## Configuración del ID de visitante {#visitorID}
 
-La configuración de un valor [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=es) es muy importante desde el punto de vista del análisis. Una vez establecido un valor EC visitorID, SDK enviará esta información junto con cada llamada de red y el servicio de autenticación de Adobe Pass recopilará esta información. De este modo, podrá correlacionar los datos de análisis del servicio de autenticación de Adobe Pass con cualquier otro informe de análisis que pueda tener de otras aplicaciones o sitios web. Encontrará información sobre cómo configurar el ID de visitante de EC [aquí](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=es).
+La configuración de un valor de [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html) es muy importante desde el punto de vista del análisis. Una vez establecido un valor EC visitorID, SDK enviará esta información junto con cada llamada de red y el servicio de autenticación de Adobe Pass recopilará esta información. De este modo, podrá correlacionar los datos de análisis del servicio de autenticación de Adobe Pass con cualquier otro informe de análisis que pueda tener de otras aplicaciones o sitios web. Encontrará información sobre cómo configurar el ID de visitante de EC [aquí](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

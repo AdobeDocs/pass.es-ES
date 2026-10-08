@@ -2,13 +2,14 @@
 title: API de supervisión del servicio de derechos
 description: API de supervisión del servicio de derechos
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2098'
 ht-degree: 0%
-
 ---
-
 # API de supervisión del servicio de derechos {#entitlement-service-monitoring-api}
 
 >[!IMPORTANT]
@@ -63,13 +64,13 @@ Los siguientes árboles de desglose ilustran las dimensiones (recursos) disponib
 
 ![](../../../assets/esm-mvpd-dimensions.png)
 
-Una GET al extremo de la API `https://mgmt.auth.adobe.com/esm/v3` devolverá una representación que contiene:
+Un GET al extremo de la API `https://mgmt.auth.adobe.com/esm/v3` devolverá una representación que contiene:
 
 * Vínculos a las rutas desplegables raíz disponibles:
 
-   * `<link rel="drill-down" href="/v3/dimensionA"/>`
+  * `<link rel="drill-down" href="/v3/dimensionA"/>`
 
-   * `<link rel="drill-down" href="/v3/dimensionB"/>`
+  * `<link rel="drill-down" href="/v3/dimensionB"/>`
 
 * Un resumen (valores agregados) para todas las métricas (en el valor predeterminado
 , ya que no se proporcionan parámetros de cadena de consulta, consulte a continuación).
@@ -139,7 +140,7 @@ El único método HTTP disponible actualmente es GET.
 | 401 | No autorizado | Causado por una solicitud que no contiene los encabezados OAuth adecuados para autenticar al usuario |
 | 403 | Prohibido | Indica que la solicitud no está permitida en el contexto de seguridad actual; esto ocurre cuando el usuario se autentica pero no tiene permiso para acceder a la información solicitada |
 | 404 | No encontrado | Se produce en caso de que se proporcione una ruta de URL no válida con la solicitud. Esto no debería suceder nunca si el cliente sigue los vínculos de &quot;desglose&quot;/&quot;resumen&quot; proporcionados con 200 respuestas |
-| 405 | Método no permitido | Indica que se ha utilizado un método no compatible en la solicitud. Aunque actualmente solo se admite el método GET, las versiones futuras pueden permitir HEAD o OPTIONS |
+| 405 | Método no permitido | Indica que se ha utilizado un método no compatible en la solicitud. Aunque actualmente solo se admite el método GET, las versiones futuras pueden permitir HEAD u OPTIONS |
 | 406 | No aceptable | Indica que el cliente ha solicitado un tipo de medio no compatible |
 | 500 | Error interno del servidor | &quot;Esto nunca debería suceder&quot; |
 | 503 | Servicio no disponible | Indica un error dentro de la aplicación o sus dependencias |

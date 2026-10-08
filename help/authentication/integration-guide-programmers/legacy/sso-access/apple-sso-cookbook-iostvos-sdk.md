@@ -2,13 +2,14 @@
 title: Guía de Apple SSO (iOS/tvOS SDK)
 description: Guía de Apple SSO (iOS/tvOS SDK)
 exl-id: 2d59cd33-ccfd-41a8-9697-1ace3165bc44
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1854'
 ht-degree: 0%
-
 ---
-
 # Guía de SSO de Apple (heredada) (iOS/tvOS SDK) {#apple-sso-cookbook-iostvos-sdk}
 
 >[!IMPORTANT]
@@ -124,15 +125,15 @@ Para beneficiarse de la experiencia del usuario de SSO de Apple, la aplicación 
    **Importante:** Este tercer paso podría almacenar en déclencheur un [código de error avanzado](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md) que es específico del flujo de trabajo de SSO de Apple, en caso de que **una de las siguientes opciones sea verdadera**:
 
    * ***VSA403** - El usuario inició sesión en su cuenta de proveedor de TV en
-el nivel del sistema del dispositivo, pero el permiso del proveedor de TV del usuario es
-denegado para la aplicación.
+     el nivel del sistema del dispositivo, pero el permiso del proveedor de TV del usuario es
+     denegado para la aplicación.
    * ***VSA404** - El usuario ha iniciado sesión en su cuenta de proveedor de TV en
-el nivel del sistema del dispositivo, pero el permiso del proveedor de TV del usuario
-no se ha determinado para la aplicación.
+     el nivel del sistema del dispositivo, pero el permiso del proveedor de TV del usuario
+     no se ha determinado para la aplicación.
    * ***APPL\_ERROR**: el usuario ha iniciado sesión en su proveedor de TV
-cuenta en el nivel del sistema del dispositivo, pero la comunicación entre
-la SDK de AccessEnabler iOS/tvOS y la cuenta de suscriptor de vídeo
-framework ha encontrado un error.
+     cuenta en el nivel del sistema del dispositivo, pero la comunicación entre
+     la SDK de AccessEnabler iOS/tvOS y la cuenta de suscriptor de vídeo
+     framework ha encontrado un error.
 
    **Importante:** Este tercer paso almacenará en déclencheur la llamada de retorno [*setAuthenticationStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus) con *status* igual a 0, en caso de que **una de las siguientes opciones sea verdadera**:
 

@@ -2,13 +2,14 @@
 title: Ámbito del proveedor de servicios
 description: Ámbito del proveedor de servicios
 exl-id: 730c43e1-46c0-4eec-b562-b1ad93cce6d3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
-
 ---
-
 # Ámbito del proveedor de servicios {#service-provoider-scoping}
 
 >[!NOTE]
@@ -25,9 +26,9 @@ Con la autenticación de Adobe Pass asumiendo la función de SP para el programa
 
 La autenticación de Adobe Pass admite las dos formas siguientes de habilitar el ámbito de SP de las solicitudes de autenticación:
 
-* **El enfoque del emisor de SAML.** En este enfoque, el &quot;ID de solicitante&quot; se anexa a la cadena del emisor SAML en la solicitud de autenticación SAML.
+* **El enfoque del emisor de SAML.**  En este enfoque, el &quot;ID de solicitante&quot; se anexa a la cadena del emisor de SAML en la solicitud de autenticación de SAML.
 
-* **Enfoque de propiedad de ámbito personalizado.** En este enfoque, el &quot;ID de solicitante&quot; se incluye explícitamente como propiedad &quot;Scoping&quot; personalizada en la solicitud de autenticación SAML.
+* **Enfoque de propiedad de ámbito personalizado.**  En este enfoque, el &quot;ID de solicitante&quot; se incluye explícitamente como propiedad &quot;Scoping&quot; personalizada en la solicitud de autenticación SAML.
 
 >[!NOTE]
 >

@@ -2,13 +2,14 @@
 title: Integración de proxy MVPD SAML
 description: Integración de proxy MVPD SAML
 exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '700'
 ht-degree: 0%
-
 ---
-
 # Integración de proxy MVPD SAML
 
 >[!NOTE]
@@ -48,17 +49,17 @@ Para que la autenticación de Adobe Pass se integre con un MVPD proxy se necesit
 * (Recomendado): el MVPD proxy gestiona la redirección adicional a la URL de la página de inicio de sesión del MVPD proxy
 
 * El proxy de MVPD debe abrir los puertos 443 y 80 para las siguientes IP:
-   * 192.150.4.5
-   * 192.150.10.200
-   * 192.150.11.4
-   * 4.53.93.130
-   * 193.105.140.131
-   * 193.105.140.132
-   * 76.74.170.204
-   * 63.140.39.4
-   * 66.235.132.38
-   * 66.235.139.38
-   * 66.235.139.168
+  * 192.150.4.5
+  * 192.150.10.200
+  * 192.150.11.4
+  * 4.53.93.130
+  * 193.105.140.131
+  * 193.105.140.132
+  * 76.74.170.204
+  * 63.140.39.4
+  * 66.235.132.38
+  * 66.235.139.38
+  * 66.235.139.168
 
 
 #### Solicitud y respuesta de SAML de autenticación {#authn-saml-req-resp}

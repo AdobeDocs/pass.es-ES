@@ -2,13 +2,14 @@
 title: 'Cierre de sesión único: flujo'
 description: 'API de REST V2: cierre de sesión único: flujo'
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '599'
 ht-degree: 0%
-
 ---
-
 # Flujo de cierre de sesión único {#single-logout-flow}
 
 >[!IMPORTANT]
@@ -30,8 +31,8 @@ ht-degree: 0%
 Antes de iniciar el cierre de sesión único de un MVPD específico, asegúrese de que se cumplan los siguientes requisitos previos:
 
 * La segunda aplicación de streaming debe tener un perfil de inicio de sesión único válido que se haya creado correctamente para MVPD mediante uno de los flujos de autenticación de inicio de sesión único:
-   * [Realizar autenticación mediante el inicio de sesión único mediante la identidad de la plataforma](rest-api-v2-single-sign-on-platform-identity-flows.md)
-   * [Realizar autenticación mediante el inicio de sesión único mediante el token de servicio](rest-api-v2-single-sign-on-service-token-flows.md)
+  * [Realizar autenticación mediante el inicio de sesión único mediante la identidad de la plataforma](rest-api-v2-single-sign-on-platform-identity-flows.md)
+  * [Realizar autenticación mediante el inicio de sesión único mediante el token de servicio](rest-api-v2-single-sign-on-service-token-flows.md)
 * La segunda aplicación de streaming debe iniciar el flujo de cierre de sesión único cuando necesite cerrar la sesión de MVPD.
 
 >[!IMPORTANT]

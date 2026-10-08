@@ -2,13 +2,14 @@
 title: Amazon fireTV SSO - Guía de inicio del programador
 description: Amazon fireTV SSO - Guía de inicio del programador
 exl-id: cf9ba614-57ad-46c3-b154-34204b38742d
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '816'
 ht-degree: 0%
-
 ---
-
 # (Heredado) Amazon fireTV SSO - Guía de inicio del programador {#amazon-firetv-sso---programmer-kick-off-guide}
 
 >[!NOTE]
@@ -60,7 +61,7 @@ En comparación con Android SDK existente, en fireTV SDK el proceso de autentica
 1. ¿Cómo funcionará el **SSO**?
 
    * SSO funcionará en todas las aplicaciones de Programador con autenticación de Adobe Pass que estén usando el nuevo SDK fireTV en el mismo dispositivo Amazon fireTV
-   * No se admitirá SSO entre aplicaciones de programador implementadas en la API de REST sin cliente y aplicaciones implementadas en fireTV SDK **&#x200B;**
+   * No se admitirá SSO entre aplicaciones de programador implementadas en la API de REST sin cliente y aplicaciones implementadas en fireTV SDK ****
 
 1. ¿Cuál es la cobertura de MVPD de FireTV SSO?
 

@@ -2,13 +2,14 @@
 title: Información general de API REST
 description: Información general sobre las API de REST
 exl-id: 5533d852-f644-417e-bf80-6f7aa1edd6b2
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1659'
 ht-degree: 0%
-
 ---
-
 # Información general de la API de REST (heredada) {#rest-api-overview}
 
 >[!NOTE]

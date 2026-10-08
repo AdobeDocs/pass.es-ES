@@ -2,13 +2,14 @@
 title: Información general sobre JavaScript SDK
 description: Información general sobre JavaScript SDK
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '515'
 ht-degree: 0%
-
 ---
-
 # Información general sobre JavaScript SDK (heredado) {#javascript-sdk-overview}
 
 >[!NOTE]
@@ -55,7 +56,7 @@ En el siguiente ejemplo de código se muestra cómo detectar y mostrar el provee
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer_es"> 
+        <a href="http://www.adobe.com/go/getflashplayer"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 
@@ -207,7 +208,7 @@ Hay algunos casos en los que el reproductor no es responsable de administrar los
 
 
 
-- **Cuando el cierre de sesión se inicia desde un sitio que no está integrado con la autenticación de Adobe Pass.** En este caso, MVPD puede invocar el servicio de cierre de sesión único de autenticación de Adobe Pass mediante una redirección del explorador. (Actualmente no se admite la invocación de SLO a través de una llamada a backchannel).
+- **Cuando el cierre de sesión se inicia desde un sitio que no está integrado con la autenticación de Adobe Pass.** En este caso, MVPD puede invocar el servicio de cierre de sesión único de autenticación de Adobe Pass a través de una redirección del explorador. (Actualmente no se admite la invocación de SLO a través de una llamada a backchannel).
 
 >[!NOTE]
 >
