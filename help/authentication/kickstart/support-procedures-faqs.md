@@ -2,13 +2,14 @@
 title: Preguntas frecuentes sobre procedimientos de soporte
 description: Preguntas frecuentes sobre procedimientos de soporte
 exl-id: 1d754e5a-d5fa-4411-8932-2a36294da6eb
-source-git-commit: 0ab1fc212752dd4a4d6e12a4ab1287ef74e4a282
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '790'
 ht-degree: 0%
-
 ---
-
 # Preguntas frecuentes sobre procedimientos de soporte {#support-procedures-faqs}
 
 >[!IMPORTANT]
@@ -93,6 +94,6 @@ Algunas situaciones con acciones predeterminadas que se realizan si se produce e
 
 |    | Escenario | Descripción | Acciones |
 |----|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| S1 | Adobe identifica un problema con la integración de MVPD durante las operaciones de producción normales. | Durante las operaciones de producción normales, Adobe identifica un problema con una de las MVPD que hace que sea imposible realizar los flujos de autenticación/autorización (por ejemplo, certificados caducados, respuestas SAML caducadas, puertos cerrados, parámetros modificados, etc.) | Adobe notificará a los programadores y MVPD afectados.  </br></br> Adobe desactivará esta MVPD para todos los programadores afectados. </br></br> Adobe abrirá un ticket con MVPD siguiendo el procedimiento de soporte acordado con MVPD |
-| S2 | Adobe activa un nuevo MVPD para un programador y el programador permite el MVPD antes de la fecha de inicio. | Adobe está activando un nuevo MVPD para el sitio de un programador y el sitio ya está mostrando el nuevo MVPD en el selector, aunque no se suponía que lo hiciera. | Adobe notificará al programador que el nuevo MVPD aparece en el selector antes de la fecha programada. El programador de </br></br> tomará medidas para quitarlo del selector si es necesario. |
+| S1 | Adobe identifica un problema con la integración de MVPD durante las operaciones de producción normales. | Durante las operaciones de producción normales, Adobe identifica un problema con una de las MVPD que hace que sea imposible realizar los flujos de autenticación/autorización (por ejemplo, certificados caducados, respuestas SAML caducadas, puertos cerrados, parámetros modificados, etc.) | Adobe notificará a los programadores y MVPD afectados.  </br></br> Adobe desactivará este MVPD para todos los programadores afectados. </br></br> Adobe abrirá un ticket con MVPD siguiendo el procedimiento de asistencia acordado con ese MVPD |
+| S2 | Adobe activa un nuevo MVPD para un programador y el programador permite el MVPD antes de la fecha de inicio. | Adobe está activando un nuevo MVPD para el sitio de un programador y el sitio ya está mostrando el nuevo MVPD en el selector, aunque no se suponía que lo hiciera. | Adobe notificará al programador que el nuevo MVPD aparece en el selector antes de la fecha programada. </br></br>  El programador tomará medidas para quitarlo del selector si es necesario. |
 | S3 | Adobe activa un nuevo MVPD para un programador incluso si el MVPD no está listo para su producción | Adobe está activando un nuevo MVPD para un programador, pero MVPD aún no ha implementado la compatibilidad con la integración, por lo que no se pueden realizar los flujos de autenticación/autorización | Adobe realizará la implementación solo si el programador </br></br> se lo solicita. El programador será responsable de garantizar la autorización de MVPD una vez que se hayan realizado todas las pruebas. |

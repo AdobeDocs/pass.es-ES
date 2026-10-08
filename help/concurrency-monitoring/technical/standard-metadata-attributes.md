@@ -2,13 +2,14 @@
 title: Atributos de metadatos estándar
 description: Atributos de metadatos estándar
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1053'
+source-wordcount: '1295'
 ht-degree: 0%
-
 ---
-
 # Atributos de metadatos estándar {#std-metadata-attributes}
 
 Esta página pretende proporcionar una lista exhaustiva de atributos de metadatos que el servicio de Monitorización de concurrencia puede procesar y que pueden utilizarse como base para las políticas que se pueden implementar. Los atributos de metadatos estándar se pueden clasificar de la siguiente manera:
@@ -73,11 +74,11 @@ Los campos de metadatos estándar se pueden utilizar para definir directivas del
 
 * Puede configurar una directiva para que solo se aplique a valores de campo específicos (por ejemplo, una directiva de iOS específica: donde `osType` es `iOS`)
 * Puede limitar el número de valores distintos para un campo determinado. Algunos ejemplos son los siguientes:
-   * no más de X dispositivos distintos: `HAVING DISTINCT COUNT(deviceId) <= 2`
-   * no más de X códigos postales distintos: `HAVING DISTINCT COUNT(zipcode) <= 3`
+  * no más de X dispositivos distintos: `HAVING DISTINCT COUNT(deviceId) <= 2`
+  * no más de X códigos postales distintos: `HAVING DISTINCT COUNT(zipcode) <= 3`
 * Puede limitar el número de flujos activos por valor de campo. Algunos ejemplos son los siguientes:
-   * no más de X flujos activos para un solo tipo de dispositivo: `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
-   * no más de X flujos activos para flujos de contenido en vivo: `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
+  * no más de X flujos activos para un solo tipo de dispositivo: `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
+  * no más de X flujos activos para flujos de contenido en vivo: `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
 
 Póngase en contacto con el equipo de Supervisión de concurrencia [creando un ticket en Zendesk](mailto:tve-support@adobe.com) e indique qué políticas desea haber implementado.
 

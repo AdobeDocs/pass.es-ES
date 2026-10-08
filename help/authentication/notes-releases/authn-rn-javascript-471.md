@@ -2,13 +2,14 @@
 title: Notas de la versión de Adobe Pass Authentication JavaScript 4.7.1
 description: Notas de la versión de Adobe Pass Authentication JavaScript 4.7.1
 exl-id: 3db96d64-536e-4ce9-86ff-096e7a9c68be
-source-git-commit: 0c6aec04ae9df410228730b5bce6ced1aeecd312
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '109'
+source-wordcount: '125'
 ht-degree: 0%
-
 ---
-
 # Notas de la versión de Adobe Pass Authentication JavaScript 4.7.1 {#javascript-sdk-471-rn}
 
 >[!IMPORTANT]
@@ -27,9 +28,9 @@ Fecha de versión: **25/02/2025 - 27/02/2025**
 
 * Se ha eliminado la versión 3.5.0 de AccessEnabler JavaScript SDK.
   <br/><br/>
-Las siguientes direcciones URL ya no son compatibles y devolverán un código de estado HTTP 410:
-   * https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js
-   * https://entitlement.auth.adobe.com/entitlement/js/AccessEnablerProxy.js
+  Las siguientes direcciones URL ya no son compatibles y devolverán un código de estado HTTP 410:
+  * https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js
+  * https://entitlement.auth.adobe.com/entitlement/js/AccessEnablerProxy.js
 
 ## Liberar paquete {#release-package-471}
 

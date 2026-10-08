@@ -2,13 +2,14 @@
 title: Información general sobre Apple SSO
 description: Información general sobre Apple SSO
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1311'
 ht-degree: 0%
-
 ---
-
 # Información general sobre Apple SSO {#apple-sso-overview}
 
 >[!IMPORTANT]
@@ -36,7 +37,7 @@ Para beneficiarse de la experiencia de usuario de inicio de sesión único (SSO)
 
 * Póngase en contacto con Apple para habilitar [Marco de cuenta de suscriptor de vídeo](https://developer.apple.com/documentation/videosubscriberaccount) como parte de su ID de equipo de Apple y configurar el [derecho de inicio de sesión único de suscriptor de vídeo](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on) como parte de su cuenta de desarrollador de Apple.
 
-   * Utilice Xcode versión 8 o posterior y iOS/tvOS versión 10 o posterior.
+  * Utilice Xcode versión 8 o posterior y iOS/tvOS versión 10 o posterior.
 
 * Habilite el inicio de sesión único (SSO) para cada integración y plataforma deseadas (iOS/tvOS) a través del [Panel de Adobe Pass TVE](https://experience.adobe.com/#/pass/authentication), para lo cual debe establecer la propiedad `Enable Single Sign On` en `Yes`.
 
@@ -47,17 +48,17 @@ Para beneficiarse de la experiencia de usuario de inicio de sesión único (SSO)
 
 * Integre los flujos de usuario de inicio de sesión único (SSO) mediante una de las siguientes soluciones que ofrece la autenticación de Adobe Pass para los usuarios finales de aplicaciones cliente que se ejecutan en iOS, iPadOS o tvOS.
 
-   * La API de REST de autenticación de Adobe Pass V2 es compatible con el inicio de sesión único (SSO) de socio.
+  * La API de REST de autenticación de Adobe Pass V2 es compatible con el inicio de sesión único (SSO) de socio.
 
-     Consulte la [Guía de Apple SSO (API REST V2)](apple-sso-cookbook-rest-api-v2.md).
+    Consulte la [Guía de Apple SSO (API REST V2)](apple-sso-cookbook-rest-api-v2.md).
 
-   * La API de REST de autenticación de Adobe Pass V1 heredada es compatible con el inicio de sesión único (SSO) de socio.
+  * La API de REST de autenticación de Adobe Pass V1 heredada es compatible con el inicio de sesión único (SSO) de socio.
 
-     Consulte la documentación de [&#x200B; (heredado) Apple SSO Cookbook (REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md).
+    Consulte la documentación de [&#x200B; (heredado) Apple SSO Cookbook (REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md).
 
-   * El Adobe Pass Authentication AccessEnabler iOS/tvOS SDK heredado es compatible con el inicio de sesión único (SSO) de socio.
+  * El Adobe Pass Authentication AccessEnabler iOS/tvOS SDK heredado es compatible con el inicio de sesión único (SSO) de socio.
 
-     Consulte la documentación de [&#x200B; (heredado) Apple SSO (iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md).
+    Consulte la documentación de [&#x200B; (heredado) Apple SSO (iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md).
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 
@@ -65,11 +66,11 @@ Para beneficiarse de la experiencia de usuario de inicio de sesión único (SSO)
 
 * Póngase en contacto con Apple para iniciar el proceso de incorporación en el lado de Apple.
 
-   * Solicite la documentación técnica sobre cómo integrar y desarrollar una aplicación TVML de JavaScript capaz de gestionar el formulario de inicio de sesión del usuario.
+  * Solicite la documentación técnica sobre cómo integrar y desarrollar una aplicación TVML de JavaScript capaz de gestionar el formulario de inicio de sesión del usuario.
 
 * Póngase en contacto con la autenticación de Adobe Pass para iniciar el proceso de incorporación en el lado de Adobe.
 
-   * Proporcione el valor de cadena que representa el identificador del proveedor de TV asignado por Apple durante el proceso de incorporación.
+  * Proporcione el valor de cadena que representa el identificador del proveedor de TV asignado por Apple durante el proceso de incorporación.
 
 ## FAQ {#FAQ}
 

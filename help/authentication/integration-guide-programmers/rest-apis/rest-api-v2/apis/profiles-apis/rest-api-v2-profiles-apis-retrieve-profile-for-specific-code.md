@@ -2,13 +2,14 @@
 title: Recuperar perfil para código específico
 description: 'API de REST V2: recuperar el perfil de un código específico'
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '851'
 ht-degree: 2%
-
 ---
-
 # Recuperar perfil para código específico {#retrieve-profile-for-specific-code}
 
 >[!IMPORTANT]
@@ -69,9 +70,12 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         La dirección IP del dispositivo de flujo continuo.<br/><br/>
-         Se recomienda utilizarlo siempre para implementaciones de servidor a servidor, especialmente cuando la llamada la realice el servicio del programador en lugar del dispositivo de flujo continuo.<br/><br/>
-         Para implementaciones de cliente a servidor, la dirección IP del dispositivo de flujo continuo se envía implícitamente.</td>
+         La dirección IP del dispositivo de flujo continuo.
+         <br/><br/>
+         Se recomienda utilizarlo siempre para implementaciones de servidor a servidor, especialmente cuando la llamada la realice el servicio del programador en lugar del dispositivo de flujo continuo.
+         <br/><br/>
+         Para implementaciones de cliente a servidor, la dirección IP del dispositivo de flujo continuo se envía implícitamente.
+      </td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -88,8 +92,10 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">Aceptar</td>
       <td>
-         El tipo de medio aceptado por la aplicación cliente.<br/><br/>
-         Si se especifica, debe ser application/json;charset=utf-8.</td>
+         El tipo de medio aceptado por la aplicación cliente.
+         <br/><br/>
+         Si se especifica, debe ser application/json;charset=utf-8.
+      </td>
       <td>opcional</td>
    </tr>
    <tr>
@@ -118,31 +124,36 @@ ht-degree: 2%
       <td>400</td>
       <td>Solicitud incorrecta</td>
       <td>
-        La solicitud no es válida, el cliente debe corregirla e intentarlo de nuevo. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
+        La solicitud no es válida, el cliente debe corregirla e intentarlo de nuevo. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>No autorizado</td>
       <td>
-        El token de acceso no es válido, el cliente debe obtener un nuevo token de acceso e intentarlo de nuevo. Para obtener más información, consulte la <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Información general sobre el registro de clientes dinámicos</a>.</td>
+        El token de acceso no es válido, el cliente debe obtener un nuevo token de acceso e intentarlo de nuevo. Para obtener más información, consulte la <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Información general sobre el registro de clientes dinámicos</a>.
+      </td>
    </tr>
    <tr>
       <td>403</td>
       <td>Prohibido</td>
       <td>
-        El tiempo de vida del acceso temporal (TTL) ha caducado o se ha superado el número máximo de recursos, por lo que el cliente debe indicar al usuario que inicie un flujo de autenticación básico con un MVPD normal. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
+        El tiempo de vida del acceso temporal (TTL) ha caducado o se ha superado el número máximo de recursos, por lo que el cliente debe indicar al usuario que inicie un flujo de autenticación básico con un MVPD normal. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
+      </td>
    </tr> 
    <tr>
       <td>405</td>
       <td>Método no permitido</td>
       <td>
-        El método HTTP no es válido, el cliente debe utilizar un método HTTP permitido para el recurso solicitado e intentarlo de nuevo. Para obtener más información, consulte la sección <a href="#request">Solicitud</a>.</td>
+        El método HTTP no es válido, el cliente debe utilizar un método HTTP permitido para el recurso solicitado e intentarlo de nuevo. Para obtener más información, consulte la sección <a href="#request">Solicitud</a>.
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>Error interno del servidor</td>
       <td>
-        El lado del servidor ha encontrado un problema. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.</td>
+        El lado del servidor ha encontrado un problema. El cuerpo de respuesta puede contener información de error que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
+      </td>
    </tr>
 </table>
 
@@ -172,8 +183,10 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">perfiles</td>
       <td>
-        JSON que contiene un mapa de pares de clave y valor.<br/><br/>
-        El elemento clave se define con el siguiente valor:<table style="table-layout:auto">
+        JSON que contiene un mapa de pares de clave y valor.
+        <br/><br/>
+        El elemento clave se define con el siguiente valor:
+        <table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Valor</th>
                <th style="background-color: #EFF2F7"></th>
@@ -205,8 +218,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">emisor</td>
                <td>
-                  La entidad propietaria del perfil.<br/><br/>
-                  Los valores posibles son:<ul>
+                  La entidad propietaria del perfil.
+                  <br/><br/>
+                  Los valores posibles son:
+                  <ul>
                     <li><b>mvpd (por ejemplo, Spectrum, Cablevision, etc.)</b><br/>El perfil se creó como resultado de: autenticación básica.</li>
                     <li><b>Adobe</b><br/>El perfil se creó como resultado de: acceso degradado, acceso temporal.</li>
                   </ul>
@@ -215,8 +230,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">type</td>
                <td>
-                  El tipo de perfil.<br/><br/>
-                  Los valores posibles son:<ul>
+                  El tipo de perfil.
+                  <br/><br/>
+                  Los valores posibles son:
+                  <ul>
                     <li><b>regular</b><br/>El perfil se creó como resultado de: autenticación básica.</li>
                     <li><b>degradado</b><br/>El perfil se creó como resultado de: acceso degradado.</li>
                     <li><b>temporal</b><br/>El perfil se creó como resultado de: acceso temporal.</li>
@@ -226,8 +243,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">atributos</td>
                <td>
-                    JSON que contiene un mapa de pares de clave y valor.<br/><br/>
-                    El elemento clave se define mediante atributos de metadatos de usuario y puede ser:<ul>
+                    JSON que contiene un mapa de pares de clave y valor.
+                    <br/><br/>
+                    El elemento clave se define mediante atributos de metadatos de usuario y puede ser:
+                    <ul>
                         <li>Obligatorio, como "userID"</li>
                         <li>No obligatorio, como "zip", "householdID", "maxRating", etc.</li>
                     </ul>
@@ -272,13 +291,16 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            El cuerpo de respuesta puede proporcionar información de error adicional que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.<br/><br/>
-            La aplicación cliente debe implementar un mecanismo de gestión de errores capaz de procesar correctamente los códigos de error devueltos con más frecuencia por esta API:<ul>
+            El cuerpo de respuesta puede proporcionar información de error adicional que se adhiera a la documentación de <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Códigos de error mejorados</a>.
+            <br/><br/>
+            La aplicación cliente debe implementar un mecanismo de gestión de errores capaz de procesar correctamente los códigos de error devueltos con más frecuencia por esta API:
+            <ul>
                 <li>invalid_authentication_session</li>
                 <li>invalid_parameter_code</li>
                 <li>etc.</li>
             </ul>
-            La lista anterior no es exhaustiva. La aplicación cliente debe poder administrar todos los códigos de error mejorados definidos en la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentación pública</a>.</td>
+            La lista anterior no es exhaustiva. La aplicación cliente debe poder administrar todos los códigos de error mejorados definidos en la <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentación pública</a>.
+      </td>
       <td><i>obligatorio</i></td>
    </tr>
 </table>

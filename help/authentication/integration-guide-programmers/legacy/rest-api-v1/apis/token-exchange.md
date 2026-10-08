@@ -2,13 +2,14 @@
 title: Intercambio de un token SSO de plataforma por un token de Adobe
 description: Intercambio de un token SSO de plataforma por un token de Adobe
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '251'
-ht-degree: 0%
-
+source-wordcount: '258'
+ht-degree: 3%
 ---
-
 # (Heredado) Intercambio de un token SSO de Platform por un token de Adobe {#exchange-a-platform-sso-token-for-an-adobe-token}
 
 >[!NOTE]
@@ -41,9 +42,9 @@ ht-degree: 0%
 
 Permite &quot;intercambiar&quot; un perfil SSO de Platform por un token de Adobe.
 
-| Extremo | Llamado </br> por | Entrada   </br>Parámetros | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
+| Extremo | Llamado </br> por | Parámetros de entrada </br> | Método HTTP </br> | Respuesta | Respuesta HTTP </br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authn | Servicio de programador </br></br>o</br></br>de aplicación de streaming | &#x200B;1. solicitante (obligatorio)</br>    </br>2.  deviceId (obligatorio)</br>    </br>3.  mvpd (obligatorio)</br>    </br>4.  deviceType (obligatorio)</br>    </br>5.  SAMLResponse (obligatorio)</br>    </br>6.  deviceUser (Obsoleto)</br>    </br>7.  appId (obsoleto) | PUBLICAR | La respuesta correcta será un 204 Sin contenido, que indica que el token se creó correctamente y está listo para usarse en los flujos de autenticación. | 204 - Sin contenido   </br>400 - Solicitud incorrecta |
+| &lt;SP_FQDN>/api/v1/tokens/authn | Servicio de programador </br></br>o</br></br>de aplicación de streaming | &#x200B;1.  solicitante (obligatorio)</br>    </br>2.  deviceId (obligatorio)</br>    </br>3.  mvpd (obligatorio)</br>    </br>4.  deviceType (obligatorio)</br>    </br>5.  SAMLResponse (obligatorio)</br>    </br>6.  deviceUser (Obsoleto)</br>    </br>7.  appId (obsoleto) | PUBLICAR | La respuesta correcta será un 204 Sin contenido, que indica que el token se creó correctamente y está listo para usarse en los flujos de autenticación. | 204 - Sin contenido </br>400 - Solicitud incorrecta |
 
 
 | Parámetro de entrada | Descripción |

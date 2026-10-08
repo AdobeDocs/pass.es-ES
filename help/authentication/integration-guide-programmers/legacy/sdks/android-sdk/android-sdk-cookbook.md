@@ -2,13 +2,14 @@
 title: Guía de Android SDK
 description: Guía de Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1690'
 ht-degree: 0%
-
 ---
-
 # Guía de Android SDK (heredada) {#android-sdk-cookbook}
 
 >[!NOTE]
@@ -30,9 +31,9 @@ La solución de asignación de derechos de autenticación de Adobe Pass para And
 
 - Dominio de interfaz de usuario: es la capa de aplicación de nivel superior que implementa la interfaz de usuario y utiliza los servicios proporcionados por la biblioteca AccessEnabler para proporcionar acceso al contenido restringido.
 - Dominio de AccessEnabler: aquí es donde se implementan los flujos de trabajo de asignación de derechos en forma de:
-   - Llamadas de red realizadas a los servidores back-end de Adobe
-   - Reglas de lógica empresarial relacionadas con los flujos de trabajo de autenticación y autorización
-   - Administración de varios recursos y procesamiento del estado del flujo de trabajo (como la caché de símbolos)
+  - Llamadas de red realizadas a los servidores back-end de Adobe
+  - Reglas de lógica empresarial relacionadas con los flujos de trabajo de autenticación y autorización
+  - Administración de varios recursos y procesamiento del estado del flujo de trabajo (como la caché de símbolos)
 
 El objetivo del dominio AccessEnabler es ocultar todas las complejidades de los flujos de trabajo de asignación de derechos y proporcionar a la aplicación de capa superior (a través de la biblioteca AccessEnabler) un conjunto de primitivas de asignación de derechos simples con las que implementar los flujos de trabajo de asignación de derechos:
 
@@ -124,7 +125,7 @@ La actividad de red de AccessEnabler tiene lugar en un subproceso diferente, por
    a.  Llame a [`getInstance`](#$getInstance) para crear una sola instancia del AccessEnabler de autenticación de Adobe Pass.
 
    - **Dependencia:** autenticación de Adobe Pass nativa
-Biblioteca de Android (AccessEnabler)
+     Biblioteca de Android (AccessEnabler)
 
    b.  Llame a ` setRequestor()` para establecer la identificación del programador; pase `requestorID` del programador y (opcionalmente) una matriz de extremos de autenticación de Adobe Pass.
 
@@ -185,9 +186,9 @@ Flujo.
 
    - Si la llamada `getAuthorization()` se realiza correctamente: el usuario tiene tokens AuthN y AuthZ válidos (el usuario está autenticado y autorizado para ver los medios solicitados).
    - Si `getAuthorization()` produce un error: examine la excepción generada para determinar su tipo (AuthN, AuthZ o algo más):
-      - Si se ha producido un error de autenticación (AuthN), reinicie el flujo de autenticación.
-      - Si se trata de un error de autorización (AuthZ), el usuario no tiene autorización para ver los medios solicitados y se le debe mostrar algún tipo de mensaje de error.
-      - Si hubo algún otro tipo de error (error de conexión, error de red, etc.) a continuación, mostrar un mensaje de error apropiado al usuario.
+     - Si se ha producido un error de autenticación (AuthN), reinicie el flujo de autenticación.
+     - Si se trata de un error de autorización (AuthZ), el usuario no tiene autorización para ver los medios solicitados y se le debe mostrar algún tipo de mensaje de error.
+     - Si hubo algún otro tipo de error (error de conexión, error de red, etc.) a continuación, mostrar un mensaje de error apropiado al usuario.
 
 1. Valide el token de medios corto.\
    Utilice la biblioteca del Comprobador de tokens de medios de autenticación de Adobe Pass para comprobar el token de medios de corta duración devuelto desde la llamada de `getAuthorization()` anterior:

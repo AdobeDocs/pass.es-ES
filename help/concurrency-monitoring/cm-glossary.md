@@ -2,13 +2,14 @@
 title: Glosario
 description: Glosario de términos de supervisión de concurrencia
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '766'
 ht-degree: 0%
-
 ---
-
 # Glosario {#glossary}
 
 ## ID de cuenta {#accid-defn}
@@ -66,8 +67,8 @@ ht-degree: 0%
 ## Punto de información de la política (PIP) {#policy-info-pt-defn}
 
 * Una fuente de valores de atributo. La Monitorización de concurrencia actúa como punto de información al proporcionar:
-   * metadatos de flujo de paso a través.
-   * métricas de actividad relativas a flujos simultáneos.
+  * metadatos de flujo de paso a través.
+  * métricas de actividad relativas a flujos simultáneos.
 
 ## Programador {#programmer-defn}
 

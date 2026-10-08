@@ -2,13 +2,14 @@
 title: Notas de la versión de Adobe Pass Authentication 3.0
 description: Notas de la versión de Adobe Pass Authentication 3.0
 exl-id: 9284151a-8458-44a3-937b-35f379ca0e4e
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '195'
+source-wordcount: '204'
 ht-degree: 0%
-
 ---
-
 # Notas de la versión de Adobe Pass Authentication 3.0 {#authn-300-rn}
 
 >[!IMPORTANT]
@@ -39,11 +40,11 @@ Fecha de versión: **10/09/2024 - 12/09/2024**
 ##### Documentación
 
 * Para empezar con la nueva API de REST v2, consulte los siguientes documentos:
-   * [API de REST v2: API: información general](../integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
-   * [API de REST v2: Flujos: información general](../integration-guide-programmers/rest-apis/rest-api-v2/flows/rest-api-v2-flows-overview.md)
+  * [API de REST v2: API: información general](../integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [API de REST v2: Flujos: información general](../integration-guide-programmers/rest-apis/rest-api-v2/flows/rest-api-v2-flows-overview.md)
 * Las direcciones URL de los documentos públicos de la API de REST v1 han cambiado, consulte los siguientes documentos:
-   * [API de REST v1: API: información general](../integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
-   * [API de REST v1: API: referencia](../integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+  * [API de REST v1: API: información general](../integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
+  * [API de REST v1: API: referencia](../integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
 
 ##### Herramientas
 

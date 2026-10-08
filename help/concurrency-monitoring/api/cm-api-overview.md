@@ -2,13 +2,14 @@
 title: Ejemplos de uso de API
 description: Uso de extremo de API de supervisión de concurrencia
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2052'
+source-wordcount: '2083'
 ht-degree: 0%
-
 ---
-
 # Resumen de API {#api-overview}
 
 Consulta la [documentación de la API en línea](https://streams-stage.adobeprimetime.com/swagger-ui/index.html) para obtener más detalles.
@@ -104,7 +105,7 @@ curl -i -X POST -u ${user}:%{pass} http://streams-stage.adobeprimetime.com/v2/se
 ```
 
 Para la llamada de Heartbeat, se le permite enviar metadatos del mismo modo que se hace para el inicio de la sesión. Se pueden agregar nuevos metadatos en cualquier momento y actualizar los valores enviados anteriormente con algunas **excepciones**. Los siguientes valores, una vez configurados, no se pueden cambiar: **paquete**, **canal**, **plataforma**, **assetId**, **idp**, **mvpd**, **hba_status**, **hba**,
-**mobileDevice**
+**dispositivo móvil**
 
 Si la sesión sigue siendo válida (no ha caducado o se ha eliminado manualmente), recibirá un resultado satisfactorio:
 
@@ -327,7 +328,7 @@ Para todas las llamadas a la API del ciclo vital de sesión, el cuerpo de respue
 ![](../assets/body_small.png)
 
 **Consejo**
-**EvaluationResult** incluirá una matriz de objetos Advice en **associatedAdvice**. Los consejos están pensados para que la aplicación muestre un mensaje de error completo para el usuario y (potencialmente) le permita tomar medidas.
+**EvaluationResult** incluirá una matriz de objetos Advice bajo **associatedAdvice**. Los consejos están pensados para que la aplicación muestre un mensaje de error completo para el usuario y (potencialmente) le permita tomar medidas.
 
 Actualmente, hay dos tipos de consejos (especificados por su valor de atributo **type**): **rule-** y **remote-terminate**. El primero proporciona detalles sobre una regla que se ha interrumpido y las sesiones que están en conflicto con la actual (incluido el atributo de finalización que se puede utilizar para finalizar esa sesión de forma remota). El segundo solo indica que la sesión actual fue deliberadamente terminada por una remota, por lo que los usuarios sabrán quién los echó cuando se alcanzaron los límites. En caso de que **reemplazado** se incluya en los metadatos, la sesión en cuestión se creó con el encabezado **X-Terminate**.
 

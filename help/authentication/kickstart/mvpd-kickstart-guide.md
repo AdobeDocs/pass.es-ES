@@ -2,13 +2,14 @@
 title: Guía de KickStart de MVPD
 description: Guía de KickStart de MVPD
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '965'
 ht-degree: 0%
-
 ---
-
 # Guía de KickStart de MVPD {#mvpd-kickstart-guide}
 
 >[!IMPORTANT]
@@ -129,13 +130,13 @@ Para obtener más información sobre cómo usar estos entornos, consulte la [Exp
 
 ## Acceso a asistencia al cliente {#access-customer-support}
 
-**Adobe proporcionará acceso a nuestro sistema de atención al cliente a través de** Zendesk[. &#x200B;](https://tve.zendesk.com/home) Para acceder a Zendesk, debe registrarse y crear una cuenta en https://tve.zendesk.com/home.
+**Adobe proporcionará acceso a nuestro sistema de atención al cliente a través de** Zendesk[&#128279;](https://tve.zendesk.com/home). Para acceder a Zendesk, debe registrarse y crear una cuenta en https://tve.zendesk.com/home.
 
 El equipo de autenticación de Adobe Pass está disponible para resolver cualquier pregunta o problema técnico que pueda surgir durante el proceso de integración. Póngase en contacto con nosotros en [tve-support@adobe.com](mailto:tve-support@adobe.com).
 
 ## Acceso a la documentación {#access-documentation}
 
-**Adobe proporcionará acceso a nuestra documentación pública a través de** Adobe Experience League[.](https://experienceleague.adobe.com/es/docs/pass/authentication/home)
+**Adobe proporcionará acceso a nuestra documentación pública a través de** Adobe Experience League[&#128279;](https://experienceleague.adobe.com/es/docs/pass/authentication/home).
 
 El equipo de autenticación de Adobe Pass proporciona documentación completa sobre las funciones y flujos de trabajo disponibles en la sección [Guía de integración para MVPD](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md). Consulte la tabla de contenido de esta sección para ver vínculos a información detallada sobre cada tema.
 

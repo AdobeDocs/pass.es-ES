@@ -2,13 +2,14 @@
 title: Página de registro
 description: Página de registro
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '529'
 ht-degree: 0%
-
 ---
-
 # Página de registro (heredada) {#registration-page}
 
 ## Extremos de API de REST {#clientless-endpoints}
@@ -41,9 +42,9 @@ ht-degree: 0%
 
 Devuelve el código de registro generado aleatoriamente y el URI de la página de inicio de sesión.
 
-| Extremo | Llamado <br> por | Entrada   <br>Parámetro | Método HTTP <br> | Respuesta | Respuesta HTTP <br> |
+| Extremo | Llamado <br> por | Parámetro <br> de entrada | Método HTTP <br> | Respuesta | Respuesta HTTP <br> |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Por ejemplo:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Servicio de programador <br>o<br>de aplicación de streaming | &#x200B;1.  solicitante <br>    (Componente de ruta de acceso)<br>2.  deviceId (con hash)   <br>    (Obligatorio)<br>3.  device_info/X-Device-Info (obligatorio)<br>4.  mvpd (opcional)<br>5.  ttl (opcional)<br> | PUBLICAR | XML o JSON que contienen un código de registro y detalles de información o error si no se consigue. Consulte los ejemplos siguientes. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Por ejemplo:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Servicio de programador <br>o<br>de aplicación de streaming | &#x200B;1.  solicitante <br> (componente de ruta de acceso)<br>2.  deviceId (con hash) <br> (obligatorio)<br>3.  device_info/X-Device-Info (obligatorio)<br>4.  mvpd (opcional)<br>5.  ttl (opcional)<br> | PUBLICAR | XML o JSON que contienen un código de registro y detalles de información o error si no se consigue. Consulte los ejemplos siguientes. | 201 |
 
 {style="table-layout:auto"}
 
@@ -65,7 +66,8 @@ Devuelve el código de registro generado aleatoriamente y el URI de la página d
 >[!CAUTION]
 >
 >**Dirección IP del dispositivo de transmisión**
-><br>>En implementaciones de cliente a servidor, la dirección IP del dispositivo de streaming se envía implícitamente con esta llamada.  En implementaciones de servidor a servidor, donde la llamada **regcode** se realiza como servicio de programador y no como dispositivo de transmisión, se requiere el siguiente encabezado para pasar la dirección IP del dispositivo de transmisión:
+><br>
+>En implementaciones de cliente a servidor, la dirección IP del dispositivo de streaming se envía implícitamente con esta llamada.  En implementaciones de servidor a servidor, donde la llamada **regcode** se realiza como servicio de programador y no como dispositivo de transmisión, se requiere el siguiente encabezado para pasar la dirección IP del dispositivo de transmisión:
 >
 >
 >```
@@ -73,7 +75,8 @@ Devuelve el código de registro generado aleatoriamente y el URI de la página d
 >```
 >
 >donde `<streaming\_device\_ip>` es la dirección IP pública del dispositivo de streaming.
-><br><br>>Ejemplo :<br>
+><br><br>
+>Ejemplo :<br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20

@@ -2,13 +2,14 @@
 title: SSO en iOS al utilizar el Habilitador de acceso a autenticación de Adobe Pass
 description: SSO en iOS al utilizar el Habilitador de acceso a autenticación de Adobe Pass
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1144'
+source-wordcount: '1216'
 ht-degree: 0%
-
 ---
-
 # (Heredado) SSO en iOS al utilizar el Habilitador de acceso a autenticación de Adobe Pass {#sso-on-ios-when-using-the-primetime-authentication-access-enabler}
 
 >[!NOTE]
@@ -39,7 +40,7 @@ El SSO en iOS viene determinado por las siguientes condiciones:
 El comportamiento de SSO es el siguiente:
 
 - **iOS 6 y versiones posteriores**: El SSO funciona automáticamente entre aplicaciones desarrolladas por el mismo equipo o equipos diferentes. El ID del dispositivo se calcula en función de la dirección de MAC (el mismo valor se genera en todas las aplicaciones) y el área de almacenamiento es común a todas las aplicaciones (la mesa de trabajo personalizada se puede compartir entre las aplicaciones en iOS 6 y versiones posteriores).
-   - **Importante:** Tenga en cuenta que la versión de iOS SDK 1.9.4 ha [aumentado el objetivo mínimo de implementación de iOS a iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
+  - **Importante:** Tenga en cuenta que la versión de iOS SDK 1.9.4 ha [aumentado el objetivo mínimo de implementación de iOS a iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7 y versiones posteriores**: SSO funcionará en las siguientes condiciones:
 
 1. Las aplicaciones se publican con el mismo perfil de distribución de Apple o perfiles que pertenecen al mismo equipo. Esta es la única manera en que las aplicaciones comparten paneles de trabajo personalizados en iOS 7 y versiones posteriores. En todos los demás casos, la mesa de trabajo se coloca en una zona protegida por aplicación. Desde [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[`UIPasteboard pasteboardWithName:create:\`] y +\[`UIPasteboard pasteboardWithUniqueName`\] ahora el nombre dado es único para permitir que solo aquellas aplicaciones del mismo grupo de aplicaciones tengan acceso a la mesa de trabajo. Si el desarrollador intenta crear una mesa de trabajo con un nombre que ya existe y no forma parte del mismo grupo de aplicaciones, obtendrá su propia mesa de trabajo única y privada. Tenga en cuenta que esto no afecta al sistema, a los paneles de trabajo que se proporcionan, a las herramientas generales y a los buscadores.
