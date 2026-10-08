@@ -54,7 +54,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>primaryHardwareType</td>
         <td>El tipo de hardware principal del dispositivo.</td>
-        <td>&amp;comprobar;</td>
+        <td>&comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -111,7 +111,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td><i>obligatorio</i></td>
         <td>osName</td>
         <td>El nombre del sistema operativo (SO) del dispositivo.</td>
-        <td>&amp;comprobar;</td>
+        <td>&comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -133,7 +133,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>osFamily</td>
         <td>El nombre del grupo del sistema operativo (SO) del dispositivo.</td>
-        <td>&amp;comprobar;</td>
+        <td>&comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -156,7 +156,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>osVendor</td>
         <td>El proveedor del sistema operativo (SO) del dispositivo.</td>
-        <td>&amp;comprobar;</td>
+        <td>&comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -186,7 +186,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>browserName</td>
         <td>El nombre del explorador.</td>
-        <td>&amp;comprobar;</td>
+        <td>&comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -206,7 +206,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>browserVendor</td>
         <td>La empresa u organización que crea el explorador.</td>
-        <td>&amp;comprobar;</td>
+        <td>&comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
@@ -291,7 +291,7 @@ El valor `Base64-encoded` del elemento JSON que contiene al menos los atributos 
         <td></td>
         <td>connectionSecure</td>
         <td>Estado de seguridad de la conexión de red.</td>
-        <td>&amp;comprobar;</td>
+        <td>&comprobar;</td>
         <td>
             Los valores están restringidos:
             <ul>
