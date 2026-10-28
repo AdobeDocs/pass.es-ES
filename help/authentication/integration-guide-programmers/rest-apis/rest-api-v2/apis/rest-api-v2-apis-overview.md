@@ -5,9 +5,9 @@ exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 35c6ed6491cd47e6f85ee8974d72236c19fb8a6d
+source-git-commit: 297578d3b311fbc2a5702f1bcc947e94463fb884
 workflow-type: tm+mt
-source-wordcount: '268'
+source-wordcount: '266'
 ht-degree: 0%
 ---
 # Información general sobre las API de REST V2 {#rest-api-v2-apis-overview}
@@ -20,22 +20,14 @@ Para empezar, visite la documentación pública de las API que le interesan en l
 
 ## Direcciones URL base {#rest-api-v2-apis-base-urls}
 
-Utilice la siguiente URL base específica del entorno para las solicitudes de API de REST V2. Añadir
-el `path` relativo documentado para cada API en esta dirección URL base.
+Utilice la siguiente URL base específica del entorno para las solicitudes de API de REST V2. Anexe los `path` relativos documentados para cada API a esta dirección URL base.
 
-Algunas respuestas de API devuelven direcciones URL interactivas que el dispositivo de flujo continuo debe abrir
-en un navegador o agente de usuario. Algunos ejemplos son el atributo `url` devuelto por
-[Iniciar el cierre de sesión de un mvpd específico](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
-y el redireccionamiento `Location` devuelto por
-[Realizar autenticación en el agente de usuario](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
+Algunas respuestas de API devuelven direcciones URL interactivas que el dispositivo de flujo continuo debe abrir en un navegador o agente de usuario. Algunos ejemplos son el atributo `url` devuelto por [Iniciar el cierre de sesión para mvpd](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) específico y la redirección `Location` devuelta por [Realizar autenticación en el agente de usuario](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
 
-Estas direcciones URL interactivas utilizan el mismo host de Adobe Pass Service Provider (SP).
-Abra una dirección URL interactiva absoluta exactamente como se devuelve. Si Adobe Pass devuelve un
-dirección URL interactiva relativa que comienza con `/adobe-services/`, resolverla con
-Seleccione el host SP para el entorno de destino:
+Estas direcciones URL interactivas utilizan el mismo host de Adobe Pass Service Provider (SP). Abra una dirección URL interactiva absoluta exactamente como se devuelve. Si Adobe Pass devuelve una dirección URL interactiva relativa que comience por `/adobe-services/`, resuelva el problema con el host SP del entorno de destino:
 
-| Entorno | API de REST V2 y URL base de URL interactiva |
-| --- | --- |
+| Entorno | API de REST V2 y URL base interactiva |
+| --- |--------------------------------------|
 | Producción | `https://sp.auth.adobe.com` |
 | Ensayo | `https://sp.auth-staging.adobe.com` |
 
